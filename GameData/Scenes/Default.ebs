@@ -174,12 +174,12 @@ Entities:
       Parent: 0
       Children: []
     TransformComponent:
-      Position: [-9.313226e-09,1.4842438,-4.408915]
+      Position: [-2.9802322e-08,1.8305078,-4.408915]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-9.313226e-09,1.4842438,-4.408915,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-2.9802322e-08,1.8305078,-4.408915,1]
     RigidBodyComponent:
-      Type: 0
+      Type: 2
       Mass: 1
       GravityEnabled: 1
     SphereColliderComponent:
@@ -196,6 +196,12 @@ Entities:
       Layer: 1
     MaterialComponent:
       MaterialUUID: 1868779223986162857
+    ScriptComponent:
+      ScriptUUID: 12117729415864912341
+      UserPropertyOverrides:
+        - Name: PickupType
+          Type: 5
+          Value: 2
   - Entity: 1173232325625663726
     TagComponent:
       Tag: Interaction

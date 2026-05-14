@@ -25,8 +25,11 @@ function PlayerInteraction:OnUpdate(entity, delta)
         pickupUI:SetActive(true)
 
         if Input.IsKeyPressed(KeyCode.E) then
-            -- TODO: Activate the entitie's pickup behavior (i.e give ammo, points, etc)
-            Scene.RemoveEntity(hitResult.Entity)
+            local pickupScript = hitResult.Entity:GetScriptInstance()
+            
+            if pickupScript and type(pickupScript.OnPickup) == "function" then
+                pickupScript:OnPickup(hitResult.Entity, entity)
+            end
         end
     else
         pickupUI:SetActive(false)
