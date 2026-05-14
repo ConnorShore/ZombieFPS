@@ -13,15 +13,23 @@ function PlayerInteraction:OnUpdate(entity, delta)
     local interactionForward = interactionTransform:GetForward()
 
     local rayStart = interactionPos
-    local rayEnd = interactionPos + interactionForward * self.InteractionDistance
+    local rayEnd = rayStart + interactionForward * self.InteractionDistance
 
-    Debug.DrawLine(rayStart, rayEnd)
+    -- Ray visualization for debugging
+    -- Debug.DrawLine(rayStart, rayEnd)
 
     -- Cast ray to detect interactable objects
+    local pickupUI = Scene.GetEntityByName("PickupItemUI")
     local hitResult = Physics.CastRay(rayStart, rayEnd, CollisionFilter.Pickup)
     if hitResult.Hit then
-        local hitEntity = hitResult.HitEntity
-        Log.Info("Player is looking at an interactable object: " .. hitEntity:GetName())
+        pickupUI:SetActive(true)
+
+        if Input.IsKeyPressed(KeyCode.E) then
+            -- TODO: Activate the entitie's pickup behavior (i.e give ammo, points, etc)
+            Scene.RemoveEntity(hitResult.Entity)
+        end
+    else
+        pickupUI:SetActive(false)
     end
 end
 

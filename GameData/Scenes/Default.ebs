@@ -9,8 +9,8 @@ Entities:
     TransformComponent:
       Position: [0,-0.1,0]
       Rotation: [0,0,0]
-      Scale: [15,0.2,15]
-      WorldTransform: [15,0,0,0,0,0.2,0,0,0,0,15,0,0,-0.1,0,1]
+      Scale: [50,0.2,50]
+      WorldTransform: [50,0,0,0,0,0.2,0,0,0,0,50,0,0,-0.1,0,1]
     RigidBodyComponent:
       Type: 0
       Mass: 1
@@ -36,12 +36,11 @@ Entities:
       Parent: 0
       Children:
         - 11417141245009400245
-        - 1173232325625663726
     TransformComponent:
-      Position: [-9.094947e-13,1,5.280866]
+      Position: [-9.094947e-13,1,5.0267487]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-9.094947e-13,1,5.280866,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-9.094947e-13,1,5.0267487,1]
     RigidBodyComponent:
       Type: 2
       Mass: 1
@@ -81,18 +80,19 @@ Entities:
       Position: [0,0.8,-0.2]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-9.094947e-13,1.8,5.0808663,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-9.094947e-13,1.8,4.826749,1]
   - Entity: 3526599274050075716
     TagComponent:
       Tag: Camera
     RelationshipComponent:
       Parent: 11417141245009400245
-      Children: []
+      Children:
+        - 1173232325625663726
     TransformComponent:
       Position: [9.094947e-13,0,0]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1.8,5.0808663,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1.8,4.826749,1]
     CameraComponent:
       Projection: [0.8988096,0,0,0,0,1.428148,0,0,0,0,-1.0004001,-1,0,0,-0.20004001,0]
       Type: 1
@@ -174,10 +174,10 @@ Entities:
       Parent: 0
       Children: []
     TransformComponent:
-      Position: [-7.450581e-09,1.4842438,-4.408915]
+      Position: [-9.313226e-09,1.4842438,-4.408915]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-7.450581e-09,1.4842438,-4.408915,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-9.313226e-09,1.4842438,-4.408915,1]
     RigidBodyComponent:
       Type: 0
       Mass: 1
@@ -200,19 +200,47 @@ Entities:
     TagComponent:
       Tag: Interaction
     RelationshipComponent:
-      Parent: 6753254757056896993
+      Parent: 3526599274050075716
       Children: []
     TransformComponent:
-      Position: [0,0,-0.38377094]
-      Rotation: [0,0,0]
+      Position: [-9.094947e-13,0,0]
+      Rotation: [0,-0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-9.094947e-13,1,4.897095,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-9.094947e-13,1.8,4.826749,1]
     ScriptComponent:
       ScriptUUID: 8562544563539838448
       UserPropertyOverrides:
         - Name: InteractionDistance
           Type: 3
           Value: 2.25
+  - Entity: 17664487549539026246
+    TagComponent:
+      Tag: HUD
+    RelationshipComponent:
+      Parent: 0
+      Children:
+        - 6356908388261273273
+    TransformComponent:
+      Position: [9.094947e-13,0,0]
+      Rotation: [0,-0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,9.094947e-13,0,0,1]
+  - Entity: 6356908388261273273
+    TagComponent:
+      Tag: PickupItemUI
+    RelationshipComponent:
+      Parent: 17664487549539026246
+      Children: []
+    TransformComponent:
+      Position: [0.55,0.5,0]
+      Rotation: [0,-0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.55,0.5,0,1]
+    TextComponent:
+      Text: 'Press [E] to pickup item'
+      FontHandle: 213406294560961755
+      Color: [1,1,1,1]
+      ScreenSpace: 1
 Environment:
   Skybox:
     Enabled: 1
