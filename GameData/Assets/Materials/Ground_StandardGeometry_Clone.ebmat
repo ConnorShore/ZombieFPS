@@ -1,0 +1,36 @@
+Material: Ground_StandardGeometry_Clone
+UUID: 13734008897576602447
+RenderQueue: 1
+Instanced: true
+BaseMaterialUUID: 31
+Uniforms:
+  u_Metallic:
+    Type: float
+    Value: 0
+  u_Albedo:
+    Type: Vector3f
+    Value: [0.055998825,0.36877078,0.0024503148]
+  u_Roughness:
+    Type: float
+    Value: 0.5
+  u_EmissionColor:
+    Type: Vector3f
+    Value: [1,1,1]
+  u_AO:
+    Type: float
+    Value: 1
+  u_AlbedoMap:
+    Type: Texture
+    Value: 1
+  u_Emission:
+    Type: float
+    Value: 0
+  u_NormalMap:
+    Type: Texture
+    Value: 3
+  u_MetallicRoughnessMap:
+    Type: Texture
+    Value: 1
+  u_EmissiveMap:
+    Type: Texture
+    Value: 1

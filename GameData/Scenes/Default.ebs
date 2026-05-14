@@ -1,12 +1,225 @@
 Scene: Default
-Entities: []
+Entities:
+  - Entity: 4008310533388848912
+    TagComponent:
+      Tag: Ground
+    RelationshipComponent:
+      Parent: 0
+      Children: []
+    TransformComponent:
+      Position: [0,-0.1,0]
+      Rotation: [0,0,0]
+      Scale: [15,0.2,15]
+      WorldTransform: [15,0,0,0,0,0.2,0,0,0,0,15,0,0,-0.1,0,1]
+    RigidBodyComponent:
+      Type: 0
+      Mass: 1
+      GravityEnabled: 1
+    BoxColliderComponent:
+      Size: [1,1,1]
+      IsTrigger: 0
+      OffsetPosition: [0,0,0]
+      OffsetRotation: [0,0,0]
+      Category: 1
+      CollisionMask: 1
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 0
+    StaticMeshComponent:
+      MeshUUID: 51
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 13734008897576602447
+  - Entity: 6753254757056896993
+    TagComponent:
+      Tag: Player
+    RelationshipComponent:
+      Parent: 0
+      Children:
+        - 11417141245009400245
+        - 1173232325625663726
+    TransformComponent:
+      Position: [-9.094947e-13,1,5.280866]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-9.094947e-13,1,5.280866,1]
+    RigidBodyComponent:
+      Type: 2
+      Mass: 1
+      GravityEnabled: 1
+    CapsuleColliderComponent:
+      Radius: 0.5
+      Height: 2
+      IsTrigger: 0
+      OffsetPosition: [0,0,0]
+      OffsetRotation: [0,0,0]
+      Category: 1
+      CollisionMask: 1
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 0
+    StaticMeshComponent:
+      MeshUUID: 53
+      Layer: 2
+    MaterialComponent:
+      MaterialUUID: 31
+    ScriptComponent:
+      ScriptUUID: 6068451618412420797
+      UserPropertyOverrides: []
+    CharacterControllerComponent:
+      WalkSpeed: 5
+      JumpForce: 5
+      GravityMultiplier: 1
+      MaxSlopeAngle: 45
+      MaxStepHeight: 0.25
+  - Entity: 11417141245009400245
+    TagComponent:
+      Tag: HeadPivot
+    RelationshipComponent:
+      Parent: 6753254757056896993
+      Children:
+        - 3526599274050075716
+    TransformComponent:
+      Position: [0,0.8,-0.2]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-9.094947e-13,1.8,5.0808663,1]
+  - Entity: 3526599274050075716
+    TagComponent:
+      Tag: Camera
+    RelationshipComponent:
+      Parent: 11417141245009400245
+      Children: []
+    TransformComponent:
+      Position: [9.094947e-13,0,0]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1.8,5.0808663,1]
+    CameraComponent:
+      Projection: [0.8988096,0,0,0,0,1.428148,0,0,0,0,-1.0004001,-1,0,0,-0.20004001,0]
+      Type: 1
+      IsActive: 1
+      RenderMask: 65533
+      VolumeMask: 65535
+      OrthographicProperties:
+        Size: 5
+        NearClip: -1
+        FarClip: 1
+      PerspectiveProperties:
+        FOV: 70
+        NearClip: 0.1
+        FarClip: 500
+    ScriptComponent:
+      ScriptUUID: 5025897937436236093
+      UserPropertyOverrides: []
+    BillboardComponent:
+      TextureHandle: 100003
+      Tint: [1,1,1,1]
+      Spherical: 1
+      StaticSize: 1
+      Size: 1
+      RenderRuntime: 0
+  - Entity: 12465165630900061560
+    TagComponent:
+      Tag: Sun
+    RelationshipComponent:
+      Parent: 0
+      Children: []
+    TransformComponent:
+      Position: [0,5.5423656,0]
+      Rotation: [-0.87266463,0.5235988,0]
+      Scale: [1,1,1]
+      WorldTransform: [0.8660254,-1.4901161e-08,-0.49999997,0,-0.3830222,0.6427876,-0.66341394,0,0.32139376,0.76604444,0.55667037,0,0,5.5423656,0,1]
+    DirectionalLightComponent:
+      Color: [1,1,1]
+      Intensity: 5
+    BillboardComponent:
+      TextureHandle: 100002
+      Tint: [1,1,1,1]
+      Spherical: 1
+      StaticSize: 1
+      Size: 1.5
+      RenderRuntime: 0
+  - Entity: 7558978174392105101
+    TagComponent:
+      Tag: Cube
+    RelationshipComponent:
+      Parent: 0
+      Children: []
+    TransformComponent:
+      Position: [0,0.5,-4.280331]
+      Rotation: [0,0,0]
+      Scale: [1.5,1,1.5]
+      WorldTransform: [1.5,0,0,0,0,1,0,0,0,0,1.5,0,0,0.5,-4.280331,1]
+    RigidBodyComponent:
+      Type: 0
+      Mass: 1
+      GravityEnabled: 1
+    BoxColliderComponent:
+      Size: [1,1,1]
+      IsTrigger: 0
+      OffsetPosition: [0,0,0]
+      OffsetRotation: [0,0,0]
+      Category: 1
+      CollisionMask: 1
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 0
+    StaticMeshComponent:
+      MeshUUID: 51
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 31
+  - Entity: 2785837306964502872
+    TagComponent:
+      Tag: Pickup
+    RelationshipComponent:
+      Parent: 0
+      Children: []
+    TransformComponent:
+      Position: [-7.450581e-09,1.4842438,-4.408915]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-7.450581e-09,1.4842438,-4.408915,1]
+    RigidBodyComponent:
+      Type: 0
+      Mass: 1
+      GravityEnabled: 1
+    SphereColliderComponent:
+      Radius: 0.5
+      IsTrigger: 0
+      OffsetPosition: [0,0,0]
+      OffsetRotation: [0,0,0]
+      Category: 256
+      CollisionMask: 1
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 0
+    StaticMeshComponent:
+      MeshUUID: 50
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 1868779223986162857
+  - Entity: 1173232325625663726
+    TagComponent:
+      Tag: Interaction
+    RelationshipComponent:
+      Parent: 6753254757056896993
+      Children: []
+    TransformComponent:
+      Position: [0,0,-0.38377094]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-9.094947e-13,1,4.897095,1]
+    ScriptComponent:
+      ScriptUUID: 8562544563539838448
+      UserPropertyOverrides:
+        - Name: InteractionDistance
+          Type: 3
+          Value: 2.25
 Environment:
   Skybox:
     Enabled: 1
     Intensity: 1
     TextureUUID: 5
   Bloom:
-    Enabled: 0
+    Enabled: 1
     Threshold: 1.5
     Knee: 0.15
     Intensity: 0.8
@@ -28,7 +241,7 @@ Environment:
     Smoothness: 0.5
     Size: 0.5
   ColorGrading:
-    Enabled: 0
+    Enabled: 1
     Exposure: 1
     Temperature: 0
     Tint: 0

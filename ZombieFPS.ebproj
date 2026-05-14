@@ -6,7 +6,8 @@ StartScene: Default.ebs
 AssetFile: Assets.eba
 Settings:
   General:
-    ScenesInBuild: []
+    ScenesInBuild:
+      - UUID: 397660979313011815
   Physics:
     GravityStrength: 9.81
     GravityVector: [0,-1,0]
@@ -14,10 +15,17 @@ Settings:
     PositionSolverIterations: 5
     VelocitySolverIterations: 10
     CollisionFilters:
-      - Name: Environment
-      - Name: VFX
-      - Name: Player
-      - Name: Enemy
+      - Index: 0
+        Name: Environment
+      - Index: 1
+        Name: VFX
+      - Index: 2
+        Name: Player
+      - Index: 3
+        Name: Enemy
+      - Index: 8
+        Name: Pickup
   Render:
     RenderLayers:
-      - Name: Default
+      - Index: 0
+        Name: Default
