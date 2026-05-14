@@ -88,13 +88,14 @@ Entities:
       Parent: 11417141245009400245
       Children:
         - 1173232325625663726
+        - 9548350549033941053
     TransformComponent:
       Position: [9.094947e-13,0,0]
       Rotation: [0,0,0]
       Scale: [1,1,1]
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1.8,4.826749,1]
     CameraComponent:
-      Projection: [0.8988096,0,0,0,0,1.428148,0,0,0,0,-1.0004001,-1,0,0,-0.20004001,0]
+      Projection: [0.7814155,0,0,0,0,1.428148,0,0,0,0,-1.0004001,-1,0,0,-0.20004001,0]
       Type: 1
       IsActive: 1
       RenderMask: 65533
@@ -201,7 +202,7 @@ Entities:
       UserPropertyOverrides:
         - Name: PickupType
           Type: 5
-          Value: 2
+          Value: 1
   - Entity: 1173232325625663726
     TagComponent:
       Tag: Interaction
@@ -218,7 +219,7 @@ Entities:
       UserPropertyOverrides:
         - Name: InteractionDistance
           Type: 3
-          Value: 2.25
+          Value: 3
   - Entity: 17664487549539026246
     TagComponent:
       Tag: HUD
@@ -247,6 +248,63 @@ Entities:
       FontHandle: 213406294560961755
       Color: [1,1,1,1]
       ScreenSpace: 1
+  - Entity: 13433792208257632190
+    TagComponent:
+      Tag: AssaultRifle
+    RelationshipComponent:
+      Parent: 9548350549033941053
+      Children:
+        - 4540107866184767776
+        - 7920508733018544036
+    TransformComponent:
+      Position: [0,0,-1.1]
+      Rotation: [0,-0,0]
+      Scale: [0.49,0.49,0.49]
+      WorldTransform: [0.49,0,0,0,0,0.49,0,0,0,0,0.49,0,0.45130473,1.383387,3.7995243,1]
+  - Entity: 4540107866184767776
+    TagComponent:
+      Tag: Weapon
+    RelationshipComponent:
+      Parent: 13433792208257632190
+      Children: []
+    TransformComponent:
+      Position: [0,0.025450587,0.38175866]
+      Rotation: [3.1415927,-0,-0]
+      Scale: [-0.09888629,0.109487295,0.109487295]
+      WorldTransform: [-0.04845428,0,0,0,0,-0.053648777,-4.6901247e-09,0,0,4.6901247e-09,-0.053648777,0,0.45130473,1.3958578,3.986586,1]
+    StaticMeshComponent:
+      MeshUUID: 15931558621658917516
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 3715140739257822472
+  - Entity: 7920508733018544036
+    TagComponent:
+      Tag: Magazine
+    RelationshipComponent:
+      Parent: 13433792208257632190
+      Children: []
+    TransformComponent:
+      Position: [0,-0.11320099,-0.015132174]
+      Rotation: [-0.00020340085,0,0]
+      Scale: [0.051736534,0.056594644,0.18163528]
+      WorldTransform: [0.025350902,0,0,0,0,0.027731376,-5.6405856e-06,0,0,1.8102937e-05,0.08900128,0,0.45130473,1.3279185,3.7921095,1]
+    StaticMeshComponent:
+      MeshUUID: 6274179878044480628
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 3715140739257822472
+  - Entity: 9548350549033941053
+    TagComponent:
+      Tag: WeaponHandler
+    RelationshipComponent:
+      Parent: 3526599274050075716
+      Children:
+        - 13433792208257632190
+    TransformComponent:
+      Position: [0.45130473,-0.41661298,0.072775364]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.45130473,1.383387,4.899524,1]
 Environment:
   Skybox:
     Enabled: 1
