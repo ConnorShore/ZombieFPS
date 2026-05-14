@@ -1,16 +1,32 @@
 Assets:
+  - Type: Texture
+    UUID: 2839879704304884181
+    Name: AssaultRifle_ARNormal.png
+    FilePath: Models/AssaultRifle_ARNormal.png
+  - Type: Texture
+    UUID: 46500555167026071
+    Name: AssaultRifle_ARMetallic-ARRoughness.png
+    FilePath: Models/AssaultRifle_ARMetallic-ARRoughness.png
+  - Type: Texture
+    UUID: 553952573417967412
+    Name: AssaultRifle_ARColor.png
+    FilePath: Models/AssaultRifle_ARColor.png
+  - Type: Texture
+    UUID: 7804144985708769464
+    Name: AssaultRifle_ORM_Mat0
+    FilePath: Models/AssaultRifle_ORM_Mat0.png
   - Type: Script
     UUID: 12117729415864912341
     Name: PickupItem
     FilePath: Scripts/PickupItem.lua
   - Type: Script
-    UUID: 6068451618412420797
-    Name: CharacterMovement
-    FilePath: Scripts/CharacterMovement.lua
-  - Type: Script
     UUID: 5025897937436236093
     Name: MouseLook
     FilePath: Scripts/MouseLook.lua
+  - Type: Script
+    UUID: 6068451618412420797
+    Name: CharacterMovement
+    FilePath: Scripts/CharacterMovement.lua
   - Type: Script
     UUID: 8562544563539838448
     Name: PlayerInteraction
@@ -23,6 +39,22 @@ Assets:
     UUID: 1868779223986162857
     Name: Pickup_StandardGeometry_Clone
     FilePath: Materials/Pickup_StandardGeometry_Clone.ebmat
+  - Type: Material
+    UUID: 3715140739257822472
+    Name: AssaultRifle_Weapon
+    FilePath: Models/AssaultRifle_Weapon.ebmat
+  - Type: Mesh
+    UUID: 15931558621658917516
+    Name: AssaultRifle_Cube.001_Prim0
+    FilePath: Models/AssaultRifle_Cube.001_Prim0.ebmesh
+  - Type: Mesh
+    UUID: 6274179878044480628
+    Name: AssaultRifle_Cube.003_Prim0
+    FilePath: Models/AssaultRifle_Cube.003_Prim0.ebmesh
+  - Type: Model
+    UUID: 12556598296557569808
+    Name: AssaultRifle
+    FilePath: Models/AssaultRifle.ebmodel
   - Type: Font
     UUID: 213406294560961755
     Name: Roboto-Regular
