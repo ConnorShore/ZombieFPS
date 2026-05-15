@@ -56,6 +56,13 @@ function WeaponFire:Fire(entity)
     else
         Log.Info("Missed! No entity hit.")
     end
+
+    -- Trigger recoil
+    local recoilEntity = Scene.GetEntityByName("WeaponRecoil")
+    if recoilEntity then
+        local recoilScript = recoilEntity:GetScriptInstance()
+        recoilScript:Fire()
+    end
 end
 
 return WeaponFire

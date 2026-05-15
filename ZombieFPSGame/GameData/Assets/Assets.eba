@@ -44,13 +44,17 @@ Assets:
     Name: PlayerInteraction
     FilePath: Scripts/PlayerInteraction.lua
   - Type: Script
+    UUID: 5025897937436236093
+    Name: MouseLook
+    FilePath: Scripts/MouseLook.lua
+  - Type: Script
     UUID: 6068451618412420797
     Name: CharacterMovement
     FilePath: Scripts/CharacterMovement.lua
   - Type: Script
-    UUID: 5025897937436236093
-    Name: MouseLook
-    FilePath: Scripts/MouseLook.lua
+    UUID: 3366872985723856610
+    Name: WeaponRecoil
+    FilePath: Scripts/WeaponRecoil.lua
   - Type: Material
     UUID: 18352460508626254789
     Name: Cube_StandardGeometry_Clone
