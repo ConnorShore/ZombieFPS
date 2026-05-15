@@ -35,6 +35,13 @@ function WeaponFire:Fire(entity)
     local position = transform.WorldPosition
     local endPoint = position + forward * self.Range
 
+    -- Spawn muzzle flash from the MuzzleFlash script
+    local muzzleFlash = Scene.GetEntityByName("MuzzleFlash")
+    if muzzleFlash then
+        local muzzleFlashScript = muzzleFlash:GetScriptInstance()
+        muzzleFlashScript:PlayFlash()
+    end
+
     -- Cast a ray to detect hits
     local hitResult = Physics.CastRay(position, endPoint)
     if hitResult.Hit then

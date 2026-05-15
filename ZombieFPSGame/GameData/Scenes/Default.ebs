@@ -91,12 +91,12 @@ Entities:
         - 9548350549033941053
         - 17202988526070122190
     TransformComponent:
-      Position: [9.094947e-13,0,0]
+      Position: [9.322321e-10,0,0]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1.8,4.826749,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,9.313226e-10,1.8,4.826749,1]
     CameraComponent:
-      Projection: [0.8988096,0,0,0,0,1.428148,0,0,0,0,-1.0004001,-1,0,0,-0.20004001,0]
+      Projection: [0.7814155,0,0,0,0,1.428148,0,0,0,0,-1.0004001,-1,0,0,-0.20004001,0]
       Type: 1
       IsActive: 1
       RenderMask: 65533
@@ -214,7 +214,7 @@ Entities:
       Position: [-9.094947e-13,0,0]
       Rotation: [0,-0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-9.094947e-13,1.8,4.826749,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,9.304131e-10,1.8,4.826749,1]
     ScriptComponent:
       ScriptUUID: 8562544563539838448
       UserPropertyOverrides:
@@ -258,6 +258,7 @@ Entities:
       Children:
         - 4540107866184767776
         - 7920508733018544036
+        - 15412099849582508473
     TransformComponent:
       Position: [0,0,-1.1]
       Rotation: [0,-0,0]
@@ -396,10 +397,49 @@ Entities:
       Position: [0,0,0]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1.8,4.826749,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,9.313226e-10,1.8,4.826749,1]
     ScriptComponent:
       ScriptUUID: 16404415058251315788
+      UserPropertyOverrides:
+        - Name: FireRate
+          Type: 2
+          Value: 500
+        - Name: ImpactForce
+          Type: 3
+          Value: 3
+  - Entity: 15412099849582508473
+    TagComponent:
+      Tag: MuzzleFlash
+    RelationshipComponent:
+      Parent: 13433792208257632190
+      Children: []
+    TransformComponent:
+      Position: [4.7564507e-05,0.23495293,-2.2327137]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [0.49,0,0,0,0,0.49,0,0,0,0,0.49,0,0.45132804,1.4985139,2.7054944,1]
+    ScriptComponent:
+      ScriptUUID: 16605421126880563658
       UserPropertyOverrides: []
+    ParticleEmitterComponent:
+      EmissionRate: 200
+      Velocity: [0,0,-1]
+      VelocityVariation: [10,10,0]
+      Drag: 0.1
+      AngularVelocity: 0
+      AngularVelocityVariation: 0.2
+      ColorBegin: [0.9335548,0.5210641,0.04031962,1]
+      ColorEnd: [0.66445184,0.66445184,0.66445184,0]
+      ScaleBegin: 0.05
+      ScaleEnd: 0.4
+      ScaleVariation: 0.1
+      TextureHandle: 1
+      Lifetime: 0.05
+      LifetimeVariation: 0.01
+      GravityMultiplier: 0
+      AlignWithVelocity: 0
+      StretchFactor: 0
+      IsActive: 0
 Environment:
   Skybox:
     Enabled: 1
