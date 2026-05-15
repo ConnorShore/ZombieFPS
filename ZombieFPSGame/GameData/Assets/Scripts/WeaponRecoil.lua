@@ -7,23 +7,11 @@ WeaponRecoil.RotationX = 5.0     -- Degrees the gun tilts up
 WeaponRecoil.Snappiness = 20.0   -- How fast it kicks back
 WeaponRecoil.ReturnSpeed = 5.0   -- How fast it returns to rest
 
-function WeaponRecoil:OnCreate(entity)
-    self.weaponHandler = Scene.GetEntityByName("WeaponHandler")
-    if not self.weaponHandler then
-        Log.Error("WeaponRecoil: Could not find WeaponHandler entity in scene!")
-        return
-    end
+-- TODO: Add some random variance to the recoil pattern so it's not exactly the same every time
 
-    local transform = self.weaponHandler:GetComponent("TransformComponent")
-    local pos = transform.Position
-    local rot = transform.Rotation
-    self.BasePosition = Vector3f.new(pos.x, pos.y, pos.z)
-    self.BaseRotation = Vector3f.new(rot.x, rot.y, rot.z)
-    
-    -- Variables to track our current mathematical offset
-    self.TargetPositionOffset = Vector3f.new(0, 0, 0)
-    self.TargetRotationOffset = Vector3f.new(0, 0, 0)
-    
+function WeaponRecoil:OnCreate(entity)
+    self.TargetPositionOffset  = Vector3f.new(0, 0, 0)
+    self.TargetRotationOffset  = Vector3f.new(0, 0, 0)
     self.CurrentPositionOffset = Vector3f.new(0, 0, 0)
     self.CurrentRotationOffset = Vector3f.new(0, 0, 0)
 end
@@ -36,11 +24,7 @@ function WeaponRecoil:OnUpdate(entity, delta)
     -- 2. Snap the CURRENT offset toward the TARGET offset
     self.CurrentPositionOffset = Math.Lerp(self.CurrentPositionOffset, self.TargetPositionOffset, self.Snappiness * delta)
     self.CurrentRotationOffset = Math.Lerp(self.CurrentRotationOffset, self.TargetRotationOffset, self.Snappiness * delta)
-
-    -- 3. Apply the offset to the weapon's actual transform
-    local transform = self.weaponHandler:GetComponent("TransformComponent")
-    transform.Position = self.BasePosition + self.CurrentPositionOffset
-    transform.Rotation = self.BaseRotation + self.CurrentRotationOffset
+    -- WeaponHandler reads CurrentPositionOffset / CurrentRotationOffset and applies them.
 end
 
 -- Call this function from your Player script EXACTLY when the raycast fires!
