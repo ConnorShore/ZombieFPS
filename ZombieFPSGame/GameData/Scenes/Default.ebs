@@ -95,7 +95,7 @@ Entities:
       Scale: [1,1,1]
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1.8,4.826749,1]
     CameraComponent:
-      Projection: [0.7814155,0,0,0,0,1.428148,0,0,0,0,-1.0004001,-1,0,0,-0.20004001,0]
+      Projection: [0.8988096,0,0,0,0,1.428148,0,0,0,0,-1.0004001,-1,0,0,-0.20004001,0]
       Type: 1
       IsActive: 1
       RenderMask: 65533
@@ -305,6 +305,64 @@ Entities:
       Rotation: [0,0,0]
       Scale: [1,1,1]
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.45130473,1.383387,4.899524,1]
+  - Entity: 17642454729594052137
+    TagComponent:
+      Tag: Box
+    RelationshipComponent:
+      Parent: 0
+      Children: []
+    TransformComponent:
+      Position: [-3.756122,0.66242003,-1.8124685]
+      Rotation: [0,0,0]
+      Scale: [1.25,1.25,1.25]
+      WorldTransform: [1.25,0,0,0,0,1.25,0,0,0,0,1.25,0,-3.756122,0.66242003,-1.8124685,1]
+    RigidBodyComponent:
+      Type: 1
+      Mass: 0.2
+      GravityEnabled: 1
+    BoxColliderComponent:
+      Size: [1,1,1]
+      IsTrigger: 0
+      OffsetPosition: [0,0,0]
+      OffsetRotation: [0,0,0]
+      Category: 1
+      CollisionMask: 1
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 0
+    StaticMeshComponent:
+      MeshUUID: 51
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 18352460508626254789
+  - Entity: 3829535230250847973
+    TagComponent:
+      Tag: Box2
+    RelationshipComponent:
+      Parent: 0
+      Children: []
+    TransformComponent:
+      Position: [3.7962027,0.6624324,-4.631617]
+      Rotation: [0,0,0]
+      Scale: [1.25,1.25,1.25]
+      WorldTransform: [1.25,0,0,0,0,1.25,0,0,0,0,1.25,0,3.7962027,0.6624324,-4.631617,1]
+    RigidBodyComponent:
+      Type: 1
+      Mass: 0.2
+      GravityEnabled: 1
+    BoxColliderComponent:
+      Size: [1,1,1]
+      IsTrigger: 0
+      OffsetPosition: [0,0,0]
+      OffsetRotation: [0,0,0]
+      Category: 1
+      CollisionMask: 1
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 0
+    StaticMeshComponent:
+      MeshUUID: 51
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 18352460508626254789
 Environment:
   Skybox:
     Enabled: 1
