@@ -89,13 +89,14 @@ Entities:
       Children:
         - 1173232325625663726
         - 9548350549033941053
+        - 17202988526070122190
     TransformComponent:
       Position: [9.094947e-13,0,0]
       Rotation: [0,0,0]
       Scale: [1,1,1]
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1.8,4.826749,1]
     CameraComponent:
-      Projection: [0.7814155,0,0,0,0,1.428148,0,0,0,0,-1.0004001,-1,0,0,-0.20004001,0]
+      Projection: [0.8988096,0,0,0,0,1.428148,0,0,0,0,-1.0004001,-1,0,0,-0.20004001,0]
       Type: 1
       IsActive: 1
       RenderMask: 65533
@@ -319,7 +320,7 @@ Entities:
       WorldTransform: [1.25,0,0,0,0,1.25,0,0,0,0,1.25,0,-3.756122,0.66242003,-1.8124685,1]
     RigidBodyComponent:
       Type: 1
-      Mass: 0.2
+      Mass: 1
       GravityEnabled: 1
     BoxColliderComponent:
       Size: [1,1,1]
@@ -348,7 +349,7 @@ Entities:
       WorldTransform: [1.25,0,0,0,0,1.25,0,0,0,0,1.25,0,3.7962027,0.6624324,-4.631617,1]
     RigidBodyComponent:
       Type: 1
-      Mass: 0.2
+      Mass: 1
       GravityEnabled: 1
     BoxColliderComponent:
       Size: [1,1,1]
@@ -385,6 +386,20 @@ Entities:
         - Name: Size
           Type: 2
           Value: 25
+  - Entity: 17202988526070122190
+    TagComponent:
+      Tag: WeaponFire
+    RelationshipComponent:
+      Parent: 3526599274050075716
+      Children: []
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1.8,4.826749,1]
+    ScriptComponent:
+      ScriptUUID: 16404415058251315788
+      UserPropertyOverrides: []
 Environment:
   Skybox:
     Enabled: 1
