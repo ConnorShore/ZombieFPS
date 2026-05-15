@@ -1,5 +1,9 @@
 Assets:
   - Type: Texture
+    UUID: 3343954652411117201
+    Name: Crosshair
+    FilePath: Textures/Crosshair.png
+  - Type: Texture
     UUID: 2839879704304884181
     Name: AssaultRifle_ARNormal.png
     FilePath: Models/AssaultRifle_ARNormal.png
@@ -24,6 +28,10 @@ Assets:
     Name: PickupItem
     FilePath: Scripts/PickupItem.lua
   - Type: Script
+    UUID: 4494000890898150304
+    Name: Crosshair
+    FilePath: Scripts/Crosshair.lua
+  - Type: Script
     UUID: 5025897937436236093
     Name: MouseLook
     FilePath: Scripts/MouseLook.lua
@@ -36,6 +44,10 @@ Assets:
     Name: PlayerInteraction
     FilePath: Scripts/PlayerInteraction.lua
   - Type: Material
+    UUID: 18352460508626254789
+    Name: Cube_StandardGeometry_Clone
+    FilePath: Materials/Cube_StandardGeometry_Clone.ebmat
+  - Type: Material
     UUID: 13734008897576602447
     Name: Ground_StandardGeometry_Clone
     FilePath: Materials/Ground_StandardGeometry_Clone.ebmat
@@ -47,10 +59,6 @@ Assets:
     UUID: 3715140739257822472
     Name: AssaultRifle_Weapon
     FilePath: Models/AssaultRifle_Weapon.ebmat
-  - Type: Material
-    UUID: 18352460508626254789
-    Name: Cube_StandardGeometry_Clone
-    FilePath: Materials/Cube_StandardGeometry_Clone.ebmat
   - Type: Mesh
     UUID: 15931558621658917516
     Name: AssaultRifle_Cube.001_Prim0

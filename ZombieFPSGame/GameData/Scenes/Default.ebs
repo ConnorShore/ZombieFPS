@@ -95,7 +95,7 @@ Entities:
       Scale: [1,1,1]
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1.8,4.826749,1]
     CameraComponent:
-      Projection: [0.8988096,0,0,0,0,1.428148,0,0,0,0,-1.0004001,-1,0,0,-0.20004001,0]
+      Projection: [0.7814155,0,0,0,0,1.428148,0,0,0,0,-1.0004001,-1,0,0,-0.20004001,0]
       Type: 1
       IsActive: 1
       RenderMask: 65533
@@ -227,6 +227,7 @@ Entities:
       Parent: 0
       Children:
         - 6356908388261273273
+        - 3907633173452727534
     TransformComponent:
       Position: [9.094947e-13,0,0]
       Rotation: [0,-0,0]
@@ -363,6 +364,27 @@ Entities:
       Layer: 1
     MaterialComponent:
       MaterialUUID: 18352460508626254789
+  - Entity: 3907633173452727534
+    TagComponent:
+      Tag: Crosshair
+    RelationshipComponent:
+      Parent: 17664487549539026246
+      Children: []
+    TransformComponent:
+      Position: [0.5,0.5,0]
+      Rotation: [0,0,0]
+      Scale: [0.014,0.02,1]
+      WorldTransform: [0.014,0,0,0,0,0.02,0,0,0,0,1,0,0.5,0.5,0,1]
+    SpriteComponent:
+      Color: [1,1,1,1]
+      TextureUUID: 3343954652411117201
+      ScreenSpace: 1
+    ScriptComponent:
+      ScriptUUID: 4494000890898150304
+      UserPropertyOverrides:
+        - Name: Size
+          Type: 2
+          Value: 25
 Environment:
   Skybox:
     Enabled: 1
