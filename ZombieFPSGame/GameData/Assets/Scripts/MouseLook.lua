@@ -1,9 +1,10 @@
 local MouseLook = {}
 
-MouseLook.Sensitivity = 0.005
+MouseLook.Sensitivity = 5.0
 
 function MouseLook:OnCreate(entity)
     self.Pitch = 0.0
+    self.SensitivityScale = 1000.0
 end
 
 function MouseLook:OnUpdate(entity, delta)
@@ -13,11 +14,11 @@ function MouseLook:OnUpdate(entity, delta)
     local parentEntity = entity:GetRootParent()
     if parentEntity then
         local parentTransform = parentEntity:GetComponent("TransformComponent")
-        parentTransform.Rotation.y = parentTransform.Rotation.y - (mouseDelta.x * self.Sensitivity)
+        parentTransform.Rotation.y = parentTransform.Rotation.y - (mouseDelta.x * (self.Sensitivity / self.SensitivityScale))
     end
 
     -- PITCH (Looking Up/Down)
-    self.Pitch = self.Pitch - (mouseDelta.y * self.Sensitivity)
+    self.Pitch = self.Pitch - (mouseDelta.y * (self.Sensitivity / self.SensitivityScale))
     self.Pitch = Math.Clamp(self.Pitch, Math.Radians(-89.0), Math.Radians(89.0))
 
     local transform = entity:GetComponent("TransformComponent")

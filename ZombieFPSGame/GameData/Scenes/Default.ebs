@@ -111,7 +111,10 @@ Entities:
         FarClip: 500
     ScriptComponent:
       ScriptUUID: 5025897937436236093
-      UserPropertyOverrides: []
+      UserPropertyOverrides:
+        - Name: Sensitivity
+          Type: 3
+          Value: 2
     BillboardComponent:
       TextureHandle: 100003
       Tint: [1,1,1,1]
@@ -131,6 +134,7 @@ Entities:
       Scale: [1,1,1]
       WorldTransform: [0.8660254,-1.4901161e-08,-0.49999997,0,-0.3830222,0.6427876,-0.66341394,0,0.32139376,0.76604444,0.55667037,0,0,5.5423656,0,1]
     DirectionalLightComponent:
+      Active: 1
       Color: [1,1,1]
       Intensity: 5
     BillboardComponent:
@@ -260,10 +264,10 @@ Entities:
         - 7920508733018544036
         - 15412099849582508473
     TransformComponent:
-      Position: [0,0,-0.4]
+      Position: [-0.056626648,0.1279279,-0.17688227]
       Rotation: [0,-0,0]
-      Scale: [0.49,0.49,0.49]
-      WorldTransform: [0.49,0,0,0,0,0.49,0,0,0,0,0.49,0,0.45130473,1.383387,3.812385,1]
+      Scale: [0.37703243,0.37703243,0.37703243]
+      WorldTransform: [0.37703243,0,0,0,0,0.37703243,0,0,0,0,0.37703243,0,0.3946781,1.5113149,4.035503,1]
   - Entity: 4540107866184767776
     TagComponent:
       Tag: Weapon
@@ -274,7 +278,7 @@ Entities:
       Position: [0,0.025450587,0.38175866]
       Rotation: [3.1415927,-0,-0]
       Scale: [-0.09888629,0.109487295,0.109487295]
-      WorldTransform: [-0.04845428,0,0,0,0,-0.053648777,-4.6901247e-09,0,0,4.6901247e-09,-0.053648777,0,0.45130473,1.3958578,3.9994469,1]
+      WorldTransform: [-0.03728334,0,0,0,0,-0.041280262,-3.6088348e-09,0,0,3.6088348e-09,-0.041280262,0,0.3946781,1.5209106,4.179438,1]
     StaticMeshComponent:
       MeshUUID: 15931558621658917516
       Layer: 1
@@ -290,7 +294,7 @@ Entities:
       Position: [0,-0.11320099,-0.015132174]
       Rotation: [-0.00020340085,0,0]
       Scale: [0.051736534,0.056594644,0.18163528]
-      WorldTransform: [0.025350902,0,0,0,0,0.027731376,-5.6405856e-06,0,0,1.8102937e-05,0.08900128,0,0.45130473,1.3279185,3.8049703,1]
+      WorldTransform: [0.01950635,0,0,0,0,0.021338016,-4.3401706e-06,0,0,1.3929376e-05,0.06848239,0,0.3946781,1.4686344,4.0297976,1]
     StaticMeshComponent:
       MeshUUID: 6274179878044480628
       Layer: 1
@@ -415,10 +419,15 @@ Entities:
       Parent: 13433792208257632190
       Children: []
     TransformComponent:
-      Position: [4.7564507e-05,0.23495293,-2.2327137]
+      Position: [7.802248e-05,0.2350812,-2.3661275]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [0.49,0,0,0,0,0.49,0,0,0,0,0.49,0,0.45132804,1.4985139,2.7183552,1]
+      WorldTransform: [0.37703243,0,0,0,0,0.37703243,0,0,0,0,0.37703243,0,0.3947075,1.599948,3.1433961,1]
+    PointLightComponent:
+      Active: 0
+      Color: [1,0.90556395,0.08305645]
+      Intensity: 5
+      Radius: 0
     ScriptComponent:
       ScriptUUID: 16605421126880563658
       UserPropertyOverrides: []
@@ -448,10 +457,10 @@ Entities:
       Parent: 9548350549033941053
       Children: []
     TransformComponent:
-      Position: [0,0,0]
+      Position: [-0.07729596,0,0]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.45130473,1.383387,4.212385,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.37400877,1.383387,4.212385,1]
     ScriptComponent:
       ScriptUUID: 3366872985723856610
       UserPropertyOverrides: []
