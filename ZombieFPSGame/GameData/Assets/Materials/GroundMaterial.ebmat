@@ -1,4 +1,4 @@
-Material: Ground_StandardGeometry_Clone
+Material: GroundMaterial
 UUID: 13734008897576602447
 RenderQueue: 1
 Instanced: true

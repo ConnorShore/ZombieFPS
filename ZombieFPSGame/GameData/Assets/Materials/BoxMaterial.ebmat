@@ -1,5 +1,5 @@
-Material: Pickup_StandardGeometry_Clone
-UUID: 1868779223986162857
+Material: BoxMaterial
+UUID: 18352460508626254789
 RenderQueue: 1
 Instanced: true
 BaseMaterialUUID: 31
@@ -9,7 +9,7 @@ Uniforms:
     Value: 0
   u_Albedo:
     Type: Vector3f
-    Value: [0.064204566,0.5875111,0.9202658]
+    Value: [0.75,0.75,0.75]
   u_Roughness:
     Type: float
     Value: 0.5
@@ -21,7 +21,7 @@ Uniforms:
     Value: 1
   u_AlbedoMap:
     Type: Texture
-    Value: 1
+    Value: 9513761758882303005
   u_Emission:
     Type: float
     Value: 0

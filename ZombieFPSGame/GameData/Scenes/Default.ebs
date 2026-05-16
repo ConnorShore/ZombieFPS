@@ -96,7 +96,7 @@ Entities:
       Scale: [1,1,1]
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1.8,4.826749,1]
     CameraComponent:
-      Projection: [0.7814155,0,0,0,0,1.428148,0,0,0,0,-1.00008,-1,0,0,-0.0400016,0]
+      Projection: [0.7779549,0,0,0,0,1.428148,0,0,0,0,-1.00008,-1,0,0,-0.0400016,0]
       Type: 1
       IsActive: 1
       RenderMask: 65533
@@ -180,10 +180,10 @@ Entities:
       Parent: 0
       Children: []
     TransformComponent:
-      Position: [-2.9802322e-08,1.8305078,-4.408915]
+      Position: [-3.7252903e-08,1.8305078,-4.408915]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-2.9802322e-08,1.8305078,-4.408915,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-3.7252903e-08,1.8305078,-4.408915,1]
     RigidBodyComponent:
       Type: 2
       Mass: 1
