@@ -96,7 +96,7 @@ Entities:
       Scale: [1,1,1]
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1.8,4.826749,1]
     CameraComponent:
-      Projection: [0.8988096,0,0,0,0,1.428148,0,0,0,0,-1.0004001,-1,0,0,-0.20004001,0]
+      Projection: [0.7814155,0,0,0,0,1.428148,0,0,0,0,-1.00008,-1,0,0,-0.0400016,0]
       Type: 1
       IsActive: 1
       RenderMask: 65533
@@ -107,7 +107,7 @@ Entities:
         FarClip: 1
       PerspectiveProperties:
         FOV: 70
-        NearClip: 0.1
+        NearClip: 0.02
         FarClip: 500
     ScriptComponent:
       ScriptUUID: 5025897937436236093
@@ -467,7 +467,10 @@ Entities:
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.34933877,1.383387,4.212385,1]
     ScriptComponent:
       ScriptUUID: 3366872985723856610
-      UserPropertyOverrides: []
+      UserPropertyOverrides:
+        - Name: KickbackZ
+          Type: 3
+          Value: 0.05
   - Entity: 417690053092696263
     TagComponent:
       Tag: ADS_Node

@@ -29,7 +29,6 @@ end
 
 -- Call this function from your Player script EXACTLY when the raycast fires!
 function WeaponRecoil:Fire(entity)
-    Log.Info("WeaponRecoil: Fire() called - applying recoil!")
     -- Add the kick to the target offset. 
     -- Because we ADD it, firing really fast (like an SMG) will stack the recoil!
     
