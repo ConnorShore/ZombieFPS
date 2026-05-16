@@ -50,11 +50,8 @@ function WeaponFire:Fire(entity)
         -- Apply force to the hit entity if it has a RigidbodyComponent
         if hitEntity:ContainsComponent("RigidBodyComponent") then
             local rigidbody = hitEntity:GetComponent("RigidBodyComponent")
-            rigidbody:ApplyImpulse(forward * self.ImpactForce)
+            rigidbody:ApplyImpulseAtPoint(forward * self.ImpactForce, hitResult.CollisionPoint)
         end
-
-    else
-        Log.Info("Missed! No entity hit.")
     end
 
     -- Trigger recoil
