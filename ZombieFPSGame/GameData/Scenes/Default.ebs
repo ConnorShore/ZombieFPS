@@ -96,7 +96,7 @@ Entities:
       Scale: [1,1,1]
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1.8,4.824887,1]
     CameraComponent:
-      Projection: [0.89325446,0,0,0,0,1.428148,0,0,0,0,-1.00008,-1,0,0,-0.0400016,0]
+      Projection: [0.7779549,0,0,0,0,1.428148,0,0,0,0,-1.00008,-1,0,0,-0.0400016,0]
       Type: 1
       IsActive: 1
       RenderMask: 65533
@@ -488,7 +488,8 @@ Entities:
       Tag: HolographicSight
     RelationshipComponent:
       Parent: 5418635159135756444
-      Children: []
+      Children:
+        - 2114081758395712569
     TransformComponent:
       Position: [0,0.025450574,0.38175866]
       Rotation: [3.1415927,-0,-0]
@@ -499,6 +500,22 @@ Entities:
       Layer: 1
     MaterialComponent:
       MaterialUUID: 13082385343188659786
+  - Entity: 2114081758395712569
+    TagComponent:
+      Tag: Reticle
+    RelationshipComponent:
+      Parent: 5732180213775248317
+      Children: []
+    TransformComponent:
+      Position: [0,-5.025543,-1.4412842]
+      Rotation: [0,0,0]
+      Scale: [0.65,0.65,1]
+      WorldTransform: [-0.023654846,0,0,0,0,-0.02619074,-2.2896673e-09,0,0,3.5225651e-09,-0.040293448,0,0.34057862,1.7041192,4.22947,1]
+    StaticMeshComponent:
+      MeshUUID: 52
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 8747674591623748722
 Environment:
   Skybox:
     Enabled: 1

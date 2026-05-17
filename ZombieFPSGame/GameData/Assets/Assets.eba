@@ -12,17 +12,25 @@ Assets:
     Name: AssaultRifle_ARColor
     FilePath: Models/AssaultRifle/AssaultRifle_ARColor.png
   - Type: Texture
-    UUID: 9513761758882303005
-    Name: box
-    FilePath: Textures/box.jpg
-  - Type: Texture
     UUID: 7295789261182852957
     Name: AssaultRifle_ARMetallic-ARRoughness
     FilePath: Models/AssaultRifle/AssaultRifle_ARMetallic-ARRoughness.png
   - Type: Texture
+    UUID: 9513761758882303005
+    Name: box
+    FilePath: Textures/box.jpg
+  - Type: Texture
     UUID: 9049085516481466605
     Name: AssaultRifle_ORM_Mat0
     FilePath: Models/AssaultRifle/AssaultRifle_ORM_Mat0.png
+  - Type: Texture
+    UUID: 15863835653609318779
+    Name: HolographicReticle
+    FilePath: Textures/HolographicReticle.png
+  - Type: Shader
+    UUID: 3290979914783484062
+    Name: HolographicSight
+    FilePath: Shaders/HolographicSight.glsl
   - Type: Script
     UUID: 16605421126880563658
     Name: MuzzleFlash
@@ -83,6 +91,10 @@ Assets:
     UUID: 13082385343188659786
     Name: AssaultRifle_Weapon
     FilePath: Models/AssaultRifle/AssaultRifle_Weapon.ebmat
+  - Type: Material
+    UUID: 8747674591623748722
+    Name: HolographicReticleMat
+    FilePath: Materials/HolographicReticleMat.ebmat
   - Type: Mesh
     UUID: 11485580323192418112
     Name: AssaultRifle_Cube.001_Prim0

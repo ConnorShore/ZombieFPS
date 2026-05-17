@@ -22,6 +22,11 @@ function WeaponHandler:OnCreate(entity)
     if not self.AimNode then
         Log.Warn("WeaponHandler: Cannot find ADS_Node!")
     end
+
+    self.Crosshair = Scene.GetEntityByName("Crosshair")
+    if not self.Crosshair then
+        Log.Warn("WeaponHandler: Cannot find Crosshair entity!")
+    end
 end
 
 function WeaponHandler:OnUpdate(entity, delta)
@@ -91,6 +96,11 @@ function WeaponHandler:HandleADS(entity, delta)
             self.PreviousADSRecoilPitch = rotOffset.x
         end
         self.WasADS = true
+
+        -- Disable crosshair when ADS
+        if self.Crosshair then
+            self.Crosshair:SetActive(false)
+        end
     else
         -- On the first frame out of ADS, remove any camera pitch recoil we added.
         if self.WasADS and self.PreviousADSRecoilPitch ~= 0.0 then
@@ -104,6 +114,11 @@ function WeaponHandler:HandleADS(entity, delta)
         -- Hip-fire: apply recoil offsets directly to the weapon
         transform.Position = self.SmoothedPosition + posOffset
         transform.Rotation = self.BaseRotation + rotOffset
+
+        -- Enable crosshair when not ADS
+        if self.Crosshair then
+            self.Crosshair:SetActive(true)
+        end
     end
 end
 
