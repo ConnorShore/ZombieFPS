@@ -91,10 +91,10 @@ Entities:
         - 9548350549033941053
         - 17202988526070122190
     TransformComponent:
-      Position: [9.094947e-13,0,-0.0018620491]
+      Position: [1.8635546e-09,0,-0.0018620491]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1.8,4.824887,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,1.8626451e-09,1.8,4.824887,1]
     CameraComponent:
       Projection: [0.7779549,0,0,0,0,1.428148,0,0,0,0,-1.00008,-1,0,0,-0.0400016,0]
       Type: 1
@@ -218,7 +218,7 @@ Entities:
       Position: [-9.094947e-13,0,0]
       Rotation: [0,-0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-9.094947e-13,1.8,4.824887,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,1.8617357e-09,1.8,4.824887,1]
     ScriptComponent:
       ScriptUUID: 8562544563539838448
       UserPropertyOverrides:
@@ -336,7 +336,10 @@ Entities:
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.42663473,1.383387,4.210523,1]
     ScriptComponent:
       ScriptUUID: 13625163170134590446
-      UserPropertyOverrides: []
+      UserPropertyOverrides:
+        - Name: ADS_Speed
+          Type: 3
+          Value: 10
   - Entity: 17642454729594052137
     TagComponent:
       Tag: Box
@@ -426,7 +429,7 @@ Entities:
       Position: [0,0,0]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1.8,4.824887,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,1.8626451e-09,1.8,4.824887,1]
     ScriptComponent:
       ScriptUUID: 16404415058251315788
       UserPropertyOverrides:
@@ -507,10 +510,10 @@ Entities:
       Parent: 5732180213775248317
       Children: []
     TransformComponent:
-      Position: [0,-5.025543,-1.4412842]
+      Position: [-9.536743e-07,-5.02565,-0.65496063]
       Rotation: [0,0,0]
-      Scale: [0.65,0.65,1]
-      WorldTransform: [-0.023654846,0,0,0,0,-0.02619074,-2.2896673e-09,0,0,3.5225651e-09,-0.040293448,0,0.34057862,1.7041192,4.22947,1]
+      Scale: [1.7159997,1.7159997,2.6399999]
+      WorldTransform: [-0.06244879,0,0,0,0,-0.06914355,-6.0447207e-09,0,0,9.299572e-09,-0.106374696,0,0.34057865,1.7041235,4.197786,1]
     StaticMeshComponent:
       MeshUUID: 52
       Layer: 1

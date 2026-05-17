@@ -16,3 +16,9 @@ Uniforms:
   u_Opacity:
     Type: float
     Value: 0.5
+  u_Depth:
+    Type: float
+    Value: -3
+  u_ReticleScale:
+    Type: float
+    Value: 2
