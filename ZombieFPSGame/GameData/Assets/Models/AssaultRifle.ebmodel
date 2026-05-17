@@ -1,5 +1,5 @@
 Model: AssaultRifle
-UUID: 12556598296557569808
+UUID: 16832771247265269212
 SkeletonID: 0
 RootNode:
   Name: AssaultRifle_Root
@@ -40,8 +40,8 @@ RootNode:
         - 0.38175866
         - 1
       Meshes:
-        - MeshID: 15931558621658917516
-          MaterialID: 3715140739257822472
+        - MeshID: 11485580323192418112
+          MaterialID: 13082385343188659786
     - Name: Magazine
       Transform:
         - 0.051736534
@@ -61,5 +61,26 @@ RootNode:
         - -0.015132174
         - 1
       Meshes:
-        - MeshID: 6274179878044480628
-          MaterialID: 3715140739257822472
+        - MeshID: 8868131158511606316
+          MaterialID: 13082385343188659786
+    - Name: HolographicSight
+      Transform:
+        - -0.09888629
+        - -0
+        - -0
+        - -0
+        - -0
+        - -0.109487295
+        - -0
+        - -0
+        - -0
+        - -0
+        - -0.109487295
+        - -0
+        - 0
+        - 0.025450574
+        - 0.38175866
+        - 1
+      Meshes:
+        - MeshID: 10196503461874081185
+          MaterialID: 13082385343188659786
