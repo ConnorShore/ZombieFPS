@@ -91,12 +91,12 @@ Entities:
         - 9548350549033941053
         - 17202988526070122190
     TransformComponent:
-      Position: [9.094947e-13,0,0]
+      Position: [9.094947e-13,0,-0.0018620491]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1.8,4.826749,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1.8,4.824887,1]
     CameraComponent:
-      Projection: [0.7779549,0,0,0,0,1.428148,0,0,0,0,-1.00008,-1,0,0,-0.0400016,0]
+      Projection: [0.89325446,0,0,0,0,1.428148,0,0,0,0,-1.00008,-1,0,0,-0.0400016,0]
       Type: 1
       IsActive: 1
       RenderMask: 65533
@@ -218,7 +218,7 @@ Entities:
       Position: [-9.094947e-13,0,0]
       Rotation: [0,-0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-9.094947e-13,1.8,4.826749,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-9.094947e-13,1.8,4.824887,1]
     ScriptComponent:
       ScriptUUID: 8562544563539838448
       UserPropertyOverrides:
@@ -254,66 +254,86 @@ Entities:
       FontHandle: 213406294560961755
       Color: [1,1,1,1]
       ScreenSpace: 1
-  - Entity: 13433792208257632190
+  - Entity: 15412099849582508473
     TagComponent:
-      Tag: AssaultRifle
+      Tag: MuzzleFlash
+    RelationshipComponent:
+      Parent: 5418635159135756444
+      Children: []
+    TransformComponent:
+      Position: [-1.1920929e-07,0.24049044,-2.3380127]
+      Rotation: [0,-0,0]
+      Scale: [2.717248,2.717248,2.717248]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.3405786,1.5807617,3.1704664,1]
+    PointLightComponent:
+      Active: 0
+      Color: [1,0.90556395,0.08305645]
+      Intensity: 5
+      Radius: 0
+    ScriptComponent:
+      ScriptUUID: 16605421126880563658
+      UserPropertyOverrides: []
+    ParticleEmitterComponent:
+      EmissionRate: 200
+      Velocity: [0,0,-1]
+      VelocityVariation: [10,10,0]
+      Drag: 0.1
+      AngularVelocity: 0
+      AngularVelocityVariation: 0.2
+      ColorBegin: [0.9335548,0.5210641,0.04031962,1]
+      ColorEnd: [0.66445184,0.66445184,0.66445184,0]
+      ScaleBegin: 0.05
+      ScaleEnd: 0.4
+      ScaleVariation: 0.1
+      TextureHandle: 1
+      Lifetime: 0.05
+      LifetimeVariation: 0.01
+      GravityMultiplier: 0
+      AlignWithVelocity: 0
+      StretchFactor: 0
+      IsActive: 0
+  - Entity: 417690053092696263
+    TagComponent:
+      Tag: ADS_Node
     RelationshipComponent:
       Parent: 9548350549033941053
-      Children:
-        - 4540107866184767776
-        - 7920508733018544036
-        - 15412099849582508473
+      Children: []
     TransformComponent:
-      Position: [-0.056626648,0.1279279,-0.17688227]
+      Position: [-0.0839667,0.32152355,0.09290075]
       Rotation: [0,-0,0]
       Scale: [0.37703243,0.37703243,0.37703243]
-      WorldTransform: [0.37703243,0,0,0,0,0.37703243,0,0,0,0,0.37703243,0,0.37000808,1.5113149,4.035503,1]
-  - Entity: 4540107866184767776
+      WorldTransform: [0.37703243,0,0,0,0,0.37703243,0,0,0,0,0.37703243,0,0.34266803,1.7049105,4.303424,1]
+  - Entity: 12156363934972497198
     TagComponent:
-      Tag: Weapon
+      Tag: WeaponRecoil
     RelationshipComponent:
-      Parent: 13433792208257632190
+      Parent: 9548350549033941053
       Children: []
     TransformComponent:
-      Position: [0,0.025450587,0.38175866]
-      Rotation: [3.1415927,-0,-0]
-      Scale: [-0.09888629,0.109487295,0.109487295]
-      WorldTransform: [-0.03728334,0,0,0,0,-0.041280262,-3.6088348e-09,0,0,3.6088348e-09,-0.041280262,0,0.37000808,1.5209106,4.179438,1]
-    StaticMeshComponent:
-      MeshUUID: 15931558621658917516
-      Layer: 1
-    MaterialComponent:
-      MaterialUUID: 3715140739257822472
-  - Entity: 7920508733018544036
-    TagComponent:
-      Tag: Magazine
-    RelationshipComponent:
-      Parent: 13433792208257632190
-      Children: []
-    TransformComponent:
-      Position: [0,-0.11320099,-0.015132174]
-      Rotation: [-0.00020340085,0,0]
-      Scale: [0.051736534,0.056594644,0.18163528]
-      WorldTransform: [0.01950635,0,0,0,0,0.021338016,-4.3401706e-06,0,0,1.3929376e-05,0.06848239,0,0.37000808,1.4686344,4.0297976,1]
-    StaticMeshComponent:
-      MeshUUID: 6274179878044480628
-      Layer: 1
-    MaterialComponent:
-      MaterialUUID: 3715140739257822472
+      Position: [-0.07729596,0,0]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.34933877,1.383387,4.210523,1]
+    ScriptComponent:
+      ScriptUUID: 3366872985723856610
+      UserPropertyOverrides:
+        - Name: KickbackZ
+          Type: 3
+          Value: 0.05
   - Entity: 9548350549033941053
     TagComponent:
       Tag: WeaponHandler
     RelationshipComponent:
       Parent: 3526599274050075716
       Children:
-        - 13433792208257632190
         - 12156363934972497198
         - 417690053092696263
+        - 5418635159135756444
     TransformComponent:
       Position: [0.42663473,-0.41661298,-0.6143637]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.42663473,1.383387,4.212385,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.42663473,1.383387,4.210523,1]
     ScriptComponent:
       ScriptUUID: 13625163170134590446
       UserPropertyOverrides: []
@@ -406,7 +426,7 @@ Entities:
       Position: [0,0,0]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1.8,4.826749,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1.8,4.824887,1]
     ScriptComponent:
       ScriptUUID: 16404415058251315788
       UserPropertyOverrides:
@@ -416,72 +436,69 @@ Entities:
         - Name: ImpactForce
           Type: 3
           Value: 3
-  - Entity: 15412099849582508473
+  - Entity: 5418635159135756444
     TagComponent:
-      Tag: MuzzleFlash
-    RelationshipComponent:
-      Parent: 13433792208257632190
-      Children: []
-    TransformComponent:
-      Position: [7.802248e-05,0.2350812,-2.3661275]
-      Rotation: [0,0,0]
-      Scale: [1,1,1]
-      WorldTransform: [0.37703243,0,0,0,0,0.37703243,0,0,0,0,0.37703243,0,0.3700375,1.599948,3.1433961,1]
-    PointLightComponent:
-      Active: 0
-      Color: [1,0.90556395,0.08305645]
-      Intensity: 5
-      Radius: 0
-    ScriptComponent:
-      ScriptUUID: 16605421126880563658
-      UserPropertyOverrides: []
-    ParticleEmitterComponent:
-      EmissionRate: 200
-      Velocity: [0,0,-1]
-      VelocityVariation: [10,10,0]
-      Drag: 0.1
-      AngularVelocity: 0
-      AngularVelocityVariation: 0.2
-      ColorBegin: [0.9335548,0.5210641,0.04031962,1]
-      ColorEnd: [0.66445184,0.66445184,0.66445184,0]
-      ScaleBegin: 0.05
-      ScaleEnd: 0.4
-      ScaleVariation: 0.1
-      TextureHandle: 1
-      Lifetime: 0.05
-      LifetimeVariation: 0.01
-      GravityMultiplier: 0
-      AlignWithVelocity: 0
-      StretchFactor: 0
-      IsActive: 0
-  - Entity: 12156363934972497198
-    TagComponent:
-      Tag: WeaponRecoil
+      Tag: AssaultRifle
     RelationshipComponent:
       Parent: 9548350549033941053
-      Children: []
+      Children:
+        - 17796126392378748482
+        - 1073259625805377775
+        - 5732180213775248317
+        - 15412099849582508473
     TransformComponent:
-      Position: [-0.07729596,0,0]
-      Rotation: [0,0,0]
-      Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.34933877,1.383387,4.212385,1]
-    ScriptComponent:
-      ScriptUUID: 3366872985723856610
-      UserPropertyOverrides:
-        - Name: KickbackZ
-          Type: 3
-          Value: 0.05
-  - Entity: 417690053092696263
-    TagComponent:
-      Tag: ADS_Node
-    RelationshipComponent:
-      Parent: 9548350549033941053
-      Children: []
-    TransformComponent:
-      Position: [-0.056607008,0.34552312,0.09290075]
+      Position: [-0.08605611,0.10886955,-0.17962265]
       Rotation: [0,-0,0]
-      Scale: [0.37703243,0.37703243,0.37703243]
-      WorldTransform: [0.37703243,0,0,0,0,0.37703243,0,0,0,0,0.37703243,0,0.37002772,1.7289101,4.305286,1]
+      Scale: [0.3680194,0.3680194,0.3680194]
+      WorldTransform: [0.3680194,0,0,0,0,0.3680194,0,0,0,0,0.3680194,0,0.34057862,1.4922565,4.0309005,1]
+  - Entity: 17796126392378748482
+    TagComponent:
+      Tag: Weapon
+    RelationshipComponent:
+      Parent: 5418635159135756444
+      Children: []
+    TransformComponent:
+      Position: [0,0.025450574,0.38175866]
+      Rotation: [3.1415927,-0,-0]
+      Scale: [-0.09888629,0.109487295,0.109487295]
+      WorldTransform: [-0.036392074,0,0,0,0,-0.040293448,-3.5225651e-09,0,0,3.5225651e-09,-0.040293448,0,0.34057862,1.5016228,4.1713953,1]
+    StaticMeshComponent:
+      MeshUUID: 11485580323192418112
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 13082385343188659786
+  - Entity: 1073259625805377775
+    TagComponent:
+      Tag: Magazine
+    RelationshipComponent:
+      Parent: 5418635159135756444
+      Children: []
+    TransformComponent:
+      Position: [0,-0.11320099,-0.015132174]
+      Rotation: [-0.00020340085,0,0]
+      Scale: [0.051736534,0.056594644,0.18163528]
+      WorldTransform: [0.019040048,0,0,0,0,0.020827927,-4.236418e-06,0,0,1.3596392e-05,0.066845305,0,0.34057862,1.4505963,4.0253315,1]
+    StaticMeshComponent:
+      MeshUUID: 8868131158511606316
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 13082385343188659786
+  - Entity: 5732180213775248317
+    TagComponent:
+      Tag: HolographicSight
+    RelationshipComponent:
+      Parent: 5418635159135756444
+      Children: []
+    TransformComponent:
+      Position: [0,0.025450574,0.38175866]
+      Rotation: [3.1415927,-0,-0]
+      Scale: [-0.09888629,0.109487295,0.109487295]
+      WorldTransform: [-0.036392074,0,0,0,0,-0.040293448,-3.5225651e-09,0,0,3.5225651e-09,-0.040293448,0,0.34057862,1.5016228,4.1713953,1]
+    StaticMeshComponent:
+      MeshUUID: 10196503461874081185
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 13082385343188659786
 Environment:
   Skybox:
     Enabled: 1

@@ -1,14 +1,18 @@
 Assets:
   - Type: Texture
+    UUID: 18246198109903864782
+    Name: AssaultRifle_ARNormal.png
+    FilePath: Models/AssaultRifle_ARNormal.png
+  - Type: Texture
     UUID: 3343954652411117201
     Name: Crosshair
     FilePath: Textures/Crosshair.png
   - Type: Texture
-    UUID: 2839879704304884181
-    Name: AssaultRifle_ARNormal.png
-    FilePath: Models/AssaultRifle_ARNormal.png
+    UUID: 1987619997240284892
+    Name: AssaultRifle_ARColor.png
+    FilePath: Models/AssaultRifle_ARColor.png
   - Type: Texture
-    UUID: 46500555167026071
+    UUID: 7295789261182852957
     Name: AssaultRifle_ARMetallic-ARRoughness.png
     FilePath: Models/AssaultRifle_ARMetallic-ARRoughness.png
   - Type: Texture
@@ -16,11 +20,7 @@ Assets:
     Name: box
     FilePath: Textures/box.jpg
   - Type: Texture
-    UUID: 553952573417967412
-    Name: AssaultRifle_ARColor.png
-    FilePath: Models/AssaultRifle_ARColor.png
-  - Type: Texture
-    UUID: 7804144985708769464
+    UUID: 9049085516481466605
     Name: AssaultRifle_ORM_Mat0
     FilePath: Models/AssaultRifle_ORM_Mat0.png
   - Type: Script
@@ -79,16 +79,24 @@ Assets:
     UUID: 3715140739257822472
     Name: AssaultRifle_Weapon
     FilePath: Models/AssaultRifle_Weapon.ebmat
+  - Type: Material
+    UUID: 13082385343188659786
+    Name: AssaultRifle_Weapon
+    FilePath: Models/AssaultRifle_Weapon.ebmat
   - Type: Mesh
-    UUID: 15931558621658917516
+    UUID: 11485580323192418112
     Name: AssaultRifle_Cube.001_Prim0
     FilePath: Models/AssaultRifle_Cube.001_Prim0.ebmesh
   - Type: Mesh
-    UUID: 6274179878044480628
+    UUID: 8868131158511606316
     Name: AssaultRifle_Cube.003_Prim0
     FilePath: Models/AssaultRifle_Cube.003_Prim0.ebmesh
+  - Type: Mesh
+    UUID: 10196503461874081185
+    Name: AssaultRifle_Cube.002_Prim0
+    FilePath: Models/AssaultRifle_Cube.002_Prim0.ebmesh
   - Type: Model
-    UUID: 12556598296557569808
+    UUID: 16832771247265269212
     Name: AssaultRifle
     FilePath: Models/AssaultRifle.ebmodel
   - Type: Font
