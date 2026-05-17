@@ -1,28 +1,28 @@
 Assets:
   - Type: Texture
     UUID: 18246198109903864782
-    Name: AssaultRifle_ARNormal.png
-    FilePath: Models/AssaultRifle_ARNormal.png
+    Name: AssaultRifle_ARNormal
+    FilePath: Models/AssaultRifle/AssaultRifle_ARNormal.png
   - Type: Texture
     UUID: 3343954652411117201
     Name: Crosshair
     FilePath: Textures/Crosshair.png
   - Type: Texture
     UUID: 1987619997240284892
-    Name: AssaultRifle_ARColor.png
-    FilePath: Models/AssaultRifle_ARColor.png
-  - Type: Texture
-    UUID: 7295789261182852957
-    Name: AssaultRifle_ARMetallic-ARRoughness.png
-    FilePath: Models/AssaultRifle_ARMetallic-ARRoughness.png
+    Name: AssaultRifle_ARColor
+    FilePath: Models/AssaultRifle/AssaultRifle_ARColor.png
   - Type: Texture
     UUID: 9513761758882303005
     Name: box
     FilePath: Textures/box.jpg
   - Type: Texture
+    UUID: 7295789261182852957
+    Name: AssaultRifle_ARMetallic-ARRoughness
+    FilePath: Models/AssaultRifle/AssaultRifle_ARMetallic-ARRoughness.png
+  - Type: Texture
     UUID: 9049085516481466605
     Name: AssaultRifle_ORM_Mat0
-    FilePath: Models/AssaultRifle_ORM_Mat0.png
+    FilePath: Models/AssaultRifle/AssaultRifle_ORM_Mat0.png
   - Type: Script
     UUID: 16605421126880563658
     Name: MuzzleFlash
@@ -82,23 +82,23 @@ Assets:
   - Type: Material
     UUID: 13082385343188659786
     Name: AssaultRifle_Weapon
-    FilePath: Models/AssaultRifle_Weapon.ebmat
+    FilePath: Models/AssaultRifle/AssaultRifle_Weapon.ebmat
   - Type: Mesh
     UUID: 11485580323192418112
     Name: AssaultRifle_Cube.001_Prim0
-    FilePath: Models/AssaultRifle_Cube.001_Prim0.ebmesh
+    FilePath: Models/AssaultRifle/AssaultRifle_Cube.001_Prim0.ebmesh
   - Type: Mesh
     UUID: 8868131158511606316
     Name: AssaultRifle_Cube.003_Prim0
-    FilePath: Models/AssaultRifle_Cube.003_Prim0.ebmesh
+    FilePath: Models/AssaultRifle/AssaultRifle_Cube.003_Prim0.ebmesh
   - Type: Mesh
     UUID: 10196503461874081185
     Name: AssaultRifle_Cube.002_Prim0
-    FilePath: Models/AssaultRifle_Cube.002_Prim0.ebmesh
+    FilePath: Models/AssaultRifle/AssaultRifle_Cube.002_Prim0.ebmesh
   - Type: Model
     UUID: 16832771247265269212
     Name: AssaultRifle
-    FilePath: Models/AssaultRifle.ebmodel
+    FilePath: Models/AssaultRifle/AssaultRifle.ebmodel
   - Type: Font
     UUID: 213406294560961755
     Name: Roboto-Regular
