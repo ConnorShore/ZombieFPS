@@ -1,41 +1,37 @@
-local PickupItem = {}
+local PickUpItem = {}
 
-PickupItem.MoveSpeed = 3.0
-PickupItem.MoveDistance = 0.2
+PickUpItem.PickupPrefabName = ""
 
-PickupItem.PickupType = {
-    Ammo = 1,
-    Health = 2,
-    Points = 3
+-- In future may need to split to types like (attachment, ammo, health, etc.) 
+-- but for now just one type for all pickups
+PickUpItem.PickupType = {
+    Sight = 1,
+    Stock = 2,
+    Muzzle = 3,
+    Grip = 4
 }
 
-function PickupItem:OnCreate(entity)
-    self.TimeSinceStart = 0.0
-    
-    -- Start point for the bobbing motion
-    local transform = entity:GetComponent("TransformComponent")
-    self.StartY = transform.Position.y
-end
-
-function PickupItem:OnUpdate(entity, delta)
-    self.TimeSinceStart = self.TimeSinceStart + delta
-
-    local transform = entity:GetComponent("TransformComponent")
-    transform.Position.y = self.StartY + (self.MoveDistance * math.sin(self.TimeSinceStart * self.MoveSpeed))
-end
-
-function PickupItem:OnPickup(entity, otherEntity)
-
-    if self.PickupType == PickupItem.PickupType.Ammo then
-        Log.Info("Picked up ammo!")
-    elseif self.PickupType == PickupItem.PickupType.Health then
-        Log.Info("Picked up health!")
-    elseif self.PickupType == PickupItem.PickupType.Points then
-        Log.Info("Picked up points!")
+function PickUpItem:OnCreate(entity)
+    if self.PickupPrefabName == "" then
+        Log.Error("PickupPrefabName is not set for entity " .. entity)
+        return
     end
 
+    local transform = entity:GetComponent("TransformComponent")
+    self.PickupPrefab = Scene.InstantiatePrefab(self.PickupPrefabName, transform.Position)
+    if self.PickupPrefab == nil then
+        Log.Error("Failed to instantiate pickup prefab: " .. self.PickupPrefabName)
+        return
+    end
+end
+
+function PickUpItem:OnUpdate(entity, delta)
+    
+end
+
+function PickUpItem:OnPickup(entity, otherEntity)
+    
     Scene.RemoveEntity(entity)
 end
 
-
-return PickupItem
+return PickUpItem
