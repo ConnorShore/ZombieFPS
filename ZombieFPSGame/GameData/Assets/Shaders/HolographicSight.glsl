@@ -57,6 +57,7 @@ uniform float u_ReticleScale;
 
 // @UIProperty(Name = "Projection Depth", Type = Float, Min = -3.0, Max = 3.0)
 uniform float u_Depth; 
+
 uniform int u_EntityID;
 
 void main()

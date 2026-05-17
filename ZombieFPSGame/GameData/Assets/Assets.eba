@@ -111,6 +111,10 @@ Assets:
     UUID: 16832771247265269212
     Name: AssaultRifle
     FilePath: Models/AssaultRifle/AssaultRifle.ebmodel
+  - Type: Prefab
+    UUID: 13132374472539448840
+    Name: HolographicSight
+    FilePath: Prefabs/HolographicSight.ebprefab
   - Type: Font
     UUID: 213406294560961755
     Name: Roboto-Regular
