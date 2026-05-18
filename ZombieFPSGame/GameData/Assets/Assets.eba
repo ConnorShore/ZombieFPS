@@ -20,13 +20,13 @@ Assets:
     Name: AssaultRifle_ORM_Mat0
     FilePath: Models/M4/AssaultRifle_ORM_Mat0.png
   - Type: Texture
-    UUID: 15863835653609318779
-    Name: HolographicReticle
-    FilePath: Textures/HolographicReticle.png
-  - Type: Texture
     UUID: 9008232455192275898
     Name: AssaultRifle_ARColor.png
     FilePath: Models/M4/AssaultRifle_ARColor.png
+  - Type: Texture
+    UUID: 15863835653609318779
+    Name: HolographicReticle
+    FilePath: Textures/HolographicReticle.png
   - Type: Shader
     UUID: 3290979914783484062
     Name: HolographicSight
@@ -79,6 +79,18 @@ Assets:
     UUID: 13625163170134590446
     Name: WeaponHandler
     FilePath: Scripts/WeaponHandler.lua
+  - Type: Script
+    UUID: 13629381204485307944
+    Name: MountBehavior
+    FilePath: Scripts/MountBehavior.lua
+  - Type: Script
+    UUID: 8102167312162542918
+    Name: WeaponController
+    FilePath: Scripts/WeaponController.lua
+  - Type: Script
+    UUID: 936314447457138483
+    Name: PlayerController
+    FilePath: Scripts/PlayerController.lua
   - Type: Material
     UUID: 13734008897576602447
     Name: GroundMaterial

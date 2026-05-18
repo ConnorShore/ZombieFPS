@@ -36,6 +36,7 @@ Entities:
       Parent: 0
       Children:
         - 11417141245009400245
+        - 13765157642257386743
     TransformComponent:
       Position: [-9.094947e-13,1,5.0267487]
       Rotation: [0,0,0]
@@ -96,7 +97,7 @@ Entities:
       Scale: [1,1,1]
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,1.8626451e-09,1.8,4.824887,1]
     CameraComponent:
-      Projection: [0.7779549,0,0,0,0,1.428148,0,0,0,0,-1.00008,-1,0,0,-0.0400016,0]
+      Projection: [0.89325446,0,0,0,0,1.428148,0,0,0,0,-1.00008,-1,0,0,-0.0400016,0]
       Type: 1
       IsActive: 1
       RenderMask: 65533
@@ -482,6 +483,12 @@ Entities:
     ScriptComponent:
       ScriptUUID: 12117729415864912341
       UserPropertyOverrides:
+        - Name: AttachmentType
+          Type: 5
+          Value: 1
+        - Name: PrefabName
+          Type: 4
+          Value: HolographicSight
         - Name: PickupPrefabName
           Type: 4
           Value: HolographicSight
@@ -532,6 +539,12 @@ Entities:
       Rotation: [0,-0,0]
       Scale: [0.4095,0.4095,0.4095]
       WorldTransform: [0.4095,0,0,0,0,0.4095,0,0,0,0,0.4095,0,0.3297033,1.4743958,3.990977,1]
+    ScriptComponent:
+      ScriptUUID: 8102167312162542918
+      UserPropertyOverrides:
+        - Name: SightMountName
+          Type: 4
+          Value: ScopeMount
   - Entity: 6252349899130932054
     TagComponent:
       Tag: Weapon
@@ -560,7 +573,7 @@ Entities:
       Scale: [1,1,1]
       WorldTransform: [0.4095,0,0,0,0,0.4095,0,0,0,0,0.4095,0,0.3297033,1.6464727,4.1888847,1]
     ScriptComponent:
-      ScriptUUID: 2649306146174457867
+      ScriptUUID: 13629381204485307944
       UserPropertyOverrides: []
   - Entity: 15248219852956789422
     TagComponent:
@@ -649,6 +662,23 @@ Entities:
       Layer: 1
     MaterialComponent:
       MaterialUUID: 18352460508626254789
+  - Entity: 13765157642257386743
+    TagComponent:
+      Tag: PlayerController
+    RelationshipComponent:
+      Parent: 6753254757056896993
+      Children: []
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-9.094947e-13,1,5.0267487,1]
+    ScriptComponent:
+      ScriptUUID: 936314447457138483
+      UserPropertyOverrides:
+        - Name: ActiveWeaponEntity
+          Type: 4
+          Value: AssaultRifle
 Environment:
   Skybox:
     Enabled: 1
