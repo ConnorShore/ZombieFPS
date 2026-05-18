@@ -36,6 +36,7 @@ Entities:
       Parent: 0
       Children:
         - 11417141245009400245
+        - 13765157642257386743
     TransformComponent:
       Position: [-9.094947e-13,1,5.0267487]
       Rotation: [0,0,0]
@@ -91,10 +92,10 @@ Entities:
         - 9548350549033941053
         - 17202988526070122190
     TransformComponent:
-      Position: [9.094947e-13,0,-0.0018620491]
+      Position: [1.8635546e-09,0,-0.0018620491]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1.8,4.824887,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,1.8626451e-09,1.8,4.824887,1]
     CameraComponent:
       Projection: [0.89325446,0,0,0,0,1.428148,0,0,0,0,-1.00008,-1,0,0,-0.0400016,0]
       Type: 1
@@ -151,10 +152,10 @@ Entities:
       Parent: 0
       Children: []
     TransformComponent:
-      Position: [0,0.5,-4.280331]
+      Position: [-3.7252903e-09,0.5,-4.280331]
       Rotation: [0,0,0]
       Scale: [1.5,1,1.5]
-      WorldTransform: [1.5,0,0,0,0,1,0,0,0,0,1.5,0,0,0.5,-4.280331,1]
+      WorldTransform: [1.5,0,0,0,0,1,0,0,0,0,1.5,0,-3.7252903e-09,0.5,-4.280331,1]
     RigidBodyComponent:
       Type: 0
       Mass: 1
@@ -175,7 +176,7 @@ Entities:
       MaterialUUID: 31
   - Entity: 2785837306964502872
     TagComponent:
-      Tag: Pickup
+      Tag: PowerUpDrop
     RelationshipComponent:
       Parent: 0
       Children: []
@@ -203,7 +204,7 @@ Entities:
     MaterialComponent:
       MaterialUUID: 1868779223986162857
     ScriptComponent:
-      ScriptUUID: 12117729415864912341
+      ScriptUUID: 15191514471842255900
       UserPropertyOverrides:
         - Name: PickupType
           Type: 5
@@ -218,7 +219,7 @@ Entities:
       Position: [-9.094947e-13,0,0]
       Rotation: [0,-0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-9.094947e-13,1.8,4.824887,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,1.8617357e-09,1.8,4.824887,1]
     ScriptComponent:
       ScriptUUID: 8562544563539838448
       UserPropertyOverrides:
@@ -258,13 +259,13 @@ Entities:
     TagComponent:
       Tag: MuzzleFlash
     RelationshipComponent:
-      Parent: 5418635159135756444
+      Parent: 10540265532210002179
       Children: []
     TransformComponent:
-      Position: [-1.1920929e-07,0.24049044,-2.3380127]
+      Position: [0,0.24543285,-2.3529143]
       Rotation: [0,-0,0]
-      Scale: [2.717248,2.717248,2.717248]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.3405786,1.5807617,3.1704664,1]
+      Scale: [6.635526,6.635526,6.635526]
+      WorldTransform: [2.717248,0,0,0,0,2.717248,0,0,0,0,2.717248,0,0.3297033,1.5749005,3.0274587,1]
     PointLightComponent:
       Active: 0
       Color: [1,0.90556395,0.08305645]
@@ -299,10 +300,10 @@ Entities:
       Parent: 9548350549033941053
       Children: []
     TransformComponent:
-      Position: [-0.0839667,0.32152355,0.09290075]
+      Position: [-0.095130265,0.31793916,0.09290075]
       Rotation: [0,-0,0]
       Scale: [0.37703243,0.37703243,0.37703243]
-      WorldTransform: [0.37703243,0,0,0,0,0.37703243,0,0,0,0,0.37703243,0,0.34266803,1.7049105,4.303424,1]
+      WorldTransform: [0.37703243,0,0,0,0,0.37703243,0,0,0,0,0.37703243,0,0.33150446,1.7013261,4.303424,1]
   - Entity: 12156363934972497198
     TagComponent:
       Tag: WeaponRecoil
@@ -328,7 +329,7 @@ Entities:
       Children:
         - 12156363934972497198
         - 417690053092696263
-        - 5418635159135756444
+        - 10540265532210002179
     TransformComponent:
       Position: [0.42663473,-0.41661298,-0.6143637]
       Rotation: [0,0,0]
@@ -336,7 +337,10 @@ Entities:
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.42663473,1.383387,4.210523,1]
     ScriptComponent:
       ScriptUUID: 13625163170134590446
-      UserPropertyOverrides: []
+      UserPropertyOverrides:
+        - Name: ADS_Speed
+          Type: 3
+          Value: 10
   - Entity: 17642454729594052137
     TagComponent:
       Tag: Box
@@ -426,7 +430,7 @@ Entities:
       Position: [0,0,0]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1.8,4.824887,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,1.8626451e-09,1.8,4.824887,1]
     ScriptComponent:
       ScriptUUID: 16404415058251315788
       UserPropertyOverrides:
@@ -436,69 +440,245 @@ Entities:
         - Name: ImpactForce
           Type: 3
           Value: 3
-  - Entity: 5418635159135756444
-    TagComponent:
-      Tag: AssaultRifle
-    RelationshipComponent:
-      Parent: 9548350549033941053
-      Children:
-        - 17796126392378748482
-        - 1073259625805377775
-        - 5732180213775248317
-        - 15412099849582508473
-    TransformComponent:
-      Position: [-0.08605611,0.10886955,-0.17962265]
-      Rotation: [0,-0,0]
-      Scale: [0.3680194,0.3680194,0.3680194]
-      WorldTransform: [0.3680194,0,0,0,0,0.3680194,0,0,0,0,0.3680194,0,0.34057862,1.4922565,4.0309005,1]
-  - Entity: 17796126392378748482
-    TagComponent:
-      Tag: Weapon
-    RelationshipComponent:
-      Parent: 5418635159135756444
-      Children: []
-    TransformComponent:
-      Position: [0,0.025450574,0.38175866]
-      Rotation: [3.1415927,-0,-0]
-      Scale: [-0.09888629,0.109487295,0.109487295]
-      WorldTransform: [-0.036392074,0,0,0,0,-0.040293448,-3.5225651e-09,0,0,3.5225651e-09,-0.040293448,0,0.34057862,1.5016228,4.1713953,1]
-    StaticMeshComponent:
-      MeshUUID: 11485580323192418112
-      Layer: 1
-    MaterialComponent:
-      MaterialUUID: 13082385343188659786
-  - Entity: 1073259625805377775
+  - Entity: 798897515031958083
     TagComponent:
       Tag: Magazine
     RelationshipComponent:
-      Parent: 5418635159135756444
+      Parent: 10540265532210002179
       Children: []
     TransformComponent:
       Position: [0,-0.11320099,-0.015132174]
       Rotation: [-0.00020340085,0,0]
       Scale: [0.051736534,0.056594644,0.18163528]
-      WorldTransform: [0.019040048,0,0,0,0,0.020827927,-4.236418e-06,0,0,1.3596392e-05,0.066845305,0,0.34057862,1.4505963,4.0253315,1]
+      WorldTransform: [0.021186111,0,0,0,0,0.023175506,-4.713918e-06,0,0,1.5128883e-05,0.074379645,0,0.3297033,1.4280399,3.9847803,1]
     StaticMeshComponent:
-      MeshUUID: 8868131158511606316
+      MeshUUID: 9147101475226164417
       Layer: 1
     MaterialComponent:
-      MaterialUUID: 13082385343188659786
-  - Entity: 5732180213775248317
+      MaterialUUID: 3531595371019758275
+  - Entity: 16886275650480693085
     TagComponent:
-      Tag: HolographicSight
+      Tag: PickUpItem
     RelationshipComponent:
-      Parent: 5418635159135756444
+      Parent: 0
+      Children: []
+    TransformComponent:
+      Position: [-2.2204175,1.0136626,-4.282076]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-2.2204175,1.0136626,-4.282076,1]
+    RigidBodyComponent:
+      Type: 0
+      Mass: 1
+      GravityEnabled: 1
+    BoxColliderComponent:
+      Size: [0.5,0.5,0.5]
+      IsTrigger: 0
+      OffsetPosition: [0,0,0]
+      OffsetRotation: [0,0,0]
+      Category: 256
+      CollisionMask: 1
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 0
+    ScriptComponent:
+      ScriptUUID: 12117729415864912341
+      UserPropertyOverrides:
+        - Name: AttachmentType
+          Type: 5
+          Value: 1
+        - Name: PrefabName
+          Type: 4
+          Value: HolographicSight
+        - Name: PickupPrefabName
+          Type: 4
+          Value: HolographicSight
+        - Name: PickupType
+          Type: 5
+          Value: 1
+  - Entity: 16256626281541658784
+    TagComponent:
+      Tag: Cube2
+    RelationshipComponent:
+      Parent: 0
+      Children: []
+    TransformComponent:
+      Position: [-2.1505952,0.5,-4.280331]
+      Rotation: [0,0,0]
+      Scale: [1.5,1,1.5]
+      WorldTransform: [1.5,0,0,0,0,1,0,0,0,0,1.5,0,-2.1505952,0.5,-4.280331,1]
+    RigidBodyComponent:
+      Type: 0
+      Mass: 1
+      GravityEnabled: 1
+    BoxColliderComponent:
+      Size: [1,1,1]
+      IsTrigger: 0
+      OffsetPosition: [0,0,0]
+      OffsetRotation: [0,0,0]
+      Category: 1
+      CollisionMask: 1
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 0
+    StaticMeshComponent:
+      MeshUUID: 51
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 31
+  - Entity: 10540265532210002179
+    TagComponent:
+      Tag: AssaultRifle
+    RelationshipComponent:
+      Parent: 9548350549033941053
+      Children:
+        - 6252349899130932054
+        - 798897515031958083
+        - 15412099849582508473
+        - 16117594982574674907
+    TransformComponent:
+      Position: [-0.09693143,0.09100878,-0.21954608]
+      Rotation: [0,-0,0]
+      Scale: [0.4095,0.4095,0.4095]
+      WorldTransform: [0.4095,0,0,0,0,0.4095,0,0,0,0,0.4095,0,0.3297033,1.4743958,3.990977,1]
+    ScriptComponent:
+      ScriptUUID: 8102167312162542918
+      UserPropertyOverrides:
+        - Name: SightMountName
+          Type: 4
+          Value: ScopeMount
+  - Entity: 6252349899130932054
+    TagComponent:
+      Tag: Weapon
+    RelationshipComponent:
+      Parent: 10540265532210002179
       Children: []
     TransformComponent:
       Position: [0,0.025450574,0.38175866]
       Rotation: [3.1415927,-0,-0]
       Scale: [-0.09888629,0.109487295,0.109487295]
-      WorldTransform: [-0.036392074,0,0,0,0,-0.040293448,-3.5225651e-09,0,0,3.5225651e-09,-0.040293448,0,0.34057862,1.5016228,4.1713953,1]
+      WorldTransform: [-0.040493935,0,0,0,0,-0.044835046,-3.919604e-09,0,0,3.919604e-09,-0.044835046,0,0.3297033,1.4848177,4.1473074,1]
     StaticMeshComponent:
-      MeshUUID: 10196503461874081185
+      MeshUUID: 12205825994227504312
       Layer: 1
     MaterialComponent:
-      MaterialUUID: 13082385343188659786
+      MaterialUUID: 3531595371019758275
+  - Entity: 16117594982574674907
+    TagComponent:
+      Tag: ScopeMount
+    RelationshipComponent:
+      Parent: 10540265532210002179
+      Children: []
+    TransformComponent:
+      Position: [0,0.42021227,0.48329163]
+      Rotation: [0,-0,0]
+      Scale: [1,1,1]
+      WorldTransform: [0.4095,0,0,0,0,0.4095,0,0,0,0,0.4095,0,0.3297033,1.6464727,4.1888847,1]
+    ScriptComponent:
+      ScriptUUID: 13629381204485307944
+      UserPropertyOverrides: []
+  - Entity: 15248219852956789422
+    TagComponent:
+      Tag: Box5
+    RelationshipComponent:
+      Parent: 0
+      Children: []
+    TransformComponent:
+      Position: [4.142291,3.506176,-1.2097178]
+      Rotation: [-1.7502875e-07,0.20501266,0.89749926]
+      Scale: [1.25,1.25,1.25]
+      WorldTransform: [0.7631356,0.956748,-0.25447443,0,-0.9772123,0.77945876,-2.1420419e-07,0,0.15868169,0.1989406,1.223823,0,4.142291,3.506176,-1.2097178,1]
+    RigidBodyComponent:
+      Type: 1
+      Mass: 1
+      GravityEnabled: 1
+    BoxColliderComponent:
+      Size: [1,1,1]
+      IsTrigger: 0
+      OffsetPosition: [0,0,0]
+      OffsetRotation: [0,0,0]
+      Category: 1
+      CollisionMask: 1
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 0
+    StaticMeshComponent:
+      MeshUUID: 51
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 18352460508626254789
+  - Entity: 1747217956981119607
+    TagComponent:
+      Tag: Box4
+    RelationshipComponent:
+      Parent: 0
+      Children: []
+    TransformComponent:
+      Position: [0.5293271,5.4486933,-9.992759]
+      Rotation: [0.79903495,0.2740918,0.38109186]
+      Scale: [1.25,1.25,1.25]
+      WorldTransform: [1.1170106,0.44756308,-0.338341,0,-0.09914568,0.8993962,0.86241335,0,0.5522295,-0.74382377,0.8392072,0,0.5293271,5.4486933,-9.992759,1]
+    RigidBodyComponent:
+      Type: 1
+      Mass: 1
+      GravityEnabled: 1
+    BoxColliderComponent:
+      Size: [1,1,1]
+      IsTrigger: 0
+      OffsetPosition: [0,0,0]
+      OffsetRotation: [0,0,0]
+      Category: 1
+      CollisionMask: 1
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 0
+    StaticMeshComponent:
+      MeshUUID: 51
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 18352460508626254789
+  - Entity: 9667282278828292663
+    TagComponent:
+      Tag: Box3
+    RelationshipComponent:
+      Parent: 0
+      Children: []
+    TransformComponent:
+      Position: [-3.8956218,2.866487,-7.115764]
+      Rotation: [0.26489678,0.6363792,0.0021954908]
+      Scale: [1.25,1.25,1.25]
+      WorldTransform: [1.0053136,0.0022071507,-0.7428591,0,0.19183859,1.2068235,0.26320142,0,0.71766466,-0.3256872,0.9702501,0,-3.8956218,2.866487,-7.115764,1]
+    RigidBodyComponent:
+      Type: 1
+      Mass: 1
+      GravityEnabled: 1
+    BoxColliderComponent:
+      Size: [1,1,1]
+      IsTrigger: 0
+      OffsetPosition: [0,0,0]
+      OffsetRotation: [0,0,0]
+      Category: 1
+      CollisionMask: 1
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 0
+    StaticMeshComponent:
+      MeshUUID: 51
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 18352460508626254789
+  - Entity: 13765157642257386743
+    TagComponent:
+      Tag: PlayerController
+    RelationshipComponent:
+      Parent: 6753254757056896993
+      Children: []
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-9.094947e-13,1,5.0267487,1]
+    ScriptComponent:
+      ScriptUUID: 936314447457138483
+      UserPropertyOverrides:
+        - Name: ActiveWeaponEntity
+          Type: 4
+          Value: AssaultRifle
 Environment:
   Skybox:
     Enabled: 1

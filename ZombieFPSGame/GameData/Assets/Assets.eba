@@ -1,32 +1,44 @@
 Assets:
   - Type: Texture
-    UUID: 18246198109903864782
-    Name: AssaultRifle_ARNormal
-    FilePath: Models/AssaultRifle/AssaultRifle_ARNormal.png
+    UUID: 17608889885004568014
+    Name: AssaultRifle_ARMetallic-ARRoughness.png
+    FilePath: Models/M4/AssaultRifle_ARMetallic-ARRoughness.png
   - Type: Texture
     UUID: 3343954652411117201
     Name: Crosshair
     FilePath: Textures/Crosshair.png
   - Type: Texture
-    UUID: 1987619997240284892
-    Name: AssaultRifle_ARColor
-    FilePath: Models/AssaultRifle/AssaultRifle_ARColor.png
+    UUID: 5298883443951100442
+    Name: AssaultRifle_ARNormal.png
+    FilePath: Models/M4/AssaultRifle_ARNormal.png
   - Type: Texture
     UUID: 9513761758882303005
     Name: box
     FilePath: Textures/box.jpg
   - Type: Texture
-    UUID: 7295789261182852957
-    Name: AssaultRifle_ARMetallic-ARRoughness
-    FilePath: Models/AssaultRifle/AssaultRifle_ARMetallic-ARRoughness.png
-  - Type: Texture
-    UUID: 9049085516481466605
+    UUID: 16364078516430552352
     Name: AssaultRifle_ORM_Mat0
-    FilePath: Models/AssaultRifle/AssaultRifle_ORM_Mat0.png
+    FilePath: Models/M4/AssaultRifle_ORM_Mat0.png
+  - Type: Texture
+    UUID: 9008232455192275898
+    Name: AssaultRifle_ARColor.png
+    FilePath: Models/M4/AssaultRifle_ARColor.png
+  - Type: Texture
+    UUID: 15863835653609318779
+    Name: HolographicReticle
+    FilePath: Textures/HolographicReticle.png
+  - Type: Shader
+    UUID: 3290979914783484062
+    Name: HolographicSight
+    FilePath: Shaders/HolographicSight.glsl
   - Type: Script
     UUID: 16605421126880563658
     Name: MuzzleFlash
     FilePath: Scripts/MuzzleFlash.lua
+  - Type: Script
+    UUID: 2649306146174457867
+    Name: ScopeMountBehavior
+    FilePath: Scripts/ScopeMountBehavior.lua
   - Type: Script
     UUID: 16404415058251315788
     Name: WeaponFire
@@ -34,7 +46,15 @@ Assets:
   - Type: Script
     UUID: 12117729415864912341
     Name: PickupItem
-    FilePath: Scripts/PickupItem.lua
+    FilePath: Scripts/PickUpItem.lua
+  - Type: Script
+    UUID: 15191514471842255900
+    Name: PowerUpDrop
+    FilePath: Scripts/PowerUpDrop.lua
+  - Type: Script
+    UUID: 6068451618412420797
+    Name: CharacterMovement
+    FilePath: Scripts/CharacterMovement.lua
   - Type: Script
     UUID: 4494000890898150304
     Name: Crosshair
@@ -48,10 +68,6 @@ Assets:
     Name: PlayerInteraction
     FilePath: Scripts/PlayerInteraction.lua
   - Type: Script
-    UUID: 6068451618412420797
-    Name: CharacterMovement
-    FilePath: Scripts/CharacterMovement.lua
-  - Type: Script
     UUID: 5025897937436236093
     Name: MouseLook
     FilePath: Scripts/MouseLook.lua
@@ -63,42 +79,58 @@ Assets:
     UUID: 13625163170134590446
     Name: WeaponHandler
     FilePath: Scripts/WeaponHandler.lua
-  - Type: Material
-    UUID: 18352460508626254789
-    Name: BoxMaterial
-    FilePath: Materials/BoxMaterial.ebmat
+  - Type: Script
+    UUID: 13629381204485307944
+    Name: MountBehavior
+    FilePath: Scripts/MountBehavior.lua
+  - Type: Script
+    UUID: 8102167312162542918
+    Name: WeaponController
+    FilePath: Scripts/WeaponController.lua
+  - Type: Script
+    UUID: 936314447457138483
+    Name: PlayerController
+    FilePath: Scripts/PlayerController.lua
   - Type: Material
     UUID: 13734008897576602447
     Name: GroundMaterial
     FilePath: Materials/GroundMaterial.ebmat
   - Type: Material
+    UUID: 18352460508626254789
+    Name: BoxMaterial
+    FilePath: Materials/BoxMaterial.ebmat
+  - Type: Material
     UUID: 1868779223986162857
     Name: PickupMaterial
     FilePath: Materials/PickupMaterial.ebmat
   - Type: Material
-    UUID: 3715140739257822472
-    Name: AssaultRifle_Weapon
-    FilePath: Models/AssaultRifle_Weapon.ebmat
+    UUID: 8747674591623748722
+    Name: HolographicReticleMat
+    FilePath: Materials/HolographicReticleMat.ebmat
   - Type: Material
-    UUID: 13082385343188659786
+    UUID: 3531595371019758275
     Name: AssaultRifle_Weapon
-    FilePath: Models/AssaultRifle/AssaultRifle_Weapon.ebmat
+    FilePath: Models/M4/AssaultRifle_Weapon.ebmat
   - Type: Mesh
-    UUID: 11485580323192418112
+    UUID: 12205825994227504312
     Name: AssaultRifle_Cube.001_Prim0
-    FilePath: Models/AssaultRifle/AssaultRifle_Cube.001_Prim0.ebmesh
+    FilePath: Models/M4/AssaultRifle_Cube.001_Prim0.ebmesh
   - Type: Mesh
-    UUID: 8868131158511606316
+    UUID: 9147101475226164417
     Name: AssaultRifle_Cube.003_Prim0
-    FilePath: Models/AssaultRifle/AssaultRifle_Cube.003_Prim0.ebmesh
+    FilePath: Models/M4/AssaultRifle_Cube.003_Prim0.ebmesh
   - Type: Mesh
-    UUID: 10196503461874081185
-    Name: AssaultRifle_Cube.002_Prim0
-    FilePath: Models/AssaultRifle/AssaultRifle_Cube.002_Prim0.ebmesh
+    UUID: 17797478620356971073
+    Name: AssaultRifle_Cube.004_Prim0
+    FilePath: Models/M4/AssaultRifle_Cube.004_Prim0.ebmesh
   - Type: Model
-    UUID: 16832771247265269212
+    UUID: 78582201594786378
     Name: AssaultRifle
-    FilePath: Models/AssaultRifle/AssaultRifle.ebmodel
+    FilePath: Models/M4/AssaultRifle.ebmodel
+  - Type: Prefab
+    UUID: 9723225066709211091
+    Name: HolographicSight
+    FilePath: Prefabs/HolographicSight.ebprefab
   - Type: Font
     UUID: 213406294560961755
     Name: Roboto-Regular

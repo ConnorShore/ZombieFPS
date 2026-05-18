@@ -1,0 +1,24 @@
+Material: HolographicReticleMat
+UUID: 8747674591623748722
+RenderQueue: 3
+Instanced: false
+Shader: 3290979914783484062
+Uniforms:
+  u_Color:
+    Type: Vector3f
+    Value: [1,1,1]
+  u_ReticleTexture:
+    Type: Texture
+    Value: 15863835653609318779
+  u_Emission:
+    Type: float
+    Value: 2.5
+  u_Opacity:
+    Type: float
+    Value: 0.5
+  u_Depth:
+    Type: float
+    Value: -3
+  u_ReticleScale:
+    Type: float
+    Value: 2
