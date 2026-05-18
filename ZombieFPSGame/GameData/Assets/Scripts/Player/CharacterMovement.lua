@@ -1,6 +1,13 @@
 local CharacterMovement = {}
 
+CharacterMovement.WalkSpeed = 5.0
+CharacterMovement.SprintSpeed = 8.0
+
 function CharacterMovement:OnCreate(entity)
+    self.Sprinting = false;
+
+    local controller = entity:GetComponent("CharacterControllerComponent")
+    controller.WalkSpeed = self.WalkSpeed
 end
 
 function CharacterMovement:OnUpdate(entity, delta)
@@ -12,6 +19,15 @@ function CharacterMovement:OnUpdate(entity, delta)
     
     -- Player Controller Movement
     local moveDir = Vector3f.new(0.0, 0.0, 0.0)
+
+    local speed = self.WalkSpeed
+    if Input.IsKeyPressed(KeyCode.LeftShift) then
+        self.Sprinting = true;
+        speed = self.SprintSpeed;
+    else
+        self.Sprinting = false;
+        speed = self.WalkSpeed;
+    end
 
     -- Strafing
     if Input.IsKeyPressed(KeyCode.A) then 
@@ -33,7 +49,7 @@ function CharacterMovement:OnUpdate(entity, delta)
     end
     
     -- Move using the Character Controller
-    controller:Move(moveDir * controller.WalkSpeed * delta)
+    controller:Move(moveDir * speed * delta)
     
     -- Jumping
     if Input.IsKeyPressed(KeyCode.Space) and controller.IsGrounded then

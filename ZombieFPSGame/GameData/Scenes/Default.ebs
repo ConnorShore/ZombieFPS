@@ -715,21 +715,27 @@ Entities:
     ScriptComponent:
       ScriptUUID: 10843162672597406671
       UserPropertyOverrides:
-        - Name: SwayRotSmoothness
-          Type: 3
-          Value: 5
-        - Name: SwayRotStep
-          Type: 3
-          Value: 1
-        - Name: SwayPosSmoothness
-          Type: 3
-          Value: 4
-        - Name: SwayRotAmount
-          Type: 3
-          Value: 3
         - Name: SwayPosAmount
           Type: 3
-          Value: 0.06
+          Value: 0.07
+        - Name: SwayRotStep
+          Type: 2
+          Value: 1
+        - Name: IdleMultiplier
+          Type: 3
+          Value: 0.12
+        - Name: BobLimit
+          Type: 6
+          Value: [0.05,0.05,0.05]
+        - Name: BobSpeed
+          Type: 3
+          Value: 10
+        - Name: BobTotalLimit
+          Type: 6
+          Value: [0.1,0.1,0.1]
+        - Name: SwayRotAmount
+          Type: 2
+          Value: 2
 Environment:
   Skybox:
     Enabled: 1
