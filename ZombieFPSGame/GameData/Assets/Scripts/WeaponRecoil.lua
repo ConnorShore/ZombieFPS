@@ -1,46 +1,74 @@
 local WeaponRecoil = {}
 
--- Exposed to your ImGui Editor for tweaking the "feel"
-WeaponRecoil.KickbackZ = 0.2     -- How far the gun pushes into the camera
-WeaponRecoil.KickUpY = 0.05      -- How far the barrel kicks up
-WeaponRecoil.RotationX = 5.0     -- Degrees the gun tilts up
-WeaponRecoil.Snappiness = 20.0   -- How fast it kicks back
-WeaponRecoil.ReturnSpeed = 5.0   -- How fast it returns to rest
-
--- TODO: Add some random variance to the recoil pattern so it's not exactly the same every time
+WeaponRecoil.KickbackZ = 0.2
+WeaponRecoil.KickUpY = 0.05
+WeaponRecoil.RotationX = 5.0
+WeaponRecoil.Snappiness = 20.0
+WeaponRecoil.ReturnSpeed = 5.0
+WeaponRecoil.ADSKickMultiplier = 0.1 
 
 function WeaponRecoil:OnCreate(entity)
+    -- Local Gun Recoil State
     self.TargetPositionOffset  = Vector3f.new(0, 0, 0)
     self.TargetRotationOffset  = Vector3f.new(0, 0, 0)
-    self.CurrentPositionOffset = Vector3f.new(0, 0, 0)
-    self.CurrentRotationOffset = Vector3f.new(0, 0, 0)
+    
+    -- Independent Camera Recoil State
+    self.TargetCameraPitch = 0.0
+    self.CurrentCameraPitch = 0.0
+    self.PreviousCameraPitch = 0.0
+    
+    self.Camera = Scene.GetEntityByName("Camera")
 end
 
 function WeaponRecoil:OnUpdate(entity, delta)
-    -- 1. Smoothly return the TARGET offset back to zero (resting state)
+    local transform = entity:GetComponent("TransformComponent")
+
+    -- 1. LOCAL GUN RECOIL (Visually bouncing in hands)
     self.TargetPositionOffset = Math.Lerp(self.TargetPositionOffset, Vector3f.new(0,0,0), self.ReturnSpeed * delta)
     self.TargetRotationOffset = Math.Lerp(self.TargetRotationOffset, Vector3f.new(0,0,0), self.ReturnSpeed * delta)
 
-    -- 2. Snap the CURRENT offset toward the TARGET offset
-    self.CurrentPositionOffset = Math.Lerp(self.CurrentPositionOffset, self.TargetPositionOffset, self.Snappiness * delta)
-    self.CurrentRotationOffset = Math.Lerp(self.CurrentRotationOffset, self.TargetRotationOffset, self.Snappiness * delta)
-    -- WeaponHandler reads CurrentPositionOffset / CurrentRotationOffset and applies them.
+    transform.Position = Math.Lerp(transform.Position, self.TargetPositionOffset, self.Snappiness * delta)
+    transform.Rotation = Math.Lerp(transform.Rotation, self.TargetRotationOffset, self.Snappiness * delta)
+    
+    -- 2. CAMERA RECOIL (The player's head kicking up)
+    self.TargetCameraPitch = Math.Lerp(self.TargetCameraPitch, 0.0, self.ReturnSpeed * delta)
+    self.CurrentCameraPitch = Math.Lerp(self.CurrentCameraPitch, self.TargetCameraPitch, self.Snappiness * delta)
+    
+    -- Calculate how much the camera recoil changed THIS frame
+    local pitchDelta = self.CurrentCameraPitch - self.PreviousCameraPitch
+    
+    -- Inject it directly into the MouseLook/PlayerController script
+    if pitchDelta ~= 0.0 and self.Camera then
+        local mouseLook = self.Camera:GetScriptInstance() -- Replace with whatever script handles your mouse pitch
+        if mouseLook then
+            mouseLook.Pitch = mouseLook.Pitch + pitchDelta
+        end
+    end
+    
+    self.PreviousCameraPitch = self.CurrentCameraPitch
 end
 
--- Call this function from your Player script EXACTLY when the raycast fires!
 function WeaponRecoil:Fire(entity)
-    -- Add the kick to the target offset. 
-    -- Because we ADD it, firing really fast (like an SMG) will stack the recoil!
-    
-    -- Kick backward (Z) and slightly up (Y)
-    self.TargetPositionOffset.z = self.TargetPositionOffset.z + self.KickbackZ
-    self.TargetPositionOffset.y = self.TargetPositionOffset.y + self.KickUpY
-    
-    -- Tilt the barrel up
-    self.TargetRotationOffset.x = self.TargetRotationOffset.x + Math.Radians(self.RotationX)
-    
-    -- Optional: Add a tiny bit of random side-to-side X rotation for variance
-    -- self.TargetRotationOffset.y = self.TargetRotationOffset.y + Math.RandomFloat(-1.0, 1.0)
+    local aimingEntity = Scene.GetEntityByName("WeaponAiming")
+    local isADS = aimingEntity and aimingEntity:GetScriptInstance().IsAiming or false
+
+    if isADS then
+        -- 1. ADS STATE
+        -- The gun ONLY kicks straight back into the shoulder. NO local rotation!
+        self.TargetPositionOffset.z = self.TargetPositionOffset.z + (self.KickbackZ * self.ADSKickMultiplier)
+        
+        -- ALL the rotational kick goes straight to the camera!
+        self.TargetCameraPitch = self.TargetCameraPitch + Math.Radians(self.RotationX)
+    else
+        -- 2. HIP FIRE STATE
+        -- The gun bounces wildly in the hands locally
+        self.TargetPositionOffset.z = self.TargetPositionOffset.z + self.KickbackZ
+        self.TargetPositionOffset.y = self.TargetPositionOffset.y + self.KickUpY
+        self.TargetRotationOffset.x = self.TargetRotationOffset.x + Math.Radians(self.RotationX)
+        
+        -- Optional: Give the camera a tiny bit of kick even in hip-fire so the screen still shakes
+        self.TargetCameraPitch = self.TargetCameraPitch + Math.Radians(self.RotationX * 0.2)
+    end
 end
 
 return WeaponRecoil

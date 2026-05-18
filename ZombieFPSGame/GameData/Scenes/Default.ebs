@@ -97,7 +97,7 @@ Entities:
       Scale: [1,1,1]
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,1.8626451e-09,1.8,4.824887,1]
     CameraComponent:
-      Projection: [0.89325446,0,0,0,0,1.428148,0,0,0,0,-1.00008,-1,0,0,-0.0400016,0]
+      Projection: [0.7779549,0,0,0,0,1.428148,0,0,0,0,-1.00008,-1,0,0,-0.0400016,0]
       Type: 1
       IsActive: 1
       RenderMask: 65533
@@ -265,7 +265,7 @@ Entities:
       Position: [0,0.24543285,-2.3529143]
       Rotation: [0,-0,0]
       Scale: [6.635526,6.635526,6.635526]
-      WorldTransform: [2.717248,0,0,0,0,2.717248,0,0,0,0,2.717248,0,0.3297033,1.5749005,3.0274587,1]
+      WorldTransform: [2.717248,0,0,0,0,2.717248,0,0,0,0,2.717248,0,0.3297033,1.5749005,2.9522483,1]
     PointLightComponent:
       Active: 0
       Color: [1,0.90556395,0.08305645]
@@ -297,50 +297,52 @@ Entities:
     TagComponent:
       Tag: ADS_Node
     RelationshipComponent:
-      Parent: 9548350549033941053
+      Parent: 14300943002917955893
       Children: []
     TransformComponent:
-      Position: [-0.095130265,0.31793916,0.09290075]
+      Position: [-0.095130265,0.31793916,0.058049202]
       Rotation: [0,-0,0]
       Scale: [0.37703243,0.37703243,0.37703243]
-      WorldTransform: [0.37703243,0,0,0,0,0.37703243,0,0,0,0,0.37703243,0,0.33150446,1.7013261,4.303424,1]
+      WorldTransform: [0.37703243,0,0,0,0,0.37703243,0,0,0,0,0.37703243,0,0.33150446,1.7013261,4.2685723,1]
   - Entity: 12156363934972497198
     TagComponent:
       Tag: WeaponRecoil
     RelationshipComponent:
-      Parent: 9548350549033941053
-      Children: []
+      Parent: 16922120325189435521
+      Children:
+        - 14300943002917955893
     TransformComponent:
-      Position: [-0.07729596,0,0]
-      Rotation: [0,0,0]
+      Position: [0,0,0]
+      Rotation: [0,-0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.34933877,1.383387,4.210523,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.42663473,1.383387,4.210523,1]
     ScriptComponent:
       ScriptUUID: 3366872985723856610
       UserPropertyOverrides:
         - Name: KickbackZ
           Type: 3
           Value: 0.05
+        - Name: ADSKickMultiplier
+          Type: 3
+          Value: 0.1
+        - Name: RotationX
+          Type: 3
+          Value: 3
+        - Name: KickUpY
+          Type: 3
+          Value: 0.02
   - Entity: 9548350549033941053
     TagComponent:
       Tag: WeaponHandler
     RelationshipComponent:
       Parent: 3526599274050075716
       Children:
-        - 12156363934972497198
-        - 417690053092696263
-        - 10540265532210002179
+        - 16922120325189435521
     TransformComponent:
       Position: [0.42663473,-0.41661298,-0.6143637]
       Rotation: [0,0,0]
       Scale: [1,1,1]
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.42663473,1.383387,4.210523,1]
-    ScriptComponent:
-      ScriptUUID: 13625163170134590446
-      UserPropertyOverrides:
-        - Name: ADS_Speed
-          Type: 3
-          Value: 10
   - Entity: 17642454729594052137
     TagComponent:
       Tag: Box
@@ -450,7 +452,7 @@ Entities:
       Position: [0,-0.11320099,-0.015132174]
       Rotation: [-0.00020340085,0,0]
       Scale: [0.051736534,0.056594644,0.18163528]
-      WorldTransform: [0.021186111,0,0,0,0,0.023175506,-4.713918e-06,0,0,1.5128883e-05,0.074379645,0,0.3297033,1.4280399,3.9847803,1]
+      WorldTransform: [0.021186111,0,0,0,0,0.023175506,-4.713918e-06,0,0,1.5128883e-05,0.074379645,0,0.3297033,1.4280399,3.90957,1]
     StaticMeshComponent:
       MeshUUID: 9147101475226164417
       Layer: 1
@@ -483,15 +485,15 @@ Entities:
     ScriptComponent:
       ScriptUUID: 12117729415864912341
       UserPropertyOverrides:
-        - Name: AttachmentType
-          Type: 5
-          Value: 1
-        - Name: PrefabName
-          Type: 4
-          Value: HolographicSight
         - Name: PickupPrefabName
           Type: 4
           Value: HolographicSight
+        - Name: PrefabName
+          Type: 4
+          Value: HolographicSight
+        - Name: AttachmentType
+          Type: 5
+          Value: 1
         - Name: PickupType
           Type: 5
           Value: 1
@@ -528,17 +530,17 @@ Entities:
     TagComponent:
       Tag: AssaultRifle
     RelationshipComponent:
-      Parent: 9548350549033941053
+      Parent: 14300943002917955893
       Children:
         - 6252349899130932054
         - 798897515031958083
         - 15412099849582508473
         - 16117594982574674907
     TransformComponent:
-      Position: [-0.09693143,0.09100878,-0.21954608]
+      Position: [-0.09693143,0.09100878,-0.2947564]
       Rotation: [0,-0,0]
       Scale: [0.4095,0.4095,0.4095]
-      WorldTransform: [0.4095,0,0,0,0,0.4095,0,0,0,0,0.4095,0,0.3297033,1.4743958,3.990977,1]
+      WorldTransform: [0.4095,0,0,0,0,0.4095,0,0,0,0,0.4095,0,0.3297033,1.4743958,3.9157667,1]
     ScriptComponent:
       ScriptUUID: 8102167312162542918
       UserPropertyOverrides:
@@ -555,7 +557,7 @@ Entities:
       Position: [0,0.025450574,0.38175866]
       Rotation: [3.1415927,-0,-0]
       Scale: [-0.09888629,0.109487295,0.109487295]
-      WorldTransform: [-0.040493935,0,0,0,0,-0.044835046,-3.919604e-09,0,0,3.919604e-09,-0.044835046,0,0.3297033,1.4848177,4.1473074,1]
+      WorldTransform: [-0.040493935,0,0,0,0,-0.044835046,-3.919604e-09,0,0,3.919604e-09,-0.044835046,0,0.3297033,1.4848177,4.072097,1]
     StaticMeshComponent:
       MeshUUID: 12205825994227504312
       Layer: 1
@@ -571,7 +573,7 @@ Entities:
       Position: [0,0.42021227,0.48329163]
       Rotation: [0,-0,0]
       Scale: [1,1,1]
-      WorldTransform: [0.4095,0,0,0,0,0.4095,0,0,0,0,0.4095,0,0.3297033,1.6464727,4.1888847,1]
+      WorldTransform: [0.4095,0,0,0,0,0.4095,0,0,0,0,0.4095,0,0.3297033,1.6464727,4.1136746,1]
     ScriptComponent:
       ScriptUUID: 13629381204485307944
       UserPropertyOverrides: []
@@ -679,6 +681,40 @@ Entities:
         - Name: ActiveWeaponEntity
           Type: 4
           Value: AssaultRifle
+  - Entity: 14300943002917955893
+    TagComponent:
+      Tag: WeaponAiming
+    RelationshipComponent:
+      Parent: 12156363934972497198
+      Children:
+        - 10540265532210002179
+        - 417690053092696263
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,-0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.42663473,1.383387,4.210523,1]
+    ScriptComponent:
+      ScriptUUID: 15631423950997928565
+      UserPropertyOverrides:
+        - Name: ADS_Speed
+          Type: 3
+          Value: 10
+  - Entity: 16922120325189435521
+    TagComponent:
+      Tag: WeaponMovement
+    RelationshipComponent:
+      Parent: 9548350549033941053
+      Children:
+        - 12156363934972497198
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.42663473,1.383387,4.210523,1]
+    ScriptComponent:
+      ScriptUUID: 10843162672597406671
+      UserPropertyOverrides: []
 Environment:
   Skybox:
     Enabled: 1

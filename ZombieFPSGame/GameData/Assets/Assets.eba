@@ -46,7 +46,7 @@ Assets:
   - Type: Script
     UUID: 12117729415864912341
     Name: PickupItem
-    FilePath: Scripts/PickUpItem.lua
+    FilePath: Scripts/PickupItem.lua
   - Type: Script
     UUID: 15191514471842255900
     Name: PowerUpDrop
@@ -91,6 +91,14 @@ Assets:
     UUID: 936314447457138483
     Name: PlayerController
     FilePath: Scripts/PlayerController.lua
+  - Type: Script
+    UUID: 15631423950997928565
+    Name: WeaponAiming
+    FilePath: Scripts/WeaponAiming.lua
+  - Type: Script
+    UUID: 10843162672597406671
+    Name: WeaponMovement
+    FilePath: Scripts/WeaponMovement.lua
   - Type: Material
     UUID: 13734008897576602447
     Name: GroundMaterial
