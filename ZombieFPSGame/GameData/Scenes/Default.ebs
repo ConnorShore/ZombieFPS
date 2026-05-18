@@ -265,7 +265,7 @@ Entities:
       Position: [0,0.24543285,-2.3529143]
       Rotation: [0,-0,0]
       Scale: [6.635526,6.635526,6.635526]
-      WorldTransform: [2.717248,0,0,0,0,2.717248,0,0,0,0,2.717248,0,0.3297033,1.5749005,2.9522483,1]
+      WorldTransform: [2.717248,0,0,0,0,2.717248,0,0,0,0,2.717248,0,0.33,1.5749005,2.9522483,1]
     PointLightComponent:
       Active: 0
       Color: [1,0.90556395,0.08305645]
@@ -300,10 +300,10 @@ Entities:
       Parent: 14300943002917955893
       Children: []
     TransformComponent:
-      Position: [-0.095130265,0.31793916,0.058049202]
+      Position: [0,0.31793916,0.058049202]
       Rotation: [0,-0,0]
       Scale: [0.37703243,0.37703243,0.37703243]
-      WorldTransform: [0.37703243,0,0,0,0,0.37703243,0,0,0,0,0.37703243,0,0.33150446,1.7013261,4.2685723,1]
+      WorldTransform: [0.37703243,0,0,0,0,0.37703243,0,0,0,0,0.37703243,0,0.33,1.7013261,4.2685723,1]
   - Entity: 12156363934972497198
     TagComponent:
       Tag: WeaponRecoil
@@ -315,7 +315,7 @@ Entities:
       Position: [0,0,0]
       Rotation: [0,-0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.42663473,1.383387,4.210523,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.33,1.383387,4.210523,1]
     ScriptComponent:
       ScriptUUID: 3366872985723856610
       UserPropertyOverrides:
@@ -339,10 +339,10 @@ Entities:
       Children:
         - 16922120325189435521
     TransformComponent:
-      Position: [0.42663473,-0.41661298,-0.6143637]
+      Position: [0.33,-0.41661298,-0.6143637]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.42663473,1.383387,4.210523,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.33,1.383387,4.210523,1]
   - Entity: 17642454729594052137
     TagComponent:
       Tag: Box
@@ -452,7 +452,7 @@ Entities:
       Position: [0,-0.11320099,-0.015132174]
       Rotation: [-0.00020340085,0,0]
       Scale: [0.051736534,0.056594644,0.18163528]
-      WorldTransform: [0.021186111,0,0,0,0,0.023175506,-4.713918e-06,0,0,1.5128883e-05,0.074379645,0,0.3297033,1.4280399,3.90957,1]
+      WorldTransform: [0.021186111,0,0,0,0,0.023175506,-4.713918e-06,0,0,1.5128883e-05,0.074379645,0,0.33,1.4280399,3.90957,1]
     StaticMeshComponent:
       MeshUUID: 9147101475226164417
       Layer: 1
@@ -537,10 +537,10 @@ Entities:
         - 15412099849582508473
         - 16117594982574674907
     TransformComponent:
-      Position: [-0.09693143,0.09100878,-0.2947564]
+      Position: [0,0.09100878,-0.2947564]
       Rotation: [0,-0,0]
       Scale: [0.4095,0.4095,0.4095]
-      WorldTransform: [0.4095,0,0,0,0,0.4095,0,0,0,0,0.4095,0,0.3297033,1.4743958,3.9157667,1]
+      WorldTransform: [0.4095,0,0,0,0,0.4095,0,0,0,0,0.4095,0,0.33,1.4743958,3.9157667,1]
     ScriptComponent:
       ScriptUUID: 8102167312162542918
       UserPropertyOverrides:
@@ -557,7 +557,7 @@ Entities:
       Position: [0,0.025450468,0.3817587]
       Rotation: [3.1415927,-0,-0]
       Scale: [-0.09888629,0.109487295,0.109487295]
-      WorldTransform: [-0.040493935,0,0,0,0,-0.044835046,-3.919604e-09,0,0,3.919604e-09,-0.044835046,0,0.3297033,1.4848177,4.072097,1]
+      WorldTransform: [-0.040493935,0,0,0,0,-0.044835046,-3.919604e-09,0,0,3.919604e-09,-0.044835046,0,0.33,1.4848177,4.072097,1]
     StaticMeshComponent:
       MeshUUID: 12205825994227504312
       Layer: 1
@@ -573,7 +573,7 @@ Entities:
       Position: [0,0.42021227,0.48329163]
       Rotation: [0,-0,0]
       Scale: [1,1,1]
-      WorldTransform: [0.4095,0,0,0,0,0.4095,0,0,0,0,0.4095,0,0.3297033,1.6464727,4.1136746,1]
+      WorldTransform: [0.4095,0,0,0,0,0.4095,0,0,0,0,0.4095,0,0.33,1.6464727,4.1136746,1]
     ScriptComponent:
       ScriptUUID: 13629381204485307944
       UserPropertyOverrides: []
@@ -693,7 +693,7 @@ Entities:
       Position: [0,0,0]
       Rotation: [0,-0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.42663473,1.383387,4.210523,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.33,1.383387,4.210523,1]
     ScriptComponent:
       ScriptUUID: 15631423950997928565
       UserPropertyOverrides:
@@ -711,10 +711,25 @@ Entities:
       Position: [0,0,0]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.42663473,1.383387,4.210523,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.33,1.383387,4.210523,1]
     ScriptComponent:
       ScriptUUID: 10843162672597406671
-      UserPropertyOverrides: []
+      UserPropertyOverrides:
+        - Name: SwayRotSmoothness
+          Type: 3
+          Value: 5
+        - Name: SwayRotStep
+          Type: 3
+          Value: 2
+        - Name: SwayPosSmoothness
+          Type: 3
+          Value: 4
+        - Name: SwayRotAmount
+          Type: 3
+          Value: 5
+        - Name: SwayPosAmount
+          Type: 3
+          Value: 0.06
 Environment:
   Skybox:
     Enabled: 1
