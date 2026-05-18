@@ -97,7 +97,7 @@ Entities:
       Scale: [1,1,1]
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,1.8626451e-09,1.8,4.824887,1]
     CameraComponent:
-      Projection: [0.7779549,0,0,0,0,1.428148,0,0,0,0,-1.00008,-1,0,0,-0.0400016,0]
+      Projection: [0.80431414,0,0,0,0,1.428148,0,0,0,0,-1.00008,-1,0,0,-0.0400016,0]
       Type: 1
       IsActive: 1
       RenderMask: 65533
@@ -327,7 +327,7 @@ Entities:
           Value: 0.1
         - Name: RotationX
           Type: 3
-          Value: 3
+          Value: 5
         - Name: KickUpY
           Type: 3
           Value: 0.05
@@ -554,7 +554,7 @@ Entities:
       Parent: 10540265532210002179
       Children: []
     TransformComponent:
-      Position: [0,0.025450574,0.38175866]
+      Position: [0,0.025450468,0.3817587]
       Rotation: [3.1415927,-0,-0]
       Scale: [-0.09888629,0.109487295,0.109487295]
       WorldTransform: [-0.040493935,0,0,0,0,-0.044835046,-3.919604e-09,0,0,3.919604e-09,-0.044835046,0,0.3297033,1.4848177,4.072097,1]
