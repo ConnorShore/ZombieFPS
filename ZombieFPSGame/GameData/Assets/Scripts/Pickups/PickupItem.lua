@@ -22,6 +22,8 @@ function PickUpItem:OnPickup(entity, otherEntity)
         Scene.RemoveEntity(self.PrefabEntity)
         self.PrefabEntity = nil
     end
+
+    Scene.RemoveEntity(entity)
 end
 
 function PickUpItem:GetAttachmentData()

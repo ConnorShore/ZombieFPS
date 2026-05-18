@@ -330,7 +330,7 @@ Entities:
           Value: 3
         - Name: KickUpY
           Type: 3
-          Value: 0.02
+          Value: 0.05
   - Entity: 9548350549033941053
     TagComponent:
       Tag: WeaponHandler
