@@ -1,5 +1,9 @@
 Assets:
   - Type: Texture
+    UUID: 17608889885004568014
+    Name: AssaultRifle_ARMetallic-ARRoughness.png
+    FilePath: Models/M4/AssaultRifle_ARMetallic-ARRoughness.png
+  - Type: Texture
     UUID: 3343954652411117201
     Name: Crosshair
     FilePath: Textures/Crosshair.png
@@ -12,6 +16,10 @@ Assets:
     Name: box
     FilePath: Textures/box.jpg
   - Type: Texture
+    UUID: 16364078516430552352
+    Name: AssaultRifle_ORM_Mat0
+    FilePath: Models/M4/AssaultRifle_ORM_Mat0.png
+  - Type: Texture
     UUID: 15863835653609318779
     Name: HolographicReticle
     FilePath: Textures/HolographicReticle.png
@@ -19,14 +27,6 @@ Assets:
     UUID: 9008232455192275898
     Name: AssaultRifle_ARColor.png
     FilePath: Models/M4/AssaultRifle_ARColor.png
-  - Type: Texture
-    UUID: 17608889885004568014
-    Name: AssaultRifle_ARMetallic-ARRoughness.png
-    FilePath: Models/M4/AssaultRifle_ARMetallic-ARRoughness.png
-  - Type: Texture
-    UUID: 16364078516430552352
-    Name: AssaultRifle_ORM_Mat0
-    FilePath: Models/M4/AssaultRifle_ORM_Mat0.png
   - Type: Shader
     UUID: 3290979914783484062
     Name: HolographicSight
@@ -35,6 +35,10 @@ Assets:
     UUID: 16605421126880563658
     Name: MuzzleFlash
     FilePath: Scripts/MuzzleFlash.lua
+  - Type: Script
+    UUID: 2649306146174457867
+    Name: ScopeMountBehavior
+    FilePath: Scripts/ScopeMountBehavior.lua
   - Type: Script
     UUID: 16404415058251315788
     Name: WeaponFire
@@ -48,6 +52,10 @@ Assets:
     Name: PowerUpDrop
     FilePath: Scripts/PowerUpDrop.lua
   - Type: Script
+    UUID: 6068451618412420797
+    Name: CharacterMovement
+    FilePath: Scripts/CharacterMovement.lua
+  - Type: Script
     UUID: 4494000890898150304
     Name: Crosshair
     FilePath: Scripts/Crosshair.lua
@@ -59,10 +67,6 @@ Assets:
     UUID: 8562544563539838448
     Name: PlayerInteraction
     FilePath: Scripts/PlayerInteraction.lua
-  - Type: Script
-    UUID: 6068451618412420797
-    Name: CharacterMovement
-    FilePath: Scripts/CharacterMovement.lua
   - Type: Script
     UUID: 5025897937436236093
     Name: MouseLook
@@ -76,13 +80,13 @@ Assets:
     Name: WeaponHandler
     FilePath: Scripts/WeaponHandler.lua
   - Type: Material
-    UUID: 18352460508626254789
-    Name: BoxMaterial
-    FilePath: Materials/BoxMaterial.ebmat
-  - Type: Material
     UUID: 13734008897576602447
     Name: GroundMaterial
     FilePath: Materials/GroundMaterial.ebmat
+  - Type: Material
+    UUID: 18352460508626254789
+    Name: BoxMaterial
+    FilePath: Materials/BoxMaterial.ebmat
   - Type: Material
     UUID: 1868779223986162857
     Name: PickupMaterial
@@ -112,7 +116,7 @@ Assets:
     Name: AssaultRifle
     FilePath: Models/M4/AssaultRifle.ebmodel
   - Type: Prefab
-    UUID: 3534975074157006888
+    UUID: 9723225066709211091
     Name: HolographicSight
     FilePath: Prefabs/HolographicSight.ebprefab
   - Type: Font

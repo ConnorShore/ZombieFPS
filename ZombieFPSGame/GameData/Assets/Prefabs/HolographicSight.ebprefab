@@ -1,33 +1,33 @@
 Prefab: HolographicSight
 PrefabEntities:
-  - Entity: 12494807328652813677
+  - Entity: 15358927768567445396
     TagComponent:
       Tag: HolographicSight
     RelationshipComponent:
-      Parent: 10540265532210002179
+      Parent: 0
       Children:
-        - 2114081758395712569
+        - 13949191695258569380
     TransformComponent:
-      Position: [0.000891924,0.41910753,0.51930636]
+      Position: [0,0,0]
       Rotation: [3.1415927,-0,-0]
-      Scale: [-0.09888629,0.109487295,0.109487295]
-      WorldTransform: [-0.040493935,0,0,0,0,-0.044835046,-3.919604e-09,0,0,3.919604e-09,-0.044835046,0,0.33006856,1.6460203,4.203633,1]
+      Scale: [0.1,0.1,0.1]
+      WorldTransform: [0.1,0,0,0,0,-0.1,-8.742278e-09,0,0,8.742278e-09,-0.1,0,0,0,0,1]
     StaticMeshComponent:
       MeshUUID: 17797478620356971073
       Layer: 1
     MaterialComponent:
       MaterialUUID: 3531595371019758275
-  - Entity: 2114081758395712569
+  - Entity: 13949191695258569380
     TagComponent:
       Tag: Reticle
     RelationshipComponent:
-      Parent: 12494807328652813677
+      Parent: 15358927768567445396
       Children: []
     TransformComponent:
       Position: [4.7683716e-06,-1.4350929,0.9476013]
       Rotation: [3.1415925,-0,0]
       Scale: [1.6156999,1.6157002,1.6157002]
-      WorldTransform: [-0.065426044,0,0,0,0,0.07244,-4.6052304e-09,0,0,4.6052304e-09,0.07244,0,0.33006838,1.7103628,4.161147,1]
+      WorldTransform: [0.16157,0,0,0,0,0.16157003,-1.0271497e-08,0,0,1.0271497e-08,0.16157003,0,4.7683716e-07,0.14350931,-0.09476012,1]
     StaticMeshComponent:
       MeshUUID: 52
       Layer: 1
