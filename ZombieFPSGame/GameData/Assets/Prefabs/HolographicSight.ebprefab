@@ -1,27 +1,29 @@
 Prefab: HolographicSight
 PrefabEntities:
-  - Entity: 15358927768567445396
+  - Entity: 12021635994689636046
     TagComponent:
       Tag: HolographicSight
     RelationshipComponent:
       Parent: 0
       Children:
-        - 13949191695258569380
+        - 4193561221402797175
     TransformComponent:
-      Position: [0,0,0]
+      Position: [0,1.8626451e-09,0]
       Rotation: [3.1415927,-0,-0]
       Scale: [0.1,0.1,0.1]
-      WorldTransform: [0.1,0,0,0,0,-0.1,-8.742278e-09,0,0,8.742278e-09,-0.1,0,0,0,0,1]
+      WorldTransform: [0.1,0,0,0,0,-0.1,-8.742278e-09,0,0,8.742278e-09,-0.1,0,0,1.8626451e-09,0,1]
     StaticMeshComponent:
       MeshUUID: 17797478620356971073
       Layer: 1
     MaterialComponent:
       MaterialUUID: 3531595371019758275
-  - Entity: 13949191695258569380
+    PrefabComponent:
+      PrefabUUID: 16541249095124470783
+  - Entity: 4193561221402797175
     TagComponent:
       Tag: Reticle
     RelationshipComponent:
-      Parent: 15358927768567445396
+      Parent: 12021635994689636046
       Children: []
     TransformComponent:
       Position: [4.7683716e-06,-1.4350929,0.9476013]

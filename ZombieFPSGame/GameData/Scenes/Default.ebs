@@ -720,13 +720,13 @@ Entities:
           Value: 5
         - Name: SwayRotStep
           Type: 3
-          Value: 2
+          Value: 1
         - Name: SwayPosSmoothness
           Type: 3
           Value: 4
         - Name: SwayRotAmount
           Type: 3
-          Value: 5
+          Value: 3
         - Name: SwayPosAmount
           Type: 3
           Value: 0.06

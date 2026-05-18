@@ -7,9 +7,10 @@ WeaponMovement.SwayPosStep = 0.01
 WeaponMovement.SwayPosAmount = 0.05
 WeaponMovement.SwayRotStep = 3
 WeaponMovement.SwayRotAmount = 5
-
 WeaponMovement.SwayPosSmoothness = 5.0
 WeaponMovement.SwayRotSmoothness = 5.0
+
+WeaponMovement.BobSpeed = 0.05
 
 function WeaponMovement:OnCreate(entity)
 
@@ -41,14 +42,18 @@ function WeaponMovement:Sway(transform, mouseDelta, delta)
     local swayRot = Vector3f.new(invertedMouseDeltaRot.y, invertedMouseDeltaRot.x, invertedMouseDeltaRot.x)
 
     -- Then add sway based on mouse movement (lerp towards target sway based on mouse delta)
-    local rotQuaternion = Quaternion.Euler(swayRot)
-    local currentRotQuaternion = Quaternion.Euler(transform.Rotation)
-    local targetRotQuaternion = Quaternion.Slerp(currentRotQuaternion, rotQuaternion, self.SwayRotSmoothness * delta)
-    transform.Rotation = Quaternion.ToEuler(targetRotQuaternion)
+    local rotQuaternion = Math.ToQuaternion(swayRot)
+    local currentRotQuaternion = Math.ToQuaternion(transform.Rotation)
+    local targetRotQuaternion = Math.Slerp(currentRotQuaternion, rotQuaternion, self.SwayRotSmoothness * delta)
+    transform.Rotation = Math.ToEulerAngles(targetRotQuaternion)
 end
 
 function WeaponMovement:Bob(transform, delta)
+    local playerController = Scene.GetEntityByName("Player"):GetComponent("CharacterControllerComponent")
+    -- Bob Position offset
 
+
+    -- bob rotation offset
 end
 
 return WeaponMovement
