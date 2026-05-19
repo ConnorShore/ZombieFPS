@@ -104,9 +104,10 @@ function WeaponFire:Fire(entity)
             local impactEffect = Scene.InstantiatePrefab("ImpactConcrete", impactPos)
             if impactEffect then
                 local impactTransform = impactEffect:GetComponent("TransformComponent")
-                impactTransform.Rotation = Math.LookAt(hitResult.CollisionPoint, hitResult.SurfaceNormal + hitResult.CollisionPoint)
+                local impactRotation = Math.LookAt(hitResult.CollisionPoint, hitResult.SurfaceNormal + hitResult.CollisionPoint)
+                impactTransform.Rotation = impactRotation
                 local particleEmitter = impactEffect:GetComponent("ParticleEmitterComponent")
-                Particles.Burst(particleEmitter, impactPos, 100)
+                Particles.Burst(particleEmitter, impactPos, 100, Math.ToQuaternion(impactRotation))
             end
         end
     end

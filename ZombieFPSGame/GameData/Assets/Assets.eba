@@ -16,6 +16,10 @@ Assets:
     Name: box
     FilePath: Textures/box.jpg
   - Type: Texture
+    UUID: 9596009522481818923
+    Name: BulletHole
+    FilePath: Textures/BulletHole.png
+  - Type: Texture
     UUID: 16364078516430552352
     Name: AssaultRifle_ORM_Mat0
     FilePath: Models/M4/AssaultRifle_ORM_Mat0.png
@@ -27,10 +31,6 @@ Assets:
     UUID: 15863835653609318779
     Name: HolographicReticle
     FilePath: Textures/HolographicReticle.png
-  - Type: Texture
-    UUID: 9596009522481818923
-    Name: BulletHole
-    FilePath: Textures/BulletHole.png
   - Type: Shader
     UUID: 3290979914783484062
     Name: HolographicSight
@@ -148,7 +148,7 @@ Assets:
     Name: Tracer
     FilePath: Prefabs/Tracer.ebprefab
   - Type: Prefab
-    UUID: 13314489817639197011
+    UUID: 13559857553863366497
     Name: ImpactConcrete
     FilePath: Prefabs/ImpactConcrete.ebprefab
   - Type: Font

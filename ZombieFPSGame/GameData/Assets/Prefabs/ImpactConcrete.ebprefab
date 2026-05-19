@@ -1,24 +1,24 @@
 Prefab: ImpactConcrete
 PrefabEntities:
-  - Entity: 3022635479553266215
+  - Entity: 2461199824786821992
     TagComponent:
       Tag: ImpactConcrete
     RelationshipComponent:
       Parent: 0
       Children: []
     TransformComponent:
-      Position: [0,0.48656926,0]
+      Position: [0,0,0]
       Rotation: [0,0,0]
       Scale: [0.3,0.3,0.3]
-      WorldTransform: [0.3,0,0,0,0,0.3,0,0,0,0,0.3,0,0,0.48656926,0,1]
+      WorldTransform: [0.3,0,0,0,0,0.3,0,0,0,0,0.3,0,0,0,0,1]
     SpriteComponent:
       Color: [1,1,1,1]
       TextureUUID: 9596009522481818923
       ScreenSpace: 0
     ParticleEmitterComponent:
       EmissionRate: 200
-      Velocity: [0,0,3]
-      VelocityVariation: [3,3,1.5]
+      Velocity: [0,0,-3]
+      VelocityVariation: [3,3,-1.5]
       Drag: 0.3
       AngularVelocity: 0
       AngularVelocityVariation: 0.2

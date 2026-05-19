@@ -92,12 +92,12 @@ Entities:
         - 9548350549033941053
         - 17202988526070122190
     TransformComponent:
-      Position: [1.8635546e-09,0,-0.0018620491]
+      Position: [9.094947e-13,0,-0.0018620491]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,1.8626451e-09,1.8,4.824887,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1.8,4.824887,1]
     CameraComponent:
-      Projection: [0.9360659,0,0,0,0,1.428148,0,0,0,0,-1.00008,-1,0,0,-0.0400016,0]
+      Projection: [0.80431414,0,0,0,0,1.428148,0,0,0,0,-1.00008,-1,0,0,-0.0400016,0]
       Type: 1
       IsActive: 1
       RenderMask: 65533
@@ -219,7 +219,7 @@ Entities:
       Position: [-9.094947e-13,0,0]
       Rotation: [0,-0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,1.8617357e-09,1.8,4.824887,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-9.094947e-13,1.8,4.824887,1]
     ScriptComponent:
       ScriptUUID: 8562544563539838448
       UserPropertyOverrides:
@@ -432,13 +432,13 @@ Entities:
       Position: [0,0,0]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,1.8626451e-09,1.8,4.824887,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1.8,4.824887,1]
     ScriptComponent:
       ScriptUUID: 16404415058251315788
       UserPropertyOverrides:
         - Name: BloomPerShot
           Type: 3
-          Value: 0.03
+          Value: 0.02
         - Name: FireRate
           Type: 2
           Value: 500
@@ -447,13 +447,13 @@ Entities:
           Value: 3
         - Name: MaxHipBloom
           Type: 3
-          Value: 1
+          Value: 0.75
         - Name: BloomDecayRate
           Type: 3
           Value: 0.6
         - Name: BaseHipBloom
           Type: 3
-          Value: 0.02
+          Value: 0.05
   - Entity: 798897515031958083
     TagComponent:
       Tag: Magazine
