@@ -1,0 +1,55 @@
+Prefab: Tracer
+PrefabEntities:
+  - Entity: 3582900744362716325
+    TagComponent:
+      Tag: Tracer
+    RelationshipComponent:
+      Parent: 0
+      Children:
+        - 2213311078791244083
+        - 8198483448685554419
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,0,0]
+      Scale: [0.05,0.05,0.05]
+      WorldTransform: [0.05,0,0,0,0,0.05,0,0,0,0,0.05,0,0,0,0,1]
+    ScriptComponent:
+      ScriptUUID: 7847366610859754620
+      UserPropertyOverrides:
+        - Name: Speed
+          Type: 3
+          Value: 75
+    PrefabComponent:
+      PrefabUUID: 9099603156203677000
+  - Entity: 2213311078791244083
+    TagComponent:
+      Tag: Quad1
+    RelationshipComponent:
+      Parent: 3582900744362716325
+      Children: []
+    TransformComponent:
+      Position: [0,0,-0.5]
+      Rotation: [1.5707964,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [0.05,0,0,0,0,2.9802323e-09,0.049999997,0,0,-0.049999997,2.9802323e-09,0,0,0,-0.025,1]
+    StaticMeshComponent:
+      MeshUUID: 52
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 7112033288364404519
+  - Entity: 8198483448685554419
+    TagComponent:
+      Tag: Quad2
+    RelationshipComponent:
+      Parent: 3582900744362716325
+      Children: []
+    TransformComponent:
+      Position: [0,0,-0.5]
+      Rotation: [1.5707964,0,1.5707964]
+      Scale: [1,1,1]
+      WorldTransform: [5.9604646e-09,0.049999993,0,0,0,5.9604646e-09,0.049999993,0,0.049999993,0,5.9604646e-09,0,0,0,-0.025,1]
+    StaticMeshComponent:
+      MeshUUID: 52
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 7112033288364404519

@@ -7,10 +7,10 @@ Entities:
       Parent: 0
       Children: []
     TransformComponent:
-      Position: [0,-0.1,0]
+      Position: [0,-0.099999994,0]
       Rotation: [0,0,0]
       Scale: [50,0.2,50]
-      WorldTransform: [50,0,0,0,0,0.2,0,0,0,0,50,0,0,-0.1,0,1]
+      WorldTransform: [50,0,0,0,0,0.2,0,0,0,0,50,0,0,-0.099999994,0,1]
     RigidBodyComponent:
       Type: 0
       Mass: 1
@@ -259,13 +259,13 @@ Entities:
     TagComponent:
       Tag: MuzzleFlash
     RelationshipComponent:
-      Parent: 10540265532210002179
+      Parent: 18106011769171454920
       Children: []
     TransformComponent:
-      Position: [0,0.24543285,-2.3529143]
-      Rotation: [0,-0,0]
+      Position: [0,-7.1525574e-07,-0.14891768]
+      Rotation: [1.2391838,-0,0]
       Scale: [6.635526,6.635526,6.635526]
-      WorldTransform: [2.717248,0,0,0,0,2.717248,0,0,0,0,2.717248,0,0.33,1.5749005,2.9522483,1]
+      WorldTransform: [2.717248,0,0,0,0,0.8846494,2.5692086,0,0,-2.5692086,0.8846494,0,0.33,1.5709076,2.938069,1]
     PointLightComponent:
       Active: 0
       Color: [1,0.90556395,0.08305645]
@@ -436,12 +436,24 @@ Entities:
     ScriptComponent:
       ScriptUUID: 16404415058251315788
       UserPropertyOverrides:
+        - Name: BloomPerShot
+          Type: 3
+          Value: 0.03
         - Name: FireRate
           Type: 2
           Value: 500
         - Name: ImpactForce
           Type: 3
           Value: 3
+        - Name: MaxHipBloom
+          Type: 3
+          Value: 1
+        - Name: BloomDecayRate
+          Type: 3
+          Value: 0.6
+        - Name: BaseHipBloom
+          Type: 3
+          Value: 0.02
   - Entity: 798897515031958083
     TagComponent:
       Tag: Magazine
@@ -534,8 +546,8 @@ Entities:
       Children:
         - 6252349899130932054
         - 798897515031958083
-        - 15412099849582508473
         - 16117594982574674907
+        - 18106011769171454920
     TransformComponent:
       Position: [0,0.09100878,-0.2947564]
       Rotation: [0,-0,0]
@@ -736,6 +748,47 @@ Entities:
         - Name: SwayRotAmount
           Type: 2
           Value: 2
+  - Entity: 2608699378515154292
+    TagComponent:
+      Tag: Wall
+    RelationshipComponent:
+      Parent: 0
+      Children: []
+    TransformComponent:
+      Position: [-10.208301,2.218621,-6.631068]
+      Rotation: [0,-0.7179043,0]
+      Scale: [1,4.8661513,6.340652]
+      WorldTransform: [0.7531859,0,0.6578077,0,0,4.8661513,0,0,-4.17093,0,4.77569,0,-10.208301,2.218621,-6.631068,1]
+    RigidBodyComponent:
+      Type: 0
+      Mass: 1
+      GravityEnabled: 1
+    BoxColliderComponent:
+      Size: [1,1,1]
+      IsTrigger: 0
+      OffsetPosition: [0,0,0]
+      OffsetRotation: [0,0,0]
+      Category: 1
+      CollisionMask: 1
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 0
+    StaticMeshComponent:
+      MeshUUID: 51
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 31
+  - Entity: 18106011769171454920
+    TagComponent:
+      Tag: BarrelTip
+    RelationshipComponent:
+      Parent: 10540265532210002179
+      Children:
+        - 15412099849582508473
+    TransformComponent:
+      Position: [0,0.23568273,-2.2386222]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [0.4095,0,0,0,0,0.4095,0,0,0,0,0.4095,0,0.33,1.5709078,2.9990509,1]
 Environment:
   Skybox:
     Enabled: 1
