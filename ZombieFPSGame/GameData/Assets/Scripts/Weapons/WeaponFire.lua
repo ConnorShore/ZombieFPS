@@ -97,6 +97,17 @@ function WeaponFire:Fire(entity)
         if hitEntity:ContainsComponent("RigidBodyComponent") then
             local rigidbody = hitEntity:GetComponent("RigidBodyComponent")
             rigidbody:ApplyImpulseAtPoint(forward * self.ImpactForce, hitResult.CollisionPoint)
+
+            -- TODO: Move impact logic to a separate script on the hit entity (or some other place probably)
+            -- Offset slightly along the surface normal to avoid z-fighting with the hit surface
+            local impactPos = hitResult.CollisionPoint + hitResult.SurfaceNormal * 0.01
+            local impactEffect = Scene.InstantiatePrefab("ImpactConcrete", impactPos)
+            if impactEffect then
+                local impactTransform = impactEffect:GetComponent("TransformComponent")
+                impactTransform.Rotation = Math.LookAt(hitResult.CollisionPoint, hitResult.SurfaceNormal + hitResult.CollisionPoint)
+                local particleEmitter = impactEffect:GetComponent("ParticleEmitterComponent")
+                Particles.Burst(particleEmitter, impactPos, 100)
+            end
         end
     end
 
