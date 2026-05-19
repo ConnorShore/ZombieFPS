@@ -11,25 +11,21 @@ WeaponFire.MaxHipBloom = 0.15     -- Maximum inaccuracy when holding the trigger
 WeaponFire.BloomPerShot = 0.03    -- How much the cone grows per shot
 WeaponFire.BloomDecayRate = 0.5   -- How fast the cone shrinks when not shooting
 
+WeaponFire.TracerEnabled = true
+WeaponFire.TracerCadence = 3 -- Spawn a tracer every 3 shots (1 = every shot, 2 = every other shot, etc.)
+
 WeaponFire.GunshotSound = "M4_Shot"
 
 function WeaponFire:OnCreate(entity)
     self.TimeSinceLastShot = 0.0
     self.CurrentBloom = self.BaseHipBloom
-
-    -- keep list of recent 10 shot contact points
-    self.RecentShots = {}
+    self.ShotCount = 0
 end
 
 function WeaponFire:OnUpdate(entity, delta)
     self.TimeSinceLastShot = self.TimeSinceLastShot + delta
     local timeBetweenShots = 60.0 / self.FireRate
     local canFire = self.TimeSinceLastShot >= timeBetweenShots
-
-    -- Draw debug hitpoints
-    for _, point in ipairs(self.RecentShots) do
-        Debug.DrawCube(point, Vector3f.new(0.1, 0.1, 0.1), Vector4f.new(1.0, 0.0, 0.0, 1.0))
-    end
 
     -- Handle bloom increase/decrease
     if self.CurrentBloom > self.BaseHipBloom then
@@ -48,15 +44,14 @@ function WeaponFire:OnUpdate(entity, delta)
 end
 
 function WeaponFire:Fire(entity)
+    self.ShotCount = self.ShotCount + 1
 
     AudioSystem.PlaySound(self.GunshotSound)
     
-
     local transform = entity:GetComponent("TransformComponent")
     local forward = transform:GetForward()
     local right = transform:GetRight()
     local up = transform:GetUp()
-
 
     local aimingEntity = Scene.GetEntityByName("WeaponAiming")
     local isADS = aimingEntity and aimingEntity:GetScriptInstance().IsAiming or false
@@ -88,16 +83,15 @@ function WeaponFire:Fire(entity)
         muzzleFlashScript:PlayFlash()
     end
 
+    -- Spawn tracer
+    if self.TracerEnabled and (self.ShotCount % self.TracerCadence == 0) then
+        self:SpawnTracer(endPoint)
+    end
+
     -- Cast a ray to detect hits
     local hitResult = Physics.CastRay(position, endPoint)
     if hitResult.Hit then
         local hitEntity = hitResult.Entity
-
-        -- Draw cube at hit point for debugging
-        self.RecentShots[#self.RecentShots + 1] = hitResult.CollisionPoint
-        if #self.RecentShots > 10 then
-            table.remove(self.RecentShots, 1)
-        end
 
         -- Apply force to the hit entity if it has a RigidbodyComponent
         if hitEntity:ContainsComponent("RigidBodyComponent") then
@@ -111,6 +105,25 @@ function WeaponFire:Fire(entity)
     if recoilEntity then
         local recoilScript = recoilEntity:GetScriptInstance()
         recoilScript:Fire()
+    end
+end
+
+function WeaponFire:SpawnTracer(endPos)
+    local gunTip = Scene.GetEntityByName("BarrelTip")
+    local forward = gunTip and gunTip:GetComponent("TransformComponent"):GetForward() or Vector3f.new(0, 0, 1)
+    local startPos = gunTip and gunTip:GetComponent("TransformComponent").WorldPosition or Vector3f.new(0, 0, 0)
+
+    -- Spawn it a bit infront of the gun tip to avoid z-fighting with the gun model
+    startPos = startPos + Math.Normalize(forward) * 0.3
+
+    local tracer = Scene.InstantiatePrefab("Tracer", startPos)
+    if tracer and startPos then
+        local tracerScript = tracer:GetScriptInstance()
+        if not tracerScript then
+            Log.Error("Tracer prefab does not have a script instance!")
+            return
+        end
+        tracerScript:Spawn(tracer, startPos, endPos)
     end
 end
 
