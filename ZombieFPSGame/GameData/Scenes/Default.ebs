@@ -436,12 +436,24 @@ Entities:
     ScriptComponent:
       ScriptUUID: 16404415058251315788
       UserPropertyOverrides:
+        - Name: BloomPerShot
+          Type: 3
+          Value: 0.03
         - Name: FireRate
           Type: 2
           Value: 500
         - Name: ImpactForce
           Type: 3
           Value: 3
+        - Name: MaxHipBloom
+          Type: 3
+          Value: 1
+        - Name: BloomDecayRate
+          Type: 3
+          Value: 0.6
+        - Name: BaseHipBloom
+          Type: 3
+          Value: 0.02
   - Entity: 798897515031958083
     TagComponent:
       Tag: Magazine
@@ -736,6 +748,35 @@ Entities:
         - Name: SwayRotAmount
           Type: 2
           Value: 2
+  - Entity: 2608699378515154292
+    TagComponent:
+      Tag: Wall
+    RelationshipComponent:
+      Parent: 0
+      Children: []
+    TransformComponent:
+      Position: [-10.208301,2.218621,-6.631068]
+      Rotation: [0,-0.7179043,0]
+      Scale: [1,4.8661513,6.340652]
+      WorldTransform: [0.7531859,0,0.6578077,0,0,4.8661513,0,0,-4.17093,0,4.77569,0,-10.208301,2.218621,-6.631068,1]
+    RigidBodyComponent:
+      Type: 0
+      Mass: 1
+      GravityEnabled: 1
+    BoxColliderComponent:
+      Size: [1,1,1]
+      IsTrigger: 0
+      OffsetPosition: [0,0,0]
+      OffsetRotation: [0,0,0]
+      Category: 1
+      CollisionMask: 1
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 0
+    StaticMeshComponent:
+      MeshUUID: 51
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 31
 Environment:
   Skybox:
     Enabled: 1
