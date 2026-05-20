@@ -1,11 +1,12 @@
 Prefab: ImpactConcrete
 PrefabEntities:
-  - Entity: 2461199824786821992
+  - Entity: 12166299019371921337
     TagComponent:
       Tag: ImpactConcrete
     RelationshipComponent:
       Parent: 0
       Children: []
+      IsAttachment: 0
     TransformComponent:
       Position: [0,0,0]
       Rotation: [0,0,0]
@@ -15,6 +16,9 @@ PrefabEntities:
       Color: [1,1,1,1]
       TextureUUID: 9596009522481818923
       ScreenSpace: 0
+    LifetimeComponent:
+      Lifetime: 60
+      InitialLifetime: 60
     ParticleEmitterComponent:
       EmissionRate: 200
       Velocity: [0,0,-3]

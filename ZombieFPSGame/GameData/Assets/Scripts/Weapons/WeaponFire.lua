@@ -101,13 +101,16 @@ function WeaponFire:Fire(entity)
             -- TODO: Move impact logic to a separate script on the hit entity (or some other place probably)
             -- Offset slightly along the surface normal to avoid z-fighting with the hit surface
             local impactPos = hitResult.CollisionPoint + hitResult.SurfaceNormal * 0.01
-            local impactEffect = Scene.InstantiatePrefab("ImpactConcrete", impactPos)
+
+            -- local impactEffect = Scene.InstantiatePrefab("ImpactConcrete", impactPos)
+            local impactEffect = Scene.RetrieveFromPool("ImpactConcretePool", impactPos)
+            Log.Info("Impact effect pulled from pool: " .. tostring(impactEffect ~= nil))
             if impactEffect then
                 local impactTransform = impactEffect:GetComponent("TransformComponent")
                 local impactRotation = Math.LookAt(hitResult.CollisionPoint, hitResult.SurfaceNormal + hitResult.CollisionPoint)
                 impactTransform.Rotation = impactRotation
                 hitEntity:AddChild(impactEffect, true)
-                
+
                 local particleEmitter = impactEffect:GetComponent("ParticleEmitterComponent")
                 Particles.Burst(particleEmitter, impactPos, 100, Math.ToQuaternion(impactRotation))
             end
