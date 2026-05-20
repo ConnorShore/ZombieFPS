@@ -12,7 +12,7 @@ WeaponFire.BloomPerShot = 0.03    -- How much the cone grows per shot
 WeaponFire.BloomDecayRate = 0.5   -- How fast the cone shrinks when not shooting
 
 WeaponFire.TracerEnabled = true
-WeaponFire.TracerCadence = 3 -- Spawn a tracer every 3 shots (1 = every shot, 2 = every other shot, etc.)
+WeaponFire.TracerCadence = 3 -- Spawn a tracer every 3 shots
 
 WeaponFire.GunshotSound = "M4_Shot"
 
@@ -106,6 +106,8 @@ function WeaponFire:Fire(entity)
                 local impactTransform = impactEffect:GetComponent("TransformComponent")
                 local impactRotation = Math.LookAt(hitResult.CollisionPoint, hitResult.SurfaceNormal + hitResult.CollisionPoint)
                 impactTransform.Rotation = impactRotation
+                hitEntity:AddChild(impactEffect, true)
+                
                 local particleEmitter = impactEffect:GetComponent("ParticleEmitterComponent")
                 Particles.Burst(particleEmitter, impactPos, 100, Math.ToQuaternion(impactRotation))
             end
