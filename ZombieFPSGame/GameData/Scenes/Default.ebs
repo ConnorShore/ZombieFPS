@@ -101,7 +101,7 @@ Entities:
       Scale: [1,1,1]
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1.8,4.824887,1]
     CameraComponent:
-      Projection: [0.9360659,0,0,0,0,1.428148,0,0,0,0,-1.00008,-1,0,0,-0.0400016,0]
+      Projection: [0.80431414,0,0,0,0,1.428148,0,0,0,0,-1.00008,-1,0,0,-0.0400016,0]
       Type: 1
       IsActive: 1
       RenderMask: 65533
@@ -563,7 +563,7 @@ Entities:
     TagComponent:
       Tag: AssaultRifle
     RelationshipComponent:
-      Parent: 14300943002917955893
+      Parent: 230291968303856085
       Children:
         - 6252349899130932054
         - 798897515031958083
@@ -581,6 +581,18 @@ Entities:
         - Name: SightMountName
           Type: 4
           Value: ScopeMount
+        - Name: ReloadStartSound
+          Type: 4
+          Value: ReloadStart
+        - Name: ReloadEndSound
+          Type: 4
+          Value: ReloadEnd
+        - Name: MaxAmmo
+          Type: 2
+          Value: 120
+        - Name: MagazineSize
+          Type: 2
+          Value: 30
   - Entity: 6252349899130932054
     TagComponent:
       Tag: Weapon
@@ -727,8 +739,8 @@ Entities:
     RelationshipComponent:
       Parent: 12156363934972497198
       Children:
-        - 10540265532210002179
         - 417690053092696263
+        - 230291968303856085
       IsAttachment: 0
     TransformComponent:
       Position: [0,0,0]
@@ -851,6 +863,28 @@ Entities:
       Capacity: 100
       PrefabHandle: 13559857553863366497
       LoopEntities: 1
+  - Entity: 230291968303856085
+    TagComponent:
+      Tag: WeaponHolder
+    RelationshipComponent:
+      Parent: 14300943002917955893
+      Children:
+        - 10540265532210002179
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.33,1.383387,4.210523,1]
+    ScriptComponent:
+      ScriptUUID: 10753367411955256691
+      UserPropertyOverrides:
+        - Name: CurrentWeapon
+          Type: 4
+          Value: AssaultRifle
+        - Name: EmptyGunSound
+          Type: 4
+          Value: EmptyGun
 Environment:
   Skybox:
     Enabled: 1

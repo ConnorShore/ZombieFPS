@@ -5,6 +5,13 @@ WeaponController.MuzzleMountName = ""
 WeaponController.StockMountName = ""
 WeaponController.GripMountName = ""
 
+WeaponController.MaxAmmo = 120
+WeaponController.MagazineSize = 30
+
+WeaponController.ReloadTime = 1.0   -- Time (in seconds) it takes to reload
+WeaponController.ReloadStartSound = ""
+WeaponController.ReloadEndSound = ""
+
 function WeaponController:OnCreate(entity)
     -- 2. Dynamically resolve the mount points based on what you typed in the Editor
     self.MountPoints = {
@@ -15,6 +22,48 @@ function WeaponController:OnCreate(entity)
     }
     
     self.ActiveAttachments = {nil, nil, nil, nil} -- Track active attachments in each slot
+
+    self.CurrentAmmo = self.MagazineSize
+    self.ReserveAmmo = self.MaxAmmo - self.MagazineSize
+    self.IsReloading = false
+    self.ReloadTimer = 0.0
+    self.CanShoot = true
+end
+
+function WeaponController:OnUpdate(entity, delta)
+end
+
+function WeaponController:OnShoot()
+    if self.CurrentAmmo > 0 then
+        self.CurrentAmmo = self.CurrentAmmo - 1
+        Log.Info("Shot fired! Current ammo: " .. self.CurrentAmmo .. "/" .. self.MagazineSize)
+    else
+        Log.Warn("Out of ammo!")
+        self.CanShoot = false
+    end
+end
+
+function WeaponController:OnReload()
+    if not self.IsReloading and self.ReserveAmmo > 0 then
+        self.IsReloading = true
+        if self.ReloadStartSound ~= "" then
+            AudioSystem.PlaySound(self.ReloadStartSound)
+        end
+
+        Timer.SetTimeout(function()
+            self.CurrentAmmo = self.ReserveAmmo > self.MagazineSize and self.MagazineSize or self.ReserveAmmo
+            self.ReserveAmmo = self.ReserveAmmo > self.MagazineSize and self.ReserveAmmo - self.MagazineSize or 0
+
+            if self.ReloadEndSound ~= "" then
+                AudioSystem.PlaySound(self.ReloadEndSound)
+            end
+            
+            self.IsReloading = false
+            self.CanShoot = true
+            Log.Info("Reload complete!")
+        end, self.ReloadTime)
+        Log.Info("Started reloading...")
+    end
 end
 
 function WeaponController:EquipAttachment(attachmentType, prefabName)

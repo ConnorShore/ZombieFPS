@@ -17,15 +17,16 @@ WeaponFire.TracerCadence = 3 -- Spawn a tracer every 3 shots
 WeaponFire.GunshotSound = "M4_Shot"
 
 function WeaponFire:OnCreate(entity)
-    self.TimeSinceLastShot = 0.0
+    self.TimeSinceLastShot = 60.0 / self.FireRate -- Initialize so that we can shoot immediately
     self.CurrentBloom = self.BaseHipBloom
     self.ShotCount = 0
+    self.CanShoot = true
 end
 
 function WeaponFire:OnUpdate(entity, delta)
     self.TimeSinceLastShot = self.TimeSinceLastShot + delta
     local timeBetweenShots = 60.0 / self.FireRate
-    local canFire = self.TimeSinceLastShot >= timeBetweenShots
+    self.CanShoot = self.TimeSinceLastShot >= timeBetweenShots
 
     -- Handle bloom increase/decrease
     if self.CurrentBloom > self.BaseHipBloom then
@@ -34,16 +35,11 @@ function WeaponFire:OnUpdate(entity, delta)
             self.CurrentBloom = self.BaseHipBloom
         end
     end
-
-    -- Shoot when left mouse button is pressed and we are allowed to fire based on the fire rate
-    if canFire and Input.IsMouseButtonPressed(MouseButton.Left) then
-        self:Fire(entity)
-        self.TimeSinceLastShot = 0.0
-    end
-
 end
 
 function WeaponFire:Fire(entity)
+    Log.Info("Attempting to fire weapon...")
+    self.TimeSinceLastShot = 0.0
     self.ShotCount = self.ShotCount + 1
 
     AudioSystem.PlaySound(self.GunshotSound)
