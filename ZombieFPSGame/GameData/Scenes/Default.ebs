@@ -582,10 +582,10 @@ Entities:
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [-0.00010059393,0.872907,-0.21577826]
+      Position: [-0.00010058284,0.87290764,-0.21577454]
       Rotation: [1.544226,-1.8633244e-18,4.1359036e-25]
       Scale: [1.0000002,0.9999999,0.9999999]
-      WorldTransform: [0.7403481,-8.271806e-25,-6.268478e-25,0,5.169879e-25,0.7403478,1.8626451e-09,0,6.914713e-25,1.8626451e-09,0.74034774,0,0.33,1.473387,3.9205232,1]
+      WorldTransform: [0.7403481,-8.271806e-25,-6.268478e-25,0,5.169879e-25,0.7403478,1.8626451e-09,0,6.914713e-25,1.8626451e-09,0.74034774,0,0.33,1.4733897,3.920523,1]
     SkinnedMeshComponent:
       MeshUUID: 16822605104283055229
       RootAnimator: 7682715582825238696
@@ -933,6 +933,9 @@ Entities:
         - Name: ReloadEndSound
           Type: 4
           Value: ReloadEnd
+        - Name: ReloadAnimationName
+          Type: 4
+          Value: M4_Reload
     AnimatorComponent:
       SkeletonHandle: 9200567303542518273
       CurrentAnimationHandle: 0
