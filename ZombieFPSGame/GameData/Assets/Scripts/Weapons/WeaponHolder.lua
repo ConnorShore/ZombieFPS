@@ -73,8 +73,8 @@ function WeaponHolder:OnShoot()
         return
     end
 
-    -- Shoot if can shoot
-    weaponFireScript:Fire(weaponEntity)
+    -- Shoot using the WeaponFire proxy so spread is centered on camera/reticle.
+    weaponFireScript:Fire(weaponFireEntity)
     weaponControllerScript:OnShoot()
 end
 
