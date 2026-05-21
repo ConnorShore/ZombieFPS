@@ -12,8 +12,29 @@ WeaponController.ReloadTime = 1.0   -- Time (in seconds) it takes to reload
 WeaponController.ReloadStartSound = ""
 WeaponController.ReloadEndSound = ""
 
+function WeaponController:TryBindAmmoUI()
+    if self.AmmoScript then
+        return true
+    end
+
+    local ammoEntity = Scene.GetEntityByName("AmmoUI")
+    if not ammoEntity then
+        return false
+    end
+
+    local ammoScript = ammoEntity:GetScriptInstance()
+    if not ammoScript then
+        return false
+    end
+
+    self.AmmoEntity = ammoEntity
+    self.AmmoScript = ammoScript
+    self.AmmoScript:SetAmmo(self.CurrentAmmo, self.ReserveAmmo)
+    return true
+end
+
 function WeaponController:OnCreate(entity)
-    -- 2. Dynamically resolve the mount points based on what you typed in the Editor
+    -- Dynamically resolve the mount points based on what you typed in the Editor
     self.MountPoints = {
         [1] = self.SightMountName ~= "" and Scene.GetEntityByName(self.SightMountName) or nil,
         [2] = self.StockMountName ~= "" and Scene.GetEntityByName(self.StockMountName) or nil,
@@ -28,17 +49,28 @@ function WeaponController:OnCreate(entity)
     self.IsReloading = false
     self.ReloadTimer = 0.0
     self.CanShoot = true
+
+    self.AmmoEntity = nil
+    self.AmmoScript = nil
+    if not self:TryBindAmmoUI() then
+        Log.Info("AmmoUI script not ready during WeaponController:OnCreate. Will retry on update.")
+    end
 end
 
 function WeaponController:OnUpdate(entity, delta)
+    if not self.AmmoScript then
+        self:TryBindAmmoUI()
+    end
 end
 
 function WeaponController:OnShoot()
     if self.CurrentAmmo > 0 then
         self.CurrentAmmo = self.CurrentAmmo - 1
-        Log.Info("Shot fired! Current ammo: " .. self.CurrentAmmo .. "/" .. self.MagazineSize)
+
+        if self.AmmoScript or self:TryBindAmmoUI() then
+            self.AmmoScript:SetAmmo(self.CurrentAmmo, self.ReserveAmmo)
+        end
     else
-        Log.Warn("Out of ammo!")
         self.CanShoot = false
     end
 end
@@ -60,15 +92,15 @@ function WeaponController:OnReload()
             
             self.IsReloading = false
             self.CanShoot = true
-            Log.Info("Reload complete!")
+            if self.AmmoScript or self:TryBindAmmoUI() then
+                self.AmmoScript:SetAmmo(self.CurrentAmmo, self.ReserveAmmo)
+            end
         end, self.ReloadTime)
         Log.Info("Started reloading...")
     end
 end
 
 function WeaponController:EquipAttachment(attachmentType, prefabName)
-    Log.Info("EquipAttachment called with type: " .. tostring(attachmentType) .. " and prefab: " .. tostring(prefabName))
-
     local mountPointEntity = self.MountPoints[attachmentType]
     Log.Info("Attempting to equip attachment of type " .. tostring(attachmentType) .. " with prefab " .. tostring(prefabName))
     
@@ -81,16 +113,13 @@ function WeaponController:EquipAttachment(attachmentType, prefabName)
     if self.ActiveAttachments[attachmentType] ~= nil then
         Scene.RemoveEntity(self.ActiveAttachments[attachmentType])
         self.ActiveAttachments[attachmentType] = nil
-        Log.Info("Removed existing attachment in slot type: " .. tostring(attachmentType))
     end
     
     -- Spawn the new attachment as a child of the specific mount point entity
     local newAttachment = Scene.InstantiatePrefab(prefabName, mountPointEntity)
-    Log.Info("Instantiated new attachment prefab: " .. tostring(newAttachment and newAttachment:GetName() or "NIL") .. " on mount point: " .. mountPointEntity:GetName())
     
     -- Track it
     self.ActiveAttachments[attachmentType] = newAttachment
-    Log.Info("Successfully equipped " .. prefabName .. " to weapon!")
 end
 
 return WeaponController

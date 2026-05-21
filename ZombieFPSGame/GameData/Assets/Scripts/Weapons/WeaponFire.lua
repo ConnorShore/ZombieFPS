@@ -38,7 +38,6 @@ function WeaponFire:OnUpdate(entity, delta)
 end
 
 function WeaponFire:Fire(entity)
-    Log.Info("Attempting to fire weapon...")
     self.TimeSinceLastShot = 0.0
     self.ShotCount = self.ShotCount + 1
 
@@ -100,7 +99,6 @@ function WeaponFire:Fire(entity)
 
             -- local impactEffect = Scene.InstantiatePrefab("ImpactConcrete", impactPos)
             local impactEffect = Scene.RetrieveFromPool("ImpactConcretePool", impactPos)
-            Log.Info("Impact effect pulled from pool: " .. tostring(impactEffect ~= nil))
             if impactEffect then
                 local impactTransform = impactEffect:GetComponent("TransformComponent")
                 local impactRotation = Math.LookAt(hitResult.CollisionPoint, hitResult.SurfaceNormal + hitResult.CollisionPoint)

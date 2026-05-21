@@ -38,7 +38,7 @@ function WeaponHolder:OnShoot()
         return
     end
 
-    local weaponControllerScript = weaponEntity:GetScriptInstance("WeaponController")
+    local weaponControllerScript = weaponEntity:GetScriptInstance()
     if not weaponControllerScript then
         Log.Warn("Weapon entity '" .. self.CurrentWeapon .. "' does not have a WeaponController script attached!")
         return
@@ -54,7 +54,7 @@ function WeaponHolder:OnShoot()
         return
     end
 
-    local weaponFireScript = weaponFireEntity:GetScriptInstance("WeaponFire")
+    local weaponFireScript = weaponFireEntity:GetScriptInstance()
     if not weaponFireScript then
         Log.Warn("WeaponFire entity does not have a WeaponFire script attached!")
         return
@@ -85,7 +85,7 @@ function WeaponHolder:OnReload()
         return
     end
 
-    local weaponControllerScript = weaponEntity:GetScriptInstance("WeaponController")
+    local weaponControllerScript = weaponEntity:GetScriptInstance()
     if not weaponControllerScript then
         Log.Warn("Weapon entity '" .. self.CurrentWeapon .. "' does not have a WeaponController script attached!")
         return

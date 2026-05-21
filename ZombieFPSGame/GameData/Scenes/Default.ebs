@@ -8,10 +8,10 @@ Entities:
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [0,-0.099999994,0]
+      Position: [0,-0.099999964,0]
       Rotation: [0,0,0]
       Scale: [50,0.2,50]
-      WorldTransform: [50,0,0,0,0,0.2,0,0,0,0,50,0,0,-0.099999994,0,1]
+      WorldTransform: [50,0,0,0,0,0.2,0,0,0,0,50,0,0,-0.099999964,0,1]
     RigidBodyComponent:
       Type: 0
       Mass: 1
@@ -242,6 +242,7 @@ Entities:
       Children:
         - 6356908388261273273
         - 3907633173452727534
+        - 13607649132809964640
       IsAttachment: 0
     TransformComponent:
       Position: [9.094947e-13,0,0]
@@ -885,6 +886,45 @@ Entities:
         - Name: EmptyGunSound
           Type: 4
           Value: EmptyGun
+  - Entity: 13607649132809964640
+    TagComponent:
+      Tag: AmmoUI
+    RelationshipComponent:
+      Parent: 17664487549539026246
+      Children:
+        - 3991048282164067314
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0.89820325,0.08584001,0.09765625]
+      Rotation: [0,0,0]
+      Scale: [0.16348793,0.11400004,0.11400004]
+      WorldTransform: [0.16348793,0,0,0,0,0.11400004,0,0,0,0,0.11400004,0,0.89820325,0.08584001,0.09765625,1]
+    SpriteComponent:
+      Color: [0.9700997,0.6449057,0.16114613,1]
+      ScreenSpace: 1
+    ScriptComponent:
+      ScriptUUID: 17429251933582378423
+      UserPropertyOverrides: []
+  - Entity: 3991048282164067314
+    TagComponent:
+      Tag: AmmoText
+    RelationshipComponent:
+      Parent: 13607649132809964640
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-0.2,-0.2,0]
+      Rotation: [0,-0,0]
+      Scale: [6.1166596,8.771927,8.771927]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.8655057,0.06304,0.09765625,1]
+    ScriptComponent:
+      ScriptUUID: 17429251933582378423
+      UserPropertyOverrides: []
+    TextComponent:
+      Text: 0 / 0
+      FontHandle: 213406294560961755
+      Color: [1,1,1,1]
+      ScreenSpace: 1
 Environment:
   Skybox:
     Enabled: 1
