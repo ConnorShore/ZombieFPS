@@ -1,8 +1,5 @@
 local MuzzleFlash = {}
 
--- Expose properties to the editor by adding them to this table. For Example:
--- MuzzleFlash.MyExampleVar = 10
-
 MuzzleFlash.FlashDuration = 0.1
 
 function MuzzleFlash:OnCreate(entity)

@@ -101,7 +101,7 @@ Entities:
       Scale: [1,1,1]
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1.8,4.824887,1]
     CameraComponent:
-      Projection: [0.9360659,0,0,0,0,1.428148,0,0,0,0,-1.00008,-1,0,0,-0.0400016,0]
+      Projection: [0.80431414,0,0,0,0,1.428148,0,0,0,0,-1.00008,-1,0,0,-0.0400016,0]
       Type: 1
       IsActive: 1
       RenderMask: 65533
@@ -277,7 +277,7 @@ Entities:
       Position: [0,-7.1525574e-07,-0.14891768]
       Rotation: [1.2391838,-0,0]
       Scale: [6.635526,6.635526,6.635526]
-      WorldTransform: [2.717248,0,0,0,0,0.8846494,2.5692086,0,0,-2.5692086,0.8846494,0,0.33,1.5709076,2.938069,1]
+      WorldTransform: [2.717248,0,0,0,0,0.8846494,2.5692086,0,0,-2.5692086,0.8846494,0,0.33,1.5709077,2.9380693,1]
     PointLightComponent:
       Active: 0
       Color: [1,0.90556395,0.08305645]
@@ -313,10 +313,10 @@ Entities:
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [0,0.31793916,0.058049202]
+      Position: [0,0.33496273,0.05273485]
       Rotation: [0,-0,0]
       Scale: [0.37703243,0.37703243,0.37703243]
-      WorldTransform: [0.37703243,0,0,0,0,0.37703243,0,0,0,0,0.37703243,0,0.33,1.7013261,4.2685723,1]
+      WorldTransform: [0.37703243,0,0,0,0,0.37703243,0,0,0,0,0.37703243,0,0.33,1.7183497,4.263258,1]
   - Entity: 12156363934972497198
     TagComponent:
       Tag: WeaponRecoil
@@ -473,23 +473,24 @@ Entities:
         - Name: BaseHipBloom
           Type: 3
           Value: 0.05
-  - Entity: 798897515031958083
+  - Entity: 16856999152075546677
     TagComponent:
       Tag: Magazine
     RelationshipComponent:
-      Parent: 10540265532210002179
+      Parent: 5223435511325881819
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [0,-0.11320099,-0.015132174]
-      Rotation: [-0.00020340085,0,0]
-      Scale: [0.051736534,0.056594644,0.18163528]
-      WorldTransform: [0.021186111,0,0,0,0,0.023175506,-4.713918e-06,0,0,1.5128883e-05,0.074379645,0,0.33,1.4280399,3.90957,1]
-    StaticMeshComponent:
-      MeshUUID: 9147101475226164417
+      Position: [-0.00010055642,-0.0825687,0.15739866]
+      Rotation: [2.9280326,2.3841872e-07,1.776357e-15]
+      Scale: [1,1,0.9999998]
+      WorldTransform: [0.7403479,-1.4210855e-14,5.684342e-14,0,2.842171e-14,0.74034774,-5.9604645e-08,0,-7.1054274e-14,4.4703484e-08,0.7403476,0,0.33,1.4733869,3.9205234,1]
+    SkinnedMeshComponent:
+      MeshUUID: 13898711898247753575
+      RootAnimator: 7682715582825238696
       Layer: 1
     MaterialComponent:
-      MaterialUUID: 3531595371019758275
+      MaterialUUID: 4587007159136363848
   - Entity: 16886275650480693085
     TagComponent:
       Tag: PickUpItem
@@ -560,69 +561,49 @@ Entities:
       Layer: 1
     MaterialComponent:
       MaterialUUID: 31
-  - Entity: 10540265532210002179
+  - Entity: 5223435511325881819
     TagComponent:
-      Tag: AssaultRifle
+      Tag: Bone_Magazine
     RelationshipComponent:
-      Parent: 230291968303856085
+      Parent: 15068365271003137802
       Children:
-        - 6252349899130932054
-        - 798897515031958083
-        - 16117594982574674907
-        - 18106011769171454920
+        - 16856999152075546677
       IsAttachment: 0
     TransformComponent:
-      Position: [0,0.09100878,-0.2947564]
-      Rotation: [0,-0,0]
-      Scale: [0.4095,0.4095,0.4095]
-      WorldTransform: [0.4095,0,0,0,0,0.4095,0,0,0,0,0.4095,0,0.33,1.4743958,3.9157667,1]
-    ScriptComponent:
-      ScriptUUID: 8102167312162542918
-      UserPropertyOverrides:
-        - Name: SightMountName
-          Type: 4
-          Value: ScopeMount
-        - Name: ReloadStartSound
-          Type: 4
-          Value: ReloadStart
-        - Name: ReloadEndSound
-          Type: 4
-          Value: ReloadEnd
-        - Name: MaxAmmo
-          Type: 2
-          Value: 120
-        - Name: MagazineSize
-          Type: 2
-          Value: 30
-  - Entity: 6252349899130932054
+      Position: [2.1684043e-19,0.7336016,-0.3261684]
+      Rotation: [-1.3838066,-4.4322476e-08,2.3426259e-07]
+      Scale: [1,0.99999994,1]
+      WorldTransform: [0.7403479,3.741016e-08,-1.7250281e-07,0,-1.0522331e-14,-0.72352904,-0.15690954,0,-1.7651274e-07,0.15690956,-0.72352904,0,0.3300745,1.3889487,4.02145,1]
+  - Entity: 11850582193888695300
     TagComponent:
       Tag: Weapon
     RelationshipComponent:
-      Parent: 10540265532210002179
+      Parent: 15068365271003137802
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [0,0.025450468,0.3817587]
-      Rotation: [3.1415927,-0,-0]
-      Scale: [-0.09888629,0.109487295,0.109487295]
-      WorldTransform: [-0.040493935,0,0,0,0,-0.044835046,-3.919604e-09,0,0,3.919604e-09,-0.044835046,0,0.33,1.4848177,4.072097,1]
-    StaticMeshComponent:
-      MeshUUID: 12205825994227504312
+      Position: [-0.00010059393,0.872907,-0.21577826]
+      Rotation: [1.544226,-1.8633244e-18,4.1359036e-25]
+      Scale: [1.0000002,0.9999999,0.9999999]
+      WorldTransform: [0.7403481,-8.271806e-25,-6.268478e-25,0,5.169879e-25,0.7403478,1.8626451e-09,0,6.914713e-25,1.8626451e-09,0.74034774,0,0.33,1.473387,3.9205232,1]
+    SkinnedMeshComponent:
+      MeshUUID: 16822605104283055229
+      RootAnimator: 7682715582825238696
       Layer: 1
     MaterialComponent:
-      MaterialUUID: 3531595371019758275
+      MaterialUUID: 4587007159136363848
   - Entity: 16117594982574674907
     TagComponent:
       Tag: ScopeMount
     RelationshipComponent:
-      Parent: 10540265532210002179
+      Parent: 7682715582825238696
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [0,0.42021227,0.48329163]
+      Position: [0,0.46380973,0.683362]
       Rotation: [0,-0,0]
-      Scale: [1,1,1]
-      WorldTransform: [0.4095,0,0,0,0,0.4095,0,0,0,0,0.4095,0,0.33,1.6464727,4.1136746,1]
+      Scale: [0.9987805,0.9987805,0.9987805]
+      WorldTransform: [0.4095,0,0,0,0,0.4095,0,0,0,0,0.4095,0,0.33,1.663549,4.2007017,1]
     ScriptComponent:
       ScriptUUID: 13629381204485307944
       UserPropertyOverrides: []
@@ -733,7 +714,7 @@ Entities:
       UserPropertyOverrides:
         - Name: ActiveWeaponEntity
           Type: 4
-          Value: AssaultRifle
+          Value: M4
   - Entity: 14300943002917955893
     TagComponent:
       Tag: WeaponAiming
@@ -773,18 +754,18 @@ Entities:
         - Name: SwayPosAmount
           Type: 3
           Value: 0.07
-        - Name: SwayRotStep
-          Type: 2
-          Value: 1
         - Name: IdleMultiplier
           Type: 3
           Value: 0.12
-        - Name: BobLimit
-          Type: 6
-          Value: [0.05,0.05,0.05]
+        - Name: SwayRotStep
+          Type: 2
+          Value: 1
         - Name: BobSpeed
           Type: 3
           Value: 10
+        - Name: BobLimit
+          Type: 6
+          Value: [0.05,0.05,0.05]
         - Name: BobTotalLimit
           Type: 6
           Value: [0.1,0.1,0.1]
@@ -825,15 +806,15 @@ Entities:
     TagComponent:
       Tag: BarrelTip
     RelationshipComponent:
-      Parent: 10540265532210002179
+      Parent: 7682715582825238696
       Children:
         - 15412099849582508473
       IsAttachment: 0
     TransformComponent:
-      Position: [0,0.23568273,-2.2386222]
-      Rotation: [0,0,0]
-      Scale: [1,1,1]
-      WorldTransform: [0.4095,0,0,0,0,0.4095,0,0,0,0,0.4095,0,0.33,1.5709078,2.9990509,1]
+      Position: [0,0.23785591,-2.2474928]
+      Rotation: [0,-0,0]
+      Scale: [0.9987805,0.9987805,0.9987805]
+      WorldTransform: [0.4095,0,0,0,0,0.4095,0,0,0,0,0.4095,0,0.33,1.570908,2.999051,1]
   - Entity: 14881747670601641762
     TagComponent:
       Tag: Pools
@@ -870,7 +851,7 @@ Entities:
     RelationshipComponent:
       Parent: 14300943002917955893
       Children:
-        - 10540265532210002179
+        - 7682715582825238696
       IsAttachment: 0
     TransformComponent:
       Position: [0,0,0]
@@ -882,7 +863,7 @@ Entities:
       UserPropertyOverrides:
         - Name: CurrentWeapon
           Type: 4
-          Value: AssaultRifle
+          Value: M4
         - Name: EmptyGunSound
           Type: 4
           Value: EmptyGun
@@ -925,6 +906,63 @@ Entities:
       FontHandle: 213406294560961755
       Color: [1,1,1,1]
       ScreenSpace: 1
+  - Entity: 7682715582825238696
+    TagComponent:
+      Tag: M4
+    RelationshipComponent:
+      Parent: 230291968303856085
+      Children:
+        - 11176369355613519503
+        - 16117594982574674907
+        - 18106011769171454920
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0.09,-0.29]
+      Rotation: [0,-0,0]
+      Scale: [0.41,0.41,0.41]
+      WorldTransform: [0.41,0,0,0,0,0.41,0,0,0,0,0.41,0,0.33,1.473387,3.9205232,1]
+    ScriptComponent:
+      ScriptUUID: 8102167312162542918
+      UserPropertyOverrides:
+        - Name: SightMountName
+          Type: 4
+          Value: ScopeMount
+        - Name: ReloadStartSound
+          Type: 4
+          Value: ReloadStart
+        - Name: ReloadEndSound
+          Type: 4
+          Value: ReloadEnd
+    AnimatorComponent:
+      SkeletonHandle: 9200567303542518273
+      CurrentAnimationHandle: 0
+  - Entity: 11176369355613519503
+    TagComponent:
+      Tag: Armature
+    RelationshipComponent:
+      Parent: 7682715582825238696
+      Children:
+        - 15068365271003137802
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,-0,0]
+      Scale: [1.8057266,1.8057266,1.8057266]
+      WorldTransform: [0.7403479,0,0,0,0,0.7403479,0,0,0,0,0.7403479,0,0.33,1.473387,3.9205232,1]
+  - Entity: 15068365271003137802
+    TagComponent:
+      Tag: Bone_Body
+    RelationshipComponent:
+      Parent: 11176369355613519503
+      Children:
+        - 5223435511325881819
+        - 11850582193888695300
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0.00010059393,0.1925114,0.87833124]
+      Rotation: [-1.544226,4.9503554e-20,-1.8626676e-18]
+      Scale: [1,0.9999998,0.9999999]
+      WorldTransform: [0.7403479,-1.3790222e-18,-3.6649853e-20,0,-3.0620067e-25,0.019668894,-0.7400865,0,1.3795089e-18,0.74008656,0.019668896,0,0.3300745,1.6159124,4.570794,1]
 Environment:
   Skybox:
     Enabled: 1
