@@ -78,20 +78,22 @@ function WeaponFire:Fire(entity)
         muzzleFlashScript:PlayFlash()
     end
 
-    -- Spawn tracer
-    if self.TracerEnabled and (self.ShotCount % self.TracerCadence == 0) then
-        self:SpawnTracer(endPoint)
-    end
-
     -- Cast a ray to detect hits
     local hitResult = Physics.CastRay(position, endPoint)
+
+    -- Tracer should end at the actual impact point when we hit something.
+    local tracerEndPoint = hitResult.Hit and hitResult.CollisionPoint or endPoint
+    if self.TracerEnabled and (self.ShotCount % self.TracerCadence == 0) then
+        self:SpawnTracer(tracerEndPoint)
+    end
+
     if hitResult.Hit then
         local hitEntity = hitResult.Entity
 
         -- Apply force to the hit entity if it has a RigidbodyComponent
         if hitEntity:ContainsComponent("RigidBodyComponent") then
             local rigidbody = hitEntity:GetComponent("RigidBodyComponent")
-            rigidbody:ApplyImpulseAtPoint(forward * self.ImpactForce, hitResult.CollisionPoint)
+            rigidbody:ApplyImpulseAtPoint(finalShootDirection * self.ImpactForce, hitResult.CollisionPoint)
 
             -- TODO: Move impact logic to a separate script on the hit entity (or some other place probably)
             -- Offset slightly along the surface normal to avoid z-fighting with the hit surface
