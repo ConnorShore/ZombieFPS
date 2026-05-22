@@ -196,38 +196,57 @@ Entities:
         - Name: InteractionDistance
           Type: 3
           Value: 3
-  - Entity: 17664487549539026246
+  - Entity: 5645678438920164573
     TagComponent:
-      Tag: HUD
+      Tag: HUD_Canvas
     RelationshipComponent:
       Parent: 0
       Children:
-        - 6356908388261273273
-        - 3907633173452727534
-        - 13607649132809964640
+        - 16155943693343446687
+        - 7122639572906643531
+        - 15941034270328579006
       IsAttachment: 0
     TransformComponent:
-      Position: [9.094947e-13,0,0]
-      Rotation: [0,-0,0]
+      Position: [0,0,0]
+      Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,9.094947e-13,0,0,1]
-  - Entity: 6356908388261273273
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
+    CanvasComponent:
+      RenderMode: 0
+      SortOrder: 0
+      MatchWidthOrHeight: 0.5
+      PlaneDistance: 1
+      ReferenceResolution: [761,506]
+    RectTransformComponent:
+      AnchoredPosition: [0,0]
+      SizeDelta: [100,100]
+      AnchorMin: [0.5,0.5]
+      AnchorMax: [0.5,0.5]
+      Pivot: [0.5,0.5]
+      Rotation: 0
+  - Entity: 8214889738320955675
     TagComponent:
-      Tag: PickupItemUI
+      Tag: AmmoText
     RelationshipComponent:
-      Parent: 17664487549539026246
+      Parent: 15941034270328579006
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [0.55,0.5,0]
+      Position: [0,0,0]
       Rotation: [0,-0,0]
-      Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.55,0.5,0,1]
+      Scale: [0.005348166,0.014285714,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,620.81,38.2,0,1]
     TextComponent:
-      Text: 'Press [E] to pickup item'
+      Text: 0 / 0
       FontHandle: 213406294560961755
       Color: [1,1,1,1]
-      ScreenSpace: 1
+    RectTransformComponent:
+      AnchoredPosition: [-30,-8.2]
+      SizeDelta: [1,1]
+      AnchorMin: [0.5,0.5]
+      AnchorMax: [0.5,0.5]
+      Pivot: [1,1]
+      Rotation: 0
   - Entity: 15412099849582508473
     TagComponent:
       Tag: MuzzleFlash
@@ -380,28 +399,31 @@ Entities:
       Layer: 1
     MaterialComponent:
       MaterialUUID: 18352460508626254789
-  - Entity: 3907633173452727534
+  - Entity: 15941034270328579006
     TagComponent:
-      Tag: Crosshair
+      Tag: AmmoUI
     RelationshipComponent:
-      Parent: 17664487549539026246
-      Children: []
+      Parent: 5645678438920164573
+      Children:
+        - 8214889738320955675
       IsAttachment: 0
     TransformComponent:
-      Position: [0.5,0.5,0]
-      Rotation: [0,0,0]
-      Scale: [0.014,0.02,1]
-      WorldTransform: [0.014,0,0,0,0,0.02,0,0,0,0,1,0,0.5,0.5,0,1]
+      Position: [-3.8049998,-2.53,0]
+      Rotation: [0,-0,0]
+      Scale: [0.01,0.01,1]
+      WorldTransform: [186.97998,0,0,0,0,70,0,0,0,0,1,0,651.31,46.9,0,1]
     SpriteComponent:
-      Color: [1,1,1,1]
-      TextureUUID: 3343954652411117201
-      ScreenSpace: 1
+      Color: [0.85714287,0.41748834,0.014238238,1]
     ScriptComponent:
-      ScriptUUID: 4494000890898150304
-      UserPropertyOverrides:
-        - Name: Size
-          Type: 2
-          Value: 25
+      ScriptUUID: 17429251933582378423
+      UserPropertyOverrides: []
+    RectTransformComponent:
+      AnchoredPosition: [-16.2,11.9]
+      SizeDelta: [50,70]
+      AnchorMin: [0.82,0]
+      AnchorMax: [1,0]
+      Pivot: [1,0]
+      Rotation: 0
   - Entity: 17202988526070122190
     TagComponent:
       Tag: WeaponFire
@@ -724,18 +746,18 @@ Entities:
         - Name: SwayPosAmount
           Type: 3
           Value: 0.07
-        - Name: IdleMultiplier
-          Type: 3
-          Value: 0.12
         - Name: SwayRotStep
           Type: 2
           Value: 1
-        - Name: BobSpeed
+        - Name: IdleMultiplier
           Type: 3
-          Value: 10
+          Value: 0.12
         - Name: BobLimit
           Type: 6
           Value: [0.05,0.05,0.05]
+        - Name: BobSpeed
+          Type: 3
+          Value: 10
         - Name: BobTotalLimit
           Type: 6
           Value: [0.1,0.1,0.1]
@@ -837,45 +859,51 @@ Entities:
         - Name: EmptyGunSound
           Type: 4
           Value: EmptyGun
-  - Entity: 13607649132809964640
+  - Entity: 16155943693343446687
     TagComponent:
-      Tag: AmmoUI
+      Tag: Crosshair
     RelationshipComponent:
-      Parent: 17664487549539026246
-      Children:
-        - 3991048282164067314
-      IsAttachment: 0
-    TransformComponent:
-      Position: [0.89820325,0.08584001,0.09765625]
-      Rotation: [0,0,0]
-      Scale: [0.16348793,0.11400004,0.11400004]
-      WorldTransform: [0.16348793,0,0,0,0,0.11400004,0,0,0,0,0.11400004,0,0.89820325,0.08584001,0.09765625,1]
-    SpriteComponent:
-      Color: [0.9700997,0.6449057,0.16114613,1]
-      ScreenSpace: 1
-    ScriptComponent:
-      ScriptUUID: 17429251933582378423
-      UserPropertyOverrides: []
-  - Entity: 3991048282164067314
-    TagComponent:
-      Tag: AmmoText
-    RelationshipComponent:
-      Parent: 13607649132809964640
+      Parent: 5645678438920164573
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [-0.3,-0.2,0]
+      Position: [0,0,0]
       Rotation: [0,-0,0]
-      Scale: [6.1166596,8.771927,8.771927]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.84915686,0.06304,0.09765625,1]
-    ScriptComponent:
-      ScriptUUID: 17429251933582378423
-      UserPropertyOverrides: []
+      Scale: [1,1,1]
+      WorldTransform: [25,0,0,0,0,25,0,0,0,0,1,0,380.5,253,0,1]
+    SpriteComponent:
+      Color: [1,1,1,1]
+      TextureUUID: 3343954652411117201
+    RectTransformComponent:
+      AnchoredPosition: [0,0]
+      SizeDelta: [25,25]
+      AnchorMin: [0.5,0.5]
+      AnchorMax: [0.5,0.5]
+      Pivot: [0.5,0.5]
+      Rotation: 0
+  - Entity: 7122639572906643531
+    TagComponent:
+      Tag: PickupItemUI
+    RelationshipComponent:
+      Parent: 5645678438920164573
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-3.8049998,-2.53,0]
+      Rotation: [0,-0,0]
+      Scale: [0.01,0.01,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,410.4,273.8,0,1]
     TextComponent:
-      Text: 0 / 0
+      Text: Press (E) to pick up
       FontHandle: 213406294560961755
       Color: [1,1,1,1]
-      ScreenSpace: 1
+    RectTransformComponent:
+      AnchoredPosition: [29.9,20.8]
+      SizeDelta: [1,1]
+      AnchorMin: [0.5,0.5]
+      AnchorMax: [0.5,0.5]
+      Pivot: [0.5,0.5]
+      Rotation: 0
   - Entity: 7682715582825238696
     TagComponent:
       Tag: M4
