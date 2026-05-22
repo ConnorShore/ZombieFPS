@@ -124,6 +124,10 @@ Assets:
     Name: AmmoUI
     FilePath: Scripts/HUD/AmmoUI.lua
   - Type: Material
+    UUID: 8747674591623748722
+    Name: HolographicReticleMat
+    FilePath: Materials/HolographicReticleMat.ebmat
+  - Type: Material
     UUID: 3531595371019758275
     Name: AssaultRifle_Weapon
     FilePath: Models/M4/AssaultRifle_Weapon.ebmat
@@ -139,10 +143,6 @@ Assets:
     UUID: 1868779223986162857
     Name: PowerUpMaterial
     FilePath: Materials/PowerUpMaterial.ebmat
-  - Type: Material
-    UUID: 8747674591623748722
-    Name: HolographicReticleMat
-    FilePath: Materials/HolographicReticleMat.ebmat
   - Type: Material
     UUID: 7112033288364404519
     Name: Tracer_Material
@@ -220,13 +220,13 @@ Assets:
     Name: Roboto-Regular
     FilePath: Fonts/Roboto-Regular.ttf
   - Type: AudioClip
-    UUID: 10601745296411271244
-    Name: M4_Shot
-    FilePath: Audio/M4_Shot.mp3
-  - Type: AudioClip
     UUID: 2869832050986379881
     Name: EmptyGun
     FilePath: Audio/EmptyGun.mp3
+  - Type: AudioClip
+    UUID: 10601745296411271244
+    Name: M4_Shot
+    FilePath: Audio/M4_Shot.mp3
   - Type: AudioClip
     UUID: 15776698392225788213
     Name: ReloadStart

@@ -101,7 +101,7 @@ Entities:
       Scale: [1,1,1]
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1.8,4.824887,1]
     CameraComponent:
-      Projection: [0.8124986,0,0,0,0,1.428148,0,0,0,0,-1.00008,-1,0,0,-0.0400016,0]
+      Projection: [0.94959635,0,0,0,0,1.428148,0,0,0,0,-1.00008,-1,0,0,-0.0400016,0]
       Type: 1
       IsActive: 1
       RenderMask: 65533
@@ -546,10 +546,10 @@ Entities:
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [-0.000100553036,0.8729086,-0.21577406]
+      Position: [-0.000100553036,0.87290907,-0.21577382]
       Rotation: [1.544226,-1.8633244e-18,4.1359036e-25]
       Scale: [1.0000002,0.9999999,0.9999999]
-      WorldTransform: [0.7403481,-8.271806e-25,-6.268478e-25,0,5.169879e-25,0.7403478,1.8626451e-09,0,6.914713e-25,1.8626451e-09,0.74034774,0,0.33000004,1.4733901,3.9205222,1]
+      WorldTransform: [0.7403481,-8.271806e-25,-6.268478e-25,0,5.169879e-25,0.7403478,1.8626451e-09,0,6.914713e-25,1.8626451e-09,0.74034774,0,0.33000004,1.4733903,3.9205217,1]
     SkinnedMeshComponent:
       MeshUUID: 16822605104283055229
       RootAnimator: 7682715582825238696
@@ -567,12 +567,12 @@ Entities:
       Position: [-0.00010058284,0.5014229,0.05104041]
       Rotation: [1.5442259,-1.8633248e-18,-4.1359036e-25]
       Scale: [0.5531183,0.55311835,0.5531184]
-      WorldTransform: [0.40950006,1.03069087e-16,-7.75721e-15,0,7.757211e-15,0.40949994,1.6763806e-08,0,-1.03057413e-16,-2.514571e-08,0.40950018,0,0.33,1.663549,4.200701,1]
+      WorldTransform: [0.40950015,7.9633565e-15,-3.9198357e-14,0,-7.9633565e-15,0.40949997,5.122274e-08,0,3.919841e-14,-4.9360096e-08,0.40950027,0,0.33000004,1.6635524,4.2006993,1]
     ScriptComponent:
       ScriptUUID: 13629381204485307944
       UserPropertyOverrides: []
     BoneSocketComponent:
-      TargetEntity: 7682715582825238696
+      TargetEntity: 11850582193888695300
       BoneName: Bone_Body
       Position: [-0.00010058284,0.50142336,0.051040173]
       Rotation: [1.544226,-1.6898456e-14,9.620535e-14]
@@ -724,18 +724,18 @@ Entities:
         - Name: SwayPosAmount
           Type: 3
           Value: 0.07
-        - Name: SwayRotStep
-          Type: 2
-          Value: 1
         - Name: IdleMultiplier
           Type: 3
           Value: 0.12
-        - Name: BobLimit
-          Type: 6
-          Value: [0.05,0.05,0.05]
+        - Name: SwayRotStep
+          Type: 2
+          Value: 1
         - Name: BobSpeed
           Type: 3
           Value: 10
+        - Name: BobLimit
+          Type: 6
+          Value: [0.05,0.05,0.05]
         - Name: BobTotalLimit
           Type: 6
           Value: [0.1,0.1,0.1]
