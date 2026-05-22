@@ -101,7 +101,7 @@ Entities:
       Scale: [1,1,1]
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1.8,4.824887,1]
     CameraComponent:
-      Projection: [0.80431414,0,0,0,0,1.428148,0,0,0,0,-1.00008,-1,0,0,-0.0400016,0]
+      Projection: [0.94959635,0,0,0,0,1.428148,0,0,0,0,-1.00008,-1,0,0,-0.0400016,0]
       Type: 1
       IsActive: 1
       RenderMask: 65533
@@ -582,10 +582,10 @@ Entities:
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [-0.00010058284,0.87290764,-0.21577454]
+      Position: [-0.000100553036,0.8729086,-0.21577406]
       Rotation: [1.544226,-1.8633244e-18,4.1359036e-25]
       Scale: [1.0000002,0.9999999,0.9999999]
-      WorldTransform: [0.7403481,-8.271806e-25,-6.268478e-25,0,5.169879e-25,0.7403478,1.8626451e-09,0,6.914713e-25,1.8626451e-09,0.74034774,0,0.33,1.4733897,3.920523,1]
+      WorldTransform: [0.7403481,-8.271806e-25,-6.268478e-25,0,5.169879e-25,0.7403478,1.8626451e-09,0,6.914713e-25,1.8626451e-09,0.74034774,0,0.33000004,1.4733901,3.9205222,1]
     SkinnedMeshComponent:
       MeshUUID: 16822605104283055229
       RootAnimator: 7682715582825238696
@@ -596,17 +596,23 @@ Entities:
     TagComponent:
       Tag: ScopeMount
     RelationshipComponent:
-      Parent: 7682715582825238696
+      Parent: 15068365271003137802
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [0,0.46380973,0.683362]
-      Rotation: [0,-0,0]
-      Scale: [0.9987805,0.9987805,0.9987805]
-      WorldTransform: [0.4095,0,0,0,0,0.4095,0,0,0,0,0.4095,0,0.33,1.663549,4.2007017,1]
+      Position: [-0.00010058284,0.5014229,0.05104041]
+      Rotation: [1.5442259,-1.8633248e-18,-4.1359036e-25]
+      Scale: [0.5531183,0.55311835,0.5531184]
+      WorldTransform: [0.40950006,1.03069087e-16,-7.75721e-15,0,7.757211e-15,0.40949994,1.6763806e-08,0,-1.03057413e-16,-2.514571e-08,0.40950018,0,0.33,1.663549,4.200701,1]
     ScriptComponent:
       ScriptUUID: 13629381204485307944
       UserPropertyOverrides: []
+    BoneSocketComponent:
+      TargetEntity: 7682715582825238696
+      BoneName: Bone_Body
+      Position: [-0.00010058284,0.50142336,0.051040173]
+      Rotation: [1.544226,-1.6898456e-14,9.620535e-14]
+      Scale: [0.5531184,0.5531184,0.5531188]
   - Entity: 15248219852956789422
     TagComponent:
       Tag: Box5
@@ -754,18 +760,18 @@ Entities:
         - Name: SwayPosAmount
           Type: 3
           Value: 0.07
-        - Name: IdleMultiplier
-          Type: 3
-          Value: 0.12
         - Name: SwayRotStep
           Type: 2
           Value: 1
-        - Name: BobSpeed
+        - Name: IdleMultiplier
           Type: 3
-          Value: 10
+          Value: 0.12
         - Name: BobLimit
           Type: 6
           Value: [0.05,0.05,0.05]
+        - Name: BobSpeed
+          Type: 3
+          Value: 10
         - Name: BobTotalLimit
           Type: 6
           Value: [0.1,0.1,0.1]
@@ -913,7 +919,6 @@ Entities:
       Parent: 230291968303856085
       Children:
         - 11176369355613519503
-        - 16117594982574674907
         - 18106011769171454920
       IsAttachment: 0
     TransformComponent:
@@ -960,6 +965,7 @@ Entities:
       Children:
         - 5223435511325881819
         - 11850582193888695300
+        - 16117594982574674907
       IsAttachment: 0
     TransformComponent:
       Position: [0.00010059393,0.1925114,0.87833124]
