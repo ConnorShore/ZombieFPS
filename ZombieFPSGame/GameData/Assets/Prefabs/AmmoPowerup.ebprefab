@@ -1,0 +1,75 @@
+Prefab: AmmoPowerup
+PrefabEntities:
+  - Entity: 11947509435464799031
+    TagComponent:
+      Tag: AmmoPowerup
+    RelationshipComponent:
+      Parent: 0
+      Children:
+        - 9090645728019880623
+        - 14693685799150300691
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0.9911727,-3.8805232]
+      Rotation: [0,-0,0]
+      Scale: [0.20457362,0.20457362,0.20457362]
+      WorldTransform: [0.20457362,0,0,0,0,0.20457362,0,0,0,0,0.20457362,0,0,0.9911727,-3.8805232,1]
+    RigidBodyComponent:
+      Type: 2
+      Mass: 1
+      GravityEnabled: 1
+    BoxColliderComponent:
+      Size: [2.5,3.3,4.1]
+      IsTrigger: 1
+      OffsetPosition: [0,0.05,0]
+      OffsetRotation: [0,0,0]
+      Category: 1
+      CollisionMask: 1
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 0
+    ScriptComponent:
+      ScriptUUID: 15191514471842255900
+      UserPropertyOverrides:
+        - Name: Amount
+          Type: 2
+          Value: 60
+        - Name: RotationSpeed
+          Type: 3
+          Value: 45
+        - Name: PickupSound
+          Type: 4
+          Value: AmmoPickupSFX
+  - Entity: 9090645728019880623
+    TagComponent:
+      Tag: AmmoBox
+    RelationshipComponent:
+      Parent: 11947509435464799031
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,4.529953e-06,0]
+      Rotation: [-1.5707965,-0,0]
+      Scale: [0.081830345,0.0642239,0.0642239]
+      WorldTransform: [0.01674033,0,0,0,0,-1.5662331e-09,-0.013138514,0,0,0.013138514,-1.5662331e-09,0,0,0.9911736,-3.8805232,1]
+    StaticMeshComponent:
+      MeshUUID: 12443871631894294282
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 1868779223986162857
+  - Entity: 14693685799150300691
+    TagComponent:
+      Tag: Light
+    RelationshipComponent:
+      Parent: 11947509435464799031
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,-0.9200525,0]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [0.20457362,0,0,0,0,0.20457362,0,0,0,0,0.20457362,0,0,0.8029542,-3.8805232,1]
+    PointLightComponent:
+      Active: 1
+      Color: [0.14617938,1,0.1745454]
+      Intensity: 5
+      Radius: 0

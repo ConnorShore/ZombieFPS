@@ -1,0 +1,44 @@
+Model: AmmoPowerup
+UUID: 7109210442730424575
+SkeletonID: 0
+RootNode:
+  Name: AmmoPowerup_Root
+  Transform:
+    - 1
+    - 0
+    - 0
+    - 0
+    - 0
+    - 1
+    - 0
+    - 0
+    - 0
+    - 0
+    - 1
+    - 0
+    - 0
+    - 0
+    - 0
+    - 1
+  Children:
+    - Name: AmmoBox
+      Transform:
+        - 0.0642239
+        - 0
+        - 0
+        - 0
+        - 0
+        - -7.6560855e-09
+        - -0.06422391
+        - 0
+        - 0
+        - 0.06422391
+        - -7.6560855e-09
+        - 0
+        - 0
+        - 0
+        - 0
+        - 1
+      Meshes:
+        - MeshID: 12443871631894294282
+          MaterialID: 30

@@ -1,0 +1,42 @@
+Prefab: HolographicSightPickup
+PrefabEntities:
+  - Entity: 16886275650480693085
+    TagComponent:
+      Tag: HolographicSightPickup
+    RelationshipComponent:
+      Parent: 0
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-2.2204175,1.0136626,-4.282076]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-2.2204175,1.0136626,-4.282076,1]
+    RigidBodyComponent:
+      Type: 0
+      Mass: 1
+      GravityEnabled: 1
+    BoxColliderComponent:
+      Size: [0.5,0.5,0.5]
+      IsTrigger: 0
+      OffsetPosition: [0,0,0]
+      OffsetRotation: [0,0,0]
+      Category: 256
+      CollisionMask: 1
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 0
+    ScriptComponent:
+      ScriptUUID: 12117729415864912341
+      UserPropertyOverrides:
+        - Name: PickupPrefabName
+          Type: 4
+          Value: HolographicSight
+        - Name: PrefabName
+          Type: 4
+          Value: HolographicSight
+        - Name: AttachmentType
+          Type: 5
+          Value: 1
+        - Name: PickupType
+          Type: 5
+          Value: 1

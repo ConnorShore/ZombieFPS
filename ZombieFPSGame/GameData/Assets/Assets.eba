@@ -137,8 +137,8 @@ Assets:
     FilePath: Materials/GroundMaterial.ebmat
   - Type: Material
     UUID: 1868779223986162857
-    Name: PickupMaterial
-    FilePath: Materials/PickupMaterial.ebmat
+    Name: PowerUpMaterial
+    FilePath: Materials/PowerUpMaterial.ebmat
   - Type: Material
     UUID: 8747674591623748722
     Name: HolographicReticleMat
@@ -171,6 +171,10 @@ Assets:
     UUID: 16822605104283055229
     Name: M4_Cube.001_Prim0
     FilePath: Models/M4_Anim/M4_Cube.001_Prim0.ebmesh
+  - Type: Mesh
+    UUID: 12443871631894294282
+    Name: AmmoPowerup_Cylinder.001_Prim0
+    FilePath: Models/PowerUps/Ammo/AmmoPowerup_Cylinder.001_Prim0.ebmesh
   - Type: Skeleton
     UUID: 9200567303542518273
     Name: M4
@@ -187,6 +191,10 @@ Assets:
     UUID: 5275369914884323396
     Name: M4
     FilePath: Models/M4_Anim/M4.ebmodel
+  - Type: Model
+    UUID: 7109210442730424575
+    Name: AmmoPowerup
+    FilePath: Models/PowerUps/Ammo/AmmoPowerup.ebmodel
   - Type: Prefab
     UUID: 13559857553863366497
     Name: ImpactConcrete
@@ -199,6 +207,14 @@ Assets:
     UUID: 16836608058861364347
     Name: HolographicSight
     FilePath: Prefabs/HolographicSight.ebprefab
+  - Type: Prefab
+    UUID: 3822534466298593180
+    Name: AmmoPowerup
+    FilePath: Prefabs/AmmoPowerup.ebprefab
+  - Type: Prefab
+    UUID: 17919492092461288605
+    Name: HolographicSightPickup
+    FilePath: Prefabs/HolographicSightPickup.ebprefab
   - Type: Font
     UUID: 213406294560961755
     Name: Roboto-Regular
@@ -219,6 +235,10 @@ Assets:
     UUID: 8785379131387521162
     Name: ReloadEnd
     FilePath: Audio/ReloadEnd.mp3
+  - Type: AudioClip
+    UUID: 4535810649324835630
+    Name: AmmoPickupSFX
+    FilePath: Audio/AmmoPickupSFX.mp3
   - Type: Scene
     UUID: 397660979313011815
     Name: Default

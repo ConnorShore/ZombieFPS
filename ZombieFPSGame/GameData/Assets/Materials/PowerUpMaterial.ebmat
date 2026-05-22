@@ -1,4 +1,4 @@
-Material: PickupMaterial
+Material: PowerUpMaterial
 UUID: 1868779223986162857
 RenderQueue: 1
 Instanced: true
@@ -24,7 +24,7 @@ Uniforms:
     Value: 1
   u_Emission:
     Type: float
-    Value: 5
+    Value: 2.1
   u_NormalMap:
     Type: Texture
     Value: 3

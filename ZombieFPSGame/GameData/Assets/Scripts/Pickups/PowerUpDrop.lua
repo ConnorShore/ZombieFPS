@@ -2,6 +2,8 @@ local PowerUpDrop = {}
 
 PowerUpDrop.MoveSpeed = 3.0
 PowerUpDrop.MoveDistance = 0.2
+PowerUpDrop.RotationSpeed = 30.0
+PowerUpDrop.PickupSound = ""
 
 PowerUpDrop.PickupType = {
     Ammo = 1,
@@ -24,6 +26,9 @@ function PowerUpDrop:OnUpdate(entity, delta)
 
     local transform = entity:GetComponent("TransformComponent")
     transform.Position.y = self.StartY + (self.MoveDistance * math.sin(self.TimeSinceStart * self.MoveSpeed))
+
+    local rotation = transform.Rotation
+    rotation.y = rotation.y + (Math.Radians(self.RotationSpeed) * delta)
 end
 
 function PowerUpDrop:OnOverlapTriggerEnter(entity, otherEntity)
@@ -39,6 +44,7 @@ function PowerUpDrop:OnOverlapTriggerEnter(entity, otherEntity)
         self:AddPoints(self.Amount)
     end
 
+    AudioSystem.PlaySound(self.PickupSound)
     Scene.RemoveEntity(entity)
 end
 
