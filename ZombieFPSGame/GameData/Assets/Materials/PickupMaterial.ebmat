@@ -9,13 +9,13 @@ Uniforms:
     Value: 0
   u_Albedo:
     Type: Vector3f
-    Value: [0.064204566,0.5875111,0.9202658]
+    Value: [0.08262602,0.65448505,0]
   u_Roughness:
     Type: float
     Value: 0.5
   u_EmissionColor:
     Type: Vector3f
-    Value: [1,1,1]
+    Value: [0.08262602,0.65448505,0]
   u_AO:
     Type: float
     Value: 1
@@ -24,13 +24,16 @@ Uniforms:
     Value: 1
   u_Emission:
     Type: float
-    Value: 0
+    Value: 5
   u_NormalMap:
     Type: Texture
     Value: 3
   u_MetallicRoughnessMap:
     Type: Texture
     Value: 1
+  u_Color:
+    Type: Vector3f
+    Value: [1,1,1]
   u_EmissiveMap:
     Type: Texture
     Value: 1

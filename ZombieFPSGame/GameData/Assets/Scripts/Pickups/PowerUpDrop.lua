@@ -9,6 +9,8 @@ PowerUpDrop.PickupType = {
     Points = 3
 }
 
+PowerUpDrop.Amount = 10
+
 function PowerUpDrop:OnCreate(entity)
     self.TimeSinceStart = 0.0
     
@@ -24,18 +26,44 @@ function PowerUpDrop:OnUpdate(entity, delta)
     transform.Position.y = self.StartY + (self.MoveDistance * math.sin(self.TimeSinceStart * self.MoveSpeed))
 end
 
-function PowerUpDrop:OnPickup(entity, otherEntity)
+function PowerUpDrop:OnOverlapTriggerEnter(entity, otherEntity)
+    if otherEntity:GetName() ~= "Player" then
+        return
+    end
 
     if self.PickupType == PowerUpDrop.PickupType.Ammo then
-        Log.Info("Picked up ammo!")
+        self:AddAmmo(self.Amount)
     elseif self.PickupType == PowerUpDrop.PickupType.Health then
-        Log.Info("Picked up health!")
+        self:AddHealth(self.Amount)
     elseif self.PickupType == PowerUpDrop.PickupType.Points then
-        Log.Info("Picked up points!")
+        self:AddPoints(self.Amount)
     end
 
     Scene.RemoveEntity(entity)
 end
 
+function PowerUpDrop:AddAmmo(amount)
+    local weaponHolderEntity = Scene.GetEntityByName("WeaponHolder")
+    local weaponHolderScript = weaponHolderEntity and weaponHolderEntity:GetScriptInstance()
+    if weaponHolderScript and weaponHolderScript.CurrentWeapon ~= "" then
+        local weaponEntity = Scene.GetEntityByName(weaponHolderScript.CurrentWeapon)
+        local weaponControllerScript = weaponEntity and weaponEntity:GetScriptInstance()
+        if weaponControllerScript then
+            weaponControllerScript:AddAmmo(amount)
+        else
+            Log.Warn("Current weapon entity does not have a WeaponController script attached!")
+        end
+    else
+        Log.Warn("No current weapon equipped or WeaponHolder script not found!")
+    end
+end
+
+function PowerUpDrop:AddPoints(amount)
+    Log.Info("Added " .. tostring(amount) .. " points!")
+end
+
+function PowerUpDrop:AddHealth(amount)
+    Log.Info("Added " .. tostring(amount) .. " health!")
+end
 
 return PowerUpDrop

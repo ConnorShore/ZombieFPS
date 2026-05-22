@@ -20,7 +20,7 @@ function PlayerInteraction:OnUpdate(entity, delta)
 
     -- Cast ray to detect interactable objects
     local pickupUI = Scene.GetEntityByName("PickupItemUI")
-    local hitResult = Physics.CastRay(rayStart, rayEnd, CollisionFilter.Pickup)
+    local hitResult = Physics.CastRay(rayStart, rayEnd, CollisionFilter.PickupItem)
     if hitResult.Hit then
         pickupUI:SetActive(true)
 

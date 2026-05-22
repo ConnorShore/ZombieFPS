@@ -24,7 +24,9 @@ Settings:
       - Index: 3
         Name: Enemy
       - Index: 8
-        Name: Pickup
+        Name: PickupItem
+      - Index: 9
+        Name: PowerUp
   Render:
     RenderLayers:
       - Index: 0

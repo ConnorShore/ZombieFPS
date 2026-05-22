@@ -83,7 +83,6 @@ function WeaponController:OnShoot()
 end
 
 function WeaponController:OnReload()
-    Log.Info("Reload key pressed. Attempting to reload...")
     if not self.IsReloading and self.ReserveAmmo > 0 then
         self.IsReloading = true
 
@@ -93,7 +92,6 @@ function WeaponController:OnReload()
         end
         
         self.AnimatorComp:Play(self.ReloadAnimationName, 1.0, 0.1)
-        Log.Info("Started reloading...")
     end
 end
 
@@ -131,9 +129,25 @@ function WeaponController:OnAnimationEvent(eventName)
         self.CurrentAmmo = self.ReserveAmmo > self.MagazineSize and self.MagazineSize or self.ReserveAmmo
         self.ReserveAmmo = self.ReserveAmmo > self.MagazineSize and (self.ReserveAmmo - self.MagazineSize) + remainingAmmoInMag or 0
         self.AmmoScript:SetAmmo(self.CurrentAmmo, self.ReserveAmmo)
+        if self.ReserveAmmo <= 0 then
+            self.CanShoot = self.CurrentAmmo > 0
+        else
+            self.CanShoot = true
+        end
     elseif eventName == self.ReloadCompleteEventName then
         Log.Info("Reload complete!")
         self.IsReloading = false
+    end
+end
+
+function WeaponController:AddAmmo(amount)
+    self.ReserveAmmo = self.ReserveAmmo + amount
+    if self.ReserveAmmo > self.MaxAmmo then
+        self.ReserveAmmo = self.MaxAmmo
+    end
+
+    if self.AmmoScript or self:TryBindAmmoUI() then
+        self.AmmoScript:SetAmmo(self.CurrentAmmo, self.ReserveAmmo)
     end
 end
 

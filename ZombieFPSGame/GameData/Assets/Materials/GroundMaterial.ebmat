@@ -9,7 +9,7 @@ Uniforms:
     Value: 0
   u_Albedo:
     Type: Vector3f
-    Value: [0.055998825,0.36877078,0.0024503148]
+    Value: [0.04869679,0.0024503148,0.36877078]
   u_Roughness:
     Type: float
     Value: 0.5
