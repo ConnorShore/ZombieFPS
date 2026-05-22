@@ -1,36 +1,36 @@
-Material: AssaultRifle_Weapon
-UUID: 3531595371019758275
+Material: M4_Weapon
+UUID: 4587007159136363848
 RenderQueue: 1
 Instanced: false
-Shader: 9
+Shader: 10
 Uniforms:
-  u_Metallic:
-    Type: float
-    Value: 1
   u_Albedo:
     Type: Vector3f
     Value: [1,1,1]
+  u_Metallic:
+    Type: float
+    Value: 1
   u_Roughness:
+    Type: float
+    Value: 1
+  u_AO:
     Type: float
     Value: 1
   u_EmissionColor:
     Type: Vector3f
     Value: [0,0,0]
-  u_AO:
-    Type: float
-    Value: 1
-  u_AlbedoMap:
-    Type: Texture
-    Value: 9008232455192275898
   u_Emission:
     Type: float
     Value: 0
+  u_AlbedoMap:
+    Type: Texture
+    Value: 8049017245590512599
   u_NormalMap:
     Type: Texture
-    Value: 5298883443951100442
+    Value: 8231069642100005462
   u_MetallicRoughnessMap:
     Type: Texture
-    Value: 16364078516430552352
+    Value: 13924914312463152501
   u_EmissiveMap:
     Type: Texture
     Value: 4
