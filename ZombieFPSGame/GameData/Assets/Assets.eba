@@ -1,5 +1,9 @@
 Assets:
   - Type: Texture
+    UUID: 3453372035684411145
+    Name: RadialGlow
+    FilePath: Textures/Effects/RadialGlow.png
+  - Type: Texture
     UUID: 17608889885004568014
     Name: AssaultRifle_ARMetallic-ARRoughness.png
     FilePath: Models/M4/AssaultRifle_ARMetallic-ARRoughness.png
@@ -124,6 +128,10 @@ Assets:
     Name: AmmoUI
     FilePath: Scripts/HUD/AmmoUI.lua
   - Type: Material
+    UUID: 4587007159136363848
+    Name: M4_Weapon
+    FilePath: Models/M4_Anim/M4_Weapon.ebmat
+  - Type: Material
     UUID: 8747674591623748722
     Name: HolographicReticleMat
     FilePath: Materials/HolographicReticleMat.ebmat
@@ -147,10 +155,6 @@ Assets:
     UUID: 7112033288364404519
     Name: Tracer_Material
     FilePath: Materials/Tracer_Material.ebmat
-  - Type: Material
-    UUID: 4587007159136363848
-    Name: M4_Weapon
-    FilePath: Models/M4_Anim/M4_Weapon.ebmat
   - Type: Mesh
     UUID: 12205825994227504312
     Name: AssaultRifle_Cube.001_Prim0
