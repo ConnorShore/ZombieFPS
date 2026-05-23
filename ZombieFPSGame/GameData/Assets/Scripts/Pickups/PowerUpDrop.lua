@@ -42,6 +42,8 @@ function PowerUpDrop:OnOverlapTriggerEnter(entity, otherEntity)
         self:AddHealth(self.Amount)
     elseif self.PickupType == PowerUpDrop.PickupType.Points then
         self:AddPoints(self.Amount)
+    else
+        Log.Warn("Unknown pickup type: " .. tostring(self.PickupType))
     end
 
     AudioSystem.PlaySound(self.PickupSound)

@@ -20,6 +20,8 @@ function AmmoUI:SetAmmo(currentAmmo, reserveAmmo)
         if textComponent then
             textComponent.Text = tostring(currentAmmo) .. " / " .. tostring(reserveAmmo)
         end
+    else
+        Log.Warn("Cannot update ammo text because AmmoTextEntity is not set!")
     end
 end
 
