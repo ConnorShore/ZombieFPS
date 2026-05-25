@@ -7,6 +7,8 @@ PickUpItem.AttachmentType = {
     Grip = 4
 }
 
+-- TODO: Remove this prefab name and just have the actual model
+-- and attach this script to it
 PickUpItem.PrefabName = ""
 
 function PickUpItem:OnCreate(entity)

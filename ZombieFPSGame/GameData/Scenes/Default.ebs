@@ -101,7 +101,7 @@ Entities:
       Scale: [1,1,1]
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-2.9802322e-08,1.8,4.824887,1]
     CameraComponent:
-      Projection: [0.79846454,0,0,0,0,1.428148,0,0,0,0,-1.00008,-1,0,0,-0.0400016,0]
+      Projection: [0.9264652,0,0,0,0,1.428148,0,0,0,0,-1.00008,-1,0,0,-0.0400016,0]
       Type: 1
       IsActive: 1
       RenderMask: 65533
@@ -221,7 +221,7 @@ Entities:
       Position: [0,0,0]
       Rotation: [0,-0,0]
       Scale: [0.005348166,0.014285714,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,968.9001,29.55,0,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,677.7,29.55,0,1]
     TextComponent:
       Text: 0 / 0
       FontHandle: 213406294560961755
@@ -333,10 +333,10 @@ Entities:
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [-3.756122,0.66242003,-1.8124685]
+      Position: [-5.869132,0.6624184,0.33630878]
       Rotation: [0,0,0]
       Scale: [1.25,1.25,1.25]
-      WorldTransform: [1.25,0,0,0,0,1.25,0,0,0,0,1.25,0,-3.756122,0.66242003,-1.8124685,1]
+      WorldTransform: [1.25,0,0,0,0,1.25,0,0,0,0,1.25,0,-5.869132,0.6624184,0.33630878,1]
     RigidBodyComponent:
       Type: 1
       Mass: 1
@@ -397,9 +397,11 @@ Entities:
       Position: [-3.8049998,-2.53,0]
       Rotation: [0,-0,0]
       Scale: [0.01,0.01,1]
-      WorldTransform: [168.8,0,0,0,0,52.7,0,0,0,0,1,0,999.4,38.25,0,1]
+      WorldTransform: [111.20003,0,0,0,0,52.7,0,0,0,0,1,0,708.19995,38.25,0,1]
     SpriteComponent:
       Color: [0.85714287,0.41748834,0.014238238,1]
+      IsBillboard: 0
+      LockYAxis: 0
     ScriptComponent:
       ScriptUUID: 17429251933582378423
       UserPropertyOverrides: []
@@ -732,18 +734,18 @@ Entities:
         - Name: SwayPosAmount
           Type: 3
           Value: 0.07
-        - Name: SwayRotStep
-          Type: 2
-          Value: 1
         - Name: IdleMultiplier
           Type: 3
           Value: 0.12
-        - Name: BobLimit
-          Type: 6
-          Value: [0.05,0.05,0.05]
+        - Name: SwayRotStep
+          Type: 2
+          Value: 1
         - Name: BobSpeed
           Type: 3
           Value: 10
+        - Name: BobLimit
+          Type: 6
+          Value: [0.05,0.05,0.05]
         - Name: BobTotalLimit
           Type: 6
           Value: [0.1,0.1,0.1]
@@ -758,10 +760,10 @@ Entities:
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [-10.208301,2.218621,-6.631068]
-      Rotation: [0,-0.7179043,0]
+      Position: [-11.87701,2.2186286,-4.6492586]
+      Rotation: [0,-0.25096554,0]
       Scale: [1,4.8661513,6.340652]
-      WorldTransform: [0.7531859,0,0.6578077,0,0,4.8661513,0,0,-4.17093,0,4.77569,0,-10.208301,2.218621,-6.631068,1]
+      WorldTransform: [0.9686731,0,0.24833937,0,0,4.8661513,0,0,-1.5746335,0,6.1420193,0,-11.87701,2.2186286,-4.6492586,1]
     RigidBodyComponent:
       Type: 0
       Mass: 1
@@ -856,10 +858,12 @@ Entities:
       Position: [0,0,0]
       Rotation: [0,-0,0]
       Scale: [1,1,1]
-      WorldTransform: [25,0,0,0,0,25,0,0,0,0,1,0,550,307.5,0,1]
+      WorldTransform: [25,0,0,0,0,25,0,0,0,0,1,0,390,253,0,1]
     SpriteComponent:
       Color: [1,1,1,1]
       TextureUUID: 3343954652411117201
+      IsBillboard: 0
+      LockYAxis: 0
     RectTransformComponent:
       AnchoredPosition: [0,0]
       SizeDelta: [25,25]
@@ -878,7 +882,7 @@ Entities:
       Position: [-3.8049998,-2.53,0]
       Rotation: [0,-0,0]
       Scale: [0.01,0.01,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,579.9,328.3,0,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,419.9,273.8,0,1]
     TextComponent:
       Text: Press (E) to pick up
       FontHandle: 213406294560961755
@@ -919,9 +923,14 @@ Entities:
         - Name: ReloadAnimationName
           Type: 4
           Value: M4_Reload
+        - Name: EquipPositionOffset
+          Type: 6
+          Value: [0,0.09,-0.29]
     AnimatorComponent:
       SkeletonHandle: 9200567303542518273
       CurrentAnimationHandle: 0
+    PrefabComponent:
+      PrefabUUID: 10097993641357000526
   - Entity: 11947509435464799031
     TagComponent:
       Tag: AmmoPowerup
@@ -946,7 +955,7 @@ Entities:
       IsTrigger: 1
       OffsetPosition: [0,0.05,0]
       OffsetRotation: [0,0,0]
-      Category: 1
+      Category: 512
       CollisionMask: 1
       PhysicsMaterialUUID: 0
       PreviewCollider: 0
@@ -972,10 +981,10 @@ Entities:
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [0,4.529953e-06,0]
+      Position: [0,5.722046e-06,4.005432e-05]
       Rotation: [-1.5707965,-0,0]
       Scale: [0.081830345,0.0642239,0.0642239]
-      WorldTransform: [0.01674033,0,0,0,0,-1.5662331e-09,-0.013138514,0,0,0.013138514,-1.5662331e-09,0,0,0.9911736,-3.8805232,1]
+      WorldTransform: [0.01674033,0,0,0,0,-1.5662331e-09,-0.013138514,0,0,0.013138514,-1.5662331e-09,0,0,0.99117386,-3.880515,1]
     StaticMeshComponent:
       MeshUUID: 12443871631894294282
       Layer: 1
@@ -989,10 +998,10 @@ Entities:
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [0,-0.9200525,0]
+      Position: [0,-0.92005134,5.1498413e-05]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [0.20457362,0,0,0,0,0.20457362,0,0,0,0,0.20457362,0,0,0.8029542,-3.8805232,1]
+      WorldTransform: [0.20457362,0,0,0,0,0.20457362,0,0,0,0,0.20457362,0,0,0.80295444,-3.8805127,1]
     PointLightComponent:
       Active: 1
       Color: [0.14617938,1,0.1745454]
@@ -1015,6 +1024,99 @@ Entities:
       TextureUUID: 3453372035684411145
       IsBillboard: 1
       LockYAxis: 0
+  - Entity: 15220513272756049617
+    TagComponent:
+      Tag: Cube2
+    RelationshipComponent:
+      Parent: 0
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-5.409823,0.5,-2.955198]
+      Rotation: [0,0.6549722,0]
+      Scale: [2.7124968,1,1.5]
+      WorldTransform: [2.151186,0,-1.6522826,0,0,1,0,0,0.91370577,0,1.1895974,0,-5.409823,0.5,-2.955198,1]
+    RigidBodyComponent:
+      Type: 0
+      Mass: 1
+      GravityEnabled: 1
+    BoxColliderComponent:
+      Size: [1,1,1]
+      IsTrigger: 0
+      OffsetPosition: [0,0,0]
+      OffsetRotation: [0,0,0]
+      Category: 1
+      CollisionMask: 1
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 0
+    StaticMeshComponent:
+      MeshUUID: 51
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 31
+  - Entity: 13404567650556012467
+    TagComponent:
+      Tag: M4_Pickup
+    RelationshipComponent:
+      Parent: 0
+      Children:
+        - 17748089738734541142
+        - 5356551002598311296
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-5.284748,1.0409653,-2.8184266]
+      Rotation: [-0.91024643,-3.3676624e-06,1.5707936]
+      Scale: [0.35,0.35,0.354]
+      WorldTransform: [9.596348e-07,0.35,1.1786818e-06,0,-0.2147429,1.5228986e-06,-0.27637923,0,-0.27953786,3.1650067e-08,0.21719712,0,-5.284748,1.0409653,-2.8184266,1]
+    RigidBodyComponent:
+      Type: 0
+      Mass: 1
+      GravityEnabled: 1
+    BoxColliderComponent:
+      Size: [0.7,1.3,4.4]
+      IsTrigger: 0
+      OffsetPosition: [0,-0.1,0]
+      OffsetRotation: [0,0,0]
+      Category: 256
+      CollisionMask: 1
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 1
+    PrefabComponent:
+      PrefabUUID: 8263028857346137852
+  - Entity: 17748089738734541142
+    TagComponent:
+      Tag: Weapon
+    RelationshipComponent:
+      Parent: 13404567650556012467
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0.025450574,0.38175866]
+      Rotation: [3.1415927,-0,-0]
+      Scale: [-0.09888629,0.109487295,0.109487295]
+      WorldTransform: [-9.489472e-08,-0.0346102,-1.1655547e-07,0,0.02351162,-1.6673805e-07,0.030260012,0,0.030605841,-3.4652656e-09,-0.023780327,0,-5.3969293,1.0409653,-2.7425437,1]
+    StaticMeshComponent:
+      MeshUUID: 12205825994227504312
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 3531595371019758275
+  - Entity: 5356551002598311296
+    TagComponent:
+      Tag: Magazine
+    RelationshipComponent:
+      Parent: 13404567650556012467
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,-0.11320099,-0.015132174]
+      Rotation: [-0.00020340085,0,0]
+      Scale: [0.051736534,0.056594644,0.18163528]
+      WorldTransform: [4.964818e-08,0.018107787,6.098091e-08,0,-0.01215008,8.618754e-08,-0.015644083,0,-0.050781872,5.8050316e-09,0.03944045,0,-5.256209,1.0409652,-2.790427,1]
+    StaticMeshComponent:
+      MeshUUID: 9147101475226164417
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 3531595371019758275
 Environment:
   Skybox:
     Enabled: 1

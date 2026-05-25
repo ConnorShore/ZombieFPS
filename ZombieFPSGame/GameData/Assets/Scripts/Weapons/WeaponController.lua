@@ -18,6 +18,8 @@ WeaponController.RefillAmmoEventName = "RefillAmmo"
 WeaponController.ReloadCompleteEventName = "ReloadComplete"
 WeaponController.ReloadAnimationName = "Reload"
 
+WeaponController.EquipPositionOffset = Vector3f.new(0, 0, 0)
+
 function WeaponController:OnCreate(entity)
     -- Dynamically resolve the mount points based on what you typed in the Editor
     self.MountPoints = {

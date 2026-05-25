@@ -44,13 +44,13 @@ Assets:
     Name: M4_ORM_Mat0
     FilePath: Models/M4_Anim/M4_ORM_Mat0.png
   - Type: Texture
-    UUID: 9008232455192275898
-    Name: AssaultRifle_ARColor.png
-    FilePath: Models/M4/AssaultRifle_ARColor.png
-  - Type: Texture
     UUID: 15863835653609318779
     Name: HolographicReticle
     FilePath: Textures/HolographicReticle.png
+  - Type: Texture
+    UUID: 9008232455192275898
+    Name: AssaultRifle_ARColor.png
+    FilePath: Models/M4/AssaultRifle_ARColor.png
   - Type: Shader
     UUID: 3290979914783484062
     Name: HolographicSight
@@ -219,6 +219,14 @@ Assets:
     UUID: 17919492092461288605
     Name: HolographicSightPickup
     FilePath: Prefabs/HolographicSightPickup.ebprefab
+  - Type: Prefab
+    UUID: 10097993641357000526
+    Name: M4
+    FilePath: Prefabs/Weapons/M4.ebprefab
+  - Type: Prefab
+    UUID: 8263028857346137852
+    Name: M4_Pickup
+    FilePath: Prefabs/Weapons/M4_Pickup.ebprefab
   - Type: Font
     UUID: 213406294560961755
     Name: Roboto-Regular
