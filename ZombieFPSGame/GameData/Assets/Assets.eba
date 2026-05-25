@@ -44,13 +44,13 @@ Assets:
     Name: M4_ORM_Mat0
     FilePath: Models/M4_Anim/M4_ORM_Mat0.png
   - Type: Texture
-    UUID: 15863835653609318779
-    Name: HolographicReticle
-    FilePath: Textures/HolographicReticle.png
-  - Type: Texture
     UUID: 9008232455192275898
     Name: AssaultRifle_ARColor.png
     FilePath: Models/M4/AssaultRifle_ARColor.png
+  - Type: Texture
+    UUID: 15863835653609318779
+    Name: HolographicReticle
+    FilePath: Textures/HolographicReticle.png
   - Type: Shader
     UUID: 3290979914783484062
     Name: HolographicSight
@@ -127,6 +127,10 @@ Assets:
     UUID: 17429251933582378423
     Name: AmmoUI
     FilePath: Scripts/HUD/AmmoUI.lua
+  - Type: Script
+    UUID: 1928101263865073231
+    Name: PickupWeapon
+    FilePath: Scripts/Pickups/PickupWeapon.lua
   - Type: Material
     UUID: 4587007159136363848
     Name: M4_Weapon
@@ -224,7 +228,7 @@ Assets:
     Name: M4
     FilePath: Prefabs/Weapons/M4.ebprefab
   - Type: Prefab
-    UUID: 8263028857346137852
+    UUID: 7525331889912364400
     Name: M4_Pickup
     FilePath: Prefabs/Weapons/M4_Pickup.ebprefab
   - Type: Font

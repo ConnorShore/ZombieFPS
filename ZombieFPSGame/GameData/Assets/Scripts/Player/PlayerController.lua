@@ -1,27 +1,27 @@
 local PlayerController = {}
 
-PlayerController.ActiveWeaponEntity = ""
+-- PlayerController.ActiveWeaponEntity = ""
 
 function PlayerController:OnCreate(entity)
-    self.ActiveWeapon = nil
-    self:EquipGun(self.ActiveWeaponEntity)
+    -- self.ActiveWeapon = nil
+    -- self:EquipGun(self.ActiveWeaponEntity)
 end
 
 function PlayerController:OnUpdate(entity, delta)
 
 end
 
-function PlayerController:EquipGun(gunEntity)
-    self.ActiveWeaponEntity = gunEntity
+-- function PlayerController:EquipGun(gunEntity)
+--     self.ActiveWeaponEntity = gunEntity
     
-    if self.ActiveWeaponEntity == "" then
-        self.ActiveWeapon = nil
-        Log.Warn("Player is now unarmed.")
-        return
-    end
+--     if self.ActiveWeaponEntity == "" then
+--         self.ActiveWeapon = nil
+--         Log.Warn("Player is now unarmed.")
+--         return
+--     end
 
-    self.ActiveWeapon = Scene.GetEntityByName(self.ActiveWeaponEntity)
-    Log.Info("Player equipped weapon: " .. self.ActiveWeapon:GetName())
-end
+--     self.ActiveWeapon = Scene.GetEntityByName(self.ActiveWeaponEntity)
+--     Log.Info("Player equipped weapon: " .. self.ActiveWeapon:GetName())
+-- end
 
 return PlayerController

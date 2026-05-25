@@ -54,10 +54,19 @@ function WeaponHolder:EquipWeapon(prefabName)
         end
     end
 
+    Log.Info("Equipping weapon '" .. prefabName .. "' to slot " .. tostring(self.ActiveWeaponSlot))
+
     -- Equip new weapon
-    local newWeaponEntity = Scene.Instantiate(prefabName, self.Entity)
+    local newWeaponEntity = Scene.InstantiatePrefab(prefabName, self.Entity)
+    local weaponControllerScript = newWeaponEntity and newWeaponEntity:GetScriptInstance()
+    if not weaponControllerScript then
+        Log.Warn("Equipped weapon prefab '" .. prefabName .. "' does not have a WeaponController script attached! Removing weapon entity.")
+        Scene.RemoveEntity(newWeaponEntity)
+        return
+    end
+    
     local transform = newWeaponEntity:GetComponent("TransformComponent")
-    transform.Position = WeaponController.EquipPositionOffset
+    transform.Position = weaponControllerScript.EquipPositionOffset
     self.Weapons[self.ActiveWeaponSlot] = newWeaponEntity
 end
 

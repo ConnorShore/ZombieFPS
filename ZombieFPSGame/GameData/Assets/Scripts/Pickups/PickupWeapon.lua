@@ -11,7 +11,13 @@ function PickupWeapon:OnUpdate(entity, delta)
 end
 
 function PickupWeapon:OnPickup(entity, otherEntity)
-    local weaponHolderScript = otherEntity:GetScriptInstance("WeaponHolder")
+    local weaponHolderEntity = Scene.GetEntityByName("WeaponHolder")
+    if not weaponHolderEntity then
+        Log.Warn("Cannot find WeaponHolder entity in scene! Cannot pick up weapon.")
+        return
+    end
+
+    local weaponHolderScript = weaponHolderEntity:GetScriptInstance()
     if not weaponHolderScript then
         Log.Warn("Other entity '" .. otherEntity:GetName() .. "' does not have a WeaponHolder script attached! Cannot pick up weapon.")
         return

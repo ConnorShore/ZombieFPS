@@ -10,10 +10,10 @@ PrefabEntities:
         - 5356551002598311296
       IsAttachment: 0
     TransformComponent:
-      Position: [0,0.8993981,0]
-      Rotation: [0,-0,0]
+      Position: [-5.284748,1.0409653,-2.8184266]
+      Rotation: [-0.91024643,-3.3676624e-06,1.5707936]
       Scale: [0.35,0.35,0.354]
-      WorldTransform: [0.35,0,0,0,0,0.35,0,0,0,0,0.354,0,0,0.8993981,0,1]
+      WorldTransform: [9.596348e-07,0.35,1.1786818e-06,0,-0.2147429,1.5228986e-06,-0.27637923,0,-0.27953786,3.1650067e-08,0.21719712,0,-5.284748,1.0409653,-2.8184266,1]
     RigidBodyComponent:
       Type: 0
       Mass: 1
@@ -27,6 +27,14 @@ PrefabEntities:
       CollisionMask: 1
       PhysicsMaterialUUID: 0
       PreviewCollider: 1
+    ScriptComponent:
+      ScriptUUID: 1928101263865073231
+      UserPropertyOverrides:
+        - Name: WeaponPrefabName
+          Type: 4
+          Value: M4
+    PrefabComponent:
+      PrefabUUID: 7525331889912364400
   - Entity: 17748089738734541142
     TagComponent:
       Tag: Weapon
@@ -35,10 +43,10 @@ PrefabEntities:
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [0,0.025450574,0.38175866]
+      Position: [0,0.025449753,0.38175917]
       Rotation: [3.1415927,-0,-0]
       Scale: [-0.09888629,0.109487295,0.109487295]
-      WorldTransform: [-0.0346102,0,0,0,0,-0.038320553,-3.3883758e-09,0,0,3.350089e-09,-0.0387585,0,0,0.90830576,0.13514256,1]
+      WorldTransform: [-9.489472e-08,-0.0346102,-1.1655547e-07,0,0.02351162,-1.6673805e-07,0.030260012,0,0.030605841,-3.4652656e-09,-0.023780327,0,-5.3969293,1.0409653,-2.7425435,1]
     StaticMeshComponent:
       MeshUUID: 12205825994227504312
       Layer: 1
@@ -55,7 +63,7 @@ PrefabEntities:
       Position: [0,-0.11320099,-0.015132174]
       Rotation: [-0.00020340085,0,0]
       Scale: [0.051736534,0.056594644,0.18163528]
-      WorldTransform: [0.018107787,0,0,0,0,0.019808125,-4.075035e-06,0,0,1.2930669e-05,0.06429889,0,0,0.85977775,-0.0053567896,1]
+      WorldTransform: [4.964818e-08,0.018107787,6.098091e-08,0,-0.01215008,8.618754e-08,-0.015644083,0,-0.050781872,5.8050316e-09,0.03944045,0,-5.256209,1.0409652,-2.790427,1]
     StaticMeshComponent:
       MeshUUID: 9147101475226164417
       Layer: 1
