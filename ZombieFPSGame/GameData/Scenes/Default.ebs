@@ -101,7 +101,7 @@ Entities:
       Scale: [1,1,1]
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-2.9802322e-08,1.8,4.824887,1]
     CameraComponent:
-      Projection: [0.9264652,0,0,0,0,1.428148,0,0,0,0,-1.00008,-1,0,0,-0.0400016,0]
+      Projection: [0.79846454,0,0,0,0,1.428148,0,0,0,0,-1.00008,-1,0,0,-0.0400016,0]
       Type: 1
       IsActive: 1
       RenderMask: 65533
@@ -227,7 +227,7 @@ Entities:
       Position: [0,0,0]
       Rotation: [0,-0,0]
       Scale: [0.005348166,0.014285714,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,677.7,29.55,0,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,968.9001,29.55,0,1]
     TextComponent:
       Text: 0 / 0
       FontHandle: 213406294560961755
@@ -381,7 +381,7 @@ Entities:
       Position: [-3.8049998,-2.53,0]
       Rotation: [0,-0,0]
       Scale: [0.01,0.01,1]
-      WorldTransform: [111.20003,0,0,0,0,52.7,0,0,0,0,1,0,708.19995,38.25,0,1]
+      WorldTransform: [168.8,0,0,0,0,52.7,0,0,0,0,1,0,999.4,38.25,0,1]
     SpriteComponent:
       Color: [0.85714287,0.41748834,0.014238238,1]
       IsBillboard: 0
@@ -474,15 +474,15 @@ Entities:
     ScriptComponent:
       ScriptUUID: 12117729415864912341
       UserPropertyOverrides:
-        - Name: PickupPrefabName
-          Type: 4
-          Value: HolographicSight
-        - Name: PrefabName
-          Type: 4
-          Value: HolographicSight
         - Name: AttachmentType
           Type: 5
           Value: 1
+        - Name: PrefabName
+          Type: 4
+          Value: HolographicSight
+        - Name: PickupPrefabName
+          Type: 4
+          Value: HolographicSight
         - Name: PickupType
           Type: 5
           Value: 1
@@ -526,10 +526,10 @@ Entities:
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [0,0.025449753,0.38175917]
+      Position: [0,0.0254488,0.38175964]
       Rotation: [3.1415927,-0,-0]
       Scale: [-0.09888629,0.109487295,0.109487295]
-      WorldTransform: [-9.489472e-08,-0.0346102,-1.1655547e-07,0,0.02351162,-1.6673805e-07,0.030260012,0,0.030605841,-3.4652656e-09,-0.023780327,0,-5.3969293,1.0409653,-2.7425435,1]
+      WorldTransform: [-9.489472e-08,-0.0346102,-1.1655547e-07,0,0.02351162,-1.6673805e-07,0.030260012,0,0.030605841,-3.4652656e-09,-0.023780327,0,-5.3969293,1.0409653,-2.742543,1]
     StaticMeshComponent:
       MeshUUID: 12205825994227504312
       Layer: 1
@@ -899,7 +899,7 @@ Entities:
       Position: [0,0,0]
       Rotation: [0,-0,0]
       Scale: [1,1,1]
-      WorldTransform: [25,0,0,0,0,25,0,0,0,0,1,0,390,253,0,1]
+      WorldTransform: [25,0,0,0,0,25,0,0,0,0,1,0,550,307.5,0,1]
     SpriteComponent:
       Color: [1,1,1,1]
       TextureUUID: 3343954652411117201
@@ -923,7 +923,7 @@ Entities:
       Position: [-3.8049998,-2.53,0]
       Rotation: [0,-0,0]
       Scale: [0.01,0.01,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,419.9,273.8,0,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,579.9,328.3,0,1]
     TextComponent:
       Text: Press (E) to pick up
       FontHandle: 213406294560961755

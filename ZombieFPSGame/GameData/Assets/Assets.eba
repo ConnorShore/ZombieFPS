@@ -204,6 +204,10 @@ Assets:
     Name: AmmoPowerup
     FilePath: Models/PowerUps/Ammo/AmmoPowerup.ebmodel
   - Type: Prefab
+    UUID: 7525331889912364400
+    Name: M4_Pickup
+    FilePath: Prefabs/Weapons/M4_Pickup.ebprefab
+  - Type: Prefab
     UUID: 13559857553863366497
     Name: ImpactConcrete
     FilePath: Prefabs/ImpactConcrete.ebprefab
@@ -227,10 +231,6 @@ Assets:
     UUID: 10097993641357000526
     Name: M4
     FilePath: Prefabs/Weapons/M4.ebprefab
-  - Type: Prefab
-    UUID: 7525331889912364400
-    Name: M4_Pickup
-    FilePath: Prefabs/Weapons/M4_Pickup.ebprefab
   - Type: Font
     UUID: 213406294560961755
     Name: Roboto-Regular
