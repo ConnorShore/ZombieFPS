@@ -17,15 +17,30 @@ PrefabEntities:
     ScriptComponent:
       ScriptUUID: 8102167312162542918
       UserPropertyOverrides:
-        - Name: SightMountName
-          Type: 4
-          Value: ScopeMount
+        - Name: SightMountRef
+          Type: 7
+          Value: 16117594982574674907
+          ReferenceKind: Entity
+        - Name: BarrelTipRef
+          Type: 7
+          Value: 18106011769171454920
+          ReferenceKind: Entity
+        - Name: MuzzleFlashRef
+          Type: 7
+          Value: 15412099849582508473
+          ReferenceKind: Entity
+        - Name: AmmoUIRef
+          Type: 7
+          Value: 15941034270328579006
+          ReferenceKind: Entity
         - Name: ReloadStartSound
-          Type: 4
-          Value: ReloadStart
+          Type: 8
+          Value: 15776698392225788213
+          ReferenceKind: AudioClip
         - Name: ReloadEndSound
-          Type: 4
-          Value: ReloadEnd
+          Type: 8
+          Value: 8785379131387521162
+          ReferenceKind: AudioClip
         - Name: ReloadAnimationName
           Type: 4
           Value: M4_Reload
@@ -35,6 +50,8 @@ PrefabEntities:
     AnimatorComponent:
       SkeletonHandle: 9200567303542518273
       CurrentAnimationHandle: 0
+    PrefabComponent:
+      PrefabUUID: 10097993641357000526
   - Entity: 11176369355613519503
     TagComponent:
       Tag: Armature

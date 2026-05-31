@@ -14,6 +14,7 @@ WeaponMovement.PosSmoothness = 5.0
 WeaponMovement.RotSmoothness = 5.0
 
 WeaponMovement.IdleMultiplier = 0.2
+WeaponMovement.PlayerRef = EntityRef()
 
 function WeaponMovement:OnCreate(entity)
     self.SwayPos = Vector3f.new(0, 0, 0)
@@ -22,6 +23,7 @@ function WeaponMovement:OnCreate(entity)
     self.BobRot = Vector3f.new(0, 0, 0)
     
     self.BobTime = 0.0 
+    self.Player = Scene.GetEntityByUUID(self.PlayerRef)
 end
 
 function WeaponMovement:OnUpdate(entity, delta)
@@ -56,7 +58,11 @@ function WeaponMovement:Sway(transform, mouseDelta)
 end
 
 function WeaponMovement:Bob(transform, delta)
-    local playerController = Scene.GetEntityByName("Player"):GetComponent("CharacterControllerComponent")
+    if not self.Player:IsValid() then
+        return
+    end
+
+    local playerController = self.Player:GetComponent("CharacterControllerComponent")
     local playerVelocity = playerController.MovementVelocity
     local requestedMovement = playerController.RequestedMovement
     local hasRequestedMovement = Math.Length(requestedMovement) > 0.0

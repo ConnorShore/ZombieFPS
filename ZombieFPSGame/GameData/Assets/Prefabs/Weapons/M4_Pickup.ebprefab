@@ -30,9 +30,14 @@ PrefabEntities:
     ScriptComponent:
       ScriptUUID: 1928101263865073231
       UserPropertyOverrides:
-        - Name: WeaponPrefabName
-          Type: 4
-          Value: M4
+        - Name: WeaponPrefab
+          Type: 8
+          Value: 10097993641357000526
+          ReferenceKind: Prefab
+        - Name: WeaponHolderRef
+          Type: 7
+          Value: 230291968303856085
+          ReferenceKind: Entity
     PrefabComponent:
       PrefabUUID: 7525331889912364400
   - Entity: 17748089738734541142

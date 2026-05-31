@@ -1,8 +1,10 @@
 local AmmoUI = {}
 
+AmmoUI.AmmoTextRef = EntityRef()
+
 function AmmoUI:OnCreate(entity)
-    self.AmmoTextEntity = Scene.GetEntityByName("AmmoText")
-    if not self.AmmoTextEntity then
+    self.AmmoTextEntity = Scene.GetEntityByUUID(self.AmmoTextRef)
+    if not self.AmmoTextEntity:IsValid() then
         Log.Warn("Cannot find AmmoText entity in scene! Ammo count will not be displayed.")
     else
         local textComponent = self.AmmoTextEntity:GetComponent("TextComponent")
@@ -15,7 +17,7 @@ function AmmoUI:OnCreate(entity)
 end
 
 function AmmoUI:SetAmmo(currentAmmo, reserveAmmo)
-    if self.AmmoTextEntity then
+    if self.AmmoTextEntity and self.AmmoTextEntity:IsValid() then
         local textComponent = self.AmmoTextEntity:GetComponent("TextComponent")
         if textComponent then
             textComponent.Text = tostring(currentAmmo) .. " / " .. tostring(reserveAmmo)

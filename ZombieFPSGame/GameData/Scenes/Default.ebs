@@ -188,6 +188,14 @@ Entities:
         - Name: InteractionDistance
           Type: 3
           Value: 3
+        - Name: PickupUIRef
+          Type: 7
+          Value: 7122639572906643531
+          ReferenceKind: Entity
+        - Name: WeaponHolderRef
+          Type: 7
+          Value: 230291968303856085
+          ReferenceKind: Entity
   - Entity: 5645678438920164573
     TagComponent:
       Tag: HUD_Canvas
@@ -296,6 +304,14 @@ Entities:
         - Name: KickUpY
           Type: 3
           Value: 0.05
+        - Name: CameraRef
+          Type: 7
+          Value: 3526599274050075716
+          ReferenceKind: Entity
+        - Name: WeaponAimingRef
+          Type: 7
+          Value: 14300943002917955893
+          ReferenceKind: Entity
   - Entity: 9548350549033941053
     TagComponent:
       Tag: WeaponHandler
@@ -388,7 +404,11 @@ Entities:
       LockYAxis: 0
     ScriptComponent:
       ScriptUUID: 17429251933582378423
-      UserPropertyOverrides: []
+      UserPropertyOverrides:
+        - Name: AmmoTextRef
+          Type: 7
+          Value: 8214889738320955675
+          ReferenceKind: Entity
     RectTransformComponent:
       AnchoredPosition: [-16.2,11.9]
       SizeDelta: [-29.2,52.7]
@@ -429,6 +449,22 @@ Entities:
         - Name: BloomDecayRate
           Type: 3
           Value: 0.6
+        - Name: GunshotSound
+          Type: 8
+          Value: 10601745296411271244
+          ReferenceKind: AudioClip
+        - Name: TracerPrefab
+          Type: 8
+          Value: 13120009099153965368
+          ReferenceKind: Prefab
+        - Name: WeaponAimingRef
+          Type: 7
+          Value: 14300943002917955893
+          ReferenceKind: Entity
+        - Name: WeaponRecoilRef
+          Type: 7
+          Value: 12156363934972497198
+          ReferenceKind: Entity
   - Entity: 5356551002598311296
     TagComponent:
       Tag: Magazine
@@ -477,12 +513,10 @@ Entities:
         - Name: AttachmentType
           Type: 5
           Value: 1
-        - Name: PrefabName
-          Type: 4
-          Value: HolographicSight
-        - Name: PickupPrefabName
-          Type: 4
-          Value: HolographicSight
+        - Name: Prefab
+          Type: 8
+          Value: 16836608058861364347
+          ReferenceKind: Prefab
         - Name: PickupType
           Type: 5
           Value: 1
@@ -565,9 +599,14 @@ Entities:
     ScriptComponent:
       ScriptUUID: 1928101263865073231
       UserPropertyOverrides:
-        - Name: WeaponPrefabName
-          Type: 4
-          Value: M4
+        - Name: WeaponPrefab
+          Type: 8
+          Value: 10097993641357000526
+          ReferenceKind: Prefab
+        - Name: WeaponHolderRef
+          Type: 7
+          Value: 230291968303856085
+          ReferenceKind: Entity
     PrefabComponent:
       PrefabUUID: 7525331889912364400
   - Entity: 15220513272756049617
@@ -704,10 +743,7 @@ Entities:
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-9.094947e-13,1,5.0267487,1]
     ScriptComponent:
       ScriptUUID: 936314447457138483
-      UserPropertyOverrides:
-        - Name: ActiveWeaponEntity
-          Type: 4
-          Value: M4
+      UserPropertyOverrides: []
   - Entity: 14300943002917955893
     TagComponent:
       Tag: WeaponAiming
@@ -728,6 +764,18 @@ Entities:
         - Name: ADS_Speed
           Type: 3
           Value: 10
+        - Name: AimNodeRef
+          Type: 7
+          Value: 417690053092696263
+          ReferenceKind: Entity
+        - Name: CrosshairRef
+          Type: 7
+          Value: 16155943693343446687
+          ReferenceKind: Entity
+        - Name: WeaponHandlerRef
+          Type: 7
+          Value: 9548350549033941053
+          ReferenceKind: Entity
   - Entity: 16922120325189435521
     TagComponent:
       Tag: WeaponMovement
@@ -765,6 +813,10 @@ Entities:
         - Name: SwayRotAmount
           Type: 2
           Value: 2
+        - Name: PlayerRef
+          Type: 7
+          Value: 6753254757056896993
+          ReferenceKind: Entity
   - Entity: 2608699378515154292
     TagComponent:
       Tag: Wall
@@ -833,8 +885,13 @@ Entities:
           Type: 3
           Value: 45
         - Name: PickupSound
-          Type: 4
-          Value: AmmoPickupSFX
+          Type: 8
+          Value: 4535810649324835630
+          ReferenceKind: AudioClip
+        - Name: WeaponHolderRef
+          Type: 7
+          Value: 230291968303856085
+          ReferenceKind: Entity
     PrefabComponent:
       PrefabUUID: 3822534466298593180
   - Entity: 14881747670601641762
@@ -882,12 +939,14 @@ Entities:
     ScriptComponent:
       ScriptUUID: 10753367411955256691
       UserPropertyOverrides:
-        - Name: CurrentWeapon
-          Type: 4
-          Value: M4
         - Name: EmptyGunSound
-          Type: 4
-          Value: EmptyGun
+          Type: 8
+          Value: 2869832050986379881
+          ReferenceKind: AudioClip
+        - Name: WeaponFireRef
+          Type: 7
+          Value: 17202988526070122190
+          ReferenceKind: Entity
   - Entity: 16155943693343446687
     TagComponent:
       Tag: Crosshair

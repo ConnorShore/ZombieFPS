@@ -1,6 +1,7 @@
 local PickupWeapon = {}
 
-PickupWeapon.WeaponPrefabName = ""
+PickupWeapon.WeaponPrefab = PrefabRef()
+PickupWeapon.WeaponHolderRef = EntityRef()
 
 function PickupWeapon:OnCreate(entity)
 
@@ -11,8 +12,8 @@ function PickupWeapon:OnUpdate(entity, delta)
 end
 
 function PickupWeapon:OnPickup(entity, otherEntity)
-    local weaponHolderEntity = Scene.GetEntityByName("WeaponHolder")
-    if not weaponHolderEntity then
+    local weaponHolderEntity = Scene.GetEntityByUUID(self.WeaponHolderRef)
+    if not weaponHolderEntity:IsValid() then
         Log.Warn("Cannot find WeaponHolder entity in scene! Cannot pick up weapon.")
         return
     end
@@ -23,7 +24,7 @@ function PickupWeapon:OnPickup(entity, otherEntity)
         return
     end
 
-    weaponHolderScript:EquipWeapon(self.WeaponPrefabName) -- For now, always equip to slot 1
+    weaponHolderScript:EquipWeapon(self.WeaponPrefab) -- For now, always equip to slot 1
 
     Scene.RemoveEntity(entity)
 end

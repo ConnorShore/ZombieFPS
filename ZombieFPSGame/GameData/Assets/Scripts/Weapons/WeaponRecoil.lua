@@ -13,6 +13,8 @@ WeaponRecoil.RotationYVariance = 2.0  -- Random horizontal bounce (Left to Right
 WeaponRecoil.Snappiness = 20.0
 WeaponRecoil.ReturnSpeed = 5.0
 WeaponRecoil.ADSKickMultiplier = 0.1 
+WeaponRecoil.CameraRef = EntityRef()
+WeaponRecoil.WeaponAimingRef = EntityRef()
 
 function WeaponRecoil:OnCreate(entity)
     self.TargetPositionOffset  = Vector3f.new(0, 0, 0)
@@ -24,7 +26,8 @@ function WeaponRecoil:OnCreate(entity)
     self.TargetCameraYaw = 0.0
     self.CurrentCameraYaw = 0.0
     self.PreviousCameraYaw = 0.0
-    self.Camera = Scene.GetEntityByName("Camera")
+    self.Camera = Scene.GetEntityByUUID(self.CameraRef)
+    self.WeaponAiming = Scene.GetEntityByUUID(self.WeaponAimingRef)
 end
 
 function WeaponRecoil:OnUpdate(entity, delta)
@@ -51,7 +54,7 @@ function WeaponRecoil:OnUpdate(entity, delta)
     local pitchDelta = self.CurrentCameraPitch - self.PreviousCameraPitch
     local yawDelta = self.CurrentCameraYaw - self.PreviousCameraYaw
     
-    if self.Camera then
+    if self.Camera:IsValid() then
         -- Inject Pitch directly into the MouseLook script (Camera local X rotation)
         if pitchDelta ~= 0.0 then
             local mouseLook = self.Camera:GetScriptInstance()
@@ -75,8 +78,7 @@ function WeaponRecoil:OnUpdate(entity, delta)
 end
 
 function WeaponRecoil:Fire(entity)
-    local aimingEntity = Scene.GetEntityByName("WeaponAiming")
-    local isADS = aimingEntity and aimingEntity:GetScriptInstance().IsAiming or false
+    local isADS = self.WeaponAiming:IsValid() and self.WeaponAiming:GetScriptInstance().IsAiming or false
 
     -- Generate the unique recoil math for this specific bullet
     local actualPitch = self.RotationX + Math.RandomFloat(-self.RotationXVariance, self.RotationXVariance)

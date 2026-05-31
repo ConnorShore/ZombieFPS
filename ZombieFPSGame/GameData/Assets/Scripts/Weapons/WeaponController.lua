@@ -1,16 +1,19 @@
 local WeaponController = {}
 
-WeaponController.SightMountName = ""
-WeaponController.MuzzleMountName = ""
-WeaponController.StockMountName = ""
-WeaponController.GripMountName = ""
+WeaponController.SightMountRef = EntityRef()
+WeaponController.MuzzleMountRef = EntityRef()
+WeaponController.StockMountRef = EntityRef()
+WeaponController.GripMountRef = EntityRef()
+WeaponController.BarrelTipRef = EntityRef()
+WeaponController.MuzzleFlashRef = EntityRef()
+WeaponController.AmmoUIRef = EntityRef()
 
 WeaponController.MaxAmmo = 120
 WeaponController.MagazineSize = 30
 
 WeaponController.ReloadTime = 1.0   -- Time (in seconds) it takes to reload
-WeaponController.ReloadStartSound = ""
-WeaponController.ReloadEndSound = ""
+WeaponController.ReloadStartSound = AudioClipRef()
+WeaponController.ReloadEndSound = AudioClipRef()
 
 WeaponController.MagOutEventName = "MagOut"
 WeaponController.MagInEventName = "MagIn"
@@ -21,13 +24,15 @@ WeaponController.ReloadAnimationName = "Reload"
 WeaponController.EquipPositionOffset = Vector3f.new(0, 0, 0)
 
 function WeaponController:OnCreate(entity)
-    -- Dynamically resolve the mount points based on what you typed in the Editor
+    self.Entity = entity
     self.MountPoints = {
-        [1] = self.SightMountName ~= "" and Scene.GetEntityByName(self.SightMountName) or nil,
-        [2] = self.StockMountName ~= "" and Scene.GetEntityByName(self.StockMountName) or nil,
-        [3] = self.MuzzleMountName ~= "" and Scene.GetEntityByName(self.MuzzleMountName) or nil,
-        [4] = self.GripMountName ~= "" and Scene.GetEntityByName(self.GripMountName) or nil
+        [1] = self:ResolveEntityRef(self.SightMountRef),
+        [2] = self:ResolveEntityRef(self.StockMountRef),
+        [3] = self:ResolveEntityRef(self.MuzzleMountRef),
+        [4] = self:ResolveEntityRef(self.GripMountRef)
     }
+    self.BarrelTipEntity = self:ResolveEntityRef(self.BarrelTipRef)
+    self.MuzzleFlashEntity = self:ResolveEntityRef(self.MuzzleFlashRef)
     
     self.ActiveAttachments = {nil, nil, nil, nil} -- Track active attachments in each slot
 
@@ -45,6 +50,15 @@ function WeaponController:OnCreate(entity)
     end
 end
 
+function WeaponController:ResolveEntityRef(entityRef)
+    local resolved = Scene.GetEntityByUUID(entityRef)
+    if resolved:IsValid() then
+        return resolved
+    end
+
+    return nil
+end
+
 function WeaponController:OnUpdate(entity, delta)
     if not self.AmmoScript then
         self:TryBindAmmoUI()
@@ -56,8 +70,8 @@ function WeaponController:TryBindAmmoUI()
         return true
     end
 
-    local ammoEntity = Scene.GetEntityByName("AmmoUI")
-    if not ammoEntity then
+    local ammoEntity = Scene.GetEntityByUUID(self.AmmoUIRef)
+    if not ammoEntity:IsValid() then
         return false
     end
 
@@ -97,11 +111,11 @@ function WeaponController:OnReload()
     end
 end
 
-function WeaponController:EquipAttachment(attachmentType, prefabName)
+function WeaponController:EquipAttachment(attachmentType, prefabHandle)
     local mountPointEntity = self.MountPoints[attachmentType]
-    Log.Info("Attempting to equip attachment of type " .. tostring(attachmentType) .. " with prefab " .. tostring(prefabName))
+    Log.Info("Attempting to equip attachment of type " .. tostring(attachmentType) .. " with prefab " .. tostring(prefabHandle))
     
-    if not mountPointEntity then
+    if not mountPointEntity or not mountPointEntity:IsValid() then
         Log.Warn("This weapon does not support attachment type: " .. tostring(attachmentType))
         return
     end
@@ -113,10 +127,18 @@ function WeaponController:EquipAttachment(attachmentType, prefabName)
     end
     
     -- Spawn the new attachment as a child of the specific mount point entity
-    local newAttachment = Scene.InstantiatePrefab(prefabName, mountPointEntity)
+    local newAttachment = Scene.InstantiatePrefab(prefabHandle, mountPointEntity)
     
     -- Track it
     self.ActiveAttachments[attachmentType] = newAttachment
+end
+
+function WeaponController:GetBarrelTipEntity()
+    return self.BarrelTipEntity
+end
+
+function WeaponController:GetMuzzleFlashEntity()
+    return self.MuzzleFlashEntity
 end
 
 function WeaponController:OnAnimationEvent(eventName)
@@ -130,7 +152,9 @@ function WeaponController:OnAnimationEvent(eventName)
         local remainingAmmoInMag = self.CurrentAmmo
         self.CurrentAmmo = self.ReserveAmmo > self.MagazineSize and self.MagazineSize or self.ReserveAmmo
         self.ReserveAmmo = self.ReserveAmmo > self.MagazineSize and (self.ReserveAmmo - self.MagazineSize) + remainingAmmoInMag or 0
-        self.AmmoScript:SetAmmo(self.CurrentAmmo, self.ReserveAmmo)
+        if self.AmmoScript or self:TryBindAmmoUI() then
+            self.AmmoScript:SetAmmo(self.CurrentAmmo, self.ReserveAmmo)
+        end
         if self.ReserveAmmo <= 0 then
             self.CanShoot = self.CurrentAmmo > 0
         else

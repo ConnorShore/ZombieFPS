@@ -1,9 +1,12 @@
 local PlayerInteraction = {}
 
 PlayerInteraction.InteractionDistance = 2.0
+PlayerInteraction.PickupUIRef = EntityRef()
+PlayerInteraction.WeaponHolderRef = EntityRef()
 
 function PlayerInteraction:OnCreate(entity)
-
+    self.PickupUI = Scene.GetEntityByUUID(self.PickupUIRef)
+    self.WeaponHolder = Scene.GetEntityByUUID(self.WeaponHolderRef)
 end
 
 function PlayerInteraction:OnUpdate(entity, delta)
@@ -19,10 +22,11 @@ function PlayerInteraction:OnUpdate(entity, delta)
     -- Debug.DrawLine(rayStart, rayEnd)
 
     -- Cast ray to detect interactable objects
-    local pickupUI = Scene.GetEntityByName("PickupItemUI")
     local hitResult = Physics.CastRay(rayStart, rayEnd, CollisionFilter.PickupItem)
     if hitResult.Hit then
-        pickupUI:SetActive(true)
+        if self.PickupUI:IsValid() then
+            self.PickupUI:SetActive(true)
+        end
 
         if Input.IsKeyPressed(KeyCode.E) then
             Log.Info("PlayerInteraction: Detected interactable object hit by raycast: " .. hitResult.Entity:GetName())
@@ -43,19 +47,25 @@ function PlayerInteraction:OnUpdate(entity, delta)
             Log.Warn("PlayerInteraction: Hit entity does not have a recognized pickup script attached!")
         end
     else
-        pickupUI:SetActive(false)
+        if self.PickupUI:IsValid() then
+            self.PickupUI:SetActive(false)
+        end
     end
 end
 
 function PlayerInteraction:OnPickupItem(pickupScript, pickupEntity, playerEntity)
     Log.Info("PlayerInteraction:OnPickupItem - Attempting to pick up item")
-    local weaponHolder = Scene.GetEntityByName("WeaponHolder")
-    if not weaponHolder then
+    local weaponHolder = self.WeaponHolder
+    if not weaponHolder:IsValid() then
         Log.Error("WeaponHolder entity not found in scene!")
         return
     end
 
     local weaponHolderScript = weaponHolder:GetScriptInstance("WeaponHolder")
+    if not weaponHolderScript then
+        Log.Error("WeaponHolder entity does not have a WeaponHolder script attached!")
+        return
+    end
 
     -- TODO: Should this logic be in PickupItem script??
     -- Check if the player is actually holding a gun right now
@@ -64,7 +74,7 @@ function PlayerInteraction:OnPickupItem(pickupScript, pickupEntity, playerEntity
         local isAttachment = pickupScript and type(pickupScript.GetAttachmentData) == "function"
         if weaponController and isAttachment then
             local data = pickupScript:GetAttachmentData()
-            weaponController:EquipAttachment(data.Type, data.PrefabName)
+            weaponController:EquipAttachment(data.Type, data.PrefabHandle)
         end
     else
         Log.Warn("Cannot equip attachment: Player is not holding a weapon!")

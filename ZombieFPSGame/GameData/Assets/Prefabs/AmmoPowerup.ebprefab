@@ -37,8 +37,13 @@ PrefabEntities:
           Type: 3
           Value: 45
         - Name: PickupSound
-          Type: 4
-          Value: AmmoPickupSFX
+          Type: 8
+          Value: 4535810649324835630
+          ReferenceKind: AudioClip
+        - Name: WeaponHolderRef
+          Type: 7
+          Value: 230291968303856085
+          ReferenceKind: Entity
   - Entity: 9090645728019880623
     TagComponent:
       Tag: AmmoBox

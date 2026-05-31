@@ -7,20 +7,18 @@ PickupItem.AttachmentType = {
     Grip = 4
 }
 
--- TODO: Remove this prefab name and just have the actual model
--- and attach this script to it
-PickupItem.PrefabName = ""
+PickupItem.Prefab = PrefabRef()
 
 function PickupItem:OnCreate(entity)
     local transform = entity:GetComponent("TransformComponent")
-    self.PrefabEntity = Scene.InstantiatePrefab(self.PrefabName, transform.WorldPosition)
+    self.PrefabEntity = Scene.InstantiatePrefab(self.Prefab, transform.WorldPosition)
 end
 
 function PickupItem:OnUpdate(entity, delta)
 end
 
 function PickupItem:OnPickup(entity, otherEntity)
-    if self.PrefabEntity then
+    if self.PrefabEntity and self.PrefabEntity:IsValid() then
         Scene.RemoveEntity(self.PrefabEntity)
         self.PrefabEntity = nil
     end
@@ -31,7 +29,7 @@ end
 function PickupItem:GetAttachmentData()
     return {
         Type = self.AttachmentType,
-        PrefabName = self.PrefabName
+        PrefabHandle = self.Prefab
     }
 end
 

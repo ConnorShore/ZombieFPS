@@ -1,13 +1,15 @@
 local WeaponHolder = {}
 
 WeaponHolder.WeaponSlots = 2
-WeaponHolder.EmptyGunSound = ""
+WeaponHolder.EmptyGunSound = AudioClipRef()
+WeaponHolder.WeaponFireRef = EntityRef()
 
 function WeaponHolder:OnCreate(entity)
     self.PlayedEmptyGunSound = false
     self.Weapons = {nil, nil} -- Track equipped weapons in each slot
     self.ActiveWeaponSlot = 1
     self.Entity = entity
+    self.WeaponFire = Scene.GetEntityByUUID(self.WeaponFireRef)
 end
 
 function WeaponHolder:OnUpdate(entity, delta)
@@ -22,11 +24,19 @@ function WeaponHolder:OnUpdate(entity, delta)
     end
 end
 
-function WeaponHolder:EquipWeapon(prefabName)
+function WeaponHolder:GetWeaponPrefabHandle(weaponEntity)
+    if weaponEntity and weaponEntity:IsValid() and weaponEntity:ContainsComponent("PrefabComponent") then
+        return weaponEntity:GetComponent("PrefabComponent").PrefabUUID
+    end
+
+    return nil
+end
+
+function WeaponHolder:EquipWeapon(prefabHandle)
     -- If the same weapon is already equipped in a slot, do nothing and switch to that slot
     for i = 1, self.WeaponSlots do
-        if self.Weapons[i] ~= nil and self.Weapons[i]:GetName() == prefabName then
-            Log.Info("Weapon '" .. prefabName .. "' is already equipped in slot " .. tostring(i) .. ". Switching to that slot.")
+        if self.Weapons[i] ~= nil and self:GetWeaponPrefabHandle(self.Weapons[i]) == prefabHandle then
+            Log.Info("Weapon prefab '" .. tostring(prefabHandle) .. "' is already equipped in slot " .. tostring(i) .. ". Switching to that slot.")
             self.ActiveWeaponSlot = i
             return
         end
@@ -47,20 +57,17 @@ function WeaponHolder:EquipWeapon(prefabName)
             self.Weapons[emptySlot] = self.Weapons[self.ActiveWeaponSlot]
         else
             Log.Info("No empty weapon slot available, removing existing weapon in slot " .. tostring(self.ActiveWeaponSlot))
-            local existingWeaponEntity = Scene.GetEntityByName(self.Weapons[self.ActiveWeaponSlot]:GetName())
-            if existingWeaponEntity then
-                Scene.RemoveEntity(existingWeaponEntity)
-            end
+            Scene.RemoveEntity(self.Weapons[self.ActiveWeaponSlot])
         end
     end
 
-    Log.Info("Equipping weapon '" .. prefabName .. "' to slot " .. tostring(self.ActiveWeaponSlot))
+    Log.Info("Equipping weapon prefab '" .. tostring(prefabHandle) .. "' to slot " .. tostring(self.ActiveWeaponSlot))
 
     -- Equip new weapon
-    local newWeaponEntity = Scene.InstantiatePrefab(prefabName, self.Entity)
-    local weaponControllerScript = newWeaponEntity and newWeaponEntity:GetScriptInstance()
+    local newWeaponEntity = Scene.InstantiatePrefab(prefabHandle, self.Entity)
+    local weaponControllerScript = newWeaponEntity:IsValid() and newWeaponEntity:GetScriptInstance() or nil
     if not weaponControllerScript then
-        Log.Warn("Equipped weapon prefab '" .. prefabName .. "' does not have a WeaponController script attached! Removing weapon entity.")
+        Log.Warn("Equipped weapon prefab '" .. tostring(prefabHandle) .. "' does not have a WeaponController script attached! Removing weapon entity.")
         Scene.RemoveEntity(newWeaponEntity)
         return
     end
@@ -71,14 +78,9 @@ function WeaponHolder:EquipWeapon(prefabName)
 end
 
 function WeaponHolder:OnShoot()
-    if not self:GetCurrentWeapon() then
+    local weaponEntity = self:GetCurrentWeapon()
+    if not weaponEntity or not weaponEntity:IsValid() then
         Log.Warn("No weapon equipped!")
-        return
-    end
-
-    local weaponEntity = Scene.GetEntityByName(self:GetCurrentWeapon():GetName())
-    if not weaponEntity then
-        Log.Warn("Weapon entity '" .. self:GetCurrentWeapon():GetName() .. "' not found in scene!")
         return
     end
 
@@ -92,8 +94,8 @@ function WeaponHolder:OnShoot()
     -- TODO: Need to have specific weapons ahve fire profiles and the WEaponFire just handles the actual firing logic
     -- based on the current equipped weapon's fire profile. This way we can have different types of weapons (hitscan, projectile, shotgun, etc.) 
     -- and the fire logic can be handled in a modular way.
-    local weaponFireEntity = Scene.GetEntityByName("WeaponFire")
-    if not weaponFireEntity then
+    local weaponFireEntity = self.WeaponFire
+    if not weaponFireEntity:IsValid() then
         Log.Warn("Cannot find WeaponFire entity in scene!")
         return
     end
@@ -106,7 +108,7 @@ function WeaponHolder:OnShoot()
 
     -- Scheck if weapons can shoot
     if not weaponControllerScript.CanShoot then
-        if not self.PlayedEmptyGunSound and self.EmptyGunSound ~= "" then
+        if not self.PlayedEmptyGunSound then
             AudioSystem.PlaySound(self.EmptyGunSound)
             self.PlayedEmptyGunSound = true
         end
@@ -118,14 +120,14 @@ function WeaponHolder:OnShoot()
     end
 
     -- Shoot using the WeaponFire proxy so spread is centered on camera/reticle.
-    weaponFireScript:Fire(weaponFireEntity)
+    weaponFireScript:Fire(weaponFireEntity, weaponEntity)
     weaponControllerScript:OnShoot()
 end
 
 function WeaponHolder:OnReload()
-    local weaponEntity = Scene.GetEntityByName(self:GetCurrentWeapon():GetName())
-    if not weaponEntity then
-        Log.Warn("Weapon entity '" .. self:GetCurrentWeapon():GetName() .. "' not found in scene!")
+    local weaponEntity = self:GetCurrentWeapon()
+    if not weaponEntity or not weaponEntity:IsValid() then
+        Log.Warn("Current weapon entity is not valid!")
         return
     end
 

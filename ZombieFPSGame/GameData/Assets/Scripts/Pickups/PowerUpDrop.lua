@@ -3,7 +3,8 @@ local PowerUpDrop = {}
 PowerUpDrop.MoveSpeed = 3.0
 PowerUpDrop.MoveDistance = 0.2
 PowerUpDrop.RotationSpeed = 30.0
-PowerUpDrop.PickupSound = ""
+PowerUpDrop.PickupSound = AudioClipRef()
+PowerUpDrop.WeaponHolderRef = EntityRef()
 
 PowerUpDrop.PickupType = {
     Ammo = 1,
@@ -15,6 +16,7 @@ PowerUpDrop.Amount = 10
 
 function PowerUpDrop:OnCreate(entity)
     self.TimeSinceStart = 0.0
+    self.WeaponHolder = Scene.GetEntityByUUID(self.WeaponHolderRef)
     
     -- Start point for the bobbing motion
     local transform = entity:GetComponent("TransformComponent")
@@ -51,11 +53,10 @@ function PowerUpDrop:OnOverlapTriggerEnter(entity, otherEntity)
 end
 
 function PowerUpDrop:AddAmmo(amount)
-    local weaponHolderEntity = Scene.GetEntityByName("WeaponHolder")
-    local weaponHolderScript = weaponHolderEntity and weaponHolderEntity:GetScriptInstance()
-    if weaponHolderScript and weaponHolderScript.CurrentWeapon ~= "" then
-        local weaponEntity = Scene.GetEntityByName(weaponHolderScript.CurrentWeapon)
-        local weaponControllerScript = weaponEntity and weaponEntity:GetScriptInstance()
+    local weaponHolderScript = self.WeaponHolder:IsValid() and self.WeaponHolder:GetScriptInstance() or nil
+    if weaponHolderScript and weaponHolderScript:GetCurrentWeapon() then
+        local weaponEntity = weaponHolderScript:GetCurrentWeapon()
+        local weaponControllerScript = weaponEntity and weaponEntity:IsValid() and weaponEntity:GetScriptInstance() or nil
         if weaponControllerScript then
             weaponControllerScript:AddAmmo(amount)
         else

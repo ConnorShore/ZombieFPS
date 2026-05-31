@@ -14,13 +14,18 @@ WeaponFire.BloomDecayRate = 0.5   -- How fast the cone shrinks when not shooting
 WeaponFire.TracerEnabled = true
 WeaponFire.TracerCadence = 3 -- Spawn a tracer every 3 shots
 
-WeaponFire.GunshotSound = "M4_Shot"
+WeaponFire.GunshotSound = AudioClipRef()
+WeaponFire.TracerPrefab = PrefabRef()
+WeaponFire.WeaponAimingRef = EntityRef()
+WeaponFire.WeaponRecoilRef = EntityRef()
 
 function WeaponFire:OnCreate(entity)
     self.TimeSinceLastShot = 60.0 / self.FireRate -- Initialize so that we can shoot immediately
     self.CurrentBloom = self.BaseHipBloom
     self.ShotCount = 0
     self.CanShoot = true
+    self.WeaponAiming = Scene.GetEntityByUUID(self.WeaponAimingRef)
+    self.WeaponRecoil = Scene.GetEntityByUUID(self.WeaponRecoilRef)
 end
 
 function WeaponFire:OnUpdate(entity, delta)
@@ -37,7 +42,7 @@ function WeaponFire:OnUpdate(entity, delta)
     end
 end
 
-function WeaponFire:Fire(entity)
+function WeaponFire:Fire(entity, weaponEntity)
     self.TimeSinceLastShot = 0.0
     self.ShotCount = self.ShotCount + 1
 
@@ -48,8 +53,7 @@ function WeaponFire:Fire(entity)
     local right = transform:GetRight()
     local up = transform:GetUp()
 
-    local aimingEntity = Scene.GetEntityByName("WeaponAiming")
-    local isADS = aimingEntity and aimingEntity:GetScriptInstance().IsAiming or false
+    local isADS = self.WeaponAiming:IsValid() and self.WeaponAiming:GetScriptInstance().IsAiming or false
 
     -- determine spread
     local finalShootDirection = forward
@@ -72,8 +76,9 @@ function WeaponFire:Fire(entity)
     local endPoint = position + finalShootDirection * self.Range
 
     -- Spawn muzzle flash from the MuzzleFlash script
-    local muzzleFlash = Scene.GetEntityByName("MuzzleFlash")
-    if muzzleFlash then
+    local weaponController = weaponEntity and weaponEntity:IsValid() and weaponEntity:GetScriptInstance() or nil
+    local muzzleFlash = weaponController and weaponController:GetMuzzleFlashEntity() or nil
+    if muzzleFlash and muzzleFlash:IsValid() then
         local muzzleFlashScript = muzzleFlash:GetScriptInstance()
         muzzleFlashScript:PlayFlash()
     end
@@ -84,7 +89,7 @@ function WeaponFire:Fire(entity)
     -- Tracer should end at the actual impact point when we hit something.
     local tracerEndPoint = hitResult.Hit and hitResult.CollisionPoint or endPoint
     if self.TracerEnabled and (self.ShotCount % self.TracerCadence == 0) then
-        self:SpawnTracer(tracerEndPoint)
+        self:SpawnTracer(tracerEndPoint, weaponController)
     end
 
     if hitResult.Hit then
@@ -99,7 +104,6 @@ function WeaponFire:Fire(entity)
             -- Offset slightly along the surface normal to avoid z-fighting with the hit surface
             local impactPos = hitResult.CollisionPoint + hitResult.SurfaceNormal * 0.01
 
-            -- local impactEffect = Scene.InstantiatePrefab("ImpactConcrete", impactPos)
             local impactEffect = Scene.RetrieveFromPool("ImpactConcretePool", impactPos)
             if impactEffect then
                 local impactTransform = impactEffect:GetComponent("TransformComponent")
@@ -114,23 +118,22 @@ function WeaponFire:Fire(entity)
     end
 
     -- Trigger recoil
-    local recoilEntity = Scene.GetEntityByName("WeaponRecoil")
-    if recoilEntity then
-        local recoilScript = recoilEntity:GetScriptInstance()
+    if self.WeaponRecoil:IsValid() then
+        local recoilScript = self.WeaponRecoil:GetScriptInstance()
         recoilScript:Fire()
     end
 end
 
-function WeaponFire:SpawnTracer(endPos)
-    local gunTip = Scene.GetEntityByName("BarrelTip")
-    local forward = gunTip and gunTip:GetComponent("TransformComponent"):GetForward() or Vector3f.new(0, 0, 1)
-    local startPos = gunTip and gunTip:GetComponent("TransformComponent").WorldPosition or Vector3f.new(0, 0, 0)
+function WeaponFire:SpawnTracer(endPos, weaponController)
+    local gunTip = weaponController and weaponController:GetBarrelTipEntity() or nil
+    local forward = gunTip and gunTip:IsValid() and gunTip:GetComponent("TransformComponent"):GetForward() or Vector3f.new(0, 0, 1)
+    local startPos = gunTip and gunTip:IsValid() and gunTip:GetComponent("TransformComponent").WorldPosition or Vector3f.new(0, 0, 0)
 
     -- Spawn it a bit infront of the gun tip to avoid z-fighting with the gun model
     startPos = startPos + Math.Normalize(forward) * 0.3
 
-    local tracer = Scene.InstantiatePrefab("Tracer", startPos)
-    if tracer and startPos then
+    local tracer = Scene.InstantiatePrefab(self.TracerPrefab, startPos)
+    if tracer:IsValid() and startPos then
         local tracerScript = tracer:GetScriptInstance()
         if not tracerScript then
             Log.Error("Tracer prefab does not have a script instance!")
