@@ -19,7 +19,8 @@ WeaponController.MagOutEventName = "MagOut"
 WeaponController.MagInEventName = "MagIn"
 WeaponController.RefillAmmoEventName = "RefillAmmo"
 WeaponController.ReloadCompleteEventName = "ReloadComplete"
-WeaponController.ReloadAnimationName = "Reload"
+WeaponController.ReloadStateName = "Reload"
+WeaponController.ReloadTriggerParam = "ReloadRequested"
 
 WeaponController.EquipPositionOffset = Vector3f.new(0, 0, 0)
 
@@ -43,6 +44,10 @@ function WeaponController:OnCreate(entity)
     self.CanShoot = true
 
     self.AnimatorComp = entity:GetComponent("AnimatorComponent")
+    if self.AnimatorComp then
+        self.AnimatorComp:SetBool(self.ReloadTriggerParam, false)
+    end
+
     self.AmmoEntity = nil
     self.AmmoScript = nil
     if not self:TryBindAmmoUI() then
@@ -104,10 +109,11 @@ function WeaponController:OnReload()
 
         if not self.AnimatorComp then
             Log.Error("WeaponController:OnReload - No AnimatorComponent found on entity " .. self.Entity:GetName())
+            self.IsReloading = false
             return
         end
-        
-        self.AnimatorComp:Play(self.ReloadAnimationName, 1.0, 0.1)
+
+        self.AnimatorComp:SetBool(self.ReloadTriggerParam, true)
     end
 end
 
@@ -163,6 +169,9 @@ function WeaponController:OnAnimationEvent(eventName)
     elseif eventName == self.ReloadCompleteEventName then
         Log.Info("Reload complete!")
         self.IsReloading = false
+        if self.AnimatorComp then
+            self.AnimatorComp:SetBool(self.ReloadTriggerParam, false)
+        end
     end
 end
 

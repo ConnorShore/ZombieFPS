@@ -41,15 +41,16 @@ PrefabEntities:
           Type: 8
           Value: 8785379131387521162
           ReferenceKind: AudioClip
-        - Name: ReloadAnimationName
+        - Name: ReloadStateName
           Type: 4
-          Value: M4_Reload
+          Value: Reload
         - Name: EquipPositionOffset
           Type: 6
           Value: [0,0.09,-0.29]
     AnimatorComponent:
       SkeletonHandle: 9200567303542518273
-      CurrentAnimationHandle: 0
+      AnimationStateMachineHandle: 17100135789324560666
+      CurrentStateName: Idle
     PrefabComponent:
       PrefabUUID: 10097993641357000526
   - Entity: 11176369355613519503

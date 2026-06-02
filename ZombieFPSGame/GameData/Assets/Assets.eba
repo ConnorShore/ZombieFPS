@@ -191,6 +191,10 @@ Assets:
     UUID: 6612716991326083235
     Name: M4_Reload
     FilePath: Models/M4_Anim/M4_Reload.ebanim
+  - Type: AnimationStateMachine
+    UUID: 17100135789324560666
+    Name: M4_ReloadStateMachine
+    FilePath: Animations/M4_ReloadStateMachine.ebasm
   - Type: Model
     UUID: 78582201594786378
     Name: AssaultRifle
