@@ -1,0 +1,55 @@
+Version: 1
+Parameters:
+  - Name: ReloadRequested
+    Type: 1
+    FloatValue: 0
+    BoolValue: 0
+    IntValue: 0
+Layers:
+  - Name: Base Layer
+    Weight: 1
+    MaskHandle: 0
+    StateMachine:
+      DefaultState: 14495123272126177779
+      EntryNodePositionSet: 1
+      ExitNodePositionSet: 1
+      EntryNodePosition: [-5,211]
+      ExitNodePosition: [715,195]
+      States:
+        - Id: 14495123272126177779
+          Name: Idle
+          AnimationHandle: 0
+          Looping: 0
+          BasePlaybackSpeed: 1
+          PositionSet: 1
+          NodePosition: [235,179]
+        - Id: 15399516915033917580
+          Name: Reload
+          AnimationHandle: 6612716991326083235
+          Looping: 0
+          BasePlaybackSpeed: 1
+          PositionSet: 1
+          NodePosition: [443,451]
+      Transitions:
+        - Id: 11788189842545254772
+          FromStateId: 14495123272126177779
+          ToStateId: 15399516915033917580
+          BlendDuration: 0.05
+          Conditions:
+            - ParameterName: ReloadRequested
+              Type: 1
+              Operator: 2
+              FloatValue: 0
+              BoolValue: 1
+              IntValue: 0
+        - Id: 14525844167888501404
+          FromStateId: 15399516915033917580
+          ToStateId: 14495123272126177779
+          BlendDuration: 0.08
+          Conditions:
+            - ParameterName: ReloadRequested
+              Type: 1
+              Operator: 2
+              FloatValue: 0
+              BoolValue: 0
+              IntValue: 0

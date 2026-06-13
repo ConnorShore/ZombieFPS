@@ -1,6 +1,15 @@
 Scene: Default
 Entities:
   - Entity: 4008310533388848912
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RigidBodyComponent
+      - BoxColliderComponent
+      - StaticMeshComponent
+      - MaterialComponent
     TagComponent:
       Tag: Ground
     RelationshipComponent:
@@ -31,6 +40,17 @@ Entities:
     MaterialComponent:
       MaterialUUID: 13734008897576602447
   - Entity: 6753254757056896993
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RigidBodyComponent
+      - CapsuleColliderComponent
+      - StaticMeshComponent
+      - MaterialComponent
+      - ScriptComponent
+      - CharacterControllerComponent
     TagComponent:
       Tag: Player
     RelationshipComponent:
@@ -73,6 +93,11 @@ Entities:
       MaxSlopeAngle: 45
       MaxStepHeight: 0.25
   - Entity: 11417141245009400245
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
     TagComponent:
       Tag: HeadPivot
     RelationshipComponent:
@@ -86,6 +111,14 @@ Entities:
       Scale: [1,1,1]
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-9.094947e-13,1.8,4.826749,1]
   - Entity: 3526599274050075716
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - CameraComponent
+      - ScriptComponent
+      - EditorIconComponent
     TagComponent:
       Tag: Camera
     RelationshipComponent:
@@ -96,12 +129,12 @@ Entities:
         - 17202988526070122190
       IsAttachment: 0
     TransformComponent:
-      Position: [-2.9801413e-08,0,-0.0018620491]
+      Position: [9.094947e-13,0,-0.0018620491]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-2.9802322e-08,1.8,4.824887,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1.8,4.824887,1]
     CameraComponent:
-      Projection: [0.79846454,0,0,0,0,1.428148,0,0,0,0,-1.00008,-1,0,0,-0.0400016,0]
+      Projection: [0.76410466,0,0,0,0,1.428148,0,0,0,0,-1.00008,-1,0,0,-0.0400016,0]
       Type: 1
       IsActive: 1
       RenderMask: 65533
@@ -121,6 +154,13 @@ Entities:
           Type: 3
           Value: 2
   - Entity: 12465165630900061560
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - DirectionalLightComponent
+      - EditorIconComponent
     TagComponent:
       Tag: Sun
     RelationshipComponent:
@@ -137,6 +177,12 @@ Entities:
       Color: [1,1,1]
       Intensity: 5
   - Entity: 5626873194022295191
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - SpriteComponent
     TagComponent:
       Tag: GlowHorz
     RelationshipComponent:
@@ -154,6 +200,13 @@ Entities:
       IsBillboard: 1
       LockYAxis: 0
   - Entity: 14693685799150300691
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - PointLightComponent
+      - EditorIconComponent
     TagComponent:
       Tag: Light
     RelationshipComponent:
@@ -171,6 +224,12 @@ Entities:
       Intensity: 5
       Radius: 0
   - Entity: 1173232325625663726
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
     TagComponent:
       Tag: Interaction
     RelationshipComponent:
@@ -181,7 +240,7 @@ Entities:
       Position: [-9.094947e-13,0,0]
       Rotation: [0,-0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-2.9803232e-08,1.8,4.824887,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-9.094947e-13,1.8,4.824887,1]
     ScriptComponent:
       ScriptUUID: 8562544563539838448
       UserPropertyOverrides:
@@ -197,6 +256,13 @@ Entities:
           Value: 230291968303856085
           ReferenceKind: Entity
   - Entity: 5645678438920164573
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - CanvasComponent
+      - RectTransformComponent
     TagComponent:
       Tag: HUD_Canvas
     RelationshipComponent:
@@ -225,6 +291,13 @@ Entities:
       Pivot: [0.5,0.5]
       Rotation: 0
   - Entity: 8214889738320955675
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - TextComponent
+      - RectTransformComponent
     TagComponent:
       Tag: AmmoText
     RelationshipComponent:
@@ -235,7 +308,7 @@ Entities:
       Position: [0,0,0]
       Rotation: [0,-0,0]
       Scale: [0.005348166,0.014285714,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,968.9001,29.55,0,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,967.99005,29.55,0,1]
     TextComponent:
       Text: 0 / 0
       FontHandle: 213406294560961755
@@ -248,6 +321,13 @@ Entities:
       Pivot: [1,1]
       Rotation: 0
   - Entity: 9090645728019880623
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - StaticMeshComponent
+      - MaterialComponent
     TagComponent:
       Tag: AmmoBox
     RelationshipComponent:
@@ -265,6 +345,11 @@ Entities:
     MaterialComponent:
       MaterialUUID: 1868779223986162857
   - Entity: 417690053092696263
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
     TagComponent:
       Tag: ADS_Node
     RelationshipComponent:
@@ -275,8 +360,14 @@ Entities:
       Position: [0,0.33496273,0.05273485]
       Rotation: [0,-0,0]
       Scale: [0.37703243,0.37703243,0.37703243]
-      WorldTransform: [0.37703243,0,0,0,0,0.37703243,0,0,0,0,0.37703243,0,0.32999998,1.7183497,4.263258,1]
+      WorldTransform: [0.37703243,0,0,0,0,0.37703243,0,0,0,0,0.37703243,0,0.33,1.7183497,4.263258,1]
   - Entity: 12156363934972497198
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
     TagComponent:
       Tag: WeaponRecoil
     RelationshipComponent:
@@ -288,7 +379,7 @@ Entities:
       Position: [0,0,0]
       Rotation: [0,-0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.32999998,1.383387,4.210523,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.33,1.383387,4.210523,1]
     ScriptComponent:
       ScriptUUID: 3366872985723856610
       UserPropertyOverrides:
@@ -304,15 +395,20 @@ Entities:
         - Name: KickUpY
           Type: 3
           Value: 0.05
-        - Name: CameraRef
-          Type: 7
-          Value: 3526599274050075716
-          ReferenceKind: Entity
         - Name: WeaponAimingRef
           Type: 7
           Value: 14300943002917955893
           ReferenceKind: Entity
+        - Name: CameraRef
+          Type: 7
+          Value: 3526599274050075716
+          ReferenceKind: Entity
   - Entity: 9548350549033941053
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
     TagComponent:
       Tag: WeaponHandler
     RelationshipComponent:
@@ -324,8 +420,17 @@ Entities:
       Position: [0.33,-0.41661298,-0.6143637]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.32999998,1.383387,4.210523,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.33,1.383387,4.210523,1]
   - Entity: 17642454729594052137
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RigidBodyComponent
+      - BoxColliderComponent
+      - StaticMeshComponent
+      - MaterialComponent
     TagComponent:
       Tag: Box
     RelationshipComponent:
@@ -356,6 +461,15 @@ Entities:
     MaterialComponent:
       MaterialUUID: 18352460508626254789
   - Entity: 3829535230250847973
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RigidBodyComponent
+      - BoxColliderComponent
+      - StaticMeshComponent
+      - MaterialComponent
     TagComponent:
       Tag: Box2
     RelationshipComponent:
@@ -386,6 +500,14 @@ Entities:
     MaterialComponent:
       MaterialUUID: 18352460508626254789
   - Entity: 15941034270328579006
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - SpriteComponent
+      - ScriptComponent
+      - RectTransformComponent
     TagComponent:
       Tag: AmmoUI
     RelationshipComponent:
@@ -397,7 +519,7 @@ Entities:
       Position: [-3.8049998,-2.53,0]
       Rotation: [0,-0,0]
       Scale: [0.01,0.01,1]
-      WorldTransform: [168.8,0,0,0,0,52.7,0,0,0,0,1,0,999.4,38.25,0,1]
+      WorldTransform: [168.62001,0,0,0,0,52.7,0,0,0,0,1,0,998.49005,38.25,0,1]
     SpriteComponent:
       Color: [0.85714287,0.41748834,0.014238238,1]
       IsBillboard: 0
@@ -417,6 +539,12 @@ Entities:
       Pivot: [1,0]
       Rotation: 0
   - Entity: 17202988526070122190
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
     TagComponent:
       Tag: WeaponFire
     RelationshipComponent:
@@ -427,28 +555,28 @@ Entities:
       Position: [0,0,0]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-2.9802322e-08,1.8,4.824887,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1.8,4.824887,1]
     ScriptComponent:
       ScriptUUID: 16404415058251315788
       UserPropertyOverrides:
-        - Name: FireRate
-          Type: 2
-          Value: 500
         - Name: BloomPerShot
           Type: 3
           Value: 0.02
+        - Name: FireRate
+          Type: 2
+          Value: 500
         - Name: ImpactForce
           Type: 3
           Value: 3
         - Name: MaxHipBloom
           Type: 3
           Value: 0.75
-        - Name: BaseHipBloom
-          Type: 3
-          Value: 0.05
         - Name: BloomDecayRate
           Type: 3
           Value: 0.6
+        - Name: BaseHipBloom
+          Type: 3
+          Value: 0.05
         - Name: GunshotSound
           Type: 8
           Value: 10601745296411271244
@@ -466,6 +594,13 @@ Entities:
           Value: 12156363934972497198
           ReferenceKind: Entity
   - Entity: 5356551002598311296
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - StaticMeshComponent
+      - MaterialComponent
     TagComponent:
       Tag: Magazine
     RelationshipComponent:
@@ -483,6 +618,15 @@ Entities:
     MaterialComponent:
       MaterialUUID: 3531595371019758275
   - Entity: 16886275650480693085
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RigidBodyComponent
+      - BoxColliderComponent
+      - ScriptComponent
+      - PrefabComponent
     TagComponent:
       Tag: HolographicSightPickup
     RelationshipComponent:
@@ -523,6 +667,15 @@ Entities:
     PrefabComponent:
       PrefabUUID: 17919492092461288605
   - Entity: 16256626281541658784
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RigidBodyComponent
+      - BoxColliderComponent
+      - StaticMeshComponent
+      - MaterialComponent
     TagComponent:
       Tag: Cube
     RelationshipComponent:
@@ -553,6 +706,13 @@ Entities:
     MaterialComponent:
       MaterialUUID: 31
   - Entity: 17748089738734541142
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - StaticMeshComponent
+      - MaterialComponent
     TagComponent:
       Tag: Weapon
     RelationshipComponent:
@@ -570,6 +730,15 @@ Entities:
     MaterialComponent:
       MaterialUUID: 3531595371019758275
   - Entity: 13404567650556012467
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RigidBodyComponent
+      - BoxColliderComponent
+      - ScriptComponent
+      - PrefabComponent
     TagComponent:
       Tag: M4_Pickup
     RelationshipComponent:
@@ -610,6 +779,15 @@ Entities:
     PrefabComponent:
       PrefabUUID: 7525331889912364400
   - Entity: 15220513272756049617
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RigidBodyComponent
+      - BoxColliderComponent
+      - StaticMeshComponent
+      - MaterialComponent
     TagComponent:
       Tag: Cube2
     RelationshipComponent:
@@ -640,6 +818,15 @@ Entities:
     MaterialComponent:
       MaterialUUID: 31
   - Entity: 15248219852956789422
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RigidBodyComponent
+      - BoxColliderComponent
+      - StaticMeshComponent
+      - MaterialComponent
     TagComponent:
       Tag: Box5
     RelationshipComponent:
@@ -670,6 +857,15 @@ Entities:
     MaterialComponent:
       MaterialUUID: 18352460508626254789
   - Entity: 1747217956981119607
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RigidBodyComponent
+      - BoxColliderComponent
+      - StaticMeshComponent
+      - MaterialComponent
     TagComponent:
       Tag: Box4
     RelationshipComponent:
@@ -700,6 +896,15 @@ Entities:
     MaterialComponent:
       MaterialUUID: 18352460508626254789
   - Entity: 9667282278828292663
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RigidBodyComponent
+      - BoxColliderComponent
+      - StaticMeshComponent
+      - MaterialComponent
     TagComponent:
       Tag: Box3
     RelationshipComponent:
@@ -730,6 +935,12 @@ Entities:
     MaterialComponent:
       MaterialUUID: 18352460508626254789
   - Entity: 13765157642257386743
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
     TagComponent:
       Tag: PlayerController
     RelationshipComponent:
@@ -745,6 +956,12 @@ Entities:
       ScriptUUID: 936314447457138483
       UserPropertyOverrides: []
   - Entity: 14300943002917955893
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
     TagComponent:
       Tag: WeaponAiming
     RelationshipComponent:
@@ -757,7 +974,7 @@ Entities:
       Position: [0,0,0]
       Rotation: [0,-0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.32999998,1.383387,4.210523,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.33,1.383387,4.210523,1]
     ScriptComponent:
       ScriptUUID: 15631423950997928565
       UserPropertyOverrides:
@@ -777,6 +994,12 @@ Entities:
           Value: 9548350549033941053
           ReferenceKind: Entity
   - Entity: 16922120325189435521
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
     TagComponent:
       Tag: WeaponMovement
     RelationshipComponent:
@@ -788,7 +1011,7 @@ Entities:
       Position: [0,0,0]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.32999998,1.383387,4.210523,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.33,1.383387,4.210523,1]
     ScriptComponent:
       ScriptUUID: 10843162672597406671
       UserPropertyOverrides:
@@ -810,14 +1033,23 @@ Entities:
         - Name: BobTotalLimit
           Type: 6
           Value: [0.1,0.1,0.1]
-        - Name: SwayRotAmount
-          Type: 2
-          Value: 2
         - Name: PlayerRef
           Type: 7
           Value: 6753254757056896993
           ReferenceKind: Entity
+        - Name: SwayRotAmount
+          Type: 2
+          Value: 2
   - Entity: 2608699378515154292
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RigidBodyComponent
+      - BoxColliderComponent
+      - StaticMeshComponent
+      - MaterialComponent
     TagComponent:
       Tag: Wall
     RelationshipComponent:
@@ -848,6 +1080,15 @@ Entities:
     MaterialComponent:
       MaterialUUID: 31
   - Entity: 11947509435464799031
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RigidBodyComponent
+      - BoxColliderComponent
+      - ScriptComponent
+      - PrefabComponent
     TagComponent:
       Tag: AmmoPowerup
     RelationshipComponent:
@@ -895,6 +1136,11 @@ Entities:
     PrefabComponent:
       PrefabUUID: 3822534466298593180
   - Entity: 14881747670601641762
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
     TagComponent:
       Tag: Pools
     RelationshipComponent:
@@ -908,6 +1154,12 @@ Entities:
       Scale: [1,1,1]
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
   - Entity: 9607599012810285547
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - PoolConfigComponent
     TagComponent:
       Tag: ImpactConcretePool
     RelationshipComponent:
@@ -925,6 +1177,12 @@ Entities:
       PrefabHandle: 13559857553863366497
       LoopEntities: 1
   - Entity: 230291968303856085
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
     TagComponent:
       Tag: WeaponHolder
     RelationshipComponent:
@@ -935,7 +1193,7 @@ Entities:
       Position: [0,0,0]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.32999998,1.383387,4.210523,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.33,1.383387,4.210523,1]
     ScriptComponent:
       ScriptUUID: 10753367411955256691
       UserPropertyOverrides:
@@ -948,6 +1206,13 @@ Entities:
           Value: 17202988526070122190
           ReferenceKind: Entity
   - Entity: 16155943693343446687
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - SpriteComponent
+      - RectTransformComponent
     TagComponent:
       Tag: Crosshair
     RelationshipComponent:
@@ -958,7 +1223,7 @@ Entities:
       Position: [0,0,0]
       Rotation: [0,-0,0]
       Scale: [1,1,1]
-      WorldTransform: [25,0,0,0,0,25,0,0,0,0,1,0,550,307.5,0,1]
+      WorldTransform: [25,0,0,0,0,25,0,0,0,0,1,0,549.5,294,0,1]
     SpriteComponent:
       Color: [1,1,1,1]
       TextureUUID: 3343954652411117201
@@ -972,6 +1237,13 @@ Entities:
       Pivot: [0.5,0.5]
       Rotation: 0
   - Entity: 7122639572906643531
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - TextComponent
+      - RectTransformComponent
     TagComponent:
       Tag: PickupItemUI
     RelationshipComponent:
@@ -982,7 +1254,7 @@ Entities:
       Position: [-3.8049998,-2.53,0]
       Rotation: [0,-0,0]
       Scale: [0.01,0.01,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,579.9,328.3,0,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,579.4,314.8,0,1]
     TextComponent:
       Text: Press (E) to pick up
       FontHandle: 213406294560961755

@@ -1,10 +1,18 @@
 Prefab: M4
 PrefabEntities:
   - Entity: 7682715582825238696
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
+      - AnimatorComponent
+      - PrefabComponent
     TagComponent:
       Tag: M4
     RelationshipComponent:
-      Parent: 230291968303856085
+      Parent: 0
       Children:
         - 11176369355613519503
         - 18106011769171454920
@@ -13,47 +21,54 @@ PrefabEntities:
       Position: [0,0.09,-0.29]
       Rotation: [0,-0,0]
       Scale: [0.41,0.41,0.41]
-      WorldTransform: [0.41,0,0,0,0,0.41,0,0,0,0,0.41,0,0.32999998,1.473387,3.9205232,1]
+      WorldTransform: [0.41,0,0,0,0,0.41,0,0,0,0,0.41,0,0,0.09,-0.29,1]
     ScriptComponent:
       ScriptUUID: 8102167312162542918
       UserPropertyOverrides:
+        - Name: ReloadEndSound
+          Type: 8
+          Value: 8785379131387521162
+          ReferenceKind: AudioClip
         - Name: SightMountRef
           Type: 7
           Value: 16117594982574674907
-          ReferenceKind: Entity
-        - Name: BarrelTipRef
-          Type: 7
-          Value: 18106011769171454920
-          ReferenceKind: Entity
-        - Name: MuzzleFlashRef
-          Type: 7
-          Value: 15412099849582508473
-          ReferenceKind: Entity
-        - Name: AmmoUIRef
-          Type: 7
-          Value: 15941034270328579006
           ReferenceKind: Entity
         - Name: ReloadStartSound
           Type: 8
           Value: 15776698392225788213
           ReferenceKind: AudioClip
-        - Name: ReloadEndSound
-          Type: 8
-          Value: 8785379131387521162
-          ReferenceKind: AudioClip
+        - Name: MuzzleFlashRef
+          Type: 7
+          Value: 15412099849582508473
+          ReferenceKind: Entity
+        - Name: BarrelTipRef
+          Type: 7
+          Value: 18106011769171454920
+          ReferenceKind: Entity
         - Name: ReloadStateName
           Type: 4
           Value: Reload
+        - Name: AmmoUIRef
+          Type: 7
+          Value: 15941034270328579006
+          ReferenceKind: Entity
         - Name: EquipPositionOffset
           Type: 6
           Value: [0,0.09,-0.29]
+        - Name: ReloadTriggerParam
+          Type: 4
+          Value: ReloadRequested
     AnimatorComponent:
       SkeletonHandle: 9200567303542518273
-      AnimationStateMachineHandle: 17100135789324560666
-      CurrentStateName: Idle
+      ControllerHandle: 17100135789324560666
     PrefabComponent:
       PrefabUUID: 10097993641357000526
   - Entity: 11176369355613519503
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
     TagComponent:
       Tag: Armature
     RelationshipComponent:
@@ -65,8 +80,13 @@ PrefabEntities:
       Position: [0,0,0]
       Rotation: [0,-0,0]
       Scale: [1.8057266,1.8057266,1.8057266]
-      WorldTransform: [0.7403479,0,0,0,0,0.7403479,0,0,0,0,0.7403479,0,0.32999998,1.473387,3.9205232,1]
+      WorldTransform: [0.7403479,0,0,0,0,0.7403479,0,0,0,0,0.7403479,0,0,0.09,-0.29,1]
   - Entity: 18106011769171454920
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
     TagComponent:
       Tag: BarrelTip
     RelationshipComponent:
@@ -78,8 +98,13 @@ PrefabEntities:
       Position: [0,0.23785591,-2.2474928]
       Rotation: [0,-0,0]
       Scale: [0.9987805,0.9987805,0.9987805]
-      WorldTransform: [0.4095,0,0,0,0,0.4095,0,0,0,0,0.4095,0,0.32999998,1.570908,2.999051,1]
+      WorldTransform: [0.4095,0,0,0,0,0.4095,0,0,0,0,0.4095,0,0,0.18752092,-1.211472,1]
   - Entity: 15068365271003137802
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
     TagComponent:
       Tag: Bone_Body
     RelationshipComponent:
@@ -93,8 +118,17 @@ PrefabEntities:
       Position: [0.00010059393,0.1925114,0.87833124]
       Rotation: [-1.544226,4.9503554e-20,-1.8626676e-18]
       Scale: [1,0.9999998,0.9999999]
-      WorldTransform: [0.7403479,-1.3790222e-18,-3.6649853e-20,0,-3.0620067e-25,0.019668894,-0.7400865,0,1.3795089e-18,0.74008656,0.019668896,0,0.33007446,1.6159124,4.570794,1]
+      WorldTransform: [0.7403479,-1.3790222e-18,-3.6649853e-20,0,-3.0620067e-25,0.019668894,-0.7400865,0,1.3795089e-18,0.74008656,0.019668896,0,7.4474505e-05,0.23252541,0.3602707,1]
   - Entity: 15412099849582508473
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - PointLightComponent
+      - ScriptComponent
+      - ParticleEmitterComponent
+      - EditorIconComponent
     TagComponent:
       Tag: MuzzleFlash
     RelationshipComponent:
@@ -105,7 +139,7 @@ PrefabEntities:
       Position: [0,-7.1525574e-07,-0.14891768]
       Rotation: [1.2391838,-0,0]
       Scale: [6.635526,6.635526,6.635526]
-      WorldTransform: [2.717248,0,0,0,0,0.8846494,2.5692086,0,0,-2.5692086,0.8846494,0,0.32999998,1.5709077,2.9380693,1]
+      WorldTransform: [2.717248,0,0,0,0,0.8846494,2.5692086,0,0,-2.5692086,0.8846494,0,0,0.18752062,-1.2724538,1]
     PointLightComponent:
       Active: 0
       Color: [1,0.90556395,0.08305645]
@@ -134,6 +168,11 @@ PrefabEntities:
       StretchFactor: 0.03
       IsActive: 0
   - Entity: 5223435511325881819
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
     TagComponent:
       Tag: Bone_Magazine
     RelationshipComponent:
@@ -145,8 +184,15 @@ PrefabEntities:
       Position: [2.1684043e-19,0.7336016,-0.3261684]
       Rotation: [-1.3838066,-4.4322476e-08,2.3426259e-07]
       Scale: [1,0.99999994,1]
-      WorldTransform: [0.7403479,3.741016e-08,-1.7250281e-07,0,-1.0522331e-14,-0.72352904,-0.15690954,0,-1.7651274e-07,0.15690956,-0.72352904,0,0.33007446,1.3889487,4.02145,1]
+      WorldTransform: [0.7403479,3.741016e-08,-1.7250281e-07,0,-1.0522331e-14,-0.72352904,-0.15690954,0,-1.7651274e-07,0.15690956,-0.72352904,0,7.4474505e-05,0.0055617094,-0.1890733,1]
   - Entity: 11850582193888695300
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - SkinnedMeshComponent
+      - MaterialComponent
     TagComponent:
       Tag: Weapon
     RelationshipComponent:
@@ -157,7 +203,7 @@ PrefabEntities:
       Position: [-0.000100553036,0.87290907,-0.21577382]
       Rotation: [1.544226,-1.8633244e-18,4.1359036e-25]
       Scale: [1.0000002,0.9999999,0.9999999]
-      WorldTransform: [0.7403481,-8.271806e-25,-6.268478e-25,0,5.169879e-25,0.7403478,1.8626451e-09,0,6.914713e-25,1.8626451e-09,0.74034774,0,0.33,1.4733903,3.9205217,1]
+      WorldTransform: [0.7403481,-8.271806e-25,-6.268478e-25,0,5.169879e-25,0.7403478,1.8626451e-09,0,6.914713e-25,1.8626451e-09,0.74034774,0,3.027526e-08,0.09000325,-0.29000154,1]
     SkinnedMeshComponent:
       MeshUUID: 16822605104283055229
       RootAnimator: 7682715582825238696
@@ -165,6 +211,13 @@ PrefabEntities:
     MaterialComponent:
       MaterialUUID: 4587007159136363848
   - Entity: 16117594982574674907
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
+      - BoneSocketComponent
     TagComponent:
       Tag: ScopeMount
     RelationshipComponent:
@@ -175,7 +228,7 @@ PrefabEntities:
       Position: [-0.00010058284,0.5014229,0.05104041]
       Rotation: [1.5442259,-1.8633248e-18,-4.1359036e-25]
       Scale: [0.5531183,0.55311835,0.5531184]
-      WorldTransform: [0.40950015,7.9633565e-15,-3.9198357e-14,0,-7.9633565e-15,0.40949997,5.122274e-08,0,3.919841e-14,-4.9360096e-08,0.40950027,0,0.33,1.6635524,4.2006993,1]
+      WorldTransform: [0.40950015,7.9633565e-15,-3.9198357e-14,0,-7.9633565e-15,0.40949997,5.122274e-08,0,3.919841e-14,-4.9360096e-08,0.40950027,0,3.848254e-08,0.28016526,-0.00982365,1]
     ScriptComponent:
       ScriptUUID: 13629381204485307944
       UserPropertyOverrides: []
@@ -186,6 +239,13 @@ PrefabEntities:
       Rotation: [1.544226,-1.6898456e-14,9.620535e-14]
       Scale: [0.5531184,0.5531184,0.5531188]
   - Entity: 16856999152075546677
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - SkinnedMeshComponent
+      - MaterialComponent
     TagComponent:
       Tag: Magazine
     RelationshipComponent:
@@ -196,7 +256,7 @@ PrefabEntities:
       Position: [-0.00010055642,-0.0825687,0.15739866]
       Rotation: [2.9280326,2.3841872e-07,1.776357e-15]
       Scale: [1,1,0.9999998]
-      WorldTransform: [0.7403479,-1.4210855e-14,5.684342e-14,0,2.842171e-14,0.74034774,-5.9604645e-08,0,-7.1054274e-14,4.4703484e-08,0.7403476,0,0.32999998,1.4733869,3.9205234,1]
+      WorldTransform: [0.7403479,-1.4210855e-14,5.684342e-14,0,2.842171e-14,0.74034774,-5.9604645e-08,0,-7.1054274e-14,4.4703484e-08,0.7403476,0,-7.275958e-12,0.089999914,-0.28999996,1]
     SkinnedMeshComponent:
       MeshUUID: 13898711898247753575
       RootAnimator: 7682715582825238696
