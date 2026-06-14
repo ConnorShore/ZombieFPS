@@ -240,6 +240,10 @@ Assets:
     Name: Roboto-Regular
     FilePath: Fonts/Roboto-Regular.ttf
   - Type: AudioClip
+    UUID: 15776698392225788213
+    Name: ReloadStart
+    FilePath: Audio/ReloadStart.mp3
+  - Type: AudioClip
     UUID: 10601745296411271244
     Name: M4_Shot
     FilePath: Audio/M4_Shot.mp3
@@ -251,10 +255,6 @@ Assets:
     UUID: 2869832050986379881
     Name: EmptyGun
     FilePath: Audio/EmptyGun.mp3
-  - Type: AudioClip
-    UUID: 15776698392225788213
-    Name: ReloadStart
-    FilePath: Audio/ReloadStart.mp3
   - Type: AudioClip
     UUID: 4535810649324835630
     Name: AmmoPickupSFX
