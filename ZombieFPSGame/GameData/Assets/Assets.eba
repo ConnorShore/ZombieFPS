@@ -64,6 +64,10 @@ Assets:
     Name: PowerUpDrop
     FilePath: Scripts/Pickups/PowerUpDrop.lua
   - Type: Script
+    UUID: 17429251933582378423
+    Name: AmmoUI
+    FilePath: Scripts/HUD/AmmoUI.lua
+  - Type: Script
     UUID: 1928101263865073231
     Name: PickupWeapon
     FilePath: Scripts/Pickups/PickupWeapon.lua
@@ -127,10 +131,6 @@ Assets:
     UUID: 10753367411955256691
     Name: WeaponHolder
     FilePath: Scripts/Weapons/WeaponHolder.lua
-  - Type: Script
-    UUID: 17429251933582378423
-    Name: AmmoUI
-    FilePath: Scripts/HUD/AmmoUI.lua
   - Type: Material
     UUID: 18352460508626254789
     Name: BoxMaterial
