@@ -187,6 +187,10 @@ Assets:
     UUID: 9200567303542518273
     Name: M4
     FilePath: Models/M4_Anim/M4.ebskeleton
+  - Type: SkeletonMask
+    UUID: 6205344509844990405
+    Name: TestMask
+    FilePath: SkeletonMasks/TestMask.ebmask
   - Type: Animation
     UUID: 6612716991326083235
     Name: M4_Reload
@@ -240,13 +244,13 @@ Assets:
     Name: Roboto-Regular
     FilePath: Fonts/Roboto-Regular.ttf
   - Type: AudioClip
-    UUID: 15776698392225788213
-    Name: ReloadStart
-    FilePath: Audio/ReloadStart.mp3
-  - Type: AudioClip
     UUID: 10601745296411271244
     Name: M4_Shot
     FilePath: Audio/M4_Shot.mp3
+  - Type: AudioClip
+    UUID: 15776698392225788213
+    Name: ReloadStart
+    FilePath: Audio/ReloadStart.mp3
   - Type: AudioClip
     UUID: 8785379131387521162
     Name: ReloadEnd
