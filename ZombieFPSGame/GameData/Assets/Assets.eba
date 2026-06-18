@@ -152,6 +152,10 @@ Assets:
     Name: DesertEagle_Metal
     FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Metal.ebmat
   - Type: Material
+    UUID: 3531595371019758275
+    Name: AssaultRifle_Weapon
+    FilePath: Models/M4/AssaultRifle_Weapon.ebmat
+  - Type: Material
     UUID: 7112033288364404519
     Name: Tracer_Material
     FilePath: Materials/Tracer_Material.ebmat
@@ -159,10 +163,6 @@ Assets:
     UUID: 18352460508626254789
     Name: BoxMaterial
     FilePath: Materials/BoxMaterial.ebmat
-  - Type: Material
-    UUID: 3531595371019758275
-    Name: AssaultRifle_Weapon
-    FilePath: Models/M4/AssaultRifle_Weapon.ebmat
   - Type: Material
     UUID: 4587007159136363848
     Name: M4_Weapon
@@ -255,6 +255,10 @@ Assets:
     UUID: 17100135789324560666
     Name: M4_ReloadController
     FilePath: Animations/M4_ReloadController.ebcontroller
+  - Type: AnimationController
+    UUID: 16717526163793928394
+    Name: DEagleAnimController
+    FilePath: Animations/DEagleAnimController.ebcontroller
   - Type: Model
     UUID: 5584464271236281027
     Name: DesertEagle

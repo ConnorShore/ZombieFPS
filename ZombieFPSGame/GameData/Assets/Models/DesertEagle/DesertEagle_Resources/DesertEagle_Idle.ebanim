@@ -1,6 +1,6 @@
 Version: 1
-Animation: Idle
-UUID: 14826971718720547246
+Animation: DesertEagle_Idle
+UUID: 1061568813566244299
 Duration: 0
 Tracks:
   - BoneID: 0

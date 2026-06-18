@@ -1,0 +1,107 @@
+Version: 1
+Parameters:
+  - Name: ReloadRequested
+    Type: 1
+    FloatValue: 0
+    BoolValue: 0
+    IntValue: 0
+  - Name: AmmoEmpty
+    Type: 1
+    FloatValue: 0
+    BoolValue: 0
+    IntValue: 0
+Layers:
+  - Name: Base Layer
+    Weight: 1
+    MaskHandle: 0
+    StateMachine:
+      DefaultState: 5893893147081397289
+      EntryNodePositionSet: 1
+      ExitNodePositionSet: 1
+      EntryNodePosition: [75,275]
+      ExitNodePosition: [523,275]
+      States:
+        - Id: 5893893147081397289
+          Name: Idle
+          AnimationHandle: 1061568813566244299
+          Looping: 0
+          BasePlaybackSpeed: 1
+          PositionSet: 1
+          NodePosition: [251,275]
+        - Id: 11190162829436865234
+          Name: Reload
+          AnimationHandle: 13210029773156912041
+          Looping: 0
+          BasePlaybackSpeed: 1
+          PositionSet: 1
+          NodePosition: [251,403]
+      Transitions:
+        - Id: 178438215687983998
+          FromStateId: 5893893147081397289
+          ToStateId: 11190162829436865234
+          BlendDuration: 0.25
+          Conditions:
+            - ParameterName: ReloadRequested
+              Type: 1
+              Operator: 2
+              FloatValue: 0
+              BoolValue: 1
+              IntValue: 0
+        - Id: 7823197705909371756
+          FromStateId: 11190162829436865234
+          ToStateId: 5893893147081397289
+          BlendDuration: 0.25
+          Conditions:
+            - ParameterName: ReloadRequested
+              Type: 1
+              Operator: 2
+              FloatValue: 0
+              BoolValue: 0
+              IntValue: 0
+  - Name: SlideLockLayer
+    Weight: 1
+    MaskHandle: 0
+    StateMachine:
+      DefaultState: 689369349743118117
+      EntryNodePositionSet: 1
+      ExitNodePositionSet: 1
+      EntryNodePosition: [75,275]
+      ExitNodePosition: [523,275]
+      States:
+        - Id: 689369349743118117
+          Name: Idle
+          AnimationHandle: 1061568813566244299
+          Looping: 0
+          BasePlaybackSpeed: 1
+          PositionSet: 1
+          NodePosition: [299,227]
+        - Id: 2726249225057367932
+          Name: AmmoEmpty
+          AnimationHandle: 7891003508228372826
+          Looping: 0
+          BasePlaybackSpeed: 1
+          PositionSet: 1
+          NodePosition: [299,387]
+      Transitions:
+        - Id: 10507437442250587418
+          FromStateId: 689369349743118117
+          ToStateId: 2726249225057367932
+          BlendDuration: 0.25
+          Conditions:
+            - ParameterName: AmmoEmpty
+              Type: 1
+              Operator: 2
+              FloatValue: 0
+              BoolValue: 1
+              IntValue: 0
+        - Id: 1345749536443012444
+          FromStateId: 2726249225057367932
+          ToStateId: 689369349743118117
+          BlendDuration: 0.25
+          Conditions:
+            - ParameterName: AmmoEmpty
+              Type: 1
+              Operator: 2
+              FloatValue: 0
+              BoolValue: 0
+              IntValue: 0

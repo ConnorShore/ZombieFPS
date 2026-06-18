@@ -40,7 +40,7 @@ PrefabEntities:
           Value: 8
     AnimatorComponent:
       SkeletonHandle: 14193014657651256754
-      ControllerHandle: 0
+      ControllerHandle: 16717526163793928394
     PrefabComponent:
       PrefabUUID: 14714906560606447307
   - Entity: 470941620084372448

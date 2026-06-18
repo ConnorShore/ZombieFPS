@@ -1,6 +1,6 @@
 Version: 1
-Animation: Reload
-UUID: 13532627508043474523
+Animation: DesertEagle_Reload
+UUID: 13210029773156912041
 Duration: 2.5
 Tracks:
   - BoneID: 0
