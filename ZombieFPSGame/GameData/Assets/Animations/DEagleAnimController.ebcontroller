@@ -60,7 +60,7 @@ Layers:
               IntValue: 0
   - Name: SlideLockLayer
     Weight: 1
-    MaskHandle: 0
+    MaskHandle: 2548850233763151739
     StateMachine:
       DefaultState: 689369349743118117
       EntryNodePositionSet: 1
@@ -74,14 +74,14 @@ Layers:
           Looping: 0
           BasePlaybackSpeed: 1
           PositionSet: 1
-          NodePosition: [299,227]
+          NodePosition: [251,275]
         - Id: 2726249225057367932
           Name: AmmoEmpty
           AnimationHandle: 7891003508228372826
           Looping: 0
           BasePlaybackSpeed: 1
           PositionSet: 1
-          NodePosition: [299,387]
+          NodePosition: [251,387]
       Transitions:
         - Id: 10507437442250587418
           FromStateId: 689369349743118117

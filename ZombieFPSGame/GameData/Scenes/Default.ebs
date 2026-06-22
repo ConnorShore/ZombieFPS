@@ -395,13 +395,13 @@ Entities:
         - Name: KickUpY
           Type: 3
           Value: 0.05
-        - Name: WeaponAimingRef
-          Type: 7
-          Value: 14300943002917955893
-          ReferenceKind: Entity
         - Name: CameraRef
           Type: 7
           Value: 3526599274050075716
+          ReferenceKind: Entity
+        - Name: WeaponAimingRef
+          Type: 7
+          Value: 14300943002917955893
           ReferenceKind: Entity
   - Entity: 9548350549033941053
     ComponentOrder:
@@ -559,24 +559,24 @@ Entities:
     ScriptComponent:
       ScriptUUID: 16404415058251315788
       UserPropertyOverrides:
-        - Name: BloomPerShot
-          Type: 3
-          Value: 0.02
         - Name: FireRate
           Type: 2
           Value: 500
+        - Name: BloomPerShot
+          Type: 3
+          Value: 0.02
         - Name: ImpactForce
           Type: 3
           Value: 3
         - Name: MaxHipBloom
           Type: 3
           Value: 0.75
-        - Name: BloomDecayRate
-          Type: 3
-          Value: 0.6
         - Name: BaseHipBloom
           Type: 3
           Value: 0.05
+        - Name: BloomDecayRate
+          Type: 3
+          Value: 0.6
         - Name: GunshotSound
           Type: 8
           Value: 10601745296411271244

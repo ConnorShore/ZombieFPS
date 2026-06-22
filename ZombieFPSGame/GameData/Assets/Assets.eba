@@ -232,9 +232,9 @@ Assets:
     Name: DesertEagle
     FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle.ebskeleton
   - Type: SkeletonMask
-    UUID: 6205344509844990405
-    Name: TestMask
-    FilePath: SkeletonMasks/TestMask.ebmask
+    UUID: 2548850233763151739
+    Name: DEagleSlideMask
+    FilePath: SkeletonMasks/DEagleSlideMask.ebmask
   - Type: Animation
     UUID: 6612716991326083235
     Name: M4_Reload

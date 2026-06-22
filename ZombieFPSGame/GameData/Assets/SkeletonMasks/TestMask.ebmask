@@ -1,9 +1,0 @@
-Version: 1
-Mask: TestMask
-UUID: 6205344509844990405
-SkeletonHandle: 9200567303542518273
-BoneWeights:
-  - Bone: Bone_Magazine
-    Weight: 0
-  - Bone: Bone_Body
-    Weight: 0

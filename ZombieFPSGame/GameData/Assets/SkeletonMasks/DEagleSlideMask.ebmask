@@ -1,0 +1,7 @@
+Version: 1
+Mask: DEagleSlideMask
+UUID: 2548850233763151739
+SkeletonHandle: 14193014657651256754
+BoneWeights:
+  - Bone: Slide_Bone
+    Weight: 1
