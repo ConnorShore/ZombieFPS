@@ -76,13 +76,13 @@ Assets:
     Name: Tracer
     FilePath: Shaders/Tracer.glsl
   - Type: Script
-    UUID: 10843162672597406671
-    Name: WeaponMovement
-    FilePath: Scripts/Weapons/WeaponMovement.lua
-  - Type: Script
     UUID: 15191514471842255900
     Name: PowerUpDrop
     FilePath: Scripts/Pickups/PowerUpDrop.lua
+  - Type: Script
+    UUID: 10843162672597406671
+    Name: WeaponMovement
+    FilePath: Scripts/Weapons/WeaponMovement.lua
   - Type: Script
     UUID: 17429251933582378423
     Name: AmmoUI
@@ -264,17 +264,21 @@ Assets:
     Name: DesertEagle
     FilePath: Models/DesertEagle/DesertEagle.ebmodel
   - Type: Model
-    UUID: 7109210442730424575
-    Name: AmmoPowerup
-    FilePath: Models/PowerUps/Ammo/AmmoPowerup.ebmodel
-  - Type: Model
     UUID: 78582201594786378
     Name: AssaultRifle
     FilePath: Models/M4/AssaultRifle.ebmodel
   - Type: Model
+    UUID: 7109210442730424575
+    Name: AmmoPowerup
+    FilePath: Models/PowerUps/Ammo/AmmoPowerup.ebmodel
+  - Type: Model
     UUID: 5275369914884323396
     Name: M4
     FilePath: Models/M4_Anim/M4.ebmodel
+  - Type: Prefab
+    UUID: 17919492092461288605
+    Name: HolographicSightPickup
+    FilePath: Prefabs/HolographicSightPickup.ebprefab
   - Type: Prefab
     UUID: 3822534466298593180
     Name: AmmoPowerup
@@ -296,21 +300,17 @@ Assets:
     Name: HolographicSight
     FilePath: Prefabs/HolographicSight.ebprefab
   - Type: Prefab
-    UUID: 17919492092461288605
-    Name: HolographicSightPickup
-    FilePath: Prefabs/HolographicSightPickup.ebprefab
-  - Type: Prefab
     UUID: 10097993641357000526
     Name: M4
     FilePath: Prefabs/Weapons/M4.ebprefab
   - Type: Prefab
-    UUID: 14714906560606447307
-    Name: DesertEagle
-    FilePath: Prefabs/Weapons/DesertEagle.ebprefab
-  - Type: Prefab
     UUID: 13041019221118750640
     Name: DesertEaglePickup
     FilePath: Prefabs/Weapons/DesertEaglePickup.ebprefab
+  - Type: Prefab
+    UUID: 1628786810858958427
+    Name: DesertEagle
+    FilePath: Prefabs/Weapons/DesertEagle.ebprefab
   - Type: Font
     UUID: 213406294560961755
     Name: Roboto-Regular

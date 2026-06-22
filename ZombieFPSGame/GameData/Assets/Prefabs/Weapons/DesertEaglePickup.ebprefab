@@ -44,7 +44,7 @@ PrefabEntities:
       UserPropertyOverrides:
         - Name: WeaponPrefab
           Type: 8
-          Value: 14714906560606447307
+          Value: 1628786810858958427
           ReferenceKind: Prefab
     AnimatorComponent:
       SkeletonHandle: 14193014657651256754

@@ -43,9 +43,10 @@ function WeaponController:OnCreate(entity)
     self.ReloadTimer = 0.0
     self.CanShoot = true
 
-    self.AnimatorComp = entity:GetComponent("AnimatorComponent")
-    if self.AnimatorComp then
-        self.AnimatorComp:SetBool(self.ReloadTriggerParam, false)
+    -- Initialize animator parameter (fetch fresh component, don't cache)
+    local animatorComp = entity:GetComponent("AnimatorComponent")
+    if animatorComp then
+        animatorComp:SetBool(self.ReloadTriggerParam, false)
     end
 
     self.AmmoEntity = nil
@@ -107,13 +108,15 @@ function WeaponController:OnReload()
     if not self.IsReloading and self.ReserveAmmo > 0 then
         self.IsReloading = true
 
-        if not self.AnimatorComp then
+        -- Fetch animator component fresh instead of using cached reference
+        local animatorComp = self.Entity:GetComponent("AnimatorComponent")
+        if not animatorComp then
             Log.Error("WeaponController:OnReload - No AnimatorComponent found on entity " .. self.Entity:GetName())
             self.IsReloading = false
             return
         end
 
-        self.AnimatorComp:SetBool(self.ReloadTriggerParam, true)
+        animatorComp:SetBool(self.ReloadTriggerParam, true)
     end
 end
 
@@ -169,8 +172,10 @@ function WeaponController:OnAnimationEvent(eventName)
     elseif eventName == self.ReloadCompleteEventName then
         Log.Info("Reload complete!")
         self.IsReloading = false
-        if self.AnimatorComp then
-            self.AnimatorComp:SetBool(self.ReloadTriggerParam, false)
+        -- Fetch animator component fresh instead of using cached reference
+        local animatorComp = self.Entity:GetComponent("AnimatorComponent")
+        if animatorComp then
+            animatorComp:SetBool(self.ReloadTriggerParam, false)
         end
     end
 end

@@ -405,4 +405,12 @@ Tracks:
         Value: [1,1,1]
       - Time: 2.5
         Value: [1,1,1]
-Events: []
+Events:
+  - Name: MagOut
+    Timestamp: 0.658
+  - Name: MagIn
+    Timestamp: 2.119
+  - Name: RefillAmmo
+    Timestamp: 2.187
+  - Name: ReloadComplete
+    Timestamp: 2.5
