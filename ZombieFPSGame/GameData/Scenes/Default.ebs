@@ -244,17 +244,17 @@ Entities:
     ScriptComponent:
       ScriptUUID: 8562544563539838448
       UserPropertyOverrides:
-        - Name: InteractionDistance
-          Type: 3
-          Value: 3
-        - Name: PickupUIRef
-          Type: 7
-          Value: 7122639572906643531
-          ReferenceKind: Entity
         - Name: WeaponHolderRef
           Type: 7
           Value: 230291968303856085
           ReferenceKind: Entity
+        - Name: PickupUIRef
+          Type: 7
+          Value: 7122639572906643531
+          ReferenceKind: Entity
+        - Name: InteractionDistance
+          Type: 3
+          Value: 3
   - Entity: 5645678438920164573
     ComponentOrder:
       - IDComponent
@@ -559,24 +559,24 @@ Entities:
     ScriptComponent:
       ScriptUUID: 16404415058251315788
       UserPropertyOverrides:
-        - Name: FireRate
-          Type: 2
-          Value: 500
         - Name: BloomPerShot
           Type: 3
           Value: 0.02
+        - Name: FireRate
+          Type: 2
+          Value: 500
         - Name: ImpactForce
           Type: 3
           Value: 3
         - Name: MaxHipBloom
           Type: 3
           Value: 0.75
-        - Name: BaseHipBloom
-          Type: 3
-          Value: 0.05
         - Name: BloomDecayRate
           Type: 3
           Value: 0.6
+        - Name: BaseHipBloom
+          Type: 3
+          Value: 0.05
         - Name: GunshotSound
           Type: 8
           Value: 10601745296411271244
@@ -720,10 +720,10 @@ Entities:
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [0,0.0254488,0.38175964]
+      Position: [0,0.0254488,0.3817606]
       Rotation: [3.1415927,-0,-0]
       Scale: [-0.09888629,0.109487295,0.109487295]
-      WorldTransform: [-9.489472e-08,-0.0346102,-1.1655547e-07,0,0.02351162,-1.6673805e-07,0.030260012,0,0.030605841,-3.4652656e-09,-0.023780327,0,-5.3969293,1.0409653,-2.742543,1]
+      WorldTransform: [-9.489472e-08,-0.0346102,-1.1655547e-07,0,0.02351162,-1.6673805e-07,0.030260012,0,0.030605841,-3.4652656e-09,-0.023780327,0,-5.3969297,1.0409653,-2.7425427,1]
     StaticMeshComponent:
       MeshUUID: 12205825994227504312
       Layer: 1
@@ -795,10 +795,10 @@ Entities:
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [-5.409823,0.5,-2.955198]
+      Position: [-6.8956637,0.5,-4.8896832]
       Rotation: [0,0.6549722,0]
       Scale: [2.7124968,1,1.5]
-      WorldTransform: [2.151186,0,-1.6522826,0,0,1,0,0,0.91370577,0,1.1895974,0,-5.409823,0.5,-2.955198,1]
+      WorldTransform: [2.151186,0,-1.6522826,0,0,1,0,0,0.91370577,0,1.1895974,0,-6.8956637,0.5,-4.8896832,1]
     RigidBodyComponent:
       Type: 0
       Mass: 1
@@ -1018,25 +1018,25 @@ Entities:
         - Name: SwayPosAmount
           Type: 3
           Value: 0.07
-        - Name: IdleMultiplier
-          Type: 3
-          Value: 0.12
         - Name: SwayRotStep
           Type: 2
           Value: 1
-        - Name: BobSpeed
+        - Name: IdleMultiplier
           Type: 3
-          Value: 10
+          Value: 0.12
         - Name: BobLimit
           Type: 6
           Value: [0.05,0.05,0.05]
-        - Name: BobTotalLimit
-          Type: 6
-          Value: [0.1,0.1,0.1]
+        - Name: BobSpeed
+          Type: 3
+          Value: 10
         - Name: PlayerRef
           Type: 7
           Value: 6753254757056896993
           ReferenceKind: Entity
+        - Name: BobTotalLimit
+          Type: 6
+          Value: [0.1,0.1,0.1]
         - Name: SwayRotAmount
           Type: 2
           Value: 2
@@ -1125,14 +1125,14 @@ Entities:
         - Name: RotationSpeed
           Type: 3
           Value: 45
-        - Name: PickupSound
-          Type: 8
-          Value: 4535810649324835630
-          ReferenceKind: AudioClip
         - Name: WeaponHolderRef
           Type: 7
           Value: 230291968303856085
           ReferenceKind: Entity
+        - Name: PickupSound
+          Type: 8
+          Value: 4535810649324835630
+          ReferenceKind: AudioClip
     PrefabComponent:
       PrefabUUID: 3822534466298593180
   - Entity: 14881747670601641762
@@ -1266,6 +1266,200 @@ Entities:
       AnchorMax: [0.5,0.5]
       Pivot: [0.5,0.5]
       Rotation: 0
+  - Entity: 500538034006602191
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - StaticMeshComponent
+      - MaterialComponent
+      - RigidBodyComponent
+      - BoxColliderComponent
+    TagComponent:
+      Tag: Cube3
+    RelationshipComponent:
+      Parent: 0
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-5.409823,0.5,-2.955198]
+      Rotation: [0,0.6549722,0]
+      Scale: [2.7124968,1,1.5]
+      WorldTransform: [2.151186,0,-1.6522826,0,0,1,0,0,0.91370577,0,1.1895974,0,-5.409823,0.5,-2.955198,1]
+    RigidBodyComponent:
+      Type: 0
+      Mass: 1
+      GravityEnabled: 1
+    BoxColliderComponent:
+      Size: [1,1,1]
+      IsTrigger: 0
+      OffsetPosition: [0,0,0]
+      OffsetRotation: [0,0,0]
+      Category: 1
+      CollisionMask: 1
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 0
+    StaticMeshComponent:
+      MeshUUID: 51
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 31
+  - Entity: 13158089462527434001
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - AnimatorComponent
+      - PrefabComponent
+      - RigidBodyComponent
+      - BoxColliderComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: DesertEaglePickup
+    RelationshipComponent:
+      Parent: 0
+      Children:
+        - 626848778819083930
+        - 13384678432357922222
+        - 18043860445861619712
+        - 15061658065021419782
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-6.9952993,1.0513172,-4.756736]
+      Rotation: [-2.0257993,0.018645354,-1.5678118]
+      Scale: [0.23000002,0.23000002,0.23000002]
+      WorldTransform: [0.0006863034,-0.22995903,-0.0042881626,0,-0.10108802,0.0035501965,-0.20656385,0,0.20659322,0.0025010896,-0.10105942,0,-6.9952993,1.0513172,-4.756736,1]
+    RigidBodyComponent:
+      Type: 0
+      Mass: 1
+      GravityEnabled: 1
+    BoxColliderComponent:
+      Size: [0.5,1.9,3.7]
+      IsTrigger: 0
+      OffsetPosition: [0,0,-0.2]
+      OffsetRotation: [0,0,0]
+      Category: 256
+      CollisionMask: 1
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 1
+    ScriptComponent:
+      ScriptUUID: 1928101263865073231
+      UserPropertyOverrides:
+        - Name: WeaponPrefab
+          Type: 8
+          Value: 14714906560606447307
+          ReferenceKind: Prefab
+        - Name: WeaponHolderRef
+          Type: 7
+          Value: 230291968303856085
+          ReferenceKind: Entity
+    AnimatorComponent:
+      SkeletonHandle: 14193014657651256754
+      ControllerHandle: 16717526163793928394
+    PrefabComponent:
+      PrefabUUID: 13041019221118750640
+  - Entity: 626848778819083930
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - SkinnedMeshComponent
+      - MaterialComponent
+    TagComponent:
+      Tag: Slide
+    RelationshipComponent:
+      Parent: 13158089462527434001
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [6.519258e-09,-3.5762787e-07,1.5497208e-06]
+      Rotation: [-5.1036454e-07,9.911335e-18,-3.7187303e-19]
+      Scale: [1.0000004,1.0000004,1.0000005]
+      WorldTransform: [0.00068630365,-0.22995912,-0.004288164,0,-0.10108816,0.0035501965,-0.20656388,0,0.20659328,0.0025010926,-0.10105957,0,-6.995299,1.0513172,-4.756736,1]
+    SkinnedMeshComponent:
+      MeshUUID: 15346656199082862049
+      RootAnimator: 13158089462527434001
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 15086660637021645114
+  - Entity: 13384678432357922222
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - SkinnedMeshComponent
+      - MaterialComponent
+    TagComponent:
+      Tag: Magazine
+    RelationshipComponent:
+      Parent: 13158089462527434001
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [2.7939677e-09,1.1920929e-07,5.9604645e-08]
+      Rotation: [-1.788139e-07,2.131628e-14,7.1054257e-15]
+      Scale: [1.0000001,1.0000002,1.0000001]
+      WorldTransform: [0.0006863035,-0.22995906,-0.004288163,0,-0.10108808,0.003550197,-0.20656388,0,0.20659323,0.0025010905,-0.101059474,0,-6.9952993,1.0513172,-4.756736,1]
+    SkinnedMeshComponent:
+      MeshUUID: 5985712711574680378
+      RootAnimator: 13158089462527434001
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 15086660637021645114
+  - Entity: 18043860445861619712
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - SkinnedMeshComponent
+      - MaterialComponent
+    TagComponent:
+      Tag: Body_Part0
+    RelationshipComponent:
+      Parent: 13158089462527434001
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [-1.4901154e-08,1.6543608e-24,-1.0339754e-24]
+      Scale: [1.0000002,1.0000005,1.0000002]
+      WorldTransform: [0.0006863036,-0.22995909,-0.0042881635,0,-0.10108806,0.0035501982,-0.20656395,0,0.20659326,0.0025010903,-0.101059444,0,-6.9952993,1.0513172,-4.756736,1]
+    SkinnedMeshComponent:
+      MeshUUID: 13365133264221018487
+      RootAnimator: 13158089462527434001
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 15086660637021645114
+  - Entity: 15061658065021419782
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - SkinnedMeshComponent
+      - MaterialComponent
+    TagComponent:
+      Tag: Body_Part1
+    RelationshipComponent:
+      Parent: 13158089462527434001
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [2.7939677e-09,-2.3841858e-07,5.9604645e-08]
+      Rotation: [-1.4901154e-08,1.6543608e-24,-1.0339754e-24]
+      Scale: [1.0000002,1.0000005,1.0000002]
+      WorldTransform: [0.0006863036,-0.22995909,-0.0042881635,0,-0.10108806,0.0035501982,-0.20656395,0,0.20659326,0.0025010903,-0.101059444,0,-6.9952993,1.0513172,-4.756736,1]
+    SkinnedMeshComponent:
+      MeshUUID: 5610316799824380095
+      RootAnimator: 13158089462527434001
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 782295293902573577
 Environment:
   Skybox:
     Enabled: 1

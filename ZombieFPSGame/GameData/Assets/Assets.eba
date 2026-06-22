@@ -76,6 +76,10 @@ Assets:
     Name: Tracer
     FilePath: Shaders/Tracer.glsl
   - Type: Script
+    UUID: 10843162672597406671
+    Name: WeaponMovement
+    FilePath: Scripts/Weapons/WeaponMovement.lua
+  - Type: Script
     UUID: 15191514471842255900
     Name: PowerUpDrop
     FilePath: Scripts/Pickups/PowerUpDrop.lua
@@ -140,10 +144,6 @@ Assets:
     Name: WeaponAiming
     FilePath: Scripts/Weapons/WeaponAiming.lua
   - Type: Script
-    UUID: 10843162672597406671
-    Name: WeaponMovement
-    FilePath: Scripts/Weapons/WeaponMovement.lua
-  - Type: Script
     UUID: 10753367411955256691
     Name: WeaponHolder
     FilePath: Scripts/Weapons/WeaponHolder.lua
@@ -151,6 +151,10 @@ Assets:
     UUID: 782295293902573577
     Name: DesertEagle_Metal
     FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Metal.ebmat
+  - Type: Material
+    UUID: 8747674591623748722
+    Name: HolographicReticleMat
+    FilePath: Materials/HolographicReticleMat.ebmat
   - Type: Material
     UUID: 3531595371019758275
     Name: AssaultRifle_Weapon
@@ -168,10 +172,6 @@ Assets:
     Name: M4_Weapon
     FilePath: Models/M4_Anim/M4_Weapon.ebmat
   - Type: Material
-    UUID: 8747674591623748722
-    Name: HolographicReticleMat
-    FilePath: Materials/HolographicReticleMat.ebmat
-  - Type: Material
     UUID: 13734008897576602447
     Name: GroundMaterial
     FilePath: Materials/GroundMaterial.ebmat
@@ -188,13 +188,13 @@ Assets:
     Name: DesertEagle_Mesh1_Cube_Prim0
     FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Mesh1_Cube_Prim0.ebmesh
   - Type: Mesh
-    UUID: 16822605104283055229
-    Name: M4_Cube.001_Prim0
-    FilePath: Models/M4_Anim/M4_Cube.001_Prim0.ebmesh
-  - Type: Mesh
     UUID: 9147101475226164417
     Name: AssaultRifle_Cube.003_Prim0
     FilePath: Models/M4/AssaultRifle_Cube.003_Prim0.ebmesh
+  - Type: Mesh
+    UUID: 16822605104283055229
+    Name: M4_Cube.001_Prim0
+    FilePath: Models/M4_Anim/M4_Cube.001_Prim0.ebmesh
   - Type: Mesh
     UUID: 12205825994227504312
     Name: AssaultRifle_Cube.001_Prim0
@@ -307,6 +307,10 @@ Assets:
     UUID: 14714906560606447307
     Name: DesertEagle
     FilePath: Prefabs/Weapons/DesertEagle.ebprefab
+  - Type: Prefab
+    UUID: 13041019221118750640
+    Name: DesertEaglePickup
+    FilePath: Prefabs/Weapons/DesertEaglePickup.ebprefab
   - Type: Font
     UUID: 213406294560961755
     Name: Roboto-Regular
