@@ -244,17 +244,17 @@ Entities:
     ScriptComponent:
       ScriptUUID: 8562544563539838448
       UserPropertyOverrides:
-        - Name: WeaponHolderRef
-          Type: 7
-          Value: 230291968303856085
-          ReferenceKind: Entity
+        - Name: InteractionDistance
+          Type: 3
+          Value: 3
         - Name: PickupUIRef
           Type: 7
           Value: 7122639572906643531
           ReferenceKind: Entity
-        - Name: InteractionDistance
-          Type: 3
-          Value: 3
+        - Name: WeaponHolderRef
+          Type: 7
+          Value: 230291968303856085
+          ReferenceKind: Entity
   - Entity: 5645678438920164573
     ComponentOrder:
       - IDComponent
@@ -559,24 +559,24 @@ Entities:
     ScriptComponent:
       ScriptUUID: 16404415058251315788
       UserPropertyOverrides:
-        - Name: BloomPerShot
-          Type: 3
-          Value: 0.02
         - Name: FireRate
           Type: 2
           Value: 500
+        - Name: BloomPerShot
+          Type: 3
+          Value: 0.02
         - Name: ImpactForce
           Type: 3
           Value: 3
         - Name: MaxHipBloom
           Type: 3
           Value: 0.75
-        - Name: BloomDecayRate
-          Type: 3
-          Value: 0.6
         - Name: BaseHipBloom
           Type: 3
           Value: 0.05
+        - Name: BloomDecayRate
+          Type: 3
+          Value: 0.6
         - Name: GunshotSound
           Type: 8
           Value: 10601745296411271244
@@ -1018,25 +1018,25 @@ Entities:
         - Name: SwayPosAmount
           Type: 3
           Value: 0.07
-        - Name: SwayRotStep
-          Type: 2
-          Value: 1
         - Name: IdleMultiplier
           Type: 3
           Value: 0.12
-        - Name: BobLimit
-          Type: 6
-          Value: [0.05,0.05,0.05]
+        - Name: SwayRotStep
+          Type: 2
+          Value: 1
         - Name: BobSpeed
           Type: 3
           Value: 10
+        - Name: BobLimit
+          Type: 6
+          Value: [0.05,0.05,0.05]
+        - Name: BobTotalLimit
+          Type: 6
+          Value: [0.1,0.1,0.1]
         - Name: PlayerRef
           Type: 7
           Value: 6753254757056896993
           ReferenceKind: Entity
-        - Name: BobTotalLimit
-          Type: 6
-          Value: [0.1,0.1,0.1]
         - Name: SwayRotAmount
           Type: 2
           Value: 2
@@ -1125,14 +1125,14 @@ Entities:
         - Name: RotationSpeed
           Type: 3
           Value: 45
-        - Name: WeaponHolderRef
-          Type: 7
-          Value: 230291968303856085
-          ReferenceKind: Entity
         - Name: PickupSound
           Type: 8
           Value: 4535810649324835630
           ReferenceKind: AudioClip
+        - Name: WeaponHolderRef
+          Type: 7
+          Value: 230291968303856085
+          ReferenceKind: Entity
     PrefabComponent:
       PrefabUUID: 3822534466298593180
   - Entity: 14881747670601641762
@@ -1358,17 +1358,6 @@ Entities:
     AnimatorComponent:
       SkeletonHandle: 14193014657651256754
       ControllerHandle: 16717526163793928394
-      Blackboard:
-        - Name: ReloadRequested
-          Type: 1
-          FloatValue: 0
-          BoolValue: 0
-          IntValue: 0
-        - Name: AmmoEmpty
-          Type: 1
-          FloatValue: 0
-          BoolValue: 0
-          IntValue: 0
     PrefabComponent:
       PrefabUUID: 13041019221118750640
   - Entity: 626848778819083930

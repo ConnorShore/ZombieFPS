@@ -76,19 +76,19 @@ Layers:
           Looping: 0
           BasePlaybackSpeed: 1
           PositionSet: 1
-          NodePosition: [0,0]
+          NodePosition: [299,275]
         - Id: 2726249225057367932
           Name: AmmoEmpty
           AnimationHandle: 7891003508228372826
           Looping: 0
           BasePlaybackSpeed: 1
           PositionSet: 1
-          NodePosition: [0,0]
+          NodePosition: [299,419]
       Transitions:
         - Id: 10507437442250587418
           FromStateId: 689369349743118117
           ToStateId: 2726249225057367932
-          BlendDuration: 0.25
+          BlendDuration: 0.08
           Conditions:
             - ParameterName: AmmoEmpty
               Type: 1
@@ -99,7 +99,7 @@ Layers:
         - Id: 1345749536443012444
           FromStateId: 2726249225057367932
           ToStateId: 689369349743118117
-          BlendDuration: 0.25
+          BlendDuration: 0.08
           Conditions:
             - ParameterName: AmmoEmpty
               Type: 1
