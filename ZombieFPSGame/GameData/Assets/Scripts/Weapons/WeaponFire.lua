@@ -42,6 +42,36 @@ function WeaponFire:OnUpdate(entity, delta)
     end
 end
 
+function WeaponFire:ResolveAimingScript(weaponEntity)
+    if weaponEntity and weaponEntity:IsValid() then
+        local aimingScript = weaponEntity:GetScriptInstance("WeaponAiming")
+        if aimingScript then
+            return aimingScript
+        end
+    end
+
+    if self.WeaponAiming and self.WeaponAiming:IsValid() then
+        return self.WeaponAiming:GetScriptInstance()
+    end
+
+    return nil
+end
+
+function WeaponFire:ResolveRecoilScript(weaponEntity)
+    if weaponEntity and weaponEntity:IsValid() then
+        local recoilScript = weaponEntity:GetScriptInstance("WeaponRecoil")
+        if recoilScript then
+            return recoilScript
+        end
+    end
+
+    if self.WeaponRecoil and self.WeaponRecoil:IsValid() then
+        return self.WeaponRecoil:GetScriptInstance()
+    end
+
+    return nil
+end
+
 function WeaponFire:Fire(entity, weaponEntity)
     self.TimeSinceLastShot = 0.0
     self.ShotCount = self.ShotCount + 1
@@ -53,7 +83,15 @@ function WeaponFire:Fire(entity, weaponEntity)
     local right = transform:GetRight()
     local up = transform:GetUp()
 
-    local isADS = self.WeaponAiming:IsValid() and self.WeaponAiming:GetScriptInstance().IsAiming or false
+    local weaponController = weaponEntity and weaponEntity:IsValid() and weaponEntity:GetScriptInstance() or nil
+
+    local isADS = false
+    if weaponController and weaponController.IsAiming then
+        isADS = weaponController:IsAiming()
+    else
+        local aimingScript = self:ResolveAimingScript(weaponEntity)
+        isADS = aimingScript and aimingScript.IsAiming or false
+    end
 
     -- determine spread
     local finalShootDirection = forward
@@ -76,7 +114,6 @@ function WeaponFire:Fire(entity, weaponEntity)
     local endPoint = position + finalShootDirection * self.Range
 
     -- Spawn muzzle flash from the MuzzleFlash script
-    local weaponController = weaponEntity and weaponEntity:IsValid() and weaponEntity:GetScriptInstance() or nil
     local muzzleFlash = weaponController and weaponController:GetMuzzleFlashEntity() or nil
     if muzzleFlash and muzzleFlash:IsValid() then
         local muzzleFlashScript = muzzleFlash:GetScriptInstance()
@@ -118,8 +155,12 @@ function WeaponFire:Fire(entity, weaponEntity)
     end
 
     -- Trigger recoil
-    if self.WeaponRecoil:IsValid() then
-        local recoilScript = self.WeaponRecoil:GetScriptInstance()
+    if weaponController and weaponController.TriggerRecoil and weaponController:TriggerRecoil() then
+        return
+    end
+
+    local recoilScript = self:ResolveRecoilScript(weaponEntity)
+    if recoilScript then
         recoilScript:Fire()
     end
 end

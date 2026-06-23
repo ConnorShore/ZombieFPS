@@ -11,6 +11,8 @@ WeaponController.GripMountRef = EntityRef()
 WeaponController.BarrelTipRef = EntityRef()
 WeaponController.MuzzleFlashRef = EntityRef()
 WeaponController.AmmoUIRef = EntityRef()
+WeaponController.WeaponAimingRef = EntityRef()
+WeaponController.WeaponRecoilRef = EntityRef()
 
 WeaponController.FireMode = FIRE_MODE
 
@@ -41,6 +43,8 @@ function WeaponController:OnCreate(entity)
     }
     self.BarrelTipEntity = self:ResolveEntityRef(self.BarrelTipRef)
     self.MuzzleFlashEntity = self:ResolveEntityRef(self.MuzzleFlashRef)
+    self.WeaponAimingEntity = self:ResolveEntityRef(self.WeaponAimingRef)
+    self.WeaponRecoilEntity = self:ResolveEntityRef(self.WeaponRecoilRef)
     
     self.ActiveAttachments = {nil, nil, nil, nil} -- Track active attachments in each slot
 
@@ -169,6 +173,29 @@ end
 
 function WeaponController:GetMuzzleFlashEntity()
     return self.MuzzleFlashEntity
+end
+
+function WeaponController:IsAiming()
+    if not self.WeaponAimingEntity or not self.WeaponAimingEntity:IsValid() then
+        return false
+    end
+
+    local aimingScript = self.WeaponAimingEntity:GetScriptInstance()
+    return aimingScript and aimingScript.IsAiming or false
+end
+
+function WeaponController:TriggerRecoil()
+    if not self.WeaponRecoilEntity or not self.WeaponRecoilEntity:IsValid() then
+        return false
+    end
+
+    local recoilScript = self.WeaponRecoilEntity:GetScriptInstance()
+    if not recoilScript then
+        return false
+    end
+
+    recoilScript:Fire()
+    return true
 end
 
 function WeaponController:OnAnimationEvent(eventName)

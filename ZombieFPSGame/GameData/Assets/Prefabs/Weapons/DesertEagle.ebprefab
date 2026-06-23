@@ -1,6 +1,6 @@
 Prefab: DesertEagle
 PrefabEntities:
-  - Entity: 14042643783696984877
+  - Entity: 9846761892442418044
     ComponentOrder:
       - IDComponent
       - TagComponent
@@ -14,8 +14,7 @@ PrefabEntities:
     RelationshipComponent:
       Parent: 0
       Children:
-        - 5176878316698041733
-        - 13698386109573853109
+        - 3656428102048254025
       IsAttachment: 0
     TransformComponent:
       Position: [0,0,0]
@@ -31,11 +30,15 @@ PrefabEntities:
           ReferenceKind: AudioClip
         - Name: BarrelTipRef
           Type: 7
-          Value: 13698386109573853109
+          Value: 7652830277987808432
+          ReferenceKind: Entity
+        - Name: WeaponAimingRef
+          Type: 7
+          Value: 306260627852323004
           ReferenceKind: Entity
         - Name: MuzzleFlashRef
           Type: 7
-          Value: 78219473190161272
+          Value: 13968620020942205073
           ReferenceKind: Entity
         - Name: ReloadEndSound
           Type: 8
@@ -44,25 +47,170 @@ PrefabEntities:
         - Name: MaxAmmo
           Type: 2
           Value: 48
-        - Name: MagEmptyParam
-          Type: 4
-          Value: AmmoEmpty
         - Name: AmmoUIRef
           Type: 7
           Value: 15941034270328579006
           ReferenceKind: Entity
+        - Name: MagEmptyParam
+          Type: 4
+          Value: AmmoEmpty
         - Name: MagazineSize
           Type: 2
           Value: 8
         - Name: FireMode
           Type: 5
           Value: 1
+        - Name: WeaponRecoilRef
+          Type: 7
+          Value: 10621022497817422972
+          ReferenceKind: Entity
     AnimatorComponent:
       SkeletonHandle: 14193014657651256754
       ControllerHandle: 16717526163793928394
     PrefabComponent:
       PrefabUUID: 1628786810858958427
-  - Entity: 5176878316698041733
+  - Entity: 3656428102048254025
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: WeaponMovement
+    RelationshipComponent:
+      Parent: 9846761892442418044
+      Children:
+        - 10621022497817422972
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [0.24000001,0,0,0,0,0.24000001,0,0,0,0,0.24000001,0,0,0,0,1]
+    ScriptComponent:
+      ScriptUUID: 10843162672597406671
+      UserPropertyOverrides:
+        - Name: SwayPosAmount
+          Type: 3
+          Value: 0.07
+        - Name: SwayRotStep
+          Type: 2
+          Value: 1
+        - Name: IdleMultiplier
+          Type: 3
+          Value: 0.12
+        - Name: BobLimit
+          Type: 6
+          Value: [0.05,0.05,0.05]
+        - Name: BobSpeed
+          Type: 3
+          Value: 10
+        - Name: PlayerRef
+          Type: 7
+          Value: 6753254757056896993
+          ReferenceKind: Entity
+        - Name: BobTotalLimit
+          Type: 6
+          Value: [0.1,0.1,0.1]
+        - Name: SwayRotAmount
+          Type: 2
+          Value: 2
+  - Entity: 10621022497817422972
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: WeaponRecoil
+    RelationshipComponent:
+      Parent: 3656428102048254025
+      Children:
+        - 306260627852323004
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,-0,0]
+      Scale: [1,1,1]
+      WorldTransform: [0.24000001,0,0,0,0,0.24000001,0,0,0,0,0.24000001,0,0,0,0,1]
+    ScriptComponent:
+      ScriptUUID: 3366872985723856610
+      UserPropertyOverrides:
+        - Name: KickbackZ
+          Type: 3
+          Value: 0.05
+        - Name: ADSKickMultiplier
+          Type: 3
+          Value: 0.1
+        - Name: RotationX
+          Type: 3
+          Value: 5
+        - Name: KickUpY
+          Type: 3
+          Value: 0.05
+        - Name: CameraRef
+          Type: 7
+          Value: 3526599274050075716
+          ReferenceKind: Entity
+        - Name: WeaponAimingRef
+          Type: 7
+          Value: 306260627852323004
+          ReferenceKind: Entity
+  - Entity: 306260627852323004
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: WeaponAiming
+    RelationshipComponent:
+      Parent: 10621022497817422972
+      Children:
+        - 17232591874503938850
+        - 7652830277987808432
+        - 4077815076531493691
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,-0,0]
+      Scale: [1,1,1]
+      WorldTransform: [0.24000001,0,0,0,0,0.24000001,0,0,0,0,0.24000001,0,0,0,0,1]
+    ScriptComponent:
+      ScriptUUID: 15631423950997928565
+      UserPropertyOverrides:
+        - Name: ADS_Speed
+          Type: 3
+          Value: 10
+        - Name: ADSPositionOffset
+          Type: 6
+          Value: [0,0,0]
+        - Name: AimNodeRef
+          Type: 7
+          Value: 4077815076531493691
+          ReferenceKind: Entity
+        - Name: DebugADSLogging
+          Type: 1
+          Value: 1
+        - Name: CrosshairRef
+          Type: 7
+          Value: 16155943693343446687
+          ReferenceKind: Entity
+        - Name: ADSCameraViewOffset
+          Type: 6
+          Value: [0,0,0]
+        - Name: CameraSocketRef
+          Type: 7
+          Value: 9548350549033941053
+          ReferenceKind: Entity
+        - Name: CameraRef
+          Type: 7
+          Value: 3526599274050075716
+          ReferenceKind: Entity
+  - Entity: 17232591874503938850
     ComponentOrder:
       - IDComponent
       - TagComponent
@@ -71,16 +219,16 @@ PrefabEntities:
     TagComponent:
       Tag: Armature
     RelationshipComponent:
-      Parent: 14042643783696984877
+      Parent: 306260627852323004
       Children:
-        - 303374227966021317
+        - 9136546328719794171
       IsAttachment: 0
     TransformComponent:
       Position: [0,0,0]
       Rotation: [0,-0,0]
       Scale: [1.4278071,1.427807,1.427807]
       WorldTransform: [0.34267372,0,0,0,0,0.3426737,0,0,0,0,0.3426737,0,0,0,0,1]
-  - Entity: 13698386109573853109
+  - Entity: 7652830277987808432
     ComponentOrder:
       - IDComponent
       - TagComponent
@@ -89,16 +237,33 @@ PrefabEntities:
     TagComponent:
       Tag: BarrelTip
     RelationshipComponent:
-      Parent: 14042643783696984877
+      Parent: 306260627852323004
       Children:
-        - 78219473190161272
+        - 13968620020942205073
       IsAttachment: 0
     TransformComponent:
       Position: [0,0.7443316,-2.8811326]
       Rotation: [0,0,0]
       Scale: [1,1,1]
       WorldTransform: [0.24000001,0,0,0,0,0.24000001,0,0,0,0,0.24000001,0,0,0.17863959,-0.6914719,1]
-  - Entity: 303374227966021317
+  - Entity: 4077815076531493691
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+    TagComponent:
+      Tag: ADS_Node
+    RelationshipComponent:
+      Parent: 306260627852323004
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0.335,0.05273485]
+      Rotation: [0,-0,0]
+      Scale: [0.37703243,0.37703243,0.37703243]
+      WorldTransform: [0.090487786,0,0,0,0,0.090487786,0,0,0,0,0.090487786,0,0,0.080400005,0.012656365,1]
+  - Entity: 9136546328719794171
     ComponentOrder:
       - IDComponent
       - TagComponent
@@ -107,18 +272,18 @@ PrefabEntities:
     TagComponent:
       Tag: Body_Bone
     RelationshipComponent:
-      Parent: 5176878316698041733
+      Parent: 17232591874503938850
       Children:
-        - 11519790743811357661
-        - 12945282099341777163
-        - 18289063746279919496
+        - 17547488570157557521
+        - 7842275511371964096
+        - 11412900125854753779
       IsAttachment: 0
     TransformComponent:
       Position: [-0.0055043227,-0.5595463,0.27099973]
       Rotation: [-0.30556366,-9.8091966e-18,3.0942405e-18]
       Scale: [1,0.99999994,0.99999994]
       WorldTransform: [0.34267372,1.0603147e-18,3.3613533e-18,0,1.0629489e-25,0.32680017,-0.10308677,0,-3.5246224e-18,0.10308677,0.32680017,0,-0.0018861868,-0.1917418,0.092864476,1]
-  - Entity: 78219473190161272
+  - Entity: 13968620020942205073
     ComponentOrder:
       - IDComponent
       - TagComponent
@@ -131,7 +296,7 @@ PrefabEntities:
     TagComponent:
       Tag: MuzzelFlash
     RelationshipComponent:
-      Parent: 13698386109573853109
+      Parent: 7652830277987808432
       Children: []
       IsAttachment: 0
     TransformComponent:
@@ -166,7 +331,7 @@ PrefabEntities:
       AlignWithVelocity: 1
       StretchFactor: 0.3
       IsActive: 0
-  - Entity: 11519790743811357661
+  - Entity: 17547488570157557521
     ComponentOrder:
       - IDComponent
       - TagComponent
@@ -175,16 +340,16 @@ PrefabEntities:
     TagComponent:
       Tag: Slide_Bone
     RelationshipComponent:
-      Parent: 303374227966021317
+      Parent: 9136546328719794171
       Children:
-        - 6483785939981961370
+        - 15072559616023659513
       IsAttachment: 0
     TransformComponent:
       Position: [4.656613e-10,1.3064115,0.20871729]
       Rotation: [-1.3027338,1.7211008e-17,-2.5213036e-17]
       Scale: [1,1.0000001,1]
       WorldTransform: [0.34267372,-8.953537e-18,3.3592342e-19,0,-1.8611564e-24,-0.012847632,-0.34243277,0,8.959838e-18,0.34243274,-0.012847625,0,-0.0018861867,0.2567097,0.026399575,1]
-  - Entity: 12945282099341777163
+  - Entity: 7842275511371964096
     ComponentOrder:
       - IDComponent
       - TagComponent
@@ -193,16 +358,16 @@ PrefabEntities:
     TagComponent:
       Tag: Magazine_Bone
     RelationshipComponent:
-      Parent: 303374227966021317
+      Parent: 9136546328719794171
       Children:
-        - 11361246189801260570
+        - 4941789625025364947
       IsAttachment: 0
     TransformComponent:
       Position: [4.656613e-10,0.94116896,-0.2201989]
       Rotation: [3.1307485,2.3840454e-07,-2.5853895e-09]
       Scale: [1,1.0000002,1.0000002]
       WorldTransform: [0.34267372,-2.5421258e-08,-7.7644124e-08,0,1.597828e-15,-0.32566315,0.10662453,0,-8.169978e-08,-0.10662453,-0.32566315,0,-0.0018861867,0.093132794,-0.076118626,1]
-  - Entity: 18289063746279919496
+  - Entity: 11412900125854753779
     ComponentOrder:
       - IDComponent
       - TagComponent
@@ -211,17 +376,17 @@ PrefabEntities:
     TagComponent:
       Tag: Body
     RelationshipComponent:
-      Parent: 303374227966021317
+      Parent: 9136546328719794171
       Children:
-        - 16371876585728045324
-        - 14511119734954062264
+        - 4081316827786002350
+        - 14006307210320986477
       IsAttachment: 0
     TransformComponent:
       Position: [0.0055043246,0.61515164,-0.09011765]
       Rotation: [0.30556363,1.0285654e-17,-1.0339759e-25]
       Scale: [0.7003749,0.70037514,0.700375]
       WorldTransform: [0.24000007,0,0,0,4.135903e-25,0.2400001,-7.450581e-09,0,8.271806e-25,0,0.24000005,0,5.820766e-10,-7.4505806e-08,2.2351742e-08,1]
-  - Entity: 6483785939981961370
+  - Entity: 15072559616023659513
     ComponentOrder:
       - IDComponent
       - TagComponent
@@ -232,7 +397,7 @@ PrefabEntities:
     TagComponent:
       Tag: Slide
     RelationshipComponent:
-      Parent: 11519790743811357661
+      Parent: 17547488570157557521
       Children: []
       IsAttachment: 0
     TransformComponent:
@@ -242,11 +407,11 @@ PrefabEntities:
       WorldTransform: [0.2400001,-8.924948e-20,-2.378721e-18,0,8.924865e-20,0.24000008,-1.2014061e-07,0,2.378722e-18,1.2665987e-07,0.24000013,0,1.3969839e-09,-8.940697e-08,3.7625432e-07,1]
     SkinnedMeshComponent:
       MeshUUID: 15346656199082862049
-      RootAnimator: 14042643783696984877
+      RootAnimator: 9846761892442418044
       Layer: 1
     MaterialComponent:
       MaterialUUID: 15086660637021645114
-  - Entity: 11361246189801260570
+  - Entity: 4941789625025364947
     ComponentOrder:
       - IDComponent
       - TagComponent
@@ -257,7 +422,7 @@ PrefabEntities:
     TagComponent:
       Tag: Magazine
     RelationshipComponent:
-      Parent: 12945282099341777163
+      Parent: 7842275511371964096
       Children: []
       IsAttachment: 0
     TransformComponent:
@@ -267,11 +432,11 @@ PrefabEntities:
       WorldTransform: [0.24000002,3.5527137e-15,3.5527137e-15,0,1.7763568e-15,0.24000005,-4.4703484e-08,0,7.1054274e-15,4.4703484e-08,0.24000004,0,5.820766e-10,7.450581e-09,2.2351742e-08,1]
     SkinnedMeshComponent:
       MeshUUID: 5985712711574680378
-      RootAnimator: 14042643783696984877
+      RootAnimator: 9846761892442418044
       Layer: 1
     MaterialComponent:
       MaterialUUID: 15086660637021645114
-  - Entity: 16371876585728045324
+  - Entity: 4081316827786002350
     ComponentOrder:
       - IDComponent
       - TagComponent
@@ -282,7 +447,7 @@ PrefabEntities:
     TagComponent:
       Tag: Body_Part0
     RelationshipComponent:
-      Parent: 18289063746279919496
+      Parent: 11412900125854753779
       Children: []
       IsAttachment: 0
     TransformComponent:
@@ -292,11 +457,11 @@ PrefabEntities:
       WorldTransform: [0.24000007,0,0,0,4.135903e-25,0.2400001,-7.450581e-09,0,8.271806e-25,0,0.24000005,0,5.820766e-10,-7.4505806e-08,2.2351742e-08,1]
     SkinnedMeshComponent:
       MeshUUID: 13365133264221018487
-      RootAnimator: 14042643783696984877
+      RootAnimator: 9846761892442418044
       Layer: 1
     MaterialComponent:
       MaterialUUID: 15086660637021645114
-  - Entity: 14511119734954062264
+  - Entity: 14006307210320986477
     ComponentOrder:
       - IDComponent
       - TagComponent
@@ -307,7 +472,7 @@ PrefabEntities:
     TagComponent:
       Tag: Body_Part1
     RelationshipComponent:
-      Parent: 18289063746279919496
+      Parent: 11412900125854753779
       Children: []
       IsAttachment: 0
     TransformComponent:
@@ -317,7 +482,7 @@ PrefabEntities:
       WorldTransform: [0.24000007,0,0,0,4.135903e-25,0.2400001,-7.450581e-09,0,8.271806e-25,0,0.24000005,0,5.820766e-10,-7.4505806e-08,2.2351742e-08,1]
     SkinnedMeshComponent:
       MeshUUID: 5610316799824380095
-      RootAnimator: 14042643783696984877
+      RootAnimator: 9846761892442418044
       Layer: 1
     MaterialComponent:
       MaterialUUID: 782295293902573577

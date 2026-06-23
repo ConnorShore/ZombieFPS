@@ -50,10 +50,6 @@ function WeaponRecoil:OnUpdate(entity, delta)
     local pitchDelta = self.CurrentCameraPitch - self.PreviousCameraPitch
     local yawDelta = self.CurrentCameraYaw - self.PreviousCameraYaw
     
--- Calculate how much the camera recoil changed THIS frame
-    local pitchDelta = self.CurrentCameraPitch - self.PreviousCameraPitch
-    local yawDelta = self.CurrentCameraYaw - self.PreviousCameraYaw
-    
     if self.Camera:IsValid() then
         -- Inject Pitch directly into the MouseLook script (Camera local X rotation)
         if pitchDelta ~= 0.0 then
@@ -78,7 +74,13 @@ function WeaponRecoil:OnUpdate(entity, delta)
 end
 
 function WeaponRecoil:Fire(entity)
-    local isADS = self.WeaponAiming:IsValid() and self.WeaponAiming:GetScriptInstance().IsAiming or false
+    local isADS = false
+    if self.WeaponAiming:IsValid() then
+        local aimingScript = self.WeaponAiming:GetScriptInstance()
+        if aimingScript then
+            isADS = aimingScript.IsAiming or false
+        end
+    end
 
     -- Generate the unique recoil math for this specific bullet
     local actualPitch = self.RotationX + Math.RandomFloat(-self.RotationXVariance, self.RotationXVariance)

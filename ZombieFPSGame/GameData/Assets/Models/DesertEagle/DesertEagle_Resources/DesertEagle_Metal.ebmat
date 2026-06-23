@@ -4,27 +4,27 @@ RenderQueue: 1
 Instanced: false
 Shader: 10
 Uniforms:
-  u_Albedo:
-    Type: Vector3f
-    Value: [0.39493036,0.39493036,0.39493036]
   u_Metallic:
     Type: float
     Value: 1
+  u_Albedo:
+    Type: Vector3f
+    Value: [0.39493036,0.39493036,0.39493036]
   u_Roughness:
     Type: float
     Value: 0.5
-  u_AO:
-    Type: float
-    Value: 1
   u_EmissionColor:
     Type: Vector3f
     Value: [0,0,0]
-  u_Emission:
+  u_AO:
     Type: float
-    Value: 0
+    Value: 1
   u_AlbedoMap:
     Type: Texture
     Value: 1
+  u_Emission:
+    Type: float
+    Value: 0
   u_NormalMap:
     Type: Texture
     Value: 3
