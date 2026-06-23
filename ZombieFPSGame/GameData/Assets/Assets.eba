@@ -80,6 +80,10 @@ Assets:
     Name: PowerUpDrop
     FilePath: Scripts/Pickups/PowerUpDrop.lua
   - Type: Script
+    UUID: 7847366610859754620
+    Name: Tracer
+    FilePath: Scripts/Weapons/Tracer.lua
+  - Type: Script
     UUID: 10843162672597406671
     Name: WeaponMovement
     FilePath: Scripts/Weapons/WeaponMovement.lua
@@ -99,10 +103,6 @@ Assets:
     UUID: 12117729415864912341
     Name: PickupItem
     FilePath: Scripts/Pickups/PickupItem.lua
-  - Type: Script
-    UUID: 7847366610859754620
-    Name: Tracer
-    FilePath: Scripts/Weapons/Tracer.lua
   - Type: Script
     UUID: 16605421126880563658
     Name: MuzzleFlash

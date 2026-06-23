@@ -21,6 +21,7 @@ WeaponController.RefillAmmoEventName = "RefillAmmo"
 WeaponController.ReloadCompleteEventName = "ReloadComplete"
 WeaponController.ReloadStateName = "Reload"
 WeaponController.ReloadTriggerParam = "ReloadRequested"
+WeaponController.MagEmptyParam = "MagEmpty"
 
 WeaponController.EquipPositionOffset = Vector3f.new(0, 0, 0)
 
@@ -101,6 +102,10 @@ function WeaponController:OnShoot()
         end
     else
         self.CanShoot = false
+        local animatorComp = self.Entity:GetComponent("AnimatorComponent")
+        if animatorComp then
+            animatorComp:SetBool(self.MagEmptyParam, true)
+        end
     end
 end
 
@@ -168,6 +173,10 @@ function WeaponController:OnAnimationEvent(eventName)
             self.CanShoot = self.CurrentAmmo > 0
         else
             self.CanShoot = true
+            local animatorComp = self.Entity:GetComponent("AnimatorComponent")
+            if animatorComp then
+                animatorComp:SetBool(self.MagEmptyParam, false)
+            end
         end
     elseif eventName == self.ReloadCompleteEventName then
         Log.Info("Reload complete!")

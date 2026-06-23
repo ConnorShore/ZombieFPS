@@ -1,11 +1,11 @@
 Version: 1
 Parameters:
-  - Name: ReloadRequested
+  - Name: AmmoEmpty
     Type: 1
     FloatValue: 0
     BoolValue: 0
     IntValue: 0
-  - Name: AmmoEmpty
+  - Name: ReloadRequested
     Type: 1
     FloatValue: 0
     BoolValue: 0
@@ -14,6 +14,7 @@ Layers:
   - Name: Base Layer
     Weight: 1
     MaskHandle: 0
+    Mode: 0
     StateMachine:
       DefaultState: 5893893147081397289
       EntryNodePositionSet: 1
@@ -61,6 +62,7 @@ Layers:
   - Name: SlideLockLayer
     Weight: 1
     MaskHandle: 2548850233763151739
+    Mode: 1
     StateMachine:
       DefaultState: 689369349743118117
       EntryNodePositionSet: 1
