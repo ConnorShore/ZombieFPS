@@ -18,7 +18,7 @@ PrefabEntities:
     MaterialComponent:
       MaterialUUID: 3531595371019758275
     PrefabComponent:
-      PrefabUUID: 16541249095124470783
+      PrefabUUID: 16836608058861364347
   - Entity: 4193561221402797175
     TagComponent:
       Tag: Reticle

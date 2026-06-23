@@ -1,6 +1,6 @@
 local MountBehavior = {}
 
-MountBehavior.MountPrefabName = ""
+MountBehavior.MountPrefab = PrefabRef()
 
 MountBehavior.MountType = {
     Sight = 1,
@@ -12,26 +12,18 @@ MountBehavior.MountType = {
 function MountBehavior:OnCreate(entity)
     self.Entity = entity
 
-    if self.MountPrefabName ~= "" then
-        self:OnAttach(self.MountPrefabName)
-    end
 end
 
 function MountBehavior:OnUpdate(entity, delta)
 
 end
 
-function MountBehavior:OnAttach(prefabName)
-    self.MountPrefabName = prefabName
-    if self.MountPrefabName == "" then
-        Log.Error("MountPrefabName is not set for entity " .. self.Entity:GetName())
-        return
-    end
-
+function MountBehavior:OnAttach(prefabHandle)
+    self.MountPrefab = prefabHandle
     local transform = self.Entity:GetComponent("TransformComponent")
-    self.MountPrefab = Scene.InstantiatePrefab(self.MountPrefabName, self.Entity)
-    if self.MountPrefab == nil then
-        Log.Error("Failed to instantiate mount prefab: " .. self.MountPrefabName)
+    self.MountPrefabEntity = Scene.InstantiatePrefab(self.MountPrefab, self.Entity)
+    if not self.MountPrefabEntity:IsValid() then
+        Log.Error("Failed to instantiate mount prefab: " .. tostring(self.MountPrefab))
         return
     end
 
@@ -41,15 +33,14 @@ end
 
 function MountBehavior:OnDetach()
     Log.Info("Detaching mount")
-    if self.MountPrefab then
-        Scene.RemoveEntity(self.MountPrefab)
-        self.MountPrefab = nil
+    if self.MountPrefabEntity and self.MountPrefabEntity:IsValid() then
+        Scene.RemoveEntity(self.MountPrefabEntity)
+        self.MountPrefabEntity = nil
         Log.Info("Mount detached and prefab removed")
     else
         Log.Warn("No mount prefab to detach")
     end
     
-    self.MountPrefabName = ""
 end
 
 return MountBehavior

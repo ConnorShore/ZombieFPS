@@ -1,24 +1,24 @@
-local PickUpItem = {}
+local PickupItem = {}
 
-PickUpItem.AttachmentType = {
+PickupItem.AttachmentType = {
     Sight = 1,
     Stock = 2,
     Muzzle = 3,
     Grip = 4
 }
 
-PickUpItem.PrefabName = ""
+PickupItem.Prefab = PrefabRef()
 
-function PickUpItem:OnCreate(entity)
+function PickupItem:OnCreate(entity)
     local transform = entity:GetComponent("TransformComponent")
-    self.PrefabEntity = Scene.InstantiatePrefab(self.PrefabName, transform.WorldPosition)
+    self.PrefabEntity = Scene.InstantiatePrefab(self.Prefab, transform.WorldPosition)
 end
 
-function PickUpItem:OnUpdate(entity, delta)
+function PickupItem:OnUpdate(entity, delta)
 end
 
-function PickUpItem:OnPickup(entity, otherEntity)
-    if self.PrefabEntity then
+function PickupItem:OnPickup(entity, otherEntity)
+    if self.PrefabEntity and self.PrefabEntity:IsValid() then
         Scene.RemoveEntity(self.PrefabEntity)
         self.PrefabEntity = nil
     end
@@ -26,11 +26,11 @@ function PickUpItem:OnPickup(entity, otherEntity)
     Scene.RemoveEntity(entity)
 end
 
-function PickUpItem:GetAttachmentData()
+function PickupItem:GetAttachmentData()
     return {
         Type = self.AttachmentType,
-        PrefabName = self.PrefabName
+        PrefabHandle = self.Prefab
     }
 end
 
-return PickUpItem
+return PickupItem

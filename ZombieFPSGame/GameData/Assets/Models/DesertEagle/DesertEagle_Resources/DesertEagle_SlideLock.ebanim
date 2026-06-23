@@ -1,0 +1,36 @@
+Version: 1
+Animation: DesertEagle_SlideLock
+UUID: 7891003508228372826
+Duration: 0
+Tracks:
+  - BoneID: 0
+    PositionKeys:
+      - Time: 0
+        Value: [-0.005504323,-0.55954635,0.27099973]
+    RotationKeys:
+      - Time: 0
+        Value: [-0.15218809,-5.0829202e-18,7.8267705e-19,0.9883516]
+    ScaleKeys:
+      - Time: 0
+        Value: [1,1,1]
+  - BoneID: 1
+    PositionKeys:
+      - Time: 0
+        Value: [-4.656613e-10,1.1464331,0.7158721]
+    RotationKeys:
+      - Time: 0
+        Value: [-0.60627395,1.4486581e-17,-4.8081114e-18,0.7952559]
+    ScaleKeys:
+      - Time: 0
+        Value: [1,0.99999994,0.99999994]
+  - BoneID: 2
+    PositionKeys:
+      - Time: 0
+        Value: [-5.6457095e-10,0.94116884,-0.22019888]
+    RotationKeys:
+      - Time: 0
+        Value: [0.99998534,-6.4635447e-10,-1.1920751e-07,0.0054220236]
+    ScaleKeys:
+      - Time: 0
+        Value: [1,1,1]
+Events: []

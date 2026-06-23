@@ -20,7 +20,7 @@ PrefabEntities:
           Type: 3
           Value: 75
     PrefabComponent:
-      PrefabUUID: 9099603156203677000
+      PrefabUUID: 13120009099153965368
   - Entity: 12723206855965078724
     TagComponent:
       Tag: Quad1

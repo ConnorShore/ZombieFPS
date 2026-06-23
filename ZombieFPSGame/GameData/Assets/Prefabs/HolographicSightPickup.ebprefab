@@ -28,12 +28,10 @@ PrefabEntities:
     ScriptComponent:
       ScriptUUID: 12117729415864912341
       UserPropertyOverrides:
-        - Name: PickupPrefabName
-          Type: 4
-          Value: HolographicSight
-        - Name: PrefabName
-          Type: 4
-          Value: HolographicSight
+        - Name: Prefab
+          Type: 8
+          Value: 16836608058861364347
+          ReferenceKind: Prefab
         - Name: AttachmentType
           Type: 5
           Value: 1
