@@ -6,30 +6,64 @@ WeaponHolder.WeaponFireRef = EntityRef()
 
 function WeaponHolder:OnCreate(entity)
     self.PlayedEmptyGunSound = false
-    self.Weapons = {nil, nil} -- Track equipped weapons in each slot
     self.ActiveWeaponSlot = 1
     self.Entity = entity
     self.WeaponFire = Scene.GetEntityByUUID(self.WeaponFireRef)
+
+    -- Weapons based on slots, will be populated when equipping weapons
+    self.Weapons = {}
+    for i = 1, self.WeaponSlots do
+        self.Weapons[i] = nil
+    end
+
+    self.WasShootingLastFrame = false
 end
 
 function WeaponHolder:OnUpdate(entity, delta)
     if Input.IsMouseButtonPressed(MouseButton.Left) then
-        self:OnShoot()
+        self:OnShoot(self.WasShootingLastFrame)
+        self.WasShootingLastFrame = true
     else
         self.PlayedEmptyGunSound = false
+        self.WasShootingLastFrame = false
     end
 
     if Input.IsKeyPressed(KeyCode.R) and self:GetCurrentWeapon() then
         self:OnReload()
     end
+
+    if Input.IsKeyPressed(KeyCode.D1) then
+        self.ActiveWeaponSlot = 1
+        self:RefreshWeaponVisibility()
+    elseif Input.IsKeyPressed(KeyCode.D2) then
+        self.ActiveWeaponSlot = 2
+        self:RefreshWeaponVisibility()
+    end
 end
 
 function WeaponHolder:GetWeaponPrefabHandle(weaponEntity)
     if weaponEntity and weaponEntity:IsValid() and weaponEntity:ContainsComponent("PrefabComponent") then
-        return weaponEntity:GetComponent("PrefabComponent").PrefabUUID
+        return weaponEntity:GetComponent("PrefabComponent").PrefabHandle
     end
 
     return nil
+end
+
+function WeaponHolder:RefreshWeaponVisibility()
+    for i = 1, self.WeaponSlots do
+        if self.Weapons[i] ~= nil and self.Weapons[i]:IsValid() then
+            local isActive = (i == self.ActiveWeaponSlot)
+            self.Weapons[i]:SetActive(isActive)
+
+            if isActive then
+                -- Update ammo UI for newly active weapon
+                local weaponControllerScript = self.Weapons[i]:GetScriptInstance()
+                if weaponControllerScript then
+                    weaponControllerScript:TryBindAmmoUI()
+                end
+            end
+        end
+    end
 end
 
 function WeaponHolder:EquipWeapon(prefabHandle)
@@ -38,6 +72,7 @@ function WeaponHolder:EquipWeapon(prefabHandle)
         if self.Weapons[i] ~= nil and self:GetWeaponPrefabHandle(self.Weapons[i]) == prefabHandle then
             Log.Info("Weapon prefab '" .. tostring(prefabHandle) .. "' is already equipped in slot " .. tostring(i) .. ". Switching to that slot.")
             self.ActiveWeaponSlot = i
+            self:RefreshWeaponVisibility()
             return
         end
     end
@@ -55,9 +90,11 @@ function WeaponHolder:EquipWeapon(prefabHandle)
         if emptySlot then
             Log.Info("Moving existing weapon in slot " .. tostring(self.ActiveWeaponSlot) .. " to empty slot " .. tostring(emptySlot))
             self.Weapons[emptySlot] = self.Weapons[self.ActiveWeaponSlot]
+            self.Weapons[self.ActiveWeaponSlot] = nil
         else
             Log.Info("No empty weapon slot available, removing existing weapon in slot " .. tostring(self.ActiveWeaponSlot))
             Scene.RemoveEntity(self.Weapons[self.ActiveWeaponSlot])
+            self.Weapons[self.ActiveWeaponSlot] = nil
         end
     end
 
@@ -75,9 +112,10 @@ function WeaponHolder:EquipWeapon(prefabHandle)
     local transform = newWeaponEntity:GetComponent("TransformComponent")
     transform.Position = weaponControllerScript.EquipPositionOffset
     self.Weapons[self.ActiveWeaponSlot] = newWeaponEntity
+    self:RefreshWeaponVisibility()
 end
 
-function WeaponHolder:OnShoot()
+function WeaponHolder:OnShoot(wasShootingLastFrame)
     local weaponEntity = self:GetCurrentWeapon()
     if not weaponEntity or not weaponEntity:IsValid() then
         Log.Warn("No weapon equipped!")
@@ -88,6 +126,11 @@ function WeaponHolder:OnShoot()
     if not weaponControllerScript then
         Log.Warn("Weapon entity '" .. self:GetCurrentWeapon():GetName() .. "' does not have a WeaponController script attached!")
         return
+    end
+
+    if weaponControllerScript.IsSemiAuto and weaponControllerScript:IsSemiAuto() and wasShootingLastFrame then
+        Log.Info("Semi-auto weapon - waiting for trigger release")
+        return -- Don't shoot again until the mouse button is released for semi-auto weapons
     end
 
     -- Fire the weapon

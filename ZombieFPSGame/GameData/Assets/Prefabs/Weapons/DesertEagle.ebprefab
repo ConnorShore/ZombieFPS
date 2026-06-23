@@ -25,18 +25,18 @@ PrefabEntities:
     ScriptComponent:
       ScriptUUID: 8102167312162542918
       UserPropertyOverrides:
-        - Name: MuzzleFlashRef
-          Type: 7
-          Value: 78219473190161272
-          ReferenceKind: Entity
-        - Name: BarrelTipRef
-          Type: 7
-          Value: 13698386109573853109
-          ReferenceKind: Entity
         - Name: ReloadStartSound
           Type: 8
           Value: 15776698392225788213
           ReferenceKind: AudioClip
+        - Name: BarrelTipRef
+          Type: 7
+          Value: 13698386109573853109
+          ReferenceKind: Entity
+        - Name: MuzzleFlashRef
+          Type: 7
+          Value: 78219473190161272
+          ReferenceKind: Entity
         - Name: ReloadEndSound
           Type: 8
           Value: 8785379131387521162
@@ -47,13 +47,16 @@ PrefabEntities:
         - Name: MagEmptyParam
           Type: 4
           Value: AmmoEmpty
-        - Name: MagazineSize
-          Type: 2
-          Value: 8
         - Name: AmmoUIRef
           Type: 7
           Value: 15941034270328579006
           ReferenceKind: Entity
+        - Name: MagazineSize
+          Type: 2
+          Value: 8
+        - Name: FireMode
+          Type: 5
+          Value: 1
     AnimatorComponent:
       SkeletonHandle: 14193014657651256754
       ControllerHandle: 16717526163793928394

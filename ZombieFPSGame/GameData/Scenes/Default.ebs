@@ -244,17 +244,17 @@ Entities:
     ScriptComponent:
       ScriptUUID: 8562544563539838448
       UserPropertyOverrides:
-        - Name: InteractionDistance
-          Type: 3
-          Value: 3
-        - Name: PickupUIRef
-          Type: 7
-          Value: 7122639572906643531
-          ReferenceKind: Entity
         - Name: WeaponHolderRef
           Type: 7
           Value: 230291968303856085
           ReferenceKind: Entity
+        - Name: PickupUIRef
+          Type: 7
+          Value: 7122639572906643531
+          ReferenceKind: Entity
+        - Name: InteractionDistance
+          Type: 3
+          Value: 3
   - Entity: 5645678438920164573
     ComponentOrder:
       - IDComponent
@@ -438,10 +438,10 @@ Entities:
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [-5.869132,0.6624184,0.33630878]
+      Position: [-4.35262,0.66242886,4.974047]
       Rotation: [0,0,0]
       Scale: [1.25,1.25,1.25]
-      WorldTransform: [1.25,0,0,0,0,1.25,0,0,0,0,1.25,0,-5.869132,0.6624184,0.33630878,1]
+      WorldTransform: [1.25,0,0,0,0,1.25,0,0,0,0,1.25,0,-4.35262,0.66242886,4.974047,1]
     RigidBodyComponent:
       Type: 1
       Mass: 1
@@ -559,24 +559,24 @@ Entities:
     ScriptComponent:
       ScriptUUID: 16404415058251315788
       UserPropertyOverrides:
-        - Name: FireRate
-          Type: 2
-          Value: 500
         - Name: BloomPerShot
           Type: 3
           Value: 0.02
+        - Name: FireRate
+          Type: 2
+          Value: 500
         - Name: ImpactForce
           Type: 3
           Value: 3
         - Name: MaxHipBloom
           Type: 3
           Value: 0.75
-        - Name: BaseHipBloom
-          Type: 3
-          Value: 0.05
         - Name: BloomDecayRate
           Type: 3
           Value: 0.6
+        - Name: BaseHipBloom
+          Type: 3
+          Value: 0.05
         - Name: GunshotSound
           Type: 8
           Value: 10601745296411271244
@@ -795,10 +795,10 @@ Entities:
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [-6.8956637,0.5,-4.8896832]
-      Rotation: [0,0.6549722,0]
+      Position: [-7.961578,0.5,0.042535722]
+      Rotation: [0,1.3421392,0]
       Scale: [2.7124968,1,1.5]
-      WorldTransform: [2.151186,0,-1.6522826,0,0,1,0,0,0.91370577,0,1.1895974,0,-6.8956637,0.5,-4.8896832,1]
+      WorldTransform: [0.61484104,0,-2.641895,0,0,1,0,0,1.4609575,0,0.34000468,0,-7.961578,0.5,0.042535722,1]
     RigidBodyComponent:
       Type: 0
       Mass: 1
@@ -1018,25 +1018,25 @@ Entities:
         - Name: SwayPosAmount
           Type: 3
           Value: 0.07
-        - Name: IdleMultiplier
-          Type: 3
-          Value: 0.12
         - Name: SwayRotStep
           Type: 2
           Value: 1
-        - Name: BobSpeed
+        - Name: IdleMultiplier
           Type: 3
-          Value: 10
+          Value: 0.12
         - Name: BobLimit
           Type: 6
           Value: [0.05,0.05,0.05]
-        - Name: BobTotalLimit
-          Type: 6
-          Value: [0.1,0.1,0.1]
+        - Name: BobSpeed
+          Type: 3
+          Value: 10
         - Name: PlayerRef
           Type: 7
           Value: 6753254757056896993
           ReferenceKind: Entity
+        - Name: BobTotalLimit
+          Type: 6
+          Value: [0.1,0.1,0.1]
         - Name: SwayRotAmount
           Type: 2
           Value: 2
@@ -1057,10 +1057,10 @@ Entities:
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [-11.87701,2.2186286,-4.6492586]
+      Position: [-12.354751,2.2186286,-8.486531]
       Rotation: [0,-0.25096554,0]
-      Scale: [1,4.8661513,6.340652]
-      WorldTransform: [0.9686731,0,0.24833937,0,0,4.8661513,0,0,-1.5746335,0,6.1420193,0,-11.87701,2.2186286,-4.6492586,1]
+      Scale: [1,4.8661513,10.696718]
+      WorldTransform: [0.9686731,0,0.24833937,0,0,4.8661513,0,0,-2.6564162,0,10.361624,0,-12.354751,2.2186286,-8.486531,1]
     RigidBodyComponent:
       Type: 0
       Mass: 1
@@ -1125,14 +1125,14 @@ Entities:
         - Name: RotationSpeed
           Type: 3
           Value: 45
-        - Name: PickupSound
-          Type: 8
-          Value: 4535810649324835630
-          ReferenceKind: AudioClip
         - Name: WeaponHolderRef
           Type: 7
           Value: 230291968303856085
           ReferenceKind: Entity
+        - Name: PickupSound
+          Type: 8
+          Value: 4535810649324835630
+          ReferenceKind: AudioClip
     PrefabComponent:
       PrefabUUID: 3822534466298593180
   - Entity: 14881747670601641762
@@ -1327,10 +1327,10 @@ Entities:
         - 15061658065021419782
       IsAttachment: 0
     TransformComponent:
-      Position: [-6.9952993,1.0513172,-4.756736]
-      Rotation: [-2.0257993,0.018645354,-1.5678118]
+      Position: [-7.858513,1.0513012,-0.013183057]
+      Rotation: [-2.9437335,0.01369812,-1.5837923]
       Scale: [0.23000002,0.23000002,0.23000002]
-      WorldTransform: [0.0006863034,-0.22995903,-0.0042881626,0,-0.10108802,0.0035501965,-0.20656385,0,0.20659322,0.0025010896,-0.10105942,0,-6.9952993,1.0513172,-4.756736,1]
+      WorldTransform: [-0.0029887143,-0.22995903,-0.003150471,0,-0.22548553,0.0035499088,-0.045207035,0,0.045247603,0.0025011958,-0.2254915,0,-7.858513,1.0513012,-0.013183057,1]
     RigidBodyComponent:
       Type: 0
       Mass: 1
@@ -1378,7 +1378,7 @@ Entities:
       Position: [6.519258e-09,-3.5762787e-07,1.5497208e-06]
       Rotation: [-5.1036454e-07,9.911335e-18,-3.7187303e-19]
       Scale: [1.0000004,1.0000004,1.0000005]
-      WorldTransform: [0.00068630365,-0.22995912,-0.004288164,0,-0.10108816,0.0035501965,-0.20656388,0,0.20659328,0.0025010926,-0.10105957,0,-6.995299,1.0513172,-4.756736,1]
+      WorldTransform: [-0.0029887154,-0.22995912,-0.0031504722,0,-0.22548564,0.0035499088,-0.045206934,0,0.04524751,0.0025011988,-0.22549163,0,-7.858513,1.0513012,-0.013183391,1]
     SkinnedMeshComponent:
       MeshUUID: 15346656199082862049
       RootAnimator: 13158089462527434001
@@ -1403,7 +1403,7 @@ Entities:
       Position: [2.7939677e-09,1.1920929e-07,5.9604645e-08]
       Rotation: [-1.788139e-07,2.131628e-14,7.1054257e-15]
       Scale: [1.0000001,1.0000002,1.0000001]
-      WorldTransform: [0.0006863035,-0.22995906,-0.004288163,0,-0.10108808,0.003550197,-0.20656388,0,0.20659323,0.0025010905,-0.101059474,0,-6.9952993,1.0513172,-4.756736,1]
+      WorldTransform: [-0.0029887147,-0.22995906,-0.0031504715,0,-0.22548561,0.0035499092,-0.045207005,0,0.045247566,0.0025011967,-0.22549154,0,-7.858513,1.0513012,-0.013183076,1]
     SkinnedMeshComponent:
       MeshUUID: 5985712711574680378
       RootAnimator: 13158089462527434001
@@ -1428,7 +1428,7 @@ Entities:
       Position: [0,0,0]
       Rotation: [-1.4901154e-08,1.6543608e-24,-1.0339754e-24]
       Scale: [1.0000002,1.0000005,1.0000002]
-      WorldTransform: [0.0006863036,-0.22995909,-0.0042881635,0,-0.10108806,0.0035501982,-0.20656395,0,0.20659326,0.0025010903,-0.101059444,0,-6.9952993,1.0513172,-4.756736,1]
+      WorldTransform: [-0.002988715,-0.22995909,-0.0031504717,0,-0.22548564,0.0035499104,-0.045207053,0,0.04524761,0.0025011965,-0.22549155,0,-7.858513,1.0513012,-0.013183057,1]
     SkinnedMeshComponent:
       MeshUUID: 13365133264221018487
       RootAnimator: 13158089462527434001
@@ -1453,7 +1453,7 @@ Entities:
       Position: [2.7939677e-09,-2.3841858e-07,5.9604645e-08]
       Rotation: [-1.4901154e-08,1.6543608e-24,-1.0339754e-24]
       Scale: [1.0000002,1.0000005,1.0000002]
-      WorldTransform: [0.0006863036,-0.22995909,-0.0042881635,0,-0.10108806,0.0035501982,-0.20656395,0,0.20659326,0.0025010903,-0.101059444,0,-6.9952993,1.0513172,-4.756736,1]
+      WorldTransform: [-0.002988715,-0.22995909,-0.0031504717,0,-0.22548564,0.0035499104,-0.045207053,0,0.04524761,0.0025011965,-0.22549155,0,-7.858513,1.0513012,-0.01318306,1]
     SkinnedMeshComponent:
       MeshUUID: 5610316799824380095
       RootAnimator: 13158089462527434001
