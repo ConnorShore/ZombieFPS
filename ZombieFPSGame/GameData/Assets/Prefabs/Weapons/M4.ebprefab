@@ -189,9 +189,6 @@ PrefabEntities:
         - Name: ADS_Speed
           Type: 3
           Value: 10
-        - Name: ADSPositionOffset
-          Type: 6
-          Value: [0,0,0]
         - Name: AimNodeRef
           Type: 7
           Value: 16766670902763021612
@@ -205,14 +202,10 @@ PrefabEntities:
           ReferenceKind: Entity
         - Name: ADSCameraViewOffset
           Type: 6
-          Value: [0,0,0]
+          Value: [0,-0.025,-0.15]
         - Name: CameraSocketRef
           Type: 7
           Value: 9548350549033941053
-          ReferenceKind: Entity
-        - Name: CameraRef
-          Type: 7
-          Value: 3526599274050075716
           ReferenceKind: Entity
   - Entity: 3771947737390781143
     ComponentOrder:
@@ -263,10 +256,10 @@ PrefabEntities:
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [0,0.33496273,1.0280333]
+      Position: [0,0.4322166,1.0280333]
       Rotation: [0,-0,0]
       Scale: [0.37703243,0.37703243,0.37703243]
-      WorldTransform: [0.15458329,0,0,0,0,0.15458329,0,0,0,0,0.15458329,0,0,0.13733472,0.42149362,1]
+      WorldTransform: [0.15458329,0,0,0,0,0.15458329,0,0,0,0,0.15458329,0,0,0.17720881,0.42149362,1]
   - Entity: 7212249998401016702
     ComponentOrder:
       - IDComponent
