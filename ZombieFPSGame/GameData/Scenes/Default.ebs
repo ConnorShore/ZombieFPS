@@ -973,14 +973,14 @@ Entities:
         - Name: RotationSpeed
           Type: 3
           Value: 45
-        - Name: PickupSound
-          Type: 8
-          Value: 4535810649324835630
-          ReferenceKind: AudioClip
         - Name: WeaponHolderRef
           Type: 7
           Value: 230291968303856085
           ReferenceKind: Entity
+        - Name: PickupSound
+          Type: 8
+          Value: 4535810649324835630
+          ReferenceKind: AudioClip
     PrefabComponent:
       PrefabUUID: 3822534466298593180
   - Entity: 14881747670601641762

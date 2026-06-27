@@ -153,19 +153,64 @@ function WeaponController:EquipAttachment(attachmentType, prefabHandle)
         Log.Warn("This weapon does not support attachment type: " .. tostring(attachmentType))
         return
     end
+
+    -- TODO: Add function for attachments for "OnEquip" and "OnUnequip" so that they can do their own setup/teardown if needed
+    -- Hard coding sights for now
     
-    -- Remove existing attachment in this slot if there is one
+    -- 1. Remove existing attachment in this slot
     if self.ActiveAttachments[attachmentType] ~= nil then
         Scene.RemoveEntity(self.ActiveAttachments[attachmentType])
         self.ActiveAttachments[attachmentType] = nil
+        
+        -- If we removed a sight, revert to iron sights!
+        if attachmentType == 1 and self.WeaponAimingEntity:IsValid() then
+            local aimingScript = self.WeaponAimingEntity:GetScriptInstance()
+            if aimingScript and aimingScript.ClearOverrideAimNode then
+                aimingScript:ClearOverrideAimNode()
+            end
+        end
     end
     
-    -- Spawn the new attachment as a child of the specific mount point entity
+    -- 2. Spawn the new attachment
     local newAttachment = Scene.InstantiatePrefab(prefabHandle, mountPointEntity)
-    
-    -- Track it
     self.ActiveAttachments[attachmentType] = newAttachment
+
+    -- 3. If the new attachment is a Sight (Slot 1), wire up the new ADS Node
+    if attachmentType == 1 and self.WeaponAimingEntity:IsValid() then
+        local attachmentScript = newAttachment:GetScriptInstance()
+        local aimingScript = self.WeaponAimingEntity:GetScriptInstance()
+        
+        -- Check if the attachment actually has an aim node to give us
+        if attachmentScript and attachmentScript.GetAimNode and aimingScript and aimingScript.SetOverrideAimNode then
+            local newAimNode = attachmentScript:GetAimNode()
+            if newAimNode then
+                aimingScript:SetOverrideAimNode(newAimNode)
+            end
+        end
+    end
 end
+
+-- function WeaponController:EquipAttachment(attachmentType, prefabHandle)
+--     local mountPointEntity = self.MountPoints[attachmentType]
+--     Log.Info("Attempting to equip attachment of type " .. tostring(attachmentType) .. " with prefab " .. tostring(prefabHandle))
+    
+--     if not mountPointEntity or not mountPointEntity:IsValid() then
+--         Log.Warn("This weapon does not support attachment type: " .. tostring(attachmentType))
+--         return
+--     end
+    
+--     -- Remove existing attachment in this slot if there is one
+--     if self.ActiveAttachments[attachmentType] ~= nil then
+--         Scene.RemoveEntity(self.ActiveAttachments[attachmentType])
+--         self.ActiveAttachments[attachmentType] = nil
+--     end
+    
+--     -- Spawn the new attachment as a child of the specific mount point entity
+--     local newAttachment = Scene.InstantiatePrefab(prefabHandle, mountPointEntity)
+    
+--     -- Track it
+--     self.ActiveAttachments[attachmentType] = newAttachment
+-- end
 
 function WeaponController:GetBarrelTipEntity()
     return self.BarrelTipEntity

@@ -1,12 +1,23 @@
 Prefab: HolographicSight
 PrefabEntities:
   - Entity: 12021635994689636046
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - StaticMeshComponent
+      - MaterialComponent
+      - PrefabComponent
+      - ScriptComponent
     TagComponent:
       Tag: HolographicSight
     RelationshipComponent:
       Parent: 0
       Children:
         - 4193561221402797175
+        - 17667008021037011278
+      IsAttachment: 0
     TransformComponent:
       Position: [0,1.8626451e-09,0]
       Rotation: [3.1415927,-0,-0]
@@ -17,14 +28,29 @@ PrefabEntities:
       Layer: 1
     MaterialComponent:
       MaterialUUID: 3531595371019758275
+    ScriptComponent:
+      ScriptUUID: 18321648132521774491
+      UserPropertyOverrides:
+        - Name: SightAimNodeRef
+          Type: 7
+          Value: 17667008021037011278
+          ReferenceKind: Entity
     PrefabComponent:
       PrefabUUID: 16836608058861364347
   - Entity: 4193561221402797175
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - StaticMeshComponent
+      - MaterialComponent
     TagComponent:
       Tag: Reticle
     RelationshipComponent:
       Parent: 12021635994689636046
       Children: []
+      IsAttachment: 0
     TransformComponent:
       Position: [4.7683716e-06,-1.4350929,0.9476013]
       Rotation: [3.1415925,-0,0]
@@ -35,3 +61,20 @@ PrefabEntities:
       Layer: 1
     MaterialComponent:
       MaterialUUID: 8747674591623748722
+  - Entity: 17667008021037011278
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+    TagComponent:
+      Tag: ADS_Node
+    RelationshipComponent:
+      Parent: 12021635994689636046
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,-1.0916233,-0.98577464]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [0.1,0,0,0,0,-0.1,-8.742278e-09,0,0,8.742278e-09,-0.1,0,0,0.10916232,0.09857747,1]

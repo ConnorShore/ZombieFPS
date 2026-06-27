@@ -24,37 +24,37 @@ PrefabEntities:
     ScriptComponent:
       ScriptUUID: 8102167312162542918
       UserPropertyOverrides:
-        - Name: SightMountRef
-          Type: 7
-          Value: 9554135011043521366
-          ReferenceKind: Entity
         - Name: ReloadEndSound
           Type: 8
           Value: 8785379131387521162
           ReferenceKind: AudioClip
-        - Name: BarrelTipRef
+        - Name: SightMountRef
           Type: 7
-          Value: 6944786712087684529
-          ReferenceKind: Entity
-        - Name: WeaponAimingRef
-          Type: 7
-          Value: 5582973607127015406
-          ReferenceKind: Entity
-        - Name: MuzzleFlashRef
-          Type: 7
-          Value: 6651037341096675291
+          Value: 9554135011043521366
           ReferenceKind: Entity
         - Name: ReloadStartSound
           Type: 8
           Value: 15776698392225788213
           ReferenceKind: AudioClip
-        - Name: AmmoUIRef
+        - Name: MuzzleFlashRef
           Type: 7
-          Value: 15941034270328579006
+          Value: 6651037341096675291
+          ReferenceKind: Entity
+        - Name: WeaponAimingRef
+          Type: 7
+          Value: 5582973607127015406
+          ReferenceKind: Entity
+        - Name: BarrelTipRef
+          Type: 7
+          Value: 6944786712087684529
           ReferenceKind: Entity
         - Name: ReloadStateName
           Type: 4
           Value: Reload
+        - Name: AmmoUIRef
+          Type: 7
+          Value: 15941034270328579006
+          ReferenceKind: Entity
         - Name: EquipPositionOffset
           Type: 6
           Value: [0,0.09,-0.29]
@@ -98,25 +98,25 @@ PrefabEntities:
         - Name: SwayPosAmount
           Type: 3
           Value: 0.07
-        - Name: SwayRotStep
-          Type: 2
-          Value: 1
         - Name: IdleMultiplier
           Type: 3
           Value: 0.12
-        - Name: BobLimit
-          Type: 6
-          Value: [0.05,0.05,0.05]
+        - Name: SwayRotStep
+          Type: 2
+          Value: 1
         - Name: BobSpeed
           Type: 3
           Value: 10
+        - Name: BobLimit
+          Type: 6
+          Value: [0.05,0.05,0.05]
+        - Name: BobTotalLimit
+          Type: 6
+          Value: [0.1,0.1,0.1]
         - Name: PlayerRef
           Type: 7
           Value: 6753254757056896993
           ReferenceKind: Entity
-        - Name: BobTotalLimit
-          Type: 6
-          Value: [0.1,0.1,0.1]
         - Name: SwayRotAmount
           Type: 2
           Value: 2
@@ -189,24 +189,24 @@ PrefabEntities:
         - Name: ADS_Speed
           Type: 3
           Value: 10
+        - Name: DebugADSLogging
+          Type: 1
+          Value: 1
         - Name: AimNodeRef
           Type: 7
           Value: 16766670902763021612
           ReferenceKind: Entity
-        - Name: DebugADSLogging
-          Type: 1
-          Value: 1
         - Name: CrosshairRef
           Type: 7
           Value: 16155943693343446687
           ReferenceKind: Entity
-        - Name: ADSCameraViewOffset
-          Type: 6
-          Value: [0,-0.025,-0.15]
         - Name: CameraSocketRef
           Type: 7
           Value: 9548350549033941053
           ReferenceKind: Entity
+        - Name: ADSCameraViewOffset
+          Type: 6
+          Value: [0,-0.025,-0.15]
   - Entity: 3771947737390781143
     ComponentOrder:
       - IDComponent
