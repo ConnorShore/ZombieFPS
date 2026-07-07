@@ -1,0 +1,70 @@
+Prefab: Enemy
+PrefabEntities:
+  - Entity: 7249904367750605669
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - StaticMeshComponent
+      - MaterialComponent
+      - CharacterControllerComponent
+      - AIPathComponent
+      - AIAgentComponent
+      - RigidBodyComponent
+      - CapsuleColliderComponent
+      - ScriptComponent
+      - PrefabComponent
+    TagComponent:
+      Tag: Enemy
+    RelationshipComponent:
+      Parent: 0
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,1,0]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1,0,1]
+    RigidBodyComponent:
+      Type: 2
+      Mass: 1
+      GravityEnabled: 1
+    CapsuleColliderComponent:
+      Radius: 0.5
+      Height: 2
+      IsTrigger: 0
+      OffsetPosition: [0,0,0]
+      OffsetRotation: [0,0,0]
+      Category: 8
+      CollisionMask: 5
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 0
+    StaticMeshComponent:
+      MeshUUID: 53
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 16908592229540959075
+    ScriptComponent:
+      ScriptUUID: 1702313573474944703
+      UserPropertyOverrides: []
+    PrefabComponent:
+      PrefabUUID: 17282698121902118170
+    CharacterControllerComponent:
+      WalkSpeed: 5
+      JumpForce: 5
+      GravityMultiplier: 1
+      MaxSlopeAngle: 45
+      MaxStepHeight: 0.25
+    AIPathComponent:
+      Waypoints: []
+      Loop: 1
+      Speed: 2.5
+      ArrivalTolerance: 0.1
+    AIAgentComponent:
+      Mode: 1
+      ManualWaypoints: []
+      Loop: 1
+      TargetEntity: 6753254757056896993
+      GridEntity: 36772468915320375
+      RecalculateInterval: 1

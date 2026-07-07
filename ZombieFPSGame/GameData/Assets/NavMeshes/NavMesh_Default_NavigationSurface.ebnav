@@ -9,4 +9,4 @@ BakeSettings:
   AgentMaxClimb: 0.5
   AgentMaxSlope: 45
 BlobFile: NavMesh_Default_NavigationSurface.ebnav.blob
-BlobSize: 14460
+BlobSize: 13224
