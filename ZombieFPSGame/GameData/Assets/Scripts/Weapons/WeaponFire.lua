@@ -1,45 +1,88 @@
 local WeaponFire = {}
 
-WeaponFire.FireRate = 300 -- Rounds per minute
-WeaponFire.Range = 100.0
-WeaponFire.Damage = 10
-WeaponFire.ImpactForce = 2.0
+-- WeaponFire.FireRate = 300 -- Rounds per minute
+-- WeaponFire.Range = 100.0
+-- WeaponFire.Damage = 10
+-- WeaponFire.ImpactForce = 2.0
 
--- Bloom (Cone of Fire) Settings
-WeaponFire.BaseHipBloom = 0.02    -- Starting inaccuracy when hip firing
-WeaponFire.MaxHipBloom = 0.15     -- Maximum inaccuracy when holding the trigger
-WeaponFire.BloomPerShot = 0.03    -- How much the cone grows per shot
-WeaponFire.BloomDecayRate = 0.5   -- How fast the cone shrinks when not shooting
+-- -- Bloom (Cone of Fire) Settings
+-- WeaponFire.BaseHipBloom = 0.02    -- Starting inaccuracy when hip firing
+-- WeaponFire.MaxHipBloom = 0.15     -- Maximum inaccuracy when holding the trigger
+-- WeaponFire.BloomPerShot = 0.03    -- How much the cone grows per shot
+-- WeaponFire.BloomDecayRate = 0.5   -- How fast the cone shrinks when not shooting
+-- WeaponFire.GunshotSound = AudioClipRef()
 
 WeaponFire.TracerEnabled = true
 WeaponFire.TracerCadence = 3 -- Spawn a tracer every 3 shots
 
-WeaponFire.GunshotSound = AudioClipRef()
 WeaponFire.TracerPrefab = PrefabRef()
 WeaponFire.WeaponAimingRef = EntityRef()
 WeaponFire.WeaponRecoilRef = EntityRef()
+WeaponFire.WeaponHolderRef = EntityRef()
 
 function WeaponFire:OnCreate(entity)
-    self.TimeSinceLastShot = 60.0 / self.FireRate -- Initialize so that we can shoot immediately
-    self.CurrentBloom = self.BaseHipBloom
+    -- self.TimeSinceLastShot = 60.0 / self.FireRate -- Initialize so that we can shoot immediately
+    -- self.CurrentBloom = self.BaseHipBloom
+    self.TimeSinceLastShot = math.huge -- Initialize to a large number so we can shoot immediately
+    self.CurrentBloom = 0.0
     self.ShotCount = 0
     self.CanShoot = true
     self.WeaponAiming = Scene.GetEntityByUUID(self.WeaponAimingRef)
     self.WeaponRecoil = Scene.GetEntityByUUID(self.WeaponRecoilRef)
+    self.WeaponHolder = Scene.GetEntityByUUID(self.WeaponHolderRef)
 end
 
 function WeaponFire:OnUpdate(entity, delta)
     self.TimeSinceLastShot = self.TimeSinceLastShot + delta
-    local timeBetweenShots = 60.0 / self.FireRate
+    local isWeaponEqupped = false
+    local weaponHolderScript = self.WeaponHolder and self.WeaponHolder:IsValid() and self.WeaponHolder:GetScriptInstance() or nil
+    if weaponHolderScript and weaponHolderScript.GetCurrentWeapon then
+        local currentWeapon = weaponHolderScript:GetCurrentWeapon()
+        isWeaponEqupped = currentWeapon and currentWeapon:IsValid()
+    end
+
+    Log.Info("[WeaponFire] Is Weapon equipped: " .. tostring(isWeaponEqupped))
+    if not isWeaponEqupped then
+        self.CurrentBloom = 0.0
+        self.ShotCount = 0
+        self.CanShoot = true
+        return
+    end
+
+    local weaponStatsEntity = weaponHolderScript and weaponHolderScript:GetCurrentWeaponStats() or nil
+    if not weaponStatsEntity then
+        Log.Error("WeaponFire [OnUpdate] script could not retrieve weapon stats entity from the weapon holder!")
+        return
+    end
+
+    local weaponStats = weaponStatsEntity:GetScriptInstance("WeaponStats")
+    if not weaponStats then
+        Log.Error("WeaponFire [OnUpdate] script could not retrieve weapon stats script instance from the weapon stats entity!")
+        return
+    end
+
+    local fireRate = weaponStats.FireRate and weaponStats.FireRate > 0 and weaponStats.FireRate or 300
+    local baseHipBloom = weaponStats.BaseHipBloom or 0.02
+    local bloomDecayRate = weaponStats.BloomDecayRate or 0.0
+
+    if weaponStats.CurrentBloom == nil then
+        weaponStats.CurrentBloom = baseHipBloom
+    end
+
+    self.CurrentBloom = weaponStats.CurrentBloom
+
+    local timeBetweenShots = 60.0 / fireRate
     self.CanShoot = self.TimeSinceLastShot >= timeBetweenShots
 
     -- Handle bloom increase/decrease
-    if self.CurrentBloom > self.BaseHipBloom then
-        self.CurrentBloom = self.CurrentBloom - (self.BloomDecayRate * delta)
-        if self.CurrentBloom < self.BaseHipBloom then
-            self.CurrentBloom = self.BaseHipBloom
+    if weaponStats.CurrentBloom > baseHipBloom then
+        weaponStats.CurrentBloom = weaponStats.CurrentBloom - (bloomDecayRate * delta)
+        if weaponStats.CurrentBloom < baseHipBloom then
+            weaponStats.CurrentBloom = baseHipBloom
         end
     end
+
+    self.CurrentBloom = weaponStats.CurrentBloom
 end
 
 function WeaponFire:ResolveAimingScript(weaponEntity)
@@ -76,7 +119,24 @@ function WeaponFire:Fire(entity, weaponEntity)
     self.TimeSinceLastShot = 0.0
     self.ShotCount = self.ShotCount + 1
 
-    AudioSystem.PlaySound(self.GunshotSound)
+    local weaponControllerScript = weaponEntity and weaponEntity:IsValid() and weaponEntity:GetScriptInstance() or nil
+    if not weaponControllerScript then
+        Log.Warn("Weapon entity '" .. weaponEntity:GetName() .. "' does not have a WeaponController script attached!")
+        return
+    end
+    local weaponStatsEntity = weaponControllerScript and weaponControllerScript.GetWeaponStats and weaponControllerScript:GetWeaponStats() or nil
+    if not weaponStatsEntity then
+        Log.Error("WeaponFire [Fire] script could not retrieve weapon stats entity from the weapon controller!")
+        return
+    end
+
+    local weaponStats = weaponStatsEntity:GetScriptInstance("WeaponStats")
+    if not weaponStats then
+        Log.Error("WeaponFire [Fire] script could not retrieve weapon stats script instance from the weapon stats entity!")
+        return
+    end
+
+    AudioSystem.PlaySound(weaponStats.GunshotSound)
     
     local transform = entity:GetComponent("TransformComponent")
     local forward = transform:GetForward()
@@ -96,22 +156,29 @@ function WeaponFire:Fire(entity, weaponEntity)
     -- determine spread
     local finalShootDirection = forward
     if not isADS then
+        local currentBloom = weaponStats.CurrentBloom or weaponStats.BaseHipBloom or 0.02
+        self.CurrentBloom = currentBloom
+
         -- Generate random offsets between -CurrentBloom and +CurrentBloom
-        local randomX = Math.RandomFloat(-self.CurrentBloom, self.CurrentBloom)
-        local randomY = Math.RandomFloat(-self.CurrentBloom, self.CurrentBloom)
+        local randomX = Math.RandomFloat(-currentBloom, currentBloom)
+        local randomY = Math.RandomFloat(-currentBloom, currentBloom)
         
         finalShootDirection = forward + (right * randomX) + (up * randomY)
         finalShootDirection = Math.Normalize(finalShootDirection)
         
         -- Increase the heat for the next shot!
-        self.CurrentBloom = self.CurrentBloom + self.BloomPerShot
-        if self.CurrentBloom > self.MaxHipBloom then
-            self.CurrentBloom = self.MaxHipBloom
+        local bloomPerShot = weaponStats.BloomPerShot or 0.03
+        local maxHipBloom = weaponStats.MaxHipBloom or 0.15
+        weaponStats.CurrentBloom = currentBloom + bloomPerShot
+        if weaponStats.CurrentBloom > maxHipBloom then
+            weaponStats.CurrentBloom = maxHipBloom
         end
+
+        self.CurrentBloom = weaponStats.CurrentBloom
     end
 
     local position = transform.WorldPosition
-    local endPoint = position + finalShootDirection * self.Range
+    local endPoint = position + finalShootDirection * weaponStats.Range
 
     -- Spawn muzzle flash from the MuzzleFlash script
     local muzzleFlash = weaponController and weaponController:GetMuzzleFlashEntity() or nil
@@ -135,7 +202,8 @@ function WeaponFire:Fire(entity, weaponEntity)
         -- Apply force to the hit entity if it has a RigidbodyComponent
         if hitEntity:ContainsComponent("RigidBodyComponent") then
             local rigidbody = hitEntity:GetComponent("RigidBodyComponent")
-            rigidbody:ApplyImpulseAtPoint(finalShootDirection * self.ImpactForce, hitResult.CollisionPoint)
+            local impactForce = weaponStats.ImpactForce or 0.0
+            rigidbody:ApplyImpulseAtPoint(finalShootDirection * impactForce, hitResult.CollisionPoint)
 
             -- TODO: Move impact logic to a separate script on the hit entity (or some other place probably)
             -- Offset slightly along the surface normal to avoid z-fighting with the hit surface

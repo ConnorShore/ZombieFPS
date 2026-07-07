@@ -13,6 +13,7 @@ WeaponController.MuzzleFlashRef = EntityRef()
 WeaponController.AmmoUIRef = EntityRef()
 WeaponController.WeaponAimingRef = EntityRef()
 WeaponController.WeaponRecoilRef = EntityRef()
+WeaponController.WeaponStatsRef = EntityRef()
 
 WeaponController.FireMode = FIRE_MODE
 
@@ -218,6 +219,14 @@ end
 
 function WeaponController:GetMuzzleFlashEntity()
     return self.MuzzleFlashEntity
+end
+
+function WeaponController:GetWeaponStats()
+    if not self.WeaponStatsRef then
+        return nil
+    end
+
+    return self:ResolveEntityRef(self.WeaponStatsRef)
 end
 
 function WeaponController:IsAiming()

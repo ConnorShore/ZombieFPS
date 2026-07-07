@@ -1,44 +1,5 @@
 Scene: Default
 Entities:
-  - Entity: 4008310533388848912
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-      - RigidBodyComponent
-      - BoxColliderComponent
-      - StaticMeshComponent
-      - MaterialComponent
-    TagComponent:
-      Tag: Ground
-    RelationshipComponent:
-      Parent: 0
-      Children: []
-      IsAttachment: 0
-    TransformComponent:
-      Position: [0,-0.099999964,0]
-      Rotation: [0,0,0]
-      Scale: [50,0.2,50]
-      WorldTransform: [50,0,0,0,0,0.2,0,0,0,0,50,0,0,-0.099999964,0,1]
-    RigidBodyComponent:
-      Type: 0
-      Mass: 1
-      GravityEnabled: 1
-    BoxColliderComponent:
-      Size: [1,1,1]
-      IsTrigger: 0
-      OffsetPosition: [0,0,0]
-      OffsetRotation: [0,0,0]
-      Category: 1
-      CollisionMask: 1
-      PhysicsMaterialUUID: 0
-      PreviewCollider: 0
-    StaticMeshComponent:
-      MeshUUID: 51
-      Layer: 1
-    MaterialComponent:
-      MaterialUUID: 13734008897576602447
   - Entity: 6753254757056896993
     ComponentOrder:
       - IDComponent
@@ -158,6 +119,45 @@ Entities:
         - Name: Sensitivity
           Type: 3
           Value: 2
+  - Entity: 4008310533388848912
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RigidBodyComponent
+      - BoxColliderComponent
+      - StaticMeshComponent
+      - MaterialComponent
+    TagComponent:
+      Tag: Ground
+    RelationshipComponent:
+      Parent: 0
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [9.094947e-13,0,0]
+      Rotation: [0,-0,0]
+      Scale: [50,0.2,50]
+      WorldTransform: [50,0,0,0,0,0.2,0,0,0,0,50,0,9.094947e-13,0,0,1]
+    RigidBodyComponent:
+      Type: 0
+      Mass: 1
+      GravityEnabled: 1
+    BoxColliderComponent:
+      Size: [1,1,1]
+      IsTrigger: 0
+      OffsetPosition: [0,0,0]
+      OffsetRotation: [0,0,0]
+      Category: 1
+      CollisionMask: 1
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 0
+    StaticMeshComponent:
+      MeshUUID: 51
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 13734008897576602447
   - Entity: 12465165630900061560
     ComponentOrder:
       - IDComponent
@@ -515,32 +515,14 @@ Entities:
     ScriptComponent:
       ScriptUUID: 16404415058251315788
       UserPropertyOverrides:
-        - Name: FireRate
-          Type: 2
-          Value: 500
-        - Name: BloomPerShot
-          Type: 3
-          Value: 0.02
-        - Name: ImpactForce
-          Type: 3
-          Value: 3
-        - Name: MaxHipBloom
-          Type: 3
-          Value: 0.75
-        - Name: BaseHipBloom
-          Type: 3
-          Value: 0.05
-        - Name: BloomDecayRate
-          Type: 3
-          Value: 0.6
-        - Name: GunshotSound
-          Type: 8
-          Value: 10601745296411271244
-          ReferenceKind: AudioClip
         - Name: TracerPrefab
           Type: 8
           Value: 13120009099153965368
           ReferenceKind: Prefab
+        - Name: WeaponHolderRef
+          Type: 7
+          Value: 230291968303856085
+          ReferenceKind: Entity
   - Entity: 5356551002598311296
     ComponentOrder:
       - IDComponent
@@ -668,10 +650,10 @@ Entities:
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [0,0.0254488,0.3817606]
+      Position: [0,0.0254488,0.38176203]
       Rotation: [3.1415927,-0,-0]
       Scale: [-0.09888629,0.109487295,0.109487295]
-      WorldTransform: [-9.489472e-08,-0.0346102,-1.1655547e-07,0,0.02351162,-1.6673805e-07,0.030260012,0,0.030605841,-3.4652656e-09,-0.023780327,0,-5.3969297,1.0409653,-2.7425427,1]
+      WorldTransform: [-9.489472e-08,-0.0346102,-1.1655547e-07,0,0.02351162,-1.6673805e-07,0.030260012,0,0.030605841,-3.4652656e-09,-0.023780327,0,-5.3969297,1.0409653,-2.7425425,1]
     StaticMeshComponent:
       MeshUUID: 12205825994227504312
       Layer: 1

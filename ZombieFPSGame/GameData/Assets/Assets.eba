@@ -80,6 +80,10 @@ Assets:
     Name: PowerUpDrop
     FilePath: Scripts/Pickups/PowerUpDrop.lua
   - Type: Script
+    UUID: 16404415058251315788
+    Name: WeaponFire
+    FilePath: Scripts/Weapons/WeaponFire.lua
+  - Type: Script
     UUID: 10753367411955256691
     Name: WeaponHolder
     FilePath: Scripts/Weapons/WeaponHolder.lua
@@ -115,10 +119,6 @@ Assets:
     UUID: 12117729415864912341
     Name: PickupItem
     FilePath: Scripts/Pickups/PickupItem.lua
-  - Type: Script
-    UUID: 16404415058251315788
-    Name: WeaponFire
-    FilePath: Scripts/Weapons/WeaponFire.lua
   - Type: Script
     UUID: 4494000890898150304
     Name: Crosshair
@@ -163,6 +163,10 @@ Assets:
     UUID: 15649694001834023247
     Name: EnemyController
     FilePath: Scripts/EnemyController.lua
+  - Type: Script
+    UUID: 16639884503866118704
+    Name: WeaponStats
+    FilePath: Scripts/Weapons/WeaponStats.lua
   - Type: Material
     UUID: 782295293902573577
     Name: DesertEagle_Metal
@@ -204,10 +208,6 @@ Assets:
     Name: EnemyMaterial
     FilePath: Materials/EnemyMaterial.ebmat
   - Type: Mesh
-    UUID: 16822605104283055229
-    Name: M4_Cube.001_Prim0
-    FilePath: Models/M4_Anim/M4_Cube.001_Prim0.ebmesh
-  - Type: Mesh
     UUID: 5610316799824380095
     Name: DesertEagle_Mesh2_Cube.007_Prim1
     FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Mesh2_Cube.007_Prim1.ebmesh
@@ -215,6 +215,10 @@ Assets:
     UUID: 5985712711574680378
     Name: DesertEagle_Mesh1_Cube_Prim0
     FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Mesh1_Cube_Prim0.ebmesh
+  - Type: Mesh
+    UUID: 16822605104283055229
+    Name: M4_Cube.001_Prim0
+    FilePath: Models/M4_Anim/M4_Cube.001_Prim0.ebmesh
   - Type: Mesh
     UUID: 9147101475226164417
     Name: AssaultRifle_Cube.003_Prim0
@@ -304,6 +308,10 @@ Assets:
     Name: Enemy
     FilePath: Prefabs/Enemy.ebprefab
   - Type: Prefab
+    UUID: 3822534466298593180
+    Name: AmmoPowerup
+    FilePath: Prefabs/AmmoPowerup.ebprefab
+  - Type: Prefab
     UUID: 7525331889912364400
     Name: M4_Pickup
     FilePath: Prefabs/Weapons/M4_Pickup.ebprefab
@@ -311,10 +319,6 @@ Assets:
     UUID: 17919492092461288605
     Name: HolographicSightPickup
     FilePath: Prefabs/HolographicSightPickup.ebprefab
-  - Type: Prefab
-    UUID: 3822534466298593180
-    Name: AmmoPowerup
-    FilePath: Prefabs/AmmoPowerup.ebprefab
   - Type: Prefab
     UUID: 13559857553863366497
     Name: ImpactConcrete

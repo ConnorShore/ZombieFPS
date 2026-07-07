@@ -187,4 +187,32 @@ function WeaponHolder:GetCurrentWeapon()
     return self.Weapons[self.ActiveWeaponSlot]
 end
 
+function WeaponHolder:GetCurrentWeaponStats()
+    local weaponEntity = self:GetCurrentWeapon()
+    if not weaponEntity or not weaponEntity:IsValid() then
+        Log.Warn("Current weapon entity is not valid!")
+        return nil
+    end
+
+    local weaponControllerScript = weaponEntity:GetScriptInstance()
+    if not weaponControllerScript then
+        Log.Warn("Weapon entity '" .. self:GetCurrentWeapon():GetName() .. "' does not have a WeaponController script attached!")
+        return nil
+    end
+
+    local weaponStatsEntity = weaponControllerScript.GetWeaponStats and weaponControllerScript:GetWeaponStats() or nil
+    if not weaponStatsEntity or not weaponStatsEntity:IsValid() then
+        Log.Warn("Weapon entity '" .. self:GetCurrentWeapon():GetName() .. "' could not resolve a valid WeaponStats entity!")
+        return nil
+    end
+
+    local weaponStatsScript = weaponStatsEntity:GetScriptInstance("WeaponStats")
+    if not weaponStatsScript then
+        Log.Warn("WeaponStats entity for weapon '" .. self:GetCurrentWeapon():GetName() .. "' does not have a WeaponStats script attached!")
+        return nil
+    end
+
+    return weaponStatsEntity
+end
+
 return WeaponHolder
