@@ -51,6 +51,7 @@ Entities:
       - MaterialComponent
       - ScriptComponent
       - CharacterControllerComponent
+      - NavigationMeshModifierComponent
     TagComponent:
       Tag: Player
     RelationshipComponent:
@@ -92,6 +93,10 @@ Entities:
       GravityMultiplier: 1
       MaxSlopeAngle: 45
       MaxStepHeight: 0.25
+    NavigationMeshModifierComponent:
+      NavMeshDataHandle: 8017132278425989816
+      ModifierType: 0
+      ApplyToChildren: 1
   - Entity: 11417141245009400245
     ComponentOrder:
       - IDComponent
@@ -134,7 +139,7 @@ Entities:
       Scale: [1,1,1]
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1.8,4.824887,1]
     CameraComponent:
-      Projection: [0.76410466,0,0,0,0,1.428148,0,0,0,0,-1.00008,-1,0,0,-0.0400016,0]
+      Projection: [0.75789803,0,0,0,0,1.428148,0,0,0,0,-1.00008,-1,0,0,-0.0400016,0]
       Type: 1
       IsActive: 1
       RenderMask: 65533
@@ -308,7 +313,7 @@ Entities:
       Position: [0,0,0]
       Rotation: [0,-0,0]
       Scale: [0.005348166,0.014285714,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,967.99005,29.55,0,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,976.18005,29.55,0,1]
     TextComponent:
       Text: 0 / 0
       FontHandle: 213406294560961755
@@ -372,6 +377,7 @@ Entities:
       - BoxColliderComponent
       - StaticMeshComponent
       - MaterialComponent
+      - NavigationMeshModifierComponent
     TagComponent:
       Tag: Box
     RelationshipComponent:
@@ -401,6 +407,10 @@ Entities:
       Layer: 1
     MaterialComponent:
       MaterialUUID: 18352460508626254789
+    NavigationMeshModifierComponent:
+      NavMeshDataHandle: 8017132278425989816
+      ModifierType: 0
+      ApplyToChildren: 1
   - Entity: 3829535230250847973
     ComponentOrder:
       - IDComponent
@@ -411,6 +421,7 @@ Entities:
       - BoxColliderComponent
       - StaticMeshComponent
       - MaterialComponent
+      - NavigationMeshModifierComponent
     TagComponent:
       Tag: Box2
     RelationshipComponent:
@@ -440,6 +451,10 @@ Entities:
       Layer: 1
     MaterialComponent:
       MaterialUUID: 18352460508626254789
+    NavigationMeshModifierComponent:
+      NavMeshDataHandle: 8017132278425989816
+      ModifierType: 0
+      ApplyToChildren: 1
   - Entity: 15941034270328579006
     ComponentOrder:
       - IDComponent
@@ -460,7 +475,7 @@ Entities:
       Position: [-3.8049998,-2.53,0]
       Rotation: [0,-0,0]
       Scale: [0.01,0.01,1]
-      WorldTransform: [168.62001,0,0,0,0,52.7,0,0,0,0,1,0,998.49005,38.25,0,1]
+      WorldTransform: [170.24,0,0,0,0,52.7,0,0,0,0,1,0,1006.68005,38.25,0,1]
     SpriteComponent:
       Color: [0.85714287,0.41748834,0.014238238,1]
       IsBillboard: 0
@@ -1071,7 +1086,7 @@ Entities:
       Position: [0,0,0]
       Rotation: [0,-0,0]
       Scale: [1,1,1]
-      WorldTransform: [25,0,0,0,0,25,0,0,0,0,1,0,549.5,294,0,1]
+      WorldTransform: [25,0,0,0,0,25,0,0,0,0,1,0,554,294,0,1]
     SpriteComponent:
       Color: [1,1,1,1]
       TextureUUID: 3343954652411117201
@@ -1102,7 +1117,7 @@ Entities:
       Position: [-3.8049998,-2.53,0]
       Rotation: [0,-0,0]
       Scale: [0.01,0.01,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,579.4,314.8,0,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,583.9,314.8,0,1]
     TextComponent:
       Text: Press (E) to pick up
       FontHandle: 213406294560961755
