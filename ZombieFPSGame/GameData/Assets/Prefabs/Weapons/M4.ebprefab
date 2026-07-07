@@ -62,9 +62,6 @@ PrefabEntities:
         - Name: ReloadTriggerParam
           Type: 4
           Value: ReloadRequested
-        - Name: FireMode
-          Type: 5
-          Value: 2
         - Name: WeaponRecoilRef
           Type: 7
           Value: 9475768984996831319
@@ -156,6 +153,9 @@ PrefabEntities:
         - Name: Damage
           Type: 2
           Value: 20
+        - Name: FireMode
+          Type: 5
+          Value: 2
   - Entity: 9475768984996831319
     ComponentOrder:
       - IDComponent

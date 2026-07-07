@@ -1,5 +1,12 @@
 local WeaponStats = {}
 
+local FIRE_MODE = {
+    SemiAuto = 1,
+    FullAuto = 2
+}
+
+WeaponStats.FireMode = FIRE_MODE
+
 WeaponStats.FireRate = 300 -- Rounds per minute
 WeaponStats.Range = 100.0
 WeaponStats.Damage = 10
@@ -19,6 +26,15 @@ end
 
 function WeaponStats:OnUpdate(entity, delta)
 
+end
+
+function WeaponStats:IsSemiAuto()
+    local fireMode = self.FireMode
+    if type(fireMode) == "table" then
+        fireMode = FIRE_MODE.SemiAuto
+    end
+
+    return fireMode == FIRE_MODE.SemiAuto
 end
 
 return WeaponStats

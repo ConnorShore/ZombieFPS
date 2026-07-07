@@ -49,7 +49,7 @@ function WeaponFire:OnUpdate(entity, delta)
         return
     end
 
-    local weaponStatsEntity = weaponHolderScript and weaponHolderScript:GetCurrentWeaponStats() or nil
+    local weaponStatsEntity = weaponHolderScript and weaponHolderScript:GetCurrentWeaponStatsEntity() or nil
     if not weaponStatsEntity then
         Log.Error("WeaponFire [OnUpdate] script could not retrieve weapon stats entity from the weapon holder!")
         return
@@ -115,26 +115,44 @@ function WeaponFire:ResolveRecoilScript(weaponEntity)
     return nil
 end
 
-function WeaponFire:Fire(entity, weaponEntity)
+function WeaponFire:IsSemiAuto(weaponStats)
+    if weaponStats and weaponStats.IsSemiAuto then
+        return weaponStats:IsSemiAuto()
+    end
+
+    local fireMode = weaponStats and weaponStats.FireMode or nil
+    if type(fireMode) == "number" then
+        return fireMode == 1
+    end
+
+    return false
+end
+
+function WeaponFire:Fire(entity, weaponEntity, wasShootingLastFrame)
     self.TimeSinceLastShot = 0.0
-    self.ShotCount = self.ShotCount + 1
 
     local weaponControllerScript = weaponEntity and weaponEntity:IsValid() and weaponEntity:GetScriptInstance() or nil
     if not weaponControllerScript then
         Log.Warn("Weapon entity '" .. weaponEntity:GetName() .. "' does not have a WeaponController script attached!")
-        return
+        return false
     end
     local weaponStatsEntity = weaponControllerScript and weaponControllerScript.GetWeaponStats and weaponControllerScript:GetWeaponStats() or nil
     if not weaponStatsEntity then
         Log.Error("WeaponFire [Fire] script could not retrieve weapon stats entity from the weapon controller!")
-        return
+        return false
     end
 
     local weaponStats = weaponStatsEntity:GetScriptInstance("WeaponStats")
     if not weaponStats then
         Log.Error("WeaponFire [Fire] script could not retrieve weapon stats script instance from the weapon stats entity!")
-        return
+        return false
     end
+
+    if self:IsSemiAuto(weaponStats) and wasShootingLastFrame then
+        return false
+    end
+
+    self.ShotCount = self.ShotCount + 1
 
     AudioSystem.PlaySound(weaponStats.GunshotSound)
     
@@ -224,13 +242,15 @@ function WeaponFire:Fire(entity, weaponEntity)
 
     -- Trigger recoil
     if weaponController and weaponController.TriggerRecoil and weaponController:TriggerRecoil() then
-        return
+        return true
     end
 
     local recoilScript = self:ResolveRecoilScript(weaponEntity)
     if recoilScript then
         recoilScript:Fire()
     end
+
+    return true
 end
 
 function WeaponFire:SpawnTracer(endPos, weaponController)

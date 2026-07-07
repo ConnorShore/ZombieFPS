@@ -116,23 +116,21 @@ function WeaponHolder:EquipWeapon(prefabHandle)
 end
 
 function WeaponHolder:OnShoot(wasShootingLastFrame)
+    Log.Info("WeaponHolder OnShoot 1");
     local weaponEntity = self:GetCurrentWeapon()
     if not weaponEntity or not weaponEntity:IsValid() then
         Log.Warn("No weapon equipped!")
         return
     end
 
+    Log.Info("WeaponHolder OnShoot 2");
     local weaponControllerScript = weaponEntity:GetScriptInstance()
     if not weaponControllerScript then
         Log.Warn("Weapon entity '" .. self:GetCurrentWeapon():GetName() .. "' does not have a WeaponController script attached!")
         return
     end
 
-    if weaponControllerScript.IsSemiAuto and weaponControllerScript:IsSemiAuto() and wasShootingLastFrame then
-        Log.Info("Semi-auto weapon - waiting for trigger release")
-        return -- Don't shoot again until the mouse button is released for semi-auto weapons
-    end
-
+    Log.Info("WeaponHolder OnShoot 3");
     -- Fire the weapon
     -- TODO: Need to have specific weapons ahve fire profiles and the WEaponFire just handles the actual firing logic
     -- based on the current equipped weapon's fire profile. This way we can have different types of weapons (hitscan, projectile, shotgun, etc.) 
@@ -143,11 +141,13 @@ function WeaponHolder:OnShoot(wasShootingLastFrame)
         return
     end
 
+    Log.Info("WeaponHolder OnShoot 4");
     local weaponFireScript = weaponFireEntity:GetScriptInstance()
     if not weaponFireScript then
         Log.Warn("WeaponFire entity does not have a WeaponFire script attached!")
         return
     end
+    Log.Info("WeaponHolder OnShoot 5");
 
     -- Scheck if weapons can shoot
     if not weaponControllerScript.CanShoot then
@@ -157,14 +157,19 @@ function WeaponHolder:OnShoot(wasShootingLastFrame)
         end
         return
     end
+    Log.Info("WeaponHolder OnShoot 6");
 
     if (not weaponFireScript.CanShoot) then
         return
     end
 
+    Log.Info("WeaponHolder OnShoot 7");
     -- Shoot using the WeaponFire proxy so spread is centered on camera/reticle.
-    weaponFireScript:Fire(weaponFireEntity, weaponEntity)
-    weaponControllerScript:OnShoot()
+    local didFire = weaponFireScript:Fire(weaponFireEntity, weaponEntity, wasShootingLastFrame)
+    if didFire then
+        weaponControllerScript:OnShoot()
+    end
+    Log.Info("WeaponHolder OnShoot 8");
 end
 
 function WeaponHolder:OnReload()
@@ -187,7 +192,7 @@ function WeaponHolder:GetCurrentWeapon()
     return self.Weapons[self.ActiveWeaponSlot]
 end
 
-function WeaponHolder:GetCurrentWeaponStats()
+function WeaponHolder:GetCurrentWeaponStatsEntity()
     local weaponEntity = self:GetCurrentWeapon()
     if not weaponEntity or not weaponEntity:IsValid() then
         Log.Warn("Current weapon entity is not valid!")
@@ -206,13 +211,22 @@ function WeaponHolder:GetCurrentWeaponStats()
         return nil
     end
 
+    return weaponStatsEntity
+end
+
+function WeaponHolder:GetCurrentWeaponStatsScript()
+    local weaponStatsEntity = self:GetCurrentWeaponStatsEntity()
+    if not weaponStatsEntity then
+        return nil
+    end
+    
     local weaponStatsScript = weaponStatsEntity:GetScriptInstance("WeaponStats")
     if not weaponStatsScript then
         Log.Warn("WeaponStats entity for weapon '" .. self:GetCurrentWeapon():GetName() .. "' does not have a WeaponStats script attached!")
         return nil
     end
 
-    return weaponStatsEntity
+    return weaponStatsScript
 end
 
 return WeaponHolder

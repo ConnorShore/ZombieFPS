@@ -25,22 +25,22 @@ PrefabEntities:
     ScriptComponent:
       ScriptUUID: 8102167312162542918
       UserPropertyOverrides:
-        - Name: ReloadStartSound
-          Type: 8
-          Value: 15776698392225788213
-          ReferenceKind: AudioClip
-        - Name: BarrelTipRef
+        - Name: MuzzleFlashRef
           Type: 7
-          Value: 7652830277987808432
+          Value: 13968620020942205073
           ReferenceKind: Entity
         - Name: WeaponAimingRef
           Type: 7
           Value: 306260627852323004
           ReferenceKind: Entity
-        - Name: MuzzleFlashRef
+        - Name: BarrelTipRef
           Type: 7
-          Value: 13968620020942205073
+          Value: 7652830277987808432
           ReferenceKind: Entity
+        - Name: ReloadStartSound
+          Type: 8
+          Value: 15776698392225788213
+          ReferenceKind: AudioClip
         - Name: ReloadEndSound
           Type: 8
           Value: 8785379131387521162
@@ -48,19 +48,16 @@ PrefabEntities:
         - Name: MaxAmmo
           Type: 2
           Value: 48
+        - Name: MagEmptyParam
+          Type: 4
+          Value: AmmoEmpty
         - Name: AmmoUIRef
           Type: 7
           Value: 15941034270328579006
           ReferenceKind: Entity
-        - Name: MagEmptyParam
-          Type: 4
-          Value: AmmoEmpty
         - Name: MagazineSize
           Type: 2
           Value: 8
-        - Name: FireMode
-          Type: 5
-          Value: 1
         - Name: WeaponRecoilRef
           Type: 7
           Value: 10621022497817422972
@@ -99,25 +96,25 @@ PrefabEntities:
         - Name: SwayPosAmount
           Type: 3
           Value: 0.07
-        - Name: SwayRotStep
-          Type: 2
-          Value: 1
         - Name: IdleMultiplier
           Type: 3
           Value: 0.12
-        - Name: BobLimit
-          Type: 6
-          Value: [0.05,0.05,0.05]
+        - Name: SwayRotStep
+          Type: 2
+          Value: 1
         - Name: BobSpeed
           Type: 3
           Value: 10
+        - Name: BobLimit
+          Type: 6
+          Value: [0.05,0.05,0.05]
+        - Name: BobTotalLimit
+          Type: 6
+          Value: [0.1,0.1,0.1]
         - Name: PlayerRef
           Type: 7
           Value: 6753254757056896993
           ReferenceKind: Entity
-        - Name: BobTotalLimit
-          Type: 6
-          Value: [0.1,0.1,0.1]
         - Name: SwayRotAmount
           Type: 2
           Value: 2
@@ -144,7 +141,7 @@ PrefabEntities:
       UserPropertyOverrides:
         - Name: FireRate
           Type: 2
-          Value: 200
+          Value: 400
         - Name: GunshotSound
           Type: 8
           Value: 10601745296411271244
@@ -186,13 +183,13 @@ PrefabEntities:
         - Name: KickUpY
           Type: 3
           Value: 0.05
-        - Name: CameraRef
-          Type: 7
-          Value: 3526599274050075716
-          ReferenceKind: Entity
         - Name: WeaponAimingRef
           Type: 7
           Value: 306260627852323004
+          ReferenceKind: Entity
+        - Name: CameraRef
+          Type: 7
+          Value: 3526599274050075716
           ReferenceKind: Entity
   - Entity: 306260627852323004
     ComponentOrder:
