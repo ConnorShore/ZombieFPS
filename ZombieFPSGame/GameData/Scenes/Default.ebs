@@ -1308,6 +1308,178 @@ Entities:
       Layer: 1
     MaterialComponent:
       MaterialUUID: 782295293902573577
+  - Entity: 36772468915320375
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - NavigationMeshComponent
+    TagComponent:
+      Tag: NavigationSurface
+    RelationshipComponent:
+      Parent: 0
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
+    NavigationMeshComponent:
+      BoundsSize: [100,20,100]
+      BoundsCenterOffset: [0,0,0]
+      NavMeshDataHandle: 8017132278425989816
+      BakeSettings:
+        CellSize: 0.3
+        CellHeight: 0.2
+        AgentHeight: 2
+        AgentRadius: 0.5
+        AgentMaxClimb: 0.5
+        AgentMaxSlope: 45
+  - Entity: 7249904367750605669
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - StaticMeshComponent
+      - MaterialComponent
+      - CharacterControllerComponent
+      - AIPathComponent
+      - AIAgentComponent
+      - RigidBodyComponent
+      - CapsuleColliderComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: Enemy
+    RelationshipComponent:
+      Parent: 0
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [7.4147162,1.02,-18.080843]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,7.4147162,1.02,-18.080843,1]
+    RigidBodyComponent:
+      Type: 2
+      Mass: 1
+      GravityEnabled: 1
+    CapsuleColliderComponent:
+      Radius: 0.5
+      Height: 2
+      IsTrigger: 0
+      OffsetPosition: [0,0,0]
+      OffsetRotation: [0,0,0]
+      Category: 8
+      CollisionMask: 5
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 0
+    StaticMeshComponent:
+      MeshUUID: 53
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 16908592229540959075
+    ScriptComponent:
+      ScriptUUID: 803391121824597106
+      UserPropertyOverrides: []
+    CharacterControllerComponent:
+      WalkSpeed: 5
+      JumpForce: 5
+      GravityMultiplier: 1
+      MaxSlopeAngle: 45
+      MaxStepHeight: 0.25
+    AIPathComponent:
+      Waypoints: []
+      Loop: 1
+      Speed: 2.5
+      ArrivalTolerance: 0.1
+    AIAgentComponent:
+      Mode: 1
+      ManualWaypoints: []
+      Loop: 1
+      TargetEntity: 6753254757056896993
+      GridEntity: 36772468915320375
+      RecalculateInterval: 1
+  - Entity: 7354351507817476709
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - StaticMeshComponent
+      - MaterialComponent
+      - RigidBodyComponent
+      - BoxColliderComponent
+    TagComponent:
+      Tag: Platform
+    RelationshipComponent:
+      Parent: 0
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [15.907844,0.81114566,0.13000631]
+      Rotation: [0,0,0]
+      Scale: [8.523767,1.9141833,5.436114]
+      WorldTransform: [8.523767,0,0,0,0,1.9141833,0,0,0,0,5.436114,0,15.907844,0.81114566,0.13000631,1]
+    RigidBodyComponent:
+      Type: 0
+      Mass: 1
+      GravityEnabled: 1
+    BoxColliderComponent:
+      Size: [1,1,1]
+      IsTrigger: 0
+      OffsetPosition: [0,0,0]
+      OffsetRotation: [0,0,0]
+      Category: 1
+      CollisionMask: 1
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 0
+    StaticMeshComponent:
+      MeshUUID: 51
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 31
+  - Entity: 2391891220990362023
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - StaticMeshComponent
+      - MaterialComponent
+      - RigidBodyComponent
+      - BoxColliderComponent
+    TagComponent:
+      Tag: Ramp
+    RelationshipComponent:
+      Parent: 0
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [10.018978,0.61501026,0.13000631]
+      Rotation: [0,-0,0.47635445]
+      Scale: [3.9394522,0.6340198,5.436114]
+      WorldTransform: [3.5008826,1.8064064,0,0,-0.29072502,0.5634359,0,0,0,0,5.436114,0,10.018978,0.61501026,0.13000631,1]
+    RigidBodyComponent:
+      Type: 0
+      Mass: 1
+      GravityEnabled: 1
+    BoxColliderComponent:
+      Size: [1,1,1]
+      IsTrigger: 0
+      OffsetPosition: [0,0,0]
+      OffsetRotation: [0,0,0]
+      Category: 1
+      CollisionMask: 1
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 0
+    StaticMeshComponent:
+      MeshUUID: 51
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 31
 Environment:
   Skybox:
     Enabled: 1

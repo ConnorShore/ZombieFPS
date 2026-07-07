@@ -1,0 +1,12 @@
+Version: 1
+NavMeshData: NavMesh_Default_NavigationSurface
+UUID: 8017132278425989816
+BakeSettings:
+  CellSize: 0.3
+  CellHeight: 0.2
+  AgentHeight: 2
+  AgentRadius: 0.5
+  AgentMaxClimb: 0.5
+  AgentMaxSlope: 45
+BlobFile: NavMesh_Default_NavigationSurface.ebnav.blob
+BlobSize: 14460
