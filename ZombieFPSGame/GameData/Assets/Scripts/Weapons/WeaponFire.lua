@@ -21,8 +21,6 @@ WeaponFire.WeaponRecoilRef = EntityRef()
 WeaponFire.WeaponHolderRef = EntityRef()
 
 function WeaponFire:OnCreate(entity)
-    -- self.TimeSinceLastShot = 60.0 / self.FireRate -- Initialize so that we can shoot immediately
-    -- self.CurrentBloom = self.BaseHipBloom
     self.TimeSinceLastShot = math.huge -- Initialize to a large number so we can shoot immediately
     self.CurrentBloom = 0.0
     self.ShotCount = 0
@@ -41,7 +39,6 @@ function WeaponFire:OnUpdate(entity, delta)
         isWeaponEqupped = currentWeapon and currentWeapon:IsValid()
     end
 
-    Log.Info("[WeaponFire] Is Weapon equipped: " .. tostring(isWeaponEqupped))
     if not isWeaponEqupped then
         self.CurrentBloom = 0.0
         self.ShotCount = 0
@@ -205,8 +202,9 @@ function WeaponFire:Fire(entity, weaponEntity, wasShootingLastFrame)
         muzzleFlashScript:PlayFlash()
     end
 
-    -- Cast a ray to detect hits
-    local hitResult = Physics.CastRay(position, endPoint)
+    -- Cast a ray to detect hits on Environment or BulletInteractable filters
+    local collisionFilter = CollisionFilter.Environment | CollisionFilter.BulletInteractable
+    local hitResult = Physics.CastRay(position, endPoint, collisionFilter)
 
     -- Tracer should end at the actual impact point when we hit something.
     local tracerEndPoint = hitResult.Hit and hitResult.CollisionPoint or endPoint
@@ -215,30 +213,66 @@ function WeaponFire:Fire(entity, weaponEntity, wasShootingLastFrame)
     end
 
     if hitResult.Hit then
-        local hitEntity = hitResult.Entity
+        -- 1. Grab the specific child hitbox entity first!
+        local hitEntity = hitResult.ColliderEntity
+        
+        -- If for some reason the collider entity is invalid, fallback to the rigid body
+        if not hitEntity or not hitEntity:IsValid() then
+            Log.Warn("HitResult has invalid ColliderEntity, falling back to RigidBodyEntity")
+            hitEntity = hitResult.RigidBodyEntity
+        end
 
-        -- Apply force to the hit entity if it has a RigidbodyComponent
-        if hitEntity:ContainsComponent("RigidBodyComponent") then
-            local rigidbody = hitEntity:GetComponent("RigidBodyComponent")
+        -- Apply baseline physics impulse using the RigidBody parent
+        if hitResult.RigidBodyEntity:ContainsComponent("RigidBodyComponent") then
+            local rigidbody = hitResult.RigidBodyEntity:GetComponent("RigidBodyComponent")
             local impactForce = weaponStats.ImpactForce or 0.0
             rigidbody:ApplyImpulseAtPoint(finalShootDirection * impactForce, hitResult.CollisionPoint)
+        end
 
-            -- TODO: Move impact logic to a separate script on the hit entity (or some other place probably)
-            -- Offset slightly along the surface normal to avoid z-fighting with the hit surface
-            local impactPos = hitResult.CollisionPoint + hitResult.SurfaceNormal * 0.01
+        -- 2. Package the Damage Payload
+        local damageInfo = {
+            Damage = weaponStats.Damage or 10,
+            HitPoint = hitResult.CollisionPoint,
+            HitNormal = hitResult.SurfaceNormal,
+            ShootDirection = finalShootDirection,
+            Instigator = entity
+        }
 
-            local impactEffect = Scene.RetrieveFromPool("ImpactConcretePool", impactPos)
-            if impactEffect then
-                local impactTransform = impactEffect:GetComponent("TransformComponent")
-                local impactRotation = Math.LookAt(hitResult.CollisionPoint, hitResult.SurfaceNormal + hitResult.CollisionPoint)
-                impactTransform.Rotation = impactRotation
-                hitEntity:AddChild(impactEffect, true)
-
-                local particleEmitter = impactEffect:GetComponent("ParticleEmitterComponent")
-                Particles.Burst(particleEmitter, impactPos, 100, Math.ToQuaternion(impactRotation))
-            end
+        -- 3. Check the specific collider (e.g., HeadHitbox) for a script
+        local hitScript = hitEntity:GetScriptInstance()
+        if hitScript and hitScript.OnTakeDamage then
+            hitScript:OnTakeDamage(hitEntity, damageInfo)
+        else
+            -- 4. Fallback for unscripted level geometry
+            self:SpawnDefaultImpact(hitResult.CollisionPoint, hitResult.SurfaceNormal, hitEntity)
         end
     end
+
+    -- if hitResult.Hit then
+    --     local hitEntity = hitResult.Entity
+
+    --     -- Apply force to the hit entity if it has a RigidbodyComponent
+    --     if hitEntity:ContainsComponent("RigidBodyComponent") then
+    --         local rigidbody = hitEntity:GetComponent("RigidBodyComponent")
+    --         local impactForce = weaponStats.ImpactForce or 0.0
+    --         rigidbody:ApplyImpulseAtPoint(finalShootDirection * impactForce, hitResult.CollisionPoint)
+
+    --         -- TODO: Move impact logic to a separate script on the hit entity (or some other place probably)
+    --         -- Offset slightly along the surface normal to avoid z-fighting with the hit surface
+    --         local impactPos = hitResult.CollisionPoint + hitResult.SurfaceNormal * 0.01
+
+    --         local impactEffect = Scene.RetrieveFromPool("ImpactConcretePool", impactPos)
+    --         if impactEffect then
+    --             local impactTransform = impactEffect:GetComponent("TransformComponent")
+    --             local impactRotation = Math.LookAt(hitResult.CollisionPoint, hitResult.SurfaceNormal + hitResult.CollisionPoint)
+    --             impactTransform.Rotation = impactRotation
+    --             hitEntity:AddChild(impactEffect, true)
+
+    --             local particleEmitter = impactEffect:GetComponent("ParticleEmitterComponent")
+    --             Particles.Burst(particleEmitter, impactPos, 100, Math.ToQuaternion(impactRotation))
+    --         end
+    --     end
+    -- end
 
     -- Trigger recoil
     if weaponController and weaponController.TriggerRecoil and weaponController:TriggerRecoil() then
@@ -269,6 +303,22 @@ function WeaponFire:SpawnTracer(endPos, weaponController)
             return
         end
         tracerScript:Spawn(tracer, startPos, endPos)
+    end
+end
+
+function WeaponFire:SpawnDefaultImpact(position, normal, parentEntity)
+    -- Offset slightly along the surface normal to avoid z-fighting with the hit surface
+    local impactPos = position + normal * 0.01
+
+    local impactEffect = Scene.RetrieveFromPool("ImpactConcretePool", impactPos)
+    if impactEffect then
+        local impactTransform = impactEffect:GetComponent("TransformComponent")
+        local impactRotation = Math.LookAt(position, normal + position)
+        impactTransform.Rotation = impactRotation
+        parentEntity:AddChild(impactEffect, true)
+
+        local particleEmitter = impactEffect:GetComponent("ParticleEmitterComponent")
+        Particles.Burst(particleEmitter, impactPos, 100, Math.ToQuaternion(impactRotation))
     end
 end
 

@@ -19,7 +19,9 @@ PrefabEntities:
       Tag: Enemy
     RelationshipComponent:
       Parent: 0
-      Children: []
+      Children:
+        - 2840289619949419083
+        - 7233789083292004851
       IsAttachment: 0
     TransformComponent:
       Position: [0,1,0]
@@ -39,7 +41,7 @@ PrefabEntities:
       Category: 8
       CollisionMask: 5
       PhysicsMaterialUUID: 0
-      PreviewCollider: 0
+      PreviewCollider: 1
     StaticMeshComponent:
       MeshUUID: 53
       Layer: 1
@@ -68,3 +70,54 @@ PrefabEntities:
       TargetEntity: 6753254757056896993
       GridEntity: 36772468915320375
       RecalculateInterval: 1
+  - Entity: 2840289619949419083
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
+      - SphereColliderComponent
+    TagComponent:
+      Tag: HeadHitbox
+    RelationshipComponent:
+      Parent: 7249904367750605669
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0.5,0]
+      Rotation: [0,0,0]
+      Scale: [1.01,1.01,1.01]
+      WorldTransform: [1.01,0,0,0,0,1.01,0,0,0,0,1.01,0,0,1.5,0,1]
+    SphereColliderComponent:
+      Radius: 0.5
+      IsTrigger: 0
+      OffsetPosition: [0,0,0]
+      OffsetRotation: [0,0,0]
+      Category: 16
+      CollisionMask: 5
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 1
+    ScriptComponent:
+      ScriptUUID: 1303867917645546364
+      UserPropertyOverrides:
+        - Name: DamageMultiplier
+          Type: 3
+          Value: 2
+  - Entity: 7233789083292004851
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+    TagComponent:
+      Tag: BodyHitbox
+    RelationshipComponent:
+      Parent: 7249904367750605669
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1,0,1]

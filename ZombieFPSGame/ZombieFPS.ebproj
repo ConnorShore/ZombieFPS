@@ -23,6 +23,8 @@ Settings:
         Name: Player
       - Index: 3
         Name: Enemy
+      - Index: 4
+        Name: BulletInteractable
       - Index: 8
         Name: PickupItem
       - Index: 9

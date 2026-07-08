@@ -249,17 +249,17 @@ Entities:
     ScriptComponent:
       ScriptUUID: 8562544563539838448
       UserPropertyOverrides:
-        - Name: InteractionDistance
-          Type: 3
-          Value: 3
-        - Name: PickupUIRef
-          Type: 7
-          Value: 7122639572906643531
-          ReferenceKind: Entity
         - Name: WeaponHolderRef
           Type: 7
           Value: 230291968303856085
           ReferenceKind: Entity
+        - Name: PickupUIRef
+          Type: 7
+          Value: 7122639572906643531
+          ReferenceKind: Entity
+        - Name: InteractionDistance
+          Type: 3
+          Value: 3
   - Entity: 5645678438920164573
     ComponentOrder:
       - IDComponent
@@ -367,94 +367,6 @@ Entities:
       Rotation: [0,0,0]
       Scale: [1,1,1]
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.33,1.383387,4.210523,1]
-  - Entity: 17642454729594052137
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-      - RigidBodyComponent
-      - BoxColliderComponent
-      - StaticMeshComponent
-      - MaterialComponent
-      - NavigationMeshModifierComponent
-    TagComponent:
-      Tag: Box
-    RelationshipComponent:
-      Parent: 0
-      Children: []
-      IsAttachment: 0
-    TransformComponent:
-      Position: [-4.35262,0.66242886,4.974047]
-      Rotation: [0,0,0]
-      Scale: [1.25,1.25,1.25]
-      WorldTransform: [1.25,0,0,0,0,1.25,0,0,0,0,1.25,0,-4.35262,0.66242886,4.974047,1]
-    RigidBodyComponent:
-      Type: 1
-      Mass: 1
-      GravityEnabled: 1
-    BoxColliderComponent:
-      Size: [1,1,1]
-      IsTrigger: 0
-      OffsetPosition: [0,0,0]
-      OffsetRotation: [0,0,0]
-      Category: 1
-      CollisionMask: 1
-      PhysicsMaterialUUID: 0
-      PreviewCollider: 0
-    StaticMeshComponent:
-      MeshUUID: 51
-      Layer: 1
-    MaterialComponent:
-      MaterialUUID: 18352460508626254789
-    NavigationMeshModifierComponent:
-      NavMeshDataHandle: 8017132278425989816
-      ModifierType: 0
-      ApplyToChildren: 1
-  - Entity: 3829535230250847973
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-      - RigidBodyComponent
-      - BoxColliderComponent
-      - StaticMeshComponent
-      - MaterialComponent
-      - NavigationMeshModifierComponent
-    TagComponent:
-      Tag: Box2
-    RelationshipComponent:
-      Parent: 0
-      Children: []
-      IsAttachment: 0
-    TransformComponent:
-      Position: [3.7962027,0.6624324,-4.631617]
-      Rotation: [0,0,0]
-      Scale: [1.25,1.25,1.25]
-      WorldTransform: [1.25,0,0,0,0,1.25,0,0,0,0,1.25,0,3.7962027,0.6624324,-4.631617,1]
-    RigidBodyComponent:
-      Type: 1
-      Mass: 1
-      GravityEnabled: 1
-    BoxColliderComponent:
-      Size: [1,1,1]
-      IsTrigger: 0
-      OffsetPosition: [0,0,0]
-      OffsetRotation: [0,0,0]
-      Category: 1
-      CollisionMask: 1
-      PhysicsMaterialUUID: 0
-      PreviewCollider: 0
-    StaticMeshComponent:
-      MeshUUID: 51
-      Layer: 1
-    MaterialComponent:
-      MaterialUUID: 18352460508626254789
-    NavigationMeshModifierComponent:
-      NavMeshDataHandle: 8017132278425989816
-      ModifierType: 0
-      ApplyToChildren: 1
   - Entity: 15941034270328579006
     ComponentOrder:
       - IDComponent
@@ -747,123 +659,6 @@ Entities:
       Layer: 1
     MaterialComponent:
       MaterialUUID: 31
-  - Entity: 15248219852956789422
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-      - RigidBodyComponent
-      - BoxColliderComponent
-      - StaticMeshComponent
-      - MaterialComponent
-    TagComponent:
-      Tag: Box5
-    RelationshipComponent:
-      Parent: 0
-      Children: []
-      IsAttachment: 0
-    TransformComponent:
-      Position: [4.142291,3.506176,-1.2097178]
-      Rotation: [-1.7502875e-07,0.20501266,0.89749926]
-      Scale: [1.25,1.25,1.25]
-      WorldTransform: [0.7631356,0.956748,-0.25447443,0,-0.9772123,0.77945876,-2.1420419e-07,0,0.15868169,0.1989406,1.223823,0,4.142291,3.506176,-1.2097178,1]
-    RigidBodyComponent:
-      Type: 1
-      Mass: 1
-      GravityEnabled: 1
-    BoxColliderComponent:
-      Size: [1,1,1]
-      IsTrigger: 0
-      OffsetPosition: [0,0,0]
-      OffsetRotation: [0,0,0]
-      Category: 1
-      CollisionMask: 1
-      PhysicsMaterialUUID: 0
-      PreviewCollider: 0
-    StaticMeshComponent:
-      MeshUUID: 51
-      Layer: 1
-    MaterialComponent:
-      MaterialUUID: 18352460508626254789
-  - Entity: 1747217956981119607
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-      - RigidBodyComponent
-      - BoxColliderComponent
-      - StaticMeshComponent
-      - MaterialComponent
-    TagComponent:
-      Tag: Box4
-    RelationshipComponent:
-      Parent: 0
-      Children: []
-      IsAttachment: 0
-    TransformComponent:
-      Position: [0.5293271,5.4486933,-9.992759]
-      Rotation: [0.79903495,0.2740918,0.38109186]
-      Scale: [1.25,1.25,1.25]
-      WorldTransform: [1.1170106,0.44756308,-0.338341,0,-0.09914568,0.8993962,0.86241335,0,0.5522295,-0.74382377,0.8392072,0,0.5293271,5.4486933,-9.992759,1]
-    RigidBodyComponent:
-      Type: 1
-      Mass: 1
-      GravityEnabled: 1
-    BoxColliderComponent:
-      Size: [1,1,1]
-      IsTrigger: 0
-      OffsetPosition: [0,0,0]
-      OffsetRotation: [0,0,0]
-      Category: 1
-      CollisionMask: 1
-      PhysicsMaterialUUID: 0
-      PreviewCollider: 0
-    StaticMeshComponent:
-      MeshUUID: 51
-      Layer: 1
-    MaterialComponent:
-      MaterialUUID: 18352460508626254789
-  - Entity: 9667282278828292663
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-      - RigidBodyComponent
-      - BoxColliderComponent
-      - StaticMeshComponent
-      - MaterialComponent
-    TagComponent:
-      Tag: Box3
-    RelationshipComponent:
-      Parent: 0
-      Children: []
-      IsAttachment: 0
-    TransformComponent:
-      Position: [-3.8956218,2.866487,-7.115764]
-      Rotation: [0.26489678,0.6363792,0.0021954908]
-      Scale: [1.25,1.25,1.25]
-      WorldTransform: [1.0053136,0.0022071507,-0.7428591,0,0.19183859,1.2068235,0.26320142,0,0.71766466,-0.3256872,0.9702501,0,-3.8956218,2.866487,-7.115764,1]
-    RigidBodyComponent:
-      Type: 1
-      Mass: 1
-      GravityEnabled: 1
-    BoxColliderComponent:
-      Size: [1,1,1]
-      IsTrigger: 0
-      OffsetPosition: [0,0,0]
-      OffsetRotation: [0,0,0]
-      Category: 1
-      CollisionMask: 1
-      PhysicsMaterialUUID: 0
-      PreviewCollider: 0
-    StaticMeshComponent:
-      MeshUUID: 51
-      Layer: 1
-    MaterialComponent:
-      MaterialUUID: 18352460508626254789
   - Entity: 13765157642257386743
     ComponentOrder:
       - IDComponent
@@ -1414,7 +1209,247 @@ Entities:
       Layer: 1
     MaterialComponent:
       MaterialUUID: 31
-  - Entity: 17989908091323230637
+  - Entity: 17642454729594052137
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RigidBodyComponent
+      - BoxColliderComponent
+      - StaticMeshComponent
+      - MaterialComponent
+      - NavigationMeshModifierComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: Box
+    RelationshipComponent:
+      Parent: 0
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-5.9027724,0.66243076,5.989206]
+      Rotation: [0,0,0]
+      Scale: [1.25,1.25,1.25]
+      WorldTransform: [1.25,0,0,0,0,1.25,0,0,0,0,1.25,0,-5.9027724,0.66243076,5.989206,1]
+    RigidBodyComponent:
+      Type: 1
+      Mass: 1
+      GravityEnabled: 1
+    BoxColliderComponent:
+      Size: [1,1,1]
+      IsTrigger: 0
+      OffsetPosition: [0,0,0]
+      OffsetRotation: [0,0,0]
+      Category: 1
+      CollisionMask: 1
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 0
+    StaticMeshComponent:
+      MeshUUID: 51
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 18352460508626254789
+    ScriptComponent:
+      ScriptUUID: 5268583109702214263
+      UserPropertyOverrides: []
+    NavigationMeshModifierComponent:
+      NavMeshDataHandle: 8017132278425989816
+      ModifierType: 0
+      ApplyToChildren: 1
+  - Entity: 12348267330520195517
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - StaticMeshComponent
+      - MaterialComponent
+      - ScriptComponent
+      - RigidBodyComponent
+      - BoxColliderComponent
+      - NavigationMeshModifierComponent
+    TagComponent:
+      Tag: Box2
+    RelationshipComponent:
+      Parent: 0
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-4.0121336,0.66242826,-9.201988]
+      Rotation: [0,0,0]
+      Scale: [1.25,1.25,1.25]
+      WorldTransform: [1.25,0,0,0,0,1.25,0,0,0,0,1.25,0,-4.0121336,0.66242826,-9.201988,1]
+    RigidBodyComponent:
+      Type: 1
+      Mass: 1
+      GravityEnabled: 1
+    BoxColliderComponent:
+      Size: [1,1,1]
+      IsTrigger: 0
+      OffsetPosition: [0,0,0]
+      OffsetRotation: [0,0,0]
+      Category: 1
+      CollisionMask: 1
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 0
+    StaticMeshComponent:
+      MeshUUID: 51
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 18352460508626254789
+    ScriptComponent:
+      ScriptUUID: 5268583109702214263
+      UserPropertyOverrides: []
+    NavigationMeshModifierComponent:
+      NavMeshDataHandle: 8017132278425989816
+      ModifierType: 0
+      ApplyToChildren: 1
+  - Entity: 8624138367965011841
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - StaticMeshComponent
+      - MaterialComponent
+      - ScriptComponent
+      - RigidBodyComponent
+      - BoxColliderComponent
+      - NavigationMeshModifierComponent
+    TagComponent:
+      Tag: Box3
+    RelationshipComponent:
+      Parent: 0
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [4.530844,0.66241974,-4.421706]
+      Rotation: [0,0,0]
+      Scale: [1.25,1.25,1.25]
+      WorldTransform: [1.25,0,0,0,0,1.25,0,0,0,0,1.25,0,4.530844,0.66241974,-4.421706,1]
+    RigidBodyComponent:
+      Type: 1
+      Mass: 1
+      GravityEnabled: 1
+    BoxColliderComponent:
+      Size: [1,1,1]
+      IsTrigger: 0
+      OffsetPosition: [0,0,0]
+      OffsetRotation: [0,0,0]
+      Category: 1
+      CollisionMask: 1
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 0
+    StaticMeshComponent:
+      MeshUUID: 51
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 18352460508626254789
+    ScriptComponent:
+      ScriptUUID: 5268583109702214263
+      UserPropertyOverrides: []
+    NavigationMeshModifierComponent:
+      NavMeshDataHandle: 8017132278425989816
+      ModifierType: 0
+      ApplyToChildren: 1
+  - Entity: 15560316705442018128
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - StaticMeshComponent
+      - MaterialComponent
+      - ScriptComponent
+      - RigidBodyComponent
+      - BoxColliderComponent
+      - NavigationMeshModifierComponent
+    TagComponent:
+      Tag: Box4
+    RelationshipComponent:
+      Parent: 0
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-8.815825,4.684121,-4.1120596]
+      Rotation: [8.47681e-08,0.49716774,0.5314949]
+      Scale: [1.25,1.25,1.25]
+      WorldTransform: [0.94710994,0.5568313,-0.5961726,0,-0.6335282,1.077563,9.313226e-08,0,0.51393086,0.30215365,1.0986711,0,-8.815825,4.684121,-4.1120596,1]
+    RigidBodyComponent:
+      Type: 1
+      Mass: 1
+      GravityEnabled: 1
+    BoxColliderComponent:
+      Size: [1,1,1]
+      IsTrigger: 0
+      OffsetPosition: [0,0,0]
+      OffsetRotation: [0,0,0]
+      Category: 1
+      CollisionMask: 1
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 0
+    StaticMeshComponent:
+      MeshUUID: 51
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 18352460508626254789
+    ScriptComponent:
+      ScriptUUID: 5268583109702214263
+      UserPropertyOverrides: []
+    NavigationMeshModifierComponent:
+      NavMeshDataHandle: 8017132278425989816
+      ModifierType: 0
+      ApplyToChildren: 1
+  - Entity: 9701003569165251489
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - StaticMeshComponent
+      - MaterialComponent
+      - ScriptComponent
+      - RigidBodyComponent
+      - BoxColliderComponent
+      - NavigationMeshModifierComponent
+    TagComponent:
+      Tag: Box5
+    RelationshipComponent:
+      Parent: 0
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-0.18547308,3.6731322,-6.2293205]
+      Rotation: [2.4032054,0.73350513,2.4984858]
+      Scale: [1.25,1.25,1.25]
+      WorldTransform: [-0.7430519,0.55683136,-0.83684677,0,0.10361874,1.0775629,0.62499696,0,0.9998184,0.30215377,-0.6867068,0,-0.18547308,3.6731322,-6.2293205,1]
+    RigidBodyComponent:
+      Type: 1
+      Mass: 1
+      GravityEnabled: 1
+    BoxColliderComponent:
+      Size: [1,1,1]
+      IsTrigger: 0
+      OffsetPosition: [0,0,0]
+      OffsetRotation: [0,0,0]
+      Category: 1
+      CollisionMask: 1
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 0
+    StaticMeshComponent:
+      MeshUUID: 51
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 18352460508626254789
+    ScriptComponent:
+      ScriptUUID: 5268583109702214263
+      UserPropertyOverrides: []
+    NavigationMeshModifierComponent:
+      NavMeshDataHandle: 8017132278425989816
+      ModifierType: 0
+      ApplyToChildren: 1
+  - Entity: 6027340077216526665
     ComponentOrder:
       - IDComponent
       - TagComponent
@@ -1433,13 +1468,15 @@ Entities:
       Tag: Enemy
     RelationshipComponent:
       Parent: 0
-      Children: []
+      Children:
+        - 7856832391853707783
+        - 6088155665928473045
       IsAttachment: 0
     TransformComponent:
-      Position: [8.996295,1.0000019,-17.301924]
+      Position: [7.1991034,1,-12.590698]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,8.996295,1.0000019,-17.301924,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,7.1991034,1,-12.590698,1]
     RigidBodyComponent:
       Type: 2
       Mass: 1
@@ -1474,7 +1511,7 @@ Entities:
       Waypoints: []
       Loop: 1
       Speed: 2.5
-      ArrivalTolerance: 0.1
+      ArrivalTolerance: 1.5
     AIAgentComponent:
       Mode: 1
       ManualWaypoints: []
@@ -1482,6 +1519,57 @@ Entities:
       TargetEntity: 6753254757056896993
       GridEntity: 36772468915320375
       RecalculateInterval: 1
+  - Entity: 7856832391853707783
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
+      - SphereColliderComponent
+    TagComponent:
+      Tag: HeadHitbox
+    RelationshipComponent:
+      Parent: 6027340077216526665
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0.5,0]
+      Rotation: [0,0,0]
+      Scale: [1.01,1.01,1.01]
+      WorldTransform: [1.01,0,0,0,0,1.01,0,0,0,0,1.01,0,7.1991034,1.5,-12.590698,1]
+    SphereColliderComponent:
+      Radius: 0.5
+      IsTrigger: 0
+      OffsetPosition: [0,0,0]
+      OffsetRotation: [0,0,0]
+      Category: 16
+      CollisionMask: 5
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 1
+    ScriptComponent:
+      ScriptUUID: 1303867917645546364
+      UserPropertyOverrides:
+        - Name: DamageMultiplier
+          Type: 3
+          Value: 2
+  - Entity: 6088155665928473045
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+    TagComponent:
+      Tag: BodyHitbox
+    RelationshipComponent:
+      Parent: 6027340077216526665
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,7.1991034,1,-12.590698,1]
 Environment:
   Skybox:
     Enabled: 1

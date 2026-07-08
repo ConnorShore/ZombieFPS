@@ -116,38 +116,30 @@ function WeaponHolder:EquipWeapon(prefabHandle)
 end
 
 function WeaponHolder:OnShoot(wasShootingLastFrame)
-    Log.Info("WeaponHolder OnShoot 1");
     local weaponEntity = self:GetCurrentWeapon()
     if not weaponEntity or not weaponEntity:IsValid() then
         Log.Warn("No weapon equipped!")
         return
     end
 
-    Log.Info("WeaponHolder OnShoot 2");
     local weaponControllerScript = weaponEntity:GetScriptInstance()
     if not weaponControllerScript then
         Log.Warn("Weapon entity '" .. self:GetCurrentWeapon():GetName() .. "' does not have a WeaponController script attached!")
         return
     end
 
-    Log.Info("WeaponHolder OnShoot 3");
     -- Fire the weapon
-    -- TODO: Need to have specific weapons ahve fire profiles and the WEaponFire just handles the actual firing logic
-    -- based on the current equipped weapon's fire profile. This way we can have different types of weapons (hitscan, projectile, shotgun, etc.) 
-    -- and the fire logic can be handled in a modular way.
     local weaponFireEntity = self.WeaponFire
     if not weaponFireEntity:IsValid() then
         Log.Warn("Cannot find WeaponFire entity in scene!")
         return
     end
 
-    Log.Info("WeaponHolder OnShoot 4");
     local weaponFireScript = weaponFireEntity:GetScriptInstance()
     if not weaponFireScript then
         Log.Warn("WeaponFire entity does not have a WeaponFire script attached!")
         return
     end
-    Log.Info("WeaponHolder OnShoot 5");
 
     -- Scheck if weapons can shoot
     if not weaponControllerScript.CanShoot then
@@ -157,19 +149,16 @@ function WeaponHolder:OnShoot(wasShootingLastFrame)
         end
         return
     end
-    Log.Info("WeaponHolder OnShoot 6");
 
     if (not weaponFireScript.CanShoot) then
         return
     end
 
-    Log.Info("WeaponHolder OnShoot 7");
     -- Shoot using the WeaponFire proxy so spread is centered on camera/reticle.
     local didFire = weaponFireScript:Fire(weaponFireEntity, weaponEntity, wasShootingLastFrame)
     if didFire then
         weaponControllerScript:OnShoot()
     end
-    Log.Info("WeaponHolder OnShoot 8");
 end
 
 function WeaponHolder:OnReload()
