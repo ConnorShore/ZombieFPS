@@ -272,13 +272,13 @@ Assets:
     Name: M4_Reload
     FilePath: Models/M4_Anim/M4_Reload.ebanim
   - Type: Animation
-    UUID: 1061568813566244299
-    Name: DesertEagle_Idle
-    FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Idle.ebanim
-  - Type: Animation
     UUID: 13210029773156912041
     Name: DesertEagle_Reload
     FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Reload.ebanim
+  - Type: Animation
+    UUID: 1061568813566244299
+    Name: DesertEagle_Idle
+    FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Idle.ebanim
   - Type: Animation
     UUID: 7891003508228372826
     Name: DesertEagle_SlideLock
@@ -360,6 +360,10 @@ Assets:
     Name: M4_Shot
     FilePath: Audio/M4_Shot.mp3
   - Type: AudioClip
+    UUID: 2869832050986379881
+    Name: EmptyGun
+    FilePath: Audio/EmptyGun.mp3
+  - Type: AudioClip
     UUID: 15776698392225788213
     Name: ReloadStart
     FilePath: Audio/ReloadStart.mp3
@@ -367,10 +371,6 @@ Assets:
     UUID: 8785379131387521162
     Name: ReloadEnd
     FilePath: Audio/ReloadEnd.mp3
-  - Type: AudioClip
-    UUID: 2869832050986379881
-    Name: EmptyGun
-    FilePath: Audio/EmptyGun.mp3
   - Type: AudioClip
     UUID: 4535810649324835630
     Name: AmmoPickupSFX

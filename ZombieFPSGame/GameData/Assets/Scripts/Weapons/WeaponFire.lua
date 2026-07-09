@@ -1,17 +1,5 @@
 local WeaponFire = {}
 
--- WeaponFire.FireRate = 300 -- Rounds per minute
--- WeaponFire.Range = 100.0
--- WeaponFire.Damage = 10
--- WeaponFire.ImpactForce = 2.0
-
--- -- Bloom (Cone of Fire) Settings
--- WeaponFire.BaseHipBloom = 0.02    -- Starting inaccuracy when hip firing
--- WeaponFire.MaxHipBloom = 0.15     -- Maximum inaccuracy when holding the trigger
--- WeaponFire.BloomPerShot = 0.03    -- How much the cone grows per shot
--- WeaponFire.BloomDecayRate = 0.5   -- How fast the cone shrinks when not shooting
--- WeaponFire.GunshotSound = AudioClipRef()
-
 WeaponFire.TracerEnabled = true
 WeaponFire.TracerCadence = 3 -- Spawn a tracer every 3 shots
 
@@ -151,7 +139,11 @@ function WeaponFire:Fire(entity, weaponEntity, wasShootingLastFrame)
 
     self.ShotCount = self.ShotCount + 1
 
-    AudioSystem.PlaySound(weaponStats.GunshotSound)
+    -- Play gunshot sound
+    local props = AudioSoundProperties.new()
+    props.Volume = 0.7
+    props.Pitch = Math.RandomFloat(0.95, 1.05)
+    AudioSystem.PlayOneShot(weaponStats.GunshotSound, props)
     
     local transform = entity:GetComponent("TransformComponent")
     local forward = transform:GetForward()

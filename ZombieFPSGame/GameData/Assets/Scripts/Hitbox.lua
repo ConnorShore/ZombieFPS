@@ -20,7 +20,11 @@ function Hitbox:OnTakeDamage(entity, damageInfo)
     end
 
     -- Play impact sound
-    AudioSystem.PlaySoundDelayed(self.ImpactSound, 100.0) -- Delay to not overlap with gunshot sound
+    local randomPitch = Math.RandomFloat(0.95, 1.05)
+    local props = AudioSoundProperties.new()
+    props.Volume      = 2.5
+    props.Pitch       = randomPitch
+    AudioSystem.PlayOneShot(self.ImpactSound, props)
 
     -- Calculate final damage and forward it to the main Enemy Controller
     local finalDamage = damageInfo.Damage * self.DamageMultiplier
