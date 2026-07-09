@@ -3,7 +3,7 @@ local EnemyController = {}
 EnemyController.Health = 100
 
 function EnemyController:OnCreate(entity)
-
+    self.Entity = entity
 end
 
 function EnemyController:OnUpdate(entity, delta)
@@ -45,8 +45,6 @@ function EnemyController:OnUpdate(entity, delta)
     local targetAngle = math.deg(math.atan(dirX, dirZ)) 
     transform.Rotation.y = targetAngle
 end
-
--- TODO: Add some kind of damage feedback when colliding with a player's bullet
 
 function EnemyController:ApplyDamage(amount)
     self.Health = self.Health - amount

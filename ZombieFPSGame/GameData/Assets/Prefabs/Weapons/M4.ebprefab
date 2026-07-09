@@ -15,6 +15,7 @@ PrefabEntities:
       Parent: 0
       Children:
         - 17842325067595788093
+        - 8126839423303021595
       IsAttachment: 0
     TransformComponent:
       Position: [0,0,0]
@@ -61,12 +62,13 @@ PrefabEntities:
         - Name: ReloadTriggerParam
           Type: 4
           Value: ReloadRequested
-        - Name: FireMode
-          Type: 5
-          Value: 2
         - Name: WeaponRecoilRef
           Type: 7
           Value: 9475768984996831319
+          ReferenceKind: Entity
+        - Name: WeaponStatsRef
+          Type: 7
+          Value: 8126839423303021595
           ReferenceKind: Entity
     AnimatorComponent:
       SkeletonHandle: 9200567303542518273
@@ -120,6 +122,40 @@ PrefabEntities:
         - Name: SwayRotAmount
           Type: 2
           Value: 2
+  - Entity: 8126839423303021595
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: WeaponStats
+    RelationshipComponent:
+      Parent: 9738441487633822906
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [0.41,0,0,0,0,0.41,0,0,0,0,0.41,0,0,0,0,1]
+    ScriptComponent:
+      ScriptUUID: 16639884503866118704
+      UserPropertyOverrides:
+        - Name: GunshotSound
+          Type: 8
+          Value: 10601745296411271244
+          ReferenceKind: AudioClip
+        - Name: FireRate
+          Type: 2
+          Value: 550
+        - Name: Damage
+          Type: 2
+          Value: 15
+        - Name: FireMode
+          Type: 5
+          Value: 2
   - Entity: 9475768984996831319
     ComponentOrder:
       - IDComponent
@@ -154,13 +190,13 @@ PrefabEntities:
         - Name: KickUpY
           Type: 3
           Value: 0.05
-        - Name: CameraRef
-          Type: 7
-          Value: 3526599274050075716
-          ReferenceKind: Entity
         - Name: WeaponAimingRef
           Type: 7
           Value: 5582973607127015406
+          ReferenceKind: Entity
+        - Name: CameraRef
+          Type: 7
+          Value: 3526599274050075716
           ReferenceKind: Entity
   - Entity: 5582973607127015406
     ComponentOrder:
@@ -189,24 +225,24 @@ PrefabEntities:
         - Name: ADS_Speed
           Type: 3
           Value: 10
-        - Name: DebugADSLogging
-          Type: 1
-          Value: 1
         - Name: AimNodeRef
           Type: 7
           Value: 16766670902763021612
           ReferenceKind: Entity
+        - Name: DebugADSLogging
+          Type: 1
+          Value: 1
         - Name: CrosshairRef
           Type: 7
           Value: 16155943693343446687
           ReferenceKind: Entity
+        - Name: ADSCameraViewOffset
+          Type: 6
+          Value: [0,-0.025,-0.15]
         - Name: CameraSocketRef
           Type: 7
           Value: 9548350549033941053
           ReferenceKind: Entity
-        - Name: ADSCameraViewOffset
-          Type: 6
-          Value: [0,-0.025,-0.15]
   - Entity: 3771947737390781143
     ComponentOrder:
       - IDComponent

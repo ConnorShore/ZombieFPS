@@ -1,8 +1,4 @@
 local WeaponController = {}
-local FIRE_MODE = {
-    SemiAuto = 1,
-    FullAuto = 2
-}
 
 WeaponController.SightMountRef = EntityRef()
 WeaponController.MuzzleMountRef = EntityRef()
@@ -13,8 +9,8 @@ WeaponController.MuzzleFlashRef = EntityRef()
 WeaponController.AmmoUIRef = EntityRef()
 WeaponController.WeaponAimingRef = EntityRef()
 WeaponController.WeaponRecoilRef = EntityRef()
+WeaponController.WeaponStatsRef = EntityRef()
 
-WeaponController.FireMode = FIRE_MODE
 
 WeaponController.MaxAmmo = 120
 WeaponController.MagazineSize = 30
@@ -102,15 +98,6 @@ function WeaponController:TryBindAmmoUI()
     self.AmmoScript = ammoScript
     self.AmmoScript:SetAmmo(self.CurrentAmmo, self.ReserveAmmo)
     return true
-end
-
-function WeaponController:IsSemiAuto()
-    local fireMode = self.FireMode
-    if type(fireMode) == "table" then
-        fireMode = FIRE_MODE.SemiAuto
-    end
-
-    return fireMode == FIRE_MODE.SemiAuto
 end
 
 function WeaponController:OnShoot()
@@ -218,6 +205,14 @@ end
 
 function WeaponController:GetMuzzleFlashEntity()
     return self.MuzzleFlashEntity
+end
+
+function WeaponController:GetWeaponStats()
+    if not self.WeaponStatsRef then
+        return nil
+    end
+
+    return self:ResolveEntityRef(self.WeaponStatsRef)
 end
 
 function WeaponController:IsAiming()

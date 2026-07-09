@@ -29,18 +29,18 @@ function PlayerInteraction:OnUpdate(entity, delta)
         end
 
         if Input.IsKeyPressed(KeyCode.E) then
-            Log.Info("PlayerInteraction: Detected interactable object hit by raycast: " .. hitResult.Entity:GetName())
-            local pickupItemScript = hitResult.Entity:GetScriptInstance("PickupItem")
+            Log.Info("PlayerInteraction: Detected interactable object hit by raycast: " .. hitResult.RigidBodyEntity:GetName())
+            local pickupItemScript = hitResult.RigidBodyEntity:GetScriptInstance("PickupItem")
             if pickupItemScript then
                 Log.Info("PlayerInteraction: Found PickupItem script on hit entity, attempting to pick up item")
-                self:OnPickupItem(pickupItemScript, hitResult.Entity, entity)
+                self:OnPickupItem(pickupItemScript, hitResult.RigidBodyEntity, entity)
                 return
             end
 
-            local pickupWeaponScript = hitResult.Entity:GetScriptInstance("PickupWeapon")
+            local pickupWeaponScript = hitResult.RigidBodyEntity:GetScriptInstance("PickupWeapon")
             if pickupWeaponScript then
                 Log.Info("PlayerInteraction: Found PickupWeapon script on hit entity, attempting to pick up weapon")
-                self:OnPickupWeapon(pickupWeaponScript, hitResult.Entity, entity)
+                self:OnPickupWeapon(pickupWeaponScript, hitResult.RigidBodyEntity, entity)
                 return
             end
 

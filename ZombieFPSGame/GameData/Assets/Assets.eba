@@ -48,6 +48,10 @@ Assets:
     Name: M4_ORM_Mat0
     FilePath: Models/M4_Anim/M4_ORM_Mat0.png
   - Type: Texture
+    UUID: 12541227798747992686
+    Name: DesertEagle_DesertEagleNormal.png
+    FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_DesertEagleNormal.png
+  - Type: Texture
     UUID: 15863835653609318779
     Name: HolographicReticle
     FilePath: Textures/HolographicReticle.png
@@ -55,10 +59,6 @@ Assets:
     UUID: 9008232455192275898
     Name: AssaultRifle_ARColor.png
     FilePath: Models/M4/AssaultRifle_ARColor.png
-  - Type: Texture
-    UUID: 12541227798747992686
-    Name: DesertEagle_DesertEagleNormal.png
-    FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_DesertEagleNormal.png
   - Type: Texture
     UUID: 2902344313391760329
     Name: DesertEagle_DesertEagleDiffuse.png
@@ -80,13 +80,25 @@ Assets:
     Name: PowerUpDrop
     FilePath: Scripts/Pickups/PowerUpDrop.lua
   - Type: Script
-    UUID: 10753367411955256691
-    Name: WeaponHolder
-    FilePath: Scripts/Weapons/WeaponHolder.lua
+    UUID: 12117729415864912341
+    Name: PickupItem
+    FilePath: Scripts/Pickups/PickupItem.lua
   - Type: Script
     UUID: 18321648132521774491
     Name: SightAttachment
     FilePath: Scripts/SightAttachment.lua
+  - Type: Script
+    UUID: 15631423950997928565
+    Name: WeaponAiming
+    FilePath: Scripts/Weapons/WeaponAiming.lua
+  - Type: Script
+    UUID: 16404415058251315788
+    Name: WeaponFire
+    FilePath: Scripts/Weapons/WeaponFire.lua
+  - Type: Script
+    UUID: 10753367411955256691
+    Name: WeaponHolder
+    FilePath: Scripts/Weapons/WeaponHolder.lua
   - Type: Script
     UUID: 17429251933582378423
     Name: AmmoUI
@@ -111,14 +123,6 @@ Assets:
     UUID: 6068451618412420797
     Name: CharacterMovement
     FilePath: Scripts/Player/CharacterMovement.lua
-  - Type: Script
-    UUID: 12117729415864912341
-    Name: PickupItem
-    FilePath: Scripts/Pickups/PickupItem.lua
-  - Type: Script
-    UUID: 16404415058251315788
-    Name: WeaponFire
-    FilePath: Scripts/Weapons/WeaponFire.lua
   - Type: Script
     UUID: 4494000890898150304
     Name: Crosshair
@@ -148,10 +152,6 @@ Assets:
     Name: PlayerController
     FilePath: Scripts/Player/PlayerController.lua
   - Type: Script
-    UUID: 15631423950997928565
-    Name: WeaponAiming
-    FilePath: Scripts/Weapons/WeaponAiming.lua
-  - Type: Script
     UUID: 803391121824597106
     Name: AIController
     FilePath: Scripts/AIController.lua
@@ -163,6 +163,18 @@ Assets:
     UUID: 15649694001834023247
     Name: EnemyController
     FilePath: Scripts/EnemyController.lua
+  - Type: Script
+    UUID: 16639884503866118704
+    Name: WeaponStats
+    FilePath: Scripts/Weapons/WeaponStats.lua
+  - Type: Script
+    UUID: 5268583109702214263
+    Name: DamageableProp
+    FilePath: Scripts/DamageableProp.lua
+  - Type: Script
+    UUID: 1303867917645546364
+    Name: Hitbox
+    FilePath: Scripts/Hitbox.lua
   - Type: Material
     UUID: 782295293902573577
     Name: DesertEagle_Metal
@@ -204,10 +216,6 @@ Assets:
     Name: EnemyMaterial
     FilePath: Materials/EnemyMaterial.ebmat
   - Type: Mesh
-    UUID: 16822605104283055229
-    Name: M4_Cube.001_Prim0
-    FilePath: Models/M4_Anim/M4_Cube.001_Prim0.ebmesh
-  - Type: Mesh
     UUID: 5610316799824380095
     Name: DesertEagle_Mesh2_Cube.007_Prim1
     FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Mesh2_Cube.007_Prim1.ebmesh
@@ -215,6 +223,14 @@ Assets:
     UUID: 5985712711574680378
     Name: DesertEagle_Mesh1_Cube_Prim0
     FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Mesh1_Cube_Prim0.ebmesh
+  - Type: Mesh
+    UUID: 15346656199082862049
+    Name: DesertEagle_Mesh0_Circle.001_Prim0
+    FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Mesh0_Circle.001_Prim0.ebmesh
+  - Type: Mesh
+    UUID: 16822605104283055229
+    Name: M4_Cube.001_Prim0
+    FilePath: Models/M4_Anim/M4_Cube.001_Prim0.ebmesh
   - Type: Mesh
     UUID: 9147101475226164417
     Name: AssaultRifle_Cube.003_Prim0
@@ -239,10 +255,6 @@ Assets:
     UUID: 12443871631894294282
     Name: AmmoPowerup_Cylinder.001_Prim0
     FilePath: Models/PowerUps/Ammo/AmmoPowerup_Cylinder.001_Prim0.ebmesh
-  - Type: Mesh
-    UUID: 15346656199082862049
-    Name: DesertEagle_Mesh0_Circle.001_Prim0
-    FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Mesh0_Circle.001_Prim0.ebmesh
   - Type: Skeleton
     UUID: 9200567303542518273
     Name: M4
@@ -260,13 +272,13 @@ Assets:
     Name: M4_Reload
     FilePath: Models/M4_Anim/M4_Reload.ebanim
   - Type: Animation
-    UUID: 1061568813566244299
-    Name: DesertEagle_Idle
-    FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Idle.ebanim
-  - Type: Animation
     UUID: 13210029773156912041
     Name: DesertEagle_Reload
     FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Reload.ebanim
+  - Type: Animation
+    UUID: 1061568813566244299
+    Name: DesertEagle_Idle
+    FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Idle.ebanim
   - Type: Animation
     UUID: 7891003508228372826
     Name: DesertEagle_SlideLock
@@ -300,9 +312,13 @@ Assets:
     Name: NavMesh_Default_NavigationSurface
     FilePath: NavMeshes/NavMesh_Default_NavigationSurface.ebnav
   - Type: Prefab
-    UUID: 17282698121902118170
-    Name: Enemy
-    FilePath: Prefabs/Enemy.ebprefab
+    UUID: 13559857553863366497
+    Name: ImpactConcrete
+    FilePath: Prefabs/ImpactConcrete.ebprefab
+  - Type: Prefab
+    UUID: 3822534466298593180
+    Name: AmmoPowerup
+    FilePath: Prefabs/AmmoPowerup.ebprefab
   - Type: Prefab
     UUID: 7525331889912364400
     Name: M4_Pickup
@@ -311,14 +327,6 @@ Assets:
     UUID: 17919492092461288605
     Name: HolographicSightPickup
     FilePath: Prefabs/HolographicSightPickup.ebprefab
-  - Type: Prefab
-    UUID: 3822534466298593180
-    Name: AmmoPowerup
-    FilePath: Prefabs/AmmoPowerup.ebprefab
-  - Type: Prefab
-    UUID: 13559857553863366497
-    Name: ImpactConcrete
-    FilePath: Prefabs/ImpactConcrete.ebprefab
   - Type: Prefab
     UUID: 13120009099153965368
     Name: Tracer
@@ -339,6 +347,10 @@ Assets:
     UUID: 1628786810858958427
     Name: DesertEagle
     FilePath: Prefabs/Weapons/DesertEagle.ebprefab
+  - Type: Prefab
+    UUID: 9278556515141032553
+    Name: Enemy
+    FilePath: Prefabs/Enemy.ebprefab
   - Type: Font
     UUID: 213406294560961755
     Name: Roboto-Regular
@@ -348,6 +360,10 @@ Assets:
     Name: M4_Shot
     FilePath: Audio/M4_Shot.mp3
   - Type: AudioClip
+    UUID: 2869832050986379881
+    Name: EmptyGun
+    FilePath: Audio/EmptyGun.mp3
+  - Type: AudioClip
     UUID: 15776698392225788213
     Name: ReloadStart
     FilePath: Audio/ReloadStart.mp3
@@ -356,13 +372,17 @@ Assets:
     Name: ReloadEnd
     FilePath: Audio/ReloadEnd.mp3
   - Type: AudioClip
-    UUID: 2869832050986379881
-    Name: EmptyGun
-    FilePath: Audio/EmptyGun.mp3
-  - Type: AudioClip
     UUID: 4535810649324835630
     Name: AmmoPickupSFX
     FilePath: Audio/AmmoPickupSFX.mp3
+  - Type: AudioClip
+    UUID: 3462192619930688989
+    Name: Hitmarker
+    FilePath: Audio/Hitmarker.mp3
+  - Type: AudioClip
+    UUID: 4006857010690811945
+    Name: Impact_Confirmed
+    FilePath: Audio/Impact_Confirmed.mp3
   - Type: Scene
     UUID: 397660979313011815
     Name: Default
