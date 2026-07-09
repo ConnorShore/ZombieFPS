@@ -152,7 +152,7 @@ PrefabEntities:
           Value: 550
         - Name: Damage
           Type: 2
-          Value: 20
+          Value: 15
         - Name: FireMode
           Type: 5
           Value: 2

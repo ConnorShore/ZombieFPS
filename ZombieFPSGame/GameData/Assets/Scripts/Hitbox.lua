@@ -11,17 +11,16 @@ end
 function Hitbox:OnTakeDamage(entity, damageInfo)
     -- Spawn Blood Particles at the exact hit point
     local impactPos = damageInfo.HitPoint + damageInfo.HitNormal * 0.01
-    -- local impactEffect = Scene.RetrieveFromPool("ImpactFleshPool", impactPos)
-    -- if impactEffect then
-    --     local impactRotation = Math.LookAt(damageInfo.HitPoint, damageInfo.HitNormal + damageInfo.HitPoint)
-    --     impactEffect:GetComponent("TransformComponent").Rotation = impactRotation
+    if entity:ContainsComponent("ParticleEmitterComponent") then
+        local impactRotation = Math.LookAt(damageInfo.HitPoint, damageInfo.HitNormal + damageInfo.HitPoint)
+        entity:GetComponent("TransformComponent").Rotation = impactRotation
         
-    --     local particleEmitter = impactEffect:GetComponent("ParticleEmitterComponent")
-    --     Particles.Burst(particleEmitter, impactPos, 50, Math.ToQuaternion(impactRotation))
-    -- end
+        local particleEmitter = entity:GetComponent("ParticleEmitterComponent")
+        Particles.Burst(particleEmitter, impactPos, 50, Math.ToQuaternion(impactRotation))
+    end
 
     -- Play impact sound
-    AudioSystem.PlaySound(self.ImpactSound)
+    AudioSystem.PlaySoundDelayed(self.ImpactSound, 100.0) -- Delay to not overlap with gunshot sound
 
     -- Calculate final damage and forward it to the main Enemy Controller
     local finalDamage = damageInfo.Damage * self.DamageMultiplier
