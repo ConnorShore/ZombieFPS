@@ -15,7 +15,6 @@ PrefabEntities:
       - CapsuleColliderComponent
       - ScriptComponent
       - PrefabComponent
-      - OutlineComponent
     TagComponent:
       Tag: Enemy
     RelationshipComponent:
@@ -25,10 +24,10 @@ PrefabEntities:
         - 8750033823247324194
       IsAttachment: 0
     TransformComponent:
-      Position: [9.718337,0.999978,-12.649881]
+      Position: [0,0,0]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,9.718337,0.999978,-12.649881,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
     RigidBodyComponent:
       Type: 2
       Mass: 1
@@ -52,7 +51,7 @@ PrefabEntities:
       ScriptUUID: 1702313573474944703
       UserPropertyOverrides: []
     PrefabComponent:
-      PrefabUUID: 14536836887442780138
+      PrefabUUID: 9278556515141032553
     CharacterControllerComponent:
       WalkSpeed: 5
       JumpForce: 5
@@ -80,7 +79,6 @@ PrefabEntities:
       - ScriptComponent
       - SphereColliderComponent
       - ParticleEmitterComponent
-      - OutlineComponent
     TagComponent:
       Tag: HeadHitbox
     RelationshipComponent:
@@ -91,7 +89,7 @@ PrefabEntities:
       Position: [0,0.5,0]
       Rotation: [0,0,0]
       Scale: [1.01,1.01,1.01]
-      WorldTransform: [1.01,0,0,0,0,1.01,0,0,0,0,1.01,0,9.718337,1.4999781,-12.649881,1]
+      WorldTransform: [1.01,0,0,0,0,1.01,0,0,0,0,1.01,0,0,0.5,0,1]
     SphereColliderComponent:
       Radius: 0.5
       IsTrigger: 0
@@ -139,7 +137,6 @@ PrefabEntities:
       - ScriptComponent
       - ParticleEmitterComponent
       - CapsuleColliderComponent
-      - OutlineComponent
     TagComponent:
       Tag: BodyHitbox
     RelationshipComponent:
@@ -150,7 +147,7 @@ PrefabEntities:
       Position: [0,-0.1,0]
       Rotation: [0,0,0]
       Scale: [1.01,1.01,1.01]
-      WorldTransform: [1.01,0,0,0,0,1.01,0,0,0,0,1.01,0,9.718337,0.899978,-12.649881,1]
+      WorldTransform: [1.01,0,0,0,0,1.01,0,0,0,0,1.01,0,0,-0.1,0,1]
     CapsuleColliderComponent:
       Radius: 0.45
       Height: 2
