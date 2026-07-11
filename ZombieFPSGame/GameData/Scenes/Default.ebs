@@ -1,63 +1,5 @@
 Scene: Default
 Entities:
-  - Entity: 6753254757056896993
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-      - RigidBodyComponent
-      - CapsuleColliderComponent
-      - StaticMeshComponent
-      - MaterialComponent
-      - ScriptComponent
-      - CharacterControllerComponent
-      - NavigationMeshModifierComponent
-    TagComponent:
-      Tag: Player
-    RelationshipComponent:
-      Parent: 0
-      Children:
-        - 11417141245009400245
-        - 13765157642257386743
-      IsAttachment: 0
-    TransformComponent:
-      Position: [-9.094947e-13,1,5.0267487]
-      Rotation: [0,0,0]
-      Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-9.094947e-13,1,5.0267487,1]
-    RigidBodyComponent:
-      Type: 2
-      Mass: 1
-      GravityEnabled: 1
-    CapsuleColliderComponent:
-      Radius: 0.5
-      Height: 2
-      IsTrigger: 0
-      OffsetPosition: [0,0,0]
-      OffsetRotation: [0,0,0]
-      Category: 1
-      CollisionMask: 1
-      PhysicsMaterialUUID: 0
-      PreviewCollider: 0
-    StaticMeshComponent:
-      MeshUUID: 53
-      Layer: 2
-    MaterialComponent:
-      MaterialUUID: 31
-    ScriptComponent:
-      ScriptUUID: 6068451618412420797
-      UserPropertyOverrides: []
-    CharacterControllerComponent:
-      WalkSpeed: 5
-      JumpForce: 5
-      GravityMultiplier: 1
-      MaxSlopeAngle: 45
-      MaxStepHeight: 0.25
-    NavigationMeshModifierComponent:
-      NavMeshDataHandle: 8017132278425989816
-      ModifierType: 0
-      ApplyToChildren: 1
   - Entity: 11417141245009400245
     ComponentOrder:
       - IDComponent
@@ -119,6 +61,142 @@ Entities:
         - Name: Sensitivity
           Type: 3
           Value: 2
+  - Entity: 3373521055754233367
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: GlobalSystems
+    RelationshipComponent:
+      Parent: 0
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
+    ScriptComponent:
+      ScriptUUID: 5515958197491920100
+      UserPropertyOverrides: []
+  - Entity: 5599888848773738242
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: RoundManager
+    RelationshipComponent:
+      Parent: 0
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
+    ScriptComponent:
+      ScriptUUID: 8058432714386778896
+      UserPropertyOverrides: []
+  - Entity: 6753254757056896993
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RigidBodyComponent
+      - CapsuleColliderComponent
+      - StaticMeshComponent
+      - MaterialComponent
+      - ScriptComponent
+      - CharacterControllerComponent
+      - NavigationMeshModifierComponent
+    TagComponent:
+      Tag: Player
+    RelationshipComponent:
+      Parent: 0
+      Children:
+        - 11417141245009400245
+        - 13765157642257386743
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-9.094947e-13,1,5.0267487]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-9.094947e-13,1,5.0267487,1]
+    RigidBodyComponent:
+      Type: 2
+      Mass: 1
+      GravityEnabled: 1
+    CapsuleColliderComponent:
+      Radius: 0.5
+      Height: 2
+      IsTrigger: 0
+      OffsetPosition: [0,0,0]
+      OffsetRotation: [0,0,0]
+      Category: 1
+      CollisionMask: 1
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 0
+    StaticMeshComponent:
+      MeshUUID: 53
+      Layer: 2
+    MaterialComponent:
+      MaterialUUID: 31
+    ScriptComponent:
+      ScriptUUID: 6068451618412420797
+      UserPropertyOverrides: []
+    CharacterControllerComponent:
+      WalkSpeed: 5
+      JumpForce: 5
+      GravityMultiplier: 1
+      MaxSlopeAngle: 45
+      MaxStepHeight: 0.25
+    NavigationMeshModifierComponent:
+      NavMeshDataHandle: 8017132278425989816
+      ModifierType: 0
+      ApplyToChildren: 1
+  - Entity: 5645678438920164573
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - CanvasComponent
+      - RectTransformComponent
+    TagComponent:
+      Tag: HUD_Canvas
+    RelationshipComponent:
+      Parent: 0
+      Children:
+        - 16155943693343446687
+        - 7122639572906643531
+        - 15941034270328579006
+        - 15578499263848755252
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
+    CanvasComponent:
+      RenderMode: 0
+      SortOrder: 0
+      MatchWidthOrHeight: 0.5
+      PlaneDistance: 1
+      ReferenceResolution: [761,506]
+    RectTransformComponent:
+      AnchoredPosition: [0,0]
+      SizeDelta: [100,100]
+      AnchorMin: [0.5,0.5]
+      AnchorMax: [0.5,0.5]
+      Pivot: [0.5,0.5]
+      Rotation: 0
   - Entity: 4008310533388848912
     ComponentOrder:
       - IDComponent
@@ -260,41 +338,6 @@ Entities:
           Type: 7
           Value: 230291968303856085
           ReferenceKind: Entity
-  - Entity: 5645678438920164573
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-      - CanvasComponent
-      - RectTransformComponent
-    TagComponent:
-      Tag: HUD_Canvas
-    RelationshipComponent:
-      Parent: 0
-      Children:
-        - 16155943693343446687
-        - 7122639572906643531
-        - 15941034270328579006
-      IsAttachment: 0
-    TransformComponent:
-      Position: [0,0,0]
-      Rotation: [0,0,0]
-      Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
-    CanvasComponent:
-      RenderMode: 0
-      SortOrder: 0
-      MatchWidthOrHeight: 0.5
-      PlaneDistance: 1
-      ReferenceResolution: [761,506]
-    RectTransformComponent:
-      AnchoredPosition: [0,0]
-      SizeDelta: [100,100]
-      AnchorMin: [0.5,0.5]
-      AnchorMax: [0.5,0.5]
-      Pivot: [0.5,0.5]
-      Rotation: 0
   - Entity: 8214889738320955675
     ComponentOrder:
       - IDComponent
@@ -313,7 +356,7 @@ Entities:
       Position: [0,0,0]
       Rotation: [0,-0,0]
       Scale: [0.005348166,0.014285714,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,976.18005,29.55,0,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,939.13007,30.55,0,1]
     TextComponent:
       Text: 0 / 0
       FontHandle: 213406294560961755
@@ -387,7 +430,7 @@ Entities:
       Position: [-3.8049998,-2.53,0]
       Rotation: [0,-0,0]
       Scale: [0.01,0.01,1]
-      WorldTransform: [170.24,0,0,0,0,52.7,0,0,0,0,1,0,1006.68005,38.25,0,1]
+      WorldTransform: [144.34,0,0,0,0,52.7,0,0,0,0,1,0,969.63007,39.25,0,1]
     SpriteComponent:
       Color: [0.85714287,0.41748834,0.014238238,1]
       IsBillboard: 0
@@ -400,8 +443,8 @@ Entities:
           Value: 8214889738320955675
           ReferenceKind: Entity
     RectTransformComponent:
-      AnchoredPosition: [-16.2,11.9]
-      SizeDelta: [-29.2,52.7]
+      AnchoredPosition: [-66.2,12.9]
+      SizeDelta: [-55.1,52.7]
       AnchorMin: [0.82,0]
       AnchorMax: [1,0]
       Pivot: [1,0]
@@ -765,14 +808,14 @@ Entities:
         - Name: RotationSpeed
           Type: 3
           Value: 45
-        - Name: PickupSound
-          Type: 8
-          Value: 4535810649324835630
-          ReferenceKind: AudioClip
         - Name: WeaponHolderRef
           Type: 7
           Value: 230291968303856085
           ReferenceKind: Entity
+        - Name: PickupSound
+          Type: 8
+          Value: 4535810649324835630
+          ReferenceKind: AudioClip
     PrefabComponent:
       PrefabUUID: 3822534466298593180
   - Entity: 14881747670601641762
@@ -1900,6 +1943,40 @@ Entities:
       AlignWithVelocity: 0
       StretchFactor: 0
       IsActive: 0
+  - Entity: 15578499263848755252
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RectTransformComponent
+      - TextComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: RoundUI
+    RelationshipComponent:
+      Parent: 5645678438920164573
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [2,0,0,0,0,2,0,0,0,0,1,0,1059,21,0,1]
+    ScriptComponent:
+      ScriptUUID: 3344681323696305163
+      UserPropertyOverrides: []
+    TextComponent:
+      Text: 1
+      FontHandle: 213406294560961755
+      Color: [1,0,0,1]
+    RectTransformComponent:
+      AnchoredPosition: [505,-273]
+      SizeDelta: [2,2]
+      AnchorMin: [0.5,0.5]
+      AnchorMax: [0.5,0.5]
+      Pivot: [0.5,0.5]
+      Rotation: 0
 Environment:
   Skybox:
     Enabled: 1
