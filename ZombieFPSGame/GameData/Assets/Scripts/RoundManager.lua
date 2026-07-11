@@ -8,6 +8,8 @@ local GameState = {
 
 RoundManager.SpawnManagerRef = EntityRef()
 RoundManager.IntermissionTime = 10.0
+RoundManager.BaseZombiesPerRound = 5
+RoundManager.ZombieRoundMultiplier = 4
 
 function RoundManager:OnCreate(entity)
     self.CurrentState = GameState.Intermission
@@ -19,8 +21,6 @@ function RoundManager:OnCreate(entity)
     EventManager.Subscribe("OnEnemyKilled", function(enemyUUID)
         self:OnZombieKilled()
     end)
-    
-    Log.Info("RoundManager initialized. Waiting to start Round 1.")
 end
 
 function RoundManager:OnUpdate(entity, delta)
@@ -43,18 +43,14 @@ function RoundManager:StartNextRound()
     self.CurrentRound = self.CurrentRound + 1
     self.CurrentState = GameState.Active
     
-    -- TODO: Better algorithm for determining how many zombies to spawn each round?
-    local zombiesForRound = 10 + (self.CurrentRound * 5)
+    local zombiesForRound = self:GetZombiesPerRound(self.CurrentRound)
     self.ZombiesRemaining = zombiesForRound
 
-    Log.Info("Starting Round " .. tostring(self.CurrentRound))
-    
     EventManager.Broadcast("OnRoundStarted", self.CurrentRound)
 
     local spawnManagerEntity = Scene.GetEntityByUUID(self.SpawnManagerRef)
-    Log.Info("Found SpawnManager Entity: " .. tostring(spawnManagerEntity))
     if spawnManagerEntity and spawnManagerEntity:IsValid() then
-        spawnManagerEntity:GetScriptInstance():StartWave(zombiesForRound)
+        spawnManagerEntity:GetScriptInstance():StartWave(self.CurrentRound, zombiesForRound)
     end
 end
 
@@ -73,6 +69,11 @@ function RoundManager:OnZombieKilled()
     if self.CurrentState == GameState.Active then
         self.ZombiesRemaining = self.ZombiesRemaining - 1
     end
+end
+
+-- TODO: Come up with a better formula for scaling zombies per round
+function RoundManager:GetZombiesPerRound(roundNum)
+    return self.BaseZombiesPerRound + ((roundNum - 1) * self.ZombieRoundMultiplier)
 end
 
 return RoundManager

@@ -109,7 +109,7 @@ Entities:
           ReferenceKind: Entity
         - Name: IntermissionTime
           Type: 3
-          Value: 5
+          Value: 10
   - Entity: 3228848565545027244
     ComponentOrder:
       - IDComponent
@@ -125,6 +125,7 @@ Entities:
         - 6207821035897400818
         - 16432397012882776458
         - 1293081826997568793
+        - 17980995006025193254
       IsAttachment: 0
     TransformComponent:
       Position: [0,0,0]
@@ -386,17 +387,17 @@ Entities:
     ScriptComponent:
       ScriptUUID: 8562544563539838448
       UserPropertyOverrides:
-        - Name: InteractionDistance
-          Type: 3
-          Value: 3
-        - Name: PickupUIRef
-          Type: 7
-          Value: 7122639572906643531
-          ReferenceKind: Entity
         - Name: WeaponHolderRef
           Type: 7
           Value: 230291968303856085
           ReferenceKind: Entity
+        - Name: PickupUIRef
+          Type: 7
+          Value: 7122639572906643531
+          ReferenceKind: Entity
+        - Name: InteractionDistance
+          Type: 3
+          Value: 3
   - Entity: 8214889738320955675
     ComponentOrder:
       - IDComponent
@@ -415,13 +416,13 @@ Entities:
       Position: [0,0,0]
       Rotation: [0,-0,0]
       Scale: [0.005348166,0.014285714,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,939.13007,30.55,0,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,934.13007,31.55,0,1]
     TextComponent:
       Text: 0 / 0
       FontHandle: 213406294560961755
       Color: [1,1,1,1]
     RectTransformComponent:
-      AnchoredPosition: [-30,-8.2]
+      AnchoredPosition: [-38,-8.2]
       SizeDelta: [1,1]
       AnchorMin: [0.5,0.5]
       AnchorMax: [0.5,0.5]
@@ -489,7 +490,7 @@ Entities:
       Position: [-3.8049998,-2.53,0]
       Rotation: [0,-0,0]
       Scale: [0.01,0.01,1]
-      WorldTransform: [144.34,0,0,0,0,52.7,0,0,0,0,1,0,969.63007,39.25,0,1]
+      WorldTransform: [144.34,0,0,0,0,52.7,0,0,0,0,1,0,972.63007,40.25,0,1]
     SpriteComponent:
       Color: [0.85714287,0.41748834,0.014238238,1]
       IsBillboard: 0
@@ -502,7 +503,7 @@ Entities:
           Value: 8214889738320955675
           ReferenceKind: Entity
     RectTransformComponent:
-      AnchoredPosition: [-66.2,12.9]
+      AnchoredPosition: [-63.199997,13.9]
       SizeDelta: [-55.1,52.7]
       AnchorMin: [0.82,0]
       AnchorMax: [1,0]
@@ -1558,6 +1559,7 @@ Entities:
       - TransformComponent
       - RelationshipComponent
       - AudioSourceComponent
+      - DisabledComponent
       - EditorIconComponent
     TagComponent:
       Tag: BackgroundMusic
@@ -1570,6 +1572,8 @@ Entities:
       Rotation: [0,0,0]
       Scale: [1,1,1]
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
+    DisabledComponent:
+      IsDisabled: 1
     AudioSourceComponent:
       AudioClipHandle: 4006857010690811945
       PlayOnStart: 1
@@ -1592,10 +1596,10 @@ Entities:
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [-6.78796,1,-13.071975]
+      Position: [-18.358238,1,-16.994528]
       Rotation: [0,-0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-6.78796,1,-13.071975,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-18.358238,1,-16.994528,1]
     ScriptComponent:
       ScriptUUID: 18266934061772524094
       UserPropertyOverrides:
@@ -1651,10 +1655,35 @@ Entities:
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [-15.292187,1.0000032,1.3338127]
+      Position: [-16.764563,1.0000029,10.813117]
       Rotation: [0,-0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-15.292187,1.0000032,1.3338127,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-16.764563,1.0000029,10.813117,1]
+    ScriptComponent:
+      ScriptUUID: 18266934061772524094
+      UserPropertyOverrides:
+        - Name: ZombiePrefab
+          Type: 8
+          Value: 9278556515141032553
+          ReferenceKind: Prefab
+  - Entity: 17980995006025193254
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: Spawner(3)
+    RelationshipComponent:
+      Parent: 3228848565545027244
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [14.454523,1.000003,17.43669]
+      Rotation: [0,-0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,14.454523,1.000003,17.43669,1]
     ScriptComponent:
       ScriptUUID: 18266934061772524094
       UserPropertyOverrides:

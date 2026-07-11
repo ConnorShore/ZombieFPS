@@ -3,7 +3,6 @@ local RoundUIControl = {}
 function RoundUIControl:OnCreate(entity)
     self.Entity = entity
     
-    -- Subscribe to the global events!
     EventManager.Subscribe("OnRoundStarted", function(roundNumber)
         self:StartRound(roundNumber)
     end)
@@ -11,13 +10,9 @@ function RoundUIControl:OnCreate(entity)
     EventManager.Subscribe("OnRoundEnded", function(roundNumber)
         self:EndRound()
     end)
-    
-    Log.Info("HUD UI successfully subscribed to Round events.")
 end
 
 function RoundUIControl:StartRound(roundNumber)
-    -- Assuming your engine has a TextComponent you can modify
-    Log.Info("Updating Round Text to: " .. tostring(roundNumber))
     if self.Entity:ContainsComponent("TextComponent") then
         local textComp = self.Entity:GetComponent("TextComponent")
         textComp.Text = tostring(roundNumber)
@@ -28,10 +23,13 @@ function RoundUIControl:StartRound(roundNumber)
 end
 
 function RoundUIControl:EndRound()
+    -- TODO: Animate the round number fading out or something fancy like that instead of just changing the text and color back to white
     if self.Entity:ContainsComponent("TextComponent") then
         local textComp = self.Entity:GetComponent("TextComponent")
         textComp.Color = Vector4f.new(1, 1, 1, 1)
     end
+
+    -- TODO: Play a sound
 end
 
 return RoundUIControl

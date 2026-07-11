@@ -236,10 +236,6 @@ Assets:
     Name: EnemyMaterial
     FilePath: Materials/EnemyMaterial.ebmat
   - Type: Mesh
-    UUID: 16822605104283055229
-    Name: M4_Cube.001_Prim0
-    FilePath: Models/M4_Anim/M4_Cube.001_Prim0.ebmesh
-  - Type: Mesh
     UUID: 5610316799824380095
     Name: DesertEagle_Mesh2_Cube.007_Prim1
     FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Mesh2_Cube.007_Prim1.ebmesh
@@ -247,6 +243,10 @@ Assets:
     UUID: 5985712711574680378
     Name: DesertEagle_Mesh1_Cube_Prim0
     FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Mesh1_Cube_Prim0.ebmesh
+  - Type: Mesh
+    UUID: 16822605104283055229
+    Name: M4_Cube.001_Prim0
+    FilePath: Models/M4_Anim/M4_Cube.001_Prim0.ebmesh
   - Type: Mesh
     UUID: 12443871631894294282
     Name: AmmoPowerup_Cylinder.001_Prim0
