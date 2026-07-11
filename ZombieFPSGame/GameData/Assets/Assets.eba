@@ -191,6 +191,10 @@ Assets:
     UUID: 8058432714386778896
     Name: RoundManager
     FilePath: Scripts/RoundManager.lua
+  - Type: Script
+    UUID: 5986627421746366671
+    Name: SpawnManager
+    FilePath: Scripts/SpawnManager.lua
   - Type: Material
     UUID: 782295293902573577
     Name: DesertEagle_Metal
@@ -204,6 +208,10 @@ Assets:
     Name: GroundMaterial
     FilePath: Materials/GroundMaterial.ebmat
   - Type: Material
+    UUID: 7112033288364404519
+    Name: Tracer_Material
+    FilePath: Materials/Tracer_Material.ebmat
+  - Type: Material
     UUID: 4587007159136363848
     Name: M4_Weapon
     FilePath: Models/M4_Anim/M4_Weapon.ebmat
@@ -211,10 +219,6 @@ Assets:
     UUID: 1868779223986162857
     Name: PowerUpMaterial
     FilePath: Materials/PowerUpMaterial.ebmat
-  - Type: Material
-    UUID: 7112033288364404519
-    Name: Tracer_Material
-    FilePath: Materials/Tracer_Material.ebmat
   - Type: Material
     UUID: 3531595371019758275
     Name: AssaultRifle_Weapon
@@ -232,6 +236,10 @@ Assets:
     Name: EnemyMaterial
     FilePath: Materials/EnemyMaterial.ebmat
   - Type: Mesh
+    UUID: 16822605104283055229
+    Name: M4_Cube.001_Prim0
+    FilePath: Models/M4_Anim/M4_Cube.001_Prim0.ebmesh
+  - Type: Mesh
     UUID: 5610316799824380095
     Name: DesertEagle_Mesh2_Cube.007_Prim1
     FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Mesh2_Cube.007_Prim1.ebmesh
@@ -247,10 +255,6 @@ Assets:
     UUID: 15346656199082862049
     Name: DesertEagle_Mesh0_Circle.001_Prim0
     FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Mesh0_Circle.001_Prim0.ebmesh
-  - Type: Mesh
-    UUID: 16822605104283055229
-    Name: M4_Cube.001_Prim0
-    FilePath: Models/M4_Anim/M4_Cube.001_Prim0.ebmesh
   - Type: Mesh
     UUID: 9147101475226164417
     Name: AssaultRifle_Cube.003_Prim0

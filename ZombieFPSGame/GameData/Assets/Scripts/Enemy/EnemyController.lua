@@ -55,6 +55,9 @@ end
 
 function EnemyController:Die()
     Log.Info("Enemy has died.")
+
+    EventManager.Broadcast("OnEnemyKilled", self.Entity:GetUUID())
+
     -- Remove entity
     Scene.RemoveEntity(self.Entity)
 end
