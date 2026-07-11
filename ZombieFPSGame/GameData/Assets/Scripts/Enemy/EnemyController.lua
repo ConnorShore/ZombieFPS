@@ -1,6 +1,7 @@
 local EnemyController = {}
 
-EnemyController.Health = 100
+EnemyController.BaseHealth = 50
+EnemyController.HealthMultiplierPerRound = 20
 
 function EnemyController:OnCreate(entity)
     self.Entity = entity
@@ -46,6 +47,10 @@ function EnemyController:OnUpdate(entity, delta)
     transform.Rotation.y = targetAngle
 end
 
+function EnemyController:InitializeForRound(roundNum)
+    self.Health = self.BaseHealth + ((roundNum - 1) * self.HealthMultiplierPerRound)
+end
+
 function EnemyController:ApplyDamage(amount)
     self.Health = self.Health - amount
     if self.Health <= 0 then
@@ -54,9 +59,10 @@ function EnemyController:ApplyDamage(amount)
 end
 
 function EnemyController:Die()
-    Log.Info("Enemy has died.")
-    -- Remove entity
+    EventManager.Broadcast("OnEnemyKilled", self.Entity:GetUUID())
     Scene.RemoveEntity(self.Entity)
+
+    -- TODO: Maybe play a death animation or drop loot here
 end
 
 return EnemyController

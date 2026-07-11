@@ -1,63 +1,5 @@
 Scene: Default
 Entities:
-  - Entity: 6753254757056896993
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-      - RigidBodyComponent
-      - CapsuleColliderComponent
-      - StaticMeshComponent
-      - MaterialComponent
-      - ScriptComponent
-      - CharacterControllerComponent
-      - NavigationMeshModifierComponent
-    TagComponent:
-      Tag: Player
-    RelationshipComponent:
-      Parent: 0
-      Children:
-        - 11417141245009400245
-        - 13765157642257386743
-      IsAttachment: 0
-    TransformComponent:
-      Position: [-9.094947e-13,1,5.0267487]
-      Rotation: [0,0,0]
-      Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-9.094947e-13,1,5.0267487,1]
-    RigidBodyComponent:
-      Type: 2
-      Mass: 1
-      GravityEnabled: 1
-    CapsuleColliderComponent:
-      Radius: 0.5
-      Height: 2
-      IsTrigger: 0
-      OffsetPosition: [0,0,0]
-      OffsetRotation: [0,0,0]
-      Category: 1
-      CollisionMask: 1
-      PhysicsMaterialUUID: 0
-      PreviewCollider: 0
-    StaticMeshComponent:
-      MeshUUID: 53
-      Layer: 2
-    MaterialComponent:
-      MaterialUUID: 31
-    ScriptComponent:
-      ScriptUUID: 6068451618412420797
-      UserPropertyOverrides: []
-    CharacterControllerComponent:
-      WalkSpeed: 5
-      JumpForce: 5
-      GravityMultiplier: 1
-      MaxSlopeAngle: 45
-      MaxStepHeight: 0.25
-    NavigationMeshModifierComponent:
-      NavMeshDataHandle: 8017132278425989816
-      ModifierType: 0
-      ApplyToChildren: 1
   - Entity: 11417141245009400245
     ComponentOrder:
       - IDComponent
@@ -119,6 +61,202 @@ Entities:
         - Name: Sensitivity
           Type: 3
           Value: 2
+  - Entity: 3373521055754233367
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: GlobalSystems
+    RelationshipComponent:
+      Parent: 0
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
+    ScriptComponent:
+      ScriptUUID: 5515958197491920100
+      UserPropertyOverrides: []
+  - Entity: 5599888848773738242
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: RoundManager
+    RelationshipComponent:
+      Parent: 0
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
+    ScriptComponent:
+      ScriptUUID: 8058432714386778896
+      UserPropertyOverrides:
+        - Name: SpawnManagerRef
+          Type: 7
+          Value: 3228848565545027244
+          ReferenceKind: Entity
+        - Name: IntermissionTime
+          Type: 3
+          Value: 10
+  - Entity: 3228848565545027244
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: SpawnManager
+    RelationshipComponent:
+      Parent: 0
+      Children:
+        - 6207821035897400818
+        - 16432397012882776458
+        - 1293081826997568793
+        - 17980995006025193254
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
+    ScriptComponent:
+      ScriptUUID: 5986627421746366671
+      UserPropertyOverrides:
+        - Name: MaxConcurrentZombies
+          Type: 2
+          Value: 5
+  - Entity: 6207821035897400818
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: Spawner
+    RelationshipComponent:
+      Parent: 3228848565545027244
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [11.863312,1,-13.071975]
+      Rotation: [0,-0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,11.863312,1,-13.071975,1]
+    ScriptComponent:
+      ScriptUUID: 18266934061772524094
+      UserPropertyOverrides:
+        - Name: ZombiePrefab
+          Type: 8
+          Value: 9278556515141032553
+          ReferenceKind: Prefab
+  - Entity: 6753254757056896993
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RigidBodyComponent
+      - CapsuleColliderComponent
+      - StaticMeshComponent
+      - MaterialComponent
+      - ScriptComponent
+      - CharacterControllerComponent
+      - NavigationMeshModifierComponent
+    TagComponent:
+      Tag: Player
+    RelationshipComponent:
+      Parent: 0
+      Children:
+        - 11417141245009400245
+        - 13765157642257386743
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-9.094947e-13,1,5.0267487]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-9.094947e-13,1,5.0267487,1]
+    RigidBodyComponent:
+      Type: 2
+      Mass: 1
+      GravityEnabled: 1
+    CapsuleColliderComponent:
+      Radius: 0.5
+      Height: 2
+      IsTrigger: 0
+      OffsetPosition: [0,0,0]
+      OffsetRotation: [0,0,0]
+      Category: 1
+      CollisionMask: 1
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 0
+    StaticMeshComponent:
+      MeshUUID: 53
+      Layer: 2
+    MaterialComponent:
+      MaterialUUID: 31
+    ScriptComponent:
+      ScriptUUID: 6068451618412420797
+      UserPropertyOverrides: []
+    CharacterControllerComponent:
+      WalkSpeed: 5
+      JumpForce: 5
+      GravityMultiplier: 1
+      MaxSlopeAngle: 45
+      MaxStepHeight: 0.25
+    NavigationMeshModifierComponent:
+      NavMeshDataHandle: 8017132278425989816
+      ModifierType: 0
+      ApplyToChildren: 1
+  - Entity: 5645678438920164573
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - CanvasComponent
+      - RectTransformComponent
+    TagComponent:
+      Tag: HUD_Canvas
+    RelationshipComponent:
+      Parent: 0
+      Children:
+        - 16155943693343446687
+        - 7122639572906643531
+        - 15941034270328579006
+        - 15578499263848755252
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
+    CanvasComponent:
+      RenderMode: 0
+      SortOrder: 0
+      MatchWidthOrHeight: 0.5
+      PlaneDistance: 1
+      ReferenceResolution: [761,506]
+    RectTransformComponent:
+      AnchoredPosition: [0,0]
+      SizeDelta: [100,100]
+      AnchorMin: [0.5,0.5]
+      AnchorMax: [0.5,0.5]
+      Pivot: [0.5,0.5]
+      Rotation: 0
   - Entity: 4008310533388848912
     ComponentOrder:
       - IDComponent
@@ -249,52 +387,17 @@ Entities:
     ScriptComponent:
       ScriptUUID: 8562544563539838448
       UserPropertyOverrides:
-        - Name: InteractionDistance
-          Type: 3
-          Value: 3
-        - Name: PickupUIRef
-          Type: 7
-          Value: 7122639572906643531
-          ReferenceKind: Entity
         - Name: WeaponHolderRef
           Type: 7
           Value: 230291968303856085
           ReferenceKind: Entity
-  - Entity: 5645678438920164573
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-      - CanvasComponent
-      - RectTransformComponent
-    TagComponent:
-      Tag: HUD_Canvas
-    RelationshipComponent:
-      Parent: 0
-      Children:
-        - 16155943693343446687
-        - 7122639572906643531
-        - 15941034270328579006
-      IsAttachment: 0
-    TransformComponent:
-      Position: [0,0,0]
-      Rotation: [0,0,0]
-      Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
-    CanvasComponent:
-      RenderMode: 0
-      SortOrder: 0
-      MatchWidthOrHeight: 0.5
-      PlaneDistance: 1
-      ReferenceResolution: [761,506]
-    RectTransformComponent:
-      AnchoredPosition: [0,0]
-      SizeDelta: [100,100]
-      AnchorMin: [0.5,0.5]
-      AnchorMax: [0.5,0.5]
-      Pivot: [0.5,0.5]
-      Rotation: 0
+        - Name: PickupUIRef
+          Type: 7
+          Value: 7122639572906643531
+          ReferenceKind: Entity
+        - Name: InteractionDistance
+          Type: 3
+          Value: 3
   - Entity: 8214889738320955675
     ComponentOrder:
       - IDComponent
@@ -313,13 +416,13 @@ Entities:
       Position: [0,0,0]
       Rotation: [0,-0,0]
       Scale: [0.005348166,0.014285714,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,976.18005,29.55,0,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,934.13007,31.55,0,1]
     TextComponent:
       Text: 0 / 0
       FontHandle: 213406294560961755
       Color: [1,1,1,1]
     RectTransformComponent:
-      AnchoredPosition: [-30,-8.2]
+      AnchoredPosition: [-38,-8.2]
       SizeDelta: [1,1]
       AnchorMin: [0.5,0.5]
       AnchorMax: [0.5,0.5]
@@ -387,7 +490,7 @@ Entities:
       Position: [-3.8049998,-2.53,0]
       Rotation: [0,-0,0]
       Scale: [0.01,0.01,1]
-      WorldTransform: [170.24,0,0,0,0,52.7,0,0,0,0,1,0,1006.68005,38.25,0,1]
+      WorldTransform: [144.34,0,0,0,0,52.7,0,0,0,0,1,0,972.63007,40.25,0,1]
     SpriteComponent:
       Color: [0.85714287,0.41748834,0.014238238,1]
       IsBillboard: 0
@@ -400,8 +503,8 @@ Entities:
           Value: 8214889738320955675
           ReferenceKind: Entity
     RectTransformComponent:
-      AnchoredPosition: [-16.2,11.9]
-      SizeDelta: [-29.2,52.7]
+      AnchoredPosition: [-63.199997,13.9]
+      SizeDelta: [-55.1,52.7]
       AnchorMin: [0.82,0]
       AnchorMax: [1,0]
       Pivot: [1,0]
@@ -765,14 +868,14 @@ Entities:
         - Name: RotationSpeed
           Type: 3
           Value: 45
-        - Name: PickupSound
-          Type: 8
-          Value: 4535810649324835630
-          ReferenceKind: AudioClip
         - Name: WeaponHolderRef
           Type: 7
           Value: 230291968303856085
           ReferenceKind: Entity
+        - Name: PickupSound
+          Type: 8
+          Value: 4535810649324835630
+          ReferenceKind: AudioClip
     PrefabComponent:
       PrefabUUID: 3822534466298593180
   - Entity: 14881747670601641762
@@ -1449,561 +1552,6 @@ Entities:
       NavMeshDataHandle: 8017132278425989816
       ModifierType: 0
       ApplyToChildren: 1
-  - Entity: 14785853968562606239
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-      - StaticMeshComponent
-      - MaterialComponent
-      - CharacterControllerComponent
-      - AIPathComponent
-      - AIAgentComponent
-      - RigidBodyComponent
-      - CapsuleColliderComponent
-      - ScriptComponent
-      - PrefabComponent
-    TagComponent:
-      Tag: Enemy
-    RelationshipComponent:
-      Parent: 0
-      Children:
-        - 7210357554957912064
-        - 8750033823247324194
-      IsAttachment: 0
-    TransformComponent:
-      Position: [9.718337,0.999978,-12.649881]
-      Rotation: [0,0,0]
-      Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,9.718337,0.999978,-12.649881,1]
-    RigidBodyComponent:
-      Type: 2
-      Mass: 1
-      GravityEnabled: 1
-    CapsuleColliderComponent:
-      Radius: 0.5
-      Height: 2
-      IsTrigger: 0
-      OffsetPosition: [0,0,0]
-      OffsetRotation: [0,0,0]
-      Category: 8
-      CollisionMask: 5
-      PhysicsMaterialUUID: 0
-      PreviewCollider: 0
-    StaticMeshComponent:
-      MeshUUID: 53
-      Layer: 1
-    MaterialComponent:
-      MaterialUUID: 16908592229540959075
-    ScriptComponent:
-      ScriptUUID: 1702313573474944703
-      UserPropertyOverrides: []
-    PrefabComponent:
-      PrefabUUID: 9278556515141032553
-    CharacterControllerComponent:
-      WalkSpeed: 5
-      JumpForce: 5
-      GravityMultiplier: 1
-      MaxSlopeAngle: 45
-      MaxStepHeight: 0.25
-    AIPathComponent:
-      Waypoints: []
-      Loop: 1
-      Speed: 2.5
-      ArrivalTolerance: 0.1
-    AIAgentComponent:
-      Mode: 1
-      ManualWaypoints: []
-      Loop: 1
-      TargetEntity: 6753254757056896993
-      GridEntity: 36772468915320375
-      RecalculateInterval: 1
-  - Entity: 7210357554957912064
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-      - ScriptComponent
-      - SphereColliderComponent
-      - ParticleEmitterComponent
-    TagComponent:
-      Tag: HeadHitbox
-    RelationshipComponent:
-      Parent: 14785853968562606239
-      Children: []
-      IsAttachment: 0
-    TransformComponent:
-      Position: [0,0.5,0]
-      Rotation: [0,0,0]
-      Scale: [1.01,1.01,1.01]
-      WorldTransform: [1.01,0,0,0,0,1.01,0,0,0,0,1.01,0,9.718337,1.4999781,-12.649881,1]
-    SphereColliderComponent:
-      Radius: 0.5
-      IsTrigger: 0
-      OffsetPosition: [0,0,0]
-      OffsetRotation: [0,0,0]
-      Category: 16
-      CollisionMask: 4
-      PhysicsMaterialUUID: 0
-      PreviewCollider: 1
-    ScriptComponent:
-      ScriptUUID: 1303867917645546364
-      UserPropertyOverrides:
-        - Name: DamageMultiplier
-          Type: 3
-          Value: 2
-        - Name: ImpactSound
-          Type: 8
-          Value: 3462192619930688989
-          ReferenceKind: AudioClip
-    ParticleEmitterComponent:
-      EmissionRate: 200
-      Velocity: [1,1,-3]
-      VelocityVariation: [2,1,-1.5]
-      Drag: 0.5
-      AngularVelocity: 0
-      AngularVelocityVariation: 0.2
-      ColorBegin: [0.5411765,0.07450981,0.07450981,0.8235294]
-      ColorEnd: [0.5411765,0.07450981,0.07450981,0]
-      ScaleBegin: 0.15
-      ScaleEnd: 0.03
-      ScaleVariation: 0.05
-      TextureHandle: 1
-      Lifetime: 0.4
-      LifetimeVariation: 0.1
-      GravityMultiplier: 1
-      AlignWithVelocity: 0
-      StretchFactor: 0
-      IsActive: 0
-  - Entity: 8750033823247324194
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-      - ScriptComponent
-      - ParticleEmitterComponent
-      - CapsuleColliderComponent
-    TagComponent:
-      Tag: BodyHitbox
-    RelationshipComponent:
-      Parent: 14785853968562606239
-      Children: []
-      IsAttachment: 0
-    TransformComponent:
-      Position: [0,-0.1,0]
-      Rotation: [0,0,0]
-      Scale: [1.01,1.01,1.01]
-      WorldTransform: [1.01,0,0,0,0,1.01,0,0,0,0,1.01,0,9.718337,0.899978,-12.649881,1]
-    CapsuleColliderComponent:
-      Radius: 0.45
-      Height: 2
-      IsTrigger: 0
-      OffsetPosition: [0,0,0]
-      OffsetRotation: [0,0,0]
-      Category: 16
-      CollisionMask: 4
-      PhysicsMaterialUUID: 0
-      PreviewCollider: 0
-    ScriptComponent:
-      ScriptUUID: 1303867917645546364
-      UserPropertyOverrides:
-        - Name: DamageMultiplier
-          Type: 3
-          Value: 1
-        - Name: ImpactSound
-          Type: 8
-          Value: 3462192619930688989
-          ReferenceKind: AudioClip
-    ParticleEmitterComponent:
-      EmissionRate: 200
-      Velocity: [1,1,-3]
-      VelocityVariation: [2,1,-1.5]
-      Drag: 0.5
-      AngularVelocity: 0
-      AngularVelocityVariation: 0.2
-      ColorBegin: [0.5411765,0.07450981,0.07450981,0.8235294]
-      ColorEnd: [0.5411765,0.07450981,0.07450981,0]
-      ScaleBegin: 0.15
-      ScaleEnd: 0.03
-      ScaleVariation: 0.05
-      TextureHandle: 1
-      Lifetime: 0.4
-      LifetimeVariation: 0.1
-      GravityMultiplier: 1
-      AlignWithVelocity: 0
-      StretchFactor: 0
-      IsActive: 0
-  - Entity: 2944335139068764550
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-      - StaticMeshComponent
-      - MaterialComponent
-      - ScriptComponent
-      - RigidBodyComponent
-      - CapsuleColliderComponent
-      - CharacterControllerComponent
-      - AIPathComponent
-      - AIAgentComponent
-    TagComponent:
-      Tag: Enemy2
-    RelationshipComponent:
-      Parent: 0
-      Children:
-        - 12092654759284456460
-        - 1185012347786408894
-      IsAttachment: 0
-    TransformComponent:
-      Position: [-7.511932,0.99998534,-7.3457575]
-      Rotation: [0,0,0]
-      Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-7.511932,0.99998534,-7.3457575,1]
-    RigidBodyComponent:
-      Type: 2
-      Mass: 1
-      GravityEnabled: 1
-    CapsuleColliderComponent:
-      Radius: 0.5
-      Height: 2
-      IsTrigger: 0
-      OffsetPosition: [0,0,0]
-      OffsetRotation: [0,0,0]
-      Category: 8
-      CollisionMask: 5
-      PhysicsMaterialUUID: 0
-      PreviewCollider: 0
-    StaticMeshComponent:
-      MeshUUID: 53
-      Layer: 1
-    MaterialComponent:
-      MaterialUUID: 16908592229540959075
-    ScriptComponent:
-      ScriptUUID: 1702313573474944703
-      UserPropertyOverrides: []
-    CharacterControllerComponent:
-      WalkSpeed: 5
-      JumpForce: 5
-      GravityMultiplier: 1
-      MaxSlopeAngle: 45
-      MaxStepHeight: 0.25
-    AIPathComponent:
-      Waypoints: []
-      Loop: 1
-      Speed: 2.5
-      ArrivalTolerance: 0.1
-    AIAgentComponent:
-      Mode: 1
-      ManualWaypoints: []
-      Loop: 1
-      TargetEntity: 6753254757056896993
-      GridEntity: 36772468915320375
-      RecalculateInterval: 1
-  - Entity: 12092654759284456460
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-      - ScriptComponent
-      - SphereColliderComponent
-      - ParticleEmitterComponent
-    TagComponent:
-      Tag: HeadHitbox (Copy)
-    RelationshipComponent:
-      Parent: 2944335139068764550
-      Children: []
-      IsAttachment: 0
-    TransformComponent:
-      Position: [0,0.5,0]
-      Rotation: [0,0,0]
-      Scale: [1.01,1.01,1.01]
-      WorldTransform: [1.01,0,0,0,0,1.01,0,0,0,0,1.01,0,-7.511932,1.4999853,-7.3457575,1]
-    SphereColliderComponent:
-      Radius: 0.5
-      IsTrigger: 0
-      OffsetPosition: [0,0,0]
-      OffsetRotation: [0,0,0]
-      Category: 16
-      CollisionMask: 4
-      PhysicsMaterialUUID: 0
-      PreviewCollider: 1
-    ScriptComponent:
-      ScriptUUID: 1303867917645546364
-      UserPropertyOverrides:
-        - Name: DamageMultiplier
-          Type: 3
-          Value: 2
-        - Name: ImpactSound
-          Type: 8
-          Value: 3462192619930688989
-          ReferenceKind: AudioClip
-    ParticleEmitterComponent:
-      EmissionRate: 200
-      Velocity: [1,1,-3]
-      VelocityVariation: [2,1,-1.5]
-      Drag: 0.5
-      AngularVelocity: 0
-      AngularVelocityVariation: 0.2
-      ColorBegin: [0.5411765,0.07450981,0.07450981,0.8235294]
-      ColorEnd: [0.5411765,0.07450981,0.07450981,0]
-      ScaleBegin: 0.15
-      ScaleEnd: 0.03
-      ScaleVariation: 0.05
-      TextureHandle: 1
-      Lifetime: 0.4
-      LifetimeVariation: 0.1
-      GravityMultiplier: 1
-      AlignWithVelocity: 0
-      StretchFactor: 0
-      IsActive: 0
-  - Entity: 1185012347786408894
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-      - ScriptComponent
-      - CapsuleColliderComponent
-      - ParticleEmitterComponent
-    TagComponent:
-      Tag: BodyHitbox (Copy)
-    RelationshipComponent:
-      Parent: 2944335139068764550
-      Children: []
-      IsAttachment: 0
-    TransformComponent:
-      Position: [0,-0.1,0]
-      Rotation: [0,0,0]
-      Scale: [1.01,1.01,1.01]
-      WorldTransform: [1.01,0,0,0,0,1.01,0,0,0,0,1.01,0,-7.511932,0.8999853,-7.3457575,1]
-    CapsuleColliderComponent:
-      Radius: 0.45
-      Height: 2
-      IsTrigger: 0
-      OffsetPosition: [0,0,0]
-      OffsetRotation: [0,0,0]
-      Category: 16
-      CollisionMask: 4
-      PhysicsMaterialUUID: 0
-      PreviewCollider: 0
-    ScriptComponent:
-      ScriptUUID: 1303867917645546364
-      UserPropertyOverrides:
-        - Name: DamageMultiplier
-          Type: 3
-          Value: 1
-        - Name: ImpactSound
-          Type: 8
-          Value: 3462192619930688989
-          ReferenceKind: AudioClip
-    ParticleEmitterComponent:
-      EmissionRate: 200
-      Velocity: [1,1,-3]
-      VelocityVariation: [2,1,-1.5]
-      Drag: 0.5
-      AngularVelocity: 0
-      AngularVelocityVariation: 0.2
-      ColorBegin: [0.5411765,0.07450981,0.07450981,0.8235294]
-      ColorEnd: [0.5411765,0.07450981,0.07450981,0]
-      ScaleBegin: 0.15
-      ScaleEnd: 0.03
-      ScaleVariation: 0.05
-      TextureHandle: 1
-      Lifetime: 0.4
-      LifetimeVariation: 0.1
-      GravityMultiplier: 1
-      AlignWithVelocity: 0
-      StretchFactor: 0
-      IsActive: 0
-  - Entity: 15757620524635528019
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-      - StaticMeshComponent
-      - MaterialComponent
-      - ScriptComponent
-      - RigidBodyComponent
-      - CapsuleColliderComponent
-      - CharacterControllerComponent
-      - AIPathComponent
-      - AIAgentComponent
-    TagComponent:
-      Tag: Enemy3
-    RelationshipComponent:
-      Parent: 0
-      Children:
-        - 18079465202589344815
-        - 1551710625783358869
-      IsAttachment: 0
-    TransformComponent:
-      Position: [16.914217,0.9999855,10.173971]
-      Rotation: [0,0,0]
-      Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,16.914217,0.9999855,10.173971,1]
-    RigidBodyComponent:
-      Type: 2
-      Mass: 1
-      GravityEnabled: 1
-    CapsuleColliderComponent:
-      Radius: 0.5
-      Height: 2
-      IsTrigger: 0
-      OffsetPosition: [0,0,0]
-      OffsetRotation: [0,0,0]
-      Category: 8
-      CollisionMask: 5
-      PhysicsMaterialUUID: 0
-      PreviewCollider: 0
-    StaticMeshComponent:
-      MeshUUID: 53
-      Layer: 1
-    MaterialComponent:
-      MaterialUUID: 16908592229540959075
-    ScriptComponent:
-      ScriptUUID: 1702313573474944703
-      UserPropertyOverrides: []
-    CharacterControllerComponent:
-      WalkSpeed: 5
-      JumpForce: 5
-      GravityMultiplier: 1
-      MaxSlopeAngle: 45
-      MaxStepHeight: 0.25
-    AIPathComponent:
-      Waypoints: []
-      Loop: 1
-      Speed: 2.5
-      ArrivalTolerance: 0.1
-    AIAgentComponent:
-      Mode: 1
-      ManualWaypoints: []
-      Loop: 1
-      TargetEntity: 6753254757056896993
-      GridEntity: 36772468915320375
-      RecalculateInterval: 1
-  - Entity: 18079465202589344815
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-      - ScriptComponent
-      - SphereColliderComponent
-      - ParticleEmitterComponent
-    TagComponent:
-      Tag: HeadHitbox (Copy) (Copy)
-    RelationshipComponent:
-      Parent: 15757620524635528019
-      Children: []
-      IsAttachment: 0
-    TransformComponent:
-      Position: [0,0.5,0]
-      Rotation: [0,0,0]
-      Scale: [1.01,1.01,1.01]
-      WorldTransform: [1.01,0,0,0,0,1.01,0,0,0,0,1.01,0,16.914217,1.4999855,10.173971,1]
-    SphereColliderComponent:
-      Radius: 0.5
-      IsTrigger: 0
-      OffsetPosition: [0,0,0]
-      OffsetRotation: [0,0,0]
-      Category: 16
-      CollisionMask: 4
-      PhysicsMaterialUUID: 0
-      PreviewCollider: 1
-    ScriptComponent:
-      ScriptUUID: 1303867917645546364
-      UserPropertyOverrides:
-        - Name: DamageMultiplier
-          Type: 3
-          Value: 2
-        - Name: ImpactSound
-          Type: 8
-          Value: 3462192619930688989
-          ReferenceKind: AudioClip
-    ParticleEmitterComponent:
-      EmissionRate: 200
-      Velocity: [1,1,-3]
-      VelocityVariation: [2,1,-1.5]
-      Drag: 0.5
-      AngularVelocity: 0
-      AngularVelocityVariation: 0.2
-      ColorBegin: [0.5411765,0.07450981,0.07450981,0.8235294]
-      ColorEnd: [0.5411765,0.07450981,0.07450981,0]
-      ScaleBegin: 0.15
-      ScaleEnd: 0.03
-      ScaleVariation: 0.05
-      TextureHandle: 1
-      Lifetime: 0.4
-      LifetimeVariation: 0.1
-      GravityMultiplier: 1
-      AlignWithVelocity: 0
-      StretchFactor: 0
-      IsActive: 0
-  - Entity: 1551710625783358869
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-      - ScriptComponent
-      - CapsuleColliderComponent
-      - ParticleEmitterComponent
-    TagComponent:
-      Tag: BodyHitbox (Copy) (Copy)
-    RelationshipComponent:
-      Parent: 15757620524635528019
-      Children: []
-      IsAttachment: 0
-    TransformComponent:
-      Position: [0,-0.1,0]
-      Rotation: [0,0,0]
-      Scale: [1.01,1.01,1.01]
-      WorldTransform: [1.01,0,0,0,0,1.01,0,0,0,0,1.01,0,16.914217,0.8999855,10.173971,1]
-    CapsuleColliderComponent:
-      Radius: 0.45
-      Height: 2
-      IsTrigger: 0
-      OffsetPosition: [0,0,0]
-      OffsetRotation: [0,0,0]
-      Category: 16
-      CollisionMask: 4
-      PhysicsMaterialUUID: 0
-      PreviewCollider: 0
-    ScriptComponent:
-      ScriptUUID: 1303867917645546364
-      UserPropertyOverrides:
-        - Name: DamageMultiplier
-          Type: 3
-          Value: 1
-        - Name: ImpactSound
-          Type: 8
-          Value: 3462192619930688989
-          ReferenceKind: AudioClip
-    ParticleEmitterComponent:
-      EmissionRate: 200
-      Velocity: [1,1,-3]
-      VelocityVariation: [2,1,-1.5]
-      Drag: 0.5
-      AngularVelocity: 0
-      AngularVelocityVariation: 0.2
-      ColorBegin: [0.5411765,0.07450981,0.07450981,0.8235294]
-      ColorEnd: [0.5411765,0.07450981,0.07450981,0]
-      ScaleBegin: 0.15
-      ScaleEnd: 0.03
-      ScaleVariation: 0.05
-      TextureHandle: 1
-      Lifetime: 0.4
-      LifetimeVariation: 0.1
-      GravityMultiplier: 1
-      AlignWithVelocity: 0
-      StretchFactor: 0
-      IsActive: 0
   - Entity: 15257941053103013198
     ComponentOrder:
       - IDComponent
@@ -2011,6 +1559,7 @@ Entities:
       - TransformComponent
       - RelationshipComponent
       - AudioSourceComponent
+      - DisabledComponent
       - EditorIconComponent
     TagComponent:
       Tag: BackgroundMusic
@@ -2023,6 +1572,8 @@ Entities:
       Rotation: [0,0,0]
       Scale: [1,1,1]
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
+    DisabledComponent:
+      IsDisabled: 1
     AudioSourceComponent:
       AudioClipHandle: 4006857010690811945
       PlayOnStart: 1
@@ -2031,6 +1582,115 @@ Entities:
       Spatialized: 0
       MinDistance: 1
       MaxDistance: 5
+  - Entity: 16432397012882776458
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: Spawner(1)
+    RelationshipComponent:
+      Parent: 3228848565545027244
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-18.358238,1,-16.994528]
+      Rotation: [0,-0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-18.358238,1,-16.994528,1]
+    ScriptComponent:
+      ScriptUUID: 18266934061772524094
+      UserPropertyOverrides:
+        - Name: ZombiePrefab
+          Type: 8
+          Value: 9278556515141032553
+          ReferenceKind: Prefab
+  - Entity: 15578499263848755252
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RectTransformComponent
+      - TextComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: RoundUI
+    RelationshipComponent:
+      Parent: 5645678438920164573
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [2,0,0,0,0,2,0,0,0,0,1,0,1059,21,0,1]
+    ScriptComponent:
+      ScriptUUID: 3344681323696305163
+      UserPropertyOverrides: []
+    TextComponent:
+      Text: 1
+      FontHandle: 213406294560961755
+      Color: [1,0,0,1]
+    RectTransformComponent:
+      AnchoredPosition: [505,-273]
+      SizeDelta: [2,2]
+      AnchorMin: [0.5,0.5]
+      AnchorMax: [0.5,0.5]
+      Pivot: [0.5,0.5]
+      Rotation: 0
+  - Entity: 1293081826997568793
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: Spawner(2)
+    RelationshipComponent:
+      Parent: 3228848565545027244
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-16.764563,1.0000029,10.813117]
+      Rotation: [0,-0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-16.764563,1.0000029,10.813117,1]
+    ScriptComponent:
+      ScriptUUID: 18266934061772524094
+      UserPropertyOverrides:
+        - Name: ZombiePrefab
+          Type: 8
+          Value: 9278556515141032553
+          ReferenceKind: Prefab
+  - Entity: 17980995006025193254
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: Spawner(3)
+    RelationshipComponent:
+      Parent: 3228848565545027244
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [14.454523,1.000003,17.43669]
+      Rotation: [0,-0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,14.454523,1.000003,17.43669,1]
+    ScriptComponent:
+      ScriptUUID: 18266934061772524094
+      UserPropertyOverrides:
+        - Name: ZombiePrefab
+          Type: 8
+          Value: 9278556515141032553
+          ReferenceKind: Prefab
 Environment:
   Skybox:
     Enabled: 1
