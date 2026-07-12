@@ -110,6 +110,35 @@ Entities:
         - Name: IntermissionTime
           Type: 3
           Value: 10
+  - Entity: 10710601879491244134
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: RoundAudioManager
+    RelationshipComponent:
+      Parent: 0
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
+    ScriptComponent:
+      ScriptUUID: 11246612645680594128
+      UserPropertyOverrides:
+        - Name: RoundStartSound
+          Type: 8
+          Value: 5305303780640533429
+          ReferenceKind: AudioClip
+        - Name: RoundEndSound
+          Type: 8
+          Value: 373352394328918492
+          ReferenceKind: AudioClip
   - Entity: 3228848565545027244
     ComponentOrder:
       - IDComponent
@@ -386,17 +415,17 @@ Entities:
     ScriptComponent:
       ScriptUUID: 8562544563539838448
       UserPropertyOverrides:
-        - Name: InteractionDistance
-          Type: 3
-          Value: 3
-        - Name: PickupUIRef
-          Type: 7
-          Value: 7122639572906643531
-          ReferenceKind: Entity
         - Name: WeaponHolderRef
           Type: 7
           Value: 230291968303856085
           ReferenceKind: Entity
+        - Name: PickupUIRef
+          Type: 7
+          Value: 7122639572906643531
+          ReferenceKind: Entity
+        - Name: InteractionDistance
+          Type: 3
+          Value: 3
   - Entity: 8214889738320955675
     ComponentOrder:
       - IDComponent
@@ -1552,36 +1581,6 @@ Entities:
       NavMeshDataHandle: 8017132278425989816
       ModifierType: 0
       ApplyToChildren: 1
-  - Entity: 15257941053103013198
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-      - AudioSourceComponent
-      - DisabledComponent
-      - EditorIconComponent
-    TagComponent:
-      Tag: BackgroundMusic
-    RelationshipComponent:
-      Parent: 0
-      Children: []
-      IsAttachment: 0
-    TransformComponent:
-      Position: [0,0,0]
-      Rotation: [0,0,0]
-      Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
-    DisabledComponent:
-      IsDisabled: 1
-    AudioSourceComponent:
-      AudioClipHandle: 4006857010690811945
-      PlayOnStart: 1
-      Volume: 1
-      Looping: 1
-      Spatialized: 0
-      MinDistance: 1
-      MaxDistance: 5
   - Entity: 16432397012882776458
     ComponentOrder:
       - IDComponent

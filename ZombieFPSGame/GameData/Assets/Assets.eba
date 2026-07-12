@@ -1,5 +1,9 @@
 Assets:
   - Type: Texture
+    UUID: 2902344313391760329
+    Name: DesertEagle_DesertEagleDiffuse.png
+    FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_DesertEagleDiffuse.png
+  - Type: Texture
     UUID: 3453372035684411145
     Name: RadialGlow
     FilePath: Textures/Effects/RadialGlow.png
@@ -59,10 +63,6 @@ Assets:
     UUID: 9008232455192275898
     Name: AssaultRifle_ARColor.png
     FilePath: Models/M4/AssaultRifle_ARColor.png
-  - Type: Texture
-    UUID: 2902344313391760329
-    Name: DesertEagle_DesertEagleDiffuse.png
-    FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_DesertEagleDiffuse.png
   - Type: Texture
     UUID: 2037891838812646000
     Name: DesertEagle_ORM_Mat0
@@ -195,14 +195,14 @@ Assets:
     UUID: 5986627421746366671
     Name: SpawnManager
     FilePath: Scripts/SpawnManager.lua
+  - Type: Script
+    UUID: 11246612645680594128
+    Name: RoundAudioManager
+    FilePath: Scripts/RoundAudioManager.lua
   - Type: Material
     UUID: 782295293902573577
     Name: DesertEagle_Metal
     FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Metal.ebmat
-  - Type: Material
-    UUID: 1868779223986162857
-    Name: PowerUpMaterial
-    FilePath: Materials/PowerUpMaterial.ebmat
   - Type: Material
     UUID: 8747674591623748722
     Name: HolographicReticleMat
@@ -211,6 +211,10 @@ Assets:
     UUID: 13734008897576602447
     Name: GroundMaterial
     FilePath: Materials/GroundMaterial.ebmat
+  - Type: Material
+    UUID: 1868779223986162857
+    Name: PowerUpMaterial
+    FilePath: Materials/PowerUpMaterial.ebmat
   - Type: Material
     UUID: 7112033288364404519
     Name: Tracer_Material
@@ -332,6 +336,10 @@ Assets:
     Name: NavMesh_Default_NavigationSurface
     FilePath: NavMeshes/NavMesh_Default_NavigationSurface.ebnav
   - Type: Prefab
+    UUID: 7525331889912364400
+    Name: M4_Pickup
+    FilePath: Prefabs/Weapons/M4_Pickup.ebprefab
+  - Type: Prefab
     UUID: 17919492092461288605
     Name: HolographicSightPickup
     FilePath: Prefabs/HolographicSightPickup.ebprefab
@@ -343,10 +351,6 @@ Assets:
     UUID: 3822534466298593180
     Name: AmmoPowerup
     FilePath: Prefabs/AmmoPowerup.ebprefab
-  - Type: Prefab
-    UUID: 7525331889912364400
-    Name: M4_Pickup
-    FilePath: Prefabs/Weapons/M4_Pickup.ebprefab
   - Type: Prefab
     UUID: 13120009099153965368
     Name: Tracer
@@ -403,6 +407,14 @@ Assets:
     UUID: 4006857010690811945
     Name: Impact_Confirmed
     FilePath: Audio/Impact_Confirmed.mp3
+  - Type: AudioClip
+    UUID: 5305303780640533429
+    Name: RoundStart
+    FilePath: Audio/RoundStart.mp3
+  - Type: AudioClip
+    UUID: 373352394328918492
+    Name: RoundEnd
+    FilePath: Audio/RoundEnd.mp3
   - Type: Scene
     UUID: 397660979313011815
     Name: Default
