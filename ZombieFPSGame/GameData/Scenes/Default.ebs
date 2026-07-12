@@ -237,7 +237,6 @@ Entities:
         - 16155943693343446687
         - 7122639572906643531
         - 15941034270328579006
-        - 15578499263848755252
       IsAttachment: 0
     TransformComponent:
       Position: [0,0,0]
@@ -387,17 +386,17 @@ Entities:
     ScriptComponent:
       ScriptUUID: 8562544563539838448
       UserPropertyOverrides:
-        - Name: WeaponHolderRef
-          Type: 7
-          Value: 230291968303856085
-          ReferenceKind: Entity
+        - Name: InteractionDistance
+          Type: 3
+          Value: 3
         - Name: PickupUIRef
           Type: 7
           Value: 7122639572906643531
           ReferenceKind: Entity
-        - Name: InteractionDistance
-          Type: 3
-          Value: 3
+        - Name: WeaponHolderRef
+          Type: 7
+          Value: 230291968303856085
+          ReferenceKind: Entity
   - Entity: 8214889738320955675
     ComponentOrder:
       - IDComponent
@@ -416,16 +415,16 @@ Entities:
       Position: [0,0,0]
       Rotation: [0,-0,0]
       Scale: [0.005348166,0.014285714,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,934.13007,31.55,0,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,906.66003,38.300003,0,1]
     TextComponent:
       Text: 0 / 0
       FontHandle: 213406294560961755
       Color: [1,1,1,1]
     RectTransformComponent:
-      AnchoredPosition: [-38,-8.2]
+      AnchoredPosition: [9.5,0]
       SizeDelta: [1,1]
-      AnchorMin: [0.5,0.5]
-      AnchorMax: [0.5,0.5]
+      AnchorMin: [0.1,0.4]
+      AnchorMax: [0.1,0.4]
       Pivot: [1,1]
       Rotation: 0
   - Entity: 9090645728019880623
@@ -480,19 +479,20 @@ Entities:
       - ScriptComponent
       - RectTransformComponent
     TagComponent:
-      Tag: AmmoUI
+      Tag: GeneralInfoUI
     RelationshipComponent:
       Parent: 5645678438920164573
       Children:
         - 8214889738320955675
+        - 15891471637122323792
       IsAttachment: 0
     TransformComponent:
       Position: [-3.8049998,-2.53,0]
       Rotation: [0,-0,0]
       Scale: [0.01,0.01,1]
-      WorldTransform: [144.34,0,0,0,0,52.7,0,0,0,0,1,0,972.63007,40.25,0,1]
+      WorldTransform: [222.59998,0,0,0,0,74.5,0,0,0,0,1,0,986.7,46.25,0,1]
     SpriteComponent:
-      Color: [0.85714287,0.41748834,0.014238238,1]
+      Color: [1,0.44186044,0,0.2509804]
       IsBillboard: 0
       LockYAxis: 0
     ScriptComponent:
@@ -503,11 +503,11 @@ Entities:
           Value: 8214889738320955675
           ReferenceKind: Entity
     RectTransformComponent:
-      AnchoredPosition: [-63.199997,13.9]
-      SizeDelta: [-55.1,52.7]
-      AnchorMin: [0.82,0]
-      AnchorMax: [1,0]
-      Pivot: [1,0]
+      AnchoredPosition: [-10,10]
+      SizeDelta: [1,1]
+      AnchorMin: [0.8,0]
+      AnchorMax: [1,0.125]
+      Pivot: [1,1]
       Rotation: 0
   - Entity: 17202988526070122190
     ComponentOrder:
@@ -1607,40 +1607,6 @@ Entities:
           Type: 8
           Value: 9278556515141032553
           ReferenceKind: Prefab
-  - Entity: 15578499263848755252
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-      - RectTransformComponent
-      - TextComponent
-      - ScriptComponent
-    TagComponent:
-      Tag: RoundUI
-    RelationshipComponent:
-      Parent: 5645678438920164573
-      Children: []
-      IsAttachment: 0
-    TransformComponent:
-      Position: [0,0,0]
-      Rotation: [0,0,0]
-      Scale: [1,1,1]
-      WorldTransform: [2,0,0,0,0,2,0,0,0,0,1,0,1059,21,0,1]
-    ScriptComponent:
-      ScriptUUID: 3344681323696305163
-      UserPropertyOverrides: []
-    TextComponent:
-      Text: 1
-      FontHandle: 213406294560961755
-      Color: [1,0,0,1]
-    RectTransformComponent:
-      AnchoredPosition: [505,-273]
-      SizeDelta: [2,2]
-      AnchorMin: [0.5,0.5]
-      AnchorMax: [0.5,0.5]
-      Pivot: [0.5,0.5]
-      Rotation: 0
   - Entity: 1293081826997568793
     ComponentOrder:
       - IDComponent
@@ -1691,6 +1657,40 @@ Entities:
           Type: 8
           Value: 9278556515141032553
           ReferenceKind: Prefab
+  - Entity: 15891471637122323792
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - TextComponent
+      - RectTransformComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: RoundUI
+    RelationshipComponent:
+      Parent: 15941034270328579006
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,-0,0]
+      Scale: [0.005348166,0.014285714,1]
+      WorldTransform: [2,0,0,0,0,2,0,0,0,0,1,0,1041.35,26.625,0,1]
+    ScriptComponent:
+      ScriptUUID: 3344681323696305163
+      UserPropertyOverrides: []
+    TextComponent:
+      Text: 1
+      FontHandle: 213406294560961755
+      Color: [1,1,1,1]
+    RectTransformComponent:
+      AnchoredPosition: [0,0]
+      SizeDelta: [2,2]
+      AnchorMin: [0.75,0.25]
+      AnchorMax: [0.75,0.25]
+      Pivot: [1,1]
+      Rotation: 0
 Environment:
   Skybox:
     Enabled: 1

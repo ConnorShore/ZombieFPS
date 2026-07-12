@@ -200,6 +200,10 @@ Assets:
     Name: DesertEagle_Metal
     FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Metal.ebmat
   - Type: Material
+    UUID: 1868779223986162857
+    Name: PowerUpMaterial
+    FilePath: Materials/PowerUpMaterial.ebmat
+  - Type: Material
     UUID: 8747674591623748722
     Name: HolographicReticleMat
     FilePath: Materials/HolographicReticleMat.ebmat
@@ -215,10 +219,6 @@ Assets:
     UUID: 4587007159136363848
     Name: M4_Weapon
     FilePath: Models/M4_Anim/M4_Weapon.ebmat
-  - Type: Material
-    UUID: 1868779223986162857
-    Name: PowerUpMaterial
-    FilePath: Materials/PowerUpMaterial.ebmat
   - Type: Material
     UUID: 3531595371019758275
     Name: AssaultRifle_Weapon
@@ -332,6 +332,10 @@ Assets:
     Name: NavMesh_Default_NavigationSurface
     FilePath: NavMeshes/NavMesh_Default_NavigationSurface.ebnav
   - Type: Prefab
+    UUID: 17919492092461288605
+    Name: HolographicSightPickup
+    FilePath: Prefabs/HolographicSightPickup.ebprefab
+  - Type: Prefab
     UUID: 13559857553863366497
     Name: ImpactConcrete
     FilePath: Prefabs/ImpactConcrete.ebprefab
@@ -343,10 +347,6 @@ Assets:
     UUID: 7525331889912364400
     Name: M4_Pickup
     FilePath: Prefabs/Weapons/M4_Pickup.ebprefab
-  - Type: Prefab
-    UUID: 17919492092461288605
-    Name: HolographicSightPickup
-    FilePath: Prefabs/HolographicSightPickup.ebprefab
   - Type: Prefab
     UUID: 13120009099153965368
     Name: Tracer
