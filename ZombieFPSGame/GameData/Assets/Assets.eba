@@ -1,12 +1,12 @@
 Assets:
   - Type: Texture
-    UUID: 2902344313391760329
-    Name: DesertEagle_DesertEagleDiffuse.png
-    FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_DesertEagleDiffuse.png
-  - Type: Texture
     UUID: 3453372035684411145
     Name: RadialGlow
     FilePath: Textures/Effects/RadialGlow.png
+  - Type: Texture
+    UUID: 2902344313391760329
+    Name: DesertEagle_DesertEagleDiffuse.png
+    FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_DesertEagleDiffuse.png
   - Type: Texture
     UUID: 18407398070678811137
     Name: DesertEagle_DesertEagleSpecular-DesertEagleRoughness.png
@@ -52,6 +52,10 @@ Assets:
     Name: M4_ORM_Mat0
     FilePath: Models/M4_Anim/M4_ORM_Mat0.png
   - Type: Texture
+    UUID: 2037891838812646000
+    Name: DesertEagle_ORM_Mat0
+    FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_ORM_Mat0.png
+  - Type: Texture
     UUID: 12541227798747992686
     Name: DesertEagle_DesertEagleNormal.png
     FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_DesertEagleNormal.png
@@ -63,10 +67,6 @@ Assets:
     UUID: 9008232455192275898
     Name: AssaultRifle_ARColor.png
     FilePath: Models/M4/AssaultRifle_ARColor.png
-  - Type: Texture
-    UUID: 2037891838812646000
-    Name: DesertEagle_ORM_Mat0
-    FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_ORM_Mat0.png
   - Type: Texture
     UUID: 11044113959953237382
     Name: Zombie_world_war_zombie_specular.png
