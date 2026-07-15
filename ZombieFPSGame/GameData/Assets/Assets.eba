@@ -67,6 +67,18 @@ Assets:
     UUID: 2037891838812646000
     Name: DesertEagle_ORM_Mat0
     FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_ORM_Mat0.png
+  - Type: Texture
+    UUID: 11044113959953237382
+    Name: Zombie_world_war_zombie_specular.png
+    FilePath: Models/Zombie/Zombie_Resources/Zombie_world_war_zombie_specular.png
+  - Type: Texture
+    UUID: 9540991726704474309
+    Name: Zombie_world_war_zombie_normal.png
+    FilePath: Models/Zombie/Zombie_Resources/Zombie_world_war_zombie_normal.png
+  - Type: Texture
+    UUID: 15495496485610532023
+    Name: Zombie_world_war_zombie_diffuse.png
+    FilePath: Models/Zombie/Zombie_Resources/Zombie_world_war_zombie_diffuse.png
   - Type: Shader
     UUID: 3290979914783484062
     Name: HolographicSight
@@ -239,6 +251,10 @@ Assets:
     UUID: 16908592229540959075
     Name: EnemyMaterial
     FilePath: Materials/EnemyMaterial.ebmat
+  - Type: Material
+    UUID: 3184855190549820850
+    Name: Zombie_WorldWar_zombie_material
+    FilePath: Models/Zombie/Zombie_Resources/Zombie_WorldWar_zombie_material.ebmat
   - Type: Mesh
     UUID: 5610316799824380095
     Name: DesertEagle_Mesh2_Cube.007_Prim1
@@ -279,6 +295,10 @@ Assets:
     UUID: 13898711898247753575
     Name: M4_Cube.003_Prim0
     FilePath: Models/M4_Anim/M4_Cube.003_Prim0.ebmesh
+  - Type: Mesh
+    UUID: 6509623147954976681
+    Name: Zombie_Mesh0_WorldWar_zombie_Prim0
+    FilePath: Models/Zombie/Zombie_Resources/Zombie_Mesh0_WorldWar_zombie_Prim0.ebmesh
   - Type: Skeleton
     UUID: 9200567303542518273
     Name: M4
@@ -287,6 +307,10 @@ Assets:
     UUID: 14193014657651256754
     Name: DesertEagle
     FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle.ebskeleton
+  - Type: Skeleton
+    UUID: 11946468697697938328
+    Name: Zombie
+    FilePath: Models/Zombie/Zombie_Resources/Zombie.ebskeleton
   - Type: SkeletonMask
     UUID: 2548850233763151739
     Name: DEagleSlideMask
@@ -295,6 +319,10 @@ Assets:
     UUID: 6612716991326083235
     Name: M4_Reload
     FilePath: Models/M4_Anim/M4_Reload.ebanim
+  - Type: Animation
+    UUID: 9936688561769825438
+    Name: Zombie_Zombie Idle
+    FilePath: Models/Zombie/Zombie_Resources/Zombie_Zombie Idle.ebanim
   - Type: Animation
     UUID: 13210029773156912041
     Name: DesertEagle_Reload
@@ -307,6 +335,14 @@ Assets:
     UUID: 7891003508228372826
     Name: DesertEagle_SlideLock
     FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_SlideLock.ebanim
+  - Type: Animation
+    UUID: 10171445062614256115
+    Name: Zombie_Zombie Attack
+    FilePath: Models/Zombie/Zombie_Resources/Zombie_Zombie Attack.ebanim
+  - Type: Animation
+    UUID: 2713313368883441983
+    Name: Zombie_Zombie Walk
+    FilePath: Models/Zombie/Zombie_Resources/Zombie_Zombie Walk.ebanim
   - Type: AnimationController
     UUID: 17100135789324560666
     Name: M4_ReloadController
@@ -315,10 +351,18 @@ Assets:
     UUID: 16717526163793928394
     Name: DEagleAnimController
     FilePath: Animations/DEagleAnimController.ebcontroller
+  - Type: AnimationController
+    UUID: 9223042378186644548
+    Name: ZombieAnimController
+    FilePath: Animations/ZombieAnimController.ebcontroller
   - Type: Model
     UUID: 5584464271236281027
     Name: DesertEagle
     FilePath: Models/DesertEagle/DesertEagle.ebmodel
+  - Type: Model
+    UUID: 5275369914884323396
+    Name: M4
+    FilePath: Models/M4_Anim/M4.ebmodel
   - Type: Model
     UUID: 78582201594786378
     Name: AssaultRifle
@@ -328,9 +372,9 @@ Assets:
     Name: AmmoPowerup
     FilePath: Models/PowerUps/Ammo/AmmoPowerup.ebmodel
   - Type: Model
-    UUID: 5275369914884323396
-    Name: M4
-    FilePath: Models/M4_Anim/M4.ebmodel
+    UUID: 990086022023498549
+    Name: Zombie
+    FilePath: Models/Zombie/Zombie.ebmodel
   - Type: NavMeshData
     UUID: 8017132278425989816
     Name: NavMesh_Default_NavigationSurface
@@ -375,6 +419,10 @@ Assets:
     UUID: 9278556515141032553
     Name: Enemy
     FilePath: Prefabs/Enemy.ebprefab
+  - Type: Prefab
+    UUID: 17623684755859048438
+    Name: Zombie
+    FilePath: Prefabs/Zombie/Zombie.ebprefab
   - Type: Font
     UUID: 213406294560961755
     Name: Roboto-Regular
@@ -384,13 +432,13 @@ Assets:
     Name: M4_Shot
     FilePath: Audio/M4_Shot.mp3
   - Type: AudioClip
-    UUID: 2869832050986379881
-    Name: EmptyGun
-    FilePath: Audio/EmptyGun.mp3
-  - Type: AudioClip
     UUID: 15776698392225788213
     Name: ReloadStart
     FilePath: Audio/ReloadStart.mp3
+  - Type: AudioClip
+    UUID: 2869832050986379881
+    Name: EmptyGun
+    FilePath: Audio/EmptyGun.mp3
   - Type: AudioClip
     UUID: 8785379131387521162
     Name: ReloadEnd
