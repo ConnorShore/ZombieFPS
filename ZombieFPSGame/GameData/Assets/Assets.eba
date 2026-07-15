@@ -1,12 +1,12 @@
 Assets:
   - Type: Texture
-    UUID: 3453372035684411145
-    Name: RadialGlow
-    FilePath: Textures/Effects/RadialGlow.png
-  - Type: Texture
     UUID: 2902344313391760329
     Name: DesertEagle_DesertEagleDiffuse.png
     FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_DesertEagleDiffuse.png
+  - Type: Texture
+    UUID: 3453372035684411145
+    Name: RadialGlow
+    FilePath: Textures/Effects/RadialGlow.png
   - Type: Texture
     UUID: 18407398070678811137
     Name: DesertEagle_DesertEagleSpecular-DesertEagleRoughness.png
@@ -420,7 +420,7 @@ Assets:
     Name: Enemy
     FilePath: Prefabs/Enemy.ebprefab
   - Type: Prefab
-    UUID: 17623684755859048438
+    UUID: 14541472444346655041
     Name: Zombie
     FilePath: Prefabs/Zombie/Zombie.ebprefab
   - Type: Font
