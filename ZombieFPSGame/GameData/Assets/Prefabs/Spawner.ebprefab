@@ -1,0 +1,28 @@
+Prefab: Spawner
+PrefabEntities:
+  - Entity: 6207821035897400818
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
+      - OutlineComponent
+    TagComponent:
+      Tag: Spawner
+    RelationshipComponent:
+      Parent: 3228848565545027244
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [11.863312,1,-13.071975]
+      Rotation: [0,-0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,11.863312,1,-13.071975,1]
+    ScriptComponent:
+      ScriptUUID: 18266934061772524094
+      UserPropertyOverrides:
+        - Name: ZombiePrefab
+          Type: 8
+          Value: 14541472444346655041
+          ReferenceKind: Prefab

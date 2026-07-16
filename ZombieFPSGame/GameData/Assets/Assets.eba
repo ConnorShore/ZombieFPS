@@ -96,6 +96,10 @@ Assets:
     Name: PowerUpDrop
     FilePath: Scripts/Pickups/PowerUpDrop.lua
   - Type: Script
+    UUID: 13629381204485307944
+    Name: MountBehavior
+    FilePath: Scripts/Weapons/MountBehavior.lua
+  - Type: Script
     UUID: 3366872985723856610
     Name: WeaponRecoil
     FilePath: Scripts/Weapons/WeaponRecoil.lua
@@ -155,10 +159,6 @@ Assets:
     UUID: 5025897937436236093
     Name: MouseLook
     FilePath: Scripts/Player/MouseLook.lua
-  - Type: Script
-    UUID: 13629381204485307944
-    Name: MountBehavior
-    FilePath: Scripts/Weapons/MountBehavior.lua
   - Type: Script
     UUID: 8102167312162542918
     Name: WeaponController
@@ -256,6 +256,10 @@ Assets:
     Name: Zombie_WorldWar_zombie_material
     FilePath: Models/Zombie/Zombie_Resources/Zombie_WorldWar_zombie_material.ebmat
   - Type: Mesh
+    UUID: 6509623147954976681
+    Name: Zombie_Mesh0_WorldWar_zombie_Prim0
+    FilePath: Models/Zombie/Zombie_Resources/Zombie_Mesh0_WorldWar_zombie_Prim0.ebmesh
+  - Type: Mesh
     UUID: 5610316799824380095
     Name: DesertEagle_Mesh2_Cube.007_Prim1
     FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Mesh2_Cube.007_Prim1.ebmesh
@@ -264,13 +268,13 @@ Assets:
     Name: DesertEagle_Mesh1_Cube_Prim0
     FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Mesh1_Cube_Prim0.ebmesh
   - Type: Mesh
-    UUID: 16822605104283055229
-    Name: M4_Cube.001_Prim0
-    FilePath: Models/M4_Anim/M4_Cube.001_Prim0.ebmesh
-  - Type: Mesh
     UUID: 12443871631894294282
     Name: AmmoPowerup_Cylinder.001_Prim0
     FilePath: Models/PowerUps/Ammo/AmmoPowerup_Cylinder.001_Prim0.ebmesh
+  - Type: Mesh
+    UUID: 16822605104283055229
+    Name: M4_Cube.001_Prim0
+    FilePath: Models/M4_Anim/M4_Cube.001_Prim0.ebmesh
   - Type: Mesh
     UUID: 15346656199082862049
     Name: DesertEagle_Mesh0_Circle.001_Prim0
@@ -295,10 +299,6 @@ Assets:
     UUID: 13898711898247753575
     Name: M4_Cube.003_Prim0
     FilePath: Models/M4_Anim/M4_Cube.003_Prim0.ebmesh
-  - Type: Mesh
-    UUID: 6509623147954976681
-    Name: Zombie_Mesh0_WorldWar_zombie_Prim0
-    FilePath: Models/Zombie/Zombie_Resources/Zombie_Mesh0_WorldWar_zombie_Prim0.ebmesh
   - Type: Skeleton
     UUID: 9200567303542518273
     Name: M4
@@ -316,6 +316,10 @@ Assets:
     Name: DEagleSlideMask
     FilePath: SkeletonMasks/DEagleSlideMask.ebmask
   - Type: Animation
+    UUID: 13210029773156912041
+    Name: DesertEagle_Reload
+    FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Reload.ebanim
+  - Type: Animation
     UUID: 6612716991326083235
     Name: M4_Reload
     FilePath: Models/M4_Anim/M4_Reload.ebanim
@@ -323,10 +327,6 @@ Assets:
     UUID: 9936688561769825438
     Name: Zombie_Zombie Idle
     FilePath: Models/Zombie/Zombie_Resources/Zombie_Zombie Idle.ebanim
-  - Type: Animation
-    UUID: 13210029773156912041
-    Name: DesertEagle_Reload
-    FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Reload.ebanim
   - Type: Animation
     UUID: 1061568813566244299
     Name: DesertEagle_Idle
@@ -380,6 +380,10 @@ Assets:
     Name: NavMesh_Default_NavigationSurface
     FilePath: NavMeshes/NavMesh_Default_NavigationSurface.ebnav
   - Type: Prefab
+    UUID: 3822534466298593180
+    Name: AmmoPowerup
+    FilePath: Prefabs/AmmoPowerup.ebprefab
+  - Type: Prefab
     UUID: 7525331889912364400
     Name: M4_Pickup
     FilePath: Prefabs/Weapons/M4_Pickup.ebprefab
@@ -391,10 +395,6 @@ Assets:
     UUID: 13559857553863366497
     Name: ImpactConcrete
     FilePath: Prefabs/ImpactConcrete.ebprefab
-  - Type: Prefab
-    UUID: 3822534466298593180
-    Name: AmmoPowerup
-    FilePath: Prefabs/AmmoPowerup.ebprefab
   - Type: Prefab
     UUID: 13120009099153965368
     Name: Tracer
@@ -423,6 +423,10 @@ Assets:
     UUID: 14541472444346655041
     Name: Zombie
     FilePath: Prefabs/Zombie/Zombie.ebprefab
+  - Type: Prefab
+    UUID: 4357804436516360089
+    Name: Spawner
+    FilePath: Prefabs/Spawner.ebprefab
   - Type: Font
     UUID: 213406294560961755
     Name: Roboto-Regular

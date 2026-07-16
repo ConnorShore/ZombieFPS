@@ -2,9 +2,12 @@ local EnemyController = {}
 
 EnemyController.BaseHealth = 50
 EnemyController.HealthMultiplierPerRound = 20
+EnemyController.TurnSpeed = 90 -- degrees per second
 
 function EnemyController:OnCreate(entity)
     self.Entity = entity
+    self.IsWalking = false
+    self.PreviewRotationRads = 0.0
 end
 
 function EnemyController:OnUpdate(entity, delta)
@@ -43,8 +46,33 @@ function EnemyController:OnUpdate(entity, delta)
     controller:Move(moveVec)
 
     -- Rotate the AI to face the waypoint
-    local targetAngle = math.deg(math.atan(dirX, dirZ)) 
-    transform.Rotation.y = targetAngle
+    local targetAngle = Math.Atan2(dirX, dirZ)
+
+    -- Smoothly rotate towards the target angle
+    local currentAngle = transform.Rotation.y
+    local angleDiff = targetAngle - currentAngle
+    local maxTurn = Math.Radians(self.TurnSpeed * delta)
+    if angleDiff > maxTurn then
+        transform.Rotation.y = currentAngle + maxTurn
+    elseif angleDiff < -maxTurn then
+        transform.Rotation.y = currentAngle - maxTurn
+    else
+        transform.Rotation.y = targetAngle
+    end
+
+    -- Set walking animation if moving, idle if not
+    local animComp = entity:GetComponent("AnimatorComponent")
+    Log.Info("Animator component exists: " .. tostring(animComp ~= nil))
+    local isMoving = Math.Length(controller.MovementVelocity) > 0
+    if isMoving and not self.IsWalking then
+        Log.Info("Enemy started walking")
+        animComp:SetBool("isWalking", true)
+        self.IsWalking = true
+    elseif not isMoving and self.IsWalking then
+        Log.Info("Enemy stopped walking")
+        animComp:SetBool("isWalking", false)
+        self.IsWalking = false
+    end
 end
 
 function EnemyController:InitializeForRound(roundNum)

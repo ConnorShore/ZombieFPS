@@ -139,6 +139,31 @@ Entities:
           Type: 8
           Value: 373352394328918492
           ReferenceKind: AudioClip
+  - Entity: 9978092339450031366
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: Spawner2
+    RelationshipComponent:
+      Parent: 3228848565545027244
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [12.081026,0,12.627694]
+      Rotation: [0,-0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,12.081026,0,12.627694,1]
+    ScriptComponent:
+      ScriptUUID: 18266934061772524094
+      UserPropertyOverrides:
+        - Name: ZombiePrefab
+          Type: 8
+          Value: 14541472444346655041
+          ReferenceKind: Prefab
   - Entity: 3228848565545027244
     ComponentOrder:
       - IDComponent
@@ -152,9 +177,8 @@ Entities:
       Parent: 0
       Children:
         - 6207821035897400818
-        - 16432397012882776458
-        - 1293081826997568793
-        - 17980995006025193254
+        - 9978092339450031366
+        - 5685266394623325010
       IsAttachment: 0
     TransformComponent:
       Position: [0,0,0]
@@ -174,6 +198,7 @@ Entities:
       - TransformComponent
       - RelationshipComponent
       - ScriptComponent
+      - PrefabComponent
     TagComponent:
       Tag: Spawner
     RelationshipComponent:
@@ -190,8 +215,10 @@ Entities:
       UserPropertyOverrides:
         - Name: ZombiePrefab
           Type: 8
-          Value: 9278556515141032553
+          Value: 14541472444346655041
           ReferenceKind: Prefab
+    PrefabComponent:
+      PrefabUUID: 4357804436516360089
   - Entity: 6753254757056896993
     ComponentOrder:
       - IDComponent
@@ -1581,81 +1608,6 @@ Entities:
       NavMeshDataHandle: 8017132278425989816
       ModifierType: 0
       ApplyToChildren: 1
-  - Entity: 16432397012882776458
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-      - ScriptComponent
-    TagComponent:
-      Tag: Spawner(1)
-    RelationshipComponent:
-      Parent: 3228848565545027244
-      Children: []
-      IsAttachment: 0
-    TransformComponent:
-      Position: [-18.358238,1,-16.994528]
-      Rotation: [0,-0,0]
-      Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-18.358238,1,-16.994528,1]
-    ScriptComponent:
-      ScriptUUID: 18266934061772524094
-      UserPropertyOverrides:
-        - Name: ZombiePrefab
-          Type: 8
-          Value: 9278556515141032553
-          ReferenceKind: Prefab
-  - Entity: 1293081826997568793
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-      - ScriptComponent
-    TagComponent:
-      Tag: Spawner(2)
-    RelationshipComponent:
-      Parent: 3228848565545027244
-      Children: []
-      IsAttachment: 0
-    TransformComponent:
-      Position: [-16.764563,1.0000029,10.813117]
-      Rotation: [0,-0,0]
-      Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-16.764563,1.0000029,10.813117,1]
-    ScriptComponent:
-      ScriptUUID: 18266934061772524094
-      UserPropertyOverrides:
-        - Name: ZombiePrefab
-          Type: 8
-          Value: 9278556515141032553
-          ReferenceKind: Prefab
-  - Entity: 17980995006025193254
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-      - ScriptComponent
-    TagComponent:
-      Tag: Spawner(3)
-    RelationshipComponent:
-      Parent: 3228848565545027244
-      Children: []
-      IsAttachment: 0
-    TransformComponent:
-      Position: [14.454523,1.000003,17.43669]
-      Rotation: [0,-0,0]
-      Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,14.454523,1.000003,17.43669,1]
-    ScriptComponent:
-      ScriptUUID: 18266934061772524094
-      UserPropertyOverrides:
-        - Name: ZombiePrefab
-          Type: 8
-          Value: 9278556515141032553
-          ReferenceKind: Prefab
   - Entity: 15891471637122323792
     ComponentOrder:
       - IDComponent
@@ -3095,6 +3047,31 @@ Entities:
       Rotation: [8.136189e-06,-3.1926904e-06,-3.1907314e-06]
       Scale: [1,1.0000001,1]
       WorldTransform: [0.00017453721,-2.6152614e-08,0.009998475,0,-0.009998478,-5.1668536e-10,0.00017453716,0,-4.0551384e-10,-0.010000004,-2.575663e-08,0,-0.941382,1.6730102,-0.16917862,1]
+  - Entity: 5685266394623325010
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: Spawner3
+    RelationshipComponent:
+      Parent: 3228848565545027244
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-13.245792,0,1.4271078]
+      Rotation: [0,-0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-13.245792,0,1.4271078,1]
+    ScriptComponent:
+      ScriptUUID: 18266934061772524094
+      UserPropertyOverrides:
+        - Name: ZombiePrefab
+          Type: 8
+          Value: 14541472444346655041
+          ReferenceKind: Prefab
 Environment:
   Skybox:
     Enabled: 1
