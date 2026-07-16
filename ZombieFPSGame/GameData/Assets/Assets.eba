@@ -92,13 +92,13 @@ Assets:
     Name: RoundUIControl
     FilePath: Scripts/RoundUIControl.lua
   - Type: Script
-    UUID: 5986627421746366671
-    Name: SpawnManager
-    FilePath: Scripts/SpawnManager.lua
-  - Type: Script
     UUID: 15191514471842255900
     Name: PowerUpDrop
     FilePath: Scripts/Pickups/PowerUpDrop.lua
+  - Type: Script
+    UUID: 5986627421746366671
+    Name: SpawnManager
+    FilePath: Scripts/SpawnManager.lua
   - Type: Script
     UUID: 13629381204485307944
     Name: MountBehavior

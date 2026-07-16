@@ -42,7 +42,7 @@ Entities:
       Scale: [1,1,1]
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1.8,4.824887,1]
     CameraComponent:
-      Projection: [0.75789803,0,0,0,0,1.428148,0,0,0,0,-1.00008,-1,0,0,-0.0400016,0]
+      Projection: [0.75789803,0,0,0,0,1.428148,0,0,0,0,-1.00004,-1,0,0,-0.0200004,0]
       Type: 1
       IsActive: 1
       RenderMask: 65533
@@ -53,7 +53,7 @@ Entities:
         FarClip: 1
       PerspectiveProperties:
         FOV: 70
-        NearClip: 0.02
+        NearClip: 0.01
         FarClip: 500
     ScriptComponent:
       ScriptUUID: 5025897937436236093
@@ -312,6 +312,24 @@ Entities:
       AnchorMax: [0.5,0.5]
       Pivot: [0.5,0.5]
       Rotation: 0
+  - Entity: 14881747670601641762
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+    TagComponent:
+      Tag: Pools
+    RelationshipComponent:
+      Parent: 0
+      Children:
+        - 9607599012810285547
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
   - Entity: 4008310533388848912
     ComponentOrder:
       - IDComponent
@@ -934,24 +952,6 @@ Entities:
           ReferenceKind: Entity
     PrefabComponent:
       PrefabUUID: 3822534466298593180
-  - Entity: 14881747670601641762
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-    TagComponent:
-      Tag: Pools
-    RelationshipComponent:
-      Parent: 0
-      Children:
-        - 9607599012810285547
-      IsAttachment: 0
-    TransformComponent:
-      Position: [0,0,0]
-      Rotation: [0,0,0]
-      Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
   - Entity: 9607599012810285547
     ComponentOrder:
       - IDComponent

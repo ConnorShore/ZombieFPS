@@ -19,15 +19,13 @@ PrefabEntities:
     RelationshipComponent:
       Parent: 0
       Children:
-        - 8259334801342345269
-        - 4857137385712710469
         - 1834901733534705291
       IsAttachment: 0
     TransformComponent:
       Position: [0,1.1,0]
       Rotation: [0,-0,0]
-      Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1.1,0,1]
+      Scale: [1.2,1.2,1.2]
+      WorldTransform: [1.2,0,0,0,0,1.2,0,0,0,0,1.2,0,0,1.1,0,1]
     RigidBodyComponent:
       Type: 2
       Mass: 1
@@ -68,6 +66,596 @@ PrefabEntities:
       TargetEntity: 6753254757056896993
       GridEntity: 36772468915320375
       RecalculateInterval: 1
+  - Entity: 1834901733534705291
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+    TagComponent:
+      Tag: Armature
+    RelationshipComponent:
+      Parent: 3704649390569406112
+      Children:
+        - 15352389498241206078
+        - 11880967540153108360
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,-1,0]
+      Rotation: [1.5707965,-0,0]
+      Scale: [0.01,0.010000001,0.010000001]
+      WorldTransform: [0.012,0,0,0,0,-1.4305116e-09,0.012,0,0,-0.012,-1.4305116e-09,0,0,-0.100000024,0,1]
+  - Entity: 15352389498241206078
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - SkinnedMeshComponent
+      - MaterialComponent
+    TagComponent:
+      Tag: WorldWar_zombie
+    RelationshipComponent:
+      Parent: 1834901733534705291
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,-0,0]
+      Scale: [1,1,1]
+      WorldTransform: [0.012,0,0,0,0,-1.4305116e-09,0.012,0,0,-0.012,-1.4305116e-09,0,0,-0.100000024,0,1]
+    SkinnedMeshComponent:
+      MeshUUID: 6509623147954976681
+      RootAnimator: 3704649390569406112
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 3184855190549820850
+  - Entity: 11880967540153108360
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+    TagComponent:
+      Tag: 'mixamorig:Hips'
+    RelationshipComponent:
+      Parent: 1834901733534705291
+      Children:
+        - 6856443722343936743
+        - 9963024811632065641
+        - 5523131443924565201
+        - 4857137385712710469
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-4.064526e-06,-1.2956513,-103.55335]
+      Rotation: [-1.5707961,1.6410345e-06,1.23603e-07]
+      Scale: [1,0.99999994,0.99999994]
+      WorldTransform: [0.012,1.9692415e-08,1.4832391e-09,0,-1.9692413e-08,0.011999998,3.5762784e-09,0,-1.4832331e-09,-3.5762784e-09,0.011999998,0,-4.877431e-08,1.1426402,-0.015547668,1]
+  - Entity: 6856443722343936743
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+    TagComponent:
+      Tag: 'mixamorig:Spine'
+    RelationshipComponent:
+      Parent: 11880967540153108360
+      Children:
+        - 5754945321061272102
+      IsAttachment: 0
+    TransformComponent:
+      Position: [1.2529906e-05,11.384766,-0.35756424]
+      Rotation: [0.0004738599,1.2360267e-07,-1.6410348e-06]
+      Scale: [1,1,1]
+      WorldTransform: [0.012,-1.3343192e-15,1.110223e-15,0,5.9216954e-15,0.011999996,5.689894e-06,0,-8.881784e-16,-5.689894e-06,0.011999996,0,-1.220786e-07,1.2792574,-0.019838396,1]
+  - Entity: 9963024811632065641
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+    TagComponent:
+      Tag: 'mixamorig:LeftUpLeg'
+    RelationshipComponent:
+      Parent: 11880967540153108360
+      Children:
+        - 13746488611887302435
+      IsAttachment: 0
+    TransformComponent:
+      Position: [11.5696,-8.174152,1.1669608]
+      Rotation: [0.008263252,0.0007299699,3.141099]
+      Scale: [1,0.99999976,1.0000001]
+      WorldTransform: [-0.0119999945,5.904437e-06,-8.761117e-06,0,-5.9766285e-06,-0.011999584,9.915423e-05,0,-8.7120325e-06,9.9158584e-05,0.011999587,0,0.13883533,1.0445507,-0.0015441515,1]
+  - Entity: 5523131443924565201
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+    TagComponent:
+      Tag: 'mixamorig:RightUpLeg'
+    RelationshipComponent:
+      Parent: 11880967540153108360
+      Children:
+        - 9785459307530803562
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-11.56961,-8.174137,1.1669637]
+      Rotation: [0.008263679,-0.0007212057,-3.1410482]
+      Scale: [0.99999994,0.99999964,1]
+      WorldTransform: [-0.011999994,-6.5532195e-06,8.65298e-06,0,6.6244984e-06,-0.011999582,9.915937e-05,0,8.598535e-06,9.916413e-05,0.011999586,0,-0.13883519,1.0445504,-0.0015441515,1]
+  - Entity: 4857137385712710469
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
+      - CapsuleColliderComponent
+      - ParticleEmitterComponent
+    TagComponent:
+      Tag: BodyHitbox
+    RelationshipComponent:
+      Parent: 11880967540153108360
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-2.918685e-05,-20.360046,1.2956452]
+      Rotation: [-2.9802337e-07,1.2360279e-07,-1.6410345e-06]
+      Scale: [100,99.99999,99.99999]
+      WorldTransform: [1.2,4.9895114e-13,0,0,4.420381e-14,1.1999997,8.526513e-14,0,2.842171e-14,1.4210855e-13,1.1999997,0,1.7408297e-13,0.8983197,0,1]
+    CapsuleColliderComponent:
+      Radius: 0.27
+      Height: 1.92
+      IsTrigger: 0
+      OffsetPosition: [0,0,0]
+      OffsetRotation: [0,0,0]
+      Category: 16
+      CollisionMask: 4
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 1
+    ScriptComponent:
+      ScriptUUID: 1303867917645546364
+      UserPropertyOverrides:
+        - Name: ImpactSound
+          Type: 8
+          Value: 3462192619930688989
+          ReferenceKind: AudioClip
+    ParticleEmitterComponent:
+      EmissionRate: 200
+      Velocity: [1,1,-3]
+      VelocityVariation: [2,1,-1.5]
+      Drag: 0.5
+      AngularVelocity: 0
+      AngularVelocityVariation: 0.2
+      ColorBegin: [0.5411765,0.07450981,0.07450981,0.8235294]
+      ColorEnd: [0.5411765,0.07450981,0.07450981,0]
+      ScaleBegin: 0.15
+      ScaleEnd: 0.03
+      ScaleVariation: 0.05
+      TextureHandle: 1
+      Lifetime: 0.4
+      LifetimeVariation: 0.1
+      GravityMultiplier: 1
+      AlignWithVelocity: 0
+      StretchFactor: 0
+      IsActive: 0
+  - Entity: 5754945321061272102
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+    TagComponent:
+      Tag: 'mixamorig:Spine1'
+    RelationshipComponent:
+      Parent: 6856443722343936743
+      Children:
+        - 17079075436341065960
+      IsAttachment: 0
+    TransformComponent:
+      Position: [6.687638e-13,11.001187,1.1920929e-07]
+      Rotation: [-0.08526873,-9.890945e-15,-3.6587256e-13]
+      Scale: [1,0.99999994,0.9999998]
+      WorldTransform: [0.012,-5.724845e-15,1.2268326e-15,0,1.036045e-14,0.011956882,-0.0010163157,0,-1.2497145e-16,0.0010163155,0.01195688,0,-1.2207853e-07,1.4112716,-0.019775799,1]
+  - Entity: 13746488611887302435
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+    TagComponent:
+      Tag: 'mixamorig:LeftLeg'
+    RelationshipComponent:
+      Parent: 9963024811632065641
+      Children:
+        - 16084006039425760989
+      IsAttachment: 0
+    TransformComponent:
+      Position: [5.387992e-07,41.253277,-8.195639e-08]
+      Rotation: [-0.0788777,-0.0016466846,-3.5303387e-05]
+      Scale: [0.9999998,0.99999994,0.9999998]
+      WorldTransform: [-0.01199999,6.491336e-06,1.0994916e-05,0,-7.2509206e-06,-0.011970086,-0.0008466728,0,1.0509507e-05,-0.0008466785,0.011970086,0,0.13858877,0.5495285,0.0025462848,1]
+  - Entity: 9785459307530803562
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+    TagComponent:
+      Tag: 'mixamorig:RightLeg'
+    RelationshipComponent:
+      Parent: 5523131443924565201
+      Children:
+        - 12722084945811483531
+      IsAttachment: 0
+    TransformComponent:
+      Position: [5.8230944e-07,41.253216,4.6007335e-07]
+      Rotation: [-0.078878604,0.0013547825,-5.0370447e-05]
+      Scale: [0.99999994,0.9999998,0.99999976]
+      WorldTransform: [-0.0119999945,-6.0831353e-06,-7.6088463e-06,0,6.604827e-06,-0.011970083,-0.0008466777,0,-7.1606755e-06,-0.00084668107,0.011970086,0,-0.13856192,0.5495291,0.0025464972,1]
+  - Entity: 17079075436341065960
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+    TagComponent:
+      Tag: 'mixamorig:Spine2'
+    RelationshipComponent:
+      Parent: 5754945321061272102
+      Children:
+        - 4517047147354000051
+        - 878241802299088201
+        - 254131521270399049
+        - 1310036980163109721
+        - 7469115423299279471
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-8.60343e-13,11.833335,1.4305115e-06]
+      Rotation: [0.084794804,-1.25610785e-14,2.632751e-13]
+      Scale: [1,1.0000002,1]
+      WorldTransform: [0.012,-2.5641299e-15,1.1094533e-15,0,7.151926e-15,0.011999999,2.561137e-09,0,-8.8460225e-16,-2.7939677e-09,0.0119999945,0,-1.2207842e-07,1.5527613,-0.031802185,1]
+  - Entity: 16084006039425760989
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+    TagComponent:
+      Tag: 'mixamorig:LeftFoot'
+    RelationshipComponent:
+      Parent: 13746488611887302435
+      Children:
+        - 11776106208768836481
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-1.1478551e-06,41.474926,3.7625432e-07]
+      Rotation: [0.81328803,-0.01768789,0.009642782]
+      Scale: [1,0.9999999,1]
+      WorldTransform: [-0.011997439,-0.00012389025,0.00021454434,0,0.00023635867,-0.008838123,0.008113666,0,7.424712e-05,0.008116161,0.008838682,0,0.13828805,0.05307004,-0.032569405,1]
+  - Entity: 12722084945811483531
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+    TagComponent:
+      Tag: 'mixamorig:RightFoot'
+    RelationshipComponent:
+      Parent: 9785459307530803562
+      Children:
+        - 5012317690049631096
+      IsAttachment: 0
+    TransformComponent:
+      Position: [1.3349345e-06,41.475002,-3.054738e-07]
+      Rotation: [0.8132825,0.017968114,-0.009586328]
+      Scale: [0.99999994,0.99999994,1]
+      WorldTransform: [-0.01199744,0.00012385941,-0.00021456042,0,-0.00023634672,-0.008838148,0.008113636,0,-7.428062e-05,0.008116132,0.008838707,0,-0.138288,0.05306986,-0.032569468,1]
+  - Entity: 4517047147354000051
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+    TagComponent:
+      Tag: 'mixamorig:Neck'
+    RelationshipComponent:
+      Parent: 17079075436341065960
+      Children:
+        - 6190058023492140879
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-2.6267417e-12,31.653841,-6.2831216]
+      Rotation: [8.7994906e-08,8.182028e-22,-3.281723e-14]
+      Scale: [1,1,1]
+      WorldTransform: [0.012,-2.9579367e-15,1.1094532e-15,0,7.545733e-15,0.011999999,3.6170755e-09,0,-8.846029e-16,-3.8499066e-09,0.0119999945,0,-1.2207822e-07,1.9326074,-0.10719953,1]
+  - Entity: 878241802299088201
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+    TagComponent:
+      Tag: 'mixamorig:LeftShoulder'
+    RelationshipComponent:
+      Parent: 17079075436341065960
+      Children:
+        - 3091686159063900631
+      IsAttachment: 0
+    TransformComponent:
+      Position: [7.841245,26.218035,-8.222702]
+      Rotation: [-1.5707952,1.4904826,2.761032]
+      Scale: [1,1,1]
+      WorldTransform: [-0.00089385227,0.00035760025,-0.011961313,0,0.01110556,-0.0044429367,-0.0009627301,0,-0.0044573043,-0.0111414725,-9.473928e-10,0,0.09409482,1.8673778,-0.13047451,1]
+  - Entity: 254131521270399049
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+    TagComponent:
+      Tag: 'mixamorig:RightShoulder'
+    RelationshipComponent:
+      Parent: 17079075436341065960
+      Children:
+        - 4450954367655833259
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-7.8412504,26.217867,-8.222693]
+      Rotation: [-1.570796,-1.4904819,-2.7610304]
+      Scale: [1.0000001,1.0000001,1.0000001]
+      WorldTransform: [-0.00089386094,-0.00035760566,0.011961315,0,-0.011105558,-0.0044429456,-0.0009627398,0,0.0044573145,-0.011141472,-2.3779028e-09,0,-0.094095126,1.8673757,-0.13047439,1]
+  - Entity: 1310036980163109721
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+    TagComponent:
+      Tag: 'mixamorig:BackRope1'
+    RelationshipComponent:
+      Parent: 17079075436341065960
+      Children:
+        - 910872294203915451
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-19.003628,11.019961,-21.992516]
+      Rotation: [0.1214421,1.4988373e-07,-3.1415927]
+      Scale: [1.0000002,1.0000001,1.0000042]
+      WorldTransform: [-0.012000002,1.0490765e-09,-1.7986054e-09,0,-1.259244e-09,-0.011911619,0.0014537227,0,-1.6582763e-09,0.001453729,0.011911663,0,-0.22804366,1.6850009,-0.2957122,1]
+  - Entity: 7469115423299279471
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+    TagComponent:
+      Tag: 'mixamorig:FrontRope1'
+    RelationshipComponent:
+      Parent: 17079075436341065960
+      Children:
+        - 14537091326744168307
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-1.2999899,6.593916,16.769022]
+      Rotation: [3.1415927,1.509958e-07,1.1576209e-21]
+      Scale: [1,1,1]
+      WorldTransform: [0.012,-2.1422524e-15,-1.8119477e-09,0,-7.310331e-15,-0.011999999,-3.61021e-09,0,-1.8119488e-09,3.843041e-09,-0.0119999945,0,-0.015600001,1.6318883,0.169426,1]
+  - Entity: 11776106208768836481
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+    TagComponent:
+      Tag: 'mixamorig:LeftToeBase'
+    RelationshipComponent:
+      Parent: 16084006039425760989
+      Children:
+        - 14884392997209990914
+      IsAttachment: 0
+    TransformComponent:
+      Position: [2.1779852e-07,17.300005,-1.0617077e-07]
+      Rotation: [0.82316345,-0.10492077,0.08283247]
+      Scale: [0.99999976,0.9999997,0.9999998]
+      WorldTransform: [-0.0118633285,-1.9441359e-08,0.0018059085,0,0.0018059083,2.9844232e-06,0.011863327,0,-4.684298e-07,0.011999991,-2.947636e-06,0,0.14237705,-0.099829525,0.10779706,1]
+  - Entity: 5012317690049631096
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+    TagComponent:
+      Tag: 'mixamorig:RightToeBase'
+    RelationshipComponent:
+      Parent: 12722084945811483531
+      Children:
+        - 9715330968039275274
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-3.7965947e-08,17.300007,4.34462e-06]
+      Rotation: [0.82315624,0.104922876,-0.08283279]
+      Scale: [1,1.0000001,0.99999994]
+      WorldTransform: [-0.011863327,-2.013985e-08,-0.0018059459,0,-0.0018059467,2.8572977e-06,0.011863323,0,4.098365e-07,0.01199999,-2.825167e-06,0,-0.14237681,-0.099830136,0.107796535,1]
+  - Entity: 6190058023492140879
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+    TagComponent:
+      Tag: 'mixamorig:Head'
+    RelationshipComponent:
+      Parent: 4517047147354000051
+      Children:
+        - 11967662410386268260
+        - 18259008516646686441
+        - 1808473579431087803
+        - 8259334801342345269
+      IsAttachment: 0
+    TransformComponent:
+      Position: [9.0949345e-13,15.916,3.311094]
+      Rotation: [-3.5024293e-08,-4.3665275e-25,7.370966e-21]
+      Scale: [1,1,1]
+      WorldTransform: [0.012,-2.9579367e-15,1.1094532e-15,0,7.545733e-15,0.011999999,3.1967842e-09,0,-8.846026e-16,-3.429615e-09,0.0119999945,0,-1.2207809e-07,2.1235993,-0.06746636,1]
+  - Entity: 3091686159063900631
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+    TagComponent:
+      Tag: 'mixamorig:LeftArm'
+    RelationshipComponent:
+      Parent: 878241802299088201
+      Children:
+        - 9876620947778610187
+      IsAttachment: 0
+    TransformComponent:
+      Position: [9.536743e-07,17.075169,-1.5780473e-05]
+      Rotation: [-0.3805611,8.568168e-08,0.080314115]
+      Scale: [1,1,1.0000001]
+      WorldTransform: [3.9866332e-09,1.4681127e-09,-0.011999994,0,0.012,-7.916242e-09,3.436907e-09,0,-7.450581e-09,-0.012,-6.758862e-10,0,0.2837242,1.791514,-0.14691329,1]
+  - Entity: 4450954367655833259
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+    TagComponent:
+      Tag: 'mixamorig:RightArm'
+    RelationshipComponent:
+      Parent: 254131521270399049
+      Children:
+        - 6245711060397894912
+      IsAttachment: 0
+    TransformComponent:
+      Position: [2.3841858e-07,17.075165,-1.1311087e-05]
+      Rotation: [-0.3805632,-3.4086406e-07,-0.08031391]
+      Scale: [0.9999999,0.99999994,1]
+      WorldTransform: [-5.8730345e-09,-9.880427e-09,0.011999995,0,-0.012000002,8.381903e-09,-5.8688325e-09,0,-8.381903e-09,-0.012000002,-9.309112e-09,0,-0.2837244,1.7915118,-0.14691332,1]
+  - Entity: 910872294203915451
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+    TagComponent:
+      Tag: 'mixamorig:BackRope2'
+    RelationshipComponent:
+      Parent: 1310036980163109721
+      Children:
+        - 15167073467332244488
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-9.3477365e-07,14.875102,3.3462943e-06]
+      Rotation: [1.4156103e-07,-6.357362e-08,-2.1760385e-14]
+      Scale: [1,1,1.0000001]
+      WorldTransform: [-0.012000002,1.1414956e-09,-1.0413378e-09,0,-1.2592444e-09,-0.011911619,0.0014537243,0,-8.9539265e-10,0.0014537307,0.011911665,0,-0.22804368,1.5078144,-0.27408788,1]
+  - Entity: 14537091326744168307
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+    TagComponent:
+      Tag: 'mixamorig:FrontRope2'
+    RelationshipComponent:
+      Parent: 7469115423299279471
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-1.0532011e-07,11.583986,3.8258815e-07]
+      Rotation: [-2.2722347e-08,6.3573005e-08,3.4803676e-14]
+      Scale: [1,1,1]
+      WorldTransform: [0.012,-2.8042101e-15,-1.0490719e-09,0,-7.704138e-15,-0.011999999,-3.3375418e-09,0,-1.0490728e-09,3.5703729e-09,-0.0119999945,0,-0.015600002,1.4928805,0.16942595,1]
+  - Entity: 14884392997209990914
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+    TagComponent:
+      Tag: 'mixamorig:LeftToe_End'
+    RelationshipComponent:
+      Parent: 11776106208768836481
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [4.469431e-07,14.758463,-8.2340557e-07]
+      Rotation: [-9.9187915e-08,9.609285e-08,-4.4713655e-08]
+      Scale: [0.99999994,0.99999994,0.9999999]
+      WorldTransform: [-0.011863328,-2.0594603e-08,0.0018059078,0,0.0018059076,2.9832327e-06,0.011863326,0,-4.6939059e-07,0.011999989,-2.9462853e-06,0,0.16902947,-0.09978549,0.28288153,1]
+  - Entity: 9715330968039275274
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+    TagComponent:
+      Tag: 'mixamorig:RightToe_End'
+    RelationshipComponent:
+      Parent: 5012317690049631096
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [6.852305e-07,14.757997,-4.2046304e-07]
+      Rotation: [1.2810218e-09,-9.666405e-08,2.9812917e-08]
+      Scale: [1,0.9999999,1]
+      WorldTransform: [-0.011863327,-1.8979797e-08,-0.0018059455,0,-0.0018059461,2.857313e-06,0.011863321,0,4.1098556e-07,0.01199999,-2.8250076e-06,0,-0.16902897,-0.09978797,0.28287542,1]
+  - Entity: 11967662410386268260
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+    TagComponent:
+      Tag: 'mixamorig:HeadTop_End'
+    RelationshipComponent:
+      Parent: 6190058023492140879
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [2.4225142e-19,18.714493,7.5086374]
+      Rotation: [-3.5527137e-15,8.871598e-25,-2.2855804e-21]
+      Scale: [1,1,1]
+      WorldTransform: [0.012,-2.9579367e-15,1.1094532e-15,0,7.545733e-15,0.011999999,3.1967842e-09,0,-8.846026e-16,-3.429615e-09,0.0119999945,0,-1.2207796e-07,2.3481731,0.022637308,1]
+  - Entity: 18259008516646686441
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+    TagComponent:
+      Tag: 'mixamorig:LeftEye'
+    RelationshipComponent:
+      Parent: 6190058023492140879
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [3.6850412,2.966232,9.1938]
+      Rotation: [-0.009965206,1.231043e-23,-8.4495995e-22]
+      Scale: [1,0.99999994,1]
+      WorldTransform: [0.012,-2.9579367e-15,1.1094532e-15,0,7.554173e-15,0.011999402,-0.00011957723,0,-8.0936513e-16,0.00011957705,0.0119993985,0,0.044220373,2.159194,0.042859197,1]
+  - Entity: 1808473579431087803
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+    TagComponent:
+      Tag: 'mixamorig:RightEye'
+    RelationshipComponent:
+      Parent: 6190058023492140879
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-3.68504,2.9660337,9.193796]
+      Rotation: [0.3815582,-2.4509704e-22,-9.237252e-22]
+      Scale: [1,1,1]
+      WorldTransform: [0.012,-2.9579367e-15,1.1094532e-15,0,6.673689e-15,0.011137025,0.0044684056,0,-3.6307695e-15,-0.004468408,0.011137021,0,-0.044220604,2.1591916,0.042859145,1]
   - Entity: 8259334801342345269
     ComponentOrder:
       - IDComponent
@@ -80,14 +668,14 @@ PrefabEntities:
     TagComponent:
       Tag: HeadHitbox
     RelationshipComponent:
-      Parent: 3704649390569406112
+      Parent: 6190058023492140879
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [0,0.9160365,0]
-      Rotation: [0,0,0]
-      Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,2.0160365,0,1]
+      Position: [1.0173495e-05,18.564972,5.6226826]
+      Rotation: [-2.9162203e-07,9.4166855e-14,4.968683e-13]
+      Scale: [100,99.99998,100.000015]
+      WorldTransform: [1.2,3.0044828e-13,-2.0546986e-15,0,1.5833133e-13,1.1999997,-3.026784e-08,0,2.4540015e-14,6.9849193e-09,1.1999997,0,3.99325e-12,2.3463788,5.8561563e-06,1]
     SphereColliderComponent:
       Radius: 0.17
       IsTrigger: 0
@@ -126,594 +714,6 @@ PrefabEntities:
       AlignWithVelocity: 0
       StretchFactor: 0
       IsActive: 0
-  - Entity: 4857137385712710469
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-      - ScriptComponent
-      - CapsuleColliderComponent
-      - ParticleEmitterComponent
-    TagComponent:
-      Tag: BodyHitbox
-    RelationshipComponent:
-      Parent: 3704649390569406112
-      Children: []
-      IsAttachment: 0
-    TransformComponent:
-      Position: [0,-0.16806686,0]
-      Rotation: [0,0,0]
-      Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0.93193316,0,1]
-    CapsuleColliderComponent:
-      Radius: 0.27
-      Height: 1.92
-      IsTrigger: 0
-      OffsetPosition: [0,0,0]
-      OffsetRotation: [0,0,0]
-      Category: 16
-      CollisionMask: 4
-      PhysicsMaterialUUID: 0
-      PreviewCollider: 1
-    ScriptComponent:
-      ScriptUUID: 1303867917645546364
-      UserPropertyOverrides:
-        - Name: ImpactSound
-          Type: 8
-          Value: 3462192619930688989
-          ReferenceKind: AudioClip
-    ParticleEmitterComponent:
-      EmissionRate: 200
-      Velocity: [1,1,-3]
-      VelocityVariation: [2,1,-1.5]
-      Drag: 0.5
-      AngularVelocity: 0
-      AngularVelocityVariation: 0.2
-      ColorBegin: [0.5411765,0.07450981,0.07450981,0.8235294]
-      ColorEnd: [0.5411765,0.07450981,0.07450981,0]
-      ScaleBegin: 0.15
-      ScaleEnd: 0.03
-      ScaleVariation: 0.05
-      TextureHandle: 1
-      Lifetime: 0.4
-      LifetimeVariation: 0.1
-      GravityMultiplier: 1
-      AlignWithVelocity: 0
-      StretchFactor: 0
-      IsActive: 0
-  - Entity: 1834901733534705291
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-    TagComponent:
-      Tag: Armature
-    RelationshipComponent:
-      Parent: 3704649390569406112
-      Children:
-        - 15352389498241206078
-        - 11880967540153108360
-      IsAttachment: 0
-    TransformComponent:
-      Position: [0,-1,0]
-      Rotation: [1.5707965,-0,0]
-      Scale: [0.01,0.010000001,0.010000001]
-      WorldTransform: [0.01,0,0,0,0,-1.192093e-09,0.01,0,0,-0.01,-1.192093e-09,0,0,0.100000024,0,1]
-  - Entity: 15352389498241206078
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-      - SkinnedMeshComponent
-      - MaterialComponent
-    TagComponent:
-      Tag: WorldWar_zombie
-    RelationshipComponent:
-      Parent: 1834901733534705291
-      Children: []
-      IsAttachment: 0
-    TransformComponent:
-      Position: [0,0,0]
-      Rotation: [0,-0,0]
-      Scale: [1,1,1]
-      WorldTransform: [0.01,0,0,0,0,-1.192093e-09,0.01,0,0,-0.01,-1.192093e-09,0,0,0.100000024,0,1]
-    SkinnedMeshComponent:
-      MeshUUID: 6509623147954976681
-      RootAnimator: 3704649390569406112
-      Layer: 1
-    MaterialComponent:
-      MaterialUUID: 3184855190549820850
-  - Entity: 11880967540153108360
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-    TagComponent:
-      Tag: 'mixamorig:Hips'
-    RelationshipComponent:
-      Parent: 1834901733534705291
-      Children:
-        - 6856443722343936743
-        - 9963024811632065641
-        - 5523131443924565201
-      IsAttachment: 0
-    TransformComponent:
-      Position: [-4.064526e-06,-1.2956513,-103.55335]
-      Rotation: [-1.5707961,1.6410345e-06,1.23603e-07]
-      Scale: [1,0.99999994,0.99999994]
-      WorldTransform: [0.01,1.6410345e-08,1.2360326e-09,0,-1.6410343e-08,0.009999999,2.980232e-09,0,-1.2360276e-09,-2.980232e-09,0.009999999,0,-4.0645258e-08,1.1355336,-0.012956389,1]
-  - Entity: 6856443722343936743
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-    TagComponent:
-      Tag: 'mixamorig:Spine'
-    RelationshipComponent:
-      Parent: 11880967540153108360
-      Children:
-        - 5754945321061272102
-      IsAttachment: 0
-    TransformComponent:
-      Position: [1.2529906e-05,11.384766,-0.35756424]
-      Rotation: [0.0004738599,1.2360267e-07,-1.6410348e-06]
-      Scale: [1,1,1]
-      WorldTransform: [0.01,-1.4079922e-15,9.992007e-16,0,5.8229246e-15,0.009999998,4.741579e-06,0,-8.881784e-16,-4.741579e-06,0.009999998,0,-1.0173217e-07,1.2493812,-0.016531996,1]
-  - Entity: 9963024811632065641
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-    TagComponent:
-      Tag: 'mixamorig:LeftUpLeg'
-    RelationshipComponent:
-      Parent: 11880967540153108360
-      Children:
-        - 13746488611887302435
-      IsAttachment: 0
-    TransformComponent:
-      Position: [11.5696,-8.174152,1.1669608]
-      Rotation: [0.008263252,0.0007299699,3.141099]
-      Scale: [1,0.99999976,1.0000001]
-      WorldTransform: [-0.009999995,4.920364e-06,-7.3009314e-06,0,-4.9805235e-06,-0.009999653,8.2628525e-05,0,-7.260026e-06,8.2632156e-05,0.009999656,0,0.115696095,1.0537922,-0.0012867926,1]
-  - Entity: 5523131443924565201
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-    TagComponent:
-      Tag: 'mixamorig:RightUpLeg'
-    RelationshipComponent:
-      Parent: 11880967540153108360
-      Children:
-        - 9785459307530803562
-      IsAttachment: 0
-    TransformComponent:
-      Position: [-11.56961,-8.174137,1.1669637]
-      Rotation: [0.008263679,-0.0007212057,-3.1410482]
-      Scale: [0.99999994,0.99999964,1]
-      WorldTransform: [-0.009999994,-5.4610164e-06,7.210817e-06,0,5.520415e-06,-0.009999652,8.263281e-05,0,7.1654454e-06,8.2636776e-05,0.009999655,0,-0.115696,1.053792,-0.0012867926,1]
-  - Entity: 5754945321061272102
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-    TagComponent:
-      Tag: 'mixamorig:Spine1'
-    RelationshipComponent:
-      Parent: 6856443722343936743
-      Children:
-        - 17079075436341065960
-      IsAttachment: 0
-    TransformComponent:
-      Position: [6.687638e-13,11.001187,1.1920929e-07]
-      Rotation: [-0.08526873,-9.890945e-15,-3.6587256e-13]
-      Scale: [1,0.99999994,0.9999998]
-      WorldTransform: [0.01,-5.0667643e-15,1.0963753e-15,0,9.531266e-15,0.009964069,-0.00084692973,0,-1.759927e-16,0.0008469296,0.009964068,0,-1.017321e-07,1.359393,-0.016479833,1]
-  - Entity: 13746488611887302435
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-    TagComponent:
-      Tag: 'mixamorig:LeftLeg'
-    RelationshipComponent:
-      Parent: 9963024811632065641
-      Children:
-        - 16084006039425760989
-      IsAttachment: 0
-    TransformComponent:
-      Position: [5.387992e-07,41.253277,-8.195639e-08]
-      Rotation: [-0.0788777,-0.0016466846,-3.5303387e-05]
-      Scale: [0.9999998,0.99999994,0.9999998]
-      WorldTransform: [-0.009999991,5.4094467e-06,9.1624315e-06,0,-6.0424327e-06,-0.009975072,-0.00070556067,0,8.757923e-06,-0.00070556544,0.009975073,0,0.11549063,0.64127374,0.002121904,1]
-  - Entity: 9785459307530803562
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-    TagComponent:
-      Tag: 'mixamorig:RightLeg'
-    RelationshipComponent:
-      Parent: 5523131443924565201
-      Children:
-        - 12722084945811483531
-      IsAttachment: 0
-    TransformComponent:
-      Position: [5.8230944e-07,41.253216,4.6007335e-07]
-      Rotation: [-0.078878604,0.0013547825,-5.0370447e-05]
-      Scale: [0.99999994,0.9999998,0.99999976]
-      WorldTransform: [-0.009999994,-5.0692797e-06,-6.340705e-06,0,5.5040223e-06,-0.009975071,-0.0007055648,0,-5.9672298e-06,-0.00070556765,0.009975073,0,-0.11546827,0.6412742,0.0021220814,1]
-  - Entity: 17079075436341065960
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-    TagComponent:
-      Tag: 'mixamorig:Spine2'
-    RelationshipComponent:
-      Parent: 5754945321061272102
-      Children:
-        - 4517047147354000051
-        - 878241802299088201
-        - 254131521270399049
-        - 1310036980163109721
-        - 7469115423299279471
-      IsAttachment: 0
-    TransformComponent:
-      Position: [-8.60343e-13,11.833335,1.4305115e-06]
-      Rotation: [0.084794804,-1.25610785e-14,2.632751e-13]
-      Scale: [1,1.0000002,1]
-      WorldTransform: [0.01,-2.432835e-15,9.985592e-16,0,6.8481877e-15,0.010000002,2.3283064e-09,0,-8.8477737e-16,-2.4447218e-09,0.009999998,0,-1.0173199e-07,1.4773011,-0.026501823,1]
-  - Entity: 16084006039425760989
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-    TagComponent:
-      Tag: 'mixamorig:LeftFoot'
-    RelationshipComponent:
-      Parent: 13746488611887302435
-      Children:
-        - 11776106208768836481
-      IsAttachment: 0
-    TransformComponent:
-      Position: [-1.1478551e-06,41.474926,3.7625432e-07]
-      Rotation: [0.81328803,-0.01768789,0.009642782]
-      Scale: [1,0.9999999,1]
-      WorldTransform: [-0.009997866,-0.00010324187,0.00017878698,0,0.00019696557,-0.0073651024,0.00676139,0,6.18726e-05,0.0067634685,0.00736557,0,0.11524003,0.22755837,-0.027141169,1]
-  - Entity: 12722084945811483531
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-    TagComponent:
-      Tag: 'mixamorig:RightFoot'
-    RelationshipComponent:
-      Parent: 9785459307530803562
-      Children:
-        - 5012317690049631096
-      IsAttachment: 0
-    TransformComponent:
-      Position: [1.3349345e-06,41.475002,-3.054738e-07]
-      Rotation: [0.8132825,0.017968114,-0.009586328]
-      Scale: [0.99999994,0.99999994,1]
-      WorldTransform: [-0.009997866,0.000103216196,-0.00017880039,0,-0.00019695556,-0.0073651248,0.0067613637,0,-6.190051e-05,0.0067634434,0.00736559,0,-0.11524001,0.2275581,-0.027141225,1]
-  - Entity: 4517047147354000051
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-    TagComponent:
-      Tag: 'mixamorig:Neck'
-    RelationshipComponent:
-      Parent: 17079075436341065960
-      Children:
-        - 6190058023492140879
-      IsAttachment: 0
-    TransformComponent:
-      Position: [-2.6267417e-12,31.653841,-6.2831216]
-      Rotation: [8.7994906e-08,8.182028e-22,-3.281723e-14]
-      Scale: [1,1,1]
-      WorldTransform: [0.01,-2.7610072e-15,9.985591e-16,0,7.17636e-15,0.010000002,3.2082554e-09,0,-8.84778e-16,-3.324671e-09,0.009999998,0,-1.0173179e-07,1.7938396,-0.08933295,1]
-  - Entity: 878241802299088201
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-    TagComponent:
-      Tag: 'mixamorig:LeftShoulder'
-    RelationshipComponent:
-      Parent: 17079075436341065960
-      Children:
-        - 3091686159063900631
-      IsAttachment: 0
-    TransformComponent:
-      Position: [7.841245,26.218035,-8.222702]
-      Rotation: [-1.5707952,1.4904826,2.761032]
-      Scale: [1,1,1]
-      WorldTransform: [-0.00074487686,0.00029800038,-0.009967763,0,0.0092546325,-0.0037024477,-0.0008022754,0,-0.0037144201,-0.009284562,-9.696381e-10,0,0.07841235,1.7394816,-0.10872877,1]
-  - Entity: 254131521270399049
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-    TagComponent:
-      Tag: 'mixamorig:RightShoulder'
-    RelationshipComponent:
-      Parent: 17079075436341065960
-      Children:
-        - 4450954367655833259
-      IsAttachment: 0
-    TransformComponent:
-      Position: [-7.8412504,26.217867,-8.222693]
-      Rotation: [-1.570796,-1.4904819,-2.7610304]
-      Scale: [1.0000001,1.0000001,1.0000001]
-      WorldTransform: [-0.0007448841,-0.0002980049,0.009967765,0,-0.009254632,-0.0037024552,-0.00080228347,0,0.0037144285,-0.0092845615,-2.1617297e-09,0,-0.07841261,1.7394799,-0.10872868,1]
-  - Entity: 1310036980163109721
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-    TagComponent:
-      Tag: 'mixamorig:BackRope1'
-    RelationshipComponent:
-      Parent: 17079075436341065960
-      Children:
-        - 910872294203915451
-      IsAttachment: 0
-    TransformComponent:
-      Position: [-19.003628,11.019961,-21.992516]
-      Rotation: [0.1214421,1.4988373e-07,-3.1415927]
-      Scale: [1.0000002,1.0000001,1.0000042]
-      WorldTransform: [-0.010000001,8.7423097e-10,-1.4988382e-09,0,-1.0493709e-09,-0.009926352,0.0012114358,0,-1.381897e-09,0.001211441,0.009926389,0,-0.19003637,1.5875008,-0.2464269,1]
-  - Entity: 7469115423299279471
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-    TagComponent:
-      Tag: 'mixamorig:FrontRope1'
-    RelationshipComponent:
-      Parent: 17079075436341065960
-      Children:
-        - 14537091326744168307
-      IsAttachment: 0
-    TransformComponent:
-      Position: [-1.2999899,6.593916,16.769022]
-      Rotation: [3.1415927,1.509958e-07,1.1576209e-21]
-      Scale: [1,1,1]
-      WorldTransform: [0.01,-2.0636922e-15,-1.5099567e-09,0,-6.9801923e-15,-0.010000002,-3.202534e-09,0,-1.509957e-09,3.3189496e-09,-0.009999998,0,-0.013,1.5432403,0.14118838,1]
-  - Entity: 11776106208768836481
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-    TagComponent:
-      Tag: 'mixamorig:LeftToeBase'
-    RelationshipComponent:
-      Parent: 16084006039425760989
-      Children:
-        - 14884392997209990914
-      IsAttachment: 0
-    TransformComponent:
-      Position: [2.1779852e-07,17.300005,-1.0617077e-07]
-      Rotation: [0.82316345,-0.10492077,0.08283247]
-      Scale: [0.99999976,0.9999997,0.9999998]
-      WorldTransform: [-0.0098861065,-1.618173e-08,0.001504924,0,0.0015049236,2.487097e-06,0.009886107,0,-3.903515e-07,0.009999993,-2.4563633e-06,0,0.11864753,0.10014206,0.089830905,1]
-  - Entity: 5012317690049631096
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-    TagComponent:
-      Tag: 'mixamorig:RightToeBase'
-    RelationshipComponent:
-      Parent: 12722084945811483531
-      Children:
-        - 9715330968039275274
-      IsAttachment: 0
-    TransformComponent:
-      Position: [-3.7965947e-08,17.300007,4.34462e-06]
-      Rotation: [0.82315624,0.104922876,-0.08283279]
-      Scale: [1,1.0000001,0.99999994]
-      WorldTransform: [-0.009886105,-1.6647391e-08,-0.0015049551,0,-0.0015049555,2.3799948e-06,0.009886105,0,3.4151526e-07,0.009999993,-2.3543835e-06,0,-0.11864734,0.10014142,0.08983044,1]
-  - Entity: 6190058023492140879
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-    TagComponent:
-      Tag: 'mixamorig:Head'
-    RelationshipComponent:
-      Parent: 4517047147354000051
-      Children:
-        - 11967662410386268260
-        - 18259008516646686441
-        - 1808473579431087803
-      IsAttachment: 0
-    TransformComponent:
-      Position: [9.0949345e-13,15.916,3.311094]
-      Rotation: [-3.5024293e-08,-4.3665275e-25,7.370966e-21]
-      Scale: [1,1,1]
-      WorldTransform: [0.01,-2.7610072e-15,9.985591e-16,0,7.17636e-15,0.010000002,2.8580125e-09,0,-8.8477774e-16,-2.974428e-09,0.009999998,0,-1.0173167e-07,1.9529996,-0.056221966,1]
-  - Entity: 3091686159063900631
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-    TagComponent:
-      Tag: 'mixamorig:LeftArm'
-    RelationshipComponent:
-      Parent: 878241802299088201
-      Children:
-        - 9876620947778610187
-      IsAttachment: 0
-    TransformComponent:
-      Position: [9.536743e-07,17.075169,-1.5780473e-05]
-      Rotation: [-0.3805611,8.568168e-08,0.080314115]
-      Scale: [1,1,1.0000001]
-      WorldTransform: [3.3415968e-09,1.3689465e-09,-0.009999997,0,0.01,-6.2864274e-09,2.8630933e-09,0,-6.519258e-09,-0.010000003,-7.838515e-10,0,0.23643681,1.6762618,-0.12242776,1]
-  - Entity: 4450954367655833259
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-    TagComponent:
-      Tag: 'mixamorig:RightArm'
-    RelationshipComponent:
-      Parent: 254131521270399049
-      Children:
-        - 6245711060397894912
-      IsAttachment: 0
-    TransformComponent:
-      Position: [2.3841858e-07,17.075165,-1.1311087e-05]
-      Rotation: [-0.3805632,-3.4086406e-07,-0.08031391]
-      Scale: [0.9999999,0.99999994,1]
-      WorldTransform: [-4.845689e-09,-8.374359e-09,0.009999999,0,-0.010000002,6.7520887e-09,-4.8431827e-09,0,-7.21775e-09,-0.0100000035,-7.973355e-09,0,-0.23643701,1.67626,-0.1224278,1]
-  - Entity: 910872294203915451
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-    TagComponent:
-      Tag: 'mixamorig:BackRope2'
-    RelationshipComponent:
-      Parent: 1310036980163109721
-      Children:
-        - 15167073467332244488
-      IsAttachment: 0
-    TransformComponent:
-      Position: [-9.3477365e-07,14.875102,3.3462943e-06]
-      Rotation: [1.4156103e-07,-6.357362e-08,-2.1760385e-14]
-      Scale: [1,1,1.0000001]
-      WorldTransform: [-0.010000001,9.512469e-10,-8.677817e-10,0,-1.0493713e-09,-0.009926352,0.0012114372,0,-7.4616063e-10,0.0012114425,0.00992639,0,-0.19003637,1.4398453,-0.22840664,1]
-  - Entity: 14537091326744168307
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-    TagComponent:
-      Tag: 'mixamorig:FrontRope2'
-    RelationshipComponent:
-      Parent: 7469115423299279471
-      Children: []
-      IsAttachment: 0
-    TransformComponent:
-      Position: [-1.0532011e-07,11.583986,3.8258815e-07]
-      Rotation: [-2.2722347e-08,6.3573005e-08,3.4803676e-14]
-      Scale: [1,1,1]
-      WorldTransform: [0.01,-2.6227244e-15,-8.742268e-10,0,-7.308365e-15,-0.010000002,-2.9753107e-09,0,-8.74227e-10,3.091726e-09,-0.009999998,0,-0.013000001,1.4274005,0.14118834,1]
-  - Entity: 14884392997209990914
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-    TagComponent:
-      Tag: 'mixamorig:LeftToe_End'
-    RelationshipComponent:
-      Parent: 11776106208768836481
-      Children: []
-      IsAttachment: 0
-    TransformComponent:
-      Position: [4.469431e-07,14.758463,-8.2340557e-07]
-      Rotation: [-9.9187915e-08,9.609285e-08,-4.4713655e-08]
-      Scale: [0.99999994,0.99999994,0.9999999]
-      WorldTransform: [-0.009886106,-1.7142767e-08,0.0015049234,0,0.001504923,2.486105e-06,0.0098861065,0,-3.9115216e-07,0.009999992,-2.4552378e-06,0,0.14085789,0.100178756,0.23573466,1]
-  - Entity: 9715330968039275274
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-    TagComponent:
-      Tag: 'mixamorig:RightToe_End'
-    RelationshipComponent:
-      Parent: 5012317690049631096
-      Children: []
-      IsAttachment: 0
-    TransformComponent:
-      Position: [6.852305e-07,14.757997,-4.2046304e-07]
-      Rotation: [1.2810218e-09,-9.666405e-08,2.9812917e-08]
-      Scale: [1,0.9999999,1]
-      WorldTransform: [-0.009886105,-1.568068e-08,-0.0015049548,0,-0.0015049549,2.3800073e-06,0.009886104,0,3.4247282e-07,0.009999993,-2.3542507e-06,0,-0.14085747,0.10017654,0.23572955,1]
-  - Entity: 11967662410386268260
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-    TagComponent:
-      Tag: 'mixamorig:HeadTop_End'
-    RelationshipComponent:
-      Parent: 6190058023492140879
-      Children: []
-      IsAttachment: 0
-    TransformComponent:
-      Position: [2.4225142e-19,18.714493,7.5086374]
-      Rotation: [-3.5527137e-15,8.871598e-25,-2.2855804e-21]
-      Scale: [1,1,1]
-      WorldTransform: [0.01,-2.7610072e-15,9.985591e-16,0,7.17636e-15,0.010000002,2.8580125e-09,0,-8.8477774e-16,-2.974428e-09,0.009999998,0,-1.01731544e-07,2.1401446,0.018864442,1]
-  - Entity: 18259008516646686441
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-    TagComponent:
-      Tag: 'mixamorig:LeftEye'
-    RelationshipComponent:
-      Parent: 6190058023492140879
-      Children: []
-      IsAttachment: 0
-    TransformComponent:
-      Position: [3.6850412,2.966232,9.1938]
-      Rotation: [-0.009965206,1.231043e-23,-8.4495995e-22]
-      Scale: [1,0.99999994,1]
-      WorldTransform: [0.01,-2.7610072e-15,9.985591e-16,0,7.18482e-15,0.009999504,-9.964752e-05,0,-8.132211e-16,9.964745e-05,0.0099995015,0,0.03685031,1.9826618,0.035716023,1]
-  - Entity: 1808473579431087803
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-    TagComponent:
-      Tag: 'mixamorig:RightEye'
-    RelationshipComponent:
-      Parent: 6190058023492140879
-      Children: []
-      IsAttachment: 0
-    TransformComponent:
-      Position: [-3.68504,2.9660337,9.193796]
-      Rotation: [0.3815582,-2.4509704e-22,-9.237252e-22]
-      Scale: [1,1,1]
-      WorldTransform: [0.01,-2.7610072e-15,9.985591e-16,0,6.3308136e-15,0.009280857,0.0037236726,0,-3.4933896e-15,-0.0037236742,0.009280853,0,-0.0368505,1.9826599,0.035715986,1]
   - Entity: 9876620947778610187
     ComponentOrder:
       - IDComponent
@@ -731,7 +731,7 @@ PrefabEntities:
       Position: [7.639642e-08,22.159266,-1.3725937e-06]
       Rotation: [-6.859617e-07,8.677686e-08,0.017453391]
       Scale: [1,1,0.99999994]
-      WorldTransform: [0.00017452838,2.126793e-09,-0.009998474,0,0.009998477,5.502572e-10,0.00017452786,0,3.5445868e-10,-0.010000002,-1.531768e-09,0,0.45802945,1.6762617,-0.1224277,1]
+      WorldTransform: [0.00020943405,2.3710531e-09,-0.011998166,0,0.011998173,2.9088199e-10,0.00020943338,0,7.9787865e-10,-0.011999999,-1.5733859e-09,0,0.5496354,1.7915139,-0.14691322,1]
   - Entity: 6245711060397894912
     ComponentOrder:
       - IDComponent
@@ -749,7 +749,7 @@ PrefabEntities:
       Position: [5.4752627e-07,22.159306,-1.1843973e-05]
       Rotation: [1.2542059e-06,2.3846547e-07,-0.017453086]
       Scale: [1,1,1]
-      WorldTransform: [0.00017451718,-6.1062675e-09,0.009998476,0,-0.009998479,-5.937154e-09,0.00017451712,0,5.364017e-09,-0.0100000035,-5.807945e-09,0,-0.4580301,1.6762602,-0.1224279,1]
+      WorldTransform: [0.00020942054,-7.16362e-09,0.011998168,0,-0.011998175,-6.8422814e-09,0.00020942044,0,6.716217e-09,-0.012000002,-6.7106196e-09,0,-0.5496361,1.7915121,-0.14691344,1]
   - Entity: 15167073467332244488
     ComponentOrder:
       - IDComponent
@@ -766,7 +766,7 @@ PrefabEntities:
       Position: [2.4704439e-06,13.950486,-2.1533706e-06]
       Rotation: [-2.04891e-07,3.4222627e-13,-1.8866715e-14]
       Scale: [1,0.99999994,0.9999999]
-      WorldTransform: [-0.010000001,9.512466e-10,-8.6778507e-10,0,-1.0493713e-09,-0.009926351,0.0012114351,0,-7.461642e-10,0.0012114404,0.009926389,0,-0.19003642,1.3013679,-0.21150652,1]
+      WorldTransform: [-0.012000002,1.1414953e-09,-1.0413419e-09,0,-1.2592443e-09,-0.0119116185,0.0014537218,0,-8.953969e-10,0.0014537282,0.011911663,0,-0.22804372,1.3416415,-0.25380775,1]
   - Entity: 177277749795042934
     ComponentOrder:
       - IDComponent
@@ -788,7 +788,7 @@ PrefabEntities:
       Position: [4.35877e-07,28.150356,5.462174e-07]
       Rotation: [-4.8487337e-14,-6.8939855e-08,-7.171184e-08]
       Scale: [1,1,0.99999994]
-      WorldTransform: [0.00017452767,1.4373943e-09,-0.009998474,0,0.009998477,5.5025784e-10,0.00017452714,0,3.4242723e-10,-0.010000001,-8.4247465e-10,0,0.73949015,1.6762617,-0.117514685,1]
+      WorldTransform: [0.00020943319,1.5437749e-09,-0.011998166,0,0.011998173,2.9088273e-10,0.00020943252,0,7.8344087e-10,-0.011999998,-7.46234e-10,0,0.8873882,1.7915139,-0.1410176,1]
   - Entity: 15138122075282390077
     ComponentOrder:
       - IDComponent
@@ -810,7 +810,7 @@ PrefabEntities:
       Position: [5.4292286e-07,28.150309,-1.1051042e-05]
       Rotation: [-5.42047e-07,-2.180767e-07,-2.179294e-07]
       Scale: [1,1,1]
-      WorldTransform: [0.00017451936,-8.287034e-09,0.009998476,0,-0.009998479,-5.1668314e-10,0.0001745193,0,-9.3686836e-11,-0.0100000035,-7.893782e-09,0,-0.7394904,1.6762602,-0.117515184,1]
+      WorldTransform: [0.00020942316,-9.780539e-09,0.011998168,0,-0.011998175,-3.3771785e-10,0.00020942306,0,1.6697221e-10,-0.012000002,-9.213624e-09,0,-0.88738847,1.791512,-0.14101818,1]
   - Entity: 13850068532658798560
     ComponentOrder:
       - IDComponent
@@ -828,7 +828,7 @@ PrefabEntities:
       Position: [-5.3268433,8.902748,2.3929288]
       Rotation: [0.461901,0.022673873,0.53646827]
       Scale: [1,1.0000001,0.99999994]
-      WorldTransform: [0.0052589164,0.00022672098,-0.008502492,0,0.0076665985,-0.0044553634,0.0046230983,0,-0.0036833542,-0.008949769,-0.0025168536,0,0.8275744,1.6523324,-0.062700614,1]
+      WorldTransform: [0.0063107,0.0002720648,-0.010202988,0,0.009199918,-0.005346435,0.0055477167,0,-0.004420025,-0.01073972,-0.0030202235,0,0.9930893,1.7627988,-0.075240724,1]
   - Entity: 16669496574323126691
     ComponentOrder:
       - IDComponent
@@ -846,7 +846,7 @@ PrefabEntities:
       Position: [-3.147173,14.950501,0.25141883]
       Rotation: [1.4967217e-05,-2.6783699e-08,1.4033169e-05]
       Scale: [1,1,0.99999994]
-      WorldTransform: [0.00017466798,1.1695651e-09,-0.0099984715,0,0.009998474,-1.4912193e-07,0.00017466745,0,-1.4931157e-07,-0.01,-3.1889638e-09,0,0.88842314,1.6737474,-0.083438486,1]
+      WorldTransform: [0.00020960155,1.2223746e-09,-0.011998164,0,0.01199817,-1.793157e-07,0.00020960088,0,-1.7880137e-07,-0.011999997,-3.5620205e-09,0,1.0661077,1.7884969,-0.10012618,1]
   - Entity: 1148542670835809842
     ComponentOrder:
       - IDComponent
@@ -864,7 +864,7 @@ PrefabEntities:
       Position: [-0.016175082,14.948546,0.1306912]
       Rotation: [3.3660144e-06,3.261064e-08,3.9488071e-07]
       Scale: [1,1,0.99999994]
-      WorldTransform: [0.00017453161,1.7635009e-09,-0.009998474,0,0.009998477,-3.3109888e-08,0.00017453109,0,-3.3306897e-08,-0.01,-1.7560053e-09,0,0.88895005,1.6749548,-0.11474403,1]
+      WorldTransform: [0.00020943793,1.9351025e-09,-0.011998166,0,0.011998173,-4.0101284e-08,0.00020943726,0,-3.959575e-08,-0.011999997,-1.8424706e-09,0,1.06674,1.7899456,-0.13769282,1]
   - Entity: 3975871864654376016
     ComponentOrder:
       - IDComponent
@@ -882,7 +882,7 @@ PrefabEntities:
       Position: [3.504791,15.108339,-0.011749721]
       Rotation: [4.7832737e-06,-7.97559e-08,2.2351708e-07]
       Scale: [1,1,0.99999994]
-      WorldTransform: [0.00017452991,6.3983535e-10,-0.009998474,0,0.009998477,-4.728248e-08,0.00017452938,0,-4.749694e-08,-0.01,-8.79859e-10,0,0.8911622,1.6763792,-0.14992043,1]
+      WorldTransform: [0.00020943586,5.8670435e-10,-0.011998166,0,0.011998173,-5.7108394e-08,0.0002094352,0,-5.6623804e-08,-0.011999997,-7.910953e-10,0,1.0693947,1.791655,-0.17990449,1]
   - Entity: 17176974184100157701
     ComponentOrder:
       - IDComponent
@@ -900,7 +900,7 @@ PrefabEntities:
       Position: [5.517923,12.748662,0.32501167]
       Rotation: [3.2112713e-17,-5.4008503e-08,6.388873e-07]
       Scale: [1,1,0.99999994]
-      WorldTransform: [0.00017453406,8.9730956e-10,-0.009998474,0,0.009998477,5.502569e-10,0.00017453353,0,3.3300088e-10,-0.01,-3.02472e-10,0,0.8679204,1.6730115,-0.1704605,1]
+      WorldTransform: [0.00020944086,8.9567315e-10,-0.011998166,0,0.011998173,2.9088174e-10,0.00020944019,0,7.7212925e-10,-0.011999997,-9.8231034e-11,0,1.0415045,1.7876137,-0.20455258,1]
   - Entity: 12030730414158121384
     ComponentOrder:
       - IDComponent
@@ -918,7 +918,7 @@ PrefabEntities:
       Position: [5.326833,8.902717,2.393006]
       Rotation: [0.46184245,-0.017268972,-0.5337772]
       Scale: [1,1.0000001,0.9999999]
-      WorldTransform: [0.005236575,-0.00017268799,0.008517539,0,-0.007666622,-0.004455325,0.0046231006,0,0.0037150031,-0.008950995,-0.0024654549,0,-0.8275744,1.6523302,-0.0627013,1]
+      WorldTransform: [0.0062838895,-0.00020722556,0.0102210445,0,-0.009199946,-0.0053463886,0.0055477195,0,0.0044580037,-0.010741192,-0.0029585448,0,-0.99308926,1.7627959,-0.075241536,1]
   - Entity: 2888975082702559461
     ComponentOrder:
       - IDComponent
@@ -936,7 +936,7 @@ PrefabEntities:
       Position: [3.1471615,14.950516,0.2509928]
       Rotation: [-9.744379e-09,2.5899826e-07,-1.2862496e-05]
       Scale: [1,1,1]
-      WorldTransform: [0.00017464797,-5.6970446e-09,0.009998474,0,-0.009998477,-4.193459e-10,0.00017464791,0,-1.4588226e-10,-0.0100000035,-5.3024927e-09,0,-0.88842356,1.6737503,-0.083439216,1]
+      WorldTransform: [0.00020957748,-6.672555e-09,0.011998165,0,-0.011998172,-2.2091108e-10,0.00020957738,0,1.0433767e-10,-0.012000002,-6.1040777e-09,0,-1.0661082,1.7885001,-0.10012703,1]
   - Entity: 18339865953885046768
     ComponentOrder:
       - IDComponent
@@ -954,7 +954,7 @@ PrefabEntities:
       Position: [0.016201526,14.948516,0.13099797]
       Rotation: [-1.6575927e-16,1.4157197e-07,1.4156103e-07]
       Scale: [1,1,1]
-      WorldTransform: [0.00017451795,-6.871314e-09,0.009998476,0,-0.009998479,-5.16682e-10,0.00017451789,0,-6.897999e-11,-0.0100000035,-6.4782775e-09,0,-0.88895,1.6749502,-0.11474439,1]
+      WorldTransform: [0.00020942146,-8.081675e-09,0.011998168,0,-0.011998175,-3.3771647e-10,0.00020942136,0,1.9662041e-10,-0.012000002,-7.51502e-09,0,-1.06674,1.78994,-0.13769323,1]
   - Entity: 13726381759701022169
     ComponentOrder:
       - IDComponent
@@ -972,7 +972,7 @@ PrefabEntities:
       Position: [-3.5048008,15.108315,-0.011991839]
       Rotation: [-1.4461224e-16,1.6771003e-07,2.2351742e-07]
       Scale: [1,1,1]
-      WorldTransform: [0.00017451712,-6.609933e-09,0.009998476,0,-0.009998479,-5.166813e-10,0.00017451706,0,-6.441857e-11,-0.0100000035,-6.216937e-09,0,-0.8911622,1.6763802,-0.14992115,1]
+      WorldTransform: [0.00020942048,-7.768018e-09,0.011998168,0,-0.011998175,-3.3771566e-10,0.00020942038,0,2.0209412e-10,-0.012000002,-7.2014106e-09,0,-1.0693947,1.7916559,-0.17990534,1]
   - Entity: 14588869822539255353
     ComponentOrder:
       - IDComponent
@@ -990,7 +990,7 @@ PrefabEntities:
       Position: [-5.5179014,12.748608,0.32499868]
       Rotation: [-3.989593e-16,4.2288605e-07,2.1234155e-07]
       Scale: [1,1,1]
-      WorldTransform: [0.00017451723,-4.058172e-09,0.009998476,0,-0.009998479,-5.1668136e-10,0.00017451718,0,-1.9885933e-11,-0.0100000035,-3.6655656e-09,0,-0.86792004,1.6730102,-0.17046091,1]
+      WorldTransform: [0.00020942061,-4.7059054e-09,0.011998168,0,-0.011998175,-3.3771577e-10,0.00020942051,0,2.5553326e-10,-0.012000002,-4.139766e-09,0,-1.041504,1.7876121,-0.20455304,1]
   - Entity: 15606123813032931631
     ComponentOrder:
       - IDComponent
@@ -1008,7 +1008,7 @@ PrefabEntities:
       Position: [2.6226044e-06,4.1029587,2.503395e-05]
       Rotation: [1.005829e-07,-3.743917e-07,-2.505258e-07]
       Scale: [1,0.9999999,0.9999999]
-      WorldTransform: [0.005258913,0.00022671875,-0.008502494,0,0.0076665985,-0.004455364,0.004623095,0,-0.0036833566,-0.008949768,-0.0025168506,0,0.85903,1.634052,-0.04373232,1]
+      WorldTransform: [0.006310696,0.0002720621,-0.01020299,0,0.009199919,-0.0053464356,0.0055477135,0,-0.0044200276,-0.0107397195,-0.0030202197,0,1.0308361,1.7408624,-0.052478775,1]
   - Entity: 15682611980447059985
     ComponentOrder:
       - IDComponent
@@ -1026,7 +1026,7 @@ PrefabEntities:
       Position: [-8.009956e-07,3.0584438,-3.0852289e-07]
       Rotation: [-5.8848573e-06,-2.3070233e-07,-1.3811509e-05]
       Scale: [1.0000001,1.0000001,1.0000001]
-      WorldTransform: [0.0001745299,-1.1353987e-09,-0.009998475,0,0.009998478,-9.0273346e-08,0.00017452937,0,-9.051223e-08,-0.010000001,1.4478774e-10,0,0.9190029,1.673747,-0.082904264,1]
+      WorldTransform: [0.00020943586,-1.5435764e-09,-0.011998168,0,0.011998175,-1.08697435e-07,0.0002094352,0,-1.08242155e-07,-0.011999999,4.3848036e-10,0,1.1028035,1.7884963,-0.099485114,1]
   - Entity: 18365446472927021324
     ComponentOrder:
       - IDComponent
@@ -1044,7 +1044,7 @@ PrefabEntities:
       Position: [7.9350457e-07,4.533194,6.7718474e-06]
       Rotation: [3.6080514e-06,1.0510138e-06,6.9104135e-07]
       Scale: [1,1,0.99999994]
-      WorldTransform: [0.00017453852,1.2273616e-08,-0.009998474,0,0.009998477,-6.9190406e-08,0.000174538,0,-6.9198464e-08,-0.009999999,-1.289428e-08,0,0.9342751,1.6749545,-0.11395285,1]
+      WorldTransform: [0.00020944623,1.4547238e-08,-0.011998166,0,0.011998173,-8.339789e-08,0.00020944556,0,-8.2665636e-08,-0.011999996,-1.5208398e-08,0,1.1211301,1.7899454,-0.13674341,1]
   - Entity: 12391369141979145543
     ComponentOrder:
       - IDComponent
@@ -1062,7 +1062,7 @@ PrefabEntities:
       Position: [-7.120325e-07,3.1900275,5.262701e-07]
       Rotation: [4.0266536e-06,6.618169e-07,9.57399e-07]
       Scale: [1,1,0.99999994]
-      WorldTransform: [0.00017453948,7.2579587e-09,-0.009998474,0,0.009998477,-8.754901e-08,0.00017453896,0,-8.764182e-08,-0.009999999,-8.199826e-09,0,0.9230576,1.6763791,-0.14936367,1]
+      WorldTransform: [0.00020944735,8.528451e-09,-0.011998166,0,0.011998173,-1.0542823e-07,0.00020944668,0,-1.04797664e-07,-0.011999996,-9.575053e-09,0,1.1076692,1.7916547,-0.17923638,1]
   - Entity: 14006463953075274676
     ComponentOrder:
       - IDComponent
@@ -1080,7 +1080,7 @@ PrefabEntities:
       Position: [-1.8907667e-07,2.2385983,1.3733068e-05]
       Rotation: [4.7193325e-06,4.5979627e-07,2.4959525e-07]
       Scale: [1,1,1]
-      WorldTransform: [0.00017453654,5.4952722e-09,-0.009998474,0,0.009998477,-4.664307e-08,0.00017453602,0,-4.677289e-08,-0.01,-5.723427e-09,0,0.89030296,1.6730114,-0.1700698,1]
+      WorldTransform: [0.00020944385,6.4132273e-09,-0.011998166,0,0.011998173,-5.6341097e-08,0.00020944318,0,-5.575494e-08,-0.011999997,-6.6033756e-09,0,1.0683635,1.7876136,-0.20408373,1]
   - Entity: 8073756534543492411
     ComponentOrder:
       - IDComponent
@@ -1098,7 +1098,7 @@ PrefabEntities:
       Position: [5.722046e-06,4.102942,-1.9073486e-06]
       Rotation: [-0.0001529455,-2.1990563e-06,9.507342e-06]
       Scale: [1.0000001,1,1.0000002]
-      WorldTransform: [0.0052365107,-0.00017275005,0.008517578,0,-0.0076672398,-0.0044539543,0.004623397,0,0.00371382,-0.008951678,-0.0024647673,0,-0.85903007,1.6340503,-0.043732934,1]
+      WorldTransform: [0.0062838127,-0.00020730004,0.010221092,0,-0.0092006875,-0.005344744,0.005548075,0,0.004456584,-0.010742012,-0.0029577194,0,-1.0308361,1.74086,-0.0524795,1]
   - Entity: 10515492456881402431
     ComponentOrder:
       - IDComponent
@@ -1116,7 +1116,7 @@ PrefabEntities:
       Position: [-9.2766277e-07,3.0584219,-6.7942005e-07]
       Rotation: [9.740973e-09,5.2900805e-07,1.3650394e-05]
       Scale: [1.0000001,1,1]
-      WorldTransform: [0.0001745115,-4.0696824e-10,0.009998478,0,-0.00999848,-5.1667787e-10,0.00017451143,0,4.3830634e-11,-0.0100000035,-1.4918289e-11,0,-0.9190031,1.6737503,-0.08290508,1]
+      WorldTransform: [0.00020941373,-3.2446046e-10,0.01199817,0,-0.011998175,-3.377117e-10,0.0002094136,0,3.319931e-10,-0.012000002,2.4100943e-10,0,-1.1028037,1.7885001,-0.09948606,1]
   - Entity: 3902824817990960073
     ComponentOrder:
       - IDComponent
@@ -1134,7 +1134,7 @@ PrefabEntities:
       Position: [8.692523e-07,4.5331883,-5.7786866e-07]
       Rotation: [1.3947648e-05,1.2419505e-06,1.2386683e-06]
       Scale: [1,1,1]
-      WorldTransform: [0.00017450556,5.5481943e-09,0.009998476,0,-0.009998479,-1.399932e-07,0.0001745055,0,1.39603e-07,-0.0100000035,3.5053933e-09,0,-0.934275,1.6749502,-0.113953255,1]
+      WorldTransform: [0.0002094066,6.8217334e-09,0.011998168,0,-0.011998175,-1.677095e-07,0.0002094065,0,1.6780302e-07,-0.012000002,4.4653845e-09,0,-1.12113,1.78994,-0.13674387,1]
   - Entity: 7718253669505211272
     ComponentOrder:
       - IDComponent
@@ -1152,7 +1152,7 @@ PrefabEntities:
       Position: [3.5725407e-06,3.1900854,1.40574775e-05]
       Rotation: [8.809947e-06,-1.6855647e-07,-2.2724291e-07]
       Scale: [1,1,1]
-      WorldTransform: [0.00017451939,-8.2954985e-09,0.009998476,0,-0.009998479,-8.861618e-08,0.00017451933,0,8.7992234e-08,-0.0100000035,-9.439751e-09,0,-0.9230582,1.67638,-0.14936438,1]
+      WorldTransform: [0.0002094232,-9.790696e-09,0.011998168,0,-0.011998175,-1.060571e-07,0.0002094231,0,1.0587007e-07,-0.012000002,-1.1068785e-08,0,-1.10767,1.7916558,-0.17923723,1]
   - Entity: 4362694637846263497
     ComponentOrder:
       - IDComponent
@@ -1170,7 +1170,7 @@ PrefabEntities:
       Position: [-5.5518467e-07,2.238597,-2.1360998e-05]
       Rotation: [9.438533e-06,-9.492299e-07,-7.357476e-07]
       Scale: [1,0.99999994,1]
-      WorldTransform: [0.0001745246,-1.3550474e-08,0.009998476,0,-0.009998478,-9.490204e-08,0.00017452452,0,9.418543e-08,-0.0100000035,-1.4803674e-08,0,-0.8903026,1.6730105,-0.17007025,1]
+      WorldTransform: [0.00020942945,-1.6096665e-08,0.011998168,0,-0.011998174,-1.1360013e-07,0.00020942933,0,1.13301915e-07,-0.012000002,-1.7505492e-08,0,-1.0683631,1.7876123,-0.20408423,1]
   - Entity: 15784265968296708251
     ComponentOrder:
       - IDComponent
@@ -1188,7 +1188,7 @@ PrefabEntities:
       Position: [4.053116e-06,3.0582514,3.772974e-05]
       Rotation: [-1.0356308e-06,-4.7218072e-07,-1.9744017e-07]
       Scale: [0.99999994,0.9999999,0.99999994]
-      WorldTransform: [0.0052589094,0.00022671539,-0.008502495,0,0.0076666023,-0.004455354,0.0046230955,0,-0.003683351,-0.0089497715,-0.0025168415,0,0.8824763,1.620426,-0.029593863,1]
+      WorldTransform: [0.0063106916,0.00027205807,-0.010202992,0,0.009199924,-0.005346424,0.0055477144,0,-0.0044200206,-0.010739724,-0.003020209,0,1.0589716,1.7245113,-0.035512626,1]
   - Entity: 13587970624380824247
     ComponentOrder:
       - IDComponent
@@ -1206,7 +1206,7 @@ PrefabEntities:
       Position: [-1.2027158e-07,3.3601065,3.242083e-06]
       Rotation: [-9.082358e-06,1.5054497e-06,6.9877e-06]
       Scale: [1.0000001,1.0000001,0.99999994]
-      WorldTransform: [0.00017459977,1.3918472e-08,-0.009998475,0,0.009998478,5.502372e-10,0.00017459925,0,5.6036953e-10,-0.01,-1.332164e-08,0,0.9525988,1.6737466,-0.08231783,1]
+      WorldTransform: [0.00020951973,1.6521062e-08,-0.011998168,0,0.011998175,2.9086067e-10,0.00020951906,0,1.0449668e-09,-0.011999998,-1.572123e-08,0,1.1431186,1.7884959,-0.098781385,1]
   - Entity: 18010214129164266610
     ComponentOrder:
       - IDComponent
@@ -1224,7 +1224,7 @@ PrefabEntities:
       Position: [-1.1661032e-06,2.1879323,4.575916e-06]
       Rotation: [-2.4700034e-06,-1.719242e-06,-1.3625182e-06]
       Scale: [0.9999999,0.9999999,0.99999994]
-      WorldTransform: [0.00017452489,-4.918708e-09,-0.009998473,0,0.009998476,-4.4490356e-08,0.00017452436,0,-4.4802235e-08,-0.009999998,4.7265925e-09,0,0.95615107,1.6749543,-0.113570966,1]
+      WorldTransform: [0.00020942985,-6.083546e-09,-0.0119981645,0,0.011998171,-5.3757837e-08,0.00020942918,0,-5.3390167e-08,-0.011999995,5.936645e-09,0,1.1473813,1.7899451,-0.13628514,1]
   - Entity: 8158184125322932639
     ComponentOrder:
       - IDComponent
@@ -1242,7 +1242,7 @@ PrefabEntities:
       Position: [-1.5279729e-06,3.464001,7.1150125e-06]
       Rotation: [-8.809928e-06,-3.3057546e-07,-3.33413e-07]
       Scale: [0.99999994,0.99999994,0.99999994]
-      WorldTransform: [0.00017453614,3.9522337e-09,-0.009998473,0,0.009998476,5.502514e-10,0.00017453561,0,3.863363e-10,-0.009999998,-3.356929e-09,0,0.9576923,1.6763787,-0.14875905,1]
+      WorldTransform: [0.00020944333,4.5615813e-09,-0.011998165,0,0.011998172,2.9086777e-10,0.00020944266,0,8.3613116e-10,-0.011999995,-3.7635783e-09,0,1.149231,1.7916542,-0.17851084,1]
   - Entity: 16114010806987505104
     ComponentOrder:
       - IDComponent
@@ -1260,7 +1260,7 @@ PrefabEntities:
       Position: [1.3496901e-07,3.2332442,3.0817806e-05]
       Rotation: [3.4171806e-06,-9.2228373e-07,-4.5262166e-07]
       Scale: [1,1,1.0000001]
-      WorldTransform: [0.00017453202,-3.727543e-09,-0.009998474,0,0.009998477,-8.081487e-08,0.0001745315,0,-8.110047e-08,-0.010000001,2.901599e-09,0,0.9226305,1.673011,-0.16950548,1]
+      WorldTransform: [0.00020943843,-4.6541495e-09,-0.011998166,0,0.011998173,-9.7347254e-08,0.00020943776,0,-9.6948035e-08,-0.011999999,3.7466528e-09,0,1.1071565,1.787613,-0.20340654,1]
   - Entity: 17693470235279591780
     ComponentOrder:
       - IDComponent
@@ -1278,7 +1278,7 @@ PrefabEntities:
       Position: [-2.3841858e-07,3.0580676,-2.8669834e-05]
       Rotation: [0.0003601387,7.3313454e-06,-7.6075867e-06]
       Scale: [0.99999994,0.9999999,0.99999994]
-      WorldTransform: [0.0052365414,-0.00017265053,0.00851756,0,-0.007665861,-0.0044571785,0.004622573,0,0.003716619,-0.008950074,-0.0024663697,0,-0.8824771,1.62043,-0.029594205,1]
+      WorldTransform: [0.0062838495,-0.00020718061,0.010221071,0,-0.0091990335,-0.005348613,0.0055470867,0,0.004459943,-0.010740088,-0.002959642,0,-1.0589726,1.7245157,-0.03551303,1]
   - Entity: 13664012510827210007
     ComponentOrder:
       - IDComponent
@@ -1296,7 +1296,7 @@ PrefabEntities:
       Position: [1.0242584e-06,3.3601015,-6.802151e-06]
       Rotation: [5.403285e-06,-7.234293e-07,-7.636845e-06]
       Scale: [1,1.0000001,1]
-      WorldTransform: [0.00017458785,-7.64126e-09,0.009998477,0,-0.00999848,-5.4549552e-08,0.0001745878,0,5.3942156e-08,-0.0100000035,-8.191456e-09,0,-0.95259905,1.6737504,-0.08231869,1]
+      WorldTransform: [0.00020950536,-9.005611e-09,0.011998168,0,-0.011998175,-6.517715e-08,0.00020950526,0,6.5009985e-08,-0.012000002,-9.570835e-09,0,-1.1431187,1.7885002,-0.0987824,1]
   - Entity: 17061286175987012877
     ComponentOrder:
       - IDComponent
@@ -1314,7 +1314,7 @@ PrefabEntities:
       Position: [4.900503e-07,2.1880062,1.0643506e-05]
       Rotation: [-1.8451805e-05,-1.6634159e-06,-1.6614646e-06]
       Scale: [1,1,1]
-      WorldTransform: [0.00017452218,-1.1085737e-08,0.009998476,0,-0.009998479,4.4524924e-08,0.00017452212,0,-4.5177288e-08,-0.0100000035,-9.905982e-09,0,-0.9561517,1.6749499,-0.11357143,1]
+      WorldTransform: [0.00020942654,-1.3138983e-08,0.011998168,0,-0.011998175,5.3712213e-08,0.00020942643,0,-5.393332e-08,-0.012000002,-1.1628263e-08,0,-1.147382,1.7899395,-0.13628568,1]
   - Entity: 12400991002199851462
     ComponentOrder:
       - IDComponent
@@ -1332,7 +1332,7 @@ PrefabEntities:
       Position: [-1.4214743e-06,3.4639869,1.4777918e-05]
       Rotation: [-8.809948e-06,-2.2084159e-07,-2.1792715e-07]
       Scale: [1,1,1]
-      WorldTransform: [0.00017452157,-1.05038955e-08,0.009998476,0,-0.009998479,-5.1667115e-10,0.00017452151,0,-1.3238122e-10,-0.0100000035,-1.01103055e-08,0,-0.9576928,1.6763796,-0.14875986,1]
+      WorldTransform: [0.00020942582,-1.2440773e-08,0.011998168,0,-0.011998175,-3.3771386e-10,0.00020942572,0,1.2052936e-10,-0.012000002,-1.187345e-08,0,-1.1492314,1.7916552,-0.17851181,1]
   - Entity: 16893085787901879168
     ComponentOrder:
       - IDComponent
@@ -1350,7 +1350,7 @@ PrefabEntities:
       Position: [3.1947784e-06,3.2332933,1.3366188e-05]
       Rotation: [-1.7574717e-05,1.9325214e-06,1.9278168e-06]
       Scale: [1,1,1.0000001]
-      WorldTransform: [0.00017450532,5.774564e-09,0.009998476,0,-0.009998478,8.084522e-08,0.00017450524,0,-8.119776e-08,-0.010000004,7.5854745e-09,0,-0.9226306,1.67301,-0.16950592,1]
+      WorldTransform: [0.00020940631,7.0933766e-09,0.011998168,0,-0.011998174,9.729654e-08,0.0002094062,0,-9.715793e-08,-0.012000004,9.361479e-09,0,-1.1071566,1.7876118,-0.20340705,1]
   - Entity: 8554570672360094909
     ComponentOrder:
       - IDComponent
@@ -1367,7 +1367,7 @@ PrefabEntities:
       Position: [2.3841858e-07,2.1670177,1.424551e-05]
       Rotation: [-6.321818e-06,2.4959394e-07,-1.671732e-07]
       Scale: [0.99999994,1,0.9999999]
-      WorldTransform: [0.0052589085,0.00022671836,-0.008502494,0,0.0076666265,-0.0044552973,0.00462311,0,-0.0036833007,-0.0089497985,-0.0025168143,0,0.8990899,1.6107711,-0.01957557,1]
+      WorldTransform: [0.0063106907,0.00027206162,-0.010202991,0,0.009199953,-0.005346356,0.0055477316,0,-0.0044199605,-0.010739757,-0.003020176,0,1.078908,1.7129253,-0.023490677,1]
   - Entity: 13457288855547919616
     ComponentOrder:
       - IDComponent
@@ -1384,7 +1384,7 @@ PrefabEntities:
       Position: [-6.755872e-07,2.8240016,-3.122372e-06]
       Rotation: [-1.0806498e-05,-1.6909407e-06,-1.6875538e-06]
       Scale: [1,1,1]
-      WorldTransform: [0.00017458289,-2.9909364e-09,-0.009998475,0,0.009998478,1.0861523e-07,0.00017458237,0,1.083137e-07,-0.01,5.471814e-09,0,0.98083454,1.6737466,-0.08182476,1]
+      WorldTransform: [0.00020949949,-3.7702232e-09,-0.011998168,0,0.011998175,1.2996884e-07,0.00020949882,0,1.3034898e-07,-0.011999998,6.830911e-09,0,1.1770015,1.7884959,-0.0981897,1]
   - Entity: 4119867802226765251
     ComponentOrder:
       - IDComponent
@@ -1401,7 +1401,7 @@ PrefabEntities:
       Position: [9.830546e-08,3.3877861,4.2096826e-06]
       Rotation: [-9.750985e-12,5.25348e-07,5.215394e-07]
       Scale: [1,1,0.99999994]
-      WorldTransform: [0.0001745301,3.3474779e-10,-0.009998473,0,0.009998476,-4.4490257e-08,0.00017452957,0,-4.4710443e-08,-0.009999997,-5.260836e-10,0,0.9900238,1.674954,-0.11297972,1]
+      WorldTransform: [0.00020943611,2.2059954e-10,-0.0119981645,0,0.011998171,-5.3757717e-08,0.00020943544,0,-5.328002e-08,-0.0119999945,-3.6656456e-10,0,1.1880286,1.7899449,-0.13557564,1]
   - Entity: 9375862829131914576
     ComponentOrder:
       - IDComponent
@@ -1418,7 +1418,7 @@ PrefabEntities:
       Position: [1.5552068e-06,2.1679668,1.8977562e-05]
       Rotation: [1.1845036e-12,-9.425827e-07,-9.397045e-07]
       Scale: [1,1,1]
-      WorldTransform: [0.00017452674,-5.4735914e-09,-0.009998473,0,0.009998476,5.502433e-10,0.00017452621,0,2.2181858e-10,-0.009999998,6.0674585e-09,0,0.9793687,1.6763785,-0.14838068,1]
+      WorldTransform: [0.00020943205,-6.749407e-09,-0.011998165,0,0.011998172,2.9085784e-10,0.00020943138,0,6.387099e-10,-0.011999995,7.545685e-09,0,1.1752425,1.791654,-0.17805679,1]
   - Entity: 12045335421426255519
     ComponentOrder:
       - IDComponent
@@ -1435,7 +1435,7 @@ PrefabEntities:
       Position: [-8.1690087e-07,1.8753449,-1.05993495e-05]
       Rotation: [-1.6273061e-05,6.7993064e-08,7.171562e-08]
       Scale: [1,1,1]
-      WorldTransform: [0.00017453273,-3.0476182e-09,-0.009998474,0,0.009998477,8.191576e-08,0.00017453221,0,8.161723e-08,-0.010000001,5.0619455e-09,0,0.9413811,1.673011,-0.16917816,1]
+      WorldTransform: [0.00020943928,-3.83824e-09,-0.011998166,0,0.011998173,9.792947e-08,0.00020943861,0,9.83132e-08,-0.011999999,6.339068e-09,0,1.1296573,1.787613,-0.20301376,1]
   - Entity: 17245549816482975122
     ComponentOrder:
       - IDComponent
@@ -1452,7 +1452,7 @@ PrefabEntities:
       Position: [-1.1920929e-06,2.1672294,-1.5944242e-05]
       Rotation: [1.3630844e-05,-4.3483246e-06,-3.0305534e-06]
       Scale: [0.9999999,1,1]
-      WorldTransform: [0.0052365805,-0.00017267592,0.008517534,0,-0.0076657943,-0.004457301,0.004622565,0,0.0037167007,-0.008950013,-0.0024664698,0,-0.8990908,1.6107705,-0.019576,1]
+      WorldTransform: [0.006283896,-0.00020721107,0.01022104,0,-0.009198954,-0.0053487597,0.0055470774,0,0.0044600414,-0.010740015,-0.0029597622,0,-1.078909,1.7129241,-0.023491183,1]
   - Entity: 9563188046882383010
     ComponentOrder:
       - IDComponent
@@ -1469,7 +1469,7 @@ PrefabEntities:
       Position: [-5.3434178e-08,2.8239775,-2.5220768e-05]
       Rotation: [-1.4512204e-11,-2.8693398e-07,-2.9150308e-07]
       Scale: [1,1,1.0000001]
-      WorldTransform: [0.00017459076,-1.0510584e-08,0.009998477,0,-0.00999848,-5.454941e-08,0.0001745907,0,5.389192e-08,-0.010000004,-1.1060358e-08,0,-0.98083454,1.6737505,-0.08182566,1]
+      WorldTransform: [0.00020950886,-1.2448801e-08,0.011998168,0,-0.011998175,-6.517697e-08,0.00020950875,0,6.49497e-08,-0.012000004,-1.3013516e-08,0,-1.1770014,1.7885003,-0.09819076,1]
   - Entity: 12322312240210019420
     ComponentOrder:
       - IDComponent
@@ -1486,7 +1486,7 @@ PrefabEntities:
       Position: [2.97714e-07,3.3877108,7.3797373e-06]
       Rotation: [4.50416e-06,8.4249484e-07,8.4564385e-07]
       Scale: [1,1,1]
-      WorldTransform: [0.00017451373,-2.660748e-09,0.009998476,0,-0.009998479,-5.166818e-10,0.00017451367,0,4.49063e-12,-0.0100000035,-2.2683535e-09,0,-0.9900237,1.67495,-0.112980194,1]
+      WorldTransform: [0.0002094164,-3.0289984e-09,0.011998168,0,-0.011998175,-3.3770675e-10,0.00020941629,0,2.848104e-10,-0.012000002,-2.4631115e-09,0,-1.1880283,1.7899396,-0.1355762,1]
   - Entity: 8394684368978844666
     ComponentOrder:
       - IDComponent
@@ -1503,7 +1503,7 @@ PrefabEntities:
       Position: [-7.098097e-07,2.1679142,3.57663e-05]
       Rotation: [4.6041025e-13,1.1959935e-06,1.1958182e-06]
       Scale: [1,1,1]
-      WorldTransform: [0.00017450961,1.4560424e-09,0.009998476,0,-0.009998479,-5.166632e-10,0.00017450955,0,7.633574e-11,-0.0100000035,1.8478072e-09,0,-0.9793686,1.6763792,-0.14838152,1]
+      WorldTransform: [0.00020941148,1.9111512e-09,0.011998168,0,-0.011998175,-3.377045e-10,0.00020941137,0,3.7098966e-10,-0.012000002,2.4762814e-09,0,-1.1752424,1.7916547,-0.1780578,1]
   - Entity: 655345320378191299
     ComponentOrder:
       - IDComponent
@@ -1520,4 +1520,4 @@ PrefabEntities:
       Position: [3.6725105e-06,1.8754251,-8.616982e-06]
       Rotation: [8.136189e-06,-3.1926904e-06,-3.1907314e-06]
       Scale: [1,1.0000001,1]
-      WorldTransform: [0.00017453721,-2.6152614e-08,0.009998475,0,-0.009998478,-5.1668536e-10,0.00017453716,0,-4.0551384e-10,-0.010000004,-2.575663e-08,0,-0.941382,1.6730102,-0.16917862,1]
+      WorldTransform: [0.0002094446,-3.121923e-08,0.011998167,0,-0.011998175,-3.3772807e-10,0.00020944451,0,-2.072369e-10,-0.012000004,-3.0649034e-08,0,-1.1296583,1.7876121,-0.20301428,1]
