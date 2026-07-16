@@ -62,14 +62,11 @@ function EnemyController:OnUpdate(entity, delta)
 
     -- Set walking animation if moving, idle if not
     local animComp = entity:GetComponent("AnimatorComponent")
-    Log.Info("Animator component exists: " .. tostring(animComp ~= nil))
     local isMoving = Math.Length(controller.MovementVelocity) > 0
     if isMoving and not self.IsWalking then
-        Log.Info("Enemy started walking")
         animComp:SetBool("isWalking", true)
         self.IsWalking = true
     elseif not isMoving and self.IsWalking then
-        Log.Info("Enemy stopped walking")
         animComp:SetBool("isWalking", false)
         self.IsWalking = false
     end

@@ -1,12 +1,12 @@
 Assets:
   - Type: Texture
-    UUID: 2902344313391760329
-    Name: DesertEagle_DesertEagleDiffuse.png
-    FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_DesertEagleDiffuse.png
-  - Type: Texture
     UUID: 3453372035684411145
     Name: RadialGlow
     FilePath: Textures/Effects/RadialGlow.png
+  - Type: Texture
+    UUID: 2902344313391760329
+    Name: DesertEagle_DesertEagleDiffuse.png
+    FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_DesertEagleDiffuse.png
   - Type: Texture
     UUID: 18407398070678811137
     Name: DesertEagle_DesertEagleSpecular-DesertEagleRoughness.png
@@ -91,6 +91,10 @@ Assets:
     UUID: 3344681323696305163
     Name: RoundUIControl
     FilePath: Scripts/RoundUIControl.lua
+  - Type: Script
+    UUID: 5986627421746366671
+    Name: SpawnManager
+    FilePath: Scripts/SpawnManager.lua
   - Type: Script
     UUID: 15191514471842255900
     Name: PowerUpDrop
@@ -204,10 +208,6 @@ Assets:
     Name: RoundManager
     FilePath: Scripts/RoundManager.lua
   - Type: Script
-    UUID: 5986627421746366671
-    Name: SpawnManager
-    FilePath: Scripts/SpawnManager.lua
-  - Type: Script
     UUID: 11246612645680594128
     Name: RoundAudioManager
     FilePath: Scripts/RoundAudioManager.lua
@@ -256,10 +256,6 @@ Assets:
     Name: Zombie_WorldWar_zombie_material
     FilePath: Models/Zombie/Zombie_Resources/Zombie_WorldWar_zombie_material.ebmat
   - Type: Mesh
-    UUID: 6509623147954976681
-    Name: Zombie_Mesh0_WorldWar_zombie_Prim0
-    FilePath: Models/Zombie/Zombie_Resources/Zombie_Mesh0_WorldWar_zombie_Prim0.ebmesh
-  - Type: Mesh
     UUID: 5610316799824380095
     Name: DesertEagle_Mesh2_Cube.007_Prim1
     FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Mesh2_Cube.007_Prim1.ebmesh
@@ -267,6 +263,10 @@ Assets:
     UUID: 5985712711574680378
     Name: DesertEagle_Mesh1_Cube_Prim0
     FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Mesh1_Cube_Prim0.ebmesh
+  - Type: Mesh
+    UUID: 6509623147954976681
+    Name: Zombie_Mesh0_WorldWar_zombie_Prim0
+    FilePath: Models/Zombie/Zombie_Resources/Zombie_Mesh0_WorldWar_zombie_Prim0.ebmesh
   - Type: Mesh
     UUID: 12443871631894294282
     Name: AmmoPowerup_Cylinder.001_Prim0
@@ -316,10 +316,6 @@ Assets:
     Name: DEagleSlideMask
     FilePath: SkeletonMasks/DEagleSlideMask.ebmask
   - Type: Animation
-    UUID: 13210029773156912041
-    Name: DesertEagle_Reload
-    FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Reload.ebanim
-  - Type: Animation
     UUID: 6612716991326083235
     Name: M4_Reload
     FilePath: Models/M4_Anim/M4_Reload.ebanim
@@ -327,6 +323,10 @@ Assets:
     UUID: 9936688561769825438
     Name: Zombie_Zombie Idle
     FilePath: Models/Zombie/Zombie_Resources/Zombie_Zombie Idle.ebanim
+  - Type: Animation
+    UUID: 13210029773156912041
+    Name: DesertEagle_Reload
+    FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Reload.ebanim
   - Type: Animation
     UUID: 1061568813566244299
     Name: DesertEagle_Idle

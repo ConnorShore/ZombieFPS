@@ -12,22 +12,27 @@ function SpawnManager:OnCreate(entity)
     self.ActiveZombies = 0
     self.IsWaveActive = false
     self.SpawnInterval = self.BaseSpawnInterval
-    self.SpawnerUUIDs = {}
+    self.Spawners = {}
     self.RoundNum = 1
 
     -- Automatically find all child entities (Spawners) attached to this Manager
     if entity:ContainsComponent("RelationshipComponent") then
         local relComp = entity:GetComponent("RelationshipComponent")
-        Log.Info("SpawnManager found " .. tostring(#relComp.Children) .. " child spawners.")
         for i, childUUID in ipairs(relComp.Children) do
-            table.insert(self.SpawnerUUIDs, childUUID)
+            local spawnerEntity = Scene.GetEntityByUUID(childUUID)
+            if spawnerEntity and spawnerEntity:IsValid() then
+                table.insert(self.Spawners, spawnerEntity)
+                Log.Info("SpawnManager added spawner: " .. spawnerEntity:GetName())
+            end
         end
     end
 
     -- Listen for zombie deaths to free up our concurrent spawn slots!
     EventManager.Subscribe("OnEnemyKilled", function(enemyUUID)
+        Log.Info("SpawnManager received OnEnemyKilled event for UUID: " .. tostring(enemyUUID))
         if self.ActiveZombies > 0 then
             self.ActiveZombies = self.ActiveZombies - 1
+            Log.Info("SpawnManager: Active Zombies = " .. tostring(self.ActiveZombies))
         end
     end)
 end
@@ -54,10 +59,13 @@ function SpawnManager:OnUpdate(entity, delta)
     end
 
     self.TimeSinceLastSpawn = self.TimeSinceLastSpawn + delta
+    Log.Info("Time since last spawn: " .. tostring(self.TimeSinceLastSpawn) .. " seconds. Spawn interval: " .. tostring(self.SpawnInterval) .. " seconds. Active Zombies: " .. tostring(self.ActiveZombies) .. "/" .. tostring(self.MaxConcurrentZombies))
 
     -- Time to spawn! Check concurrency limits first.
     if self.TimeSinceLastSpawn >= self.SpawnInterval then
+        Log.Info("SpawnManager: Time to spawn a new zombie!")
         if self.ActiveZombies < self.MaxConcurrentZombies then
+            Log.Info("SpawnManager: Active zombies below max limit, spawning new zombie.")
             self.TimeSinceLastSpawn = 0.0
             self:TriggerRandomSpawner()
         end
@@ -65,29 +73,30 @@ function SpawnManager:OnUpdate(entity, delta)
 end
 
 function SpawnManager:TriggerRandomSpawner()
-    if #self.SpawnerUUIDs == 0 then
+    if #self.Spawners == 0 then
         Log.Warn("SpawnManager cannot spawn: No child spawners found!")
         return
     end
 
-    -- 1. Pick a random spawner from our list of children
-    local randomIndex = Math.RandomInt(1, #self.SpawnerUUIDs)
-    local spawnerUUID = self.SpawnerUUIDs[randomIndex]
-    
-    local spawnerEntity = Scene.GetEntityByUUID(spawnerUUID)
+    Log.Info("SpawnManager: Triggering a random spawner for round " .. tostring(self.RoundNum) .. ". Zombies spawned this wave: " .. tostring(self.ZombiesSpawned) .. "/" .. tostring(self.TotalZombiesForWave))
 
+    local randomIndex = Math.RandomInt(1, #self.Spawners)
+    local spawnerEntity = self.Spawners[randomIndex]
     if spawnerEntity and spawnerEntity:IsValid() then
-        -- 2. Call the spawn function on the chosen child's script
         local spawnerScript = spawnerEntity:GetScriptInstance()
         if spawnerScript and spawnerScript.Spawn then
+            Log.Info("SpawnManager triggering spawner: " .. spawnerEntity:GetName())
             spawnerScript:Spawn(spawnerEntity, self.RoundNum)
-            
-            -- Keep track of our numbers!
+
             self.ZombiesSpawned = self.ZombiesSpawned + 1
             self.ActiveZombies = self.ActiveZombies + 1
+            Log.Info("SpawnManager: Zombies Spawned = " .. tostring(self.ZombiesSpawned) .. ", Active Zombies = " .. tostring(self.ActiveZombies))
+            Log.Info("Zombies remaining to spawn this wave: " .. tostring(self.TotalZombiesForWave - self.ZombiesSpawned))
         else
             Log.Error("Child entity '" .. spawnerEntity:GetName() .. "' is missing a Spawner script!")
         end
+    else
+        Log.Error("SpawnManager picked an invalid spawner entity at index: " .. tostring(randomIndex))
     end
 end
 
