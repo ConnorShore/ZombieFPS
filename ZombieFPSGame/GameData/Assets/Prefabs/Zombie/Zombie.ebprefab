@@ -42,7 +42,10 @@ PrefabEntities:
       PreviewCollider: 0
     ScriptComponent:
       ScriptUUID: 1702313573474944703
-      UserPropertyOverrides: []
+      UserPropertyOverrides:
+        - Name: SpeedMultiplier
+          Type: 3
+          Value: 0.25
     AnimatorComponent:
       SkeletonHandle: 11946468697697938328
       ControllerHandle: 9223042378186644548

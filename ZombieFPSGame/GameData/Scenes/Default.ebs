@@ -153,10 +153,10 @@ Entities:
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [12.081026,1,12.627694]
+      Position: [12.081026,1.1,12.627694]
       Rotation: [0,-0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,12.081026,1,12.627694,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,12.081026,1.1,12.627694,1]
     ScriptComponent:
       ScriptUUID: 18266934061772524094
       UserPropertyOverrides:
@@ -206,10 +206,10 @@ Entities:
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [11.863312,1,-13.071975]
+      Position: [11.863312,1.1,-13.071975]
       Rotation: [0,-0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,11.863312,1,-13.071975,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,11.863312,1.1,-13.071975,1]
     ScriptComponent:
       ScriptUUID: 18266934061772524094
       UserPropertyOverrides:
@@ -1656,10 +1656,10 @@ Entities:
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [-13.245792,1,1.4271078]
+      Position: [-13.245792,1.1,1.4271078]
       Rotation: [0,-0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-13.245792,1,1.4271078,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-13.245792,1.1,1.4271078,1]
     ScriptComponent:
       ScriptUUID: 18266934061772524094
       UserPropertyOverrides:

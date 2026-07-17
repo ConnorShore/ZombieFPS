@@ -35,7 +35,7 @@ Layers:
           Looping: 1
           BasePlaybackSpeed: 1
           PositionSet: 1
-          NodePosition: [299,387]
+          NodePosition: [299,371]
       Transitions:
         - Id: 2320673472777220095
           FromStateId: 9338777461451115943

@@ -2,12 +2,16 @@ local EnemyController = {}
 
 EnemyController.BaseHealth = 50
 EnemyController.HealthMultiplierPerRound = 20
+
+EnemyController.BaseSpeed = 1.0
+EnemyController.SpeedMultiplier = 0.2
 EnemyController.TurnSpeed = 90 -- degrees per second
 
 function EnemyController:OnCreate(entity)
     self.Entity = entity
     self.IsWalking = false
     self.PreviewRotationRads = 0.0
+    self.Speed = self.BaseSpeed
 end
 
 function EnemyController:OnUpdate(entity, delta)
@@ -40,7 +44,8 @@ function EnemyController:OnUpdate(entity, delta)
     local dirZ = dz / distance
     
     -- Create the movement vector
-    local moveVec = Vector3f.new(dirX * pathComp.Speed * delta, 0.0, dirZ * pathComp.Speed * delta)
+    local speed = pathComp.Speed * self.BaseSpeed * self.SpeedMultiplier
+    local moveVec = Vector3f.new(dirX * speed * delta, 0.0, dirZ * speed * delta)
     
     -- Move using the Character Controller
     controller:Move(moveVec)
@@ -65,6 +70,7 @@ function EnemyController:OnUpdate(entity, delta)
     local isMoving = Math.Length(controller.MovementVelocity) > 0
     if isMoving and not self.IsWalking then
         animComp:SetBool("isWalking", true)
+        animComp.PlaybackSpeed = self.Speed
         self.IsWalking = true
     elseif not isMoving and self.IsWalking then
         animComp:SetBool("isWalking", false)
@@ -74,6 +80,10 @@ end
 
 function EnemyController:InitializeForRound(roundNum)
     self.Health = self.BaseHealth + ((roundNum - 1) * self.HealthMultiplierPerRound)
+
+    -- Generate random speed between 1.0 and a max number based on the round
+    local maxSpeed = self.BaseSpeed + ((roundNum - 1) * self.SpeedMultiplier)
+    self.Speed = 1.0 + Math.RandomFloat(0.0, maxSpeed - 1.0)
 end
 
 function EnemyController:ApplyDamage(amount)
