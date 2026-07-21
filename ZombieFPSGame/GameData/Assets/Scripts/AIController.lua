@@ -3,13 +3,19 @@ local AIController = {}
 function AIController:OnCreate(entity)
     -- Reused every frame in OnUpdate to avoid allocating a Vector3f (a GC object) per frame.
     self.moveVec = Vector3f.new(0.0, 0.0, 0.0)
+
+    -- Component handles are safe to cache for the entity's lifetime (they re-resolve the
+    -- live component internally), so fetch them once instead of every frame in OnUpdate.
+    self.pathComp = entity:GetComponent("AIPathComponent")
+    self.transform = entity:GetComponent("TransformComponent")
+    self.controller = entity:GetComponent("CharacterControllerComponent")
 end
 
 function AIController:OnUpdate(entity, delta)
-    local pathComp = entity:GetComponent("AIPathComponent")
-    local transform = entity:GetComponent("TransformComponent")
-    local controller = entity:GetComponent("CharacterControllerComponent")
-    
+    local pathComp = self.pathComp
+    local transform = self.transform
+    local controller = self.controller
+
     -- Check if we have waypoints to follow
     if #pathComp.Waypoints == 0 then 
         return 
