@@ -12,6 +12,9 @@ function EnemyController:OnCreate(entity)
     self.IsWalking = false
     self.PreviewRotationRads = 0.0
     self.Speed = self.BaseSpeed
+    -- Reused every frame in OnUpdate so we don't allocate a new Vector3f (a GC object)
+    -- per zombie per frame.
+    self.moveVec = Vector3f.new(0.0, 0.0, 0.0)
 end
 
 function EnemyController:OnUpdate(entity, delta)
@@ -43,10 +46,13 @@ function EnemyController:OnUpdate(entity, delta)
     local dirX = dx / distance
     local dirZ = dz / distance
     
-    -- Create the movement vector
+    -- Create the movement vector (reuse the cached vector; Move copies it immediately)
     local speed = pathComp.Speed * self.BaseSpeed * self.SpeedMultiplier
-    local moveVec = Vector3f.new(dirX * speed * delta, 0.0, dirZ * speed * delta)
-    
+    local moveVec = self.moveVec
+    moveVec.x = dirX * speed * delta
+    moveVec.y = 0.0
+    moveVec.z = dirZ * speed * delta
+
     -- Move using the Character Controller
     controller:Move(moveVec)
 
@@ -65,16 +71,19 @@ function EnemyController:OnUpdate(entity, delta)
         transform.Rotation.y = targetAngle
     end
 
-    -- Set walking animation if moving, idle if not
-    local animComp = entity:GetComponent("AnimatorComponent")
+    -- Update the walking animation only when the movement state actually changes, so we
+    -- skip the AnimatorComponent lookup (a string-keyed GetComponent that allocates a Lua
+    -- proxy) on every frame and only pay it on the rare idle<->walk transitions.
     local isMoving = Math.Length(controller.MovementVelocity) > 0
-    if isMoving and not self.IsWalking then
-        animComp:SetBool("isWalking", true)
-        animComp.PlaybackSpeed = self.Speed
-        self.IsWalking = true
-    elseif not isMoving and self.IsWalking then
-        animComp:SetBool("isWalking", false)
-        self.IsWalking = false
+    if isMoving ~= self.IsWalking then
+        local animComp = entity:GetComponent("AnimatorComponent")
+        if isMoving then
+            animComp:SetBool("isWalking", true)
+            animComp.PlaybackSpeed = self.Speed
+        else
+            animComp:SetBool("isWalking", false)
+        end
+        self.IsWalking = isMoving
     end
 end
 
