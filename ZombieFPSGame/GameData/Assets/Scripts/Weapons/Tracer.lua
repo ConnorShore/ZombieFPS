@@ -9,6 +9,10 @@ function Tracer:OnCreate(entity)
     self.DistanceTraveled = 0.0
     self.TotalDistance = 0.0
     self.Entity = entity
+
+    -- Cache our own transform handle (safe for the entity's lifetime; it re-resolves the
+    -- live component internally) so Spawn/OnUpdate don't do a string-keyed lookup each call.
+    self.transform = entity:GetComponent("TransformComponent")
 end
 
 function Tracer:Spawn(entity, startPos, endPos)
@@ -16,7 +20,7 @@ function Tracer:Spawn(entity, startPos, endPos)
     self.EndPosition = endPos
     self.TotalDistance = Math.Distance(startPos, endPos)
     
-    local transform = entity:GetComponent("TransformComponent")
+    local transform = self.transform
     transform.Position = startPos
     transform.Rotation = Math.LookAt(startPos, endPos)
 end
@@ -31,7 +35,7 @@ function Tracer:OnUpdate(entity, delta)
         -- We hit the target! Destroy the fake bullet.
         Scene.RemoveEntity(entity)
     else
-        local transform = entity:GetComponent("TransformComponent")
+        local transform = self.transform
         transform.Position = Math.Lerp(self.StartPosition, self.EndPosition, progress)
     end
 end

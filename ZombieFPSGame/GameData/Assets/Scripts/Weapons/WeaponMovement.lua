@@ -22,12 +22,16 @@ function WeaponMovement:OnCreate(entity)
     self.BobPos = Vector3f.new(0, 0, 0)
     self.BobRot = Vector3f.new(0, 0, 0)
     
-    self.BobTime = 0.0 
+    self.BobTime = 0.0
     self.Player = Scene.GetEntityByUUID(self.PlayerRef)
+
+    -- Cache our own transform handle (safe for the entity's lifetime; it re-resolves the
+    -- live component internally) so OnUpdate doesn't do a string-keyed lookup every frame.
+    self.transform = entity:GetComponent("TransformComponent")
 end
 
 function WeaponMovement:OnUpdate(entity, delta)
-    local transform = entity:GetComponent("TransformComponent")
+    local transform = self.transform
     local mouseDelta = Input.GetMouseDelta()
     self.BobTime = self.BobTime + delta
 

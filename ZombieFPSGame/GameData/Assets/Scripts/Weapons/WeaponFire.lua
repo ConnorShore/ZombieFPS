@@ -16,6 +16,10 @@ function WeaponFire:OnCreate(entity)
     self.WeaponAiming = Scene.GetEntityByUUID(self.WeaponAimingRef)
     self.WeaponRecoil = Scene.GetEntityByUUID(self.WeaponRecoilRef)
     self.WeaponHolder = Scene.GetEntityByUUID(self.WeaponHolderRef)
+
+    -- Cache our own transform handle (safe for the entity's lifetime; it re-resolves the
+    -- live component internally) so each Fire call doesn't do a string-keyed lookup.
+    self.transform = entity:GetComponent("TransformComponent")
 end
 
 function WeaponFire:OnUpdate(entity, delta)
@@ -145,7 +149,7 @@ function WeaponFire:Fire(entity, weaponEntity, wasShootingLastFrame)
     props.Pitch = Math.RandomFloat(0.95, 1.05)
     AudioSystem.PlayOneShot(weaponStats.GunshotSound, props)
     
-    local transform = entity:GetComponent("TransformComponent")
+    local transform = self.transform
     local forward = transform:GetForward()
     local right = transform:GetRight()
     local up = transform:GetUp()

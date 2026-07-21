@@ -3,7 +3,11 @@ local Crosshair = {}
 Crosshair.Size = 20
 
 function Crosshair:OnCreate(entity)
-    local transform = entity:GetComponent("TransformComponent")
+    -- Component handles are safe to cache for the entity's lifetime (they re-resolve the
+    -- live component internally), so fetch it once here instead of every frame in OnUpdate.
+    self.transform = entity:GetComponent("TransformComponent")
+
+    local transform = self.transform
     local screenSize = Renderer.GetViewportSize()
 
     transform.Position = Vector3f.new(0.5, 0.5, 0)
@@ -17,7 +21,7 @@ function Crosshair:OnCreate(entity)
 end
 
 function Crosshair:OnUpdate(entity, delta)
-    local transform = entity:GetComponent("TransformComponent")
+    local transform = self.transform
     local screenSize = Renderer.GetViewportSize()
 
     -- Keep centered

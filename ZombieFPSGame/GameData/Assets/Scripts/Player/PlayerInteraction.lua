@@ -7,11 +7,15 @@ PlayerInteraction.WeaponHolderRef = EntityRef()
 function PlayerInteraction:OnCreate(entity)
     self.PickupUI = Scene.GetEntityByUUID(self.PickupUIRef)
     self.WeaponHolder = Scene.GetEntityByUUID(self.WeaponHolderRef)
+
+    -- Cache our own transform handle (safe for the entity's lifetime; it re-resolves the
+    -- live component internally) so OnUpdate doesn't do a string-keyed lookup every frame.
+    self.transform = entity:GetComponent("TransformComponent")
 end
 
 function PlayerInteraction:OnUpdate(entity, delta)
     -- Get player position and forward direction
-    local interactionTransform = entity:GetComponent("TransformComponent")
+    local interactionTransform = self.transform
     local interactionPos = interactionTransform.WorldPosition
     local interactionForward = interactionTransform:GetForward()
 

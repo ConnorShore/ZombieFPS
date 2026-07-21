@@ -6,17 +6,23 @@ Hitbox.ImpactSound = AudioClipRef()
 
 function Hitbox:OnCreate(entity)
     self.ParentEnemy = entity:GetRootParent()
+
+    -- Component handles are safe to cache for the entity's lifetime (they re-resolve the
+    -- live component internally), so fetch them once here instead of on every hit.
+    self.transform = entity:GetComponent("TransformComponent")
+    if entity:ContainsComponent("ParticleEmitterComponent") then
+        self.particleEmitter = entity:GetComponent("ParticleEmitterComponent")
+    end
 end
 
 function Hitbox:OnTakeDamage(entity, damageInfo)
     -- Spawn Blood Particles at the exact hit point
     local impactPos = damageInfo.HitPoint + damageInfo.HitNormal * 0.01
-    if entity:ContainsComponent("ParticleEmitterComponent") then
+    if self.particleEmitter then
         local impactRotation = Math.LookAt(damageInfo.HitPoint, damageInfo.HitNormal + damageInfo.HitPoint)
-        entity:GetComponent("TransformComponent").Rotation = impactRotation
-        
-        local particleEmitter = entity:GetComponent("ParticleEmitterComponent")
-        Particles.Burst(particleEmitter, impactPos, 50, Math.ToQuaternion(impactRotation))
+        self.transform.Rotation = impactRotation
+
+        Particles.Burst(self.particleEmitter, impactPos, 50, Math.ToQuaternion(impactRotation))
     end
 
     -- Play impact sound

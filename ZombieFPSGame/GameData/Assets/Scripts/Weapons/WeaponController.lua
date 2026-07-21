@@ -50,10 +50,12 @@ function WeaponController:OnCreate(entity)
     self.ReloadTimer = 0.0
     self.CanShoot = true
 
-    -- Initialize animator parameter (fetch fresh component, don't cache)
-    local animatorComp = entity:GetComponent("AnimatorComponent")
-    if animatorComp then
-        animatorComp:SetBool(self.ReloadTriggerParam, false)
+    -- Component handles are safe to cache for the entity's lifetime: they re-resolve the
+    -- live component internally on each access, so this AnimatorComponent handle stays valid
+    -- even if a prefab spawn reallocates the pool.
+    self.AnimatorComp = entity:GetComponent("AnimatorComponent")
+    if self.AnimatorComp then
+        self.AnimatorComp:SetBool(self.ReloadTriggerParam, false)
     end
 
     self.AmmoEntity = nil
@@ -109,7 +111,7 @@ function WeaponController:OnShoot()
         end
     else
         self.CanShoot = false
-        local animatorComp = self.Entity:GetComponent("AnimatorComponent")
+        local animatorComp = self.AnimatorComp
         if animatorComp then
             animatorComp:SetBool(self.MagEmptyParam, true)
         end
@@ -120,8 +122,7 @@ function WeaponController:OnReload()
     if not self.IsReloading and self.ReserveAmmo > 0 then
         self.IsReloading = true
 
-        -- Fetch animator component fresh instead of using cached reference
-        local animatorComp = self.Entity:GetComponent("AnimatorComponent")
+        local animatorComp = self.AnimatorComp
         if not animatorComp then
             Log.Error("WeaponController:OnReload - No AnimatorComponent found on entity " .. self.Entity:GetName())
             self.IsReloading = false
@@ -256,7 +257,7 @@ function WeaponController:OnAnimationEvent(eventName)
             self.CanShoot = self.CurrentAmmo > 0
         else
             self.CanShoot = true
-            local animatorComp = self.Entity:GetComponent("AnimatorComponent")
+            local animatorComp = self.AnimatorComp
             if animatorComp then
                 animatorComp:SetBool(self.MagEmptyParam, false)
             end
@@ -264,8 +265,7 @@ function WeaponController:OnAnimationEvent(eventName)
     elseif eventName == self.ReloadCompleteEventName then
         Log.Info("Reload complete!")
         self.IsReloading = false
-        -- Fetch animator component fresh instead of using cached reference
-        local animatorComp = self.Entity:GetComponent("AnimatorComponent")
+        local animatorComp = self.AnimatorComp
         if animatorComp then
             animatorComp:SetBool(self.ReloadTriggerParam, false)
         end

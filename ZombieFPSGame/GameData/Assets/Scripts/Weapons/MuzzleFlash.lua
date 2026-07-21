@@ -7,10 +7,10 @@ function MuzzleFlash:OnCreate(entity)
     self.FlashTime = 0.0
     self.IsFlashing = false
 
-    -- NOTE: Do NOT cache ParticleEmitterComponent / PointLightComponent handles.
-    -- GetComponent returns a raw pointer into EnTT storage; spawning a prefab that
-    -- adds the same component type can reallocate the pool and invalidate cached
-    -- pointers, causing writes to land on the wrong entity (or freed memory).
+    -- Component handles are now safe to cache for the entity's lifetime: they store the
+    -- owning entity and re-resolve the live component internally on every access, so a
+    -- prefab spawn reallocating the component pool no longer dangles them (which is why
+    -- these used to be re-fetched every frame).
     if not entity:ContainsComponent("ParticleEmitterComponent") then
         Log.Warn("MuzzleFlash: No ParticleEmitterComponent found on entity!")
     end
@@ -18,9 +18,10 @@ function MuzzleFlash:OnCreate(entity)
         Log.Warn("MuzzleFlash: No PointLightComponent found on entity!")
     end
 
-    local light = entity:GetComponent("PointLightComponent")
-    if light then
-        light.IsActive = false -- Ensure light starts off
+    self.emitter = entity:GetComponent("ParticleEmitterComponent")
+    self.light = entity:GetComponent("PointLightComponent")
+    if self.light then
+        self.light.IsActive = false -- Ensure light starts off
     end
 end
 
@@ -28,14 +29,14 @@ function MuzzleFlash:OnUpdate(entity, delta)
     if self.IsFlashing then
         self.FlashTime = self.FlashTime + delta
 
-        local light = entity:GetComponent("PointLightComponent")
+        local light = self.light
         if light then
             light.IsActive = true
         end
 
         -- Deactivate the flash after the duration has passed
         if self.FlashTime >= self.FlashDuration then
-            local emitter = entity:GetComponent("ParticleEmitterComponent")
+            local emitter = self.emitter
             if emitter then
                 emitter.IsActive = false
             end
@@ -48,7 +49,7 @@ function MuzzleFlash:OnUpdate(entity, delta)
 end
 
 function MuzzleFlash:PlayFlash()
-    local emitter = self.Entity:GetComponent("ParticleEmitterComponent")
+    local emitter = self.emitter
     if emitter then
         emitter.IsActive = true
         self.FlashTime = 0.0
