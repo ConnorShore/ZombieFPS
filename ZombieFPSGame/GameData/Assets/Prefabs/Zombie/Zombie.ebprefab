@@ -32,14 +32,14 @@ PrefabEntities:
       GravityEnabled: 1
     CapsuleColliderComponent:
       Radius: 0.31
-      Height: 2
+      Height: 2.22
       IsTrigger: 0
       OffsetPosition: [0,0,0]
       OffsetRotation: [0,0,0]
       Category: 8
       CollisionMask: 5
       PhysicsMaterialUUID: 0
-      PreviewCollider: 0
+      PreviewCollider: 1
     ScriptComponent:
       ScriptUUID: 1702313573474944703
       UserPropertyOverrides:
@@ -209,7 +209,7 @@ PrefabEntities:
       Scale: [100,99.99999,99.99999]
       WorldTransform: [1.2,4.9895114e-13,0,0,4.420381e-14,1.1999997,8.526513e-14,0,2.842171e-14,1.4210855e-13,1.1999997,0,1.7408297e-13,0.8983197,0,1]
     CapsuleColliderComponent:
-      Radius: 0.27
+      Radius: 0.325
       Height: 1.92
       IsTrigger: 0
       OffsetPosition: [0,0,0]
@@ -675,12 +675,12 @@ PrefabEntities:
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [1.0173495e-05,18.564972,5.6226826]
+      Position: [1.0173591e-05,22.711823,5.6227775]
       Rotation: [-2.9162203e-07,9.4166855e-14,4.968683e-13]
       Scale: [100,99.99998,100.000015]
-      WorldTransform: [1.2,3.0044828e-13,-2.0546986e-15,0,1.5833133e-13,1.1999997,-3.026784e-08,0,2.4540015e-14,6.9849193e-09,1.1999997,0,3.99325e-12,2.3463788,5.8561563e-06,1]
+      WorldTransform: [1.2,3.0044828e-13,-2.0546986e-15,0,1.5833133e-13,1.1999997,-3.026784e-08,0,2.4540015e-14,6.9849193e-09,1.1999997,0,5.172751e-12,2.396141,7.0109963e-06,1]
     SphereColliderComponent:
-      Radius: 0.17
+      Radius: 0.18
       IsTrigger: 0
       OffsetPosition: [0,0,0]
       OffsetRotation: [0,0,0]

@@ -244,32 +244,6 @@ function WeaponFire:Fire(entity, weaponEntity, wasShootingLastFrame)
         end
     end
 
-    -- if hitResult.Hit then
-    --     local hitEntity = hitResult.Entity
-
-    --     -- Apply force to the hit entity if it has a RigidbodyComponent
-    --     if hitEntity:ContainsComponent("RigidBodyComponent") then
-    --         local rigidbody = hitEntity:GetComponent("RigidBodyComponent")
-    --         local impactForce = weaponStats.ImpactForce or 0.0
-    --         rigidbody:ApplyImpulseAtPoint(finalShootDirection * impactForce, hitResult.CollisionPoint)
-
-    --         -- TODO: Move impact logic to a separate script on the hit entity (or some other place probably)
-    --         -- Offset slightly along the surface normal to avoid z-fighting with the hit surface
-    --         local impactPos = hitResult.CollisionPoint + hitResult.SurfaceNormal * 0.01
-
-    --         local impactEffect = Scene.RetrieveFromPool("ImpactConcretePool", impactPos)
-    --         if impactEffect then
-    --             local impactTransform = impactEffect:GetComponent("TransformComponent")
-    --             local impactRotation = Math.LookAt(hitResult.CollisionPoint, hitResult.SurfaceNormal + hitResult.CollisionPoint)
-    --             impactTransform.Rotation = impactRotation
-    --             hitEntity:AddChild(impactEffect, true)
-
-    --             local particleEmitter = impactEffect:GetComponent("ParticleEmitterComponent")
-    --             Particles.Burst(particleEmitter, impactPos, 100, Math.ToQuaternion(impactRotation))
-    --         end
-    --     end
-    -- end
-
     -- Trigger recoil
     if weaponController and weaponController.TriggerRecoil and weaponController:TriggerRecoil() then
         return true

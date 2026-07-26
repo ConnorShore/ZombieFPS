@@ -109,7 +109,9 @@ function WeaponController:OnShoot()
         if self.AmmoScript or self:TryBindAmmoUI() then
             self.AmmoScript:SetAmmo(self.CurrentAmmo, self.ReserveAmmo)
         end
-    else
+    end
+
+    if self.CurrentAmmo == 0 then
         self.CanShoot = false
         local animatorComp = self.AnimatorComp
         if animatorComp then
@@ -177,28 +179,6 @@ function WeaponController:EquipAttachment(attachmentType, prefabHandle)
         end
     end
 end
-
--- function WeaponController:EquipAttachment(attachmentType, prefabHandle)
---     local mountPointEntity = self.MountPoints[attachmentType]
---     Log.Info("Attempting to equip attachment of type " .. tostring(attachmentType) .. " with prefab " .. tostring(prefabHandle))
-    
---     if not mountPointEntity or not mountPointEntity:IsValid() then
---         Log.Warn("This weapon does not support attachment type: " .. tostring(attachmentType))
---         return
---     end
-    
---     -- Remove existing attachment in this slot if there is one
---     if self.ActiveAttachments[attachmentType] ~= nil then
---         Scene.RemoveEntity(self.ActiveAttachments[attachmentType])
---         self.ActiveAttachments[attachmentType] = nil
---     end
-    
---     -- Spawn the new attachment as a child of the specific mount point entity
---     local newAttachment = Scene.InstantiatePrefab(prefabHandle, mountPointEntity)
-    
---     -- Track it
---     self.ActiveAttachments[attachmentType] = newAttachment
--- end
 
 function WeaponController:GetBarrelTipEntity()
     return self.BarrelTipEntity
