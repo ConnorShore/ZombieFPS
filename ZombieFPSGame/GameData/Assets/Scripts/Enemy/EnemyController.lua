@@ -7,6 +7,12 @@ EnemyController.BaseSpeed = 1.0
 EnemyController.SpeedMultiplier = 0.2
 EnemyController.TurnSpeed = 90 -- degrees per second
 
+EnemyController.AttackDamage = 50
+EnemyController.AttackDistance = 2.5
+EnemyController.HitDistance = 2.0
+EnemyController.TargetPlayer = EntityRef()
+EnemyController.PlayerController = EntityRef()
+
 function EnemyController:OnCreate(entity)
     self.Entity = entity
     self.IsWalking = false
@@ -15,6 +21,23 @@ function EnemyController:OnCreate(entity)
     -- Reused every frame in OnUpdate so we don't allocate a new Vector3f (a GC object)
     -- per zombie per frame.
     self.moveVec = Vector3f.new(0.0, 0.0, 0.0)
+
+    self.TargetPlayerTransform = nil
+    self.PlayerControllerInstance = nil
+
+    local targetPlayerEntity = Scene.GetEntityByUUID(self.TargetPlayer)
+    if targetPlayerEntity and targetPlayerEntity:IsValid() then
+        self.TargetPlayerTransform = targetPlayerEntity:GetComponent("TransformComponent")
+    else
+        Log.Warn("EnemyController: TargetPlayer reference is not set or invalid.")
+    end
+
+    local playerControllerEntity = Scene.GetEntityByUUID(self.PlayerController)
+    if playerControllerEntity and playerControllerEntity:IsValid() then
+        self.PlayerControllerInstance = playerControllerEntity:GetScriptInstance()
+    else
+        Log.Warn("EnemyController: PlayerController reference is not set or invalid.")
+    end
 
     -- Component handles are stable and safe to cache for the entity's lifetime (they
     -- re-resolve the live component internally), so we fetch them once here instead of
@@ -42,12 +65,21 @@ function EnemyController:OnUpdate(entity, delta)
     local dx = targetPos.x - currentPos.x
     local dz = targetPos.z - currentPos.z
     local distance = math.sqrt(dx*dx + dz*dz)
+    local isLastWaypoint = pathComp.CurrentWaypointIndex == #pathComp.Waypoints - 1
     
     -- Did we arrive?
     if distance <= pathComp.ArrivalTolerance then
         -- Cycle to the next waypoint
         pathComp.CurrentWaypointIndex = (pathComp.CurrentWaypointIndex + 1) % #pathComp.Waypoints
         return 
+    end
+
+    -- Check if near target
+    if isLastWaypoint and distance <= self.AttackDistance then
+        -- Attack the player or perform some action here
+        self.animComp:SetBool("isAttacking", true)
+    else
+        self.animComp:SetBool("isAttacking", false)
     end
     
     -- Normalize the direction
@@ -113,6 +145,23 @@ function EnemyController:Die()
     Scene.RemoveEntity(self.Entity)
 
     -- TODO: Maybe play a death animation or drop loot here
+end
+
+function EnemyController:OnAnimationEvent(eventName)
+    if eventName == "AttackHit" then
+        -- Apply damage to the player if they're within hit range when the attack connects
+        if self.TargetPlayerTransform and self.PlayerControllerInstance then
+            local distance = Math.Length(self.TargetPlayerTransform.WorldPosition - self.transform.WorldPosition)
+            if distance <= self.HitDistance then
+                self.PlayerControllerInstance:TakeDamage(self.AttackDamage)
+                Log.Info("Enemy attack hit the player.")
+            else
+                Log.Info("Enemy attack missed the player.")
+            end
+        else
+            Log.Warn("Enemy attempted to attack, but no target player is set.")
+        end
+    end
 end
 
 return EnemyController

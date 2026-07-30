@@ -2,6 +2,7 @@ local RoundAudioManager = {}
 
 RoundAudioManager.RoundStartSound = AudioClipRef()
 RoundAudioManager.RoundEndSound = AudioClipRef()
+RoundAudioManager.PlayerDeathSound = AudioClipRef()
 
 function RoundAudioManager:OnCreate(entity)
     self.Entity = entity
@@ -12,6 +13,12 @@ function RoundAudioManager:OnCreate(entity)
 
     EventManager.Subscribe("OnRoundEnded", function(roundNumber)
         self:PlayEndRoundSound()
+    end)
+
+    EventManager.Subscribe("OnPlayerDeath", function(isDead)
+        if isDead then
+            self:PlayPlayerDeathSound()
+        end
     end)
 end
 
@@ -24,6 +31,12 @@ end
 function RoundAudioManager:PlayEndRoundSound()
     if self.RoundEndSound and self.RoundEndSound:IsValid() then
         AudioSystem.PlayOneShot(self.RoundEndSound)
+    end
+end
+
+function RoundAudioManager:PlayPlayerDeathSound()
+    if self.PlayerDeathSound and self.PlayerDeathSound:IsValid() then
+        AudioSystem.PlayOneShot(self.PlayerDeathSound)
     end
 end
 

@@ -34851,4 +34851,6 @@ Tracks:
         Value: [1,1,1]
       - Time: 2.6666667
         Value: [1,1,1.0000001]
-Events: []
+Events:
+  - Name: AttackHit
+    Timestamp: 1.076

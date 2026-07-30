@@ -1,6 +1,6 @@
 Prefab: Zombie
 PrefabEntities:
-  - Entity: 3704649390569406112
+  - Entity: 17863328913237311285
     ComponentOrder:
       - IDComponent
       - TagComponent
@@ -14,18 +14,19 @@ PrefabEntities:
       - RigidBodyComponent
       - CapsuleColliderComponent
       - ScriptComponent
+      - OutlineComponent
     TagComponent:
       Tag: Zombie
     RelationshipComponent:
       Parent: 0
       Children:
-        - 1834901733534705291
+        - 5188072264420867709
       IsAttachment: 0
     TransformComponent:
-      Position: [0,1.1,0]
+      Position: [0,0,0]
       Rotation: [0,-0,0]
       Scale: [1.2,1.2,1.2]
-      WorldTransform: [1.2,0,0,0,0,1.2,0,0,0,0,1.2,0,0,1.1,0,1]
+      WorldTransform: [1.2,0,0,0,0,1.2,0,0,0,0,1.2,0,0,0,0,1]
     RigidBodyComponent:
       Type: 2
       Mass: 1
@@ -39,13 +40,24 @@ PrefabEntities:
       Category: 8
       CollisionMask: 5
       PhysicsMaterialUUID: 0
-      PreviewCollider: 1
+      PreviewCollider: 0
     ScriptComponent:
       ScriptUUID: 1702313573474944703
       UserPropertyOverrides:
         - Name: SpeedMultiplier
           Type: 3
           Value: 0.25
+        - Name: AttackDistance
+          Type: 3
+          Value: 2.5
+        - Name: TargetPlayer
+          Type: 7
+          Value: 6753254757056896993
+          ReferenceKind: Entity
+        - Name: PlayerController
+          Type: 7
+          Value: 13765157642257386743
+          ReferenceKind: Entity
     AnimatorComponent:
       SkeletonHandle: 11946468697697938328
       ControllerHandle: 9223042378186644548
@@ -69,26 +81,27 @@ PrefabEntities:
       TargetEntity: 6753254757056896993
       GridEntity: 36772468915320375
       RecalculateInterval: 1
-  - Entity: 1834901733534705291
+  - Entity: 5188072264420867709
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: Armature
     RelationshipComponent:
-      Parent: 3704649390569406112
+      Parent: 17863328913237311285
       Children:
-        - 15352389498241206078
-        - 11880967540153108360
+        - 13674015370935599536
+        - 3616432294152460780
       IsAttachment: 0
     TransformComponent:
       Position: [0,-1,0]
       Rotation: [1.5707965,-0,0]
       Scale: [0.01,0.010000001,0.010000001]
-      WorldTransform: [0.012,0,0,0,0,-1.4305116e-09,0.012,0,0,-0.012,-1.4305116e-09,0,0,-0.100000024,0,1]
-  - Entity: 15352389498241206078
+      WorldTransform: [0.012,0,0,0,0,-1.4305116e-09,0.012,0,0,-0.012,-1.4305116e-09,0,0,-1.2,0,1]
+  - Entity: 13674015370935599536
     ComponentOrder:
       - IDComponent
       - TagComponent
@@ -96,99 +109,104 @@ PrefabEntities:
       - RelationshipComponent
       - SkinnedMeshComponent
       - MaterialComponent
+      - OutlineComponent
     TagComponent:
       Tag: WorldWar_zombie
     RelationshipComponent:
-      Parent: 1834901733534705291
+      Parent: 5188072264420867709
       Children: []
       IsAttachment: 0
     TransformComponent:
       Position: [0,0,0]
       Rotation: [0,-0,0]
       Scale: [1,1,1]
-      WorldTransform: [0.012,0,0,0,0,-1.4305116e-09,0.012,0,0,-0.012,-1.4305116e-09,0,0,-0.100000024,0,1]
+      WorldTransform: [0.012,0,0,0,0,-1.4305116e-09,0.012,0,0,-0.012,-1.4305116e-09,0,0,-1.2,0,1]
     SkinnedMeshComponent:
       MeshUUID: 6509623147954976681
-      RootAnimator: 3704649390569406112
+      RootAnimator: 17863328913237311285
       Layer: 1
     MaterialComponent:
       MaterialUUID: 3184855190549820850
-  - Entity: 11880967540153108360
+  - Entity: 3616432294152460780
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:Hips'
     RelationshipComponent:
-      Parent: 1834901733534705291
+      Parent: 5188072264420867709
       Children:
-        - 6856443722343936743
-        - 9963024811632065641
-        - 5523131443924565201
-        - 4857137385712710469
+        - 8892363096233577241
+        - 16922256362828268641
+        - 4463036630305807974
+        - 16504981946639521874
       IsAttachment: 0
     TransformComponent:
       Position: [-4.064526e-06,-1.2956513,-103.55335]
       Rotation: [-1.5707961,1.6410345e-06,1.23603e-07]
       Scale: [1,0.99999994,0.99999994]
-      WorldTransform: [0.012,1.9692415e-08,1.4832391e-09,0,-1.9692413e-08,0.011999998,3.5762784e-09,0,-1.4832331e-09,-3.5762784e-09,0.011999998,0,-4.877431e-08,1.1426402,-0.015547668,1]
-  - Entity: 6856443722343936743
+      WorldTransform: [0.012,1.9692415e-08,1.4832391e-09,0,-1.9692413e-08,0.011999998,3.5762784e-09,0,-1.4832331e-09,-3.5762784e-09,0.011999998,0,-4.877431e-08,0.04264021,-0.015547668,1]
+  - Entity: 8892363096233577241
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:Spine'
     RelationshipComponent:
-      Parent: 11880967540153108360
+      Parent: 3616432294152460780
       Children:
-        - 5754945321061272102
+        - 4337914384271376024
       IsAttachment: 0
     TransformComponent:
       Position: [1.2529906e-05,11.384766,-0.35756424]
       Rotation: [0.0004738599,1.2360267e-07,-1.6410348e-06]
       Scale: [1,1,1]
-      WorldTransform: [0.012,-1.3343192e-15,1.110223e-15,0,5.9216954e-15,0.011999996,5.689894e-06,0,-8.881784e-16,-5.689894e-06,0.011999996,0,-1.220786e-07,1.2792574,-0.019838396,1]
-  - Entity: 9963024811632065641
+      WorldTransform: [0.012,-1.3343192e-15,1.110223e-15,0,5.9216954e-15,0.011999996,5.689894e-06,0,-8.881784e-16,-5.689894e-06,0.011999996,0,-1.220786e-07,0.17925738,-0.019838396,1]
+  - Entity: 16922256362828268641
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftUpLeg'
     RelationshipComponent:
-      Parent: 11880967540153108360
+      Parent: 3616432294152460780
       Children:
-        - 13746488611887302435
+        - 13148904175126379129
       IsAttachment: 0
     TransformComponent:
       Position: [11.5696,-8.174152,1.1669608]
       Rotation: [0.008263252,0.0007299699,3.141099]
       Scale: [1,0.99999976,1.0000001]
-      WorldTransform: [-0.0119999945,5.904437e-06,-8.761117e-06,0,-5.9766285e-06,-0.011999584,9.915423e-05,0,-8.7120325e-06,9.9158584e-05,0.011999587,0,0.13883533,1.0445507,-0.0015441515,1]
-  - Entity: 5523131443924565201
+      WorldTransform: [-0.0119999945,5.904437e-06,-8.761117e-06,0,-5.9766285e-06,-0.011999584,9.915423e-05,0,-8.7120325e-06,9.9158584e-05,0.011999587,0,0.13883533,-0.05544938,-0.0015441515,1]
+  - Entity: 4463036630305807974
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightUpLeg'
     RelationshipComponent:
-      Parent: 11880967540153108360
+      Parent: 3616432294152460780
       Children:
-        - 9785459307530803562
+        - 10309148718786198122
       IsAttachment: 0
     TransformComponent:
       Position: [-11.56961,-8.174137,1.1669637]
       Rotation: [0.008263679,-0.0007212057,-3.1410482]
       Scale: [0.99999994,0.99999964,1]
-      WorldTransform: [-0.011999994,-6.5532195e-06,8.65298e-06,0,6.6244984e-06,-0.011999582,9.915937e-05,0,8.598535e-06,9.916413e-05,0.011999586,0,-0.13883519,1.0445504,-0.0015441515,1]
-  - Entity: 4857137385712710469
+      WorldTransform: [-0.011999994,-6.5532195e-06,8.65298e-06,0,6.6244984e-06,-0.011999582,9.915937e-05,0,8.598535e-06,9.916413e-05,0.011999586,0,-0.13883519,-0.055449657,-0.0015441515,1]
+  - Entity: 16504981946639521874
     ComponentOrder:
       - IDComponent
       - TagComponent
@@ -197,17 +215,18 @@ PrefabEntities:
       - ScriptComponent
       - CapsuleColliderComponent
       - ParticleEmitterComponent
+      - OutlineComponent
     TagComponent:
       Tag: BodyHitbox
     RelationshipComponent:
-      Parent: 11880967540153108360
+      Parent: 3616432294152460780
       Children: []
       IsAttachment: 0
     TransformComponent:
       Position: [-2.918685e-05,-20.360046,1.2956452]
       Rotation: [-2.9802337e-07,1.2360279e-07,-1.6410345e-06]
       Scale: [100,99.99999,99.99999]
-      WorldTransform: [1.2,4.9895114e-13,0,0,4.420381e-14,1.1999997,8.526513e-14,0,2.842171e-14,1.4210855e-13,1.1999997,0,1.7408297e-13,0.8983197,0,1]
+      WorldTransform: [1.2,4.9895114e-13,0,0,4.420381e-14,1.1999997,8.526513e-14,0,2.842171e-14,1.4210855e-13,1.1999997,0,1.7408297e-13,-0.20168032,0,1]
     CapsuleColliderComponent:
       Radius: 0.325
       Height: 1.92
@@ -244,422 +263,445 @@ PrefabEntities:
       AlignWithVelocity: 0
       StretchFactor: 0
       IsActive: 0
-  - Entity: 5754945321061272102
+  - Entity: 4337914384271376024
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:Spine1'
     RelationshipComponent:
-      Parent: 6856443722343936743
+      Parent: 8892363096233577241
       Children:
-        - 17079075436341065960
+        - 13089565389175124756
       IsAttachment: 0
     TransformComponent:
       Position: [6.687638e-13,11.001187,1.1920929e-07]
       Rotation: [-0.08526873,-9.890945e-15,-3.6587256e-13]
       Scale: [1,0.99999994,0.9999998]
-      WorldTransform: [0.012,-5.724845e-15,1.2268326e-15,0,1.036045e-14,0.011956882,-0.0010163157,0,-1.2497145e-16,0.0010163155,0.01195688,0,-1.2207853e-07,1.4112716,-0.019775799,1]
-  - Entity: 13746488611887302435
+      WorldTransform: [0.012,-5.724845e-15,1.2268326e-15,0,1.036045e-14,0.011956882,-0.0010163157,0,-1.2497145e-16,0.0010163155,0.01195688,0,-1.2207853e-07,0.3112716,-0.019775799,1]
+  - Entity: 13148904175126379129
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftLeg'
     RelationshipComponent:
-      Parent: 9963024811632065641
+      Parent: 16922256362828268641
       Children:
-        - 16084006039425760989
+        - 5413806295077166651
       IsAttachment: 0
     TransformComponent:
       Position: [5.387992e-07,41.253277,-8.195639e-08]
       Rotation: [-0.0788777,-0.0016466846,-3.5303387e-05]
       Scale: [0.9999998,0.99999994,0.9999998]
-      WorldTransform: [-0.01199999,6.491336e-06,1.0994916e-05,0,-7.2509206e-06,-0.011970086,-0.0008466728,0,1.0509507e-05,-0.0008466785,0.011970086,0,0.13858877,0.5495285,0.0025462848,1]
-  - Entity: 9785459307530803562
+      WorldTransform: [-0.01199999,6.491336e-06,1.0994916e-05,0,-7.2509206e-06,-0.011970086,-0.0008466728,0,1.0509507e-05,-0.0008466785,0.011970086,0,0.13858877,-0.55047154,0.0025462848,1]
+  - Entity: 10309148718786198122
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightLeg'
     RelationshipComponent:
-      Parent: 5523131443924565201
+      Parent: 4463036630305807974
       Children:
-        - 12722084945811483531
+        - 10214394299888029129
       IsAttachment: 0
     TransformComponent:
       Position: [5.8230944e-07,41.253216,4.6007335e-07]
       Rotation: [-0.078878604,0.0013547825,-5.0370447e-05]
       Scale: [0.99999994,0.9999998,0.99999976]
-      WorldTransform: [-0.0119999945,-6.0831353e-06,-7.6088463e-06,0,6.604827e-06,-0.011970083,-0.0008466777,0,-7.1606755e-06,-0.00084668107,0.011970086,0,-0.13856192,0.5495291,0.0025464972,1]
-  - Entity: 17079075436341065960
+      WorldTransform: [-0.0119999945,-6.0831353e-06,-7.6088463e-06,0,6.604827e-06,-0.011970083,-0.0008466777,0,-7.1606755e-06,-0.00084668107,0.011970086,0,-0.13856192,-0.550471,0.0025464972,1]
+  - Entity: 13089565389175124756
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:Spine2'
     RelationshipComponent:
-      Parent: 5754945321061272102
+      Parent: 4337914384271376024
       Children:
-        - 4517047147354000051
-        - 878241802299088201
-        - 254131521270399049
-        - 1310036980163109721
-        - 7469115423299279471
+        - 5771175786067601184
+        - 3927583508648082269
+        - 10495999467727231807
+        - 1440345398355603422
+        - 10083102639498107323
       IsAttachment: 0
     TransformComponent:
       Position: [-8.60343e-13,11.833335,1.4305115e-06]
       Rotation: [0.084794804,-1.25610785e-14,2.632751e-13]
       Scale: [1,1.0000002,1]
-      WorldTransform: [0.012,-2.5641299e-15,1.1094533e-15,0,7.151926e-15,0.011999999,2.561137e-09,0,-8.8460225e-16,-2.7939677e-09,0.0119999945,0,-1.2207842e-07,1.5527613,-0.031802185,1]
-  - Entity: 16084006039425760989
+      WorldTransform: [0.012,-2.5641299e-15,1.1094533e-15,0,7.151926e-15,0.011999999,2.561137e-09,0,-8.8460225e-16,-2.7939677e-09,0.0119999945,0,-1.2207842e-07,0.4527614,-0.031802185,1]
+  - Entity: 5413806295077166651
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftFoot'
     RelationshipComponent:
-      Parent: 13746488611887302435
+      Parent: 13148904175126379129
       Children:
-        - 11776106208768836481
+        - 749009649122298653
       IsAttachment: 0
     TransformComponent:
       Position: [-1.1478551e-06,41.474926,3.7625432e-07]
       Rotation: [0.81328803,-0.01768789,0.009642782]
       Scale: [1,0.9999999,1]
-      WorldTransform: [-0.011997439,-0.00012389025,0.00021454434,0,0.00023635867,-0.008838123,0.008113666,0,7.424712e-05,0.008116161,0.008838682,0,0.13828805,0.05307004,-0.032569405,1]
-  - Entity: 12722084945811483531
+      WorldTransform: [-0.011997439,-0.00012389025,0.00021454434,0,0.00023635867,-0.008838123,0.008113666,0,7.424712e-05,0.008116161,0.008838682,0,0.13828805,-1.04693,-0.032569405,1]
+  - Entity: 10214394299888029129
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightFoot'
     RelationshipComponent:
-      Parent: 9785459307530803562
+      Parent: 10309148718786198122
       Children:
-        - 5012317690049631096
+        - 17943149109842626671
       IsAttachment: 0
     TransformComponent:
       Position: [1.3349345e-06,41.475002,-3.054738e-07]
       Rotation: [0.8132825,0.017968114,-0.009586328]
       Scale: [0.99999994,0.99999994,1]
-      WorldTransform: [-0.01199744,0.00012385941,-0.00021456042,0,-0.00023634672,-0.008838148,0.008113636,0,-7.428062e-05,0.008116132,0.008838707,0,-0.138288,0.05306986,-0.032569468,1]
-  - Entity: 4517047147354000051
+      WorldTransform: [-0.01199744,0.00012385941,-0.00021456042,0,-0.00023634672,-0.008838148,0.008113636,0,-7.428062e-05,0.008116132,0.008838707,0,-0.138288,-1.0469302,-0.032569468,1]
+  - Entity: 5771175786067601184
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:Neck'
     RelationshipComponent:
-      Parent: 17079075436341065960
+      Parent: 13089565389175124756
       Children:
-        - 6190058023492140879
+        - 2917413417707679797
       IsAttachment: 0
     TransformComponent:
       Position: [-2.6267417e-12,31.653841,-6.2831216]
       Rotation: [8.7994906e-08,8.182028e-22,-3.281723e-14]
       Scale: [1,1,1]
-      WorldTransform: [0.012,-2.9579367e-15,1.1094532e-15,0,7.545733e-15,0.011999999,3.6170755e-09,0,-8.846029e-16,-3.8499066e-09,0.0119999945,0,-1.2207822e-07,1.9326074,-0.10719953,1]
-  - Entity: 878241802299088201
+      WorldTransform: [0.012,-2.9579367e-15,1.1094532e-15,0,7.545733e-15,0.011999999,3.6170755e-09,0,-8.846029e-16,-3.8499066e-09,0.0119999945,0,-1.2207822e-07,0.8326075,-0.10719953,1]
+  - Entity: 3927583508648082269
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftShoulder'
     RelationshipComponent:
-      Parent: 17079075436341065960
+      Parent: 13089565389175124756
       Children:
-        - 3091686159063900631
+        - 4374336629035134141
       IsAttachment: 0
     TransformComponent:
       Position: [7.841245,26.218035,-8.222702]
       Rotation: [-1.5707952,1.4904826,2.761032]
       Scale: [1,1,1]
-      WorldTransform: [-0.00089385227,0.00035760025,-0.011961313,0,0.01110556,-0.0044429367,-0.0009627301,0,-0.0044573043,-0.0111414725,-9.473928e-10,0,0.09409482,1.8673778,-0.13047451,1]
-  - Entity: 254131521270399049
+      WorldTransform: [-0.00089385227,0.00035760025,-0.011961313,0,0.01110556,-0.0044429367,-0.0009627301,0,-0.0044573043,-0.0111414725,-9.473928e-10,0,0.09409482,0.76737785,-0.13047451,1]
+  - Entity: 10495999467727231807
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightShoulder'
     RelationshipComponent:
-      Parent: 17079075436341065960
+      Parent: 13089565389175124756
       Children:
-        - 4450954367655833259
+        - 1478335896113130830
       IsAttachment: 0
     TransformComponent:
       Position: [-7.8412504,26.217867,-8.222693]
       Rotation: [-1.570796,-1.4904819,-2.7610304]
       Scale: [1.0000001,1.0000001,1.0000001]
-      WorldTransform: [-0.00089386094,-0.00035760566,0.011961315,0,-0.011105558,-0.0044429456,-0.0009627398,0,0.0044573145,-0.011141472,-2.3779028e-09,0,-0.094095126,1.8673757,-0.13047439,1]
-  - Entity: 1310036980163109721
+      WorldTransform: [-0.00089386094,-0.00035760566,0.011961315,0,-0.011105558,-0.0044429456,-0.0009627398,0,0.0044573145,-0.011141472,-2.3779028e-09,0,-0.094095126,0.7673758,-0.13047439,1]
+  - Entity: 1440345398355603422
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:BackRope1'
     RelationshipComponent:
-      Parent: 17079075436341065960
+      Parent: 13089565389175124756
       Children:
-        - 910872294203915451
+        - 3816239245350684607
       IsAttachment: 0
     TransformComponent:
       Position: [-19.003628,11.019961,-21.992516]
       Rotation: [0.1214421,1.4988373e-07,-3.1415927]
       Scale: [1.0000002,1.0000001,1.0000042]
-      WorldTransform: [-0.012000002,1.0490765e-09,-1.7986054e-09,0,-1.259244e-09,-0.011911619,0.0014537227,0,-1.6582763e-09,0.001453729,0.011911663,0,-0.22804366,1.6850009,-0.2957122,1]
-  - Entity: 7469115423299279471
+      WorldTransform: [-0.012000002,1.0490765e-09,-1.7986054e-09,0,-1.259244e-09,-0.011911619,0.0014537227,0,-1.6582763e-09,0.001453729,0.011911663,0,-0.22804366,0.585001,-0.2957122,1]
+  - Entity: 10083102639498107323
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:FrontRope1'
     RelationshipComponent:
-      Parent: 17079075436341065960
+      Parent: 13089565389175124756
       Children:
-        - 14537091326744168307
+        - 8704669611948976840
       IsAttachment: 0
     TransformComponent:
       Position: [-1.2999899,6.593916,16.769022]
       Rotation: [3.1415927,1.509958e-07,1.1576209e-21]
       Scale: [1,1,1]
-      WorldTransform: [0.012,-2.1422524e-15,-1.8119477e-09,0,-7.310331e-15,-0.011999999,-3.61021e-09,0,-1.8119488e-09,3.843041e-09,-0.0119999945,0,-0.015600001,1.6318883,0.169426,1]
-  - Entity: 11776106208768836481
+      WorldTransform: [0.012,-2.1422524e-15,-1.8119477e-09,0,-7.310331e-15,-0.011999999,-3.61021e-09,0,-1.8119488e-09,3.843041e-09,-0.0119999945,0,-0.015600001,0.53188837,0.169426,1]
+  - Entity: 749009649122298653
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftToeBase'
     RelationshipComponent:
-      Parent: 16084006039425760989
+      Parent: 5413806295077166651
       Children:
-        - 14884392997209990914
+        - 730078379049745212
       IsAttachment: 0
     TransformComponent:
       Position: [2.1779852e-07,17.300005,-1.0617077e-07]
       Rotation: [0.82316345,-0.10492077,0.08283247]
       Scale: [0.99999976,0.9999997,0.9999998]
-      WorldTransform: [-0.0118633285,-1.9441359e-08,0.0018059085,0,0.0018059083,2.9844232e-06,0.011863327,0,-4.684298e-07,0.011999991,-2.947636e-06,0,0.14237705,-0.099829525,0.10779706,1]
-  - Entity: 5012317690049631096
+      WorldTransform: [-0.0118633285,-1.9441359e-08,0.0018059085,0,0.0018059083,2.9844232e-06,0.011863327,0,-4.684298e-07,0.011999991,-2.947636e-06,0,0.14237705,-1.1998296,0.10779706,1]
+  - Entity: 17943149109842626671
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightToeBase'
     RelationshipComponent:
-      Parent: 12722084945811483531
+      Parent: 10214394299888029129
       Children:
-        - 9715330968039275274
+        - 4039545831899799254
       IsAttachment: 0
     TransformComponent:
       Position: [-3.7965947e-08,17.300007,4.34462e-06]
       Rotation: [0.82315624,0.104922876,-0.08283279]
       Scale: [1,1.0000001,0.99999994]
-      WorldTransform: [-0.011863327,-2.013985e-08,-0.0018059459,0,-0.0018059467,2.8572977e-06,0.011863323,0,4.098365e-07,0.01199999,-2.825167e-06,0,-0.14237681,-0.099830136,0.107796535,1]
-  - Entity: 6190058023492140879
+      WorldTransform: [-0.011863327,-2.013985e-08,-0.0018059459,0,-0.0018059467,2.8572977e-06,0.011863323,0,4.098365e-07,0.01199999,-2.825167e-06,0,-0.14237681,-1.1998302,0.107796535,1]
+  - Entity: 2917413417707679797
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:Head'
     RelationshipComponent:
-      Parent: 4517047147354000051
+      Parent: 5771175786067601184
       Children:
-        - 11967662410386268260
-        - 18259008516646686441
-        - 1808473579431087803
-        - 8259334801342345269
+        - 463334901606883301
+        - 9950944913016059553
+        - 3781244316728697784
+        - 12367012930884811541
       IsAttachment: 0
     TransformComponent:
       Position: [9.0949345e-13,15.916,3.311094]
       Rotation: [-3.5024293e-08,-4.3665275e-25,7.370966e-21]
       Scale: [1,1,1]
-      WorldTransform: [0.012,-2.9579367e-15,1.1094532e-15,0,7.545733e-15,0.011999999,3.1967842e-09,0,-8.846026e-16,-3.429615e-09,0.0119999945,0,-1.2207809e-07,2.1235993,-0.06746636,1]
-  - Entity: 3091686159063900631
+      WorldTransform: [0.012,-2.9579367e-15,1.1094532e-15,0,7.545733e-15,0.011999999,3.1967842e-09,0,-8.846026e-16,-3.429615e-09,0.0119999945,0,-1.2207809e-07,1.0235995,-0.06746636,1]
+  - Entity: 4374336629035134141
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftArm'
     RelationshipComponent:
-      Parent: 878241802299088201
+      Parent: 3927583508648082269
       Children:
-        - 9876620947778610187
+        - 699281928078618222
       IsAttachment: 0
     TransformComponent:
       Position: [9.536743e-07,17.075169,-1.5780473e-05]
       Rotation: [-0.3805611,8.568168e-08,0.080314115]
       Scale: [1,1,1.0000001]
-      WorldTransform: [3.9866332e-09,1.4681127e-09,-0.011999994,0,0.012,-7.916242e-09,3.436907e-09,0,-7.450581e-09,-0.012,-6.758862e-10,0,0.2837242,1.791514,-0.14691329,1]
-  - Entity: 4450954367655833259
+      WorldTransform: [3.9866332e-09,1.4681127e-09,-0.011999994,0,0.012,-7.916242e-09,3.436907e-09,0,-7.450581e-09,-0.012,-6.758862e-10,0,0.2837242,0.69151413,-0.14691329,1]
+  - Entity: 1478335896113130830
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightArm'
     RelationshipComponent:
-      Parent: 254131521270399049
+      Parent: 10495999467727231807
       Children:
-        - 6245711060397894912
+        - 5337818003449391792
       IsAttachment: 0
     TransformComponent:
       Position: [2.3841858e-07,17.075165,-1.1311087e-05]
       Rotation: [-0.3805632,-3.4086406e-07,-0.08031391]
       Scale: [0.9999999,0.99999994,1]
-      WorldTransform: [-5.8730345e-09,-9.880427e-09,0.011999995,0,-0.012000002,8.381903e-09,-5.8688325e-09,0,-8.381903e-09,-0.012000002,-9.309112e-09,0,-0.2837244,1.7915118,-0.14691332,1]
-  - Entity: 910872294203915451
+      WorldTransform: [-5.8730345e-09,-9.880427e-09,0.011999995,0,-0.012000002,8.381903e-09,-5.8688325e-09,0,-8.381903e-09,-0.012000002,-9.309112e-09,0,-0.2837244,0.6915119,-0.14691332,1]
+  - Entity: 3816239245350684607
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:BackRope2'
     RelationshipComponent:
-      Parent: 1310036980163109721
+      Parent: 1440345398355603422
       Children:
-        - 15167073467332244488
+        - 13173478949575217466
       IsAttachment: 0
     TransformComponent:
       Position: [-9.3477365e-07,14.875102,3.3462943e-06]
       Rotation: [1.4156103e-07,-6.357362e-08,-2.1760385e-14]
       Scale: [1,1,1.0000001]
-      WorldTransform: [-0.012000002,1.1414956e-09,-1.0413378e-09,0,-1.2592444e-09,-0.011911619,0.0014537243,0,-8.9539265e-10,0.0014537307,0.011911665,0,-0.22804368,1.5078144,-0.27408788,1]
-  - Entity: 14537091326744168307
+      WorldTransform: [-0.012000002,1.1414956e-09,-1.0413378e-09,0,-1.2592444e-09,-0.011911619,0.0014537243,0,-8.9539265e-10,0.0014537307,0.011911665,0,-0.22804368,0.40781444,-0.27408788,1]
+  - Entity: 8704669611948976840
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:FrontRope2'
     RelationshipComponent:
-      Parent: 7469115423299279471
+      Parent: 10083102639498107323
       Children: []
       IsAttachment: 0
     TransformComponent:
       Position: [-1.0532011e-07,11.583986,3.8258815e-07]
       Rotation: [-2.2722347e-08,6.3573005e-08,3.4803676e-14]
       Scale: [1,1,1]
-      WorldTransform: [0.012,-2.8042101e-15,-1.0490719e-09,0,-7.704138e-15,-0.011999999,-3.3375418e-09,0,-1.0490728e-09,3.5703729e-09,-0.0119999945,0,-0.015600002,1.4928805,0.16942595,1]
-  - Entity: 14884392997209990914
+      WorldTransform: [0.012,-2.8042101e-15,-1.0490719e-09,0,-7.704138e-15,-0.011999999,-3.3375418e-09,0,-1.0490728e-09,3.5703729e-09,-0.0119999945,0,-0.015600002,0.39288056,0.16942595,1]
+  - Entity: 730078379049745212
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftToe_End'
     RelationshipComponent:
-      Parent: 11776106208768836481
+      Parent: 749009649122298653
       Children: []
       IsAttachment: 0
     TransformComponent:
       Position: [4.469431e-07,14.758463,-8.2340557e-07]
       Rotation: [-9.9187915e-08,9.609285e-08,-4.4713655e-08]
       Scale: [0.99999994,0.99999994,0.9999999]
-      WorldTransform: [-0.011863328,-2.0594603e-08,0.0018059078,0,0.0018059076,2.9832327e-06,0.011863326,0,-4.6939059e-07,0.011999989,-2.9462853e-06,0,0.16902947,-0.09978549,0.28288153,1]
-  - Entity: 9715330968039275274
+      WorldTransform: [-0.011863328,-2.0594603e-08,0.0018059078,0,0.0018059076,2.9832327e-06,0.011863326,0,-4.6939059e-07,0.011999989,-2.9462853e-06,0,0.16902947,-1.1997856,0.28288153,1]
+  - Entity: 4039545831899799254
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightToe_End'
     RelationshipComponent:
-      Parent: 5012317690049631096
+      Parent: 17943149109842626671
       Children: []
       IsAttachment: 0
     TransformComponent:
       Position: [6.852305e-07,14.757997,-4.2046304e-07]
       Rotation: [1.2810218e-09,-9.666405e-08,2.9812917e-08]
       Scale: [1,0.9999999,1]
-      WorldTransform: [-0.011863327,-1.8979797e-08,-0.0018059455,0,-0.0018059461,2.857313e-06,0.011863321,0,4.1098556e-07,0.01199999,-2.8250076e-06,0,-0.16902897,-0.09978797,0.28287542,1]
-  - Entity: 11967662410386268260
+      WorldTransform: [-0.011863327,-1.8979797e-08,-0.0018059455,0,-0.0018059461,2.857313e-06,0.011863321,0,4.1098556e-07,0.01199999,-2.8250076e-06,0,-0.16902897,-1.199788,0.28287542,1]
+  - Entity: 463334901606883301
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:HeadTop_End'
     RelationshipComponent:
-      Parent: 6190058023492140879
+      Parent: 2917413417707679797
       Children: []
       IsAttachment: 0
     TransformComponent:
       Position: [2.4225142e-19,18.714493,7.5086374]
       Rotation: [-3.5527137e-15,8.871598e-25,-2.2855804e-21]
       Scale: [1,1,1]
-      WorldTransform: [0.012,-2.9579367e-15,1.1094532e-15,0,7.545733e-15,0.011999999,3.1967842e-09,0,-8.846026e-16,-3.429615e-09,0.0119999945,0,-1.2207796e-07,2.3481731,0.022637308,1]
-  - Entity: 18259008516646686441
+      WorldTransform: [0.012,-2.9579367e-15,1.1094532e-15,0,7.545733e-15,0.011999999,3.1967842e-09,0,-8.846026e-16,-3.429615e-09,0.0119999945,0,-1.2207796e-07,1.2481734,0.022637308,1]
+  - Entity: 9950944913016059553
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftEye'
     RelationshipComponent:
-      Parent: 6190058023492140879
+      Parent: 2917413417707679797
       Children: []
       IsAttachment: 0
     TransformComponent:
       Position: [3.6850412,2.966232,9.1938]
       Rotation: [-0.009965206,1.231043e-23,-8.4495995e-22]
       Scale: [1,0.99999994,1]
-      WorldTransform: [0.012,-2.9579367e-15,1.1094532e-15,0,7.554173e-15,0.011999402,-0.00011957723,0,-8.0936513e-16,0.00011957705,0.0119993985,0,0.044220373,2.159194,0.042859197,1]
-  - Entity: 1808473579431087803
+      WorldTransform: [0.012,-2.9579367e-15,1.1094532e-15,0,7.554173e-15,0.011999402,-0.00011957723,0,-8.0936513e-16,0.00011957705,0.0119993985,0,0.044220373,1.0591942,0.042859197,1]
+  - Entity: 3781244316728697784
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightEye'
     RelationshipComponent:
-      Parent: 6190058023492140879
+      Parent: 2917413417707679797
       Children: []
       IsAttachment: 0
     TransformComponent:
       Position: [-3.68504,2.9660337,9.193796]
       Rotation: [0.3815582,-2.4509704e-22,-9.237252e-22]
       Scale: [1,1,1]
-      WorldTransform: [0.012,-2.9579367e-15,1.1094532e-15,0,6.673689e-15,0.011137025,0.0044684056,0,-3.6307695e-15,-0.004468408,0.011137021,0,-0.044220604,2.1591916,0.042859145,1]
-  - Entity: 8259334801342345269
+      WorldTransform: [0.012,-2.9579367e-15,1.1094532e-15,0,6.673689e-15,0.011137025,0.0044684056,0,-3.6307695e-15,-0.004468408,0.011137021,0,-0.044220604,1.0591918,0.042859145,1]
+  - Entity: 12367012930884811541
     ComponentOrder:
       - IDComponent
       - TagComponent
@@ -668,17 +710,18 @@ PrefabEntities:
       - ScriptComponent
       - SphereColliderComponent
       - ParticleEmitterComponent
+      - OutlineComponent
     TagComponent:
       Tag: HeadHitbox
     RelationshipComponent:
-      Parent: 6190058023492140879
+      Parent: 2917413417707679797
       Children: []
       IsAttachment: 0
     TransformComponent:
       Position: [1.0173591e-05,22.711823,5.6227775]
       Rotation: [-2.9162203e-07,9.4166855e-14,4.968683e-13]
       Scale: [100,99.99998,100.000015]
-      WorldTransform: [1.2,3.0044828e-13,-2.0546986e-15,0,1.5833133e-13,1.1999997,-3.026784e-08,0,2.4540015e-14,6.9849193e-09,1.1999997,0,5.172751e-12,2.396141,7.0109963e-06,1]
+      WorldTransform: [1.2,3.0044828e-13,-2.0546986e-15,0,1.5833133e-13,1.1999997,-3.026784e-08,0,2.4540015e-14,6.9849193e-09,1.1999997,0,5.172751e-12,1.2961414,7.0109963e-06,1]
     SphereColliderComponent:
       Radius: 0.18
       IsTrigger: 0
@@ -717,810 +760,855 @@ PrefabEntities:
       AlignWithVelocity: 0
       StretchFactor: 0
       IsActive: 0
-  - Entity: 9876620947778610187
+  - Entity: 699281928078618222
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftForeArm'
     RelationshipComponent:
-      Parent: 3091686159063900631
+      Parent: 4374336629035134141
       Children:
-        - 177277749795042934
+        - 1505349285973990735
       IsAttachment: 0
     TransformComponent:
       Position: [7.639642e-08,22.159266,-1.3725937e-06]
       Rotation: [-6.859617e-07,8.677686e-08,0.017453391]
       Scale: [1,1,0.99999994]
-      WorldTransform: [0.00020943405,2.3710531e-09,-0.011998166,0,0.011998173,2.9088199e-10,0.00020943338,0,7.9787865e-10,-0.011999999,-1.5733859e-09,0,0.5496354,1.7915139,-0.14691322,1]
-  - Entity: 6245711060397894912
+      WorldTransform: [0.00020943405,2.3710531e-09,-0.011998166,0,0.011998173,2.9088199e-10,0.00020943338,0,7.9787865e-10,-0.011999999,-1.5733859e-09,0,0.5496354,0.69151396,-0.14691322,1]
+  - Entity: 5337818003449391792
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightForeArm'
     RelationshipComponent:
-      Parent: 4450954367655833259
+      Parent: 1478335896113130830
       Children:
-        - 15138122075282390077
+        - 9352809934084493235
       IsAttachment: 0
     TransformComponent:
       Position: [5.4752627e-07,22.159306,-1.1843973e-05]
       Rotation: [1.2542059e-06,2.3846547e-07,-0.017453086]
       Scale: [1,1,1]
-      WorldTransform: [0.00020942054,-7.16362e-09,0.011998168,0,-0.011998175,-6.8422814e-09,0.00020942044,0,6.716217e-09,-0.012000002,-6.7106196e-09,0,-0.5496361,1.7915121,-0.14691344,1]
-  - Entity: 15167073467332244488
+      WorldTransform: [0.00020942054,-7.16362e-09,0.011998168,0,-0.011998175,-6.8422814e-09,0.00020942044,0,6.716217e-09,-0.012000002,-6.7106196e-09,0,-0.5496361,0.6915123,-0.14691344,1]
+  - Entity: 13173478949575217466
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:BackRope3'
     RelationshipComponent:
-      Parent: 910872294203915451
+      Parent: 3816239245350684607
       Children: []
       IsAttachment: 0
     TransformComponent:
       Position: [2.4704439e-06,13.950486,-2.1533706e-06]
       Rotation: [-2.04891e-07,3.4222627e-13,-1.8866715e-14]
       Scale: [1,0.99999994,0.9999999]
-      WorldTransform: [-0.012000002,1.1414953e-09,-1.0413419e-09,0,-1.2592443e-09,-0.0119116185,0.0014537218,0,-8.953969e-10,0.0014537282,0.011911663,0,-0.22804372,1.3416415,-0.25380775,1]
-  - Entity: 177277749795042934
+      WorldTransform: [-0.012000002,1.1414953e-09,-1.0413419e-09,0,-1.2592443e-09,-0.0119116185,0.0014537218,0,-8.953969e-10,0.0014537282,0.011911663,0,-0.22804372,0.24164157,-0.25380775,1]
+  - Entity: 1505349285973990735
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHand'
     RelationshipComponent:
-      Parent: 9876620947778610187
+      Parent: 699281928078618222
       Children:
-        - 13850068532658798560
-        - 16669496574323126691
-        - 1148542670835809842
-        - 3975871864654376016
-        - 17176974184100157701
+        - 4937234909667238421
+        - 12549901752275307471
+        - 4125243842384432387
+        - 5970744341297231177
+        - 9398321133288143989
       IsAttachment: 0
     TransformComponent:
       Position: [4.35877e-07,28.150356,5.462174e-07]
       Rotation: [-4.8487337e-14,-6.8939855e-08,-7.171184e-08]
       Scale: [1,1,0.99999994]
-      WorldTransform: [0.00020943319,1.5437749e-09,-0.011998166,0,0.011998173,2.9088273e-10,0.00020943252,0,7.8344087e-10,-0.011999998,-7.46234e-10,0,0.8873882,1.7915139,-0.1410176,1]
-  - Entity: 15138122075282390077
+      WorldTransform: [0.00020943319,1.5437749e-09,-0.011998166,0,0.011998173,2.9088273e-10,0.00020943252,0,7.8344087e-10,-0.011999998,-7.46234e-10,0,0.8873882,0.69151396,-0.1410176,1]
+  - Entity: 9352809934084493235
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHand'
     RelationshipComponent:
-      Parent: 6245711060397894912
+      Parent: 5337818003449391792
       Children:
-        - 12030730414158121384
-        - 2888975082702559461
-        - 18339865953885046768
-        - 13726381759701022169
-        - 14588869822539255353
+        - 5242960098636943278
+        - 9230415171547338229
+        - 5449089154520733864
+        - 16447251601135145936
+        - 6843945798408064179
       IsAttachment: 0
     TransformComponent:
       Position: [5.4292286e-07,28.150309,-1.1051042e-05]
       Rotation: [-5.42047e-07,-2.180767e-07,-2.179294e-07]
       Scale: [1,1,1]
-      WorldTransform: [0.00020942316,-9.780539e-09,0.011998168,0,-0.011998175,-3.3771785e-10,0.00020942306,0,1.6697221e-10,-0.012000002,-9.213624e-09,0,-0.88738847,1.791512,-0.14101818,1]
-  - Entity: 13850068532658798560
+      WorldTransform: [0.00020942316,-9.780539e-09,0.011998168,0,-0.011998175,-3.3771785e-10,0.00020942306,0,1.6697221e-10,-0.012000002,-9.213624e-09,0,-0.88738847,0.6915122,-0.14101818,1]
+  - Entity: 4937234909667238421
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandThumb1'
     RelationshipComponent:
-      Parent: 177277749795042934
+      Parent: 1505349285973990735
       Children:
-        - 15606123813032931631
+        - 6555540385142651257
       IsAttachment: 0
     TransformComponent:
       Position: [-5.3268433,8.902748,2.3929288]
       Rotation: [0.461901,0.022673873,0.53646827]
       Scale: [1,1.0000001,0.99999994]
-      WorldTransform: [0.0063107,0.0002720648,-0.010202988,0,0.009199918,-0.005346435,0.0055477167,0,-0.004420025,-0.01073972,-0.0030202235,0,0.9930893,1.7627988,-0.075240724,1]
-  - Entity: 16669496574323126691
+      WorldTransform: [0.0063107,0.0002720648,-0.010202988,0,0.009199918,-0.005346435,0.0055477167,0,-0.004420025,-0.01073972,-0.0030202235,0,0.9930893,0.6627988,-0.075240724,1]
+  - Entity: 12549901752275307471
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandIndex1'
     RelationshipComponent:
-      Parent: 177277749795042934
+      Parent: 1505349285973990735
       Children:
-        - 15682611980447059985
+        - 14828493522352287465
       IsAttachment: 0
     TransformComponent:
       Position: [-3.147173,14.950501,0.25141883]
       Rotation: [1.4967217e-05,-2.6783699e-08,1.4033169e-05]
       Scale: [1,1,0.99999994]
-      WorldTransform: [0.00020960155,1.2223746e-09,-0.011998164,0,0.01199817,-1.793157e-07,0.00020960088,0,-1.7880137e-07,-0.011999997,-3.5620205e-09,0,1.0661077,1.7884969,-0.10012618,1]
-  - Entity: 1148542670835809842
+      WorldTransform: [0.00020960155,1.2223746e-09,-0.011998164,0,0.01199817,-1.793157e-07,0.00020960088,0,-1.7880137e-07,-0.011999997,-3.5620205e-09,0,1.0661077,0.68849695,-0.10012618,1]
+  - Entity: 4125243842384432387
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandMiddle1'
     RelationshipComponent:
-      Parent: 177277749795042934
+      Parent: 1505349285973990735
       Children:
-        - 18365446472927021324
+        - 9234007384881972263
       IsAttachment: 0
     TransformComponent:
       Position: [-0.016175082,14.948546,0.1306912]
       Rotation: [3.3660144e-06,3.261064e-08,3.9488071e-07]
       Scale: [1,1,0.99999994]
-      WorldTransform: [0.00020943793,1.9351025e-09,-0.011998166,0,0.011998173,-4.0101284e-08,0.00020943726,0,-3.959575e-08,-0.011999997,-1.8424706e-09,0,1.06674,1.7899456,-0.13769282,1]
-  - Entity: 3975871864654376016
+      WorldTransform: [0.00020943793,1.9351025e-09,-0.011998166,0,0.011998173,-4.0101284e-08,0.00020943726,0,-3.959575e-08,-0.011999997,-1.8424706e-09,0,1.06674,0.68994564,-0.13769282,1]
+  - Entity: 5970744341297231177
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandRing1'
     RelationshipComponent:
-      Parent: 177277749795042934
+      Parent: 1505349285973990735
       Children:
-        - 12391369141979145543
+        - 15783774305741576639
       IsAttachment: 0
     TransformComponent:
       Position: [3.504791,15.108339,-0.011749721]
       Rotation: [4.7832737e-06,-7.97559e-08,2.2351708e-07]
       Scale: [1,1,0.99999994]
-      WorldTransform: [0.00020943586,5.8670435e-10,-0.011998166,0,0.011998173,-5.7108394e-08,0.0002094352,0,-5.6623804e-08,-0.011999997,-7.910953e-10,0,1.0693947,1.791655,-0.17990449,1]
-  - Entity: 17176974184100157701
+      WorldTransform: [0.00020943586,5.8670435e-10,-0.011998166,0,0.011998173,-5.7108394e-08,0.0002094352,0,-5.6623804e-08,-0.011999997,-7.910953e-10,0,1.0693947,0.691655,-0.17990449,1]
+  - Entity: 9398321133288143989
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandPinky1'
     RelationshipComponent:
-      Parent: 177277749795042934
+      Parent: 1505349285973990735
       Children:
-        - 14006463953075274676
+        - 9765422772035617395
       IsAttachment: 0
     TransformComponent:
       Position: [5.517923,12.748662,0.32501167]
       Rotation: [3.2112713e-17,-5.4008503e-08,6.388873e-07]
       Scale: [1,1,0.99999994]
-      WorldTransform: [0.00020944086,8.9567315e-10,-0.011998166,0,0.011998173,2.9088174e-10,0.00020944019,0,7.7212925e-10,-0.011999997,-9.8231034e-11,0,1.0415045,1.7876137,-0.20455258,1]
-  - Entity: 12030730414158121384
+      WorldTransform: [0.00020944086,8.9567315e-10,-0.011998166,0,0.011998173,2.9088174e-10,0.00020944019,0,7.7212925e-10,-0.011999997,-9.8231034e-11,0,1.0415045,0.68761384,-0.20455258,1]
+  - Entity: 5242960098636943278
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandThumb1'
     RelationshipComponent:
-      Parent: 15138122075282390077
+      Parent: 9352809934084493235
       Children:
-        - 8073756534543492411
+        - 10739299038926382708
       IsAttachment: 0
     TransformComponent:
       Position: [5.326833,8.902717,2.393006]
       Rotation: [0.46184245,-0.017268972,-0.5337772]
       Scale: [1,1.0000001,0.9999999]
-      WorldTransform: [0.0062838895,-0.00020722556,0.0102210445,0,-0.009199946,-0.0053463886,0.0055477195,0,0.0044580037,-0.010741192,-0.0029585448,0,-0.99308926,1.7627959,-0.075241536,1]
-  - Entity: 2888975082702559461
+      WorldTransform: [0.0062838895,-0.00020722556,0.0102210445,0,-0.009199946,-0.0053463886,0.0055477195,0,0.0044580037,-0.010741192,-0.0029585448,0,-0.99308926,0.6627961,-0.075241536,1]
+  - Entity: 9230415171547338229
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandIndex1'
     RelationshipComponent:
-      Parent: 15138122075282390077
+      Parent: 9352809934084493235
       Children:
-        - 10515492456881402431
+        - 8786694688260017509
       IsAttachment: 0
     TransformComponent:
       Position: [3.1471615,14.950516,0.2509928]
       Rotation: [-9.744379e-09,2.5899826e-07,-1.2862496e-05]
       Scale: [1,1,1]
-      WorldTransform: [0.00020957748,-6.672555e-09,0.011998165,0,-0.011998172,-2.2091108e-10,0.00020957738,0,1.0433767e-10,-0.012000002,-6.1040777e-09,0,-1.0661082,1.7885001,-0.10012703,1]
-  - Entity: 18339865953885046768
+      WorldTransform: [0.00020957748,-6.672555e-09,0.011998165,0,-0.011998172,-2.2091108e-10,0.00020957738,0,1.0433767e-10,-0.012000002,-6.1040777e-09,0,-1.0661082,0.6885003,-0.10012703,1]
+  - Entity: 5449089154520733864
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandMiddle1'
     RelationshipComponent:
-      Parent: 15138122075282390077
+      Parent: 9352809934084493235
       Children:
-        - 3902824817990960073
+        - 14748935826680066443
       IsAttachment: 0
     TransformComponent:
       Position: [0.016201526,14.948516,0.13099797]
       Rotation: [-1.6575927e-16,1.4157197e-07,1.4156103e-07]
       Scale: [1,1,1]
-      WorldTransform: [0.00020942146,-8.081675e-09,0.011998168,0,-0.011998175,-3.3771647e-10,0.00020942136,0,1.9662041e-10,-0.012000002,-7.51502e-09,0,-1.06674,1.78994,-0.13769323,1]
-  - Entity: 13726381759701022169
+      WorldTransform: [0.00020942146,-8.081675e-09,0.011998168,0,-0.011998175,-3.3771647e-10,0.00020942136,0,1.9662041e-10,-0.012000002,-7.51502e-09,0,-1.06674,0.6899403,-0.13769323,1]
+  - Entity: 16447251601135145936
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandRing1'
     RelationshipComponent:
-      Parent: 15138122075282390077
+      Parent: 9352809934084493235
       Children:
-        - 7718253669505211272
+        - 4778252629419597683
       IsAttachment: 0
     TransformComponent:
       Position: [-3.5048008,15.108315,-0.011991839]
       Rotation: [-1.4461224e-16,1.6771003e-07,2.2351742e-07]
       Scale: [1,1,1]
-      WorldTransform: [0.00020942048,-7.768018e-09,0.011998168,0,-0.011998175,-3.3771566e-10,0.00020942038,0,2.0209412e-10,-0.012000002,-7.2014106e-09,0,-1.0693947,1.7916559,-0.17990534,1]
-  - Entity: 14588869822539255353
+      WorldTransform: [0.00020942048,-7.768018e-09,0.011998168,0,-0.011998175,-3.3771566e-10,0.00020942038,0,2.0209412e-10,-0.012000002,-7.2014106e-09,0,-1.0693947,0.6916562,-0.17990534,1]
+  - Entity: 6843945798408064179
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandPinky1'
     RelationshipComponent:
-      Parent: 15138122075282390077
+      Parent: 9352809934084493235
       Children:
-        - 4362694637846263497
+        - 12789691489820445017
       IsAttachment: 0
     TransformComponent:
       Position: [-5.5179014,12.748608,0.32499868]
       Rotation: [-3.989593e-16,4.2288605e-07,2.1234155e-07]
       Scale: [1,1,1]
-      WorldTransform: [0.00020942061,-4.7059054e-09,0.011998168,0,-0.011998175,-3.3771577e-10,0.00020942051,0,2.5553326e-10,-0.012000002,-4.139766e-09,0,-1.041504,1.7876121,-0.20455304,1]
-  - Entity: 15606123813032931631
+      WorldTransform: [0.00020942061,-4.7059054e-09,0.011998168,0,-0.011998175,-3.3771577e-10,0.00020942051,0,2.5553326e-10,-0.012000002,-4.139766e-09,0,-1.041504,0.6876123,-0.20455304,1]
+  - Entity: 6555540385142651257
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandThumb2'
     RelationshipComponent:
-      Parent: 13850068532658798560
+      Parent: 4937234909667238421
       Children:
-        - 15784265968296708251
+        - 12483844287500592512
       IsAttachment: 0
     TransformComponent:
       Position: [2.6226044e-06,4.1029587,2.503395e-05]
       Rotation: [1.005829e-07,-3.743917e-07,-2.505258e-07]
       Scale: [1,0.9999999,0.9999999]
-      WorldTransform: [0.006310696,0.0002720621,-0.01020299,0,0.009199919,-0.0053464356,0.0055477135,0,-0.0044200276,-0.0107397195,-0.0030202197,0,1.0308361,1.7408624,-0.052478775,1]
-  - Entity: 15682611980447059985
+      WorldTransform: [0.006310696,0.0002720621,-0.01020299,0,0.009199919,-0.0053464356,0.0055477135,0,-0.0044200276,-0.0107397195,-0.0030202197,0,1.0308361,0.64086235,-0.052478775,1]
+  - Entity: 14828493522352287465
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandIndex2'
     RelationshipComponent:
-      Parent: 16669496574323126691
+      Parent: 12549901752275307471
       Children:
-        - 13587970624380824247
+        - 5356954339327894376
       IsAttachment: 0
     TransformComponent:
       Position: [-8.009956e-07,3.0584438,-3.0852289e-07]
       Rotation: [-5.8848573e-06,-2.3070233e-07,-1.3811509e-05]
       Scale: [1.0000001,1.0000001,1.0000001]
-      WorldTransform: [0.00020943586,-1.5435764e-09,-0.011998168,0,0.011998175,-1.08697435e-07,0.0002094352,0,-1.08242155e-07,-0.011999999,4.3848036e-10,0,1.1028035,1.7884963,-0.099485114,1]
-  - Entity: 18365446472927021324
+      WorldTransform: [0.00020943586,-1.5435764e-09,-0.011998168,0,0.011998175,-1.08697435e-07,0.0002094352,0,-1.08242155e-07,-0.011999999,4.3848036e-10,0,1.1028035,0.6884964,-0.099485114,1]
+  - Entity: 9234007384881972263
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandMiddle2'
     RelationshipComponent:
-      Parent: 1148542670835809842
+      Parent: 4125243842384432387
       Children:
-        - 18010214129164266610
+        - 2315980280024314397
       IsAttachment: 0
     TransformComponent:
       Position: [7.9350457e-07,4.533194,6.7718474e-06]
       Rotation: [3.6080514e-06,1.0510138e-06,6.9104135e-07]
       Scale: [1,1,0.99999994]
-      WorldTransform: [0.00020944623,1.4547238e-08,-0.011998166,0,0.011998173,-8.339789e-08,0.00020944556,0,-8.2665636e-08,-0.011999996,-1.5208398e-08,0,1.1211301,1.7899454,-0.13674341,1]
-  - Entity: 12391369141979145543
+      WorldTransform: [0.00020944623,1.4547238e-08,-0.011998166,0,0.011998173,-8.339789e-08,0.00020944556,0,-8.2665636e-08,-0.011999996,-1.5208398e-08,0,1.1211301,0.6899454,-0.13674341,1]
+  - Entity: 15783774305741576639
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandRing2'
     RelationshipComponent:
-      Parent: 3975871864654376016
+      Parent: 5970744341297231177
       Children:
-        - 8158184125322932639
+        - 3152952699162919852
       IsAttachment: 0
     TransformComponent:
       Position: [-7.120325e-07,3.1900275,5.262701e-07]
       Rotation: [4.0266536e-06,6.618169e-07,9.57399e-07]
       Scale: [1,1,0.99999994]
-      WorldTransform: [0.00020944735,8.528451e-09,-0.011998166,0,0.011998173,-1.0542823e-07,0.00020944668,0,-1.04797664e-07,-0.011999996,-9.575053e-09,0,1.1076692,1.7916547,-0.17923638,1]
-  - Entity: 14006463953075274676
+      WorldTransform: [0.00020944735,8.528451e-09,-0.011998166,0,0.011998173,-1.0542823e-07,0.00020944668,0,-1.04797664e-07,-0.011999996,-9.575053e-09,0,1.1076692,0.6916548,-0.17923638,1]
+  - Entity: 9765422772035617395
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandPinky2'
     RelationshipComponent:
-      Parent: 17176974184100157701
+      Parent: 9398321133288143989
       Children:
-        - 16114010806987505104
+        - 141600922675807328
       IsAttachment: 0
     TransformComponent:
       Position: [-1.8907667e-07,2.2385983,1.3733068e-05]
       Rotation: [4.7193325e-06,4.5979627e-07,2.4959525e-07]
       Scale: [1,1,1]
-      WorldTransform: [0.00020944385,6.4132273e-09,-0.011998166,0,0.011998173,-5.6341097e-08,0.00020944318,0,-5.575494e-08,-0.011999997,-6.6033756e-09,0,1.0683635,1.7876136,-0.20408373,1]
-  - Entity: 8073756534543492411
+      WorldTransform: [0.00020944385,6.4132273e-09,-0.011998166,0,0.011998173,-5.6341097e-08,0.00020944318,0,-5.575494e-08,-0.011999997,-6.6033756e-09,0,1.0683635,0.68761367,-0.20408373,1]
+  - Entity: 10739299038926382708
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandThumb2'
     RelationshipComponent:
-      Parent: 12030730414158121384
+      Parent: 5242960098636943278
       Children:
-        - 17693470235279591780
+        - 17336397454476870406
       IsAttachment: 0
     TransformComponent:
       Position: [5.722046e-06,4.102942,-1.9073486e-06]
       Rotation: [-0.0001529455,-2.1990563e-06,9.507342e-06]
       Scale: [1.0000001,1,1.0000002]
-      WorldTransform: [0.0062838127,-0.00020730004,0.010221092,0,-0.0092006875,-0.005344744,0.005548075,0,0.004456584,-0.010742012,-0.0029577194,0,-1.0308361,1.74086,-0.0524795,1]
-  - Entity: 10515492456881402431
+      WorldTransform: [0.0062838127,-0.00020730004,0.010221092,0,-0.0092006875,-0.005344744,0.005548075,0,0.004456584,-0.010742012,-0.0029577194,0,-1.0308361,0.6408602,-0.0524795,1]
+  - Entity: 8786694688260017509
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandIndex2'
     RelationshipComponent:
-      Parent: 2888975082702559461
+      Parent: 9230415171547338229
       Children:
-        - 13664012510827210007
+        - 8340568283243273471
       IsAttachment: 0
     TransformComponent:
       Position: [-9.2766277e-07,3.0584219,-6.7942005e-07]
       Rotation: [9.740973e-09,5.2900805e-07,1.3650394e-05]
       Scale: [1.0000001,1,1]
-      WorldTransform: [0.00020941373,-3.2446046e-10,0.01199817,0,-0.011998175,-3.377117e-10,0.0002094136,0,3.319931e-10,-0.012000002,2.4100943e-10,0,-1.1028037,1.7885001,-0.09948606,1]
-  - Entity: 3902824817990960073
+      WorldTransform: [0.00020941373,-3.2446046e-10,0.01199817,0,-0.011998175,-3.377117e-10,0.0002094136,0,3.319931e-10,-0.012000002,2.4100943e-10,0,-1.1028037,0.6885003,-0.09948606,1]
+  - Entity: 14748935826680066443
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandMiddle2'
     RelationshipComponent:
-      Parent: 18339865953885046768
+      Parent: 5449089154520733864
       Children:
-        - 17061286175987012877
+        - 3842414077264502834
       IsAttachment: 0
     TransformComponent:
       Position: [8.692523e-07,4.5331883,-5.7786866e-07]
       Rotation: [1.3947648e-05,1.2419505e-06,1.2386683e-06]
       Scale: [1,1,1]
-      WorldTransform: [0.0002094066,6.8217334e-09,0.011998168,0,-0.011998175,-1.677095e-07,0.0002094065,0,1.6780302e-07,-0.012000002,4.4653845e-09,0,-1.12113,1.78994,-0.13674387,1]
-  - Entity: 7718253669505211272
+      WorldTransform: [0.0002094066,6.8217334e-09,0.011998168,0,-0.011998175,-1.677095e-07,0.0002094065,0,1.6780302e-07,-0.012000002,4.4653845e-09,0,-1.12113,0.6899403,-0.13674387,1]
+  - Entity: 4778252629419597683
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandRing2'
     RelationshipComponent:
-      Parent: 13726381759701022169
+      Parent: 16447251601135145936
       Children:
-        - 12400991002199851462
+        - 13907438291094089241
       IsAttachment: 0
     TransformComponent:
       Position: [3.5725407e-06,3.1900854,1.40574775e-05]
       Rotation: [8.809947e-06,-1.6855647e-07,-2.2724291e-07]
       Scale: [1,1,1]
-      WorldTransform: [0.0002094232,-9.790696e-09,0.011998168,0,-0.011998175,-1.060571e-07,0.0002094231,0,1.0587007e-07,-0.012000002,-1.1068785e-08,0,-1.10767,1.7916558,-0.17923723,1]
-  - Entity: 4362694637846263497
+      WorldTransform: [0.0002094232,-9.790696e-09,0.011998168,0,-0.011998175,-1.060571e-07,0.0002094231,0,1.0587007e-07,-0.012000002,-1.1068785e-08,0,-1.10767,0.691656,-0.17923723,1]
+  - Entity: 12789691489820445017
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandPinky2'
     RelationshipComponent:
-      Parent: 14588869822539255353
+      Parent: 6843945798408064179
       Children:
-        - 16893085787901879168
+        - 9888315753917108411
       IsAttachment: 0
     TransformComponent:
       Position: [-5.5518467e-07,2.238597,-2.1360998e-05]
       Rotation: [9.438533e-06,-9.492299e-07,-7.357476e-07]
       Scale: [1,0.99999994,1]
-      WorldTransform: [0.00020942945,-1.6096665e-08,0.011998168,0,-0.011998174,-1.1360013e-07,0.00020942933,0,1.13301915e-07,-0.012000002,-1.7505492e-08,0,-1.0683631,1.7876123,-0.20408423,1]
-  - Entity: 15784265968296708251
+      WorldTransform: [0.00020942945,-1.6096665e-08,0.011998168,0,-0.011998174,-1.1360013e-07,0.00020942933,0,1.13301915e-07,-0.012000002,-1.7505492e-08,0,-1.0683631,0.68761253,-0.20408423,1]
+  - Entity: 12483844287500592512
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandThumb3'
     RelationshipComponent:
-      Parent: 15606123813032931631
+      Parent: 6555540385142651257
       Children:
-        - 8554570672360094909
+        - 5160129623204141665
       IsAttachment: 0
     TransformComponent:
       Position: [4.053116e-06,3.0582514,3.772974e-05]
       Rotation: [-1.0356308e-06,-4.7218072e-07,-1.9744017e-07]
       Scale: [0.99999994,0.9999999,0.99999994]
-      WorldTransform: [0.0063106916,0.00027205807,-0.010202992,0,0.009199924,-0.005346424,0.0055477144,0,-0.0044200206,-0.010739724,-0.003020209,0,1.0589716,1.7245113,-0.035512626,1]
-  - Entity: 13587970624380824247
+      WorldTransform: [0.0063106916,0.00027205807,-0.010202992,0,0.009199924,-0.005346424,0.0055477144,0,-0.0044200206,-0.010739724,-0.003020209,0,1.0589716,0.6245112,-0.035512626,1]
+  - Entity: 5356954339327894376
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandIndex3'
     RelationshipComponent:
-      Parent: 15682611980447059985
+      Parent: 14828493522352287465
       Children:
-        - 13457288855547919616
+        - 17489093544408803370
       IsAttachment: 0
     TransformComponent:
       Position: [-1.2027158e-07,3.3601065,3.242083e-06]
       Rotation: [-9.082358e-06,1.5054497e-06,6.9877e-06]
       Scale: [1.0000001,1.0000001,0.99999994]
-      WorldTransform: [0.00020951973,1.6521062e-08,-0.011998168,0,0.011998175,2.9086067e-10,0.00020951906,0,1.0449668e-09,-0.011999998,-1.572123e-08,0,1.1431186,1.7884959,-0.098781385,1]
-  - Entity: 18010214129164266610
+      WorldTransform: [0.00020951973,1.6521062e-08,-0.011998168,0,0.011998175,2.9086067e-10,0.00020951906,0,1.0449668e-09,-0.011999998,-1.572123e-08,0,1.1431186,0.688496,-0.098781385,1]
+  - Entity: 2315980280024314397
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandMiddle3'
     RelationshipComponent:
-      Parent: 18365446472927021324
+      Parent: 9234007384881972263
       Children:
-        - 4119867802226765251
+        - 5719706061910219819
       IsAttachment: 0
     TransformComponent:
       Position: [-1.1661032e-06,2.1879323,4.575916e-06]
       Rotation: [-2.4700034e-06,-1.719242e-06,-1.3625182e-06]
       Scale: [0.9999999,0.9999999,0.99999994]
-      WorldTransform: [0.00020942985,-6.083546e-09,-0.0119981645,0,0.011998171,-5.3757837e-08,0.00020942918,0,-5.3390167e-08,-0.011999995,5.936645e-09,0,1.1473813,1.7899451,-0.13628514,1]
-  - Entity: 8158184125322932639
+      WorldTransform: [0.00020942985,-6.083546e-09,-0.0119981645,0,0.011998171,-5.3757837e-08,0.00020942918,0,-5.3390167e-08,-0.011999995,5.936645e-09,0,1.1473813,0.68994516,-0.13628514,1]
+  - Entity: 3152952699162919852
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandRing3'
     RelationshipComponent:
-      Parent: 12391369141979145543
+      Parent: 15783774305741576639
       Children:
-        - 9375862829131914576
+        - 14261594746989846802
       IsAttachment: 0
     TransformComponent:
       Position: [-1.5279729e-06,3.464001,7.1150125e-06]
       Rotation: [-8.809928e-06,-3.3057546e-07,-3.33413e-07]
       Scale: [0.99999994,0.99999994,0.99999994]
-      WorldTransform: [0.00020944333,4.5615813e-09,-0.011998165,0,0.011998172,2.9086777e-10,0.00020944266,0,8.3613116e-10,-0.011999995,-3.7635783e-09,0,1.149231,1.7916542,-0.17851084,1]
-  - Entity: 16114010806987505104
+      WorldTransform: [0.00020944333,4.5615813e-09,-0.011998165,0,0.011998172,2.9086777e-10,0.00020944266,0,8.3613116e-10,-0.011999995,-3.7635783e-09,0,1.149231,0.6916543,-0.17851084,1]
+  - Entity: 141600922675807328
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandPinky3'
     RelationshipComponent:
-      Parent: 14006463953075274676
+      Parent: 9765422772035617395
       Children:
-        - 12045335421426255519
+        - 17508465576885730377
       IsAttachment: 0
     TransformComponent:
       Position: [1.3496901e-07,3.2332442,3.0817806e-05]
       Rotation: [3.4171806e-06,-9.2228373e-07,-4.5262166e-07]
       Scale: [1,1,1.0000001]
-      WorldTransform: [0.00020943843,-4.6541495e-09,-0.011998166,0,0.011998173,-9.7347254e-08,0.00020943776,0,-9.6948035e-08,-0.011999999,3.7466528e-09,0,1.1071565,1.787613,-0.20340654,1]
-  - Entity: 17693470235279591780
+      WorldTransform: [0.00020943843,-4.6541495e-09,-0.011998166,0,0.011998173,-9.7347254e-08,0.00020943776,0,-9.6948035e-08,-0.011999999,3.7466528e-09,0,1.1071565,0.6876131,-0.20340654,1]
+  - Entity: 17336397454476870406
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandThumb3'
     RelationshipComponent:
-      Parent: 8073756534543492411
+      Parent: 10739299038926382708
       Children:
-        - 17245549816482975122
+        - 7407422080248278178
       IsAttachment: 0
     TransformComponent:
       Position: [-2.3841858e-07,3.0580676,-2.8669834e-05]
       Rotation: [0.0003601387,7.3313454e-06,-7.6075867e-06]
       Scale: [0.99999994,0.9999999,0.99999994]
-      WorldTransform: [0.0062838495,-0.00020718061,0.010221071,0,-0.0091990335,-0.005348613,0.0055470867,0,0.004459943,-0.010740088,-0.002959642,0,-1.0589726,1.7245157,-0.03551303,1]
-  - Entity: 13664012510827210007
+      WorldTransform: [0.0062838495,-0.00020718061,0.010221071,0,-0.0091990335,-0.005348613,0.0055470867,0,0.004459943,-0.010740088,-0.002959642,0,-1.0589726,0.6245159,-0.03551303,1]
+  - Entity: 8340568283243273471
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandIndex3'
     RelationshipComponent:
-      Parent: 10515492456881402431
+      Parent: 8786694688260017509
       Children:
-        - 9563188046882383010
+        - 11376355644647910889
       IsAttachment: 0
     TransformComponent:
       Position: [1.0242584e-06,3.3601015,-6.802151e-06]
       Rotation: [5.403285e-06,-7.234293e-07,-7.636845e-06]
       Scale: [1,1.0000001,1]
-      WorldTransform: [0.00020950536,-9.005611e-09,0.011998168,0,-0.011998175,-6.517715e-08,0.00020950526,0,6.5009985e-08,-0.012000002,-9.570835e-09,0,-1.1431187,1.7885002,-0.0987824,1]
-  - Entity: 17061286175987012877
+      WorldTransform: [0.00020950536,-9.005611e-09,0.011998168,0,-0.011998175,-6.517715e-08,0.00020950526,0,6.5009985e-08,-0.012000002,-9.570835e-09,0,-1.1431187,0.68850034,-0.0987824,1]
+  - Entity: 3842414077264502834
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandMiddle3'
     RelationshipComponent:
-      Parent: 3902824817990960073
+      Parent: 14748935826680066443
       Children:
-        - 12322312240210019420
+        - 17980298453280732107
       IsAttachment: 0
     TransformComponent:
       Position: [4.900503e-07,2.1880062,1.0643506e-05]
       Rotation: [-1.8451805e-05,-1.6634159e-06,-1.6614646e-06]
       Scale: [1,1,1]
-      WorldTransform: [0.00020942654,-1.3138983e-08,0.011998168,0,-0.011998175,5.3712213e-08,0.00020942643,0,-5.393332e-08,-0.012000002,-1.1628263e-08,0,-1.147382,1.7899395,-0.13628568,1]
-  - Entity: 12400991002199851462
+      WorldTransform: [0.00020942654,-1.3138983e-08,0.011998168,0,-0.011998175,5.3712213e-08,0.00020942643,0,-5.393332e-08,-0.012000002,-1.1628263e-08,0,-1.147382,0.6899398,-0.13628568,1]
+  - Entity: 13907438291094089241
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandRing3'
     RelationshipComponent:
-      Parent: 7718253669505211272
+      Parent: 4778252629419597683
       Children:
-        - 8394684368978844666
+        - 8840093260801170275
       IsAttachment: 0
     TransformComponent:
       Position: [-1.4214743e-06,3.4639869,1.4777918e-05]
       Rotation: [-8.809948e-06,-2.2084159e-07,-2.1792715e-07]
       Scale: [1,1,1]
-      WorldTransform: [0.00020942582,-1.2440773e-08,0.011998168,0,-0.011998175,-3.3771386e-10,0.00020942572,0,1.2052936e-10,-0.012000002,-1.187345e-08,0,-1.1492314,1.7916552,-0.17851181,1]
-  - Entity: 16893085787901879168
+      WorldTransform: [0.00020942582,-1.2440773e-08,0.011998168,0,-0.011998175,-3.3771386e-10,0.00020942572,0,1.2052936e-10,-0.012000002,-1.187345e-08,0,-1.1492314,0.69165546,-0.17851181,1]
+  - Entity: 9888315753917108411
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandPinky3'
     RelationshipComponent:
-      Parent: 4362694637846263497
+      Parent: 12789691489820445017
       Children:
-        - 655345320378191299
+        - 10815596487153735377
       IsAttachment: 0
     TransformComponent:
       Position: [3.1947784e-06,3.2332933,1.3366188e-05]
       Rotation: [-1.7574717e-05,1.9325214e-06,1.9278168e-06]
       Scale: [1,1,1.0000001]
-      WorldTransform: [0.00020940631,7.0933766e-09,0.011998168,0,-0.011998174,9.729654e-08,0.0002094062,0,-9.715793e-08,-0.012000004,9.361479e-09,0,-1.1071566,1.7876118,-0.20340705,1]
-  - Entity: 8554570672360094909
+      WorldTransform: [0.00020940631,7.0933766e-09,0.011998168,0,-0.011998174,9.729654e-08,0.0002094062,0,-9.715793e-08,-0.012000004,9.361479e-09,0,-1.1071566,0.687612,-0.20340705,1]
+  - Entity: 5160129623204141665
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandThumb4'
     RelationshipComponent:
-      Parent: 15784265968296708251
+      Parent: 12483844287500592512
       Children: []
       IsAttachment: 0
     TransformComponent:
       Position: [2.3841858e-07,2.1670177,1.424551e-05]
       Rotation: [-6.321818e-06,2.4959394e-07,-1.671732e-07]
       Scale: [0.99999994,1,0.9999999]
-      WorldTransform: [0.0063106907,0.00027206162,-0.010202991,0,0.009199953,-0.005346356,0.0055477316,0,-0.0044199605,-0.010739757,-0.003020176,0,1.078908,1.7129253,-0.023490677,1]
-  - Entity: 13457288855547919616
+      WorldTransform: [0.0063106907,0.00027206162,-0.010202991,0,0.009199953,-0.005346356,0.0055477316,0,-0.0044199605,-0.010739757,-0.003020176,0,1.078908,0.61292523,-0.023490677,1]
+  - Entity: 17489093544408803370
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandIndex4'
     RelationshipComponent:
-      Parent: 13587970624380824247
+      Parent: 5356954339327894376
       Children: []
       IsAttachment: 0
     TransformComponent:
       Position: [-6.755872e-07,2.8240016,-3.122372e-06]
       Rotation: [-1.0806498e-05,-1.6909407e-06,-1.6875538e-06]
       Scale: [1,1,1]
-      WorldTransform: [0.00020949949,-3.7702232e-09,-0.011998168,0,0.011998175,1.2996884e-07,0.00020949882,0,1.3034898e-07,-0.011999998,6.830911e-09,0,1.1770015,1.7884959,-0.0981897,1]
-  - Entity: 4119867802226765251
+      WorldTransform: [0.00020949949,-3.7702232e-09,-0.011998168,0,0.011998175,1.2996884e-07,0.00020949882,0,1.3034898e-07,-0.011999998,6.830911e-09,0,1.1770015,0.68849605,-0.0981897,1]
+  - Entity: 5719706061910219819
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandMiddle4'
     RelationshipComponent:
-      Parent: 18010214129164266610
+      Parent: 2315980280024314397
       Children: []
       IsAttachment: 0
     TransformComponent:
       Position: [9.830546e-08,3.3877861,4.2096826e-06]
       Rotation: [-9.750985e-12,5.25348e-07,5.215394e-07]
       Scale: [1,1,0.99999994]
-      WorldTransform: [0.00020943611,2.2059954e-10,-0.0119981645,0,0.011998171,-5.3757717e-08,0.00020943544,0,-5.328002e-08,-0.0119999945,-3.6656456e-10,0,1.1880286,1.7899449,-0.13557564,1]
-  - Entity: 9375862829131914576
+      WorldTransform: [0.00020943611,2.2059954e-10,-0.0119981645,0,0.011998171,-5.3757717e-08,0.00020943544,0,-5.328002e-08,-0.0119999945,-3.6656456e-10,0,1.1880286,0.6899449,-0.13557564,1]
+  - Entity: 14261594746989846802
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandRing4'
     RelationshipComponent:
-      Parent: 8158184125322932639
+      Parent: 3152952699162919852
       Children: []
       IsAttachment: 0
     TransformComponent:
       Position: [1.5552068e-06,2.1679668,1.8977562e-05]
       Rotation: [1.1845036e-12,-9.425827e-07,-9.397045e-07]
       Scale: [1,1,1]
-      WorldTransform: [0.00020943205,-6.749407e-09,-0.011998165,0,0.011998172,2.9085784e-10,0.00020943138,0,6.387099e-10,-0.011999995,7.545685e-09,0,1.1752425,1.791654,-0.17805679,1]
-  - Entity: 12045335421426255519
+      WorldTransform: [0.00020943205,-6.749407e-09,-0.011998165,0,0.011998172,2.9085784e-10,0.00020943138,0,6.387099e-10,-0.011999995,7.545685e-09,0,1.1752425,0.6916541,-0.17805679,1]
+  - Entity: 17508465576885730377
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandPinky4'
     RelationshipComponent:
-      Parent: 16114010806987505104
+      Parent: 141600922675807328
       Children: []
       IsAttachment: 0
     TransformComponent:
       Position: [-8.1690087e-07,1.8753449,-1.05993495e-05]
       Rotation: [-1.6273061e-05,6.7993064e-08,7.171562e-08]
       Scale: [1,1,1]
-      WorldTransform: [0.00020943928,-3.83824e-09,-0.011998166,0,0.011998173,9.792947e-08,0.00020943861,0,9.83132e-08,-0.011999999,6.339068e-09,0,1.1296573,1.787613,-0.20301376,1]
-  - Entity: 17245549816482975122
+      WorldTransform: [0.00020943928,-3.83824e-09,-0.011998166,0,0.011998173,9.792947e-08,0.00020943861,0,9.83132e-08,-0.011999999,6.339068e-09,0,1.1296573,0.68761307,-0.20301376,1]
+  - Entity: 7407422080248278178
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandThumb4'
     RelationshipComponent:
-      Parent: 17693470235279591780
+      Parent: 17336397454476870406
       Children: []
       IsAttachment: 0
     TransformComponent:
       Position: [-1.1920929e-06,2.1672294,-1.5944242e-05]
       Rotation: [1.3630844e-05,-4.3483246e-06,-3.0305534e-06]
       Scale: [0.9999999,1,1]
-      WorldTransform: [0.006283896,-0.00020721107,0.01022104,0,-0.009198954,-0.0053487597,0.0055470774,0,0.0044600414,-0.010740015,-0.0029597622,0,-1.078909,1.7129241,-0.023491183,1]
-  - Entity: 9563188046882383010
+      WorldTransform: [0.006283896,-0.00020721107,0.01022104,0,-0.009198954,-0.0053487597,0.0055470774,0,0.0044600414,-0.010740015,-0.0029597622,0,-1.078909,0.6129244,-0.023491183,1]
+  - Entity: 11376355644647910889
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandIndex4'
     RelationshipComponent:
-      Parent: 13664012510827210007
+      Parent: 8340568283243273471
       Children: []
       IsAttachment: 0
     TransformComponent:
       Position: [-5.3434178e-08,2.8239775,-2.5220768e-05]
       Rotation: [-1.4512204e-11,-2.8693398e-07,-2.9150308e-07]
       Scale: [1,1,1.0000001]
-      WorldTransform: [0.00020950886,-1.2448801e-08,0.011998168,0,-0.011998175,-6.517697e-08,0.00020950875,0,6.49497e-08,-0.012000004,-1.3013516e-08,0,-1.1770014,1.7885003,-0.09819076,1]
-  - Entity: 12322312240210019420
+      WorldTransform: [0.00020950886,-1.2448801e-08,0.011998168,0,-0.011998175,-6.517697e-08,0.00020950875,0,6.49497e-08,-0.012000004,-1.3013516e-08,0,-1.1770014,0.68850046,-0.09819076,1]
+  - Entity: 17980298453280732107
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandMiddle4'
     RelationshipComponent:
-      Parent: 17061286175987012877
+      Parent: 3842414077264502834
       Children: []
       IsAttachment: 0
     TransformComponent:
       Position: [2.97714e-07,3.3877108,7.3797373e-06]
       Rotation: [4.50416e-06,8.4249484e-07,8.4564385e-07]
       Scale: [1,1,1]
-      WorldTransform: [0.0002094164,-3.0289984e-09,0.011998168,0,-0.011998175,-3.3770675e-10,0.00020941629,0,2.848104e-10,-0.012000002,-2.4631115e-09,0,-1.1880283,1.7899396,-0.1355762,1]
-  - Entity: 8394684368978844666
+      WorldTransform: [0.0002094164,-3.0289984e-09,0.011998168,0,-0.011998175,-3.3770675e-10,0.00020941629,0,2.848104e-10,-0.012000002,-2.4631115e-09,0,-1.1880283,0.6899399,-0.1355762,1]
+  - Entity: 8840093260801170275
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandRing4'
     RelationshipComponent:
-      Parent: 12400991002199851462
+      Parent: 13907438291094089241
       Children: []
       IsAttachment: 0
     TransformComponent:
       Position: [-7.098097e-07,2.1679142,3.57663e-05]
       Rotation: [4.6041025e-13,1.1959935e-06,1.1958182e-06]
       Scale: [1,1,1]
-      WorldTransform: [0.00020941148,1.9111512e-09,0.011998168,0,-0.011998175,-3.377045e-10,0.00020941137,0,3.7098966e-10,-0.012000002,2.4762814e-09,0,-1.1752424,1.7916547,-0.1780578,1]
-  - Entity: 655345320378191299
+      WorldTransform: [0.00020941148,1.9111512e-09,0.011998168,0,-0.011998175,-3.377045e-10,0.00020941137,0,3.7098966e-10,-0.012000002,2.4762814e-09,0,-1.1752424,0.69165504,-0.1780578,1]
+  - Entity: 10815596487153735377
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandPinky4'
     RelationshipComponent:
-      Parent: 16893085787901879168
+      Parent: 9888315753917108411
       Children: []
       IsAttachment: 0
     TransformComponent:
       Position: [3.6725105e-06,1.8754251,-8.616982e-06]
       Rotation: [8.136189e-06,-3.1926904e-06,-3.1907314e-06]
       Scale: [1,1.0000001,1]
-      WorldTransform: [0.0002094446,-3.121923e-08,0.011998167,0,-0.011998175,-3.3772807e-10,0.00020944451,0,-2.072369e-10,-0.012000004,-3.0649034e-08,0,-1.1296583,1.7876121,-0.20301428,1]
+      WorldTransform: [0.0002094446,-3.121923e-08,0.011998167,0,-0.011998175,-3.3772807e-10,0.00020944451,0,-2.072369e-10,-0.012000004,-3.0649034e-08,0,-1.1296583,0.6876123,-0.20301428,1]

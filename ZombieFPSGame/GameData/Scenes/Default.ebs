@@ -139,6 +139,10 @@ Entities:
           Type: 8
           Value: 373352394328918492
           ReferenceKind: AudioClip
+        - Name: PlayerDeathSound
+          Type: 8
+          Value: 4006857010690811945
+          ReferenceKind: AudioClip
   - Entity: 9978092339450031366
     ComponentOrder:
       - IDComponent
@@ -162,7 +166,7 @@ Entities:
       UserPropertyOverrides:
         - Name: ZombiePrefab
           Type: 8
-          Value: 14541472444346655041
+          Value: 948669407353468754
           ReferenceKind: Prefab
   - Entity: 3228848565545027244
     ComponentOrder:
@@ -215,7 +219,7 @@ Entities:
       UserPropertyOverrides:
         - Name: ZombiePrefab
           Type: 8
-          Value: 14541472444346655041
+          Value: 948669407353468754
           ReferenceKind: Prefab
     PrefabComponent:
       PrefabUUID: 4357804436516360089
@@ -1665,7 +1669,7 @@ Entities:
       UserPropertyOverrides:
         - Name: ZombiePrefab
           Type: 8
-          Value: 14541472444346655041
+          Value: 948669407353468754
           ReferenceKind: Prefab
 Environment:
   Skybox:
