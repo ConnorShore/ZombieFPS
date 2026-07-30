@@ -79,6 +79,10 @@ Assets:
     UUID: 15495496485610532023
     Name: Zombie_world_war_zombie_diffuse.png
     FilePath: Models/Zombie/Zombie_Resources/Zombie_world_war_zombie_diffuse.png
+  - Type: Texture
+    UUID: 6891481540194389905
+    Name: BloodDamageEffect
+    FilePath: Textures/BloodDamageEffect.png
   - Type: Shader
     UUID: 3290979914783484062
     Name: HolographicSight
@@ -211,6 +215,10 @@ Assets:
     UUID: 11246612645680594128
     Name: RoundAudioManager
     FilePath: Scripts/RoundAudioManager.lua
+  - Type: Script
+    UUID: 10853797460557917967
+    Name: DamageSplashController
+    FilePath: Scripts/DamageSplashController.lua
   - Type: Material
     UUID: 782295293902573577
     Name: DesertEagle_Metal

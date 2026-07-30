@@ -10,6 +10,8 @@ function PlayerController:OnUpdate(entity, delta)
 end
 
 function PlayerController:TakeDamage(amount)
+    EventManager.Broadcast("OnPlayerDamaged", amount)
+
     self.Health = self.Health - amount
     if self.Health < 0 then
         self.Health = 0

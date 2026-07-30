@@ -297,6 +297,7 @@ Entities:
         - 16155943693343446687
         - 7122639572906643531
         - 15941034270328579006
+        - 3446544600952183294
       IsAttachment: 0
     TransformComponent:
       Position: [0,0,0]
@@ -1671,6 +1672,41 @@ Entities:
           Type: 8
           Value: 948669407353468754
           ReferenceKind: Prefab
+  - Entity: 3446544600952183294
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RectTransformComponent
+      - SpriteComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: DamageSplash
+    RelationshipComponent:
+      Parent: 5645678438920164573
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1208,0,0,0,0,688,0,0,0,0,1,0,554,294,0,1]
+    SpriteComponent:
+      Color: [1,1,1,0]
+      TextureUUID: 6891481540194389905
+      IsBillboard: 0
+      LockYAxis: 0
+    ScriptComponent:
+      ScriptUUID: 10853797460557917967
+      UserPropertyOverrides: []
+    RectTransformComponent:
+      AnchoredPosition: [0,0]
+      SizeDelta: [100,100]
+      AnchorMin: [0,0]
+      AnchorMax: [1,1]
+      Pivot: [0.5,0.5]
+      Rotation: 0
 Environment:
   Skybox:
     Enabled: 1
