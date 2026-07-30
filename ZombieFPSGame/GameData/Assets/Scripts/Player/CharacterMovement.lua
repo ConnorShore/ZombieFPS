@@ -6,13 +6,17 @@ CharacterMovement.SprintSpeed = 8.0
 function CharacterMovement:OnCreate(entity)
     self.Sprinting = false;
 
-    local controller = entity:GetComponent("CharacterControllerComponent")
-    controller.WalkSpeed = self.WalkSpeed
+    -- Component handles are safe to cache for the entity's lifetime (they re-resolve the
+    -- live component internally), so fetch them once here instead of every frame in OnUpdate.
+    self.controller = entity:GetComponent("CharacterControllerComponent")
+    self.transform = entity:GetComponent("TransformComponent")
+
+    self.controller.WalkSpeed = self.WalkSpeed
 end
 
 function CharacterMovement:OnUpdate(entity, delta)
-    local controller = entity:GetComponent("CharacterControllerComponent")
-    local transform = entity:GetComponent("TransformComponent")
+    local controller = self.controller
+    local transform = self.transform
 
     local forward = transform:GetForward()
     local right = transform:GetRight()

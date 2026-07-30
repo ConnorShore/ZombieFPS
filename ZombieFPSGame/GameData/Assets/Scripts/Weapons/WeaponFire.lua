@@ -16,6 +16,10 @@ function WeaponFire:OnCreate(entity)
     self.WeaponAiming = Scene.GetEntityByUUID(self.WeaponAimingRef)
     self.WeaponRecoil = Scene.GetEntityByUUID(self.WeaponRecoilRef)
     self.WeaponHolder = Scene.GetEntityByUUID(self.WeaponHolderRef)
+
+    -- Cache our own transform handle (safe for the entity's lifetime; it re-resolves the
+    -- live component internally) so each Fire call doesn't do a string-keyed lookup.
+    self.transform = entity:GetComponent("TransformComponent")
 end
 
 function WeaponFire:OnUpdate(entity, delta)
@@ -145,7 +149,7 @@ function WeaponFire:Fire(entity, weaponEntity, wasShootingLastFrame)
     props.Pitch = Math.RandomFloat(0.95, 1.05)
     AudioSystem.PlayOneShot(weaponStats.GunshotSound, props)
     
-    local transform = entity:GetComponent("TransformComponent")
+    local transform = self.transform
     local forward = transform:GetForward()
     local right = transform:GetRight()
     local up = transform:GetUp()
@@ -239,32 +243,6 @@ function WeaponFire:Fire(entity, weaponEntity, wasShootingLastFrame)
             self:SpawnDefaultImpact(hitResult.CollisionPoint, hitResult.SurfaceNormal, hitEntity)
         end
     end
-
-    -- if hitResult.Hit then
-    --     local hitEntity = hitResult.Entity
-
-    --     -- Apply force to the hit entity if it has a RigidbodyComponent
-    --     if hitEntity:ContainsComponent("RigidBodyComponent") then
-    --         local rigidbody = hitEntity:GetComponent("RigidBodyComponent")
-    --         local impactForce = weaponStats.ImpactForce or 0.0
-    --         rigidbody:ApplyImpulseAtPoint(finalShootDirection * impactForce, hitResult.CollisionPoint)
-
-    --         -- TODO: Move impact logic to a separate script on the hit entity (or some other place probably)
-    --         -- Offset slightly along the surface normal to avoid z-fighting with the hit surface
-    --         local impactPos = hitResult.CollisionPoint + hitResult.SurfaceNormal * 0.01
-
-    --         local impactEffect = Scene.RetrieveFromPool("ImpactConcretePool", impactPos)
-    --         if impactEffect then
-    --             local impactTransform = impactEffect:GetComponent("TransformComponent")
-    --             local impactRotation = Math.LookAt(hitResult.CollisionPoint, hitResult.SurfaceNormal + hitResult.CollisionPoint)
-    --             impactTransform.Rotation = impactRotation
-    --             hitEntity:AddChild(impactEffect, true)
-
-    --             local particleEmitter = impactEffect:GetComponent("ParticleEmitterComponent")
-    --             Particles.Burst(particleEmitter, impactPos, 100, Math.ToQuaternion(impactRotation))
-    --         end
-    --     end
-    -- end
 
     -- Trigger recoil
     if weaponController and weaponController.TriggerRecoil and weaponController:TriggerRecoil() then

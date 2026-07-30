@@ -1,0 +1,90 @@
+Version: 1
+Parameters:
+  - Name: isWalking
+    Type: 1
+    FloatValue: 0
+    BoolValue: 0
+    IntValue: 0
+  - Name: isAttacking
+    Type: 1
+    FloatValue: 0
+    BoolValue: 0
+    IntValue: 0
+Layers:
+  - Name: Base Layer
+    Weight: 1
+    MaskHandle: 0
+    Mode: 0
+    StateMachine:
+      DefaultState: 9338777461451115943
+      EntryNodePositionSet: 1
+      ExitNodePositionSet: 1
+      EntryNodePosition: [91,227]
+      ExitNodePosition: [523,227]
+      States:
+        - Id: 9338777461451115943
+          Name: Idle
+          AnimationHandle: 9936688561769825438
+          Looping: 1
+          BasePlaybackSpeed: 1
+          PositionSet: 1
+          NodePosition: [299,227]
+        - Id: 17339741300308657369
+          Name: Walking
+          AnimationHandle: 2713313368883441983
+          Looping: 1
+          BasePlaybackSpeed: 1
+          PositionSet: 1
+          NodePosition: [299,371]
+        - Id: 15658248006269782940
+          Name: Attacking
+          AnimationHandle: 10171445062614256115
+          Looping: 1
+          BasePlaybackSpeed: 1
+          PositionSet: 1
+          NodePosition: [299,483]
+      Transitions:
+        - Id: 2320673472777220095
+          FromStateId: 9338777461451115943
+          ToStateId: 17339741300308657369
+          BlendDuration: 0.25
+          Conditions:
+            - ParameterName: isWalking
+              Type: 1
+              Operator: 2
+              FloatValue: 0
+              BoolValue: 1
+              IntValue: 0
+        - Id: 2760914813775317255
+          FromStateId: 17339741300308657369
+          ToStateId: 9338777461451115943
+          BlendDuration: 0.25
+          Conditions:
+            - ParameterName: isWalking
+              Type: 1
+              Operator: 2
+              FloatValue: 0
+              BoolValue: 0
+              IntValue: 0
+        - Id: 12984317458210839642
+          FromStateId: 17339741300308657369
+          ToStateId: 15658248006269782940
+          BlendDuration: 0.25
+          Conditions:
+            - ParameterName: isAttacking
+              Type: 1
+              Operator: 2
+              FloatValue: 0
+              BoolValue: 1
+              IntValue: 0
+        - Id: 1250540000699749460
+          FromStateId: 15658248006269782940
+          ToStateId: 17339741300308657369
+          BlendDuration: 0.25
+          Conditions:
+            - ParameterName: isAttacking
+              Type: 1
+              Operator: 2
+              FloatValue: 0
+              BoolValue: 0
+              IntValue: 0

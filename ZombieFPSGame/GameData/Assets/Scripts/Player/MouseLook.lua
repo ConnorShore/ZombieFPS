@@ -5,6 +5,10 @@ MouseLook.Sensitivity = 5.0
 function MouseLook:OnCreate(entity)
     self.Pitch = 0.0
     self.SensitivityScale = 1000.0
+
+    -- Cache our own transform handle (safe for the entity's lifetime; it re-resolves the
+    -- live component internally) so OnUpdate doesn't do a string-keyed lookup every frame.
+    self.transform = entity:GetComponent("TransformComponent")
 end
 
 function MouseLook:OnUpdate(entity, delta)
@@ -21,7 +25,7 @@ function MouseLook:OnUpdate(entity, delta)
     self.Pitch = self.Pitch - (mouseDelta.y * (self.Sensitivity / self.SensitivityScale))
     self.Pitch = Math.Clamp(self.Pitch, Math.Radians(-89.0), Math.Radians(89.0))
 
-    local transform = entity:GetComponent("TransformComponent")
+    local transform = self.transform
     transform.Rotation.x = self.Pitch
 end
 

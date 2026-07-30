@@ -50,10 +50,12 @@ function WeaponController:OnCreate(entity)
     self.ReloadTimer = 0.0
     self.CanShoot = true
 
-    -- Initialize animator parameter (fetch fresh component, don't cache)
-    local animatorComp = entity:GetComponent("AnimatorComponent")
-    if animatorComp then
-        animatorComp:SetBool(self.ReloadTriggerParam, false)
+    -- Component handles are safe to cache for the entity's lifetime: they re-resolve the
+    -- live component internally on each access, so this AnimatorComponent handle stays valid
+    -- even if a prefab spawn reallocates the pool.
+    self.AnimatorComp = entity:GetComponent("AnimatorComponent")
+    if self.AnimatorComp then
+        self.AnimatorComp:SetBool(self.ReloadTriggerParam, false)
     end
 
     self.AmmoEntity = nil
@@ -107,9 +109,11 @@ function WeaponController:OnShoot()
         if self.AmmoScript or self:TryBindAmmoUI() then
             self.AmmoScript:SetAmmo(self.CurrentAmmo, self.ReserveAmmo)
         end
-    else
+    end
+
+    if self.CurrentAmmo == 0 then
         self.CanShoot = false
-        local animatorComp = self.Entity:GetComponent("AnimatorComponent")
+        local animatorComp = self.AnimatorComp
         if animatorComp then
             animatorComp:SetBool(self.MagEmptyParam, true)
         end
@@ -120,8 +124,7 @@ function WeaponController:OnReload()
     if not self.IsReloading and self.ReserveAmmo > 0 then
         self.IsReloading = true
 
-        -- Fetch animator component fresh instead of using cached reference
-        local animatorComp = self.Entity:GetComponent("AnimatorComponent")
+        local animatorComp = self.AnimatorComp
         if not animatorComp then
             Log.Error("WeaponController:OnReload - No AnimatorComponent found on entity " .. self.Entity:GetName())
             self.IsReloading = false
@@ -176,28 +179,6 @@ function WeaponController:EquipAttachment(attachmentType, prefabHandle)
         end
     end
 end
-
--- function WeaponController:EquipAttachment(attachmentType, prefabHandle)
---     local mountPointEntity = self.MountPoints[attachmentType]
---     Log.Info("Attempting to equip attachment of type " .. tostring(attachmentType) .. " with prefab " .. tostring(prefabHandle))
-    
---     if not mountPointEntity or not mountPointEntity:IsValid() then
---         Log.Warn("This weapon does not support attachment type: " .. tostring(attachmentType))
---         return
---     end
-    
---     -- Remove existing attachment in this slot if there is one
---     if self.ActiveAttachments[attachmentType] ~= nil then
---         Scene.RemoveEntity(self.ActiveAttachments[attachmentType])
---         self.ActiveAttachments[attachmentType] = nil
---     end
-    
---     -- Spawn the new attachment as a child of the specific mount point entity
---     local newAttachment = Scene.InstantiatePrefab(prefabHandle, mountPointEntity)
-    
---     -- Track it
---     self.ActiveAttachments[attachmentType] = newAttachment
--- end
 
 function WeaponController:GetBarrelTipEntity()
     return self.BarrelTipEntity
@@ -256,7 +237,7 @@ function WeaponController:OnAnimationEvent(eventName)
             self.CanShoot = self.CurrentAmmo > 0
         else
             self.CanShoot = true
-            local animatorComp = self.Entity:GetComponent("AnimatorComponent")
+            local animatorComp = self.AnimatorComp
             if animatorComp then
                 animatorComp:SetBool(self.MagEmptyParam, false)
             end
@@ -264,8 +245,7 @@ function WeaponController:OnAnimationEvent(eventName)
     elseif eventName == self.ReloadCompleteEventName then
         Log.Info("Reload complete!")
         self.IsReloading = false
-        -- Fetch animator component fresh instead of using cached reference
-        local animatorComp = self.Entity:GetComponent("AnimatorComponent")
+        local animatorComp = self.AnimatorComp
         if animatorComp then
             animatorComp:SetBool(self.ReloadTriggerParam, false)
         end

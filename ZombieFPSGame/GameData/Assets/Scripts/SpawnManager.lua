@@ -12,15 +12,17 @@ function SpawnManager:OnCreate(entity)
     self.ActiveZombies = 0
     self.IsWaveActive = false
     self.SpawnInterval = self.BaseSpawnInterval
-    self.SpawnerUUIDs = {}
+    self.Spawners = {}
     self.RoundNum = 1
 
     -- Automatically find all child entities (Spawners) attached to this Manager
     if entity:ContainsComponent("RelationshipComponent") then
         local relComp = entity:GetComponent("RelationshipComponent")
-        Log.Info("SpawnManager found " .. tostring(#relComp.Children) .. " child spawners.")
         for i, childUUID in ipairs(relComp.Children) do
-            table.insert(self.SpawnerUUIDs, childUUID)
+            local spawnerEntity = Scene.GetEntityByUUID(childUUID)
+            if spawnerEntity and spawnerEntity:IsValid() then
+                table.insert(self.Spawners, spawnerEntity)
+            end
         end
     end
 
@@ -65,29 +67,25 @@ function SpawnManager:OnUpdate(entity, delta)
 end
 
 function SpawnManager:TriggerRandomSpawner()
-    if #self.SpawnerUUIDs == 0 then
+    if #self.Spawners == 0 then
         Log.Warn("SpawnManager cannot spawn: No child spawners found!")
         return
     end
 
-    -- 1. Pick a random spawner from our list of children
-    local randomIndex = Math.RandomInt(1, #self.SpawnerUUIDs)
-    local spawnerUUID = self.SpawnerUUIDs[randomIndex]
-    
-    local spawnerEntity = Scene.GetEntityByUUID(spawnerUUID)
-
+    local randomIndex = Math.RandomInt(1, #self.Spawners)
+    local spawnerEntity = self.Spawners[randomIndex]
     if spawnerEntity and spawnerEntity:IsValid() then
-        -- 2. Call the spawn function on the chosen child's script
         local spawnerScript = spawnerEntity:GetScriptInstance()
         if spawnerScript and spawnerScript.Spawn then
             spawnerScript:Spawn(spawnerEntity, self.RoundNum)
-            
-            -- Keep track of our numbers!
+
             self.ZombiesSpawned = self.ZombiesSpawned + 1
             self.ActiveZombies = self.ActiveZombies + 1
         else
             Log.Error("Child entity '" .. spawnerEntity:GetName() .. "' is missing a Spawner script!")
         end
+    else
+        Log.Error("SpawnManager picked an invalid spawner entity at index: " .. tostring(randomIndex))
     end
 end
 

@@ -28,10 +28,14 @@ function WeaponRecoil:OnCreate(entity)
     self.PreviousCameraYaw = 0.0
     self.Camera = Scene.GetEntityByUUID(self.CameraRef)
     self.WeaponAiming = Scene.GetEntityByUUID(self.WeaponAimingRef)
+
+    -- Cache our own transform handle (safe for the entity's lifetime; it re-resolves the
+    -- live component internally) so OnUpdate doesn't do a string-keyed lookup every frame.
+    self.transform = entity:GetComponent("TransformComponent")
 end
 
 function WeaponRecoil:OnUpdate(entity, delta)
-    local transform = entity:GetComponent("TransformComponent")
+    local transform = self.transform
 
     -- LOCAL GUN RECOIL (Visually bouncing in hands)
     self.TargetPositionOffset = Math.Lerp(self.TargetPositionOffset, Vector3f.new(0,0,0), self.ReturnSpeed * delta)

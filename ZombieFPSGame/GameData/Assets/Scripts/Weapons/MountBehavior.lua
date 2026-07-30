@@ -12,6 +12,9 @@ MountBehavior.MountType = {
 function MountBehavior:OnCreate(entity)
     self.Entity = entity
 
+    -- Cache our own transform handle (safe for the entity's lifetime; it re-resolves the
+    -- live component internally) so we don't do a string-keyed lookup on every attach.
+    self.transform = entity:GetComponent("TransformComponent")
 end
 
 function MountBehavior:OnUpdate(entity, delta)
@@ -20,7 +23,7 @@ end
 
 function MountBehavior:OnAttach(prefabHandle)
     self.MountPrefab = prefabHandle
-    local transform = self.Entity:GetComponent("TransformComponent")
+    local transform = self.transform
     self.MountPrefabEntity = Scene.InstantiatePrefab(self.MountPrefab, self.Entity)
     if not self.MountPrefabEntity:IsValid() then
         Log.Error("Failed to instantiate mount prefab: " .. tostring(self.MountPrefab))

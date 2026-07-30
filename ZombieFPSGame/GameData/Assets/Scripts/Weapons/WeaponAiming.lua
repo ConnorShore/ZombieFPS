@@ -30,7 +30,11 @@ function WeaponAiming:OnCreate(entity)
     self.HipPosition = Vector3f.new(0, 0, 0)
     self.IsAiming = false
     self.RootScale = Vector3f.new(1, 1, 1)
-    
+
+    -- Cache our own transform handle (safe for the entity's lifetime; it re-resolves the
+    -- live component internally) so OnUpdate doesn't do a string-keyed lookup every frame.
+    self.transform = entity:GetComponent("TransformComponent")
+
     self.DefaultAimNode = Scene.GetEntityByUUID(self.AimNodeRef)
     self.CurrentAimNode = self.DefaultAimNode
     self.Crosshair = Scene.GetEntityByUUID(self.CrosshairRef)
@@ -42,8 +46,8 @@ function WeaponAiming:OnCreate(entity)
 end
 
 function WeaponAiming:OnUpdate(entity, delta)
-    local transform = entity:GetComponent("TransformComponent")
-    
+    local transform = self.transform
+
     local rootPos = Vector3f.new(0, 0, 0)
     self.WeaponRoot = self:ResolveWeaponPrefabRoot(entity)
     if self.WeaponRoot and self.WeaponRoot:IsValid() then
