@@ -14,7 +14,6 @@ PrefabEntities:
       - RigidBodyComponent
       - CapsuleColliderComponent
       - ScriptComponent
-      - OutlineComponent
     TagComponent:
       Tag: Zombie
     RelationshipComponent:
@@ -62,7 +61,7 @@ PrefabEntities:
       SkeletonHandle: 11946468697697938328
       ControllerHandle: 9223042378186644548
     PrefabComponent:
-      PrefabUUID: 14541472444346655041
+      PrefabUUID: 948669407353468754
     CharacterControllerComponent:
       WalkSpeed: 5
       JumpForce: 5
@@ -87,7 +86,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: Armature
     RelationshipComponent:
@@ -109,7 +107,6 @@ PrefabEntities:
       - RelationshipComponent
       - SkinnedMeshComponent
       - MaterialComponent
-      - OutlineComponent
     TagComponent:
       Tag: WorldWar_zombie
     RelationshipComponent:
@@ -133,7 +130,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:Hips'
     RelationshipComponent:
@@ -155,7 +151,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:Spine'
     RelationshipComponent:
@@ -174,7 +169,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftUpLeg'
     RelationshipComponent:
@@ -193,7 +187,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightUpLeg'
     RelationshipComponent:
@@ -215,7 +208,6 @@ PrefabEntities:
       - ScriptComponent
       - CapsuleColliderComponent
       - ParticleEmitterComponent
-      - OutlineComponent
     TagComponent:
       Tag: BodyHitbox
     RelationshipComponent:
@@ -269,7 +261,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:Spine1'
     RelationshipComponent:
@@ -288,7 +279,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftLeg'
     RelationshipComponent:
@@ -307,7 +297,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightLeg'
     RelationshipComponent:
@@ -326,7 +315,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:Spine2'
     RelationshipComponent:
@@ -349,7 +337,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftFoot'
     RelationshipComponent:
@@ -368,7 +355,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightFoot'
     RelationshipComponent:
@@ -387,7 +373,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:Neck'
     RelationshipComponent:
@@ -406,7 +391,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftShoulder'
     RelationshipComponent:
@@ -425,7 +409,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightShoulder'
     RelationshipComponent:
@@ -444,7 +427,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:BackRope1'
     RelationshipComponent:
@@ -463,7 +445,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:FrontRope1'
     RelationshipComponent:
@@ -482,7 +463,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftToeBase'
     RelationshipComponent:
@@ -501,7 +481,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightToeBase'
     RelationshipComponent:
@@ -520,7 +499,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:Head'
     RelationshipComponent:
@@ -542,7 +520,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftArm'
     RelationshipComponent:
@@ -561,7 +538,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightArm'
     RelationshipComponent:
@@ -580,7 +556,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:BackRope2'
     RelationshipComponent:
@@ -599,7 +574,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:FrontRope2'
     RelationshipComponent:
@@ -617,7 +591,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftToe_End'
     RelationshipComponent:
@@ -635,7 +608,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightToe_End'
     RelationshipComponent:
@@ -653,7 +625,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:HeadTop_End'
     RelationshipComponent:
@@ -671,7 +642,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftEye'
     RelationshipComponent:
@@ -689,7 +659,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightEye'
     RelationshipComponent:
@@ -710,7 +679,6 @@ PrefabEntities:
       - ScriptComponent
       - SphereColliderComponent
       - ParticleEmitterComponent
-      - OutlineComponent
     TagComponent:
       Tag: HeadHitbox
     RelationshipComponent:
@@ -766,7 +734,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftForeArm'
     RelationshipComponent:
@@ -785,7 +752,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightForeArm'
     RelationshipComponent:
@@ -804,7 +770,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:BackRope3'
     RelationshipComponent:
@@ -822,7 +787,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHand'
     RelationshipComponent:
@@ -845,7 +809,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHand'
     RelationshipComponent:
@@ -868,7 +831,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandThumb1'
     RelationshipComponent:
@@ -887,7 +849,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandIndex1'
     RelationshipComponent:
@@ -906,7 +867,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandMiddle1'
     RelationshipComponent:
@@ -925,7 +885,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandRing1'
     RelationshipComponent:
@@ -944,7 +903,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandPinky1'
     RelationshipComponent:
@@ -963,7 +921,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandThumb1'
     RelationshipComponent:
@@ -982,7 +939,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandIndex1'
     RelationshipComponent:
@@ -1001,7 +957,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandMiddle1'
     RelationshipComponent:
@@ -1020,7 +975,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandRing1'
     RelationshipComponent:
@@ -1039,7 +993,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandPinky1'
     RelationshipComponent:
@@ -1058,7 +1011,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandThumb2'
     RelationshipComponent:
@@ -1077,7 +1029,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandIndex2'
     RelationshipComponent:
@@ -1096,7 +1047,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandMiddle2'
     RelationshipComponent:
@@ -1115,7 +1065,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandRing2'
     RelationshipComponent:
@@ -1134,7 +1083,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandPinky2'
     RelationshipComponent:
@@ -1153,7 +1101,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandThumb2'
     RelationshipComponent:
@@ -1172,7 +1119,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandIndex2'
     RelationshipComponent:
@@ -1191,7 +1137,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandMiddle2'
     RelationshipComponent:
@@ -1210,7 +1155,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandRing2'
     RelationshipComponent:
@@ -1229,7 +1173,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandPinky2'
     RelationshipComponent:
@@ -1248,7 +1191,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandThumb3'
     RelationshipComponent:
@@ -1267,7 +1209,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandIndex3'
     RelationshipComponent:
@@ -1286,7 +1227,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandMiddle3'
     RelationshipComponent:
@@ -1305,7 +1245,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandRing3'
     RelationshipComponent:
@@ -1324,7 +1263,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandPinky3'
     RelationshipComponent:
@@ -1343,7 +1281,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandThumb3'
     RelationshipComponent:
@@ -1362,7 +1299,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandIndex3'
     RelationshipComponent:
@@ -1381,7 +1317,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandMiddle3'
     RelationshipComponent:
@@ -1400,7 +1335,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandRing3'
     RelationshipComponent:
@@ -1419,7 +1353,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandPinky3'
     RelationshipComponent:
@@ -1438,7 +1371,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandThumb4'
     RelationshipComponent:
@@ -1456,7 +1388,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandIndex4'
     RelationshipComponent:
@@ -1474,7 +1405,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandMiddle4'
     RelationshipComponent:
@@ -1492,7 +1422,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandRing4'
     RelationshipComponent:
@@ -1510,7 +1439,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:LeftHandPinky4'
     RelationshipComponent:
@@ -1528,7 +1456,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandThumb4'
     RelationshipComponent:
@@ -1546,7 +1473,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandIndex4'
     RelationshipComponent:
@@ -1564,7 +1490,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandMiddle4'
     RelationshipComponent:
@@ -1582,7 +1507,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandRing4'
     RelationshipComponent:
@@ -1600,7 +1524,6 @@ PrefabEntities:
       - TagComponent
       - TransformComponent
       - RelationshipComponent
-      - OutlineComponent
     TagComponent:
       Tag: 'mixamorig:RightHandPinky4'
     RelationshipComponent:

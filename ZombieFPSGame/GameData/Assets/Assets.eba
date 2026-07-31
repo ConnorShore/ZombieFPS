@@ -1,12 +1,12 @@
 Assets:
   - Type: Texture
-    UUID: 3453372035684411145
-    Name: RadialGlow
-    FilePath: Textures/Effects/RadialGlow.png
-  - Type: Texture
     UUID: 2902344313391760329
     Name: DesertEagle_DesertEagleDiffuse.png
     FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_DesertEagleDiffuse.png
+  - Type: Texture
+    UUID: 3453372035684411145
+    Name: RadialGlow
+    FilePath: Textures/Effects/RadialGlow.png
   - Type: Texture
     UUID: 18407398070678811137
     Name: DesertEagle_DesertEagleSpecular-DesertEagleRoughness.png
@@ -19,6 +19,10 @@ Assets:
     UUID: 3343954652411117201
     Name: Crosshair
     FilePath: Textures/Crosshair.png
+  - Type: Texture
+    UUID: 6891481540194389905
+    Name: BloodDamageEffect
+    FilePath: Textures/BloodDamageEffect.png
   - Type: Texture
     UUID: 8231069642100005462
     Name: M4_ARNormal.png
@@ -79,10 +83,6 @@ Assets:
     UUID: 15495496485610532023
     Name: Zombie_world_war_zombie_diffuse.png
     FilePath: Models/Zombie/Zombie_Resources/Zombie_world_war_zombie_diffuse.png
-  - Type: Texture
-    UUID: 6891481540194389905
-    Name: BloodDamageEffect
-    FilePath: Textures/BloodDamageEffect.png
   - Type: Shader
     UUID: 3290979914783484062
     Name: HolographicSight
@@ -99,6 +99,14 @@ Assets:
     UUID: 15191514471842255900
     Name: PowerUpDrop
     FilePath: Scripts/Pickups/PowerUpDrop.lua
+  - Type: Script
+    UUID: 8562544563539838448
+    Name: PlayerInteraction
+    FilePath: Scripts/Player/PlayerInteraction.lua
+  - Type: Script
+    UUID: 17429251933582378423
+    Name: AmmoUI
+    FilePath: Scripts/HUD/AmmoUI.lua
   - Type: Script
     UUID: 5986627421746366671
     Name: SpawnManager
@@ -136,10 +144,6 @@ Assets:
     Name: WeaponHolder
     FilePath: Scripts/Weapons/WeaponHolder.lua
   - Type: Script
-    UUID: 17429251933582378423
-    Name: AmmoUI
-    FilePath: Scripts/HUD/AmmoUI.lua
-  - Type: Script
     UUID: 1928101263865073231
     Name: PickupWeapon
     FilePath: Scripts/Pickups/PickupWeapon.lua
@@ -159,10 +163,6 @@ Assets:
     UUID: 4494000890898150304
     Name: Crosshair
     FilePath: Scripts/HUD/Crosshair.lua
-  - Type: Script
-    UUID: 8562544563539838448
-    Name: PlayerInteraction
-    FilePath: Scripts/Player/PlayerInteraction.lua
   - Type: Script
     UUID: 5025897937436236093
     Name: MouseLook
@@ -224,6 +224,10 @@ Assets:
     Name: DesertEagle_Metal
     FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Metal.ebmat
   - Type: Material
+    UUID: 4587007159136363848
+    Name: M4_Weapon
+    FilePath: Models/M4_Anim/M4_Weapon.ebmat
+  - Type: Material
     UUID: 8747674591623748722
     Name: HolographicReticleMat
     FilePath: Materials/HolographicReticleMat.ebmat
@@ -243,10 +247,6 @@ Assets:
     UUID: 7112033288364404519
     Name: Tracer_Material
     FilePath: Materials/Tracer_Material.ebmat
-  - Type: Material
-    UUID: 4587007159136363848
-    Name: M4_Weapon
-    FilePath: Models/M4_Anim/M4_Weapon.ebmat
   - Type: Material
     UUID: 3531595371019758275
     Name: AssaultRifle_Weapon
@@ -475,6 +475,10 @@ Assets:
     UUID: 373352394328918492
     Name: RoundEnd
     FilePath: Audio/RoundEnd.mp3
+  - Type: AudioClip
+    UUID: 144036002822472231
+    Name: PlayerHit
+    FilePath: Audio/PlayerHit.mp3
   - Type: Scene
     UUID: 397660979313011815
     Name: Default
