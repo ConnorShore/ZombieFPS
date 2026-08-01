@@ -1,0 +1,197 @@
+Scene: GameOver
+Entities:
+  - Entity: 15029031499143416586
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - CameraComponent
+      - EditorIconComponent
+    TagComponent:
+      Tag: Camera3D
+    RelationshipComponent:
+      Parent: 0
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,-0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
+    CameraComponent:
+      Projection: [2.1227436,0,0,0,0,4,0,0,0,0,-1,0,-0,-0,-0,1]
+      Type: 0
+      IsActive: 1
+      RenderMask: 65535
+      VolumeMask: 65535
+      OrthographicProperties:
+        Size: 0.5
+        NearClip: -1
+        FarClip: 1
+      PerspectiveProperties:
+        FOV: 70
+        NearClip: 1
+        FarClip: 100
+  - Entity: 8652634754062191097
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RectTransformComponent
+      - CanvasComponent
+    TagComponent:
+      Tag: Canvas
+    RelationshipComponent:
+      Parent: 0
+      Children:
+        - 4038841023429264473
+        - 16224197544873452014
+        - 3398176764541136651
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
+    CanvasComponent:
+      RenderMode: 0
+      SortOrder: 0
+      MatchWidthOrHeight: 0.5
+      PlaneDistance: 1
+      ReferenceResolution: [1108,588]
+    RectTransformComponent:
+      AnchoredPosition: [0,0]
+      SizeDelta: [100,100]
+      AnchorMin: [0.5,0.5]
+      AnchorMax: [0.5,0.5]
+      Pivot: [0.5,0.5]
+      Rotation: 0
+  - Entity: 4038841023429264473
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RectTransformComponent
+      - SpriteComponent
+    TagComponent:
+      Tag: Background
+    RelationshipComponent:
+      Parent: 8652634754062191097
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,-0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1208,0,0,0,0,688,0,0,0,0,1,0,554,294,0,1]
+    SpriteComponent:
+      Color: [0,0,0,1]
+      IsBillboard: 0
+      LockYAxis: 0
+    RectTransformComponent:
+      AnchoredPosition: [0,0]
+      SizeDelta: [100,100]
+      AnchorMin: [0,0]
+      AnchorMax: [1,1]
+      Pivot: [0.5,0.5]
+      Rotation: 0
+  - Entity: 16224197544873452014
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RectTransformComponent
+      - TextComponent
+    TagComponent:
+      Tag: GameOverText
+    RelationshipComponent:
+      Parent: 8652634754062191097
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,-0,0]
+      Scale: [1,1,1]
+      WorldTransform: [3,0,0,0,0,3,0,0,0,0,1,0,362,470,0,1]
+    TextComponent:
+      Text: Game Over
+      FontHandle: 213406294560961755
+      Color: [1,0.25581396,0.25581396,1]
+    RectTransformComponent:
+      AnchoredPosition: [-192,176]
+      SizeDelta: [3,3]
+      AnchorMin: [0.5,0.5]
+      AnchorMax: [0.5,0.5]
+      Pivot: [0.5,0.5]
+      Rotation: 0
+  - Entity: 3398176764541136651
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RectTransformComponent
+      - SpriteComponent
+    TagComponent:
+      Tag: Scoreboard
+    RelationshipComponent:
+      Parent: 8652634754062191097
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,-0,0]
+      Scale: [1,1,1]
+      WorldTransform: [800,0,0,0,0,250,0,0,0,0,1,0,559,232.5,0,1]
+    SpriteComponent:
+      Color: [1,1,1,0.7607843]
+      IsBillboard: 0
+      LockYAxis: 0
+    RectTransformComponent:
+      AnchoredPosition: [5,-61.5]
+      SizeDelta: [800,250]
+      AnchorMin: [0.5,0.5]
+      AnchorMax: [0.5,0.5]
+      Pivot: [0.5,0.5]
+      Rotation: 0
+Environment:
+  Skybox:
+    Enabled: 1
+    Intensity: 1
+    TextureUUID: 5
+  Bloom:
+    Enabled: 1
+    Threshold: 1.5
+    Knee: 0.15
+    Intensity: 0.8
+    BlurRadius: 0.7
+  Fog:
+    Enabled: 0
+    Color: [0.5,0.6,0.7]
+    Density: 0.02
+    StartDistance: 5
+    Falloff: 1
+  FXAA:
+    Enabled: 1
+    SubpixelQuality: 0.75
+    EdgeThresholdMin: 0.0312
+    EdgeThresholdMax: 0.125
+  Vignette:
+    Color: [0,0,0]
+    Intensity: 1
+    Smoothness: 0.5
+    Size: 0.5
+  ColorGrading:
+    Enabled: 1
+    Exposure: 1
+    Temperature: 0
+    Tint: 0
+    Contrast: 1
+    Saturation: 1
+    Lift: [0,0,0,0]
+    Gamma: [1,1,1,0]
+    Gain: [1,1,1,0]

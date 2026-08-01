@@ -92,6 +92,10 @@ Assets:
     Name: Tracer
     FilePath: Shaders/Tracer.glsl
   - Type: Script
+    UUID: 14757129538171395586
+    Name: GameManager
+    FilePath: Scripts/GameManager.lua
+  - Type: Script
     UUID: 3344681323696305163
     Name: RoundUIControl
     FilePath: Scripts/RoundUIControl.lua
@@ -224,10 +228,6 @@ Assets:
     Name: DesertEagle_Metal
     FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Metal.ebmat
   - Type: Material
-    UUID: 4587007159136363848
-    Name: M4_Weapon
-    FilePath: Models/M4_Anim/M4_Weapon.ebmat
-  - Type: Material
     UUID: 8747674591623748722
     Name: HolographicReticleMat
     FilePath: Materials/HolographicReticleMat.ebmat
@@ -235,6 +235,10 @@ Assets:
     UUID: 13734008897576602447
     Name: GroundMaterial
     FilePath: Materials/GroundMaterial.ebmat
+  - Type: Material
+    UUID: 4587007159136363848
+    Name: M4_Weapon
+    FilePath: Models/M4_Anim/M4_Weapon.ebmat
   - Type: Material
     UUID: 15086660637021645114
     Name: DesertEagle_DesertEagle
@@ -443,43 +447,57 @@ Assets:
     UUID: 10601745296411271244
     Name: M4_Shot
     FilePath: Audio/M4_Shot.mp3
+    LoadMode: Auto
   - Type: AudioClip
     UUID: 15776698392225788213
     Name: ReloadStart
     FilePath: Audio/ReloadStart.mp3
+    LoadMode: Auto
   - Type: AudioClip
     UUID: 2869832050986379881
     Name: EmptyGun
     FilePath: Audio/EmptyGun.mp3
+    LoadMode: Auto
   - Type: AudioClip
     UUID: 8785379131387521162
     Name: ReloadEnd
     FilePath: Audio/ReloadEnd.mp3
+    LoadMode: Auto
   - Type: AudioClip
     UUID: 4535810649324835630
     Name: AmmoPickupSFX
     FilePath: Audio/AmmoPickupSFX.mp3
+    LoadMode: Auto
   - Type: AudioClip
     UUID: 3462192619930688989
     Name: Hitmarker
     FilePath: Audio/Hitmarker.mp3
+    LoadMode: Auto
   - Type: AudioClip
     UUID: 4006857010690811945
     Name: Impact_Confirmed
     FilePath: Audio/Impact_Confirmed.mp3
+    LoadMode: Auto
   - Type: AudioClip
     UUID: 5305303780640533429
     Name: RoundStart
     FilePath: Audio/RoundStart.mp3
+    LoadMode: Auto
   - Type: AudioClip
     UUID: 373352394328918492
     Name: RoundEnd
     FilePath: Audio/RoundEnd.mp3
+    LoadMode: Auto
   - Type: AudioClip
     UUID: 144036002822472231
     Name: PlayerHit
     FilePath: Audio/PlayerHit.mp3
+    LoadMode: Auto
   - Type: Scene
     UUID: 397660979313011815
     Name: Default
     FilePath: ../Scenes/Default.ebs
+  - Type: Scene
+    UUID: 9535833023953995507
+    Name: GameOver
+    FilePath: ../Scenes/GameOver.ebs

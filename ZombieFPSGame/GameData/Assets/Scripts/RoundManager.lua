@@ -21,6 +21,9 @@ function RoundManager:OnCreate(entity)
     EventManager.Subscribe("OnEnemyKilled", function(enemyUUID)
         self:OnZombieKilled()
     end)
+    EventManager.Subscribe("OnPlayerDeath", function()
+        self:OnPlayerDeath()
+    end)
 end
 
 function RoundManager:OnUpdate(entity, delta)
@@ -74,6 +77,11 @@ end
 -- TODO: Come up with a better formula for scaling zombies per round
 function RoundManager:GetZombiesPerRound(roundNum)
     return self.BaseZombiesPerRound + ((roundNum - 1) * self.ZombieRoundMultiplier)
+end
+
+function RoundManager:OnPlayerDeath()
+    self.CurrentState = GameState.GameOver
+    EventManager.Broadcast("OnGameOver")
 end
 
 return RoundManager

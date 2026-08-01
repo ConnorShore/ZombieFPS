@@ -82,6 +82,27 @@ Entities:
     ScriptComponent:
       ScriptUUID: 5515958197491920100
       UserPropertyOverrides: []
+  - Entity: 18421528740310120633
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: GameManager
+    RelationshipComponent:
+      Parent: 0
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
+    ScriptComponent:
+      ScriptUUID: 14757129538171395586
+      UserPropertyOverrides: []
   - Entity: 5599888848773738242
     ComponentOrder:
       - IDComponent
