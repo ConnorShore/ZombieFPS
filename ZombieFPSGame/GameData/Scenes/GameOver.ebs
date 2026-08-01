@@ -1,5 +1,26 @@
 Scene: GameOver
 Entities:
+  - Entity: 7162013772198735395
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: GameOverManager
+    RelationshipComponent:
+      Parent: 0
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
+    ScriptComponent:
+      ScriptUUID: 5831931640429785370
+      UserPropertyOverrides: []
   - Entity: 15029031499143416586
     ComponentOrder:
       - IDComponent
@@ -7,7 +28,6 @@ Entities:
       - TransformComponent
       - RelationshipComponent
       - CameraComponent
-      - EditorIconComponent
     TagComponent:
       Tag: Camera3D
     RelationshipComponent:
