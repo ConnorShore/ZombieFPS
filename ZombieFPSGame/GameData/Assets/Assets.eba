@@ -1,12 +1,12 @@
 Assets:
   - Type: Texture
-    UUID: 2902344313391760329
-    Name: DesertEagle_DesertEagleDiffuse.png
-    FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_DesertEagleDiffuse.png
-  - Type: Texture
     UUID: 3453372035684411145
     Name: RadialGlow
     FilePath: Textures/Effects/RadialGlow.png
+  - Type: Texture
+    UUID: 2902344313391760329
+    Name: DesertEagle_DesertEagleDiffuse.png
+    FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_DesertEagleDiffuse.png
   - Type: Texture
     UUID: 18407398070678811137
     Name: DesertEagle_DesertEagleSpecular-DesertEagleRoughness.png
@@ -16,13 +16,13 @@ Assets:
     Name: AssaultRifle_ARMetallic-ARRoughness.png
     FilePath: Models/M4/AssaultRifle_ARMetallic-ARRoughness.png
   - Type: Texture
-    UUID: 3343954652411117201
-    Name: Crosshair
-    FilePath: Textures/Crosshair.png
-  - Type: Texture
     UUID: 6891481540194389905
     Name: BloodDamageEffect
     FilePath: Textures/BloodDamageEffect.png
+  - Type: Texture
+    UUID: 3343954652411117201
+    Name: Crosshair
+    FilePath: Textures/Crosshair.png
   - Type: Texture
     UUID: 8231069642100005462
     Name: M4_ARNormal.png
@@ -192,10 +192,6 @@ Assets:
     Name: EnemyController
     FilePath: Scripts/Enemy/EnemyController.lua
   - Type: Script
-    UUID: 15649694001834023247
-    Name: EnemyController
-    FilePath: Scripts/EnemyController.lua
-  - Type: Script
     UUID: 16639884503866118704
     Name: WeaponStats
     FilePath: Scripts/Weapons/WeaponStats.lua
@@ -208,13 +204,13 @@ Assets:
     Name: Hitbox
     FilePath: Scripts/Hitbox.lua
   - Type: Script
-    UUID: 2119190290714536510
-    Name: PointUIController
-    FilePath: Scripts/PointUIController.lua
-  - Type: Script
     UUID: 18266934061772524094
     Name: ZombieSpawner
     FilePath: Scripts/ZombieSpawner.lua
+  - Type: Script
+    UUID: 2119190290714536510
+    Name: PointUIController
+    FilePath: Scripts/PointUIController.lua
   - Type: Script
     UUID: 5515958197491920100
     Name: GlobalSystems

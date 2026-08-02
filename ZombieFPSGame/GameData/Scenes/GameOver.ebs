@@ -227,7 +227,7 @@ Entities:
       Scale: [0.00125,0.0039999997,1]
       WorldTransform: [1.5,0,0,0,0,1.5,0,0,0,0,1,0,634,184,0,1]
     TextComponent:
-      Text: 'Top Score: 680'
+      Text: 'Top Score: 880'
       FontHandle: 213406294560961755
       Color: [0.069767475,1,0,1]
     RectTransformComponent:
@@ -317,7 +317,7 @@ Entities:
       Scale: [0.00125,0.0039999997,1]
       WorldTransform: [1.5,0,0,0,0,1.5,0,0,0,0,1,0,234,184,0,1]
     TextComponent:
-      Text: 'Score: 680'
+      Text: 'Score: 880'
       FontHandle: 213406294560961755
       Color: [0.31395346,0.31395346,0.31395346,1]
     RectTransformComponent:
