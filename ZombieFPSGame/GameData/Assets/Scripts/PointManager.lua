@@ -15,7 +15,7 @@ function PointManager:OnCreate(entity)
 
     EventManager.Subscribe("OnEnemyKilled", function(isHeadshot)
         if isHeadshot then
-            self:AwardPointsForHeadshot()
+            self:AwardPointsForHeadshotKill()
         else
             self:AwardPointsForKill()
         end
@@ -40,8 +40,8 @@ function PointManager:AwardPointsForKill()
     self:OnPointsChanged(self.Points)
 end
 
-function PointManager:AwardPointsForHeadshot()
-    self.Points = self.Points + math.tointeger(self.EnemyHitPoints * self.EnemyHeadshotMultiplier)
+function PointManager:AwardPointsForHeadshotKill()
+    self.Points = self.Points + math.tointeger(self.EnemyKillPoints * self.EnemyHeadshotMultiplier)
     self:OnPointsChanged(self.Points)
 end
 
