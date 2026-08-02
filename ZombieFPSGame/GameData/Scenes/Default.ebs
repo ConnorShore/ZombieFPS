@@ -37,10 +37,10 @@ Entities:
         - 17202988526070122190
       IsAttachment: 0
     TransformComponent:
-      Position: [0,0,-0.0018620491]
+      Position: [2.9802322e-08,0,-0.0018620491]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1.8,4.824887,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,2.9802322e-08,1.8,4.824887,1]
     CameraComponent:
       Projection: [0.75789803,0,0,0,0,1.428148,0,0,0,0,-1.00004,-1,0,0,-0.0200004,0]
       Type: 1
@@ -482,7 +482,7 @@ Entities:
       Position: [-9.094947e-13,0,0]
       Rotation: [0,-0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-9.094947e-13,1.8,4.824887,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,2.9801413e-08,1.8,4.824887,1]
     ScriptComponent:
       ScriptUUID: 8562544563539838448
       UserPropertyOverrides:
@@ -568,7 +568,7 @@ Entities:
       Position: [0.33,-0.41661298,-0.6143637]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.33,1.383387,4.210523,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.33000004,1.383387,4.210523,1]
   - Entity: 15941034270328579006
     ComponentOrder:
       - IDComponent
@@ -626,7 +626,7 @@ Entities:
       Position: [0,0,0]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1.8,4.824887,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,2.9802322e-08,1.8,4.824887,1]
     ScriptComponent:
       ScriptUUID: 16404415058251315788
       UserPropertyOverrides:
@@ -972,14 +972,14 @@ Entities:
         - Name: RotationSpeed
           Type: 3
           Value: 45
-        - Name: WeaponHolderRef
-          Type: 7
-          Value: 230291968303856085
-          ReferenceKind: Entity
         - Name: PickupSound
           Type: 8
           Value: 4535810649324835630
           ReferenceKind: AudioClip
+        - Name: WeaponHolderRef
+          Type: 7
+          Value: 230291968303856085
+          ReferenceKind: Entity
     PrefabComponent:
       PrefabUUID: 3822534466298593180
   - Entity: 9607599012810285547
@@ -1022,7 +1022,7 @@ Entities:
       Position: [0,0,0]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.33,1.383387,4.210523,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.33000004,1.383387,4.210523,1]
     ScriptComponent:
       ScriptUUID: 10753367411955256691
       UserPropertyOverrides:

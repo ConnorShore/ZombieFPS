@@ -169,7 +169,7 @@ Entities:
       Scale: [1,1,1]
       WorldTransform: [800,0,0,0,0,250,0,0,0,0,1,0,559,232.5,0,1]
     SpriteComponent:
-      Color: [1,1,1,0.7607843]
+      Color: [1,1,1,0.96862745]
       IsBillboard: 0
       LockYAxis: 0
     RectTransformComponent:

@@ -51,7 +51,7 @@ PrefabEntities:
           Value: 2.5
         - Name: MaxHitAngle
           Type: 2
-          Value: 60
+          Value: 80
         - Name: TargetPlayer
           Type: 7
           Value: 6753254757056896993
