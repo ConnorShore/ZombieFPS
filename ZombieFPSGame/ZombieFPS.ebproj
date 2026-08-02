@@ -8,6 +8,7 @@ Settings:
   General:
     ScenesInBuild:
       - UUID: 397660979313011815
+      - UUID: 9535833023953995507
   Physics:
     GravityStrength: 9.81
     GravityVector: [0,-1,0]

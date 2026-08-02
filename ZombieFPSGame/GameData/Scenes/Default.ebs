@@ -17,7 +17,7 @@ Entities:
       Position: [0,0.8,-0.2]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-9.094947e-13,1.8,4.826749,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1.8,4.826749,1]
   - Entity: 3526599274050075716
     ComponentOrder:
       - IDComponent
@@ -37,10 +37,10 @@ Entities:
         - 17202988526070122190
       IsAttachment: 0
     TransformComponent:
-      Position: [9.094947e-13,0,-0.0018620491]
+      Position: [2.9802322e-08,0,-0.0018620491]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1.8,4.824887,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,2.9802322e-08,1.8,4.824887,1]
     CameraComponent:
       Projection: [0.75789803,0,0,0,0,1.428148,0,0,0,0,-1.00004,-1,0,0,-0.0200004,0]
       Type: 1
@@ -81,6 +81,27 @@ Entities:
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
     ScriptComponent:
       ScriptUUID: 5515958197491920100
+      UserPropertyOverrides: []
+  - Entity: 18421528740310120633
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: GameManager
+    RelationshipComponent:
+      Parent: 0
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
+    ScriptComponent:
+      ScriptUUID: 14757129538171395586
       UserPropertyOverrides: []
   - Entity: 5599888848773738242
     ComponentOrder:
@@ -245,10 +266,10 @@ Entities:
         - 13765157642257386743
       IsAttachment: 0
     TransformComponent:
-      Position: [-9.094947e-13,1,5.0267487]
+      Position: [0,1,5.0267487]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-9.094947e-13,1,5.0267487,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1,5.0267487,1]
     RigidBodyComponent:
       Type: 2
       Mass: 1
@@ -461,21 +482,21 @@ Entities:
       Position: [-9.094947e-13,0,0]
       Rotation: [0,-0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-9.094947e-13,1.8,4.824887,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,2.9801413e-08,1.8,4.824887,1]
     ScriptComponent:
       ScriptUUID: 8562544563539838448
       UserPropertyOverrides:
-        - Name: InteractionDistance
-          Type: 3
-          Value: 3
-        - Name: PickupUIRef
-          Type: 7
-          Value: 7122639572906643531
-          ReferenceKind: Entity
         - Name: WeaponHolderRef
           Type: 7
           Value: 230291968303856085
           ReferenceKind: Entity
+        - Name: PickupUIRef
+          Type: 7
+          Value: 7122639572906643531
+          ReferenceKind: Entity
+        - Name: InteractionDistance
+          Type: 3
+          Value: 3
   - Entity: 8214889738320955675
     ComponentOrder:
       - IDComponent
@@ -547,7 +568,7 @@ Entities:
       Position: [0.33,-0.41661298,-0.6143637]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.33,1.383387,4.210523,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.33000004,1.383387,4.210523,1]
   - Entity: 15941034270328579006
     ComponentOrder:
       - IDComponent
@@ -605,7 +626,7 @@ Entities:
       Position: [0,0,0]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1.8,4.824887,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,2.9802322e-08,1.8,4.824887,1]
     ScriptComponent:
       ScriptUUID: 16404415058251315788
       UserPropertyOverrides:
@@ -858,10 +879,14 @@ Entities:
       Position: [0,0,0]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-9.094947e-13,1,5.0267487,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1,5.0267487,1]
     ScriptComponent:
       ScriptUUID: 936314447457138483
-      UserPropertyOverrides: []
+      UserPropertyOverrides:
+        - Name: DamageSound
+          Type: 8
+          Value: 144036002822472231
+          ReferenceKind: AudioClip
   - Entity: 2608699378515154292
     ComponentOrder:
       - IDComponent
@@ -997,7 +1022,7 @@ Entities:
       Position: [0,0,0]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.33,1.383387,4.210523,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.33000004,1.383387,4.210523,1]
     ScriptComponent:
       ScriptUUID: 10753367411955256691
       UserPropertyOverrides:
