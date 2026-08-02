@@ -235,14 +235,14 @@ Assets:
     UUID: 5831931640429785370
     Name: GameOverManager
     FilePath: Scripts/GameOver/GameOverManager.lua
+  - Type: Script
+    UUID: 1985529488838138239
+    Name: ScoreboardController
+    FilePath: Scripts/ScoreboardController.lua
   - Type: Material
     UUID: 782295293902573577
     Name: DesertEagle_Metal
     FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Metal.ebmat
-  - Type: Material
-    UUID: 15086660637021645114
-    Name: DesertEagle_DesertEagle
-    FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_DesertEagle.ebmat
   - Type: Material
     UUID: 8747674591623748722
     Name: HolographicReticleMat
@@ -252,13 +252,17 @@ Assets:
     Name: GroundMaterial
     FilePath: Materials/GroundMaterial.ebmat
   - Type: Material
-    UUID: 4587007159136363848
-    Name: M4_Weapon
-    FilePath: Models/M4_Anim/M4_Weapon.ebmat
-  - Type: Material
     UUID: 1868779223986162857
     Name: PowerUpMaterial
     FilePath: Materials/PowerUpMaterial.ebmat
+  - Type: Material
+    UUID: 15086660637021645114
+    Name: DesertEagle_DesertEagle
+    FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_DesertEagle.ebmat
+  - Type: Material
+    UUID: 4587007159136363848
+    Name: M4_Weapon
+    FilePath: Models/M4_Anim/M4_Weapon.ebmat
   - Type: Material
     UUID: 7112033288364404519
     Name: Tracer_Material
@@ -280,13 +284,13 @@ Assets:
     Name: Zombie_WorldWar_zombie_material
     FilePath: Models/Zombie/Zombie_Resources/Zombie_WorldWar_zombie_material.ebmat
   - Type: Mesh
-    UUID: 5985712711574680378
-    Name: DesertEagle_Mesh1_Cube_Prim0
-    FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Mesh1_Cube_Prim0.ebmesh
-  - Type: Mesh
     UUID: 5610316799824380095
     Name: DesertEagle_Mesh2_Cube.007_Prim1
     FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Mesh2_Cube.007_Prim1.ebmesh
+  - Type: Mesh
+    UUID: 5985712711574680378
+    Name: DesertEagle_Mesh1_Cube_Prim0
+    FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Mesh1_Cube_Prim0.ebmesh
   - Type: Mesh
     UUID: 6509623147954976681
     Name: Zombie_Mesh0_WorldWar_zombie_Prim0
@@ -404,13 +408,13 @@ Assets:
     Name: NavMesh_Default_NavigationSurface
     FilePath: NavMeshes/NavMesh_Default_NavigationSurface.ebnav
   - Type: Prefab
-    UUID: 3822534466298593180
-    Name: AmmoPowerup
-    FilePath: Prefabs/AmmoPowerup.ebprefab
-  - Type: Prefab
     UUID: 7525331889912364400
     Name: M4_Pickup
     FilePath: Prefabs/Weapons/M4_Pickup.ebprefab
+  - Type: Prefab
+    UUID: 3822534466298593180
+    Name: AmmoPowerup
+    FilePath: Prefabs/AmmoPowerup.ebprefab
   - Type: Prefab
     UUID: 17919492092461288605
     Name: HolographicSightPickup

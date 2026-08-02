@@ -6,8 +6,11 @@ PointManager.EnemyKillPoints = 50
 PointManager.EnemyHeadshotMultiplier = 2.0
 
 function PointManager:OnCreate(entity)
+    -- Cached for the whole run; the Game Over scene reads this same file back.
+    self.ScoreFile = GameData:Open("CurrentScore")
+
     self.Points = self.StartingPoints
-    GameData:SetInt("CurrentPlayerPoints", self.Points)
+    self.ScoreFile:SetInt("CurrentPlayerPoints", self.Points)
 
     EventManager.Subscribe("OnEnemyHit", function()
         self:AwardPointsForHit()
@@ -51,7 +54,7 @@ function PointManager:OnItemPurchased(itemCost)
 end
 
 function PointManager:OnPointsChanged(newPoints)
-    GameData:SetInt("CurrentPlayerPoints", newPoints)
+    self.ScoreFile:SetInt("CurrentPlayerPoints", newPoints)
 
     EventManager.Broadcast("OnPointsChanged", newPoints)
 end

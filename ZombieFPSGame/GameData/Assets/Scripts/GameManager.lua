@@ -11,6 +11,8 @@ function GameManager:OnUpdate(entity, delta)
 end
 
 function GameManager:OnGameOver()
+    Log.Info("Saving game data and transitioning to Game Over scene...")
+    GameData:Open("CurrentScore"):Save()
     SceneManager.LoadScene("GameOver")
 end
 
