@@ -11,7 +11,6 @@ function GameManager:OnUpdate(entity, delta)
 end
 
 function GameManager:OnGameOver()
-    Log.Info("Game Over! Player has died.")
     SceneManager.LoadScene("GameOver")
 end
 

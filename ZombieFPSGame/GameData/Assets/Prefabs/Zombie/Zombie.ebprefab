@@ -49,10 +49,16 @@ PrefabEntities:
         - Name: AttackDistance
           Type: 3
           Value: 2.5
+        - Name: MaxHitAngle
+          Type: 2
+          Value: 60
         - Name: TargetPlayer
           Type: 7
           Value: 6753254757056896993
           ReferenceKind: Entity
+        - Name: AttackDamage
+          Type: 2
+          Value: 60
         - Name: PlayerController
           Type: 7
           Value: 13765157642257386743

@@ -10,6 +10,7 @@ EnemyController.TurnSpeed = 90 -- degrees per second
 EnemyController.AttackDamage = 50
 EnemyController.AttackDistance = 2.5
 EnemyController.HitDistance = 2.0
+EnemyController.MaxHitAngle = 45 -- degrees
 EnemyController.TargetPlayer = EntityRef()
 EnemyController.PlayerController = EntityRef()
 
@@ -152,11 +153,13 @@ function EnemyController:OnAnimationEvent(eventName)
         -- Apply damage to the player if they're within hit range when the attack connects
         if self.TargetPlayerTransform and self.PlayerControllerInstance then
             local distance = Math.Length(self.TargetPlayerTransform.WorldPosition - self.transform.WorldPosition)
-            if distance <= self.HitDistance then
+            local hitAngle = Math.Degrees(Math.Atan2(self.TargetPlayerTransform.WorldPosition.x - self.transform.WorldPosition.x, self.TargetPlayerTransform.WorldPosition.z - self.transform.WorldPosition.z))
+            local forwardAngle = Math.Degrees(self.transform.Rotation.y)
+            local angleDiff = Math.Abs(hitAngle - forwardAngle)
+
+            Log.Info(string.format("Enemy attack check: distance=%.2f, angleDiff=%.2f", distance, angleDiff))
+            if distance <= self.HitDistance and angleDiff <= self.MaxHitAngle then
                 self.PlayerControllerInstance:TakeDamage(self.AttackDamage)
-                Log.Info("Enemy attack hit the player.")
-            else
-                Log.Info("Enemy attack missed the player.")
             end
         else
             Log.Warn("Enemy attempted to attack, but no target player is set.")

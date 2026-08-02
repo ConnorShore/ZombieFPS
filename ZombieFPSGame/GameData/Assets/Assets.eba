@@ -1,12 +1,12 @@
 Assets:
   - Type: Texture
-    UUID: 3453372035684411145
-    Name: RadialGlow
-    FilePath: Textures/Effects/RadialGlow.png
-  - Type: Texture
     UUID: 2902344313391760329
     Name: DesertEagle_DesertEagleDiffuse.png
     FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_DesertEagleDiffuse.png
+  - Type: Texture
+    UUID: 3453372035684411145
+    Name: RadialGlow
+    FilePath: Textures/Effects/RadialGlow.png
   - Type: Texture
     UUID: 18407398070678811137
     Name: DesertEagle_DesertEagleSpecular-DesertEagleRoughness.png
@@ -16,13 +16,13 @@ Assets:
     Name: AssaultRifle_ARMetallic-ARRoughness.png
     FilePath: Models/M4/AssaultRifle_ARMetallic-ARRoughness.png
   - Type: Texture
-    UUID: 6891481540194389905
-    Name: BloodDamageEffect
-    FilePath: Textures/BloodDamageEffect.png
-  - Type: Texture
     UUID: 3343954652411117201
     Name: Crosshair
     FilePath: Textures/Crosshair.png
+  - Type: Texture
+    UUID: 6891481540194389905
+    Name: BloodDamageEffect
+    FilePath: Textures/BloodDamageEffect.png
   - Type: Texture
     UUID: 8231069642100005462
     Name: M4_ARNormal.png
@@ -104,6 +104,10 @@ Assets:
     Name: PowerUpDrop
     FilePath: Scripts/Pickups/PowerUpDrop.lua
   - Type: Script
+    UUID: 10753367411955256691
+    Name: WeaponHolder
+    FilePath: Scripts/Weapons/WeaponHolder.lua
+  - Type: Script
     UUID: 7847366610859754620
     Name: Tracer
     FilePath: Scripts/Weapons/Tracer.lua
@@ -147,10 +151,6 @@ Assets:
     UUID: 16404415058251315788
     Name: WeaponFire
     FilePath: Scripts/Weapons/WeaponFire.lua
-  - Type: Script
-    UUID: 10753367411955256691
-    Name: WeaponHolder
-    FilePath: Scripts/Weapons/WeaponHolder.lua
   - Type: Script
     UUID: 1928101263865073231
     Name: PickupWeapon
@@ -448,6 +448,11 @@ Assets:
     Name: Roboto-Regular
     FilePath: Fonts/Roboto-Regular.ttf
   - Type: AudioClip
+    UUID: 373352394328918492
+    Name: RoundEnd
+    FilePath: Audio/RoundEnd.mp3
+    LoadMode: Auto
+  - Type: AudioClip
     UUID: 10601745296411271244
     Name: M4_Shot
     FilePath: Audio/M4_Shot.mp3
@@ -463,14 +468,14 @@ Assets:
     FilePath: Audio/EmptyGun.mp3
     LoadMode: Auto
   - Type: AudioClip
-    UUID: 8785379131387521162
-    Name: ReloadEnd
-    FilePath: Audio/ReloadEnd.mp3
-    LoadMode: Auto
-  - Type: AudioClip
     UUID: 4535810649324835630
     Name: AmmoPickupSFX
     FilePath: Audio/AmmoPickupSFX.mp3
+    LoadMode: Auto
+  - Type: AudioClip
+    UUID: 8785379131387521162
+    Name: ReloadEnd
+    FilePath: Audio/ReloadEnd.mp3
     LoadMode: Auto
   - Type: AudioClip
     UUID: 3462192619930688989
@@ -486,11 +491,6 @@ Assets:
     UUID: 5305303780640533429
     Name: RoundStart
     FilePath: Audio/RoundStart.mp3
-    LoadMode: Auto
-  - Type: AudioClip
-    UUID: 373352394328918492
-    Name: RoundEnd
-    FilePath: Audio/RoundEnd.mp3
     LoadMode: Auto
   - Type: AudioClip
     UUID: 144036002822472231

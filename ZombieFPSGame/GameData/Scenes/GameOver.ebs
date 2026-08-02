@@ -28,6 +28,7 @@ Entities:
       - TransformComponent
       - RelationshipComponent
       - CameraComponent
+      - EditorIconComponent
     TagComponent:
       Tag: Camera3D
     RelationshipComponent:
