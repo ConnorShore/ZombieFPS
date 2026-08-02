@@ -134,15 +134,18 @@ function EnemyController:InitializeForRound(roundNum)
     self.Speed = 1.0 + Math.RandomFloat(0.0, maxSpeed - 1.0)
 end
 
-function EnemyController:ApplyDamage(amount)
+function EnemyController:ApplyDamage(amount, isHeadshot)
+    EventManager.Broadcast("OnEnemyHit")
+    
     self.Health = self.Health - amount
     if self.Health <= 0 then
-        self:Die()
+        self:Die(isHeadshot)
     end
 end
 
-function EnemyController:Die()
-    EventManager.Broadcast("OnEnemyKilled", self.Entity:GetUUID())
+function EnemyController:Die(isHeadshot)
+    EventManager.Broadcast("OnEnemyKilled", isHeadshot)
+    -- EventManager.Broadcast("OnEnemyKilled", self.Entity:GetUUID())
     Scene.RemoveEntity(self.Entity)
 
     -- TODO: Maybe play a death animation or drop loot here

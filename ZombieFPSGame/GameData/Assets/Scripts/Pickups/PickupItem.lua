@@ -19,10 +19,12 @@ end
 
 function PickupItem:OnPickup(entity, otherEntity)
     if self.PrefabEntity and self.PrefabEntity:IsValid() then
+        Log.Error("Removed prefab entity for pickup item: " .. self.PrefabEntity:GetName())
         Scene.RemoveEntity(self.PrefabEntity)
         self.PrefabEntity = nil
     end
 
+    Log.Error("PickupItem: OnPickup called. Removing pickup item entity: " .. entity:GetName())
     Scene.RemoveEntity(entity)
 end
 

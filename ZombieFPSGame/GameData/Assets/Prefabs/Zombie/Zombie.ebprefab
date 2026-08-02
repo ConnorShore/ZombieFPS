@@ -221,10 +221,10 @@ PrefabEntities:
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [-2.918685e-05,-20.360046,1.2956452]
+      Position: [-4.0081646e-05,-26.998379,1.2956479]
       Rotation: [-2.9802337e-07,1.2360279e-07,-1.6410345e-06]
       Scale: [100,99.99999,99.99999]
-      WorldTransform: [1.2,4.9895114e-13,0,0,4.420381e-14,1.1999997,8.526513e-14,0,2.842171e-14,1.4210855e-13,1.1999997,0,1.7408297e-13,-0.20168032,0,1]
+      WorldTransform: [1.2,4.9895114e-13,0,0,4.420381e-14,1.1999997,8.526513e-14,0,2.842171e-14,1.4210855e-13,1.1999997,0,-1.2590817e-11,-0.2813403,7.450581e-09,1]
     CapsuleColliderComponent:
       Radius: 0.325
       Height: 1.92
@@ -692,10 +692,10 @@ PrefabEntities:
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [1.0173591e-05,22.711823,5.6227775]
+      Position: [1.0174014e-05,22.71186,5.6231008]
       Rotation: [-2.9162203e-07,9.4166855e-14,4.968683e-13]
       Scale: [100,99.99998,100.000015]
-      WorldTransform: [1.2,3.0044828e-13,-2.0546986e-15,0,1.5833133e-13,1.1999997,-3.026784e-08,0,2.4540015e-14,6.9849193e-09,1.1999997,0,5.172751e-12,1.2961414,7.0109963e-06,1]
+      WorldTransform: [1.2,3.0044828e-13,-2.0546986e-15,0,1.5833133e-13,1.1999997,-3.026784e-08,0,2.4540015e-14,6.9849193e-09,1.1999997,0,1.0246026e-11,1.2961417,1.0892749e-05,1]
     SphereColliderComponent:
       Radius: 0.18
       IsTrigger: 0
@@ -715,6 +715,9 @@ PrefabEntities:
           Type: 8
           Value: 3462192619930688989
           ReferenceKind: AudioClip
+        - Name: ApplyHeadshotMultiplier
+          Type: 1
+          Value: 1
     ParticleEmitterComponent:
       EmissionRate: 250
       Velocity: [1,1,-3]

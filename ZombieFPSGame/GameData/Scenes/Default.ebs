@@ -82,55 +82,6 @@ Entities:
     ScriptComponent:
       ScriptUUID: 5515958197491920100
       UserPropertyOverrides: []
-  - Entity: 18421528740310120633
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-      - ScriptComponent
-    TagComponent:
-      Tag: GameManager
-    RelationshipComponent:
-      Parent: 0
-      Children: []
-      IsAttachment: 0
-    TransformComponent:
-      Position: [0,0,0]
-      Rotation: [0,0,0]
-      Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
-    ScriptComponent:
-      ScriptUUID: 14757129538171395586
-      UserPropertyOverrides: []
-  - Entity: 5599888848773738242
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-      - ScriptComponent
-    TagComponent:
-      Tag: RoundManager
-    RelationshipComponent:
-      Parent: 0
-      Children: []
-      IsAttachment: 0
-    TransformComponent:
-      Position: [0,0,0]
-      Rotation: [0,0,0]
-      Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
-    ScriptComponent:
-      ScriptUUID: 8058432714386778896
-      UserPropertyOverrides:
-        - Name: SpawnManagerRef
-          Type: 7
-          Value: 3228848565545027244
-          ReferenceKind: Entity
-        - Name: IntermissionTime
-          Type: 3
-          Value: 5
   - Entity: 10710601879491244134
     ComponentOrder:
       - IDComponent
@@ -141,12 +92,12 @@ Entities:
     TagComponent:
       Tag: RoundAudioManager
     RelationshipComponent:
-      Parent: 0
+      Parent: 8133465050989195876
       Children: []
       IsAttachment: 0
     TransformComponent:
       Position: [0,0,0]
-      Rotation: [0,0,0]
+      Rotation: [0,-0,0]
       Scale: [1,1,1]
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
     ScriptComponent:
@@ -164,6 +115,98 @@ Entities:
           Type: 8
           Value: 4006857010690811945
           ReferenceKind: AudioClip
+  - Entity: 8133465050989195876
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+    TagComponent:
+      Tag: Managers
+    RelationshipComponent:
+      Parent: 0
+      Children:
+        - 18421528740310120633
+        - 5599888848773738242
+        - 10710601879491244134
+        - 6896436297867714122
+        - 3228848565545027244
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
+  - Entity: 18421528740310120633
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: GameManager
+    RelationshipComponent:
+      Parent: 8133465050989195876
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,-0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
+    ScriptComponent:
+      ScriptUUID: 14757129538171395586
+      UserPropertyOverrides: []
+  - Entity: 5599888848773738242
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: RoundManager
+    RelationshipComponent:
+      Parent: 8133465050989195876
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,-0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
+    ScriptComponent:
+      ScriptUUID: 8058432714386778896
+      UserPropertyOverrides:
+        - Name: SpawnManagerRef
+          Type: 7
+          Value: 3228848565545027244
+          ReferenceKind: Entity
+        - Name: IntermissionTime
+          Type: 3
+          Value: 5
+  - Entity: 6896436297867714122
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: PointManager
+    RelationshipComponent:
+      Parent: 8133465050989195876
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,-0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
+    ScriptComponent:
+      ScriptUUID: 7371630261308486327
+      UserPropertyOverrides: []
   - Entity: 9978092339450031366
     ComponentOrder:
       - IDComponent
@@ -199,7 +242,7 @@ Entities:
     TagComponent:
       Tag: SpawnManager
     RelationshipComponent:
-      Parent: 0
+      Parent: 8133465050989195876
       Children:
         - 6207821035897400818
         - 9978092339450031366
@@ -207,7 +250,7 @@ Entities:
       IsAttachment: 0
     TransformComponent:
       Position: [0,0,0]
-      Rotation: [0,0,0]
+      Rotation: [0,-0,0]
       Scale: [1,1,1]
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
     ScriptComponent:
@@ -244,6 +287,95 @@ Entities:
           ReferenceKind: Prefab
     PrefabComponent:
       PrefabUUID: 4357804436516360089
+  - Entity: 10222896294028970181
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RectTransformComponent
+      - TextComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: PointUI
+    RelationshipComponent:
+      Parent: 5645678438920164573
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,-0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1.25,0,0,0,0,1.25,0,0,0,0,1,0,1019.36005,117.6,0,1]
+    ScriptComponent:
+      ScriptUUID: 2119190290714536510
+      UserPropertyOverrides: []
+    TextComponent:
+      Text: 100
+      FontHandle: 213406294560961755
+      Color: [0.9836849,1,0.29844964,1]
+    RectTransformComponent:
+      AnchoredPosition: [0,0]
+      SizeDelta: [1.25,1.25]
+      AnchorMin: [0.92,0.2]
+      AnchorMax: [0.92,0.2]
+      Pivot: [0.5,0.5]
+      Rotation: 0
+  - Entity: 5645678438920164573
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - CanvasComponent
+      - RectTransformComponent
+    TagComponent:
+      Tag: HUD_Canvas
+    RelationshipComponent:
+      Parent: 0
+      Children:
+        - 16155943693343446687
+        - 7122639572906643531
+        - 15941034270328579006
+        - 3446544600952183294
+        - 10222896294028970181
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
+    CanvasComponent:
+      RenderMode: 0
+      SortOrder: 0
+      MatchWidthOrHeight: 0.5
+      PlaneDistance: 1
+      ReferenceResolution: [761,506]
+    RectTransformComponent:
+      AnchoredPosition: [0,0]
+      SizeDelta: [100,100]
+      AnchorMin: [0.5,0.5]
+      AnchorMax: [0.5,0.5]
+      Pivot: [0.5,0.5]
+      Rotation: 0
+  - Entity: 14881747670601641762
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+    TagComponent:
+      Tag: Pools
+    RelationshipComponent:
+      Parent: 0
+      Children:
+        - 9607599012810285547
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
   - Entity: 6753254757056896993
     ComponentOrder:
       - IDComponent
@@ -302,60 +434,6 @@ Entities:
       NavMeshDataHandle: 8017132278425989816
       ModifierType: 0
       ApplyToChildren: 1
-  - Entity: 5645678438920164573
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-      - CanvasComponent
-      - RectTransformComponent
-    TagComponent:
-      Tag: HUD_Canvas
-    RelationshipComponent:
-      Parent: 0
-      Children:
-        - 16155943693343446687
-        - 7122639572906643531
-        - 15941034270328579006
-        - 3446544600952183294
-      IsAttachment: 0
-    TransformComponent:
-      Position: [0,0,0]
-      Rotation: [0,0,0]
-      Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
-    CanvasComponent:
-      RenderMode: 0
-      SortOrder: 0
-      MatchWidthOrHeight: 0.5
-      PlaneDistance: 1
-      ReferenceResolution: [761,506]
-    RectTransformComponent:
-      AnchoredPosition: [0,0]
-      SizeDelta: [100,100]
-      AnchorMin: [0.5,0.5]
-      AnchorMax: [0.5,0.5]
-      Pivot: [0.5,0.5]
-      Rotation: 0
-  - Entity: 14881747670601641762
-    ComponentOrder:
-      - IDComponent
-      - TagComponent
-      - TransformComponent
-      - RelationshipComponent
-    TagComponent:
-      Tag: Pools
-    RelationshipComponent:
-      Parent: 0
-      Children:
-        - 9607599012810285547
-      IsAttachment: 0
-    TransformComponent:
-      Position: [0,0,0]
-      Rotation: [0,0,0]
-      Scale: [1,1,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
   - Entity: 4008310533388848912
     ComponentOrder:
       - IDComponent
