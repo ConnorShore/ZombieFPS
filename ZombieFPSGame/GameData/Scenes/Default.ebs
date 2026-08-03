@@ -131,6 +131,7 @@ Entities:
         - 10710601879491244134
         - 6896436297867714122
         - 3228848565545027244
+        - 1313275785191007249
       IsAttachment: 0
     TransformComponent:
       Position: [0,0,0]
@@ -620,10 +621,10 @@ Entities:
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [0,5.722046e-06,4.005432e-05]
+      Position: [-4.370405e-07,5.722046e-06,6.67572e-05]
       Rotation: [-1.5707965,-0,0]
       Scale: [0.081830345,0.0642239,0.0642239]
-      WorldTransform: [0.01674033,0,0,0,0,-1.5662331e-09,-0.013138514,0,0,0.013138514,-1.5662331e-09,0,0,0.99117386,-3.880515,1]
+      WorldTransform: [0.01674033,0,0,0,0,-1.5662331e-09,-0.013138514,0,0,0.013138514,-1.5662331e-09,0,-8.940696e-08,0.99117386,-3.8805096,1]
     StaticMeshComponent:
       MeshUUID: 12443871631894294282
       Layer: 1
@@ -1819,6 +1820,35 @@ Entities:
       AnchorMax: [1,1]
       Pivot: [0.5,0.5]
       Rotation: 0
+  - Entity: 1313275785191007249
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: PowerUpManager
+    RelationshipComponent:
+      Parent: 8133465050989195876
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
+    ScriptComponent:
+      ScriptUUID: 6171998476316795323
+      UserPropertyOverrides:
+        - Name: PowerUpPrefabs
+          Type: 9
+          Value:
+            - 3822534466298593180
+          ReferenceKind: Prefab
+        - Name: BaseSpawnChance
+          Type: 3
+          Value: 0.5
 Environment:
   Skybox:
     Enabled: 1

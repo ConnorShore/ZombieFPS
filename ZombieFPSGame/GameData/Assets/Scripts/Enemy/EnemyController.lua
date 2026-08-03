@@ -144,8 +144,11 @@ function EnemyController:ApplyDamage(amount, isHeadshot)
 end
 
 function EnemyController:Die(isHeadshot)
-    EventManager.Broadcast("OnEnemyKilled", isHeadshot)
-    -- EventManager.Broadcast("OnEnemyKilled", self.Entity:GetUUID())
+    EventManager.Broadcast("OnEnemyKilled", self.Entity:GetUUID())
+    if isHeadshot then
+        EventManager.Broadcast("OnEnemyHeadshotKill", self.Entity:GetUUID())
+    end
+    
     Scene.RemoveEntity(self.Entity)
 
     -- TODO: Maybe play a death animation or drop loot here

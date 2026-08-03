@@ -21,12 +21,12 @@ function PointManager:OnCreate(entity)
         self:AwardPointsForHit()
     end)
 
-    EventManager.Subscribe("OnEnemyKilled", function(isHeadshot)
-        if isHeadshot then
-            self:AwardPointsForHeadshotKill()
-        else
-            self:AwardPointsForKill()
-        end
+    EventManager.Subscribe("OnEnemyKilled", function(enemyUUID)
+        self:AwardPointsForKill()
+    end)
+
+    EventManager.Subscribe("OnEnemyHeadshotKill", function(enemyUUID)
+        self:AwardPointsForHeadshotKill()
     end)
 
     EventManager.Subscribe("OnItemPurchased", function(itemCost)

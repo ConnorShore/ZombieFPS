@@ -104,6 +104,14 @@ Assets:
     Name: PowerUpDrop
     FilePath: Scripts/Pickups/PowerUpDrop.lua
   - Type: Script
+    UUID: 936314447457138483
+    Name: PlayerController
+    FilePath: Scripts/Player/PlayerController.lua
+  - Type: Script
+    UUID: 5268583109702214263
+    Name: DamageableProp
+    FilePath: Scripts/DamageableProp.lua
+  - Type: Script
     UUID: 7371630261308486327
     Name: PointManager
     FilePath: Scripts/PointManager.lua
@@ -180,10 +188,6 @@ Assets:
     Name: WeaponController
     FilePath: Scripts/Weapons/WeaponController.lua
   - Type: Script
-    UUID: 936314447457138483
-    Name: PlayerController
-    FilePath: Scripts/Player/PlayerController.lua
-  - Type: Script
     UUID: 803391121824597106
     Name: AIController
     FilePath: Scripts/AIController.lua
@@ -195,10 +199,6 @@ Assets:
     UUID: 16639884503866118704
     Name: WeaponStats
     FilePath: Scripts/Weapons/WeaponStats.lua
-  - Type: Script
-    UUID: 5268583109702214263
-    Name: DamageableProp
-    FilePath: Scripts/DamageableProp.lua
   - Type: Script
     UUID: 1303867917645546364
     Name: Hitbox
@@ -239,6 +239,10 @@ Assets:
     UUID: 4079924673265810475
     Name: PurchasableItem
     FilePath: Scripts/Pickups/PurchasableItem.lua
+  - Type: Script
+    UUID: 6171998476316795323
+    Name: PowerUpManager
+    FilePath: Scripts/PowerUpManager.lua
   - Type: Material
     UUID: 782295293902573577
     Name: DesertEagle_Metal
@@ -408,13 +412,13 @@ Assets:
     Name: NavMesh_Default_NavigationSurface
     FilePath: NavMeshes/NavMesh_Default_NavigationSurface.ebnav
   - Type: Prefab
-    UUID: 7525331889912364400
-    Name: M4_Pickup
-    FilePath: Prefabs/Weapons/M4_Pickup.ebprefab
-  - Type: Prefab
     UUID: 1628786810858958427
     Name: DesertEagle
     FilePath: Prefabs/Weapons/DesertEagle.ebprefab
+  - Type: Prefab
+    UUID: 7525331889912364400
+    Name: M4_Pickup
+    FilePath: Prefabs/Weapons/M4_Pickup.ebprefab
   - Type: Prefab
     UUID: 3822534466298593180
     Name: AmmoPowerup
