@@ -12,11 +12,16 @@ RoundManager.BaseZombiesPerRound = 5
 RoundManager.ZombieRoundMultiplier = 4
 
 function RoundManager:OnCreate(entity)
+    self.ScoreFile = GameData:Open("CurrentScore")
+
     self.CurrentState = GameState.Intermission
     self.CurrentRound = 0
     self.StateTimer = self.IntermissionTime
-    
+
     self.ZombiesRemaining = 0
+
+    -- The file is read back from disk on open, so clear last run's round before the first one starts.
+    self.ScoreFile:SetInt("CurrentRound", 0)
 
     EventManager.Subscribe("OnEnemyKilled", function(enemyUUID)
         self:OnZombieKilled()
@@ -49,6 +54,7 @@ function RoundManager:StartNextRound()
     local zombiesForRound = self:GetZombiesPerRound(self.CurrentRound)
     self.ZombiesRemaining = zombiesForRound
 
+    self.ScoreFile:SetInt("CurrentRound", self.CurrentRound)
     EventManager.Broadcast("OnRoundStarted", self.CurrentRound)
 
     local spawnManagerEntity = Scene.GetEntityByUUID(self.SpawnManagerRef)

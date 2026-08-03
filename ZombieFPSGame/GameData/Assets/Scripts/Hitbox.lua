@@ -1,7 +1,8 @@
 local Hitbox = {}
 
 -- Expose to editor so a Headshot hitbox can be 2.0, and a toe can be 0.5
-Hitbox.DamageMultiplier = 1.0 
+Hitbox.DamageMultiplier = 1.0
+Hitbox.ApplyHeadshotMultiplier = false
 Hitbox.ImpactSound = AudioClipRef()
 
 function Hitbox:OnCreate(entity)
@@ -37,8 +38,7 @@ function Hitbox:OnTakeDamage(entity, damageInfo)
     
     local parentScript = self.ParentEnemy:GetScriptInstance()
     if parentScript and parentScript.ApplyDamage then
-        Log.Info("Hitbox applying damage to parent enemy. Base Damage: " .. tostring(damageInfo.Damage) .. ", Multiplier: " .. tostring(self.DamageMultiplier) .. ", Final Damage: " .. tostring(finalDamage))
-        parentScript:ApplyDamage(finalDamage)
+        parentScript:ApplyDamage(finalDamage, self.ApplyHeadshotMultiplier)
     else
         Log.Error("Hitbox could not find parent enemy script to apply damage! Parent Enemy: '" .. self.ParentEnemy:GetName() .. "'")
     end

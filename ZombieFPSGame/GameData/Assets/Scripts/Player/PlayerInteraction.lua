@@ -8,12 +8,24 @@ function PlayerInteraction:OnCreate(entity)
     self.PickupUI = Scene.GetEntityByUUID(self.PickupUIRef)
     self.WeaponHolder = Scene.GetEntityByUUID(self.WeaponHolderRef)
 
+    self.PickupTextComponent = nil
+    if self.PickupUI and self.PickupUI:IsValid() then
+        self.PickupTextComponent = self.PickupUI:GetComponent("TextComponent")
+    else
+        Log.Error("PlayerInteraction: PickupUI entity is not valid!")
+    end
+
     -- Cache our own transform handle (safe for the entity's lifetime; it re-resolves the
     -- live component internally) so OnUpdate doesn't do a string-keyed lookup every frame.
     self.transform = entity:GetComponent("TransformComponent")
 end
 
 function PlayerInteraction:OnUpdate(entity, delta)
+    if not self.PickupUI or not self.PickupUI:IsValid() then
+        Log.Warn("PlayerInteraction: PickupUI entity is not valid!")
+        return
+    end
+
     -- Get player position and forward direction
     local interactionTransform = self.transform
     local interactionPos = interactionTransform.WorldPosition
@@ -27,33 +39,42 @@ function PlayerInteraction:OnUpdate(entity, delta)
 
     -- Cast ray to detect interactable objects
     local hitResult = Physics.CastRay(rayStart, rayEnd, CollisionFilter.PickupItem)
-    if hitResult.Hit then
-        if self.PickupUI:IsValid() then
-            self.PickupUI:SetActive(true)
+    if not hitResult.Hit then
+        self.PickupUI:SetActive(false)
+        return
+    end
+
+    -- Show pickup UI and update text based on the hit entity
+    self.PickupUI:SetActive(true)
+
+    -- If player can't afford item, don't allow pickup
+    local pickupScript = hitResult.RigidBodyEntity:GetScriptInstance("PurchasableItem")
+    if not pickupScript then
+        Log.Warn("PlayerInteraction: Hit entity '" .. hitResult.RigidBodyEntity:GetName() .. "' does not have a PurchasableItem script attached!")
+        return
+    end
+    if not pickupScript:CanAfford() then
+        self.PickupTextComponent.Color = Vector4f.new(1.0, 0.0, 0.0, 1.0)
+        return
+    end
+
+    -- Player can afford item, show pickup text in white
+    self.PickupTextComponent.Color = Vector4f.new(1.0, 1.0, 1.0, 1.0)
+
+    if Input.IsKeyPressed(KeyCode.E) then
+        local pickupItemScript = hitResult.RigidBodyEntity:GetScriptInstance("PickupItem")
+        if pickupItemScript then
+            self:OnPickupItem(pickupItemScript, hitResult.RigidBodyEntity, entity)
+            return
         end
 
-        if Input.IsKeyPressed(KeyCode.E) then
-            Log.Info("PlayerInteraction: Detected interactable object hit by raycast: " .. hitResult.RigidBodyEntity:GetName())
-            local pickupItemScript = hitResult.RigidBodyEntity:GetScriptInstance("PickupItem")
-            if pickupItemScript then
-                Log.Info("PlayerInteraction: Found PickupItem script on hit entity, attempting to pick up item")
-                self:OnPickupItem(pickupItemScript, hitResult.RigidBodyEntity, entity)
-                return
-            end
-
-            local pickupWeaponScript = hitResult.RigidBodyEntity:GetScriptInstance("PickupWeapon")
-            if pickupWeaponScript then
-                Log.Info("PlayerInteraction: Found PickupWeapon script on hit entity, attempting to pick up weapon")
-                self:OnPickupWeapon(pickupWeaponScript, hitResult.RigidBodyEntity, entity)
-                return
-            end
-
-            Log.Warn("PlayerInteraction: Hit entity does not have a recognized pickup script attached!")
+        local pickupWeaponScript = hitResult.RigidBodyEntity:GetScriptInstance("PickupWeapon")
+        if pickupWeaponScript then
+            self:OnPickupWeapon(pickupWeaponScript, hitResult.RigidBodyEntity, entity)
+            return
         end
-    else
-        if self.PickupUI:IsValid() then
-            self.PickupUI:SetActive(false)
-        end
+
+        Log.Warn("PlayerInteraction: Hit entity does not have a recognized pickup script attached!")
     end
 end
 
