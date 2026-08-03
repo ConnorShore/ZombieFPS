@@ -1,12 +1,12 @@
 Assets:
   - Type: Texture
-    UUID: 3453372035684411145
-    Name: RadialGlow
-    FilePath: Textures/Effects/RadialGlow.png
-  - Type: Texture
     UUID: 2902344313391760329
     Name: DesertEagle_DesertEagleDiffuse.png
     FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_DesertEagleDiffuse.png
+  - Type: Texture
+    UUID: 3453372035684411145
+    Name: RadialGlow
+    FilePath: Textures/Effects/RadialGlow.png
   - Type: Texture
     UUID: 18407398070678811137
     Name: DesertEagle_DesertEagleSpecular-DesertEagleRoughness.png
@@ -16,13 +16,13 @@ Assets:
     Name: AssaultRifle_ARMetallic-ARRoughness.png
     FilePath: Models/M4/AssaultRifle_ARMetallic-ARRoughness.png
   - Type: Texture
-    UUID: 6891481540194389905
-    Name: BloodDamageEffect
-    FilePath: Textures/BloodDamageEffect.png
-  - Type: Texture
     UUID: 3343954652411117201
     Name: Crosshair
     FilePath: Textures/Crosshair.png
+  - Type: Texture
+    UUID: 6891481540194389905
+    Name: BloodDamageEffect
+    FilePath: Textures/BloodDamageEffect.png
   - Type: Texture
     UUID: 8231069642100005462
     Name: M4_ARNormal.png
@@ -204,13 +204,13 @@ Assets:
     Name: Hitbox
     FilePath: Scripts/Hitbox.lua
   - Type: Script
-    UUID: 18266934061772524094
-    Name: ZombieSpawner
-    FilePath: Scripts/ZombieSpawner.lua
-  - Type: Script
     UUID: 2119190290714536510
     Name: PointUIController
     FilePath: Scripts/PointUIController.lua
+  - Type: Script
+    UUID: 18266934061772524094
+    Name: ZombieSpawner
+    FilePath: Scripts/ZombieSpawner.lua
   - Type: Script
     UUID: 5515958197491920100
     Name: GlobalSystems
@@ -235,6 +235,10 @@ Assets:
     UUID: 1985529488838138239
     Name: ScoreboardController
     FilePath: Scripts/ScoreboardController.lua
+  - Type: Script
+    UUID: 4079924673265810475
+    Name: PurchasableItem
+    FilePath: Scripts/Pickups/PurchasableItem.lua
   - Type: Material
     UUID: 782295293902573577
     Name: DesertEagle_Metal
@@ -352,6 +356,10 @@ Assets:
     Name: DesertEagle_Reload
     FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Reload.ebanim
   - Type: Animation
+    UUID: 2713313368883441983
+    Name: Zombie_Zombie Walk
+    FilePath: Models/Zombie/Zombie_Resources/Zombie_Zombie Walk.ebanim
+  - Type: Animation
     UUID: 10171445062614256115
     Name: Zombie_Zombie Attack
     FilePath: Models/Zombie/Zombie_Resources/Zombie_Zombie Attack.ebanim
@@ -363,10 +371,6 @@ Assets:
     UUID: 7891003508228372826
     Name: DesertEagle_SlideLock
     FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_SlideLock.ebanim
-  - Type: Animation
-    UUID: 2713313368883441983
-    Name: Zombie_Zombie Walk
-    FilePath: Models/Zombie/Zombie_Resources/Zombie_Zombie Walk.ebanim
   - Type: AnimationController
     UUID: 17100135789324560666
     Name: M4_ReloadController
@@ -408,6 +412,10 @@ Assets:
     Name: M4_Pickup
     FilePath: Prefabs/Weapons/M4_Pickup.ebprefab
   - Type: Prefab
+    UUID: 1628786810858958427
+    Name: DesertEagle
+    FilePath: Prefabs/Weapons/DesertEagle.ebprefab
+  - Type: Prefab
     UUID: 3822534466298593180
     Name: AmmoPowerup
     FilePath: Prefabs/AmmoPowerup.ebprefab
@@ -435,10 +443,6 @@ Assets:
     UUID: 13041019221118750640
     Name: DesertEaglePickup
     FilePath: Prefabs/Weapons/DesertEaglePickup.ebprefab
-  - Type: Prefab
-    UUID: 1628786810858958427
-    Name: DesertEagle
-    FilePath: Prefabs/Weapons/DesertEagle.ebprefab
   - Type: Prefab
     UUID: 9278556515141032553
     Name: Enemy

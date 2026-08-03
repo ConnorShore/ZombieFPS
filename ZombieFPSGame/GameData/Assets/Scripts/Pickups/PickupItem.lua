@@ -1,4 +1,5 @@
 local PickupItem = {}
+PickupItem.Base = "PurchasableItem"
 
 PickupItem.AttachmentType = {
     Sight = 1,
@@ -8,6 +9,7 @@ PickupItem.AttachmentType = {
 }
 
 PickupItem.Prefab = PrefabRef()
+PickupItem.Cost = 0
 
 function PickupItem:OnCreate(entity)
     local transform = entity:GetComponent("TransformComponent")
@@ -18,6 +20,11 @@ function PickupItem:OnUpdate(entity, delta)
 end
 
 function PickupItem:OnPickup(entity, otherEntity)
+    if not self:TryPurchase() then
+        Log.Warn("Not enough points to pick up '" .. entity:GetName() .. "'")
+        return
+    end
+
     if self.PrefabEntity and self.PrefabEntity:IsValid() then
         Scene.RemoveEntity(self.PrefabEntity)
         self.PrefabEntity = nil

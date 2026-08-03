@@ -6,6 +6,10 @@ PointManager.EnemyKillPoints = 50
 PointManager.EnemyHeadshotMultiplier = 2.0
 
 function PointManager:OnCreate(entity)
+    -- Published so PurchasableItem (and anything else) can read the live point total without
+    -- needing an EntityRef back to whichever entity carries this script.
+    _G.PointManager = self
+
     -- Cached for the whole run; the Game Over scene reads this same file back.
     self.ScoreFile = GameData:Open("CurrentScore")
 

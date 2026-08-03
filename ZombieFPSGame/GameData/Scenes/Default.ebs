@@ -777,6 +777,9 @@ Entities:
     ScriptComponent:
       ScriptUUID: 12117729415864912341
       UserPropertyOverrides:
+        - Name: Cost
+          Type: 2
+          Value: 150
         - Name: AttachmentType
           Type: 5
           Value: 1
@@ -899,6 +902,9 @@ Entities:
           Type: 7
           Value: 230291968303856085
           ReferenceKind: Entity
+        - Name: Cost
+          Type: 2
+          Value: 850
     PrefabComponent:
       PrefabUUID: 7525331889912364400
   - Entity: 15220513272756049617
@@ -1262,6 +1268,9 @@ Entities:
           Type: 7
           Value: 230291968303856085
           ReferenceKind: Entity
+        - Name: Cost
+          Type: 2
+          Value: 100
     AnimatorComponent:
       SkeletonHandle: 14193014657651256754
       ControllerHandle: 16717526163793928394
