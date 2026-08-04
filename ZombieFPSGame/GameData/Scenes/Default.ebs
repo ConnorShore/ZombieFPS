@@ -565,17 +565,17 @@ Entities:
     ScriptComponent:
       ScriptUUID: 8562544563539838448
       UserPropertyOverrides:
-        - Name: WeaponHolderRef
-          Type: 7
-          Value: 230291968303856085
-          ReferenceKind: Entity
+        - Name: InteractionDistance
+          Type: 3
+          Value: 3
         - Name: PickupUIRef
           Type: 7
           Value: 7122639572906643531
           ReferenceKind: Entity
-        - Name: InteractionDistance
-          Type: 3
-          Value: 3
+        - Name: WeaponHolderRef
+          Type: 7
+          Value: 230291968303856085
+          ReferenceKind: Entity
   - Entity: 8214889738320955675
     ComponentOrder:
       - IDComponent
@@ -1845,10 +1845,11 @@ Entities:
           Type: 9
           Value:
             - 3822534466298593180
+            - 16063513610624631090
           ReferenceKind: Prefab
         - Name: BaseSpawnChance
           Type: 3
-          Value: 0.5
+          Value: 0.1
 Environment:
   Skybox:
     Enabled: 1

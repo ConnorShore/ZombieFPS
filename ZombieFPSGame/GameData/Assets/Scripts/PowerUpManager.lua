@@ -5,8 +5,6 @@ PowerUpManager.MoveSpeed = 2.0 -- Speed at which the power-up moves up and down
 PowerUpManager.MoveDistance = 0.2 -- Distance the power-up moves up and down
 PowerUpManager.RotationSpeed = 45.0 -- Speed at which the power-up rotates
 
-PowerUpManager.PowerUpDuration = 10.0 -- Duration of the power-up effect in seconds
-
 PowerUpManager.BaseSpawnChance = 0.1 -- Base chance for a power-up to spawn after a zombie is killed
 -- Populated in the Inspector: click + and drag a power-up prefab onto each slot
 PowerUpManager.PowerUpPrefabs = PrefabRefArray()
@@ -56,9 +54,6 @@ function PowerUpManager:TrySpawnPowerUp(zombieEntity)
         local raycastResult = Physics.CastRay(transform.WorldPosition, Vector3f.new(0.0, -1.0, 0.0), 10.0, CollisionFilter.Environment)
         if raycastResult.Hit then
             groundHeight = raycastResult.CollisionPoint.y
-            Log.Trace("PowerUpManager: Ground height detected at " .. groundHeight .. " for zombie entity: " .. zombieEntity:GetName())
-        else
-            Log.Trace("PowerUpManager: No ground detected for zombie entity: " .. zombieEntity:GetName())
         end
 
         local spawnPosition = Vector3f.new(transform.WorldPosition.x, groundHeight + self.SpawnHeight, transform.WorldPosition.z)

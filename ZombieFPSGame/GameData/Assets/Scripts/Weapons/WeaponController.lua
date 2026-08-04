@@ -63,6 +63,10 @@ function WeaponController:OnCreate(entity)
     if not self:TryBindAmmoUI() then
         Log.Info("AmmoUI script not ready during WeaponController:OnCreate. Will retry on update.")
     end
+
+    EventManager.Subscribe("OnAmmoPickup", function()
+        self:AddAmmo(self.MaxAmmo)
+    end)
 end
 
 function WeaponController:ResolveEntityRef(entityRef)

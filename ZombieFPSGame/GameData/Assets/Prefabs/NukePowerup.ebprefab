@@ -1,23 +1,24 @@
-Prefab: AmmoPowerup
+Prefab: NukePowerup
 PrefabEntities:
-  - Entity: 11947509435464799031
+  - Entity: 16271276818946154947
     ComponentOrder:
       - IDComponent
       - TagComponent
       - TransformComponent
       - RelationshipComponent
+      - ScriptComponent
       - RigidBodyComponent
       - BoxColliderComponent
-      - ScriptComponent
       - PrefabComponent
       - LifetimeComponent
     TagComponent:
-      Tag: AmmoPowerup
+      Tag: NukePowerup
     RelationshipComponent:
       Parent: 0
       Children:
-        - 9090645728019880623
-        - 14693685799150300691
+        - 8452545706866157394
+        - 2113316005502678136
+        - 17218960239438338666
       IsAttachment: 0
     TransformComponent:
       Position: [0,0,0]
@@ -29,11 +30,11 @@ PrefabEntities:
       Mass: 1
       GravityEnabled: 1
     BoxColliderComponent:
-      Size: [2.5,3.3,4.1]
+      Size: [5.1,3.3,4.1]
       IsTrigger: 1
       OffsetPosition: [0,0.05,0]
       OffsetRotation: [0,0,0]
-      Category: 1
+      Category: 512
       CollisionMask: 1
       PhysicsMaterialUUID: 0
       PreviewCollider: 0
@@ -48,18 +49,21 @@ PrefabEntities:
           Value: 45
         - Name: PickupSound
           Type: 8
-          Value: 4535810649324835630
+          Value: 14168917987159911087
           ReferenceKind: AudioClip
         - Name: WeaponHolderRef
           Type: 7
           Value: 230291968303856085
           ReferenceKind: Entity
+        - Name: PickupType
+          Type: 5
+          Value: 2
     PrefabComponent:
-      PrefabUUID: 3822534466298593180
+      PrefabUUID: 16063513610624631090
     LifetimeComponent:
-      Lifetime: 15
-      InitialLifetime: 15
-  - Entity: 9090645728019880623
+      Lifetime: 10
+      InitialLifetime: 10
+  - Entity: 8452545706866157394
     ComponentOrder:
       - IDComponent
       - TagComponent
@@ -68,22 +72,22 @@ PrefabEntities:
       - StaticMeshComponent
       - MaterialComponent
     TagComponent:
-      Tag: AmmoBox
+      Tag: NukeMesh
     RelationshipComponent:
-      Parent: 11947509435464799031
+      Parent: 16271276818946154947
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [0,4.529953e-06,0]
-      Rotation: [-1.5707965,-0,0]
-      Scale: [0.081830345,0.0642239,0.0642239]
-      WorldTransform: [0.01674033,0,0,0,0,-1.5662331e-09,-0.013138514,0,0,0.013138514,-1.5662331e-09,0,0,9.267089e-07,0,1]
+      Position: [-1.0608355,0.11637306,0.2040543]
+      Rotation: [9.672348e-08,0.39145115,-1.570796]
+      Scale: [1.2631153,1.144348,1.2631149]
+      WorldTransform: [6.160737e-08,-0.23885375,-0.098587416,0,0.23410341,5.5814603e-08,1.7442064e-08,0,3.85046e-09,-0.098587394,0.23885368,0,-0.21701895,0.023806859,0.041744124,1]
     StaticMeshComponent:
-      MeshUUID: 12443871631894294282
+      MeshUUID: 8280835987364870734
       Layer: 1
     MaterialComponent:
       MaterialUUID: 1868779223986162857
-  - Entity: 14693685799150300691
+  - Entity: 2113316005502678136
     ComponentOrder:
       - IDComponent
       - TagComponent
@@ -94,16 +98,39 @@ PrefabEntities:
     TagComponent:
       Tag: Light
     RelationshipComponent:
-      Parent: 11947509435464799031
+      Parent: 16271276818946154947
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [0,-0.9200525,0]
+      Position: [0,-0.6355386,5.1498413e-05]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [0.20457362,0,0,0,0,0.20457362,0,0,0,0,0.20457362,0,0,-0.18821847,0,1]
+      WorldTransform: [0.20457362,0,0,0,0,0.20457362,0,0,0,0,0.20457362,0,0,-0.13001442,1.05352165e-05,1]
     PointLightComponent:
       Active: 1
       Color: [0.14617938,1,0.1745454]
       Intensity: 5
       Radius: 0
+  - Entity: 17218960239438338666
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - SpriteComponent
+    TagComponent:
+      Tag: GlowHorz
+    RelationshipComponent:
+      Parent: 16271276818946154947
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,1.9073486e-06]
+      Rotation: [0,0,0]
+      Scale: [8.152899,8.152899,8.152899]
+      WorldTransform: [1.667868,0,0,0,0,1.667868,0,0,0,0,1.667868,0,0,0,3.901932e-07,1]
+    SpriteComponent:
+      Color: [0.21960784,0.8666667,0.03137255,0.39215687]
+      TextureUUID: 3453372035684411145
+      IsBillboard: 1
+      LockYAxis: 0

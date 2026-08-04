@@ -25,22 +25,22 @@ PrefabEntities:
     ScriptComponent:
       ScriptUUID: 8102167312162542918
       UserPropertyOverrides:
-        - Name: MuzzleFlashRef
+        - Name: ReloadStartSound
+          Type: 8
+          Value: 15776698392225788213
+          ReferenceKind: AudioClip
+        - Name: BarrelTipRef
           Type: 7
-          Value: 13968620020942205073
+          Value: 7652830277987808432
           ReferenceKind: Entity
         - Name: WeaponAimingRef
           Type: 7
           Value: 306260627852323004
           ReferenceKind: Entity
-        - Name: BarrelTipRef
+        - Name: MuzzleFlashRef
           Type: 7
-          Value: 7652830277987808432
+          Value: 13968620020942205073
           ReferenceKind: Entity
-        - Name: ReloadStartSound
-          Type: 8
-          Value: 15776698392225788213
-          ReferenceKind: AudioClip
         - Name: ReloadEndSound
           Type: 8
           Value: 8785379131387521162
@@ -48,13 +48,13 @@ PrefabEntities:
         - Name: MaxAmmo
           Type: 2
           Value: 48
-        - Name: MagEmptyParam
-          Type: 4
-          Value: AmmoEmpty
         - Name: AmmoUIRef
           Type: 7
           Value: 15941034270328579006
           ReferenceKind: Entity
+        - Name: MagEmptyParam
+          Type: 4
+          Value: AmmoEmpty
         - Name: MagazineSize
           Type: 2
           Value: 8
@@ -96,25 +96,25 @@ PrefabEntities:
         - Name: SwayPosAmount
           Type: 3
           Value: 0.07
-        - Name: IdleMultiplier
-          Type: 3
-          Value: 0.12
         - Name: SwayRotStep
           Type: 2
           Value: 1
-        - Name: BobSpeed
+        - Name: IdleMultiplier
           Type: 3
-          Value: 10
+          Value: 0.12
         - Name: BobLimit
           Type: 6
           Value: [0.05,0.05,0.05]
-        - Name: BobTotalLimit
-          Type: 6
-          Value: [0.1,0.1,0.1]
+        - Name: BobSpeed
+          Type: 3
+          Value: 10
         - Name: PlayerRef
           Type: 7
           Value: 6753254757056896993
           ReferenceKind: Entity
+        - Name: BobTotalLimit
+          Type: 6
+          Value: [0.1,0.1,0.1]
         - Name: SwayRotAmount
           Type: 2
           Value: 2
@@ -183,13 +183,13 @@ PrefabEntities:
         - Name: KickUpY
           Type: 3
           Value: 0.05
-        - Name: WeaponAimingRef
-          Type: 7
-          Value: 306260627852323004
-          ReferenceKind: Entity
         - Name: CameraRef
           Type: 7
           Value: 3526599274050075716
+          ReferenceKind: Entity
+        - Name: WeaponAimingRef
+          Type: 7
+          Value: 306260627852323004
           ReferenceKind: Entity
   - Entity: 306260627852323004
     ComponentOrder:
@@ -315,7 +315,7 @@ PrefabEntities:
       Position: [-0.0055043227,-0.5595463,0.27099973]
       Rotation: [-0.30556366,-9.8091966e-18,3.0942405e-18]
       Scale: [1,0.99999994,0.99999994]
-      WorldTransform: [0.34267372,1.0603147e-18,3.3613533e-18,0,1.0629489e-25,0.32680017,-0.10308677,0,-3.5246224e-18,0.10308677,0.32680017,0,-0.0018861868,-0.1917418,0.092864476,1]
+      WorldTransform: [1e-45,-1e-45,-1e-45,0,1e-45,1e-45,-1e-45,0,1e-45,1e-45,1e-45,0,3.619675e-09,-2.6359123e-07,1.2462838e-06,1]
   - Entity: 13968620020942205073
     ComponentOrder:
       - IDComponent
@@ -362,7 +362,7 @@ PrefabEntities:
       LifetimeVariation: 0.01
       GravityMultiplier: 0
       AlignWithVelocity: 1
-      StretchFactor: 0.3
+      StretchFactor: 0.03
       IsActive: 0
   - Entity: 17547488570157557521
     ComponentOrder:
@@ -381,7 +381,7 @@ PrefabEntities:
       Position: [4.656613e-10,1.3064115,0.20871729]
       Rotation: [-1.3027338,1.7211008e-17,-2.5213036e-17]
       Scale: [1,1.0000001,1]
-      WorldTransform: [0.34267372,-8.953537e-18,3.3592342e-19,0,-1.8611564e-24,-0.012847632,-0.34243277,0,8.959838e-18,0.34243274,-0.012847625,0,-0.0018861867,0.2567097,0.026399575,1]
+      WorldTransform: [1e-45,-1e-45,-1e-45,0,-1e-45,-1e-45,-1e-45,0,1e-45,1e-45,-1e-45,0,3.619675e-09,-2.6359123e-07,1.2462838e-06,1]
   - Entity: 7842275511371964096
     ComponentOrder:
       - IDComponent
@@ -399,7 +399,7 @@ PrefabEntities:
       Position: [4.656613e-10,0.94116896,-0.2201989]
       Rotation: [3.1307485,2.3840454e-07,-2.5853895e-09]
       Scale: [1,1.0000002,1.0000002]
-      WorldTransform: [0.34267372,-2.5421258e-08,-7.7644124e-08,0,1.597828e-15,-0.32566315,0.10662453,0,-8.169978e-08,-0.10662453,-0.32566315,0,-0.0018861867,0.093132794,-0.076118626,1]
+      WorldTransform: [1e-45,-1e-45,-1e-45,0,-1e-45,-1e-45,1e-45,0,-1e-45,-1e-45,-1e-45,0,3.619675e-09,-2.6359123e-07,1.2462838e-06,1]
   - Entity: 11412900125854753779
     ComponentOrder:
       - IDComponent
@@ -418,7 +418,7 @@ PrefabEntities:
       Position: [0.0055043246,0.61515164,-0.09011765]
       Rotation: [0.30556363,1.0285654e-17,-1.0339759e-25]
       Scale: [0.7003749,0.70037514,0.700375]
-      WorldTransform: [0.24000007,0,0,0,4.135903e-25,0.2400001,-7.450581e-09,0,8.271806e-25,0,0.24000005,0,5.820766e-10,-7.4505806e-08,2.2351742e-08,1]
+      WorldTransform: [1e-45,-1e-45,-1e-45,0,1e-45,1e-45,-1e-45,0,1e-45,1e-45,1e-45,0,3.619675e-09,-2.6359123e-07,1.2462838e-06,1]
   - Entity: 15072559616023659513
     ComponentOrder:
       - IDComponent
@@ -437,7 +437,7 @@ PrefabEntities:
       Position: [0.0055043264,0.10507162,-0.7457227]
       Rotation: [1.6082969,-2.6146835e-17,9.918303e-18]
       Scale: [0.70037496,0.700375,0.7003751]
-      WorldTransform: [0.2400001,-8.924948e-20,-2.378721e-18,0,8.924865e-20,0.24000008,-1.2014061e-07,0,2.378722e-18,1.2665987e-07,0.24000013,0,1.3969839e-09,-8.940697e-08,3.7625432e-07,1]
+      WorldTransform: [1e-45,-1e-45,-1e-45,0,1e-45,1e-45,-1e-45,0,1e-45,1e-45,1e-45,0,3.619675e-09,-2.6359123e-07,1.2462838e-06,1]
     SkinnedMeshComponent:
       MeshUUID: 15346656199082862049
       RootAnimator: 9846761892442418044
@@ -462,7 +462,7 @@ PrefabEntities:
       Position: [0.005504294,0.3274085,-0.12653834]
       Rotation: [-2.825185,2.3841851e-07,-7.1054274e-15]
       Scale: [0.7003748,0.7003749,0.70037484]
-      WorldTransform: [0.24000002,3.5527137e-15,3.5527137e-15,0,1.7763568e-15,0.24000005,-4.4703484e-08,0,7.1054274e-15,4.4703484e-08,0.24000004,0,5.820766e-10,7.450581e-09,2.2351742e-08,1]
+      WorldTransform: [1e-45,-1e-45,-1e-45,0,1e-45,1e-45,-1e-45,0,1e-45,1e-45,1e-45,0,3.619675e-09,-2.6359123e-07,1.2462838e-06,1]
     SkinnedMeshComponent:
       MeshUUID: 5985712711574680378
       RootAnimator: 9846761892442418044
@@ -487,7 +487,7 @@ PrefabEntities:
       Position: [0,0,0]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [0.24000007,0,0,0,4.135903e-25,0.2400001,-7.450581e-09,0,8.271806e-25,0,0.24000005,0,5.820766e-10,-7.4505806e-08,2.2351742e-08,1]
+      WorldTransform: [1e-45,-1e-45,-1e-45,0,1e-45,1e-45,-1e-45,0,1e-45,1e-45,1e-45,0,3.619675e-09,-2.6359123e-07,1.2462838e-06,1]
     SkinnedMeshComponent:
       MeshUUID: 13365133264221018487
       RootAnimator: 9846761892442418044
@@ -512,7 +512,7 @@ PrefabEntities:
       Position: [0,0,0]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [0.24000007,0,0,0,4.135903e-25,0.2400001,-7.450581e-09,0,8.271806e-25,0,0.24000005,0,5.820766e-10,-7.4505806e-08,2.2351742e-08,1]
+      WorldTransform: [1e-45,-1e-45,-1e-45,0,1e-45,1e-45,-1e-45,0,1e-45,1e-45,1e-45,0,3.619675e-09,-2.6359123e-07,1.2462838e-06,1]
     SkinnedMeshComponent:
       MeshUUID: 5610316799824380095
       RootAnimator: 9846761892442418044

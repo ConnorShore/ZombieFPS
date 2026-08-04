@@ -25,18 +25,18 @@ PrefabEntities:
     ScriptComponent:
       ScriptUUID: 8102167312162542918
       UserPropertyOverrides:
-        - Name: ReloadEndSound
-          Type: 8
-          Value: 8785379131387521162
-          ReferenceKind: AudioClip
         - Name: SightMountRef
           Type: 7
           Value: 9554135011043521366
           ReferenceKind: Entity
-        - Name: ReloadStartSound
+        - Name: ReloadEndSound
           Type: 8
-          Value: 15776698392225788213
+          Value: 8785379131387521162
           ReferenceKind: AudioClip
+        - Name: BarrelTipRef
+          Type: 7
+          Value: 6944786712087684529
+          ReferenceKind: Entity
         - Name: MuzzleFlashRef
           Type: 7
           Value: 6651037341096675291
@@ -45,17 +45,17 @@ PrefabEntities:
           Type: 7
           Value: 5582973607127015406
           ReferenceKind: Entity
-        - Name: BarrelTipRef
-          Type: 7
-          Value: 6944786712087684529
-          ReferenceKind: Entity
-        - Name: ReloadStateName
-          Type: 4
-          Value: Reload
+        - Name: ReloadStartSound
+          Type: 8
+          Value: 15776698392225788213
+          ReferenceKind: AudioClip
         - Name: AmmoUIRef
           Type: 7
           Value: 15941034270328579006
           ReferenceKind: Entity
+        - Name: ReloadStateName
+          Type: 4
+          Value: Reload
         - Name: EquipPositionOffset
           Type: 6
           Value: [0,0.09,-0.29]
@@ -225,24 +225,24 @@ PrefabEntities:
         - Name: ADS_Speed
           Type: 3
           Value: 10
+        - Name: DebugADSLogging
+          Type: 1
+          Value: 1
         - Name: AimNodeRef
           Type: 7
           Value: 16766670902763021612
           ReferenceKind: Entity
-        - Name: DebugADSLogging
-          Type: 1
-          Value: 1
         - Name: CrosshairRef
           Type: 7
           Value: 16155943693343446687
           ReferenceKind: Entity
-        - Name: ADSCameraViewOffset
-          Type: 6
-          Value: [0,-0.025,-0.15]
         - Name: CameraSocketRef
           Type: 7
           Value: 9548350549033941053
           ReferenceKind: Entity
+        - Name: ADSCameraViewOffset
+          Type: 6
+          Value: [0,-0.025,-0.15]
   - Entity: 3771947737390781143
     ComponentOrder:
       - IDComponent
@@ -315,7 +315,7 @@ PrefabEntities:
       Position: [0.00010059393,0.1925114,0.87833124]
       Rotation: [-1.544226,4.9503554e-20,-1.8626676e-18]
       Scale: [1,0.9999998,0.9999999]
-      WorldTransform: [0.7403479,-1.3790222e-18,-3.6649853e-20,0,-3.0620067e-25,0.019668894,-0.7400865,0,1.3795089e-18,0.74008656,0.019668896,0,7.4474505e-05,0.1425254,0.6502707,1]
+      WorldTransform: [0.7417827,-1.3824964e-18,-4.165243e-20,0,-4.2266934e-21,0.020376643,-0.73927534,0,1.3871098e-18,0.73927504,0.020376643,0,0.00031776278,0.16856247,0.6368664,1]
   - Entity: 6651037341096675291
     ComponentOrder:
       - IDComponent
@@ -381,7 +381,7 @@ PrefabEntities:
       Position: [2.1684043e-19,0.7336016,-0.3261684]
       Rotation: [-1.3838066,-4.4322476e-08,2.3426259e-07]
       Scale: [1,0.99999994,1]
-      WorldTransform: [0.7403479,3.741016e-08,-1.7250281e-07,0,-1.0522331e-14,-0.72352904,-0.15690954,0,-1.7651274e-07,0.15690956,-0.72352904,0,7.4474505e-05,-0.084438294,0.1009267,1]
+      WorldTransform: [0.7417827,3.7539994e-08,-1.7228142e-07,0,2.1081368e-14,-0.7226002,-0.15745403,0,-1.7685483e-07,0.15745398,-0.72260046,0,0.00031776278,-0.05761733,0.087886624,1]
   - Entity: 9851154522119051659
     ComponentOrder:
       - IDComponent
@@ -400,7 +400,7 @@ PrefabEntities:
       Position: [-0.000100553036,0.87290907,-0.21577382]
       Rotation: [1.544226,-1.8633244e-18,4.1359036e-25]
       Scale: [1.0000002,0.9999999,0.9999999]
-      WorldTransform: [0.7403481,-8.271806e-25,-6.268478e-25,0,5.169879e-25,0.7403478,1.8626451e-09,0,6.914713e-25,1.8626451e-09,0.74034774,0,3.027526e-08,3.2484531e-06,-1.5497208e-06,1]
+      WorldTransform: [0.7417829,-4.9871753e-21,-3.6844434e-21,0,4.813881e-21,0.73955536,0.0007290486,0,4.3564986e-21,-0.00072905794,0.73955566,0,0.00024317428,0.026833236,-0.012850463,1]
     SkinnedMeshComponent:
       MeshUUID: 16822605104283055229
       RootAnimator: 9738441487633822906
@@ -425,7 +425,7 @@ PrefabEntities:
       Position: [-0.00010058284,0.5014229,0.05104041]
       Rotation: [1.5442259,-1.8633248e-18,-4.1359036e-25]
       Scale: [0.5531183,0.55311835,0.5531184]
-      WorldTransform: [0.40950015,7.9633565e-15,-3.9198357e-14,0,-7.9633565e-15,0.40949997,5.122274e-08,0,3.919841e-14,-4.9360096e-08,0.40950027,0,3.848254e-08,0.19016527,0.28017634,1]
+      WorldTransform: [0.4102938,7.993431e-15,-3.9148582e-14,0,-7.978788e-15,0.40906167,0.00040329993,0,3.927438e-14,-0.00040330458,0.40906215,0,0.0002431825,0.21651581,0.2672149,1]
     ScriptComponent:
       ScriptUUID: 13629381204485307944
       UserPropertyOverrides: []
@@ -453,7 +453,7 @@ PrefabEntities:
       Position: [-0.00010055642,-0.0825687,0.15739866]
       Rotation: [2.9280326,2.3841872e-07,1.776357e-15]
       Scale: [1,1,0.9999998]
-      WorldTransform: [0.7403479,-1.4210855e-14,5.684342e-14,0,2.842171e-14,0.74034774,-5.9604645e-08,0,-7.1054274e-14,4.4703484e-08,0.7403476,0,-7.275958e-12,-8.940697e-08,1.4901161e-08,1]
+      WorldTransform: [0.7417827,1.7763568e-14,5.684342e-14,0,-3.5527137e-15,0.7395554,0.0007288456,0,-5.684342e-14,-0.0007288754,0.73955554,0,0.00024314394,0.026829876,-0.0128489435,1]
     SkinnedMeshComponent:
       MeshUUID: 13898711898247753575
       RootAnimator: 9738441487633822906

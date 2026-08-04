@@ -5,13 +5,10 @@ local PurchasableItem = {}
 PurchasableItem.Cost = 0
 
 function PurchasableItem:CanAfford()
-    Log.Trace("PurchasableItem:CanAfford - Checking if player can afford item with cost " .. self.Cost)
     if _G.PointManager == nil then
-        Log.Warn("PurchasableItem:CanAfford - PointManager is not available in the global scope! Cannot determine if player can afford item.")
         return false
     end
 
-    Log.Trace("PurchasableItem:CanAfford - Player has " .. _G.PointManager.Points .. " points available.")
     return _G.PointManager ~= nil and _G.PointManager.Points >= self.Cost
 end
 

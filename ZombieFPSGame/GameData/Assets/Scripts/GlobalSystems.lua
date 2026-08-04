@@ -15,11 +15,11 @@ if not _G.EventManager then
     end
 
     -- Broadcast an event to anyone listening
-    function _G.EventManager.Broadcast(eventName, data)
+    function _G.EventManager.Broadcast(eventName, ...)
         local listeners = _G.EventManager._listeners[eventName]
         if listeners then
             for _, callback in ipairs(listeners) do
-                callback(data)
+                callback(...)
             end
         end
     end
