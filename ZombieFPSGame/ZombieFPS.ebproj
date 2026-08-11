@@ -30,6 +30,8 @@ Settings:
         Name: PickupItem
       - Index: 9
         Name: PowerUp
+      - Index: 10
+        Name: Shop
   Render:
     RenderLayers:
       - Index: 0

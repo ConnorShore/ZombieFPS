@@ -340,6 +340,7 @@ Entities:
         - 15941034270328579006
         - 3446544600952183294
         - 10222896294028970181
+        - 2179583451832717959
       IsAttachment: 0
     TransformComponent:
       Position: [0,0,0]
@@ -793,6 +794,50 @@ Entities:
           Value: 1
     PrefabComponent:
       PrefabUUID: 17919492092461288605
+  - Entity: 18235847441977686208
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - PrefabComponent
+      - RigidBodyComponent
+      - BoxColliderComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: ShopKiosk
+    RelationshipComponent:
+      Parent: 0
+      Children:
+        - 13024975722609094965
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-10.996501,0.12927741,-8.247228]
+      Rotation: [0,1.3126715,0]
+      Scale: [0.5,0.5,0.5]
+      WorldTransform: [0.12763393,0,-0.48343518,0,0,0.5,0,0,0.48343518,0,0.12763393,0,-10.996501,0.12927741,-8.247228,1]
+    RigidBodyComponent:
+      Type: 0
+      Mass: 1
+      GravityEnabled: 1
+    BoxColliderComponent:
+      Size: [9.5,3.5,2.5]
+      IsTrigger: 0
+      OffsetPosition: [-0.2,0.8,0]
+      OffsetRotation: [0,0,0]
+      Category: 1025
+      CollisionMask: 1
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 0
+    ScriptComponent:
+      ScriptUUID: 140741752612032377
+      UserPropertyOverrides:
+        - Name: ShopMenuUI
+          Type: 7
+          Value: 2179583451832717959
+          ReferenceKind: Entity
+    PrefabComponent:
+      PrefabUUID: 7112226948926292235
   - Entity: 16256626281541658784
     ComponentOrder:
       - IDComponent
@@ -1649,10 +1694,10 @@ Entities:
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [-8.815825,4.684121,-4.1120596]
+      Position: [-8.126023,4.684121,-4.70734]
       Rotation: [8.47681e-08,0.49716774,0.5314949]
       Scale: [1.25,1.25,1.25]
-      WorldTransform: [0.94710994,0.5568313,-0.5961726,0,-0.6335282,1.077563,9.313226e-08,0,0.51393086,0.30215365,1.0986711,0,-8.815825,4.684121,-4.1120596,1]
+      WorldTransform: [0.94710994,0.5568313,-0.5961726,0,-0.6335282,1.077563,9.313226e-08,0,0.51393086,0.30215365,1.0986711,0,-8.126023,4.684121,-4.70734,1]
     RigidBodyComponent:
       Type: 1
       Mass: 1
@@ -1850,6 +1895,60 @@ Entities:
         - Name: BaseSpawnChance
           Type: 3
           Value: 0.1
+  - Entity: 13024975722609094965
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - StaticMeshComponent
+      - MaterialComponent
+    TagComponent:
+      Tag: Mesh
+    RelationshipComponent:
+      Parent: 18235847441977686208
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-2.276268,1.4597436,1.1110268]
+      Rotation: [3.1415925,-2.5154014e-07,-2.323207]
+      Scale: [0.13582622,0.7595618,0.046142258]
+      WorldTransform: [-0.011847439,-0.049579527,0.04487426,0,-0.07077465,0.25954247,0.2680712,0,-0.022306792,-1.8559488e-09,-0.005889311,0,-10.749921,0.8591492,-7.004995,1]
+    StaticMeshComponent:
+      MeshUUID: 9226244638066152502
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 9148160884979557009
+  - Entity: 2179583451832717959
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RectTransformComponent
+      - SpriteComponent
+    TagComponent:
+      Tag: ShopMenuUI
+    RelationshipComponent:
+      Parent: 5645678438920164573
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,-0,0]
+      Scale: [1,1,1]
+      WorldTransform: [764.80005,0,0,0,0,452.8,0,0,0,0,1,0,550.5,292,0,1]
+    SpriteComponent:
+      Color: [0,0.8914729,0.20731916,1]
+      IsBillboard: 0
+      LockYAxis: 0
+    RectTransformComponent:
+      AnchoredPosition: [-3.5,-2]
+      SizeDelta: [100,100]
+      AnchorMin: [0.2,0.2]
+      AnchorMax: [0.8,0.8]
+      Pivot: [0.5,0.5]
+      Rotation: 0
 Environment:
   Skybox:
     Enabled: 1

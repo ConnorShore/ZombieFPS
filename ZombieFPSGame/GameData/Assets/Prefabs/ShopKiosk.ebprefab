@@ -1,0 +1,66 @@
+Prefab: ShopKiosk
+PrefabEntities:
+  - Entity: 7789361748329543855
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - PrefabComponent
+      - RigidBodyComponent
+      - BoxColliderComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: ShopKiosk
+    RelationshipComponent:
+      Parent: 0
+      Children:
+        - 8029168857411678709
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0.09263405,0]
+      Rotation: [0,0,0]
+      Scale: [0.5,0.5,0.5]
+      WorldTransform: [0.5,0,0,0,0,0.5,0,0,0,0,0.5,0,0,0.09263405,0,1]
+    RigidBodyComponent:
+      Type: 0
+      Mass: 1
+      GravityEnabled: 1
+    BoxColliderComponent:
+      Size: [9.5,3.5,2.5]
+      IsTrigger: 0
+      OffsetPosition: [-0.2,0.8,0]
+      OffsetRotation: [0,0,0]
+      Category: 1025
+      CollisionMask: 1
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 0
+    ScriptComponent:
+      ScriptUUID: 140741752612032377
+      UserPropertyOverrides: []
+    PrefabComponent:
+      PrefabUUID: 7112226948926292235
+  - Entity: 8029168857411678709
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - StaticMeshComponent
+      - MaterialComponent
+    TagComponent:
+      Tag: Mesh
+    RelationshipComponent:
+      Parent: 7789361748329543855
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-2.276268,1.4597436,1.1110268]
+      Rotation: [3.1415925,-2.5154014e-07,-2.323207]
+      Scale: [0.13582622,0.75956184,0.046142258]
+      WorldTransform: [-0.04641186,-0.049579527,1.7082872e-08,0,-0.27725664,0.2595425,5.7345325e-08,0,-6.5092e-09,-1.8559488e-09,-0.023071129,0,-1.138134,0.82250583,0.5555134,1]
+    StaticMeshComponent:
+      MeshUUID: 9226244638066152502
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 9148160884979557009

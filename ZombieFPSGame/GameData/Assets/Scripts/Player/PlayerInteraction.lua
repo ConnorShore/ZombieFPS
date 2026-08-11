@@ -38,11 +38,19 @@ function PlayerInteraction:OnUpdate(entity, delta)
     -- Debug.DrawLine(rayStart, rayEnd)
 
     -- Cast ray to detect interactable objects
+    self:HandlePickupInteraction(rayStart, rayEnd)
+    self:HandleShopInteraction(rayStart, rayEnd)
+end
+
+function PlayerInteraction:HandlePickupInteraction(rayStart, rayEnd)
     local hitResult = Physics.CastRay(rayStart, rayEnd, CollisionFilter.PickupItem)
     if not hitResult.Hit then
         self.PickupUI:SetActive(false)
         return
     end
+
+    -- TODO: Refactor so the message UI and interaction logic are handled on the interactable item itself
+    --  i.e. Items, weapons, shop, etc all implement their own interaction logic and this is just the player's way of detecting and triggering those interactions
 
     -- Show pickup UI and update text based on the hit entity
     self.PickupUI:SetActive(true)
@@ -113,6 +121,20 @@ end
 function PlayerInteraction:OnPickupWeapon(pickupScript, pickupEntity, playerEntity)
     Log.Info("PlayerInteraction:OnPickupWeapon - Attempting to pick up weapon")
     pickupScript:OnPickup(pickupEntity, playerEntity)
+end
+
+function PlayerInteraction:HandleShopInteraction(rayStart, rayEnd)
+    local hitResult = Physics.CastRay(rayStart, rayEnd, CollisionFilter.Shop)
+    if not hitResult.Hit then
+        return
+    end
+
+    local shopController = hitResult.RigidBodyEntity:GetScriptInstance("ShopController")
+    if shopController then
+        shopController:OnApproach()
+    else
+        Log.Warn("PlayerInteraction: Hit entity does not have a ShopController script attached!")
+    end
 end
 
 return PlayerInteraction

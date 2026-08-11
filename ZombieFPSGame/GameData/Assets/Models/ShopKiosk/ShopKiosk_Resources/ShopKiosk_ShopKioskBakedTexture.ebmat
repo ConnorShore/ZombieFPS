@@ -1,0 +1,36 @@
+Material: ShopKiosk_ShopKioskBakedTexture
+UUID: 9148160884979557009
+RenderQueue: 1
+Instanced: false
+Shader: 9
+Uniforms:
+  u_Metallic:
+    Type: float
+    Value: 1
+  u_Albedo:
+    Type: Vector3f
+    Value: [1,1,1]
+  u_Roughness:
+    Type: float
+    Value: 1
+  u_EmissionColor:
+    Type: Vector3f
+    Value: [0,0,0]
+  u_AO:
+    Type: float
+    Value: 1
+  u_AlbedoMap:
+    Type: Texture
+    Value: 1689671812453981333
+  u_Emission:
+    Type: float
+    Value: 0
+  u_NormalMap:
+    Type: Texture
+    Value: 15400749083740855036
+  u_MetallicRoughnessMap:
+    Type: Texture
+    Value: 10504724898190463676
+  u_EmissiveMap:
+    Type: Texture
+    Value: 4
