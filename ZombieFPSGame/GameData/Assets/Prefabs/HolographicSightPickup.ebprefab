@@ -32,6 +32,10 @@ PrefabEntities:
           Type: 8
           Value: 16836608058861364347
           ReferenceKind: Prefab
+        - Name: WeaponHolderRef
+          Type: 7
+          Value: 230291968303856085
+          ReferenceKind: Entity
         - Name: AttachmentType
           Type: 5
           Value: 1

@@ -31,7 +31,7 @@ PrefabEntities:
       IsTrigger: 0
       OffsetPosition: [-0.2,0.8,0]
       OffsetRotation: [0,0,0]
-      Category: 1025
+      Category: 257
       CollisionMask: 1
       PhysicsMaterialUUID: 0
       PreviewCollider: 0

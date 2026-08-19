@@ -256,6 +256,10 @@ Assets:
     Name: PurchasableItem
     FilePath: Scripts/Pickups/PurchasableItem.lua
   - Type: Script
+    UUID: 5988707575132309720
+    Name: Interactable
+    FilePath: Scripts/Interactable.lua
+  - Type: Script
     UUID: 6171998476316795323
     Name: PowerUpManager
     FilePath: Scripts/PowerUpManager.lua

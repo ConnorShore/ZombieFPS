@@ -1,8 +1,23 @@
--- Base class for pickups that cost points to collect. Never attached to an entity directly -
+-- Base class for interactables that cost points. Never attached to an entity directly -
 -- PickupItem and PickupWeapon inherit from it via Base = "PurchasableItem".
 local PurchasableItem = {}
+PurchasableItem.Base = "Interactable"
 
 PurchasableItem.Cost = 0
+
+function PurchasableItem:GetInteractionText(entity, playerEntity)
+    return self:GetPurchasePrompt()
+end
+
+-- Appends the price to whatever prompt the concrete pickup declares. Split out from
+-- GetInteractionText so a pickup can override the text yet still fall back to the priced prompt.
+function PurchasableItem:GetPurchasePrompt()
+    return self.InteractionPrompt .. " [" .. tostring(self.Cost) .. "]"
+end
+
+function PurchasableItem:CanInteract(entity, playerEntity)
+    return self:CanAfford()
+end
 
 function PurchasableItem:CanAfford()
     if _G.PointManager == nil then

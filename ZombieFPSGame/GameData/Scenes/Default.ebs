@@ -569,13 +569,9 @@ Entities:
         - Name: InteractionDistance
           Type: 3
           Value: 3
-        - Name: PickupUIRef
+        - Name: InteractionUIRef
           Type: 7
           Value: 7122639572906643531
-          ReferenceKind: Entity
-        - Name: WeaponHolderRef
-          Type: 7
-          Value: 230291968303856085
           ReferenceKind: Entity
   - Entity: 8214889738320955675
     ComponentOrder:
@@ -789,6 +785,10 @@ Entities:
           Type: 8
           Value: 16836608058861364347
           ReferenceKind: Prefab
+        - Name: WeaponHolderRef
+          Type: 7
+          Value: 230291968303856085
+          ReferenceKind: Entity
         - Name: PickupType
           Type: 5
           Value: 1
@@ -825,7 +825,7 @@ Entities:
       IsTrigger: 0
       OffsetPosition: [-0.2,0.8,0]
       OffsetRotation: [0,0,0]
-      Category: 1025
+      Category: 257
       CollisionMask: 1
       PhysicsMaterialUUID: 0
       PreviewCollider: 0
