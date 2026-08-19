@@ -11,6 +11,10 @@ function ShopController:OnCreate(entity)
         return
     end
 
+    EventManager.Subscribe("OnCloseShop", function()
+        self:OnClose()
+    end)
+
     self.ShopMenuUIEntity:SetActive(false)
 end
 
@@ -20,7 +24,15 @@ end
 
 function ShopController:OnOpen()
     if self.ShopMenuUIEntity and self.ShopMenuUIEntity:IsValid() then
+        Input.SetCursorMode(CursorMode.Normal)
         self.ShopMenuUIEntity:SetActive(true)
+    end
+end
+
+function ShopController:OnClose()
+    if self.ShopMenuUIEntity and self.ShopMenuUIEntity:IsValid() then
+        Input.SetCursorMode(CursorMode.Locked)
+        self.ShopMenuUIEntity:SetActive(false)
     end
 end
 
