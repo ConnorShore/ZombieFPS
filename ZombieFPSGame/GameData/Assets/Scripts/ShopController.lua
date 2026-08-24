@@ -15,6 +15,10 @@ function ShopController:OnCreate(entity)
         self:OnClose()
     end)
 
+    EventManager.Subscribe("OnShopItemPurchased", function(itemPrefab)
+        self:OnPurchase(itemPrefab)
+    end)
+
     self.ShopMenuUIEntity:SetActive(false)
 end
 
@@ -36,8 +40,8 @@ function ShopController:OnClose()
     end
 end
 
-function ShopController:OnPurchase(purchaseItem, price)
-
+function ShopController:OnPurchase(purchaseItem)
+    -- Spawn the prefab item at the shop's item location
 end
 
 return ShopController

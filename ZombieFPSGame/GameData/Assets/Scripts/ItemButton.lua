@@ -2,10 +2,47 @@ local ItemButton = {}
 
 ItemButton.ItemName = "Item Name"
 ItemButton.ItemPrice = 100
+ItemButton.ItemPrefab = PrefabRef()
+
+-- UISelectableComponent tints are multiplied against the sprite's authored colour, so these
+-- assume the button sprite is authored white; anything else shifts the result.
+local AffordableTint = {
+    Normal      = Vector4f.new(0.0, 1.0, 0.0, 0.75),
+    Highlighted = Vector4f.new(0.35, 1.0, 0.35, 0.9),
+    Pressed     = Vector4f.new(0.0, 0.7, 0.0, 1.0)
+}
+
+local UnaffordableTint = {
+    Normal      = Vector4f.new(1.0, 0.0, 0.0, 0.75),
+    Highlighted = Vector4f.new(1.0, 0.35, 0.35, 0.9),
+    Pressed     = Vector4f.new(0.7, 0.0, 0.0, 1.0)
+}
 
 function ItemButton:OnCreate(entity)
     self.PointManager = _G.PointManager
     self.CanAfford = false
+    self.TintApplied = nil  -- nil rather than false so the first update always pushes a palette
+end
+
+-- Pushes one palette onto the selectable; UIInputSystem drives the hover/press tinting from there.
+function ItemButton:ApplyTint(entity, canAfford)
+    local selectable = entity:GetComponent("UISelectableComponent")
+    if not selectable then
+        Log.Warn("ItemButton: UISelectableComponent is not available on the entity!")
+        return
+    end
+
+    local tint = canAfford and AffordableTint or UnaffordableTint
+    selectable.NormalColor = tint.Normal
+    selectable.HighlightedColor = tint.Highlighted
+    selectable.PressedColor = tint.Pressed
+    selectable.SelectedColor = tint.Highlighted
+    selectable.DisabledColor = tint.Normal
+
+    -- An unaffordable button stays interactable so it still hovers red; OnClick rejects the buy.
+    selectable.Interactable = true
+
+    self.TintApplied = canAfford
 end
 
 function ItemButton:OnUpdate(entity, delta)
@@ -14,29 +51,11 @@ function ItemButton:OnUpdate(entity, delta)
         return
     end
 
-    Log.Info("ItemButton: Current Points = " .. tostring(self.PointManager.Points) .. ", Item Price = " .. tostring(self.ItemPrice))
-
-    -- Update the button's state based on the player's current points
     self.CanAfford = self.PointManager.Points >= self.ItemPrice
 
-    -- Enable/Disable selectable component based on affordability
-    local selectableComponent = entity:GetComponent("UISelectableComponent")
-    if selectableComponent then
-        selectableComponent.Interactable = self.CanAfford
-    else
-        Log.Warn("ItemButton: UISelectableComponent is not available on the entity!")
-    end
-
-    -- If affordable, change color to green, else red
-    local spriteComponent = entity:GetComponent("SpriteComponent")
-    if spriteComponent then
-        if self.CanAfford then
-            spriteComponent.Color = Vector4f.new(0.0, 1.0, 0.0, 0.75) -- Green
-        else
-            spriteComponent.Color = Vector4f.new(1.0, 0.0, 0.0, 0.75) -- Red
-        end
-    else
-        Log.Warn("ItemButton: SpriteComponent is not available on the entity!")
+    -- Only touch the component when affordability actually flips.
+    if self.TintApplied ~= self.CanAfford then
+        self:ApplyTint(entity, self.CanAfford)
     end
 end
 
@@ -44,17 +63,18 @@ function ItemButton:OnClick(entity)
     if self.CanAfford then
         Log.Info("ItemButton: Purchasing item '" .. self.ItemName .. "' for " .. tostring(self.ItemPrice) .. " points.")
         EventManager.Broadcast("OnItemPurchased", self.ItemPrice)
+        EventManager.Broadcast("OnShopItemPurchased", self.ItemPrefab)
     else
         Log.Warn("ItemButton: Cannot afford item '" .. self.ItemName .. "'. Current Points = " .. tostring(self.PointManager.Points) .. ", Item Price = " .. tostring(self.ItemPrice))
     end
 end
 
 function ItemButton:OnHoverEnter(entity)
-
+    Log.Trace("Hovering entered item button for '" .. self.ItemName .. "'. Can afford: " .. tostring(self.CanAfford))
 end
 
 function ItemButton:OnHoverExit(entity)
-
+    Log.Trace("Hovering exited item button for '" .. self.ItemName .. "'. Can afford: " .. tostring(self.CanAfford))
 end
 
 return ItemButton
