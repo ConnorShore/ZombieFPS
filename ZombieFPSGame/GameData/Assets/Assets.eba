@@ -107,6 +107,10 @@ Assets:
     UUID: 3022324816389271706
     Name: StoreBackground
     FilePath: Textures/StoreBackground.png
+  - Type: Texture
+    UUID: 13040007539414461172
+    Name: DesertEagleRender
+    FilePath: Textures/ShopItems/DesertEagleRender.png
   - Type: Shader
     UUID: 3290979914783484062
     Name: HolographicSight
@@ -279,6 +283,10 @@ Assets:
     UUID: 7000367312231355508
     Name: CloseMenuButton
     FilePath: Scripts/CloseMenuButton.lua
+  - Type: Script
+    UUID: 12846303117417708509
+    Name: ItemButton
+    FilePath: Scripts/ItemButton.lua
   - Type: Material
     UUID: 782295293902573577
     Name: DesertEagle_Metal
@@ -472,6 +480,10 @@ Assets:
     Name: NavMesh_Default_NavigationSurface
     FilePath: NavMeshes/NavMesh_Default_NavigationSurface.ebnav
   - Type: Prefab
+    UUID: 948669407353468754
+    Name: Zombie
+    FilePath: Prefabs/Zombie/Zombie.ebprefab
+  - Type: Prefab
     UUID: 9278556515141032553
     Name: Enemy
     FilePath: Prefabs/Enemy.ebprefab
@@ -516,10 +528,6 @@ Assets:
     Name: Spawner
     FilePath: Prefabs/Spawner.ebprefab
   - Type: Prefab
-    UUID: 948669407353468754
-    Name: Zombie
-    FilePath: Prefabs/Zombie/Zombie.ebprefab
-  - Type: Prefab
     UUID: 16063513610624631090
     Name: NukePowerup
     FilePath: Prefabs/NukePowerup.ebprefab
@@ -532,19 +540,29 @@ Assets:
     Name: Roboto-Regular
     FilePath: Fonts/Roboto-Regular.ttf
   - Type: AudioClip
-    UUID: 2869832050986379881
-    Name: EmptyGun
-    FilePath: Audio/EmptyGun.mp3
-    LoadMode: Auto
-  - Type: AudioClip
     UUID: 10601745296411271244
     Name: M4_Shot
     FilePath: Audio/M4_Shot.mp3
     LoadMode: Auto
   - Type: AudioClip
+    UUID: 3462192619930688989
+    Name: Hitmarker
+    FilePath: Audio/Hitmarker.mp3
+    LoadMode: Auto
+  - Type: AudioClip
     UUID: 15776698392225788213
     Name: ReloadStart
     FilePath: Audio/ReloadStart.mp3
+    LoadMode: Auto
+  - Type: AudioClip
+    UUID: 2869832050986379881
+    Name: EmptyGun
+    FilePath: Audio/EmptyGun.mp3
+    LoadMode: Auto
+  - Type: AudioClip
+    UUID: 8785379131387521162
+    Name: ReloadEnd
+    FilePath: Audio/ReloadEnd.mp3
     LoadMode: Auto
   - Type: AudioClip
     UUID: 4006857010690811945
@@ -560,16 +578,6 @@ Assets:
     UUID: 4535810649324835630
     Name: AmmoPickupSFX
     FilePath: Audio/AmmoPickupSFX.mp3
-    LoadMode: Auto
-  - Type: AudioClip
-    UUID: 8785379131387521162
-    Name: ReloadEnd
-    FilePath: Audio/ReloadEnd.mp3
-    LoadMode: Auto
-  - Type: AudioClip
-    UUID: 3462192619930688989
-    Name: Hitmarker
-    FilePath: Audio/Hitmarker.mp3
     LoadMode: Auto
   - Type: AudioClip
     UUID: 5305303780640533429
