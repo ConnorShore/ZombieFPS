@@ -1,0 +1,44 @@
+Model: NukePowerup
+UUID: 9458949399076497110
+SkeletonID: 0
+RootNode:
+  Name: NukePowerup_Root
+  Transform:
+    - 1
+    - 0
+    - 0
+    - 0
+    - 0
+    - 1
+    - 0
+    - 0
+    - 0
+    - 0
+    - 1
+    - 0
+    - 0
+    - 0
+    - 0
+    - 1
+  Children:
+    - Name: Sphere
+      Transform:
+        - 2.3841858e-07
+        - -0.92435646
+        - -0.38153026
+        - 0
+        - 0.905973
+        - 2.1600077e-07
+        - 5.4000193e-08
+        - 0
+        - 5.9604645e-08
+        - -0.38153026
+        - 0.92435634
+        - 0
+        - -1.002737
+        - 0
+        - 0
+        - 1
+      Meshes:
+        - MeshID: 8280835987364870734
+          MaterialID: 30

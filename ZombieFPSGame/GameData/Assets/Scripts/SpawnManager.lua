@@ -7,6 +7,7 @@ SpawnManager.SpawnIntervalDecreasePerRound = 0.05 -- Percentage decrease in spaw
 
 function SpawnManager:OnCreate(entity)
     self.TimeSinceLastSpawn = 0.0
+    self.PauseTimer = 0.0
     self.ZombiesSpawned = 0
     self.TotalZombiesForWave = 0
     self.ActiveZombies = 0
@@ -45,7 +46,20 @@ function SpawnManager:StartWave(roundNum, totalZombies)
     self.SpawnInterval = math.max(self.MinSpawnInterval, self.BaseSpawnInterval * (1.0 - (roundNum * self.SpawnIntervalDecreasePerRound))) -- Decrease spawn interval by 5% each round, down to a minimum of MinSpawnInterval
 end
 
+function SpawnManager:PauseWave(time)
+    self.IsWaveActive = false
+    self.PauseTimer = time
+end
+
 function SpawnManager:OnUpdate(entity, delta)
+    -- Handle pause timer
+    if self.PauseTimer > 0.0 then
+        self.PauseTimer = self.PauseTimer - delta
+        if self.PauseTimer <= 0.0 then
+            self.IsWaveActive = true
+        end
+    end
+
     -- Don't do anything if we are in intermission or finished our quota
     if not self.IsWaveActive then return end
 

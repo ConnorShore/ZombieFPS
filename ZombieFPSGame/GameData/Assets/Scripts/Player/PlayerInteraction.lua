@@ -1,118 +1,98 @@
+-- Facilitates interaction: finds the Interactable the player is aiming at, drives the prompt UI
+-- from it and forwards the interact key to it. Every interactable owns its own text and behaviour.
 local PlayerInteraction = {}
 
 PlayerInteraction.InteractionDistance = 2.0
-PlayerInteraction.PickupUIRef = EntityRef()
-PlayerInteraction.WeaponHolderRef = EntityRef()
+PlayerInteraction.InteractionUIRef = EntityRef()
 
 function PlayerInteraction:OnCreate(entity)
-    self.PickupUI = Scene.GetEntityByUUID(self.PickupUIRef)
-    self.WeaponHolder = Scene.GetEntityByUUID(self.WeaponHolderRef)
+    self.InteractionUI = Scene.GetEntityByUUID(self.InteractionUIRef)
 
-    self.PickupTextComponent = nil
-    if self.PickupUI and self.PickupUI:IsValid() then
-        self.PickupTextComponent = self.PickupUI:GetComponent("TextComponent")
+    self.InteractionTextComponent = nil
+    if self.InteractionUI and self.InteractionUI:IsValid() then
+        self.InteractionTextComponent = self.InteractionUI:GetComponent("TextComponent")
     else
-        Log.Error("PlayerInteraction: PickupUI entity is not valid!")
+        Log.Error("PlayerInteraction: InteractionUI entity is not valid!")
     end
 
     -- Cache our own transform handle (safe for the entity's lifetime; it re-resolves the
     -- live component internally) so OnUpdate doesn't do a string-keyed lookup every frame.
     self.transform = entity:GetComponent("TransformComponent")
+
+    self.AvailableColor = Vector4f.new(1.0, 1.0, 1.0, 1.0)
+    self.UnavailableColor = Vector4f.new(1.0, 0.0, 0.0, 1.0)
+    self.DisplayedText = nil
+    self.WasInteractKeyDown = false
+    self.WarnedEntityID = nil
 end
 
 function PlayerInteraction:OnUpdate(entity, delta)
-    if not self.PickupUI or not self.PickupUI:IsValid() then
-        Log.Warn("PlayerInteraction: PickupUI entity is not valid!")
+    -- Edge-detect the key here so each interactable is triggered once per press rather than
+    -- every frame the key is held.
+    local interactKeyDown = Input.IsKeyPressed(KeyCode.E)
+    local interactKeyJustPressed = interactKeyDown and not self.WasInteractKeyDown
+    self.WasInteractKeyDown = interactKeyDown
+
+    if not self.InteractionUI or not self.InteractionUI:IsValid() or not self.InteractionTextComponent then
+        Log.Warn("PlayerInteraction: InteractionUI entity or its TextComponent is not valid!")
         return
     end
 
-    -- Get player position and forward direction
-    local interactionTransform = self.transform
-    local interactionPos = interactionTransform.WorldPosition
-    local interactionForward = interactionTransform:GetForward()
+    local interactable, interactableEntity = self:FindInteractable()
+    if not interactable then
+        self.InteractionUI:SetActive(false)
+        return
+    end
 
-    local rayStart = interactionPos
-    local rayEnd = rayStart + interactionForward * self.InteractionDistance
+    local canInteract = interactable:CanInteract(interactableEntity, entity)
+
+    self.InteractionUI:SetActive(true)
+    self:SetPromptText(interactable:GetInteractionText(interactableEntity, entity))
+    self.InteractionTextComponent.Color = canInteract and self.AvailableColor or self.UnavailableColor
+
+    if canInteract and interactKeyJustPressed then
+        interactable:OnInteract(interactableEntity, entity)
+    end
+end
+
+-- Returns the Interactable script instance the player is aiming at and the entity it is attached
+-- to, or nil when there is nothing interactable in range.
+function PlayerInteraction:FindInteractable()
+    local transform = self.transform
+    local rayStart = transform.WorldPosition
+    local rayEnd = rayStart + transform:GetForward() * self.InteractionDistance
 
     -- Ray visualization for debugging
     -- Debug.DrawLine(rayStart, rayEnd)
 
-    -- Cast ray to detect interactable objects
-    local hitResult = Physics.CastRay(rayStart, rayEnd, CollisionFilter.PickupItem)
+    local hitResult = Physics.CastRay(rayStart, rayEnd, CollisionFilter.Interactable)
     if not hitResult.Hit then
-        self.PickupUI:SetActive(false)
-        return
+        return nil, nil
     end
 
-    -- Show pickup UI and update text based on the hit entity
-    self.PickupUI:SetActive(true)
-
-    -- If player can't afford item, don't allow pickup
-    local pickupScript = hitResult.RigidBodyEntity:GetScriptInstance("PurchasableItem")
-    if not pickupScript then
-        Log.Warn("PlayerInteraction: Hit entity '" .. hitResult.RigidBodyEntity:GetName() .. "' does not have a PurchasableItem script attached!")
-        return
-    end
-    if not pickupScript:CanAfford() then
-        self.PickupTextComponent.Color = Vector4f.new(1.0, 0.0, 0.0, 1.0)
-        return
-    end
-
-    -- Player can afford item, show pickup text in white
-    self.PickupTextComponent.Color = Vector4f.new(1.0, 1.0, 1.0, 1.0)
-
-    if Input.IsKeyPressed(KeyCode.E) then
-        local pickupItemScript = hitResult.RigidBodyEntity:GetScriptInstance("PickupItem")
-        if pickupItemScript then
-            self:OnPickupItem(pickupItemScript, hitResult.RigidBodyEntity, entity)
-            return
+    -- Resolves through the script's Base chain, so any script inheriting Interactable matches.
+    local hitEntity = hitResult.RigidBodyEntity
+    local interactable = hitEntity:GetScriptInstance("Interactable")
+    if not interactable then
+        -- Warn once per offending entity rather than every frame the player looks at it.
+        if self.WarnedEntityID ~= hitEntity:GetID() then
+            Log.Warn("PlayerInteraction: '" .. hitEntity:GetName() .. "' is on the Interactable filter but has no Interactable script attached!")
+            self.WarnedEntityID = hitEntity:GetID()
         end
-
-        local pickupWeaponScript = hitResult.RigidBodyEntity:GetScriptInstance("PickupWeapon")
-        if pickupWeaponScript then
-            self:OnPickupWeapon(pickupWeaponScript, hitResult.RigidBodyEntity, entity)
-            return
-        end
-
-        Log.Warn("PlayerInteraction: Hit entity does not have a recognized pickup script attached!")
+        return nil, nil
     end
+
+    return interactable, hitEntity
 end
 
-function PlayerInteraction:OnPickupItem(pickupScript, pickupEntity, playerEntity)
-    Log.Info("PlayerInteraction:OnPickupItem - Attempting to pick up item")
-    local weaponHolder = self.WeaponHolder
-    if not weaponHolder:IsValid() then
-        Log.Error("WeaponHolder entity not found in scene!")
+-- Only pushes the string when it actually changes, so the text mesh isn't rebuilt every frame.
+function PlayerInteraction:SetPromptText(text)
+    if text == self.DisplayedText then
         return
     end
 
-    local weaponHolderScript = weaponHolder:GetScriptInstance("WeaponHolder")
-    if not weaponHolderScript then
-        Log.Error("WeaponHolder entity does not have a WeaponHolder script attached!")
-        return
-    end
-
-    -- TODO: Should this logic be in PickupItem script??
-    -- Check if the player is actually holding a gun right now
-    if weaponHolderScript:GetCurrentWeapon() then
-        local weaponController = weaponHolderScript:GetCurrentWeapon():GetScriptInstance("WeaponController")
-        local isAttachment = pickupScript and type(pickupScript.GetAttachmentData) == "function"
-        if weaponController and isAttachment then
-            local data = pickupScript:GetAttachmentData()
-            weaponController:EquipAttachment(data.Type, data.PrefabHandle)
-        end
-    else
-        Log.Warn("Cannot equip attachment: Player is not holding a weapon!")
-        return
-    end
-    
-    -- Always call OnPickup and remove entity for all pickup types
-    pickupScript:OnPickup(pickupEntity, playerEntity)
-end
-
-function PlayerInteraction:OnPickupWeapon(pickupScript, pickupEntity, playerEntity)
-    Log.Info("PlayerInteraction:OnPickupWeapon - Attempting to pick up weapon")
-    pickupScript:OnPickup(pickupEntity, playerEntity)
+    self.InteractionTextComponent.Text = text
+    self.DisplayedText = text
 end
 
 return PlayerInteraction

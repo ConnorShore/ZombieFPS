@@ -5,6 +5,8 @@ PointManager.EnemyHitPoints = 10
 PointManager.EnemyKillPoints = 50
 PointManager.EnemyHeadshotMultiplier = 2.0
 
+PointManager.NukePickupPoints = 300
+
 function PointManager:OnCreate(entity)
     -- Published so PurchasableItem (and anything else) can read the live point total without
     -- needing an EntityRef back to whichever entity carries this script.
@@ -18,15 +20,19 @@ function PointManager:OnCreate(entity)
     self.ScoreFile:SetInt("CurrentPlayerPoints", self.TotalPointsEarned)
 
     EventManager.Subscribe("OnEnemyHit", function()
-        self:AwardPointsForHit()
+        self:AwardPoints(self.EnemyHitPoints)
     end)
 
-    EventManager.Subscribe("OnEnemyKilled", function(isHeadshot)
-        if isHeadshot then
-            self:AwardPointsForHeadshotKill()
-        else
-            self:AwardPointsForKill()
-        end
+    EventManager.Subscribe("OnEnemyKilled", function(enemyUUID)
+        self:AwardPoints(self.EnemyKillPoints)
+    end)
+
+    EventManager.Subscribe("OnNukePickup", function()
+        self:AwardPoints(self.NukePickupPoints)
+    end)
+
+    EventManager.Subscribe("OnEnemyHeadshotKill", function(enemyUUID)
+        self:AwardPoints(math.tointeger(self.EnemyKillPoints * self.EnemyHeadshotMultiplier))
     end)
 
     EventManager.Subscribe("OnItemPurchased", function(itemCost)
@@ -43,22 +49,9 @@ function PointManager:OnUpdate(entity, delta)
 
 end
 
-function PointManager:AwardPointsForHit()
-    self.Points = self.Points + self.EnemyHitPoints
-    self.TotalPointsEarned = self.TotalPointsEarned + self.EnemyHitPoints
-    self:OnPointsChanged(self.Points)
-end
-
-function PointManager:AwardPointsForKill()
-    self.Points = self.Points + self.EnemyKillPoints
-    self.TotalPointsEarned = self.TotalPointsEarned + self.EnemyKillPoints
-    self:OnPointsChanged(self.Points)
-end
-
-function PointManager:AwardPointsForHeadshotKill()
-    local pointsAwarded = math.tointeger(self.EnemyKillPoints * self.EnemyHeadshotMultiplier)
-    self.Points = self.Points + pointsAwarded
-    self.TotalPointsEarned = self.TotalPointsEarned + pointsAwarded
+function PointManager:AwardPoints(points)
+    self.Points = self.Points + points
+    self.TotalPointsEarned = self.TotalPointsEarned + points
     self:OnPointsChanged(self.Points)
 end
 

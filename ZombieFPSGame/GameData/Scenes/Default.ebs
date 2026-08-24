@@ -131,6 +131,7 @@ Entities:
         - 10710601879491244134
         - 6896436297867714122
         - 3228848565545027244
+        - 1313275785191007249
       IsAttachment: 0
     TransformComponent:
       Position: [0,0,0]
@@ -306,13 +307,16 @@ Entities:
       Position: [0,0,0]
       Rotation: [0,-0,0]
       Scale: [1,1,1]
-      WorldTransform: [1.25,0,0,0,0,1.25,0,0,0,0,1,0,1019.36005,117.6,0,1]
+      WorldTransform: [1.6259267,0,0,0,0,1.6259267,0,0,0,0,1,0,1019.36005,117.6,0,1]
     ScriptComponent:
       ScriptUUID: 2119190290714536510
       UserPropertyOverrides: []
     TextComponent:
       Text: 100
       FontHandle: 213406294560961755
+      FontSize: 24
+      HorizontalAlignment: 1
+      VerticalAlignment: 1
       Color: [0.9836849,1,0.29844964,1]
     RectTransformComponent:
       AnchoredPosition: [0,0]
@@ -321,6 +325,7 @@ Entities:
       AnchorMax: [0.92,0.2]
       Pivot: [0.5,0.5]
       Rotation: 0
+      RaycastTarget: 0
   - Entity: 5645678438920164573
     ComponentOrder:
       - IDComponent
@@ -339,6 +344,7 @@ Entities:
         - 15941034270328579006
         - 3446544600952183294
         - 10222896294028970181
+        - 2179583451832717959
       IsAttachment: 0
     TransformComponent:
       Position: [0,0,0]
@@ -358,6 +364,7 @@ Entities:
       AnchorMax: [0.5,0.5]
       Pivot: [0.5,0.5]
       Rotation: 0
+      RaycastTarget: 0
   - Entity: 14881747670601641762
     ComponentOrder:
       - IDComponent
@@ -519,6 +526,7 @@ Entities:
       TextureUUID: 3453372035684411145
       IsBillboard: 1
       LockYAxis: 0
+      NineSliceBorder: [0,0,0,0]
   - Entity: 14693685799150300691
     ComponentOrder:
       - IDComponent
@@ -564,17 +572,13 @@ Entities:
     ScriptComponent:
       ScriptUUID: 8562544563539838448
       UserPropertyOverrides:
-        - Name: WeaponHolderRef
-          Type: 7
-          Value: 230291968303856085
-          ReferenceKind: Entity
-        - Name: PickupUIRef
-          Type: 7
-          Value: 7122639572906643531
-          ReferenceKind: Entity
         - Name: InteractionDistance
           Type: 3
           Value: 3
+        - Name: InteractionUIRef
+          Type: 7
+          Value: 7122639572906643531
+          ReferenceKind: Entity
   - Entity: 8214889738320955675
     ComponentOrder:
       - IDComponent
@@ -593,10 +597,13 @@ Entities:
       Position: [0,0,0]
       Rotation: [0,-0,0]
       Scale: [0.005348166,0.014285714,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,906.66003,38.300003,0,1]
+      WorldTransform: [1.3007414,0,0,0,0,1.3007414,0,0,0,0,1,0,906.0886,40.976597,0,1]
     TextComponent:
       Text: 0 / 0
       FontHandle: 213406294560961755
+      FontSize: 24
+      HorizontalAlignment: 1
+      VerticalAlignment: 1
       Color: [1,1,1,1]
     RectTransformComponent:
       AnchoredPosition: [9.5,0]
@@ -605,6 +612,7 @@ Entities:
       AnchorMax: [0.1,0.4]
       Pivot: [1,1]
       Rotation: 0
+      RaycastTarget: 0
   - Entity: 9090645728019880623
     ComponentOrder:
       - IDComponent
@@ -620,10 +628,10 @@ Entities:
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [0,5.722046e-06,4.005432e-05]
+      Position: [-4.370405e-07,5.722046e-06,6.67572e-05]
       Rotation: [-1.5707965,-0,0]
       Scale: [0.081830345,0.0642239,0.0642239]
-      WorldTransform: [0.01674033,0,0,0,0,-1.5662331e-09,-0.013138514,0,0,0.013138514,-1.5662331e-09,0,0,0.99117386,-3.880515,1]
+      WorldTransform: [0.01674033,0,0,0,0,-1.5662331e-09,-0.013138514,0,0,0.013138514,-1.5662331e-09,0,-8.940696e-08,0.99117386,-3.8805096,1]
     StaticMeshComponent:
       MeshUUID: 12443871631894294282
       Layer: 1
@@ -668,11 +676,12 @@ Entities:
       Position: [-3.8049998,-2.53,0]
       Rotation: [0,-0,0]
       Scale: [0.01,0.01,1]
-      WorldTransform: [222.59998,0,0,0,0,74.5,0,0,0,0,1,0,986.7,46.25,0,1]
+      WorldTransform: [222.90071,0,0,0,0,74.80074,0,0,0,0,1,0,983.5422,49.107044,0,1]
     SpriteComponent:
       Color: [1,0.44186044,0,0.2509804]
       IsBillboard: 0
       LockYAxis: 0
+      NineSliceBorder: [0,0,0,0]
     ScriptComponent:
       ScriptUUID: 17429251933582378423
       UserPropertyOverrides:
@@ -687,6 +696,7 @@ Entities:
       AnchorMax: [1,0.125]
       Pivot: [1,1]
       Rotation: 0
+      RaycastTarget: 0
   - Entity: 17202988526070122190
     ComponentOrder:
       - IDComponent
@@ -787,11 +797,59 @@ Entities:
           Type: 8
           Value: 16836608058861364347
           ReferenceKind: Prefab
+        - Name: WeaponHolderRef
+          Type: 7
+          Value: 230291968303856085
+          ReferenceKind: Entity
         - Name: PickupType
           Type: 5
           Value: 1
     PrefabComponent:
       PrefabUUID: 17919492092461288605
+  - Entity: 18235847441977686208
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - PrefabComponent
+      - RigidBodyComponent
+      - BoxColliderComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: ShopKiosk
+    RelationshipComponent:
+      Parent: 0
+      Children:
+        - 13024975722609094965
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-10.996501,0.12927741,-8.247228]
+      Rotation: [0,1.3126715,0]
+      Scale: [0.5,0.5,0.5]
+      WorldTransform: [0.12763393,0,-0.48343518,0,0,0.5,0,0,0.48343518,0,0.12763393,0,-10.996501,0.12927741,-8.247228,1]
+    RigidBodyComponent:
+      Type: 0
+      Mass: 1
+      GravityEnabled: 1
+    BoxColliderComponent:
+      Size: [9.5,3.5,2.5]
+      IsTrigger: 0
+      OffsetPosition: [-0.2,0.8,0]
+      OffsetRotation: [0,0,0]
+      Category: 257
+      CollisionMask: 1
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 0
+    ScriptComponent:
+      ScriptUUID: 140741752612032377
+      UserPropertyOverrides:
+        - Name: ShopMenuUI
+          Type: 7
+          Value: 2179583451832717959
+          ReferenceKind: Entity
+    PrefabComponent:
+      PrefabUUID: 7112226948926292235
   - Entity: 16256626281541658784
     ComponentOrder:
       - IDComponent
@@ -1136,12 +1194,13 @@ Entities:
       Position: [0,0,0]
       Rotation: [0,-0,0]
       Scale: [1,1,1]
-      WorldTransform: [25,0,0,0,0,25,0,0,0,0,1,0,554,294,0,1]
+      WorldTransform: [32.518536,0,0,0,0,32.518536,0,0,0,0,1,0,554,294,0,1]
     SpriteComponent:
       Color: [1,1,1,1]
       TextureUUID: 3343954652411117201
       IsBillboard: 0
       LockYAxis: 0
+      NineSliceBorder: [0,0,0,0]
     RectTransformComponent:
       AnchoredPosition: [0,0]
       SizeDelta: [25,25]
@@ -1149,6 +1208,7 @@ Entities:
       AnchorMax: [0.5,0.5]
       Pivot: [0.5,0.5]
       Rotation: 0
+      RaycastTarget: 0
   - Entity: 7122639572906643531
     ComponentOrder:
       - IDComponent
@@ -1167,10 +1227,13 @@ Entities:
       Position: [-3.8049998,-2.53,0]
       Rotation: [0,-0,0]
       Scale: [0.01,0.01,1]
-      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,583.9,314.8,0,1]
+      WorldTransform: [1.3007414,0,0,0,0,1.3007414,0,0,0,0,1,0,592.89215,321.05542,0,1]
     TextComponent:
       Text: Press (E) to pick up
       FontHandle: 213406294560961755
+      FontSize: 24
+      HorizontalAlignment: 1
+      VerticalAlignment: 1
       Color: [1,1,1,1]
     RectTransformComponent:
       AnchoredPosition: [29.9,20.8]
@@ -1179,6 +1242,7 @@ Entities:
       AnchorMax: [0.5,0.5]
       Pivot: [0.5,0.5]
       Rotation: 0
+      RaycastTarget: 0
   - Entity: 500538034006602191
     ComponentOrder:
       - IDComponent
@@ -1648,10 +1712,10 @@ Entities:
       Children: []
       IsAttachment: 0
     TransformComponent:
-      Position: [-8.815825,4.684121,-4.1120596]
+      Position: [-8.126023,4.684121,-4.70734]
       Rotation: [8.47681e-08,0.49716774,0.5314949]
       Scale: [1.25,1.25,1.25]
-      WorldTransform: [0.94710994,0.5568313,-0.5961726,0,-0.6335282,1.077563,9.313226e-08,0,0.51393086,0.30215365,1.0986711,0,-8.815825,4.684121,-4.1120596,1]
+      WorldTransform: [0.94710994,0.5568313,-0.5961726,0,-0.6335282,1.077563,9.313226e-08,0,0.51393086,0.30215365,1.0986711,0,-8.126023,4.684121,-4.70734,1]
     RigidBodyComponent:
       Type: 1
       Mass: 1
@@ -1744,13 +1808,16 @@ Entities:
       Position: [0,0,0]
       Rotation: [0,-0,0]
       Scale: [0.005348166,0.014285714,1]
-      WorldTransform: [2,0,0,0,0,2,0,0,0,0,1,0,1041.35,26.625,0,1]
+      WorldTransform: [2.6014829,0,0,0,0,2.6014829,0,0,0,0,1,0,1037.9666,29.106117,0,1]
     ScriptComponent:
       ScriptUUID: 3344681323696305163
       UserPropertyOverrides: []
     TextComponent:
       Text: 1
       FontHandle: 213406294560961755
+      FontSize: 24
+      HorizontalAlignment: 1
+      VerticalAlignment: 1
       Color: [1,1,1,1]
     RectTransformComponent:
       AnchoredPosition: [0,0]
@@ -1759,6 +1826,7 @@ Entities:
       AnchorMax: [0.75,0.25]
       Pivot: [1,1]
       Rotation: 0
+      RaycastTarget: 0
   - Entity: 5685266394623325010
     ComponentOrder:
       - IDComponent
@@ -1803,12 +1871,13 @@ Entities:
       Position: [0,0,0]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [1208,0,0,0,0,688,0,0,0,0,1,0,554,294,0,1]
+      WorldTransform: [1238.0741,0,0,0,0,718.07416,0,0,0,0,1,0,554,294,0,1]
     SpriteComponent:
       Color: [1,1,1,0]
       TextureUUID: 6891481540194389905
       IsBillboard: 0
       LockYAxis: 0
+      NineSliceBorder: [0,0,0,0]
     ScriptComponent:
       ScriptUUID: 10853797460557917967
       UserPropertyOverrides: []
@@ -1819,6 +1888,190 @@ Entities:
       AnchorMax: [1,1]
       Pivot: [0.5,0.5]
       Rotation: 0
+      RaycastTarget: 0
+  - Entity: 1313275785191007249
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: PowerUpManager
+    RelationshipComponent:
+      Parent: 8133465050989195876
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
+    ScriptComponent:
+      ScriptUUID: 6171998476316795323
+      UserPropertyOverrides:
+        - Name: PowerUpPrefabs
+          Type: 9
+          Value:
+            - 3822534466298593180
+            - 16063513610624631090
+          ReferenceKind: Prefab
+        - Name: BaseSpawnChance
+          Type: 3
+          Value: 0.1
+  - Entity: 13024975722609094965
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - StaticMeshComponent
+      - MaterialComponent
+    TagComponent:
+      Tag: Mesh
+    RelationshipComponent:
+      Parent: 18235847441977686208
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-2.276268,1.4597436,1.1110268]
+      Rotation: [3.1415925,-2.5154014e-07,-2.323207]
+      Scale: [0.13582622,0.7595618,0.046142258]
+      WorldTransform: [-0.011847439,-0.049579527,0.04487426,0,-0.07077465,0.25954247,0.2680712,0,-0.022306792,-1.8559488e-09,-0.005889311,0,-10.749921,0.8591492,-7.004995,1]
+    StaticMeshComponent:
+      MeshUUID: 9226244638066152502
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 9148160884979557009
+  - Entity: 2179583451832717959
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RectTransformComponent
+      - SpriteComponent
+    TagComponent:
+      Tag: ShopMenuUI
+    RelationshipComponent:
+      Parent: 5645678438920164573
+      Children:
+        - 13528432822024982709
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,-0,0]
+      Scale: [1,1,1]
+      WorldTransform: [794.8742,0,0,0,0,482.87415,0,0,0,0,1,0,549.4474,291.39853,0,1]
+    SpriteComponent:
+      Color: [1,1,1,1]
+      TextureUUID: 3022324816389271706
+      IsBillboard: 0
+      LockYAxis: 0
+      NineSliceBorder: [0,0,0,0]
+    RectTransformComponent:
+      AnchoredPosition: [-3.5,-2]
+      SizeDelta: [100,100]
+      AnchorMin: [0.2,0.2]
+      AnchorMax: [0.8,0.8]
+      Pivot: [0.5,0.5]
+      Rotation: 0
+      RaycastTarget: 0
+  - Entity: 13528432822024982709
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RectTransformComponent
+      - SpriteComponent
+      - UISelectableComponent
+      - UIButtonComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: CloseMenuButton
+    RelationshipComponent:
+      Parent: 2179583451832717959
+      Children:
+        - 1038119754515574656
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-0.6912381,-0.60346675,0]
+      Rotation: [0,-0,0]
+      Scale: [0.0012580606,0.0020709329,0.99999994]
+      WorldTransform: [41.623726,0,0,0,0,41.623726,0,0,0,0,1,0,919.5689,505.52,0,1]
+    SpriteComponent:
+      Color: [1,1,1,1]
+      TextureUUID: 17414033509723315684
+      IsBillboard: 0
+      LockYAxis: 0
+      NineSliceBorder: [0,0,0,0]
+    ScriptComponent:
+      ScriptUUID: 7000367312231355508
+      UserPropertyOverrides: []
+    RectTransformComponent:
+      AnchoredPosition: [-5,-5]
+      SizeDelta: [32,32]
+      AnchorMin: [1,1]
+      AnchorMax: [1,1]
+      Pivot: [1,1]
+      Rotation: 0
+      RaycastTarget: 0
+    UISelectableComponent:
+      Interactable: 1
+      Transition: 1
+      TargetGraphicEntity: 0
+      NormalColor: [1,0,0,1]
+      HighlightedColor: [0.6666666,0,0,1]
+      PressedColor: [0.78,0.78,0.78,1]
+      SelectedColor: [0.96,0.96,0.96,1]
+      DisabledColor: [0.78,0.78,0.78,0.5]
+      FadeDuration: 0.1
+      HighlightedTexture: 0
+      PressedTexture: 0
+      SelectedTexture: 0
+      DisabledTexture: 0
+      Navigation: 1
+      NavigateUp: 0
+      NavigateDown: 0
+      NavigateLeft: 0
+      NavigateRight: 0
+    UIButtonComponent:
+      IsButton: 1
+  - Entity: 1038119754515574656
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RectTransformComponent
+      - TextComponent
+    TagComponent:
+      Tag: Label
+    RelationshipComponent:
+      Parent: 13528432822024982709
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,-0,0]
+      Scale: [1,1,1]
+      WorldTransform: [41.62372,0,0,0,0,41.62372,0,0,0,0,1,0,919.569,505.52,0,1]
+    TextComponent:
+      Text: Button
+      FontHandle: 0
+      FontSize: 24
+      HorizontalAlignment: 1
+      VerticalAlignment: 1
+      Color: [0,0,0,1]
+    RectTransformComponent:
+      AnchoredPosition: [0,0]
+      SizeDelta: [0,0]
+      AnchorMin: [0,0]
+      AnchorMax: [1,1]
+      Pivot: [0.5,0.5]
+      Rotation: 0
+      RaycastTarget: 0
 Environment:
   Skybox:
     Enabled: 1

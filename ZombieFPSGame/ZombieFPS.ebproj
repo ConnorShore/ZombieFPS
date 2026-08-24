@@ -27,7 +27,7 @@ Settings:
       - Index: 4
         Name: BulletInteractable
       - Index: 8
-        Name: PickupItem
+        Name: Interactable
       - Index: 9
         Name: PowerUp
   Render:

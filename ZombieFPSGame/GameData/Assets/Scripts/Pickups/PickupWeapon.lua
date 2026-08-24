@@ -1,37 +1,38 @@
+-- A weapon lying in the world; interacting buys it and equips it on the player's weapon holder.
 local PickupWeapon = {}
 PickupWeapon.Base = "PurchasableItem"
 
 PickupWeapon.WeaponPrefab = PrefabRef()
 PickupWeapon.WeaponHolderRef = EntityRef()
 PickupWeapon.Cost = 0
+PickupWeapon.InteractionPrompt = "Press (E) to pick up weapon"
 
 function PickupWeapon:OnCreate(entity)
-
+    self.WeaponHolder = Scene.GetEntityByUUID(self.WeaponHolderRef)
+    if not self.WeaponHolder or not self.WeaponHolder:IsValid() then
+        Log.Error("PickupWeapon: WeaponHolder entity is not valid on '" .. entity:GetName() .. "'!")
+    end
 end
 
-function PickupWeapon:OnUpdate(entity, delta)
+function PickupWeapon:OnInteract(entity, playerEntity)
+    local weaponHolder = self.WeaponHolder
+    if not weaponHolder or not weaponHolder:IsValid() then
+        Log.Warn("Cannot find WeaponHolder entity in scene! Cannot pick up weapon.")
+        return
+    end
 
-end
+    local weaponHolderScript = weaponHolder:GetScriptInstance("WeaponHolder")
+    if not weaponHolderScript then
+        Log.Warn("Entity '" .. weaponHolder:GetName() .. "' does not have a WeaponHolder script attached! Cannot pick up weapon.")
+        return
+    end
 
-function PickupWeapon:OnPickup(entity, otherEntity)
     if not self:TryPurchase() then
         Log.Warn("Not enough points to pick up '" .. entity:GetName() .. "'")
         return
     end
 
-    local weaponHolderEntity = Scene.GetEntityByUUID(self.WeaponHolderRef)
-    if not weaponHolderEntity:IsValid() then
-        Log.Warn("Cannot find WeaponHolder entity in scene! Cannot pick up weapon.")
-        return
-    end
-
-    local weaponHolderScript = weaponHolderEntity:GetScriptInstance()
-    if not weaponHolderScript then
-        Log.Warn("Other entity '" .. otherEntity:GetName() .. "' does not have a WeaponHolder script attached! Cannot pick up weapon.")
-        return
-    end
-
-    weaponHolderScript:EquipWeapon(self.WeaponPrefab) -- For now, always equip to slot 1
+    weaponHolderScript:EquipWeapon(self.WeaponPrefab)
 
     Scene.RemoveEntity(entity)
 end

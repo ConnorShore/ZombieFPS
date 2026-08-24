@@ -20,7 +20,12 @@ function ZombieSpawner:Spawn(entity, roundNum)
             if zombieScript and zombieScript.InitializeForRound then
                 zombieScript:InitializeForRound(roundNum)
             end
+        else
+            Log.Error("Failed to spawn zombie from prefab.")
+            return
         end
+            
+        EventManager.Broadcast("OnZombieSpawned", zombie:GetUUID())
 
         -- Optional: Play a cool dirt particle effect or zombie groan sound right here!
     end

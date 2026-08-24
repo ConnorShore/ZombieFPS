@@ -1,39 +1,36 @@
-Material: PowerUpMaterial
-UUID: 1868779223986162857
+Material: ShopKiosk_ShopKioskBakedTexture
+UUID: 9148160884979557009
 RenderQueue: 1
-Instanced: true
-BaseMaterialUUID: 31
+Instanced: false
+Shader: 9
 Uniforms:
   u_Metallic:
     Type: float
-    Value: 0
+    Value: 1
   u_Albedo:
     Type: Vector3f
-    Value: [0.08262602,0.65448505,0]
+    Value: [1,1,1]
   u_Roughness:
     Type: float
-    Value: 0.5
+    Value: 1
   u_EmissionColor:
     Type: Vector3f
-    Value: [0.08262602,0.65448505,0]
+    Value: [0,0,0]
   u_AO:
     Type: float
     Value: 1
   u_AlbedoMap:
     Type: Texture
-    Value: 1
+    Value: 1689671812453981333
   u_Emission:
     Type: float
-    Value: 2
+    Value: 0
   u_NormalMap:
     Type: Texture
-    Value: 3
+    Value: 15400749083740855036
   u_MetallicRoughnessMap:
     Type: Texture
-    Value: 1
-  u_Color:
-    Type: Vector3f
-    Value: [1,1,1]
+    Value: 10504724898190463676
   u_EmissiveMap:
     Type: Texture
-    Value: 1
+    Value: 4

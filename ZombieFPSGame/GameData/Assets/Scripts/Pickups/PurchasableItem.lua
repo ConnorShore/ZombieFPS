@@ -1,17 +1,29 @@
--- Base class for pickups that cost points to collect. Never attached to an entity directly -
+-- Base class for interactables that cost points. Never attached to an entity directly -
 -- PickupItem and PickupWeapon inherit from it via Base = "PurchasableItem".
 local PurchasableItem = {}
+PurchasableItem.Base = "Interactable"
 
 PurchasableItem.Cost = 0
 
+function PurchasableItem:GetInteractionText(entity, playerEntity)
+    return self:GetPurchasePrompt()
+end
+
+-- Appends the price to whatever prompt the concrete pickup declares. Split out from
+-- GetInteractionText so a pickup can override the text yet still fall back to the priced prompt.
+function PurchasableItem:GetPurchasePrompt()
+    return self.InteractionPrompt .. " [" .. tostring(self.Cost) .. "]"
+end
+
+function PurchasableItem:CanInteract(entity, playerEntity)
+    return self:CanAfford()
+end
+
 function PurchasableItem:CanAfford()
-    Log.Trace("PurchasableItem:CanAfford - Checking if player can afford item with cost " .. self.Cost)
     if _G.PointManager == nil then
-        Log.Warn("PurchasableItem:CanAfford - PointManager is not available in the global scope! Cannot determine if player can afford item.")
         return false
     end
 
-    Log.Trace("PurchasableItem:CanAfford - Player has " .. _G.PointManager.Points .. " points available.")
     return _G.PointManager ~= nil and _G.PointManager.Points >= self.Cost
 end
 
