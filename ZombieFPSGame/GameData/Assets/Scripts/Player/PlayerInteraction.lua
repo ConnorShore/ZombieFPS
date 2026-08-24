@@ -5,6 +5,11 @@ local PlayerInteraction = {}
 PlayerInteraction.InteractionDistance = 2.0
 PlayerInteraction.InteractionUIRef = EntityRef()
 
+-- Queried in order, first match wins. A pickup spawned inside the shop kiosk's volume has to beat
+-- the kiosk, and a single closest-hit ray can't do that: it returns the kiosk's outer surface
+-- because the ray enters that before ever reaching the pickup nested within it.
+local InteractionFilterNames = { "Pickup", "Interactable" }
+
 function PlayerInteraction:OnCreate(entity)
     self.InteractionUI = Scene.GetEntityByUUID(self.InteractionUIRef)
 
@@ -23,7 +28,27 @@ function PlayerInteraction:OnCreate(entity)
     self.UnavailableColor = Vector4f.new(1.0, 0.0, 0.0, 1.0)
     self.DisplayedText = nil
     self.WasInteractKeyDown = false
-    self.WarnedEntityID = nil
+    self.WarnedEntityIDs = {}
+
+    self.InteractionFilters = self:ResolveInteractionFilters()
+end
+
+-- Resolves the filter names to their project bitmasks once, since the slots can't change at runtime.
+function PlayerInteraction:ResolveInteractionFilters()
+    local filters = {}
+
+    for _, name in ipairs(InteractionFilterNames) do
+        local filter = CollisionFilter[name]
+        if filter then
+            table.insert(filters, filter)
+        else
+            -- Skipped rather than passed through: CastRay reads a nil filter as "every filter", so
+            -- an unregistered slot would quietly match world geometry instead of matching nothing.
+            Log.Error("PlayerInteraction: collision filter '" .. name .. "' is not defined in the project settings; interaction will ignore it!")
+        end
+    end
+
+    return filters
 end
 
 function PlayerInteraction:OnUpdate(entity, delta)
@@ -65,19 +90,36 @@ function PlayerInteraction:FindInteractable()
     -- Ray visualization for debugging
     -- Debug.DrawLine(rayStart, rayEnd)
 
-    local hitResult = Physics.CastRay(rayStart, rayEnd, CollisionFilter.Interactable)
+    for _, filter in ipairs(self.InteractionFilters) do
+        local interactable, hitEntity = self:QueryInteractable(rayStart, rayEnd, filter)
+        if interactable then
+            return interactable, hitEntity
+        end
+    end
+
+    return nil, nil
+end
+
+-- One closest-hit cast against a single filter; nil means nothing usable on that filter.
+function PlayerInteraction:QueryInteractable(rayStart, rayEnd, filter)
+    local hitResult = Physics.CastRay(rayStart, rayEnd, filter)
     if not hitResult.Hit then
         return nil, nil
     end
 
-    -- Resolves through the script's Base chain, so any script inheriting Interactable matches.
     local hitEntity = hitResult.RigidBodyEntity
+    if not hitEntity or not hitEntity:IsValid() then
+        return nil, nil
+    end
+
+    -- Resolves through the script's Base chain, so any script inheriting Interactable matches.
     local interactable = hitEntity:GetScriptInstance("Interactable")
     if not interactable then
         -- Warn once per offending entity rather than every frame the player looks at it.
-        if self.WarnedEntityID ~= hitEntity:GetID() then
-            Log.Warn("PlayerInteraction: '" .. hitEntity:GetName() .. "' is on the Interactable filter but has no Interactable script attached!")
-            self.WarnedEntityID = hitEntity:GetID()
+        local hitID = hitEntity:GetID()
+        if not self.WarnedEntityIDs[hitID] then
+            Log.Warn("PlayerInteraction: '" .. hitEntity:GetName() .. "' is on an interaction filter but has no Interactable script attached!")
+            self.WarnedEntityIDs[hitID] = true
         end
         return nil, nil
     end

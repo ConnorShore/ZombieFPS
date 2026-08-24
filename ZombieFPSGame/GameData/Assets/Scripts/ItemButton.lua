@@ -4,8 +4,6 @@ ItemButton.ItemName = "Item Name"
 ItemButton.ItemPrice = 100
 ItemButton.ItemPrefab = PrefabRef()
 
--- UISelectableComponent tints are multiplied against the sprite's authored colour, so these
--- assume the button sprite is authored white; anything else shifts the result.
 local AffordableTint = {
     Normal      = Vector4f.new(0.0, 1.0, 0.0, 0.75),
     Highlighted = Vector4f.new(0.35, 1.0, 0.35, 0.9),
@@ -53,6 +51,8 @@ function ItemButton:OnUpdate(entity, delta)
 
     self.CanAfford = self.PointManager.Points >= self.ItemPrice
 
+    -- TODO: Disable the item if the player already owns it / has it equipt
+
     -- Only touch the component when affordability actually flips.
     if self.TintApplied ~= self.CanAfford then
         self:ApplyTint(entity, self.CanAfford)
@@ -70,11 +70,9 @@ function ItemButton:OnClick(entity)
 end
 
 function ItemButton:OnHoverEnter(entity)
-    Log.Trace("Hovering entered item button for '" .. self.ItemName .. "'. Can afford: " .. tostring(self.CanAfford))
 end
 
 function ItemButton:OnHoverExit(entity)
-    Log.Trace("Hovering exited item button for '" .. self.ItemName .. "'. Can afford: " .. tostring(self.CanAfford))
 end
 
 return ItemButton

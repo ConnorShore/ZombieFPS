@@ -822,6 +822,7 @@ Entities:
       Parent: 0
       Children:
         - 13024975722609094965
+        - 16281376589904542290
       IsAttachment: 0
     TransformComponent:
       Position: [-10.996501,0.12927741,-8.247228]
@@ -847,6 +848,10 @@ Entities:
         - Name: ShopMenuUI
           Type: 7
           Value: 2179583451832717959
+          ReferenceKind: Entity
+        - Name: SpawnLocation
+          Type: 7
+          Value: 16281376589904542290
           ReferenceKind: Entity
     PrefabComponent:
       PrefabUUID: 7112226948926292235
@@ -2131,7 +2136,11 @@ Entities:
       NineSliceBorder: [0,0,0,0]
     ScriptComponent:
       ScriptUUID: 12846303117417708509
-      UserPropertyOverrides: []
+      UserPropertyOverrides:
+        - Name: ItemPrefab
+          Type: 8
+          Value: 15848494941088245562
+          ReferenceKind: Prefab
     RectTransformComponent:
       AnchoredPosition: [0,0]
       SizeDelta: [100,80]
@@ -2228,6 +2237,181 @@ Entities:
       Pivot: [0.5,0.5]
       Rotation: 0
       RaycastTarget: 0
+  - Entity: 16281376589904542290
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+    TagComponent:
+      Tag: ItemSpawn
+    RelationshipComponent:
+      Parent: 18235847441977686208
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-0.4417019,2.4304628,0.20952034]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [0.12763393,0,-0.48343518,0,0,0.5,0,0,0.48343518,0,0.12763393,0,-10.951588,1.3445089,-8.006951,1]
+  - Entity: 14991398890160729993
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
+      - RigidBodyComponent
+      - BoxColliderComponent
+      - AnimatorComponent
+      - PrefabComponent
+    TagComponent:
+      Tag: DesertEagleItem
+    RelationshipComponent:
+      Parent: 0
+      Children:
+        - 8520399161346774992
+        - 5849224964504064395
+        - 13104535949379880247
+        - 3760483337253970100
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-7.858513,1.0513012,-0.013183057]
+      Rotation: [-2.9437335,0.01369812,-1.5837923]
+      Scale: [0.23000002,0.23000002,0.23000002]
+      WorldTransform: [-0.0029887143,-0.22995903,-0.003150471,0,-0.22548553,0.0035499088,-0.045207035,0,0.045247603,0.0025011958,-0.2254915,0,-7.858513,1.0513012,-0.013183057,1]
+    RigidBodyComponent:
+      Type: 0
+      Mass: 1
+      GravityEnabled: 1
+    BoxColliderComponent:
+      Size: [0.5,1.9,3.7]
+      IsTrigger: 0
+      OffsetPosition: [0,0,-0.2]
+      OffsetRotation: [0,0,0]
+      Category: 256
+      CollisionMask: 1
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 1
+    ScriptComponent:
+      ScriptUUID: 1928101263865073231
+      UserPropertyOverrides:
+        - Name: WeaponPrefab
+          Type: 8
+          Value: 1628786810858958427
+          ReferenceKind: Prefab
+        - Name: WeaponHolderRef
+          Type: 7
+          Value: 230291968303856085
+          ReferenceKind: Entity
+        - Name: Cost
+          Type: 2
+          Value: 0
+    AnimatorComponent:
+      SkeletonHandle: 14193014657651256754
+      ControllerHandle: 16717526163793928394
+    PrefabComponent:
+      PrefabUUID: 15848494941088245562
+  - Entity: 8520399161346774992
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - SkinnedMeshComponent
+      - MaterialComponent
+    TagComponent:
+      Tag: Slide(1)
+    RelationshipComponent:
+      Parent: 14991398890160729993
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [6.519258e-09,-3.5762787e-07,1.5497208e-06]
+      Rotation: [-5.1036454e-07,9.911335e-18,-3.7187303e-19]
+      Scale: [1.0000004,1.0000004,1.0000005]
+      WorldTransform: [-0.0029887154,-0.22995912,-0.0031504722,0,-0.22548564,0.0035499088,-0.045206934,0,0.04524751,0.0025011988,-0.22549163,0,-7.858513,1.0513012,-0.013183391,1]
+    SkinnedMeshComponent:
+      MeshUUID: 15346656199082862049
+      RootAnimator: 14991398890160729993
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 15086660637021645114
+  - Entity: 5849224964504064395
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - SkinnedMeshComponent
+      - MaterialComponent
+    TagComponent:
+      Tag: Magazine(1)
+    RelationshipComponent:
+      Parent: 14991398890160729993
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [2.7939677e-09,1.1920929e-07,5.9604645e-08]
+      Rotation: [-1.788139e-07,2.131628e-14,7.1054257e-15]
+      Scale: [1.0000001,1.0000002,1.0000001]
+      WorldTransform: [-0.0029887147,-0.22995906,-0.0031504715,0,-0.22548561,0.0035499092,-0.045207005,0,0.045247566,0.0025011967,-0.22549154,0,-7.858513,1.0513012,-0.013183076,1]
+    SkinnedMeshComponent:
+      MeshUUID: 5985712711574680378
+      RootAnimator: 14991398890160729993
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 15086660637021645114
+  - Entity: 13104535949379880247
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - SkinnedMeshComponent
+      - MaterialComponent
+    TagComponent:
+      Tag: Body_Part0(1)
+    RelationshipComponent:
+      Parent: 14991398890160729993
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [-1.4901154e-08,1.6543608e-24,-1.0339754e-24]
+      Scale: [1.0000002,1.0000005,1.0000002]
+      WorldTransform: [-0.002988715,-0.22995909,-0.0031504717,0,-0.22548564,0.0035499104,-0.045207053,0,0.04524761,0.0025011965,-0.22549155,0,-7.858513,1.0513012,-0.013183057,1]
+    SkinnedMeshComponent:
+      MeshUUID: 13365133264221018487
+      RootAnimator: 14991398890160729993
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 15086660637021645114
+  - Entity: 3760483337253970100
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - SkinnedMeshComponent
+      - MaterialComponent
+    TagComponent:
+      Tag: Body_Part1(1)
+    RelationshipComponent:
+      Parent: 14991398890160729993
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [2.7939677e-09,-2.3841858e-07,5.9604645e-08]
+      Rotation: [-1.4901154e-08,1.6543608e-24,-1.0339754e-24]
+      Scale: [1.0000002,1.0000005,1.0000002]
+      WorldTransform: [-0.002988715,-0.22995909,-0.0031504717,0,-0.22548564,0.0035499104,-0.045207053,0,0.04524761,0.0025011965,-0.22549155,0,-7.858513,1.0513012,-0.01318306,1]
+    SkinnedMeshComponent:
+      MeshUUID: 5610316799824380095
+      RootAnimator: 14991398890160729993
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 782295293902573577
 Environment:
   Skybox:
     Enabled: 1

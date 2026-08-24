@@ -3,11 +3,18 @@ ShopController.Base = "Interactable"
 
 ShopController.ShopMenuUI = EntityRef()
 ShopController.InteractionPrompt = "Press (E) to open shop"
+ShopController.SpawnLocation = EntityRef() -- The entity where purchased items will spawn
 
 function ShopController:OnCreate(entity)
     self.ShopMenuUIEntity = Scene.GetEntityByUUID(self.ShopMenuUI)
     if not self.ShopMenuUIEntity or not self.ShopMenuUIEntity:IsValid() then
         Log.Error("ShopController: ShopMenuUI entity is not valid!")
+        return
+    end
+
+    self.SpawnLocationEntity = Scene.GetEntityByUUID(self.SpawnLocation)
+    if not self.SpawnLocationEntity or not self.SpawnLocationEntity:IsValid() then
+        Log.Error("ShopController: SpawnLocation entity is not valid!")
         return
     end
 
@@ -41,7 +48,19 @@ function ShopController:OnClose()
 end
 
 function ShopController:OnPurchase(purchaseItem)
+    if not purchaseItem or not purchaseItem:IsValid() then
+        Log.Error("ShopController: Invalid item prefab received for purchase!")
+        return
+    end
+
+    if not self.SpawnLocationEntity or not self.SpawnLocationEntity:IsValid() then
+        Log.Error("ShopController: SpawnLocation entity is not valid!")
+        return
+    end
+
     -- Spawn the prefab item at the shop's item location
+    local spawnLocation = self.SpawnLocationEntity:GetComponent("TransformComponent").WorldPosition
+    Scene.InstantiatePrefab(purchaseItem, spawnLocation)
 end
 
 return ShopController
