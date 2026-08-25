@@ -1,6 +1,15 @@
 Prefab: HolographicSightPickup
 PrefabEntities:
   - Entity: 16886275650480693085
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RigidBodyComponent
+      - BoxColliderComponent
+      - ScriptComponent
+      - PrefabComponent
     TagComponent:
       Tag: HolographicSightPickup
     RelationshipComponent:
@@ -21,7 +30,7 @@ PrefabEntities:
       IsTrigger: 0
       OffsetPosition: [0,0,0]
       OffsetRotation: [0,0,0]
-      Category: 256
+      Category: 1024
       CollisionMask: 1
       PhysicsMaterialUUID: 0
       PreviewCollider: 0
@@ -42,3 +51,5 @@ PrefabEntities:
         - Name: PickupType
           Type: 5
           Value: 1
+    PrefabComponent:
+      PrefabUUID: 17919492092461288605

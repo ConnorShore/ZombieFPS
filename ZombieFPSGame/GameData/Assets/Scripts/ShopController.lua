@@ -4,6 +4,7 @@ ShopController.Base = "Interactable"
 ShopController.ShopMenuUI = EntityRef()
 ShopController.InteractionPrompt = "Press (E) to open shop"
 ShopController.SpawnLocation = EntityRef() -- The entity where purchased items will spawn
+ShopController.PurchaseSound = AudioClipRef()
 
 function ShopController:OnCreate(entity)
     self.ShopMenuUIEntity = Scene.GetEntityByUUID(self.ShopMenuUI)
@@ -35,6 +36,8 @@ end
 
 function ShopController:OnOpen()
     if self.ShopMenuUIEntity and self.ShopMenuUIEntity:IsValid() then
+        EventManager.Broadcast("OnLockFreelook")
+        EventManager.Broadcast("OnWeaponLocked")
         Input.SetCursorMode(CursorMode.Normal)
         self.ShopMenuUIEntity:SetActive(true)
     end
@@ -42,6 +45,8 @@ end
 
 function ShopController:OnClose()
     if self.ShopMenuUIEntity and self.ShopMenuUIEntity:IsValid() then
+        EventManager.Broadcast("OnUnlockFreelook")
+        EventManager.Broadcast("OnWeaponUnlocked")
         Input.SetCursorMode(CursorMode.Locked)
         self.ShopMenuUIEntity:SetActive(false)
     end
@@ -61,6 +66,10 @@ function ShopController:OnPurchase(purchaseItem)
     -- Spawn the prefab item at the shop's item location
     local spawnLocation = self.SpawnLocationEntity:GetComponent("TransformComponent").WorldPosition
     Scene.InstantiatePrefab(purchaseItem, spawnLocation)
+
+    AudioSystem.PlayOneShot(self.PurchaseSound)
+
+    self:OnClose()
 end
 
 return ShopController

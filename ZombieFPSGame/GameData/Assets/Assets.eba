@@ -24,6 +24,10 @@ Assets:
     Name: Crosshair
     FilePath: Textures/Crosshair.png
   - Type: Texture
+    UUID: 1689671812453981333
+    Name: ShopKiosk_ShopKioskDiffuse.png
+    FilePath: Models/ShopKiosk/ShopKiosk_Resources/ShopKiosk_ShopKioskDiffuse.png
+  - Type: Texture
     UUID: 8231069642100005462
     Name: M4_ARNormal.png
     FilePath: Models/M4_Anim/M4_ARNormal.png
@@ -88,10 +92,6 @@ Assets:
     Name: ShopKiosk_ShopKioskNormal.png
     FilePath: Models/ShopKiosk/ShopKiosk_Resources/ShopKiosk_ShopKioskNormal.png
   - Type: Texture
-    UUID: 1689671812453981333
-    Name: ShopKiosk_ShopKioskDiffuse.png
-    FilePath: Models/ShopKiosk/ShopKiosk_Resources/ShopKiosk_ShopKioskDiffuse.png
-  - Type: Texture
     UUID: 10916275607388120618
     Name: ShopKiosk_ShopKioskMetallic-ShopKioskRoughness.png
     FilePath: Models/ShopKiosk/ShopKiosk_Resources/ShopKiosk_ShopKioskMetallic-ShopKioskRoughness.png
@@ -111,6 +111,14 @@ Assets:
     UUID: 13040007539414461172
     Name: DesertEagleRender
     FilePath: Textures/ShopItems/DesertEagleRender.png
+  - Type: Texture
+    UUID: 15385322542672120409
+    Name: AssaultRifleRender
+    FilePath: Textures/ShopItems/AssaultRifleRender.png
+  - Type: Texture
+    UUID: 11392929540707926425
+    Name: HolographicSightRender
+    FilePath: Textures/ShopItems/HolographicSightRender.png
   - Type: Shader
     UUID: 3290979914783484062
     Name: HolographicSight
@@ -132,13 +140,17 @@ Assets:
     Name: PowerUpDrop
     FilePath: Scripts/Pickups/PowerUpDrop.lua
   - Type: Script
-    UUID: 8562544563539838448
-    Name: PlayerInteraction
-    FilePath: Scripts/Player/PlayerInteraction.lua
-  - Type: Script
     UUID: 7371630261308486327
     Name: PointManager
     FilePath: Scripts/PointManager.lua
+  - Type: Script
+    UUID: 5515958197491920100
+    Name: GlobalSystems
+    FilePath: Scripts/GlobalSystems.lua
+  - Type: Script
+    UUID: 8562544563539838448
+    Name: PlayerInteraction
+    FilePath: Scripts/Player/PlayerInteraction.lua
   - Type: Script
     UUID: 5831931640429785370
     Name: GameOverManager
@@ -243,10 +255,6 @@ Assets:
     UUID: 2119190290714536510
     Name: PointUIController
     FilePath: Scripts/PointUIController.lua
-  - Type: Script
-    UUID: 5515958197491920100
-    Name: GlobalSystems
-    FilePath: Scripts/GlobalSystems.lua
   - Type: Script
     UUID: 8058432714386778896
     Name: RoundManager
@@ -480,6 +488,14 @@ Assets:
     Name: NavMesh_Default_NavigationSurface
     FilePath: NavMeshes/NavMesh_Default_NavigationSurface.ebnav
   - Type: Prefab
+    UUID: 3643707714679057419
+    Name: M4_Item
+    FilePath: Prefabs/Weapons/M4_Item.ebprefab
+  - Type: Prefab
+    UUID: 4357804436516360089
+    Name: Spawner
+    FilePath: Prefabs/Spawner.ebprefab
+  - Type: Prefab
     UUID: 15848494941088245562
     Name: DesertEagleItem
     FilePath: Prefabs/Weapons/DesertEagleItem.ebprefab
@@ -495,14 +511,6 @@ Assets:
     UUID: 13120009099153965368
     Name: Tracer
     FilePath: Prefabs/Tracer.ebprefab
-  - Type: Prefab
-    UUID: 7525331889912364400
-    Name: M4_Pickup
-    FilePath: Prefabs/Weapons/M4_Pickup.ebprefab
-  - Type: Prefab
-    UUID: 13041019221118750640
-    Name: DesertEaglePickup
-    FilePath: Prefabs/Weapons/DesertEaglePickup.ebprefab
   - Type: Prefab
     UUID: 1628786810858958427
     Name: DesertEagle
@@ -528,10 +536,6 @@ Assets:
     Name: M4
     FilePath: Prefabs/Weapons/M4.ebprefab
   - Type: Prefab
-    UUID: 4357804436516360089
-    Name: Spawner
-    FilePath: Prefabs/Spawner.ebprefab
-  - Type: Prefab
     UUID: 16063513610624631090
     Name: NukePowerup
     FilePath: Prefabs/NukePowerup.ebprefab
@@ -539,6 +543,10 @@ Assets:
     UUID: 7112226948926292235
     Name: ShopKiosk
     FilePath: Prefabs/ShopKiosk.ebprefab
+  - Type: Prefab
+    UUID: 3502454662407739951
+    Name: ShopItem
+    FilePath: Prefabs/ShopItem.ebprefab
   - Type: Font
     UUID: 213406294560961755
     Name: Roboto-Regular
@@ -597,6 +605,11 @@ Assets:
     UUID: 14168917987159911087
     Name: NukeSoundEffect
     FilePath: Audio/NukeSoundEffect.mp3
+    LoadMode: Auto
+  - Type: AudioClip
+    UUID: 12020081571446126966
+    Name: PurchaseSoundEffect
+    FilePath: Audio/PurchaseSoundEffect.mp3
     LoadMode: Auto
   - Type: Scene
     UUID: 397660979313011815

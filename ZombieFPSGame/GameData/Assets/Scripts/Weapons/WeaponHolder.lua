@@ -7,6 +7,7 @@ WeaponHolder.WeaponFireRef = EntityRef()
 function WeaponHolder:OnCreate(entity)
     self.PlayedEmptyGunSound = false
     self.ActiveWeaponSlot = 1
+    self.WeaponLocked = false
     self.Entity = entity
     self.WeaponFire = Scene.GetEntityByUUID(self.WeaponFireRef)
 
@@ -17,9 +18,20 @@ function WeaponHolder:OnCreate(entity)
     end
 
     self.WasShootingLastFrame = false
+
+    EventManager.Subscribe("OnWeaponLocked", function()
+        self.WeaponLocked = true
+    end)
+    EventManager.Subscribe("OnWeaponUnlocked", function()
+        self.WeaponLocked = false
+    end)
 end
 
 function WeaponHolder:OnUpdate(entity, delta)
+    if self.WeaponLocked then
+        return
+    end
+
     if Input.IsMouseButtonPressed(MouseButton.Left) then
         self:OnShoot(self.WasShootingLastFrame)
         self.WasShootingLastFrame = true
