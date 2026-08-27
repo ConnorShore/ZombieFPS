@@ -136,6 +136,10 @@ Assets:
     Name: RoundUIControl
     FilePath: Scripts/RoundUIControl.lua
   - Type: Script
+    UUID: 5986627421746366671
+    Name: SpawnManager
+    FilePath: Scripts/SpawnManager.lua
+  - Type: Script
     UUID: 15191514471842255900
     Name: PowerUpDrop
     FilePath: Scripts/Pickups/PowerUpDrop.lua
@@ -143,6 +147,10 @@ Assets:
     UUID: 7371630261308486327
     Name: PointManager
     FilePath: Scripts/PointManager.lua
+  - Type: Script
+    UUID: 1928101263865073231
+    Name: PickupWeapon
+    FilePath: Scripts/Pickups/PickupWeapon.lua
   - Type: Script
     UUID: 5515958197491920100
     Name: GlobalSystems
@@ -176,10 +184,6 @@ Assets:
     Name: AmmoUI
     FilePath: Scripts/HUD/AmmoUI.lua
   - Type: Script
-    UUID: 5986627421746366671
-    Name: SpawnManager
-    FilePath: Scripts/SpawnManager.lua
-  - Type: Script
     UUID: 13629381204485307944
     Name: MountBehavior
     FilePath: Scripts/Weapons/MountBehavior.lua
@@ -207,10 +211,6 @@ Assets:
     UUID: 16404415058251315788
     Name: WeaponFire
     FilePath: Scripts/Weapons/WeaponFire.lua
-  - Type: Script
-    UUID: 1928101263865073231
-    Name: PickupWeapon
-    FilePath: Scripts/Pickups/PickupWeapon.lua
   - Type: Script
     UUID: 16605421126880563658
     Name: MuzzleFlash
@@ -295,6 +295,10 @@ Assets:
     UUID: 12846303117417708509
     Name: ItemButton
     FilePath: Scripts/ItemButton.lua
+  - Type: Script
+    UUID: 6606166469813654353
+    Name: ShopItem
+    FilePath: Scripts/ShopItem.lua
   - Type: Material
     UUID: 782295293902573577
     Name: DesertEagle_Metal
@@ -456,6 +460,10 @@ Assets:
     Name: ZombieAnimController
     FilePath: Animations/ZombieAnimController.ebcontroller
   - Type: Model
+    UUID: 10130453322988471974
+    Name: ShopKiosk
+    FilePath: Models/ShopKiosk/ShopKiosk.ebmodel
+  - Type: Model
     UUID: 5584464271236281027
     Name: DesertEagle
     FilePath: Models/DesertEagle/DesertEagle.ebmodel
@@ -479,10 +487,6 @@ Assets:
     UUID: 9458949399076497110
     Name: NukePowerup
     FilePath: Models/PowerUps/Nuke/NukePowerup.ebmodel
-  - Type: Model
-    UUID: 10130453322988471974
-    Name: ShopKiosk
-    FilePath: Models/ShopKiosk/ShopKiosk.ebmodel
   - Type: NavMeshData
     UUID: 8017132278425989816
     Name: NavMesh_Default_NavigationSurface

@@ -1785,6 +1785,7 @@ Entities:
       - TransformComponent
       - RelationshipComponent
       - RectTransformComponent
+      - ScriptComponent
     TagComponent:
       Tag: DesertEagleItem
     RelationshipComponent:
@@ -1797,6 +1798,16 @@ Entities:
       Rotation: [0,0,0]
       Scale: [1,1,1]
       WorldTransform: [65.9457,0,0,0,0,70.574486,0,0,0,0,1,0,259.4592,393.3126,0,1]
+    ScriptComponent:
+      ScriptUUID: 6606166469813654353
+      UserPropertyOverrides:
+        - Name: ItemPrefab
+          Type: 8
+          Value: 15848494941088245562
+          ReferenceKind: Prefab
+        - Name: ItemName
+          Type: 4
+          Value: Desert Eagle
     RectTransformComponent:
       AnchoredPosition: [0,0]
       SizeDelta: [1,1]
@@ -1823,6 +1834,7 @@ Entities:
       Children:
         - 4903557797569435364
         - 14614997818587249901
+        - 7820877170526419511
       IsAttachment: 0
     TransformComponent:
       Position: [-0.6912381,-0.60346675,0]
@@ -1836,14 +1848,7 @@ Entities:
       NineSliceBorder: [0,0,0,0]
     ScriptComponent:
       ScriptUUID: 12846303117417708509
-      UserPropertyOverrides:
-        - Name: ItemPrefab
-          Type: 8
-          Value: 15848494941088245562
-          ReferenceKind: Prefab
-        - Name: ItemName
-          Type: 4
-          Value: Desert Eagle
+      UserPropertyOverrides: []
     RectTransformComponent:
       AnchoredPosition: [0,0]
       SizeDelta: [1,1]
@@ -1947,6 +1952,7 @@ Entities:
       - TransformComponent
       - RelationshipComponent
       - RectTransformComponent
+      - ScriptComponent
     TagComponent:
       Tag: M4_Item
     RelationshipComponent:
@@ -1959,6 +1965,19 @@ Entities:
       Rotation: [0,0,0]
       Scale: [1,1,1]
       WorldTransform: [65.94573,0,0,0,0,70.574486,0,0,0,0,1,0,356.42664,393.3126,0,1]
+    ScriptComponent:
+      ScriptUUID: 6606166469813654353
+      UserPropertyOverrides:
+        - Name: ItemPrefab
+          Type: 8
+          Value: 3643707714679057419
+          ReferenceKind: Prefab
+        - Name: ItemName
+          Type: 4
+          Value: M4 Rifle
+        - Name: ItemPrice
+          Type: 2
+          Value: 850
     RectTransformComponent:
       AnchoredPosition: [0,0]
       SizeDelta: [1,1]
@@ -1979,12 +1998,13 @@ Entities:
       - UISelectableComponent
       - UIButtonComponent
     TagComponent:
-      Tag: ItemButton(1)
+      Tag: ItemButton
     RelationshipComponent:
       Parent: 13349997947465885854
       Children:
         - 7983468163723589166
         - 12893207046643181304
+        - 4266226328773272448
       IsAttachment: 0
     TransformComponent:
       Position: [-0.6912381,-0.60346675,0]
@@ -1998,17 +2018,7 @@ Entities:
       NineSliceBorder: [0,0,0,0]
     ScriptComponent:
       ScriptUUID: 12846303117417708509
-      UserPropertyOverrides:
-        - Name: ItemPrefab
-          Type: 8
-          Value: 3643707714679057419
-          ReferenceKind: Prefab
-        - Name: ItemName
-          Type: 4
-          Value: M4 Rifle
-        - Name: ItemPrice
-          Type: 2
-          Value: 850
+      UserPropertyOverrides: []
     RectTransformComponent:
       AnchoredPosition: [0,0]
       SizeDelta: [1,1]
@@ -2047,7 +2057,7 @@ Entities:
       - TextComponent
       - RectTransformComponent
     TagComponent:
-      Tag: Label(1)
+      Tag: Label
     RelationshipComponent:
       Parent: 8362818236916851370
       Children: []
@@ -2081,7 +2091,7 @@ Entities:
       - SpriteComponent
       - RectTransformComponent
     TagComponent:
-      Tag: ItemImage(1)
+      Tag: ItemImage
     RelationshipComponent:
       Parent: 8362818236916851370
       Children: []
@@ -2102,6 +2112,40 @@ Entities:
       SizeDelta: [1.83,1]
       AnchorMin: [0,0]
       AnchorMax: [1,1]
+      Pivot: [0.5,0.5]
+      Rotation: 0
+      RaycastTarget: 0
+  - Entity: 4266226328773272448
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RectTransformComponent
+      - TextComponent
+    TagComponent:
+      Tag: Price
+    RelationshipComponent:
+      Parent: 8362818236916851370
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,-0,0]
+      Scale: [1,1,1]
+      WorldTransform: [67.24649,0,0,0,0,0,0,0,0,0,1,0,356.42664,349.57056,0,1]
+    TextComponent:
+      Text: 850
+      FontHandle: 213406294560961755
+      FontSize: 16
+      HorizontalAlignment: 1
+      VerticalAlignment: 1
+      Color: [1,1,1,1]
+    RectTransformComponent:
+      AnchoredPosition: [0,-6]
+      SizeDelta: [0,0]
+      AnchorMin: [0,0]
+      AnchorMax: [1,0]
       Pivot: [0.5,0.5]
       Rotation: 0
       RaycastTarget: 0
@@ -2179,6 +2223,7 @@ Entities:
       - TransformComponent
       - RelationshipComponent
       - RectTransformComponent
+      - ScriptComponent
     TagComponent:
       Tag: HolographicSightItem
     RelationshipComponent:
@@ -2191,6 +2236,19 @@ Entities:
       Rotation: [0,0,0]
       Scale: [1,1,1]
       WorldTransform: [65.15084,0,0,0,0,70.574486,0,0,0,0,1,0,612.58203,393.3126,0,1]
+    ScriptComponent:
+      ScriptUUID: 6606166469813654353
+      UserPropertyOverrides:
+        - Name: ItemPrefab
+          Type: 8
+          Value: 17919492092461288605
+          ReferenceKind: Prefab
+        - Name: ItemName
+          Type: 4
+          Value: Holo Sight
+        - Name: ItemPrice
+          Type: 2
+          Value: 150
     RectTransformComponent:
       AnchoredPosition: [0,0]
       SizeDelta: [1,1]
@@ -2211,12 +2269,13 @@ Entities:
       - UIButtonComponent
       - ScriptComponent
     TagComponent:
-      Tag: ItemButton(2)
+      Tag: ItemButton
     RelationshipComponent:
       Parent: 15977657280803636428
       Children:
         - 1715720473602383271
         - 1732885592424765029
+        - 10871142000109515034
       IsAttachment: 0
     TransformComponent:
       Position: [-0.6912381,-0.60346675,0]
@@ -2230,17 +2289,7 @@ Entities:
       NineSliceBorder: [0,0,0,0]
     ScriptComponent:
       ScriptUUID: 12846303117417708509
-      UserPropertyOverrides:
-        - Name: ItemPrefab
-          Type: 8
-          Value: 17919492092461288605
-          ReferenceKind: Prefab
-        - Name: ItemName
-          Type: 4
-          Value: Holo Sight
-        - Name: ItemPrice
-          Type: 2
-          Value: 150
+      UserPropertyOverrides: []
     RectTransformComponent:
       AnchoredPosition: [0,0]
       SizeDelta: [1,1]
@@ -2279,7 +2328,7 @@ Entities:
       - RectTransformComponent
       - TextComponent
     TagComponent:
-      Tag: Label(2)
+      Tag: Label
     RelationshipComponent:
       Parent: 16068386961496139316
       Children: []
@@ -2313,7 +2362,7 @@ Entities:
       - RectTransformComponent
       - SpriteComponent
     TagComponent:
-      Tag: ItemImage(2)
+      Tag: ItemImage
     RelationshipComponent:
       Parent: 16068386961496139316
       Children: []
@@ -2334,6 +2383,74 @@ Entities:
       SizeDelta: [45,25]
       AnchorMin: [0,0]
       AnchorMax: [1,1]
+      Pivot: [0.5,0.5]
+      Rotation: 0
+      RaycastTarget: 0
+  - Entity: 10871142000109515034
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RectTransformComponent
+      - TextComponent
+    TagComponent:
+      Tag: Price
+    RelationshipComponent:
+      Parent: 16068386961496139316
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,-0,0]
+      Scale: [1,1,1]
+      WorldTransform: [66.45154,0,0,0,0,0,0,0,0,0,1,0,612.58203,349.57056,0,1]
+    TextComponent:
+      Text: 150
+      FontHandle: 213406294560961755
+      FontSize: 16
+      HorizontalAlignment: 1
+      VerticalAlignment: 1
+      Color: [1,1,1,1]
+    RectTransformComponent:
+      AnchoredPosition: [0,-6]
+      SizeDelta: [0,0]
+      AnchorMin: [0,0]
+      AnchorMax: [1,0]
+      Pivot: [0.5,0.5]
+      Rotation: 0
+      RaycastTarget: 0
+  - Entity: 7820877170526419511
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RectTransformComponent
+      - TextComponent
+    TagComponent:
+      Tag: Price
+    RelationshipComponent:
+      Parent: 1932255766353741902
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,-0,0]
+      Scale: [1,1,1]
+      WorldTransform: [67.246445,0,0,0,0,0,0,0,0,0,1,0,259.4592,349.57056,0,1]
+    TextComponent:
+      Text: 100
+      FontHandle: 213406294560961755
+      FontSize: 16
+      HorizontalAlignment: 1
+      VerticalAlignment: 1
+      Color: [1,1,1,1]
+    RectTransformComponent:
+      AnchoredPosition: [0,-6]
+      SizeDelta: [0,0]
+      AnchorMin: [0,0]
+      AnchorMax: [1,0]
       Pivot: [0.5,0.5]
       Rotation: 0
       RaycastTarget: 0

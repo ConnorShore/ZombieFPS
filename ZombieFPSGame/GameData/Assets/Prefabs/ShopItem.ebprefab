@@ -7,11 +7,12 @@ PrefabEntities:
       - TransformComponent
       - RelationshipComponent
       - RectTransformComponent
-      - OutlineComponent
+      - PrefabComponent
+      - ScriptComponent
     TagComponent:
       Tag: ShopItem
     RelationshipComponent:
-      Parent: 2179583451832717959
+      Parent: 0
       Children:
         - 3495353796335699677
       IsAttachment: 0
@@ -19,7 +20,12 @@ PrefabEntities:
       Position: [0,0,0]
       Rotation: [0,0,0]
       Scale: [1,1,1]
-      WorldTransform: [130.07414,0,0,0,0,130.07414,0,0,0,0,1,0,271.24142,412.11707,0,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
+    PrefabComponent:
+      PrefabUUID: 3502454662407739951
+    ScriptComponent:
+      ScriptUUID: 6606166469813654353
+      UserPropertyOverrides: []
     RectTransformComponent:
       AnchoredPosition: [0,0]
       SizeDelta: [100,100]
@@ -46,12 +52,13 @@ PrefabEntities:
       Children:
         - 12853617377225115069
         - 4323485484131437962
+        - 14255906207316804348
       IsAttachment: 0
     TransformComponent:
       Position: [-0.6912381,-0.60346675,0]
       Rotation: [0,-0,0]
       Scale: [0.0012580606,0.0020709329,0.99999994]
-      WorldTransform: [130.07414,0,0,0,0,104.05931,0,0,0,0,1,0,271.24142,412.11707,0,1]
+      WorldTransform: [0.0012580606,0,0,0,0,0.0020709329,0,0,0,0,0.99999994,0,-0.6912381,-0.60346675,0,1]
     SpriteComponent:
       Color: [1,1,1,0.5882353]
       IsBillboard: 0
@@ -59,11 +66,7 @@ PrefabEntities:
       NineSliceBorder: [0,0,0,0]
     ScriptComponent:
       ScriptUUID: 12846303117417708509
-      UserPropertyOverrides:
-        - Name: ItemPrefab
-          Type: 8
-          Value: 0
-          ReferenceKind: Prefab
+      UserPropertyOverrides: []
     RectTransformComponent:
       AnchoredPosition: [0,0]
       SizeDelta: [100,80]
@@ -111,7 +114,7 @@ PrefabEntities:
       Position: [0,0,0]
       Rotation: [0,-0,0]
       Scale: [1,1,1]
-      WorldTransform: [130.07416,0,0,0,0,0,0,0,0,0,1,0,271.24142,470.65042,0,1]
+      WorldTransform: [0.0012580606,0,0,0,0,0.0020709329,0,0,0,0,0.99999994,0,-0.6912381,-0.60346675,0,1]
     TextComponent:
       Text: Item Name
       FontHandle: 213406294560961755
@@ -145,7 +148,7 @@ PrefabEntities:
       Position: [-2.0852833,-4.1924243,0]
       Rotation: [0,-0,0]
       Scale: [0.007687923,0.009609904,1]
-      WorldTransform: [130.07414,0,0,0,0,104.05931,0,0,0,0,1,0,271.24142,412.11707,0,1]
+      WorldTransform: [9.671873e-06,0,0,0,0,1.9901467e-05,0,0,0,0,0.99999994,0,-0.69386154,-0.612149,0,1]
     SpriteComponent:
       Color: [1,1,1,1]
       IsBillboard: 0
@@ -156,6 +159,40 @@ PrefabEntities:
       SizeDelta: [100,80]
       AnchorMin: [0.5,0.5]
       AnchorMax: [0.5,0.5]
+      Pivot: [0.5,0.5]
+      Rotation: 0
+      RaycastTarget: 0
+  - Entity: 14255906207316804348
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RectTransformComponent
+      - TextComponent
+    TagComponent:
+      Tag: Price
+    RelationshipComponent:
+      Parent: 3495353796335699677
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,-0,0]
+      Scale: [1,1,1]
+      WorldTransform: [0.0012580606,0,0,0,0,0.0020709329,0,0,0,0,0.99999994,0,-0.6912381,-0.60346675,0,1]
+    TextComponent:
+      Text: Item Name
+      FontHandle: 213406294560961755
+      FontSize: 16
+      HorizontalAlignment: 1
+      VerticalAlignment: 1
+      Color: [1,1,1,1]
+    RectTransformComponent:
+      AnchoredPosition: [0,-5]
+      SizeDelta: [0,0]
+      AnchorMin: [0,0]
+      AnchorMax: [1,0]
       Pivot: [0.5,0.5]
       Rotation: 0
       RaycastTarget: 0

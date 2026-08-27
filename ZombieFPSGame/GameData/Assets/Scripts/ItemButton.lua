@@ -1,9 +1,5 @@
 local ItemButton = {}
 
-ItemButton.ItemName = "Item Name"
-ItemButton.ItemPrice = 100
-ItemButton.ItemPrefab = PrefabRef()
-
 local AffordableTint = {
     Normal      = Vector4f.new(0.0, 1.0, 0.0, 0.75),
     Highlighted = Vector4f.new(0.35, 1.0, 0.35, 0.9),
@@ -20,6 +16,15 @@ function ItemButton:OnCreate(entity)
     self.PointManager = _G.PointManager
     self.CanAfford = false
     self.TintApplied = nil  -- nil rather than false so the first update always pushes a palette
+end
+
+-- Item data (name/price/prefab) lives on the parent entity's ShopItem script.
+function ItemButton:GetShopItem(entity)
+    local shopItem = entity:GetParent():GetScriptInstance("ShopItem")
+    if not shopItem then
+        Log.Warn("ItemButton: parent entity does not have a ShopItem script instance!")
+    end
+    return shopItem
 end
 
 -- Pushes one palette onto the selectable; UIInputSystem drives the hover/press tinting from there.
@@ -49,7 +54,12 @@ function ItemButton:OnUpdate(entity, delta)
         return
     end
 
-    self.CanAfford = self.PointManager.Points >= self.ItemPrice
+    local shopItem = self:GetShopItem(entity)
+    if not shopItem then
+        return
+    end
+
+    self.CanAfford = self.PointManager.Points >= shopItem.ItemPrice
 
     -- TODO: Disable the item if the player already owns it / has it equipt
 
@@ -60,12 +70,17 @@ function ItemButton:OnUpdate(entity, delta)
 end
 
 function ItemButton:OnClick(entity)
+    local shopItem = self:GetShopItem(entity)
+    if not shopItem then
+        return
+    end
+
     if self.CanAfford then
-        Log.Info("ItemButton: Purchasing item '" .. self.ItemName .. "' for " .. tostring(self.ItemPrice) .. " points.")
-        EventManager.Broadcast("OnItemPurchased", self.ItemPrice)
-        EventManager.Broadcast("OnShopItemPurchased", self.ItemPrefab)
+        Log.Info("ItemButton: Purchasing item '" .. shopItem.ItemName .. "' for " .. tostring(shopItem.ItemPrice) .. " points.")
+        EventManager.Broadcast("OnItemPurchased", shopItem.ItemPrice)
+        EventManager.Broadcast("OnShopItemPurchased", shopItem.ItemPrefab)
     else
-        Log.Warn("ItemButton: Cannot afford item '" .. self.ItemName .. "'. Current Points = " .. tostring(self.PointManager.Points) .. ", Item Price = " .. tostring(self.ItemPrice))
+        Log.Warn("ItemButton: Cannot afford item '" .. shopItem.ItemName .. "'. Current Points = " .. tostring(self.PointManager.Points) .. ", Item Price = " .. tostring(shopItem.ItemPrice))
     end
 end
 
