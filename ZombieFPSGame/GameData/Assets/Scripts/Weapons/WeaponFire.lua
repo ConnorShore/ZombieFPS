@@ -11,7 +11,7 @@ WeaponFire.WeaponHolderRef = EntityRef()
 function WeaponFire:OnCreate(entity)
     self.TimeSinceLastShot = math.huge -- Initialize to a large number so we can shoot immediately
     self.CurrentBloom = 0.0
-    self.ShotCount = 0
+    self.TracerShotCounter = 0
     self.CanShoot = true
     self.WeaponAiming = Scene.GetEntityByUUID(self.WeaponAimingRef)
     self.WeaponRecoil = Scene.GetEntityByUUID(self.WeaponRecoilRef)
@@ -24,6 +24,7 @@ end
 
 function WeaponFire:OnUpdate(entity, delta)
     self.TimeSinceLastShot = self.TimeSinceLastShot + delta
+
     local isWeaponEqupped = false
     local weaponHolderScript = self.WeaponHolder and self.WeaponHolder:IsValid() and self.WeaponHolder:GetScriptInstance() or nil
     if weaponHolderScript and weaponHolderScript.GetCurrentWeapon then
@@ -33,7 +34,7 @@ function WeaponFire:OnUpdate(entity, delta)
 
     if not isWeaponEqupped then
         self.CurrentBloom = 0.0
-        self.ShotCount = 0
+        self.TracerShotCounter = 0
         self.CanShoot = true
         return
     end
@@ -141,7 +142,7 @@ function WeaponFire:Fire(entity, weaponEntity, wasShootingLastFrame)
         return false
     end
 
-    self.ShotCount = self.ShotCount + 1
+    self.TracerShotCounter = self.TracerShotCounter + 1
 
     -- Play gunshot sound
     local props = AudioSoundProperties.new()
@@ -204,7 +205,7 @@ function WeaponFire:Fire(entity, weaponEntity, wasShootingLastFrame)
 
     -- Tracer should end at the actual impact point when we hit something.
     local tracerEndPoint = hitResult.Hit and hitResult.CollisionPoint or endPoint
-    if self.TracerEnabled and (self.ShotCount % self.TracerCadence == 0) then
+    if self.TracerEnabled and (self.TracerShotCounter % self.TracerCadence == 0) then
         self:SpawnTracer(tracerEndPoint, weaponController)
     end
 

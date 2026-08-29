@@ -72,7 +72,6 @@ function RoundManager:StartNextRound()
 end
 
 function RoundManager:HandleActiveRound(delta)
-    Log.Info("[RoundManager] Handling active round. Zombies remaining: " .. tostring(self.ZombiesRemaining))
     if self.ZombiesRemaining <= 0 then
         self.CurrentState = GameState.Intermission
         self.StateTimer = self.IntermissionTime
@@ -85,14 +84,12 @@ end
 
 function RoundManager:OnZombieSpawned(enemyUUID)
     table.insert(self.ActiveZombies, enemyUUID)
-    Log.Trace("[RoundManager] Zombie added to active list. ID: " .. tostring(enemyUUID))
 end
 
 -- This should be called by the Zombie script when its health reaches 0
 function RoundManager:OnZombieKilled(enemyUUID)
     if self.CurrentState == GameState.Active then
         self.ZombiesRemaining = self.ZombiesRemaining - 1
-        Log.Trace("[RoundManager] Zombie killed. Remaining zombies: " .. tostring(self.ZombiesRemaining))
     end
 
     for i, uuid in ipairs(self.ActiveZombies) do
@@ -104,10 +101,8 @@ function RoundManager:OnZombieKilled(enemyUUID)
 end
 
 function RoundManager:OnNukePickup()
-    Log.Trace("[RoundManager] Nuke pickup detected. Removing all active zombies. Active zombies count: " .. tostring(#self.ActiveZombies))
     local numActiveZombies = #self.ActiveZombies
     for _, zombieUUID in ipairs(self.ActiveZombies) do
-        Log.Trace("[RoundManager] Removing zombie with ID: " .. tostring(zombieUUID))
         local zombieEntity = Scene.GetEntityByUUID(zombieUUID)
         if zombieEntity and zombieEntity:IsValid() then
             Scene.RemoveEntity(zombieEntity)

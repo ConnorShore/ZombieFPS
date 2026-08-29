@@ -5,13 +5,26 @@ MouseLook.Sensitivity = 5.0
 function MouseLook:OnCreate(entity)
     self.Pitch = 0.0
     self.SensitivityScale = 1000.0
+    self.LockFreelook = false
 
     -- Cache our own transform handle (safe for the entity's lifetime; it re-resolves the
     -- live component internally) so OnUpdate doesn't do a string-keyed lookup every frame.
     self.transform = entity:GetComponent("TransformComponent")
+
+    EventManager.Subscribe("OnLockFreelook", function()
+        self.LockFreelook = true
+    end)
+    
+    EventManager.Subscribe("OnUnlockFreelook", function()
+        self.LockFreelook = false
+    end)
 end
 
 function MouseLook:OnUpdate(entity, delta)
+    if self.LockFreelook then
+        return
+    end
+
     local mouseDelta = Input.GetMouseDelta()
 
     -- YAW (Looking Left/Right)

@@ -1,0 +1,102 @@
+Prefab: M4_Item
+PrefabEntities:
+  - Entity: 7140893283392457281
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - ScriptComponent
+      - RigidBodyComponent
+      - BoxColliderComponent
+      - PrefabComponent
+    TagComponent:
+      Tag: M4_Item
+    RelationshipComponent:
+      Parent: 0
+      Children:
+        - 4098326518884859273
+        - 17464927817808412369
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,0,1.5707964]
+      Scale: [0.35,0.35,0.354]
+      WorldTransform: [2.0861625e-08,0.34999996,0,0,-0.34999996,2.0861625e-08,0,0,0,0,0.354,0,0,0,0,1]
+    RigidBodyComponent:
+      Type: 0
+      Mass: 1
+      GravityEnabled: 1
+    BoxColliderComponent:
+      Size: [0.7,1.3,4.4]
+      IsTrigger: 0
+      OffsetPosition: [0,-0.1,0]
+      OffsetRotation: [0,0,0]
+      Category: 1024
+      CollisionMask: 1
+      PhysicsMaterialUUID: 0
+      PreviewCollider: 1
+    ScriptComponent:
+      ScriptUUID: 1928101263865073231
+      UserPropertyOverrides:
+        - Name: WeaponPrefab
+          Type: 8
+          Value: 10097993641357000526
+          ReferenceKind: Prefab
+        - Name: WeaponHolderRef
+          Type: 7
+          Value: 230291968303856085
+          ReferenceKind: Entity
+        - Name: Cost
+          Type: 2
+          Value: 0
+    PrefabComponent:
+      PrefabUUID: 3643707714679057419
+  - Entity: 4098326518884859273
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - StaticMeshComponent
+      - MaterialComponent
+    TagComponent:
+      Tag: Weapon(1)
+    RelationshipComponent:
+      Parent: 7140893283392457281
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-2.220446e-16,0.025448801,0.38176197]
+      Rotation: [3.1415927,0,-0]
+      Scale: [-0.09888629,0.109487295,0.109487295]
+      WorldTransform: [-2.0629287e-09,-0.034610197,0,0,0.03832055,-2.284083e-09,-3.3883758e-09,0,-3.3500887e-09,1.9968087e-16,-0.0387585,0,-0.00890708,5.309033e-10,0.13514374,1]
+    StaticMeshComponent:
+      MeshUUID: 12205825994227504312
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 3531595371019758275
+  - Entity: 17464927817808412369
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - StaticMeshComponent
+      - MaterialComponent
+    TagComponent:
+      Tag: Magazine(2)
+    RelationshipComponent:
+      Parent: 7140893283392457281
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,-0.11320099,-0.015132174]
+      Rotation: [-0.00020340085,0,0]
+      Scale: [0.051736534,0.056594644,0.18163528]
+      WorldTransform: [1.0793082e-09,0.018107785,0,0,-0.019808123,1.1806562e-09,-4.075035e-06,0,-1.2930668e-05,7.7072794e-13,0.06429889,0,0.039620344,-2.3615567e-09,-0.0053567896,1]
+    StaticMeshComponent:
+      MeshUUID: 9147101475226164417
+      Layer: 1
+    MaterialComponent:
+      MaterialUUID: 3531595371019758275

@@ -30,6 +30,8 @@ Settings:
         Name: Interactable
       - Index: 9
         Name: PowerUp
+      - Index: 10
+        Name: Pickup
   Render:
     RenderLayers:
       - Index: 0
