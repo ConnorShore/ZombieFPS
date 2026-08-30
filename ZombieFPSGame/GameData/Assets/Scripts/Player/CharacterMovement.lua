@@ -25,7 +25,7 @@ function CharacterMovement:OnUpdate(entity, delta)
     local moveDir = Vector3f.new(0.0, 0.0, 0.0)
 
     local speed = self.WalkSpeed
-    if Input.IsKeyPressed(KeyCode.LeftShift) then
+    if Input.IsActionDown("Sprint") then
         self.Sprinting = true;
         speed = self.SprintSpeed;
     else
@@ -34,16 +34,16 @@ function CharacterMovement:OnUpdate(entity, delta)
     end
 
     -- Strafing
-    if Input.IsKeyPressed(KeyCode.A) then 
+    if Input.IsActionDown("MoveLeft") then 
         moveDir = moveDir - right
-    elseif Input.IsKeyPressed(KeyCode.D) then 
+    elseif Input.IsActionDown("MoveRight") then 
         moveDir = moveDir + right
     end
 
     -- Forward / Backward
-    if Input.IsKeyPressed(KeyCode.W) then 
+    if Input.IsActionDown("MoveForward") then 
         moveDir = moveDir + forward
-    elseif Input.IsKeyPressed(KeyCode.S) then 
+    elseif Input.IsActionDown("MoveBackward") then 
         moveDir = moveDir - forward
     end
     
@@ -56,7 +56,7 @@ function CharacterMovement:OnUpdate(entity, delta)
     controller:Move(moveDir * speed * delta)
     
     -- Jumping
-    if Input.IsKeyPressed(KeyCode.Space) and controller.IsGrounded then
+    if Input.IsActionDown("Jump") and controller.IsGrounded then
         controller:Jump()
     end
 end

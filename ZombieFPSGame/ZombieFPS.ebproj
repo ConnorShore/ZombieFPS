@@ -83,3 +83,18 @@ Settings:
           - Device: 1
             ControlId: 69
             RequiredModifiers: 0
+      - Name: Sprint
+        Triggers:
+          - Device: 1
+            ControlId: 340
+            RequiredModifiers: 0
+      - Name: WeaponSlot1
+        Triggers:
+          - Device: 1
+            ControlId: 49
+            RequiredModifiers: 0
+      - Name: WeaponSlot2
+        Triggers:
+          - Device: 1
+            ControlId: 50
+            RequiredModifiers: 0

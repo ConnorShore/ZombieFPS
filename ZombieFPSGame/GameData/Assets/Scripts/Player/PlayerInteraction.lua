@@ -27,7 +27,6 @@ function PlayerInteraction:OnCreate(entity)
     self.AvailableColor = Vector4f.new(1.0, 1.0, 1.0, 1.0)
     self.UnavailableColor = Vector4f.new(1.0, 0.0, 0.0, 1.0)
     self.DisplayedText = nil
-    self.WasInteractKeyDown = false
     self.WarnedEntityIDs = {}
 
     self.InteractionFilters = self:ResolveInteractionFilters()
@@ -52,11 +51,9 @@ function PlayerInteraction:ResolveInteractionFilters()
 end
 
 function PlayerInteraction:OnUpdate(entity, delta)
-    -- Edge-detect the key here so each interactable is triggered once per press rather than
-    -- every frame the key is held.
-    local interactKeyDown = Input.IsKeyPressed(KeyCode.E)
-    local interactKeyJustPressed = interactKeyDown and not self.WasInteractKeyDown
-    self.WasInteractKeyDown = interactKeyDown
+    -- The action reports the press edge, so each interactable is triggered once per press
+    -- rather than every frame the key is held.
+    local interactJustPressed = Input.IsActionPressed("Interact")
 
     if not self.InteractionUI or not self.InteractionUI:IsValid() or not self.InteractionTextComponent then
         Log.Warn("PlayerInteraction: InteractionUI entity or its TextComponent is not valid!")
@@ -75,7 +72,7 @@ function PlayerInteraction:OnUpdate(entity, delta)
     self:SetPromptText(interactable:GetInteractionText(interactableEntity, entity))
     self.InteractionTextComponent.Color = canInteract and self.AvailableColor or self.UnavailableColor
 
-    if canInteract and interactKeyJustPressed then
+    if canInteract and interactJustPressed then
         interactable:OnInteract(interactableEntity, entity)
     end
 end
