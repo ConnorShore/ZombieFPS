@@ -36,3 +36,50 @@ Settings:
     RenderLayers:
       - Index: 0
         Name: Default
+  Input:
+    Actions:
+      - Name: MoveForward
+        Triggers:
+          - Device: 1
+            ControlId: 87
+            RequiredModifiers: 0
+      - Name: MoveBackward
+        Triggers:
+          - Device: 1
+            ControlId: 83
+            RequiredModifiers: 0
+      - Name: MoveRight
+        Triggers:
+          - Device: 1
+            ControlId: 68
+            RequiredModifiers: 0
+      - Name: MoveLeft
+        Triggers:
+          - Device: 1
+            ControlId: 65
+            RequiredModifiers: 0
+      - Name: Jump
+        Triggers:
+          - Device: 1
+            ControlId: 32
+            RequiredModifiers: 0
+      - Name: Reload
+        Triggers:
+          - Device: 1
+            ControlId: 82
+            RequiredModifiers: 0
+      - Name: Shoot
+        Triggers:
+          - Device: 2
+            ControlId: 0
+            RequiredModifiers: 0
+      - Name: Aim
+        Triggers:
+          - Device: 2
+            ControlId: 1
+            RequiredModifiers: 0
+      - Name: Interact
+        Triggers:
+          - Device: 1
+            ControlId: 69
+            RequiredModifiers: 0
