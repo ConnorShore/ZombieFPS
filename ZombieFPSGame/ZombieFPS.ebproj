@@ -40,61 +40,49 @@ Settings:
     Actions:
       - Name: MoveForward
         Triggers:
-          - Device: 1
-            ControlId: 87
-            RequiredModifiers: 0
+          - Trigger: Key/W
       - Name: MoveBackward
         Triggers:
-          - Device: 1
-            ControlId: 83
-            RequiredModifiers: 0
+          - Trigger: Key/S
       - Name: MoveRight
         Triggers:
-          - Device: 1
-            ControlId: 68
-            RequiredModifiers: 0
+          - Trigger: Key/D
       - Name: MoveLeft
         Triggers:
-          - Device: 1
-            ControlId: 65
-            RequiredModifiers: 0
+          - Trigger: Key/A
       - Name: Jump
         Triggers:
-          - Device: 1
-            ControlId: 32
-            RequiredModifiers: 0
+          - Trigger: Key/Space
       - Name: Reload
         Triggers:
-          - Device: 1
-            ControlId: 82
-            RequiredModifiers: 0
+          - Trigger: Key/R
       - Name: Shoot
         Triggers:
-          - Device: 2
-            ControlId: 0
-            RequiredModifiers: 0
+          - Trigger: Mouse/Left
       - Name: Aim
         Triggers:
-          - Device: 2
-            ControlId: 1
-            RequiredModifiers: 0
+          - Trigger: Mouse/Right
       - Name: Interact
         Triggers:
-          - Device: 1
-            ControlId: 69
-            RequiredModifiers: 0
+          - Trigger: Key/E
       - Name: Sprint
         Triggers:
-          - Device: 1
-            ControlId: 340
-            RequiredModifiers: 0
+          - Trigger: Key/LeftShift
       - Name: WeaponSlot1
         Triggers:
-          - Device: 1
-            ControlId: 49
-            RequiredModifiers: 0
+          - Trigger: Key/D1
       - Name: WeaponSlot2
         Triggers:
-          - Device: 1
-            ControlId: 50
-            RequiredModifiers: 0
+          - Trigger: Key/D2
+      - Name: LookLeft
+        Triggers:
+          - Trigger: Gamepad/RightX-
+      - Name: LookRight
+        Triggers:
+          - Trigger: Gamepad/RightX+
+      - Name: LookUp
+        Triggers:
+          - Trigger: Gamepad/RightY-
+      - Name: LookDown
+        Triggers:
+          - Trigger: Gamepad/RightY+
