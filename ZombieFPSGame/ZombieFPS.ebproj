@@ -41,33 +41,43 @@ Settings:
       - Name: MoveForward
         Triggers:
           - Trigger: Key/W
+          - Trigger: Gamepad/LeftY-
       - Name: MoveBackward
         Triggers:
           - Trigger: Key/S
+          - Trigger: Gamepad/LeftY+
       - Name: MoveRight
         Triggers:
           - Trigger: Key/D
+          - Trigger: Gamepad/LeftX+
       - Name: MoveLeft
         Triggers:
           - Trigger: Key/A
+          - Trigger: Gamepad/LeftX-
       - Name: Jump
         Triggers:
           - Trigger: Key/Space
+          - Trigger: Gamepad/A
       - Name: Reload
         Triggers:
           - Trigger: Key/R
+          - Trigger: Gamepad/X
       - Name: Shoot
         Triggers:
           - Trigger: Mouse/Left
+          - Trigger: Gamepad/RightTrigger
       - Name: Aim
         Triggers:
           - Trigger: Mouse/Right
+          - Trigger: Gamepad/LeftTrigger
       - Name: Interact
         Triggers:
           - Trigger: Key/E
+          - Trigger: Gamepad/B
       - Name: Sprint
         Triggers:
           - Trigger: Key/LeftShift
+          - Trigger: Gamepad/LeftThumb
       - Name: WeaponSlot1
         Triggers:
           - Trigger: Key/D1
@@ -86,3 +96,6 @@ Settings:
       - Name: LookDown
         Triggers:
           - Trigger: Gamepad/RightY+
+      - Name: SwapWeapons
+        Triggers:
+          - Trigger: Gamepad/Y

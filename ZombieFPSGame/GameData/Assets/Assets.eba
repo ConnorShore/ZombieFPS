@@ -1,12 +1,12 @@
 Assets:
   - Type: Texture
-    UUID: 2902344313391760329
-    Name: DesertEagle_DesertEagleDiffuse.png
-    FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_DesertEagleDiffuse.png
-  - Type: Texture
     UUID: 3453372035684411145
     Name: RadialGlow
     FilePath: Textures/Effects/RadialGlow.png
+  - Type: Texture
+    UUID: 2902344313391760329
+    Name: DesertEagle_DesertEagleDiffuse.png
+    FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_DesertEagleDiffuse.png
   - Type: Texture
     UUID: 18407398070678811137
     Name: DesertEagle_DesertEagleSpecular-DesertEagleRoughness.png
@@ -16,13 +16,13 @@ Assets:
     Name: AssaultRifle_ARMetallic-ARRoughness.png
     FilePath: Models/M4/AssaultRifle_ARMetallic-ARRoughness.png
   - Type: Texture
-    UUID: 3343954652411117201
-    Name: Crosshair
-    FilePath: Textures/Crosshair.png
-  - Type: Texture
     UUID: 6891481540194389905
     Name: BloodDamageEffect
     FilePath: Textures/BloodDamageEffect.png
+  - Type: Texture
+    UUID: 3343954652411117201
+    Name: Crosshair
+    FilePath: Textures/Crosshair.png
   - Type: Texture
     UUID: 1689671812453981333
     Name: ShopKiosk_ShopKioskDiffuse.png
@@ -51,6 +51,10 @@ Assets:
     UUID: 16523311715972877363
     Name: M4_ARMetallic-ARRoughness.png
     FilePath: Models/M4_Anim/M4_ARMetallic-ARRoughness.png
+  - Type: Texture
+    UUID: 10504724898190463676
+    Name: ShopKiosk_ORM_Mat0
+    FilePath: Models/ShopKiosk/ShopKiosk_Resources/ShopKiosk_ORM_Mat0.png
   - Type: Texture
     UUID: 16364078516430552352
     Name: AssaultRifle_ORM_Mat0
@@ -95,10 +99,6 @@ Assets:
     UUID: 10916275607388120618
     Name: ShopKiosk_ShopKioskMetallic-ShopKioskRoughness.png
     FilePath: Models/ShopKiosk/ShopKiosk_Resources/ShopKiosk_ShopKioskMetallic-ShopKioskRoughness.png
-  - Type: Texture
-    UUID: 10504724898190463676
-    Name: ShopKiosk_ORM_Mat0
-    FilePath: Models/ShopKiosk/ShopKiosk_Resources/ShopKiosk_ORM_Mat0.png
   - Type: Texture
     UUID: 17414033509723315684
     Name: Close
@@ -248,13 +248,13 @@ Assets:
     Name: Hitbox
     FilePath: Scripts/Hitbox.lua
   - Type: Script
-    UUID: 2119190290714536510
-    Name: PointUIController
-    FilePath: Scripts/PointUIController.lua
-  - Type: Script
     UUID: 18266934061772524094
     Name: ZombieSpawner
     FilePath: Scripts/ZombieSpawner.lua
+  - Type: Script
+    UUID: 2119190290714536510
+    Name: PointUIController
+    FilePath: Scripts/PointUIController.lua
   - Type: Script
     UUID: 8058432714386778896
     Name: RoundManager
@@ -496,10 +496,6 @@ Assets:
     Name: M4_Item
     FilePath: Prefabs/Weapons/M4_Item.ebprefab
   - Type: Prefab
-    UUID: 3822534466298593180
-    Name: AmmoPowerup
-    FilePath: Prefabs/AmmoPowerup.ebprefab
-  - Type: Prefab
     UUID: 4357804436516360089
     Name: Spawner
     FilePath: Prefabs/Spawner.ebprefab
@@ -507,6 +503,10 @@ Assets:
     UUID: 15848494941088245562
     Name: DesertEagleItem
     FilePath: Prefabs/Weapons/DesertEagleItem.ebprefab
+  - Type: Prefab
+    UUID: 3822534466298593180
+    Name: AmmoPowerup
+    FilePath: Prefabs/AmmoPowerup.ebprefab
   - Type: Prefab
     UUID: 948669407353468754
     Name: Zombie
@@ -556,6 +556,11 @@ Assets:
     Name: Roboto-Regular
     FilePath: Fonts/Roboto-Regular.ttf
   - Type: AudioClip
+    UUID: 8785379131387521162
+    Name: ReloadEnd
+    FilePath: Audio/ReloadEnd.mp3
+    LoadMode: Auto
+  - Type: AudioClip
     UUID: 10601745296411271244
     Name: M4_Shot
     FilePath: Audio/M4_Shot.mp3
@@ -574,11 +579,6 @@ Assets:
     UUID: 2869832050986379881
     Name: EmptyGun
     FilePath: Audio/EmptyGun.mp3
-    LoadMode: Auto
-  - Type: AudioClip
-    UUID: 8785379131387521162
-    Name: ReloadEnd
-    FilePath: Audio/ReloadEnd.mp3
     LoadMode: Auto
   - Type: AudioClip
     UUID: 4006857010690811945

@@ -43,8 +43,11 @@ function WeaponHolder:OnUpdate(entity, delta)
     if Input.IsActionDown("Reload") and self:GetCurrentWeapon() then
         self:OnReload()
     end
-
-    if Input.IsActionDown("WeaponSlot1") then
+    
+    if Input.IsActionDown("SwapWeapons") then
+        self.ActiveWeaponSlot = ((self.ActiveWeaponSlot) % self.WeaponSlots) + 1
+        self:RefreshWeaponVisibility()
+    elseif Input.IsActionDown("WeaponSlot1") then
         self.ActiveWeaponSlot = 1
         self:RefreshWeaponVisibility()
     elseif Input.IsActionDown("WeaponSlot2") then
