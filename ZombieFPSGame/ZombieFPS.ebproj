@@ -37,6 +37,33 @@ Settings:
       - Index: 0
         Name: Default
   Input:
+    LeftStick:
+      Deadzone: 0.15
+      Saturation: 1
+      Exponent: 1
+      Actuation: 0.5
+      InvertX: 0
+      InvertY: 0
+    RightStick:
+      Deadzone: 0.12
+      Saturation: 0.9
+      Exponent: 2.15
+      Actuation: 0.5
+      InvertX: 0
+      InvertY: 0
+    LeftTrigger:
+      Deadzone: 0.05
+      Saturation: 1
+      Exponent: 1
+      Actuation: 0.15
+    RightTrigger:
+      Deadzone: 0.05
+      Saturation: 1
+      Exponent: 1
+      Actuation: 0.15
+    Mouse:
+      InvertX: 0
+      InvertY: 0
     Actions:
       - Name: MoveForward
         Triggers:

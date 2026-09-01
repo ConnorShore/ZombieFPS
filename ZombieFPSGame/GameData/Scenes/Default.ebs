@@ -60,7 +60,7 @@ Entities:
       UserPropertyOverrides:
         - Name: Sensitivity
           Type: 3
-          Value: 2
+          Value: 0.002
   - Entity: 3373521055754233367
     ComponentOrder:
       - IDComponent
@@ -765,6 +765,10 @@ Entities:
     ScriptComponent:
       ScriptUUID: 140741752612032377
       UserPropertyOverrides:
+        - Name: DefaultSelection
+          Type: 7
+          Value: 1932255766353741902
+          ReferenceKind: Entity
         - Name: ShopMenuUI
           Type: 7
           Value: 2179583451832717959

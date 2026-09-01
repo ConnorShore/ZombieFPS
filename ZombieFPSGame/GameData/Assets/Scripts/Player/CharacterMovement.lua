@@ -5,6 +5,7 @@ CharacterMovement.SprintSpeed = 8.0
 
 function CharacterMovement:OnCreate(entity)
     self.Sprinting = false;
+    self.LockMovement = false;
 
     -- Component handles are safe to cache for the entity's lifetime (they re-resolve the
     -- live component internally), so fetch them once here instead of every frame in OnUpdate.
@@ -12,9 +13,20 @@ function CharacterMovement:OnCreate(entity)
     self.transform = entity:GetComponent("TransformComponent")
 
     self.controller.WalkSpeed = self.WalkSpeed
+
+    EventManager.Subscribe("OnLockMovement", function()
+        self.LockMovement = true
+    end)
+    EventManager.Subscribe("OnUnlockMovement", function()
+        self.LockMovement = false
+    end)
 end
 
 function CharacterMovement:OnUpdate(entity, delta)
+    if self.LockMovement then
+        return
+    end
+
     local controller = self.controller
     local transform = self.transform
 
@@ -46,7 +58,7 @@ function CharacterMovement:OnUpdate(entity, delta)
     controller:Move(moveDir * speed * delta)
     
     -- Jumping
-    if Input.IsActionDown("Jump") and controller.IsGrounded then
+    if Input.IsActionPressed("Jump") and controller.IsGrounded then
         controller:Jump()
     end
 end
