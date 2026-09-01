@@ -21,9 +21,6 @@ function CharacterMovement:OnUpdate(entity, delta)
     local forward = transform:GetForward()
     local right = transform:GetRight()
     
-    -- Player Controller Movement
-    local moveDir = Vector3f.new(0.0, 0.0, 0.0)
-
     local speed = self.WalkSpeed
     if Input.IsActionDown("Sprint") then
         self.Sprinting = true;
@@ -33,25 +30,18 @@ function CharacterMovement:OnUpdate(entity, delta)
         speed = self.WalkSpeed;
     end
 
-    -- Strafing
-    if Input.IsActionDown("MoveLeft") then 
-        moveDir = moveDir - right
-    elseif Input.IsActionDown("MoveRight") then 
-        moveDir = moveDir + right
-    end
+    -- Read the sticks as axes, the way MouseLook does: four button reads would quantise a stick
+    -- to the diagonals, since pushing it "straight" forward still leaves a little on the X axis.
+    -- A key still reports a full 1.0, so the keyboard is unchanged.
+    local move = Input.GetAxis2D("MoveLeft", "MoveRight", "MoveBackward", "MoveForward")
+    local moveDir = (right * move.x) + (forward * move.y)
 
-    -- Forward / Backward
-    if Input.IsActionDown("MoveForward") then 
-        moveDir = moveDir + forward
-    elseif Input.IsActionDown("MoveBackward") then 
-        moveDir = moveDir - forward
-    end
-    
-    -- Normalize so diagonal movement isn't 1.4x faster!
-    if Math.Length(moveDir) > 0 then
+    -- Only clamp when the input overshoots - keyboard diagonals, or a stick in its corner - so a
+    -- gentle lean on the stick keeps its slower speed instead of snapping to a full walk.
+    if Math.Length(moveDir) > 1.0 then
         moveDir = Math.Normalize(moveDir);
     end
-    
+
     -- Move using the Character Controller
     controller:Move(moveDir * speed * delta)
     
