@@ -36,6 +36,26 @@ function ShopController:OnCreate(entity)
     self.ShopMenuUIEntity:SetActive(false)
 end
 
+function ShopController:OnUpdate(entity, delta)
+    -- Check for input to close the shop menu
+    if self.ShopMenuUIEntity:IsActive() then
+        -- The button that opened the shop is still held and NavBack shares it, so a close only
+        -- counts once the player has let go.
+        if self.WaitingForNavBackRelease then
+            if not Input.IsActionDown("NavBack") then
+                self.WaitingForNavBackRelease = false
+            end
+
+            return
+        end
+
+        if Input.IsActionPressed("NavBack") then
+            Log.Trace("ShopController: Closing shop menu due to NavBack input.")
+            self:OnClose()
+        end
+    end
+end
+
 function ShopController:OnInteract(entity, playerEntity)
     self:OnOpen()
 end
@@ -45,8 +65,10 @@ function ShopController:OnOpen()
         EventManager.Broadcast("OnLockFreelook")
         EventManager.Broadcast("OnWeaponLocked")
         EventManager.Broadcast("OnLockMovement")
+        EventManager.Broadcast("OnLockInteraction")
         Input.SetCursorMode(CursorMode.Normal)
         self.ShopMenuUIEntity:SetActive(true)
+        self.WaitingForNavBackRelease = true
 
         if Input.GetLastUsedInputDevice() == InputDevice.Gamepad and self.DefaultSelectionEntity and self.DefaultSelectionEntity:IsValid() then
             local selectable = self.DefaultSelectionEntity:GetComponent("UISelectableComponent")
@@ -65,8 +87,13 @@ function ShopController:OnClose()
         EventManager.Broadcast("OnUnlockFreelook")
         EventManager.Broadcast("OnWeaponUnlocked")
         EventManager.Broadcast("OnUnlockMovement")
+        EventManager.Broadcast("OnUnlockInteraction")
         Input.SetCursorMode(CursorMode.Locked)
         self.ShopMenuUIEntity:SetActive(false)
+
+        -- NavBack shares its button with Interact, so without this the press that closed the shop
+        -- re-opens it the moment interaction unlocks.
+        Input.ConsumeAction("NavBack")
     end
 end
 

@@ -126,3 +126,11 @@ Settings:
       - Name: SwapWeapons
         Triggers:
           - Trigger: Gamepad/Y
+      - Name: NavBack
+        Triggers:
+          - Trigger: Gamepad/B
+          - Trigger: Key/Escape
+      - Name: Pause
+        Triggers:
+          - Trigger: Gamepad/Start
+          - Trigger: Key/Escape
