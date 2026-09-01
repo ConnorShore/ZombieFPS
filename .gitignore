@@ -1,0 +1,9 @@
+# Cooked asset sidecars. Ember-Forge regenerates these in-place in the asset tree on every
+# project export, and the runtime falls back to the source asset when one is missing.
+# Not glTF buffers: those sit next to a .gltf as real source data. Our models are .glb
+# (self-contained), so nothing here is source - but check before adding a .gltf + .bin pair.
+*.bin
+
+# Editor and runtime output
+Logs/
+Profiles/
