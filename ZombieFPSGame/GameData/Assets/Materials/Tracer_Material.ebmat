@@ -7,12 +7,12 @@ Uniforms:
   u_Color:
     Type: Vector3f
     Value: [0.77209574,0.8504983,0.036732417]
-  u_Opacity:
-    Type: float
-    Value: 0.5
   u_Emission:
     Type: float
     Value: 3
+  u_Opacity:
+    Type: float
+    Value: 0.5
   u_TailFade:
     Type: float
     Value: 1.26

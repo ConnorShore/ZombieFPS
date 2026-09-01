@@ -27,10 +27,17 @@ function PlayerInteraction:OnCreate(entity)
     self.AvailableColor = Vector4f.new(1.0, 1.0, 1.0, 1.0)
     self.UnavailableColor = Vector4f.new(1.0, 0.0, 0.0, 1.0)
     self.DisplayedText = nil
-    self.WasInteractKeyDown = false
     self.WarnedEntityIDs = {}
 
     self.InteractionFilters = self:ResolveInteractionFilters()
+
+    EventManager.Subscribe("OnLockInteraction", function()
+        self.LockInteraction = true
+    end)
+
+    EventManager.Subscribe("OnUnlockInteraction", function()
+        self.LockInteraction = false
+    end)
 end
 
 -- Resolves the filter names to their project bitmasks once, since the slots can't change at runtime.
@@ -52,11 +59,18 @@ function PlayerInteraction:ResolveInteractionFilters()
 end
 
 function PlayerInteraction:OnUpdate(entity, delta)
-    -- Edge-detect the key here so each interactable is triggered once per press rather than
-    -- every frame the key is held.
-    local interactKeyDown = Input.IsKeyPressed(KeyCode.E)
-    local interactKeyJustPressed = interactKeyDown and not self.WasInteractKeyDown
-    self.WasInteractKeyDown = interactKeyDown
+    -- A menu owns the interact button while it is up, so the prompt and the ray go with it.
+    if self.LockInteraction then
+        if self.InteractionUI and self.InteractionUI:IsValid() then
+            self.InteractionUI:SetActive(false)
+        end
+
+        return
+    end
+
+    -- The action reports the press edge, so each interactable is triggered once per press
+    -- rather than every frame the key is held.
+    local interactJustPressed = Input.IsActionPressed("Interact")
 
     if not self.InteractionUI or not self.InteractionUI:IsValid() or not self.InteractionTextComponent then
         Log.Warn("PlayerInteraction: InteractionUI entity or its TextComponent is not valid!")
@@ -75,8 +89,12 @@ function PlayerInteraction:OnUpdate(entity, delta)
     self:SetPromptText(interactable:GetInteractionText(interactableEntity, entity))
     self.InteractionTextComponent.Color = canInteract and self.AvailableColor or self.UnavailableColor
 
-    if canInteract and interactKeyJustPressed then
+    if canInteract and interactJustPressed then
         interactable:OnInteract(interactableEntity, entity)
+
+        -- Interact shares a gamepad button with NavBack, so without this whatever the interaction
+        -- just opened would read the same press as a close later in this frame.
+        Input.ConsumeAction("Interact")
     end
 end
 

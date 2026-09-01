@@ -5,6 +5,7 @@ CharacterMovement.SprintSpeed = 8.0
 
 function CharacterMovement:OnCreate(entity)
     self.Sprinting = false;
+    self.LockMovement = false;
 
     -- Component handles are safe to cache for the entity's lifetime (they re-resolve the
     -- live component internally), so fetch them once here instead of every frame in OnUpdate.
@@ -12,20 +13,28 @@ function CharacterMovement:OnCreate(entity)
     self.transform = entity:GetComponent("TransformComponent")
 
     self.controller.WalkSpeed = self.WalkSpeed
+
+    EventManager.Subscribe("OnLockMovement", function()
+        self.LockMovement = true
+    end)
+    EventManager.Subscribe("OnUnlockMovement", function()
+        self.LockMovement = false
+    end)
 end
 
 function CharacterMovement:OnUpdate(entity, delta)
+    if self.LockMovement then
+        return
+    end
+
     local controller = self.controller
     local transform = self.transform
 
     local forward = transform:GetForward()
     local right = transform:GetRight()
     
-    -- Player Controller Movement
-    local moveDir = Vector3f.new(0.0, 0.0, 0.0)
-
     local speed = self.WalkSpeed
-    if Input.IsKeyPressed(KeyCode.LeftShift) then
+    if Input.IsActionDown("Sprint") then
         self.Sprinting = true;
         speed = self.SprintSpeed;
     else
@@ -33,30 +42,23 @@ function CharacterMovement:OnUpdate(entity, delta)
         speed = self.WalkSpeed;
     end
 
-    -- Strafing
-    if Input.IsKeyPressed(KeyCode.A) then 
-        moveDir = moveDir - right
-    elseif Input.IsKeyPressed(KeyCode.D) then 
-        moveDir = moveDir + right
-    end
+    -- Read the sticks as axes, the way MouseLook does: four button reads would quantise a stick
+    -- to the diagonals, since pushing it "straight" forward still leaves a little on the X axis.
+    -- A key still reports a full 1.0, so the keyboard is unchanged.
+    local move = Input.GetAxis2D("MoveLeft", "MoveRight", "MoveBackward", "MoveForward")
+    local moveDir = (right * move.x) + (forward * move.y)
 
-    -- Forward / Backward
-    if Input.IsKeyPressed(KeyCode.W) then 
-        moveDir = moveDir + forward
-    elseif Input.IsKeyPressed(KeyCode.S) then 
-        moveDir = moveDir - forward
-    end
-    
-    -- Normalize so diagonal movement isn't 1.4x faster!
-    if Math.Length(moveDir) > 0 then
+    -- Only clamp when the input overshoots - keyboard diagonals, or a stick in its corner - so a
+    -- gentle lean on the stick keeps its slower speed instead of snapping to a full walk.
+    if Math.Length(moveDir) > 1.0 then
         moveDir = Math.Normalize(moveDir);
     end
-    
+
     -- Move using the Character Controller
     controller:Move(moveDir * speed * delta)
     
     -- Jumping
-    if Input.IsKeyPressed(KeyCode.Space) and controller.IsGrounded then
+    if Input.IsActionPressed("Jump") and controller.IsGrounded then
         controller:Jump()
     end
 end

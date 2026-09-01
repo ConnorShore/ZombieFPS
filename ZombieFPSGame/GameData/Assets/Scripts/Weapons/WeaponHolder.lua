@@ -32,7 +32,7 @@ function WeaponHolder:OnUpdate(entity, delta)
         return
     end
 
-    if Input.IsMouseButtonPressed(MouseButton.Left) then
+    if Input.IsActionDown("Shoot") then
         self:OnShoot(self.WasShootingLastFrame)
         self.WasShootingLastFrame = true
     else
@@ -40,14 +40,17 @@ function WeaponHolder:OnUpdate(entity, delta)
         self.WasShootingLastFrame = false
     end
 
-    if Input.IsKeyPressed(KeyCode.R) and self:GetCurrentWeapon() then
+    if Input.IsActionPressed("Reload") and self:GetCurrentWeapon() then
         self:OnReload()
     end
-
-    if Input.IsKeyPressed(KeyCode.D1) then
+    
+    if Input.IsActionPressed("SwapWeapons") then
+        self.ActiveWeaponSlot = ((self.ActiveWeaponSlot) % self.WeaponSlots) + 1
+        self:RefreshWeaponVisibility()
+    elseif Input.IsActionPressed("WeaponSlot1") then
         self.ActiveWeaponSlot = 1
         self:RefreshWeaponVisibility()
-    elseif Input.IsKeyPressed(KeyCode.D2) then
+    elseif Input.IsActionPressed("WeaponSlot2") then
         self.ActiveWeaponSlot = 2
         self:RefreshWeaponVisibility()
     end

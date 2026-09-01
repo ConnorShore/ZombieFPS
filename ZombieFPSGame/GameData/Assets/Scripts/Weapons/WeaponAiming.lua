@@ -56,7 +56,7 @@ function WeaponAiming:OnUpdate(entity, delta)
         rootPos = rootTransform.Position
     end
     
-    self.IsAiming = Input.IsMouseButtonPressed(MouseButton.Right) and self.CurrentAimNode:IsValid()
+    self.IsAiming = Input.IsActionDown("Aim") and self.CurrentAimNode:IsValid()
     
     local targetPosition = self.HipPosition
     

@@ -5,6 +5,7 @@ ShopController.ShopMenuUI = EntityRef()
 ShopController.InteractionPrompt = "Press (E) to open shop"
 ShopController.SpawnLocation = EntityRef() -- The entity where purchased items will spawn
 ShopController.PurchaseSound = AudioClipRef()
+ShopController.DefaultSelection = EntityRef() -- The default button to select when the shop opens (if current device is a gamepad)
 
 function ShopController:OnCreate(entity)
     self.ShopMenuUIEntity = Scene.GetEntityByUUID(self.ShopMenuUI)
@@ -19,6 +20,11 @@ function ShopController:OnCreate(entity)
         return
     end
 
+    self.DefaultSelectionEntity = Scene.GetEntityByUUID(self.DefaultSelection)
+    if not self.DefaultSelectionEntity or not self.DefaultSelectionEntity:IsValid() then
+        Log.Warn("ShopController: DefaultSelection entity is not valid!")
+    end
+
     EventManager.Subscribe("OnCloseShop", function()
         self:OnClose()
     end)
@@ -30,6 +36,26 @@ function ShopController:OnCreate(entity)
     self.ShopMenuUIEntity:SetActive(false)
 end
 
+function ShopController:OnUpdate(entity, delta)
+    -- Check for input to close the shop menu
+    if self.ShopMenuUIEntity:IsActive() then
+        -- The button that opened the shop is still held and NavBack shares it, so a close only
+        -- counts once the player has let go.
+        if self.WaitingForNavBackRelease then
+            if not Input.IsActionDown("NavBack") then
+                self.WaitingForNavBackRelease = false
+            end
+
+            return
+        end
+
+        if Input.IsActionPressed("NavBack") then
+            Log.Trace("ShopController: Closing shop menu due to NavBack input.")
+            self:OnClose()
+        end
+    end
+end
+
 function ShopController:OnInteract(entity, playerEntity)
     self:OnOpen()
 end
@@ -38,8 +64,21 @@ function ShopController:OnOpen()
     if self.ShopMenuUIEntity and self.ShopMenuUIEntity:IsValid() then
         EventManager.Broadcast("OnLockFreelook")
         EventManager.Broadcast("OnWeaponLocked")
+        EventManager.Broadcast("OnLockMovement")
+        EventManager.Broadcast("OnLockInteraction")
         Input.SetCursorMode(CursorMode.Normal)
         self.ShopMenuUIEntity:SetActive(true)
+        self.WaitingForNavBackRelease = true
+
+        if Input.GetLastUsedInputDevice() == InputDevice.Gamepad and self.DefaultSelectionEntity and self.DefaultSelectionEntity:IsValid() then
+            local selectable = self.DefaultSelectionEntity:GetComponent("UISelectableComponent")
+            if selectable then
+                Log.Trace("ShopController: Selecting default button for gamepad input.")
+                selectable:Select()
+            else
+                Log.Warn("ShopController: DefaultSelection entity does not have a UISelectableComponent!")
+            end
+        end
     end
 end
 
@@ -47,8 +86,14 @@ function ShopController:OnClose()
     if self.ShopMenuUIEntity and self.ShopMenuUIEntity:IsValid() then
         EventManager.Broadcast("OnUnlockFreelook")
         EventManager.Broadcast("OnWeaponUnlocked")
+        EventManager.Broadcast("OnUnlockMovement")
+        EventManager.Broadcast("OnUnlockInteraction")
         Input.SetCursorMode(CursorMode.Locked)
         self.ShopMenuUIEntity:SetActive(false)
+
+        -- NavBack shares its button with Interact, so without this the press that closed the shop
+        -- re-opens it the moment interaction unlocks.
+        Input.ConsumeAction("NavBack")
     end
 end
 

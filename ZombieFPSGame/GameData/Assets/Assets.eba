@@ -52,6 +52,14 @@ Assets:
     Name: M4_ARMetallic-ARRoughness.png
     FilePath: Models/M4_Anim/M4_ARMetallic-ARRoughness.png
   - Type: Texture
+    UUID: 15400749083740855036
+    Name: ShopKiosk_ShopKioskNormal.png
+    FilePath: Models/ShopKiosk/ShopKiosk_Resources/ShopKiosk_ShopKioskNormal.png
+  - Type: Texture
+    UUID: 10504724898190463676
+    Name: ShopKiosk_ORM_Mat0
+    FilePath: Models/ShopKiosk/ShopKiosk_Resources/ShopKiosk_ORM_Mat0.png
+  - Type: Texture
     UUID: 16364078516430552352
     Name: AssaultRifle_ORM_Mat0
     FilePath: Models/M4/AssaultRifle_ORM_Mat0.png
@@ -88,17 +96,9 @@ Assets:
     Name: Zombie_world_war_zombie_diffuse.png
     FilePath: Models/Zombie/Zombie_Resources/Zombie_world_war_zombie_diffuse.png
   - Type: Texture
-    UUID: 15400749083740855036
-    Name: ShopKiosk_ShopKioskNormal.png
-    FilePath: Models/ShopKiosk/ShopKiosk_Resources/ShopKiosk_ShopKioskNormal.png
-  - Type: Texture
     UUID: 10916275607388120618
     Name: ShopKiosk_ShopKioskMetallic-ShopKioskRoughness.png
     FilePath: Models/ShopKiosk/ShopKiosk_Resources/ShopKiosk_ShopKioskMetallic-ShopKioskRoughness.png
-  - Type: Texture
-    UUID: 10504724898190463676
-    Name: ShopKiosk_ORM_Mat0
-    FilePath: Models/ShopKiosk/ShopKiosk_Resources/ShopKiosk_ORM_Mat0.png
   - Type: Texture
     UUID: 17414033509723315684
     Name: Close
@@ -136,17 +136,41 @@ Assets:
     Name: RoundUIControl
     FilePath: Scripts/RoundUIControl.lua
   - Type: Script
-    UUID: 5986627421746366671
-    Name: SpawnManager
-    FilePath: Scripts/SpawnManager.lua
-  - Type: Script
     UUID: 15191514471842255900
     Name: PowerUpDrop
     FilePath: Scripts/Pickups/PowerUpDrop.lua
   - Type: Script
+    UUID: 5025897937436236093
+    Name: MouseLook
+    FilePath: Scripts/Player/MouseLook.lua
+  - Type: Script
+    UUID: 8562544563539838448
+    Name: PlayerInteraction
+    FilePath: Scripts/Player/PlayerInteraction.lua
+  - Type: Script
     UUID: 7371630261308486327
     Name: PointManager
     FilePath: Scripts/PointManager.lua
+  - Type: Script
+    UUID: 803391121824597106
+    Name: AIController
+    FilePath: Scripts/AIController.lua
+  - Type: Script
+    UUID: 16639884503866118704
+    Name: WeaponStats
+    FilePath: Scripts/Weapons/WeaponStats.lua
+  - Type: Script
+    UUID: 12117729415864912341
+    Name: PickupItem
+    FilePath: Scripts/Pickups/PickupItem.lua
+  - Type: Script
+    UUID: 7847366610859754620
+    Name: Tracer
+    FilePath: Scripts/Weapons/Tracer.lua
+  - Type: Script
+    UUID: 5986627421746366671
+    Name: SpawnManager
+    FilePath: Scripts/SpawnManager.lua
   - Type: Script
     UUID: 1928101263865073231
     Name: PickupWeapon
@@ -155,10 +179,6 @@ Assets:
     UUID: 5515958197491920100
     Name: GlobalSystems
     FilePath: Scripts/GlobalSystems.lua
-  - Type: Script
-    UUID: 8562544563539838448
-    Name: PlayerInteraction
-    FilePath: Scripts/Player/PlayerInteraction.lua
   - Type: Script
     UUID: 5831931640429785370
     Name: GameOverManager
@@ -176,10 +196,6 @@ Assets:
     Name: WeaponHolder
     FilePath: Scripts/Weapons/WeaponHolder.lua
   - Type: Script
-    UUID: 7847366610859754620
-    Name: Tracer
-    FilePath: Scripts/Weapons/Tracer.lua
-  - Type: Script
     UUID: 17429251933582378423
     Name: AmmoUI
     FilePath: Scripts/HUD/AmmoUI.lua
@@ -195,10 +211,6 @@ Assets:
     UUID: 10843162672597406671
     Name: WeaponMovement
     FilePath: Scripts/Weapons/WeaponMovement.lua
-  - Type: Script
-    UUID: 12117729415864912341
-    Name: PickupItem
-    FilePath: Scripts/Pickups/PickupItem.lua
   - Type: Script
     UUID: 18321648132521774491
     Name: SightAttachment
@@ -224,25 +236,13 @@ Assets:
     Name: Crosshair
     FilePath: Scripts/HUD/Crosshair.lua
   - Type: Script
-    UUID: 5025897937436236093
-    Name: MouseLook
-    FilePath: Scripts/Player/MouseLook.lua
-  - Type: Script
     UUID: 8102167312162542918
     Name: WeaponController
     FilePath: Scripts/Weapons/WeaponController.lua
   - Type: Script
-    UUID: 803391121824597106
-    Name: AIController
-    FilePath: Scripts/AIController.lua
-  - Type: Script
     UUID: 1702313573474944703
     Name: EnemyController
     FilePath: Scripts/Enemy/EnemyController.lua
-  - Type: Script
-    UUID: 16639884503866118704
-    Name: WeaponStats
-    FilePath: Scripts/Weapons/WeaponStats.lua
   - Type: Script
     UUID: 1303867917645546364
     Name: Hitbox
@@ -308,13 +308,17 @@ Assets:
     Name: ShopKiosk_ShopKioskBakedTexture
     FilePath: Models/ShopKiosk/ShopKiosk_Resources/ShopKiosk_ShopKioskBakedTexture.ebmat
   - Type: Material
+    UUID: 8747674591623748722
+    Name: HolographicReticleMat
+    FilePath: Materials/HolographicReticleMat.ebmat
+  - Type: Material
     UUID: 9139976515286893363
     Name: NukeMesh_DefaultMaterial_Clone
     FilePath: Materials/NukeMesh_DefaultMaterial_Clone.ebmat
   - Type: Material
-    UUID: 8747674591623748722
-    Name: HolographicReticleMat
-    FilePath: Materials/HolographicReticleMat.ebmat
+    UUID: 15086660637021645114
+    Name: DesertEagle_DesertEagle
+    FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_DesertEagle.ebmat
   - Type: Material
     UUID: 18352460508626254789
     Name: BoxMaterial
@@ -327,10 +331,6 @@ Assets:
     UUID: 1868779223986162857
     Name: PowerUpMaterial
     FilePath: Materials/PowerUpMaterial.ebmat
-  - Type: Material
-    UUID: 15086660637021645114
-    Name: DesertEagle_DesertEagle
-    FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_DesertEagle.ebmat
   - Type: Material
     UUID: 4587007159136363848
     Name: M4_Weapon
@@ -360,13 +360,13 @@ Assets:
     Name: DesertEagle_Mesh1_Cube_Prim0
     FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Mesh1_Cube_Prim0.ebmesh
   - Type: Mesh
-    UUID: 15346656199082862049
-    Name: DesertEagle_Mesh0_Circle.001_Prim0
-    FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Mesh0_Circle.001_Prim0.ebmesh
-  - Type: Mesh
     UUID: 13898711898247753575
     Name: M4_Cube.003_Prim0
     FilePath: Models/M4_Anim/M4_Cube.003_Prim0.ebmesh
+  - Type: Mesh
+    UUID: 15346656199082862049
+    Name: DesertEagle_Mesh0_Circle.001_Prim0
+    FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Mesh0_Circle.001_Prim0.ebmesh
   - Type: Mesh
     UUID: 13365133264221018487
     Name: DesertEagle_Mesh2_Cube.007_Prim0
@@ -460,10 +460,6 @@ Assets:
     Name: ZombieAnimController
     FilePath: Animations/ZombieAnimController.ebcontroller
   - Type: Model
-    UUID: 10130453322988471974
-    Name: ShopKiosk
-    FilePath: Models/ShopKiosk/ShopKiosk.ebmodel
-  - Type: Model
     UUID: 5584464271236281027
     Name: DesertEagle
     FilePath: Models/DesertEagle/DesertEagle.ebmodel
@@ -471,6 +467,10 @@ Assets:
     UUID: 5275369914884323396
     Name: M4
     FilePath: Models/M4_Anim/M4.ebmodel
+  - Type: Model
+    UUID: 10130453322988471974
+    Name: ShopKiosk
+    FilePath: Models/ShopKiosk/ShopKiosk.ebmodel
   - Type: Model
     UUID: 990086022023498549
     Name: Zombie
@@ -504,6 +504,14 @@ Assets:
     Name: DesertEagleItem
     FilePath: Prefabs/Weapons/DesertEagleItem.ebprefab
   - Type: Prefab
+    UUID: 10097993641357000526
+    Name: M4
+    FilePath: Prefabs/Weapons/M4.ebprefab
+  - Type: Prefab
+    UUID: 3822534466298593180
+    Name: AmmoPowerup
+    FilePath: Prefabs/AmmoPowerup.ebprefab
+  - Type: Prefab
     UUID: 948669407353468754
     Name: Zombie
     FilePath: Prefabs/Zombie/Zombie.ebprefab
@@ -520,10 +528,6 @@ Assets:
     Name: DesertEagle
     FilePath: Prefabs/Weapons/DesertEagle.ebprefab
   - Type: Prefab
-    UUID: 3822534466298593180
-    Name: AmmoPowerup
-    FilePath: Prefabs/AmmoPowerup.ebprefab
-  - Type: Prefab
     UUID: 17919492092461288605
     Name: HolographicSightPickup
     FilePath: Prefabs/HolographicSightPickup.ebprefab
@@ -535,10 +539,6 @@ Assets:
     UUID: 16836608058861364347
     Name: HolographicSight
     FilePath: Prefabs/HolographicSight.ebprefab
-  - Type: Prefab
-    UUID: 10097993641357000526
-    Name: M4
-    FilePath: Prefabs/Weapons/M4.ebprefab
   - Type: Prefab
     UUID: 16063513610624631090
     Name: NukePowerup
@@ -616,10 +616,10 @@ Assets:
     FilePath: Audio/PurchaseSoundEffect.mp3
     LoadMode: Auto
   - Type: Scene
-    UUID: 397660979313011815
-    Name: Default
-    FilePath: ../Scenes/Default.ebs
-  - Type: Scene
     UUID: 9535833023953995507
     Name: GameOver
     FilePath: ../Scenes/GameOver.ebs
+  - Type: Scene
+    UUID: 397660979313011815
+    Name: Default
+    FilePath: ../Scenes/Default.ebs

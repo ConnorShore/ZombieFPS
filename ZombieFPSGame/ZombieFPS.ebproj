@@ -36,3 +36,101 @@ Settings:
     RenderLayers:
       - Index: 0
         Name: Default
+  Input:
+    LeftStick:
+      Deadzone: 0.15
+      Saturation: 1
+      Exponent: 1
+      Actuation: 0.5
+      InvertX: 0
+      InvertY: 0
+    RightStick:
+      Deadzone: 0.12
+      Saturation: 0.9
+      Exponent: 2.15
+      Actuation: 0.5
+      InvertX: 0
+      InvertY: 0
+    LeftTrigger:
+      Deadzone: 0.05
+      Saturation: 1
+      Exponent: 1
+      Actuation: 0.15
+    RightTrigger:
+      Deadzone: 0.05
+      Saturation: 1
+      Exponent: 1
+      Actuation: 0.15
+    Mouse:
+      InvertX: 0
+      InvertY: 0
+    Actions:
+      - Name: MoveForward
+        Triggers:
+          - Trigger: Key/W
+          - Trigger: Gamepad/LeftY-
+      - Name: MoveBackward
+        Triggers:
+          - Trigger: Key/S
+          - Trigger: Gamepad/LeftY+
+      - Name: MoveRight
+        Triggers:
+          - Trigger: Key/D
+          - Trigger: Gamepad/LeftX+
+      - Name: MoveLeft
+        Triggers:
+          - Trigger: Key/A
+          - Trigger: Gamepad/LeftX-
+      - Name: Jump
+        Triggers:
+          - Trigger: Key/Space
+          - Trigger: Gamepad/A
+      - Name: Reload
+        Triggers:
+          - Trigger: Key/R
+          - Trigger: Gamepad/X
+      - Name: Shoot
+        Triggers:
+          - Trigger: Mouse/Left
+          - Trigger: Gamepad/RightTrigger
+      - Name: Aim
+        Triggers:
+          - Trigger: Mouse/Right
+          - Trigger: Gamepad/LeftTrigger
+      - Name: Interact
+        Triggers:
+          - Trigger: Key/E
+          - Trigger: Gamepad/B
+      - Name: Sprint
+        Triggers:
+          - Trigger: Key/LeftShift
+          - Trigger: Gamepad/LeftThumb
+      - Name: WeaponSlot1
+        Triggers:
+          - Trigger: Key/D1
+      - Name: WeaponSlot2
+        Triggers:
+          - Trigger: Key/D2
+      - Name: LookLeft
+        Triggers:
+          - Trigger: Gamepad/RightX-
+      - Name: LookRight
+        Triggers:
+          - Trigger: Gamepad/RightX+
+      - Name: LookUp
+        Triggers:
+          - Trigger: Gamepad/RightY-
+      - Name: LookDown
+        Triggers:
+          - Trigger: Gamepad/RightY+
+      - Name: SwapWeapons
+        Triggers:
+          - Trigger: Gamepad/Y
+      - Name: NavBack
+        Triggers:
+          - Trigger: Gamepad/B
+          - Trigger: Key/Escape
+      - Name: Pause
+        Triggers:
+          - Trigger: Gamepad/Start
+          - Trigger: Key/Escape
