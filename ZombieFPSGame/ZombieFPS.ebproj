@@ -68,11 +68,11 @@ Settings:
       - Name: MoveForward
         Triggers:
           - Trigger: Key/W
-          - Trigger: Gamepad/LeftY-
+          - Trigger: Gamepad/LeftY+
       - Name: MoveBackward
         Triggers:
           - Trigger: Key/S
-          - Trigger: Gamepad/LeftY+
+          - Trigger: Gamepad/LeftY-
       - Name: MoveRight
         Triggers:
           - Trigger: Key/D
@@ -119,10 +119,10 @@ Settings:
           - Trigger: Gamepad/RightX+
       - Name: LookUp
         Triggers:
-          - Trigger: Gamepad/RightY-
+          - Trigger: Gamepad/RightY+
       - Name: LookDown
         Triggers:
-          - Trigger: Gamepad/RightY+
+          - Trigger: Gamepad/RightY-
       - Name: SwapWeapons
         Triggers:
           - Trigger: Gamepad/Y

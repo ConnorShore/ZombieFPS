@@ -1,12 +1,12 @@
 Assets:
   - Type: Texture
-    UUID: 3453372035684411145
-    Name: RadialGlow
-    FilePath: Textures/Effects/RadialGlow.png
-  - Type: Texture
     UUID: 2902344313391760329
     Name: DesertEagle_DesertEagleDiffuse.png
     FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_DesertEagleDiffuse.png
+  - Type: Texture
+    UUID: 3453372035684411145
+    Name: RadialGlow
+    FilePath: Textures/Effects/RadialGlow.png
   - Type: Texture
     UUID: 18407398070678811137
     Name: DesertEagle_DesertEagleSpecular-DesertEagleRoughness.png
@@ -16,13 +16,13 @@ Assets:
     Name: AssaultRifle_ARMetallic-ARRoughness.png
     FilePath: Models/M4/AssaultRifle_ARMetallic-ARRoughness.png
   - Type: Texture
-    UUID: 6891481540194389905
-    Name: BloodDamageEffect
-    FilePath: Textures/BloodDamageEffect.png
-  - Type: Texture
     UUID: 3343954652411117201
     Name: Crosshair
     FilePath: Textures/Crosshair.png
+  - Type: Texture
+    UUID: 6891481540194389905
+    Name: BloodDamageEffect
+    FilePath: Textures/BloodDamageEffect.png
   - Type: Texture
     UUID: 1689671812453981333
     Name: ShopKiosk_ShopKioskDiffuse.png
@@ -140,6 +140,14 @@ Assets:
     Name: PowerUpDrop
     FilePath: Scripts/Pickups/PowerUpDrop.lua
   - Type: Script
+    UUID: 7371630261308486327
+    Name: PointManager
+    FilePath: Scripts/PointManager.lua
+  - Type: Script
+    UUID: 7847366610859754620
+    Name: Tracer
+    FilePath: Scripts/Weapons/Tracer.lua
+  - Type: Script
     UUID: 5025897937436236093
     Name: MouseLook
     FilePath: Scripts/Player/MouseLook.lua
@@ -147,10 +155,6 @@ Assets:
     UUID: 8562544563539838448
     Name: PlayerInteraction
     FilePath: Scripts/Player/PlayerInteraction.lua
-  - Type: Script
-    UUID: 7371630261308486327
-    Name: PointManager
-    FilePath: Scripts/PointManager.lua
   - Type: Script
     UUID: 803391121824597106
     Name: AIController
@@ -163,10 +167,6 @@ Assets:
     UUID: 12117729415864912341
     Name: PickupItem
     FilePath: Scripts/Pickups/PickupItem.lua
-  - Type: Script
-    UUID: 7847366610859754620
-    Name: Tracer
-    FilePath: Scripts/Weapons/Tracer.lua
   - Type: Script
     UUID: 5986627421746366671
     Name: SpawnManager
@@ -248,13 +248,13 @@ Assets:
     Name: Hitbox
     FilePath: Scripts/Hitbox.lua
   - Type: Script
-    UUID: 18266934061772524094
-    Name: ZombieSpawner
-    FilePath: Scripts/ZombieSpawner.lua
-  - Type: Script
     UUID: 2119190290714536510
     Name: PointUIController
     FilePath: Scripts/PointUIController.lua
+  - Type: Script
+    UUID: 18266934061772524094
+    Name: ZombieSpawner
+    FilePath: Scripts/ZombieSpawner.lua
   - Type: Script
     UUID: 8058432714386778896
     Name: RoundManager
@@ -299,10 +299,26 @@ Assets:
     UUID: 6606166469813654353
     Name: ShopItem
     FilePath: Scripts/ShopItem.lua
+  - Type: Script
+    UUID: 4148257376836290362
+    Name: PauseMenuController
+    FilePath: Scripts/PauseMenuController.lua
+  - Type: Script
+    UUID: 3196176274719519961
+    Name: ResumeButton
+    FilePath: Scripts/ResumeButton.lua
+  - Type: Script
+    UUID: 10726552121413273794
+    Name: ExitToDesktopButton
+    FilePath: Scripts/ExitToDesktopButton.lua
   - Type: Material
     UUID: 782295293902573577
     Name: DesertEagle_Metal
     FilePath: Models/DesertEagle/DesertEagle_Resources/DesertEagle_Metal.ebmat
+  - Type: Material
+    UUID: 13734008897576602447
+    Name: GroundMaterial
+    FilePath: Materials/GroundMaterial.ebmat
   - Type: Material
     UUID: 9148160884979557009
     Name: ShopKiosk_ShopKioskBakedTexture
@@ -323,10 +339,6 @@ Assets:
     UUID: 18352460508626254789
     Name: BoxMaterial
     FilePath: Materials/BoxMaterial.ebmat
-  - Type: Material
-    UUID: 13734008897576602447
-    Name: GroundMaterial
-    FilePath: Materials/GroundMaterial.ebmat
   - Type: Material
     UUID: 1868779223986162857
     Name: PowerUpMaterial
@@ -452,13 +464,13 @@ Assets:
     Name: M4_ReloadController
     FilePath: Animations/M4_ReloadController.ebcontroller
   - Type: AnimationController
-    UUID: 16717526163793928394
-    Name: DEagleAnimController
-    FilePath: Animations/DEagleAnimController.ebcontroller
-  - Type: AnimationController
     UUID: 9223042378186644548
     Name: ZombieAnimController
     FilePath: Animations/ZombieAnimController.ebcontroller
+  - Type: AnimationController
+    UUID: 16717526163793928394
+    Name: DEagleAnimController
+    FilePath: Animations/DEagleAnimController.ebcontroller
   - Type: Model
     UUID: 5584464271236281027
     Name: DesertEagle
@@ -496,6 +508,10 @@ Assets:
     Name: M4_Item
     FilePath: Prefabs/Weapons/M4_Item.ebprefab
   - Type: Prefab
+    UUID: 17919492092461288605
+    Name: HolographicSightPickup
+    FilePath: Prefabs/HolographicSightPickup.ebprefab
+  - Type: Prefab
     UUID: 4357804436516360089
     Name: Spawner
     FilePath: Prefabs/Spawner.ebprefab
@@ -527,10 +543,6 @@ Assets:
     UUID: 1628786810858958427
     Name: DesertEagle
     FilePath: Prefabs/Weapons/DesertEagle.ebprefab
-  - Type: Prefab
-    UUID: 17919492092461288605
-    Name: HolographicSightPickup
-    FilePath: Prefabs/HolographicSightPickup.ebprefab
   - Type: Prefab
     UUID: 13559857553863366497
     Name: ImpactConcrete

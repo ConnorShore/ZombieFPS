@@ -57,6 +57,7 @@ Entities:
         FarClip: 500
     ScriptComponent:
       ScriptUUID: 5025897937436236093
+      RunWhenPaused: 0
       UserPropertyOverrides:
         - Name: Sensitivity
           Type: 3
@@ -81,6 +82,7 @@ Entities:
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
     ScriptComponent:
       ScriptUUID: 5515958197491920100
+      RunWhenPaused: 0
       UserPropertyOverrides: []
   - Entity: 10710601879491244134
     ComponentOrder:
@@ -102,6 +104,7 @@ Entities:
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
     ScriptComponent:
       ScriptUUID: 11246612645680594128
+      RunWhenPaused: 0
       UserPropertyOverrides:
         - Name: RoundStartSound
           Type: 8
@@ -158,6 +161,7 @@ Entities:
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
     ScriptComponent:
       ScriptUUID: 14757129538171395586
+      RunWhenPaused: 1
       UserPropertyOverrides: []
   - Entity: 5599888848773738242
     ComponentOrder:
@@ -179,6 +183,7 @@ Entities:
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
     ScriptComponent:
       ScriptUUID: 8058432714386778896
+      RunWhenPaused: 0
       UserPropertyOverrides:
         - Name: SpawnManagerRef
           Type: 7
@@ -207,6 +212,7 @@ Entities:
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
     ScriptComponent:
       ScriptUUID: 7371630261308486327
+      RunWhenPaused: 0
       UserPropertyOverrides: []
   - Entity: 9978092339450031366
     ComponentOrder:
@@ -228,6 +234,7 @@ Entities:
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,12.081026,1.1,12.627694,1]
     ScriptComponent:
       ScriptUUID: 18266934061772524094
+      RunWhenPaused: 0
       UserPropertyOverrides:
         - Name: ZombiePrefab
           Type: 8
@@ -256,6 +263,7 @@ Entities:
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
     ScriptComponent:
       ScriptUUID: 5986627421746366671
+      RunWhenPaused: 0
       UserPropertyOverrides:
         - Name: MaxConcurrentZombies
           Type: 2
@@ -281,6 +289,7 @@ Entities:
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,11.863312,1.1,-13.071975,1]
     ScriptComponent:
       ScriptUUID: 18266934061772524094
+      RunWhenPaused: 0
       UserPropertyOverrides:
         - Name: ZombiePrefab
           Type: 8
@@ -310,6 +319,7 @@ Entities:
       WorldTransform: [1.6259267,0,0,0,0,1.6259267,0,0,0,0,1,0,1019.36005,117.6,0,1]
     ScriptComponent:
       ScriptUUID: 2119190290714536510
+      RunWhenPaused: 0
       UserPropertyOverrides: []
     TextComponent:
       Text: 100
@@ -357,6 +367,40 @@ Entities:
       MatchWidthOrHeight: 0.5
       PlaneDistance: 1
       ReferenceResolution: [761,506]
+    RectTransformComponent:
+      AnchoredPosition: [0,0]
+      SizeDelta: [100,100]
+      AnchorMin: [0.5,0.5]
+      AnchorMax: [0.5,0.5]
+      Pivot: [0.5,0.5]
+      Rotation: 0
+      RaycastTarget: 0
+  - Entity: 15022887750578409856
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RectTransformComponent
+      - CanvasComponent
+    TagComponent:
+      Tag: MenuCanvas
+    RelationshipComponent:
+      Parent: 0
+      Children:
+        - 2692871788000595805
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,0,0]
+      Scale: [1,1,1]
+      WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
+    CanvasComponent:
+      RenderMode: 0
+      SortOrder: 0
+      MatchWidthOrHeight: 0.5
+      PlaneDistance: 1
+      ReferenceResolution: [1108,588]
     RectTransformComponent:
       AnchoredPosition: [0,0]
       SizeDelta: [100,100]
@@ -430,6 +474,7 @@ Entities:
       MaterialUUID: 31
     ScriptComponent:
       ScriptUUID: 6068451618412420797
+      RunWhenPaused: 0
       UserPropertyOverrides: []
     CharacterControllerComponent:
       WalkSpeed: 5
@@ -571,6 +616,7 @@ Entities:
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,2.9801413e-08,1.8,4.824887,1]
     ScriptComponent:
       ScriptUUID: 8562544563539838448
+      RunWhenPaused: 0
       UserPropertyOverrides:
         - Name: InteractionDistance
           Type: 3
@@ -684,6 +730,7 @@ Entities:
       NineSliceBorder: [0,0,0,0]
     ScriptComponent:
       ScriptUUID: 17429251933582378423
+      RunWhenPaused: 0
       UserPropertyOverrides:
         - Name: AmmoTextRef
           Type: 7
@@ -717,6 +764,7 @@ Entities:
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,2.9802322e-08,1.8,4.824887,1]
     ScriptComponent:
       ScriptUUID: 16404415058251315788
+      RunWhenPaused: 0
       UserPropertyOverrides:
         - Name: TracerPrefab
           Type: 8
@@ -764,6 +812,7 @@ Entities:
       PreviewCollider: 0
     ScriptComponent:
       ScriptUUID: 140741752612032377
+      RunWhenPaused: 0
       UserPropertyOverrides:
         - Name: DefaultSelection
           Type: 7
@@ -842,6 +891,7 @@ Entities:
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,1,5.0267487,1]
     ScriptComponent:
       ScriptUUID: 936314447457138483
+      RunWhenPaused: 0
       UserPropertyOverrides:
         - Name: DamageSound
           Type: 8
@@ -925,6 +975,7 @@ Entities:
       PreviewCollider: 0
     ScriptComponent:
       ScriptUUID: 15191514471842255900
+      RunWhenPaused: 0
       UserPropertyOverrides:
         - Name: Amount
           Type: 2
@@ -985,6 +1036,7 @@ Entities:
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0.33000004,1.383387,4.210523,1]
     ScriptComponent:
       ScriptUUID: 10753367411955256691
+      RunWhenPaused: 0
       UserPropertyOverrides:
         - Name: EmptyGunSound
           Type: 8
@@ -1213,6 +1265,7 @@ Entities:
       MaterialUUID: 18352460508626254789
     ScriptComponent:
       ScriptUUID: 5268583109702214263
+      RunWhenPaused: 0
       UserPropertyOverrides: []
     NavigationMeshModifierComponent:
       NavMeshDataHandle: 8017132278425989816
@@ -1261,6 +1314,7 @@ Entities:
       MaterialUUID: 18352460508626254789
     ScriptComponent:
       ScriptUUID: 5268583109702214263
+      RunWhenPaused: 0
       UserPropertyOverrides: []
     NavigationMeshModifierComponent:
       NavMeshDataHandle: 8017132278425989816
@@ -1309,6 +1363,7 @@ Entities:
       MaterialUUID: 18352460508626254789
     ScriptComponent:
       ScriptUUID: 5268583109702214263
+      RunWhenPaused: 0
       UserPropertyOverrides: []
     NavigationMeshModifierComponent:
       NavMeshDataHandle: 8017132278425989816
@@ -1357,6 +1412,7 @@ Entities:
       MaterialUUID: 18352460508626254789
     ScriptComponent:
       ScriptUUID: 5268583109702214263
+      RunWhenPaused: 0
       UserPropertyOverrides: []
     NavigationMeshModifierComponent:
       NavMeshDataHandle: 8017132278425989816
@@ -1405,6 +1461,7 @@ Entities:
       MaterialUUID: 18352460508626254789
     ScriptComponent:
       ScriptUUID: 5268583109702214263
+      RunWhenPaused: 0
       UserPropertyOverrides: []
     NavigationMeshModifierComponent:
       NavMeshDataHandle: 8017132278425989816
@@ -1432,6 +1489,7 @@ Entities:
       WorldTransform: [2.6014829,0,0,0,0,2.6014829,0,0,0,0,1,0,1037.9666,29.106117,0,1]
     ScriptComponent:
       ScriptUUID: 3344681323696305163
+      RunWhenPaused: 0
       UserPropertyOverrides: []
     TextComponent:
       Text: 1
@@ -1468,6 +1526,7 @@ Entities:
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,-13.245792,1.1,1.4271078,1]
     ScriptComponent:
       ScriptUUID: 18266934061772524094
+      RunWhenPaused: 0
       UserPropertyOverrides:
         - Name: ZombiePrefab
           Type: 8
@@ -1501,6 +1560,7 @@ Entities:
       NineSliceBorder: [0,0,0,0]
     ScriptComponent:
       ScriptUUID: 10853797460557917967
+      RunWhenPaused: 0
       UserPropertyOverrides: []
     RectTransformComponent:
       AnchoredPosition: [0,0]
@@ -1530,6 +1590,7 @@ Entities:
       WorldTransform: [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
     ScriptComponent:
       ScriptUUID: 6171998476316795323
+      RunWhenPaused: 0
       UserPropertyOverrides:
         - Name: PowerUpPrefabs
           Type: 9
@@ -1633,6 +1694,7 @@ Entities:
       NineSliceBorder: [0,0,0,0]
     ScriptComponent:
       ScriptUUID: 7000367312231355508
+      RunWhenPaused: 0
       UserPropertyOverrides: []
     RectTransformComponent:
       AnchoredPosition: [-5,-5]
@@ -1804,6 +1866,7 @@ Entities:
       WorldTransform: [65.9457,0,0,0,0,70.574486,0,0,0,0,1,0,259.4592,393.3126,0,1]
     ScriptComponent:
       ScriptUUID: 6606166469813654353
+      RunWhenPaused: 0
       UserPropertyOverrides:
         - Name: ItemPrefab
           Type: 8
@@ -1852,6 +1915,7 @@ Entities:
       NineSliceBorder: [0,0,0,0]
     ScriptComponent:
       ScriptUUID: 12846303117417708509
+      RunWhenPaused: 0
       UserPropertyOverrides: []
     RectTransformComponent:
       AnchoredPosition: [0,0]
@@ -1971,6 +2035,7 @@ Entities:
       WorldTransform: [65.94573,0,0,0,0,70.574486,0,0,0,0,1,0,356.42664,393.3126,0,1]
     ScriptComponent:
       ScriptUUID: 6606166469813654353
+      RunWhenPaused: 0
       UserPropertyOverrides:
         - Name: ItemPrefab
           Type: 8
@@ -2022,6 +2087,7 @@ Entities:
       NineSliceBorder: [0,0,0,0]
     ScriptComponent:
       ScriptUUID: 12846303117417708509
+      RunWhenPaused: 0
       UserPropertyOverrides: []
     RectTransformComponent:
       AnchoredPosition: [0,0]
@@ -2242,6 +2308,7 @@ Entities:
       WorldTransform: [65.15084,0,0,0,0,70.574486,0,0,0,0,1,0,612.58203,393.3126,0,1]
     ScriptComponent:
       ScriptUUID: 6606166469813654353
+      RunWhenPaused: 0
       UserPropertyOverrides:
         - Name: ItemPrefab
           Type: 8
@@ -2293,6 +2360,7 @@ Entities:
       NineSliceBorder: [0,0,0,0]
     ScriptComponent:
       ScriptUUID: 12846303117417708509
+      RunWhenPaused: 0
       UserPropertyOverrides: []
     RectTransformComponent:
       AnchoredPosition: [0,0]
@@ -2455,6 +2523,456 @@ Entities:
       SizeDelta: [0,0]
       AnchorMin: [0,0]
       AnchorMax: [1,0]
+      Pivot: [0.5,0.5]
+      Rotation: 0
+      RaycastTarget: 0
+  - Entity: 2692871788000595805
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RectTransformComponent
+      - SpriteComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: PauseMenu
+    RelationshipComponent:
+      Parent: 15022887750578409856
+      Children:
+        - 2618147128780770730
+        - 8281786943661747224
+        - 6404768055883065112
+        - 14529594422019317531
+        - 8677396885853781619
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,-0,0]
+      Scale: [1,1,1]
+      WorldTransform: [764.80005,0,0,0,0,452.8,0,0,0,0,1,0,554,294,0,1]
+    SpriteComponent:
+      Color: [0,0,0,0.8117647]
+      IsBillboard: 0
+      LockYAxis: 0
+      NineSliceBorder: [0,0,0,0]
+    ScriptComponent:
+      ScriptUUID: 4148257376836290362
+      RunWhenPaused: 1
+      UserPropertyOverrides:
+        - Name: DefaultSelection
+          Type: 7
+          Value: 8281786943661747224
+          ReferenceKind: Entity
+    RectTransformComponent:
+      AnchoredPosition: [0,0]
+      SizeDelta: [100,100]
+      AnchorMin: [0.2,0.2]
+      AnchorMax: [0.8,0.8]
+      Pivot: [0.5,0.5]
+      Rotation: 0
+      RaycastTarget: 0
+  - Entity: 2618147128780770730
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RectTransformComponent
+      - TextComponent
+    TagComponent:
+      Tag: MenuText
+    RelationshipComponent:
+      Parent: 2692871788000595805
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-0.7243724,-0.64929336,0]
+      Rotation: [0,-0,0]
+      Scale: [0.0013075314,0.0022084808,1]
+      WorldTransform: [100,0,0,0,0,100,0,0,0,0,1,0,554,470.40002,0,1]
+    TextComponent:
+      Text: Pause Menu
+      FontHandle: 213406294560961755
+      FontSize: 36
+      HorizontalAlignment: 1
+      VerticalAlignment: 1
+      Color: [1,1,1,1]
+    RectTransformComponent:
+      AnchoredPosition: [0,0]
+      SizeDelta: [100,100]
+      AnchorMin: [0.5,1]
+      AnchorMax: [0.5,1]
+      Pivot: [0.5,1]
+      Rotation: 0
+      RaycastTarget: 0
+  - Entity: 8281786943661747224
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RectTransformComponent
+      - SpriteComponent
+      - UISelectableComponent
+      - UIButtonComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: ResumeButton
+    RelationshipComponent:
+      Parent: 2692871788000595805
+      Children:
+        - 17659511846501663826
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-0.7243724,-0.64929336,0]
+      Rotation: [0,-0,0]
+      Scale: [0.0013075314,0.0022084808,1]
+      WorldTransform: [200,0,0,0,0,60,0,0,0,0,1,0,554,407.19998,0,1]
+    SpriteComponent:
+      Color: [0.72868216,0.72868216,0.72868216,0.78039217]
+      IsBillboard: 0
+      LockYAxis: 0
+      NineSliceBorder: [0,0,0,0]
+    ScriptComponent:
+      ScriptUUID: 3196176274719519961
+      RunWhenPaused: 0
+      UserPropertyOverrides: []
+    RectTransformComponent:
+      AnchoredPosition: [0,0]
+      SizeDelta: [200,60]
+      AnchorMin: [0.5,0.75]
+      AnchorMax: [0.5,0.75]
+      Pivot: [0.5,0.5]
+      Rotation: 0
+      RaycastTarget: 0
+    UISelectableComponent:
+      Interactable: 1
+      Transition: 1
+      TargetGraphicEntity: 0
+      NormalColor: [1,1,1,0.78431374]
+      HighlightedColor: [0.96,0.96,0.96,1]
+      PressedColor: [0.78,0.78,0.78,1]
+      SelectedColor: [0.96,0.96,0.96,1]
+      DisabledColor: [0.78,0.78,0.78,0.5]
+      FadeDuration: 0.1
+      HighlightedTexture: 0
+      PressedTexture: 0
+      SelectedTexture: 0
+      DisabledTexture: 0
+      Navigation: 1
+      NavigateUp: 0
+      NavigateDown: 0
+      NavigateLeft: 0
+      NavigateRight: 0
+    UIButtonComponent:
+      IsButton: 1
+  - Entity: 17659511846501663826
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RectTransformComponent
+      - TextComponent
+    TagComponent:
+      Tag: Label
+    RelationshipComponent:
+      Parent: 8281786943661747224
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,-0,0]
+      Scale: [1,1,1]
+      WorldTransform: [200,0,0,0,0,60,0,0,0,0,1,0,554,407.19998,0,1]
+    TextComponent:
+      Text: Resume
+      FontHandle: 213406294560961755
+      FontSize: 24
+      HorizontalAlignment: 1
+      VerticalAlignment: 1
+      Color: [1,1,1,1]
+    RectTransformComponent:
+      AnchoredPosition: [0,0]
+      SizeDelta: [0,0]
+      AnchorMin: [0,0]
+      AnchorMax: [1,1]
+      Pivot: [0.5,0.5]
+      Rotation: 0
+      RaycastTarget: 0
+  - Entity: 6404768055883065112
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RectTransformComponent
+      - SpriteComponent
+      - UISelectableComponent
+      - UIButtonComponent
+    TagComponent:
+      Tag: OptionsButton
+    RelationshipComponent:
+      Parent: 2692871788000595805
+      Children:
+        - 6330386074502570564
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-0.7243724,-0.64929336,0]
+      Rotation: [0,-0,0]
+      Scale: [0.0013075314,0.0022084808,1]
+      WorldTransform: [200,0,0,0,0,60,0,0,0,0,1,0,554,316.64,0,1]
+    SpriteComponent:
+      Color: [0.72868216,0.72868216,0.72868216,0.78039217]
+      IsBillboard: 0
+      LockYAxis: 0
+      NineSliceBorder: [0,0,0,0]
+    RectTransformComponent:
+      AnchoredPosition: [0,0]
+      SizeDelta: [200,60]
+      AnchorMin: [0.5,0.55]
+      AnchorMax: [0.5,0.55]
+      Pivot: [0.5,0.5]
+      Rotation: 0
+      RaycastTarget: 0
+    UISelectableComponent:
+      Interactable: 1
+      Transition: 1
+      TargetGraphicEntity: 0
+      NormalColor: [1,1,1,0.78431374]
+      HighlightedColor: [0.96,0.96,0.96,1]
+      PressedColor: [0.78,0.78,0.78,1]
+      SelectedColor: [0.96,0.96,0.96,1]
+      DisabledColor: [0.78,0.78,0.78,0.5]
+      FadeDuration: 0.1
+      HighlightedTexture: 0
+      PressedTexture: 0
+      SelectedTexture: 0
+      DisabledTexture: 0
+      Navigation: 1
+      NavigateUp: 0
+      NavigateDown: 0
+      NavigateLeft: 0
+      NavigateRight: 0
+    UIButtonComponent:
+      IsButton: 1
+  - Entity: 6330386074502570564
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RectTransformComponent
+      - TextComponent
+    TagComponent:
+      Tag: Label
+    RelationshipComponent:
+      Parent: 6404768055883065112
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,-0,0]
+      Scale: [1,1,1]
+      WorldTransform: [200,0,0,0,0,60,0,0,0,0,1,0,554,316.64,0,1]
+    TextComponent:
+      Text: Options
+      FontHandle: 213406294560961755
+      FontSize: 24
+      HorizontalAlignment: 1
+      VerticalAlignment: 1
+      Color: [1,1,1,1]
+    RectTransformComponent:
+      AnchoredPosition: [0,0]
+      SizeDelta: [0,0]
+      AnchorMin: [0,0]
+      AnchorMax: [1,1]
+      Pivot: [0.5,0.5]
+      Rotation: 0
+      RaycastTarget: 0
+  - Entity: 14529594422019317531
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RectTransformComponent
+      - SpriteComponent
+      - UISelectableComponent
+      - UIButtonComponent
+    TagComponent:
+      Tag: ExitToMenuButton
+    RelationshipComponent:
+      Parent: 2692871788000595805
+      Children:
+        - 10689949107971948940
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-0.7243724,-0.64929336,0]
+      Rotation: [0,-0,0]
+      Scale: [0.0013075314,0.0022084808,1]
+      WorldTransform: [200,0,0,0,0,60,0,0,0,0,1,0,554,226.08,0,1]
+    SpriteComponent:
+      Color: [0.72868216,0.72868216,0.72868216,0.78039217]
+      IsBillboard: 0
+      LockYAxis: 0
+      NineSliceBorder: [0,0,0,0]
+    RectTransformComponent:
+      AnchoredPosition: [0,0]
+      SizeDelta: [200,60]
+      AnchorMin: [0.5,0.35]
+      AnchorMax: [0.5,0.35]
+      Pivot: [0.5,0.5]
+      Rotation: 0
+      RaycastTarget: 0
+    UISelectableComponent:
+      Interactable: 1
+      Transition: 1
+      TargetGraphicEntity: 0
+      NormalColor: [1,1,1,0.78431374]
+      HighlightedColor: [0.96,0.96,0.96,1]
+      PressedColor: [0.78,0.78,0.78,1]
+      SelectedColor: [0.96,0.96,0.96,1]
+      DisabledColor: [0.78,0.78,0.78,0.5]
+      FadeDuration: 0.1
+      HighlightedTexture: 0
+      PressedTexture: 0
+      SelectedTexture: 0
+      DisabledTexture: 0
+      Navigation: 1
+      NavigateUp: 0
+      NavigateDown: 0
+      NavigateLeft: 0
+      NavigateRight: 0
+    UIButtonComponent:
+      IsButton: 1
+  - Entity: 10689949107971948940
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RectTransformComponent
+      - TextComponent
+    TagComponent:
+      Tag: Label
+    RelationshipComponent:
+      Parent: 14529594422019317531
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,-0,0]
+      Scale: [1,1,1]
+      WorldTransform: [200,0,0,0,0,60.000015,0,0,0,0,1,0,554,226.08002,0,1]
+    TextComponent:
+      Text: Exit to Menu
+      FontHandle: 213406294560961755
+      FontSize: 24
+      HorizontalAlignment: 1
+      VerticalAlignment: 1
+      Color: [1,1,1,1]
+    RectTransformComponent:
+      AnchoredPosition: [0,0]
+      SizeDelta: [0,0]
+      AnchorMin: [0,0]
+      AnchorMax: [1,1]
+      Pivot: [0.5,0.5]
+      Rotation: 0
+      RaycastTarget: 0
+  - Entity: 8677396885853781619
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RectTransformComponent
+      - SpriteComponent
+      - UISelectableComponent
+      - UIButtonComponent
+      - ScriptComponent
+    TagComponent:
+      Tag: ExitToDesktopButton
+    RelationshipComponent:
+      Parent: 2692871788000595805
+      Children:
+        - 4810468308939724421
+      IsAttachment: 0
+    TransformComponent:
+      Position: [-0.7243724,-0.64929336,0]
+      Rotation: [0,-0,0]
+      Scale: [0.0013075314,0.0022084808,1]
+      WorldTransform: [200,0,0,0,0,60,0,0,0,0,1,0,554,135.52,0,1]
+    SpriteComponent:
+      Color: [0.72868216,0.72868216,0.72868216,0.78039217]
+      IsBillboard: 0
+      LockYAxis: 0
+      NineSliceBorder: [0,0,0,0]
+    ScriptComponent:
+      ScriptUUID: 10726552121413273794
+      RunWhenPaused: 0
+      UserPropertyOverrides: []
+    RectTransformComponent:
+      AnchoredPosition: [0,0]
+      SizeDelta: [200,60]
+      AnchorMin: [0.5,0.15]
+      AnchorMax: [0.5,0.15]
+      Pivot: [0.5,0.5]
+      Rotation: 0
+      RaycastTarget: 0
+    UISelectableComponent:
+      Interactable: 1
+      Transition: 1
+      TargetGraphicEntity: 0
+      NormalColor: [1,1,1,0.78431374]
+      HighlightedColor: [0.96,0.96,0.96,1]
+      PressedColor: [0.78,0.78,0.78,1]
+      SelectedColor: [0.96,0.96,0.96,1]
+      DisabledColor: [0.78,0.78,0.78,0.5]
+      FadeDuration: 0.1
+      HighlightedTexture: 0
+      PressedTexture: 0
+      SelectedTexture: 0
+      DisabledTexture: 0
+      Navigation: 1
+      NavigateUp: 0
+      NavigateDown: 0
+      NavigateLeft: 0
+      NavigateRight: 0
+    UIButtonComponent:
+      IsButton: 1
+  - Entity: 4810468308939724421
+    ComponentOrder:
+      - IDComponent
+      - TagComponent
+      - TransformComponent
+      - RelationshipComponent
+      - RectTransformComponent
+      - TextComponent
+    TagComponent:
+      Tag: Label
+    RelationshipComponent:
+      Parent: 8677396885853781619
+      Children: []
+      IsAttachment: 0
+    TransformComponent:
+      Position: [0,0,0]
+      Rotation: [0,-0,0]
+      Scale: [1,1,1]
+      WorldTransform: [200,0,0,0,0,60,0,0,0,0,1,0,554,135.52,0,1]
+    TextComponent:
+      Text: Exit to Desktop
+      FontHandle: 213406294560961755
+      FontSize: 24
+      HorizontalAlignment: 1
+      VerticalAlignment: 1
+      Color: [1,1,1,1]
+    RectTransformComponent:
+      AnchoredPosition: [0,0]
+      SizeDelta: [0,0]
+      AnchorMin: [0,0]
+      AnchorMax: [1,1]
       Pivot: [0.5,0.5]
       Rotation: 0
       RaycastTarget: 0
