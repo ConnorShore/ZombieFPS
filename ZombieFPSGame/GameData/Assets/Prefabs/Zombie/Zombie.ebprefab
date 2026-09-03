@@ -243,24 +243,8 @@ PrefabEntities:
           Value: 3462192619930688989
           ReferenceKind: AudioClip
     ParticleEmitterComponent:
-      EmissionRate: 200
-      Velocity: [1,1,-3]
-      VelocityVariation: [2,1,-1.5]
-      Drag: 0.5
-      AngularVelocity: 0
-      AngularVelocityVariation: 0.2
-      ColorBegin: [0.5411765,0.07450981,0.07450981,0.8235294]
-      ColorEnd: [0.5411765,0.07450981,0.07450981,0]
-      ScaleBegin: 0.15
-      ScaleEnd: 0.03
-      ScaleVariation: 0.05
-      TextureHandle: 1
-      Lifetime: 0.4
-      LifetimeVariation: 0.1
-      GravityMultiplier: 1
-      AlignWithVelocity: 0
-      StretchFactor: 0
       IsActive: 0
+      EffectHandle: 9182734650918273465
   - Entity: 4337914384271376024
     ComponentOrder:
       - IDComponent
@@ -719,24 +703,28 @@ PrefabEntities:
           Type: 1
           Value: 1
     ParticleEmitterComponent:
-      EmissionRate: 250
-      Velocity: [1,1,-3]
-      VelocityVariation: [2,1,-1.5]
-      Drag: 0.5
-      AngularVelocity: 0
-      AngularVelocityVariation: 0.2
-      ColorBegin: [0.5411765,0.07450981,0.07450981,0.8235294]
-      ColorEnd: [0.5411765,0.07450981,0.07450981,0]
-      ScaleBegin: 0.15
-      ScaleEnd: 0.03
-      ScaleVariation: 0.05
-      TextureHandle: 1
-      Lifetime: 0.4
-      LifetimeVariation: 0.1
-      GravityMultiplier: 1
-      AlignWithVelocity: 0
-      StretchFactor: 0
       IsActive: 0
+      EffectHandle: 9182734650918273465
+      InstanceUUID: 2481039571628394057
+      Overrides:
+        EmissionRate: 250
+        Lifetime: 0.4
+        LifetimeVariation: 0.1
+        Velocity: [1,1,-3]
+        VelocityVariation: [2,1,-1.5]
+        GravityMultiplier: 1
+        Drag: 0.5
+        AngularVelocity: 0
+        AngularVelocityVariation: 0.2
+        AlignWithVelocity: 0
+        StretchFactor: 0
+        ColorBegin: [0.5411765,0.07450981,0.07450981,0.8235294]
+        ColorEnd: [0.5411765,0.07450981,0.07450981,0]
+        ColorIntensity: 1
+        ScaleBegin: 0.15
+        ScaleEnd: 0.03
+        ScaleVariation: 0.05
+        TextureHandle: 1
   - Entity: 699281928078618222
     ComponentOrder:
       - IDComponent

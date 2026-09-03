@@ -1,0 +1,23 @@
+Version: 2
+ParticleEffect: Torch_FlameOuter
+UUID: 14651277394188695946
+Properties:
+  EmissionRate: 20
+  Lifetime: 0.7
+  LifetimeVariation: 0.25
+  Velocity: [0,1.3,0]
+  VelocityVariation: [0.4,0.3,0.4]
+  GravityMultiplier: -0.12
+  Drag: 0.8
+  AngularVelocity: 0.5
+  AngularVelocityVariation: 2
+  AlignWithVelocity: 0
+  StretchFactor: 0
+  ColorBegin: [1,0.45,0.08,0.55]
+  ColorEnd: [0.35,0.06,0,0]
+  ColorIntensity: 1.5
+  ScaleBegin: 0.22
+  ScaleEnd: 0.1
+  ScaleVariation: 0.08
+  TextureHandle: 2615814691088578839
+  BlendMode: Additive

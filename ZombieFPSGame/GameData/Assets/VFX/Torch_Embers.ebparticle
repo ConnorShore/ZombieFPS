@@ -1,0 +1,23 @@
+Version: 2
+ParticleEffect: Torch_Embers
+UUID: 17404596940138442635
+Properties:
+  EmissionRate: 4
+  Lifetime: 1.4
+  LifetimeVariation: 0.6
+  Velocity: [0,1.6,0]
+  VelocityVariation: [0.8,0.6,0.8]
+  GravityMultiplier: -0.05
+  Drag: 0.3
+  AngularVelocity: 0
+  AngularVelocityVariation: 0
+  AlignWithVelocity: 1
+  StretchFactor: 0.02
+  ColorBegin: [1,0.6,0.15,1]
+  ColorEnd: [1,0.15,0,0]
+  ColorIntensity: 7
+  ScaleBegin: 0.02
+  ScaleEnd: 0.005
+  ScaleVariation: 0.01
+  TextureHandle: 2615814691088578839
+  BlendMode: Additive

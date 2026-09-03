@@ -1,0 +1,23 @@
+Version: 2
+ParticleEffect: MuzzleFlashRifle
+UUID: 4726150398271640583
+Properties:
+  EmissionRate: 200
+  Lifetime: 0.06
+  LifetimeVariation: 0.015
+  Velocity: [0,0,-1]
+  VelocityVariation: [5,15,0]
+  GravityMultiplier: 0
+  Drag: 0.1
+  AngularVelocity: 0
+  AngularVelocityVariation: 0.2
+  AlignWithVelocity: 1
+  StretchFactor: 0.03
+  ColorBegin: [0.8272425,0.45284176,0.016489906,1]
+  ColorEnd: [0.52491695,0.394705,0.2441474,0.06666667]
+  ColorIntensity: 1
+  ScaleBegin: 0.05
+  ScaleEnd: 0.4
+  ScaleVariation: 0.1
+  TextureHandle: 1
+  BlendMode: Alpha

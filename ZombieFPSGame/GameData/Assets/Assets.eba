@@ -635,3 +635,39 @@ Assets:
     UUID: 397660979313011815
     Name: Default
     FilePath: ../Scenes/Default.ebs
+  - Type: ParticleEffect
+    UUID: 7314520896331457021
+    Name: ImpactConcrete
+    FilePath: VFX/ImpactConcrete.ebparticle
+  - Type: ParticleEffect
+    UUID: 9182734650918273465
+    Name: BloodSplatter
+    FilePath: VFX/BloodSplatter.ebparticle
+  - Type: ParticleEffect
+    UUID: 4726150398271640583
+    Name: MuzzleFlashRifle
+    FilePath: VFX/MuzzleFlashRifle.ebparticle
+  - Type: ParticleEffect
+    UUID: 6039182745610293847
+    Name: MuzzleFlashPistol
+    FilePath: VFX/MuzzleFlashPistol.ebparticle
+  - Type: Texture
+    UUID: 2615814691088578839
+    Name: FlameSoft
+    FilePath: Textures/Effects/FlameSoft.png
+  - Type: ParticleEffect
+    UUID: 17042753974293300699
+    Name: Torch_FlameCore
+    FilePath: VFX/Torch_FlameCore.ebparticle
+  - Type: ParticleEffect
+    UUID: 14651277394188695946
+    Name: Torch_FlameOuter
+    FilePath: VFX/Torch_FlameOuter.ebparticle
+  - Type: ParticleEffect
+    UUID: 6991907224424695768
+    Name: Torch_Smoke
+    FilePath: VFX/Torch_Smoke.ebparticle
+  - Type: ParticleEffect
+    UUID: 17404596940138442635
+    Name: Torch_Embers
+    FilePath: VFX/Torch_Embers.ebparticle

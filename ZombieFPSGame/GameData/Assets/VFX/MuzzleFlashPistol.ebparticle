@@ -1,0 +1,23 @@
+Version: 2
+ParticleEffect: MuzzleFlashPistol
+UUID: 6039182745610293847
+Properties:
+  EmissionRate: 200
+  Lifetime: 0.06
+  LifetimeVariation: 0.01
+  Velocity: [0,0,-1]
+  VelocityVariation: [5,15,1]
+  GravityMultiplier: 0
+  Drag: 0.1
+  AngularVelocity: 0
+  AngularVelocityVariation: 0.2
+  AlignWithVelocity: 1
+  StretchFactor: 0.03
+  ColorBegin: [1,0.46511626,0,1]
+  ColorEnd: [0.5387597,0.38618073,0.25267413,0]
+  ColorIntensity: 1
+  ScaleBegin: 0.05
+  ScaleEnd: 0.4
+  ScaleVariation: 0.1
+  TextureHandle: 1
+  BlendMode: Alpha

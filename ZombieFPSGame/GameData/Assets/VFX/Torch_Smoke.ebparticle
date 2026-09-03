@@ -1,0 +1,23 @@
+Version: 2
+ParticleEffect: Torch_Smoke
+UUID: 6991907224424695768
+Properties:
+  EmissionRate: 8
+  Lifetime: 2.2
+  LifetimeVariation: 0.8
+  Velocity: [0,0.8,0]
+  VelocityVariation: [0.25,0.2,0.25]
+  GravityMultiplier: -0.03
+  Drag: 0.5
+  AngularVelocity: 0.3
+  AngularVelocityVariation: 0.6
+  AlignWithVelocity: 0
+  StretchFactor: 0
+  ColorBegin: [0.18,0.16,0.15,0.35]
+  ColorEnd: [0.1,0.1,0.1,0]
+  ColorIntensity: 1
+  ScaleBegin: 0.12
+  ScaleEnd: 0.5
+  ScaleVariation: 0.05
+  TextureHandle: 2615814691088578839
+  BlendMode: Alpha

@@ -1,0 +1,23 @@
+Version: 2
+ParticleEffect: BloodSplatter
+UUID: 9182734650918273465
+Properties:
+  EmissionRate: 200
+  Lifetime: 0.4
+  LifetimeVariation: 0.1
+  Velocity: [1,1,-3]
+  VelocityVariation: [2,1,-1.5]
+  GravityMultiplier: 1
+  Drag: 0.5
+  AngularVelocity: 0
+  AngularVelocityVariation: 0.2
+  AlignWithVelocity: 0
+  StretchFactor: 0
+  ColorBegin: [0.5411765,0.07450981,0.07450981,0.8235294]
+  ColorEnd: [0.5411765,0.07450981,0.07450981,0]
+  ColorIntensity: 1
+  ScaleBegin: 0.15
+  ScaleEnd: 0.03
+  ScaleVariation: 0.05
+  TextureHandle: 1
+  BlendMode: Alpha

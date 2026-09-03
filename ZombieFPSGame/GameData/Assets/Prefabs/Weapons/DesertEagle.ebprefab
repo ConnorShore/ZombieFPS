@@ -346,24 +346,8 @@ PrefabEntities:
       ScriptUUID: 16605421126880563658
       UserPropertyOverrides: []
     ParticleEmitterComponent:
-      EmissionRate: 200
-      Velocity: [0,0,-1]
-      VelocityVariation: [5,15,1]
-      Drag: 0.1
-      AngularVelocity: 0
-      AngularVelocityVariation: 0.2
-      ColorBegin: [1,0.46511626,0,1]
-      ColorEnd: [0.5387597,0.38618073,0.25267413,0]
-      ScaleBegin: 0.05
-      ScaleEnd: 0.4
-      ScaleVariation: 0.1
-      TextureHandle: 1
-      Lifetime: 0.06
-      LifetimeVariation: 0.01
-      GravityMultiplier: 0
-      AlignWithVelocity: 1
-      StretchFactor: 0.03
       IsActive: 0
+      EffectHandle: 6039182745610293847
   - Entity: 17547488570157557521
     ComponentOrder:
       - IDComponent
